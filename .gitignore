@@ -1,0 +1,5 @@
+node_modules/*
+scaffolds/*
+themes/*
+db.json
+package-lock.json
