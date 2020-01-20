@@ -4,13 +4,13 @@ date: 2020-01-19 19:26:40
 tags: [RTL-SDR, SDRSharp, Windows]
 ---
 
-En este tutorial vamos ver cómo instalar nuestro nuevo dispositivo RTL-SDR en Windows 10.
+En este tutorial vamos a ver cómo instalar nuestro nuevo dispositivo RTL-SDR en Windows 10.
 
 Existen varias alternativas para Windows, pero en este tutorial vamos a instalar y configurar SDR# (SDR Sharp), ya que es el más conocido y utilizado.
 
 ## Instalación de SDR#.
 
-El primer paso es descargar el software que necesitamos para poder usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última version disponible de SDR# haciendo click en el siguiente enlace:
+El primer paso es descargar el software que necesitamos para poder usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo click en el siguiente enlace:
 
 [<center>https://airspy.com/download/</center>](https://airspy.com/download/)
 
@@ -71,7 +71,7 @@ En esta ventana encontramos las siguientes opciones:
 | **RTL AGC** | Desactivado | Activa el control automático de ganancia del chip RTL2832U. |
 | **Tuner AGC** | Desactivado | Activa el control automático de ganancia del sintonizador del dispositivo. |
 | **RF Gain** |  | Permite ajustar la ganancia manualmente. En el siguiente punto veremos como ajustarla correctamente. |
-| **Frequency correction (ppm)** | | Permite corregir la variación de la frecuencia que tienen la mayoria de dispositivos. Esta variación se debe al oscilador de baja calidad con el que normalmente vienen. Para establecer este valor, tendremos que sintonizar una frecuencia conocida y ajustarlo manualmente. |
+| **Frequency correction (ppm)** | | Permite corregir la variación de la frecuencia que tienen la mayoría de dispositivos. Esta variación se debe al oscilador de baja calidad con el que normalmente vienen. Para establecer este valor, tendremos que sintonizar una frecuencia conocida y ajustarlo manualmente. |
 
 Con todo ya configurado, solo queda pulsar el botón de **Start/Stop** para empezar a recibir.
 
@@ -79,7 +79,7 @@ Con todo ya configurado, solo queda pulsar el botón de **Start/Stop** para empe
 
 ## Ajuste de la ganancia.
 
-En este último paso vamos a ajustar la ganancia de nuestro dispositivo manualmente. Como hemos visto anteriormente, el ajuste de la ganacia se puede dejar para que el dispositivo lo haga automáticamente. El problema es que este ajuste muy pocas veces se hace correctamente, por lo que es muy recomendable hacerlo manualmente. Para ello sintonizamos cualquier señal en la frecuencia para la que vamos a ajustar la ganancia y abrimos los ajustes del dispositivo.
+En este último paso vamos a ajustar la ganancia de nuestro dispositivo manualmente. Como hemos visto anteriormente, el ajuste de la ganancia se puede dejar para que el dispositivo lo haga automáticamente. El problema es que este ajuste muy pocas veces se hace correctamente, por lo que es muy recomendable hacerlo manualmente. Para ello sintonizamos cualquier señal en la frecuencia para la que vamos a ajustar la ganancia y abrimos los ajustes del dispositivo.
 Ahora el objetivo es ajustar el valor de **RF Gain** hasta que consigamos el mejor valor de SNR (Signal to Noise Ratio).
 
 |Ganancia sin ajustar|Ganancia ajustada|
