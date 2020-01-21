@@ -82,8 +82,6 @@ Con todo ya configurado, solo queda pulsar el botón de **Start/Stop** para empe
 En este último paso vamos a ajustar la ganancia de nuestro dispositivo manualmente. Como hemos visto anteriormente, el ajuste de la ganancia se puede dejar para que el dispositivo lo haga automáticamente. El problema es que este ajuste muy pocas veces se hace correctamente, por lo que es muy recomendable hacerlo manualmente. Para ello sintonizamos cualquier señal en la frecuencia para la que vamos a ajustar la ganancia y abrimos los ajustes del dispositivo.
 Ahora el objetivo es ajustar el valor de **RF Gain** hasta que consigamos el mejor valor de SNR (Signal to Noise Ratio).
 
-|Ganancia sin ajustar|Ganancia ajustada|
-|---|---|
-|{% asset_img ganancia0.jpg "Ganancia 0" %}|{% asset_img ganancia_ajustada.jpg "Ganancia ajustada" %}|
+{% asset_img ganancia.jpg "Ajuste de la ganancia manualmente" %}
 
 Una vez tengamos la ganancia ajustada, ya tendremos listo nuestro dispositivo SDR.
