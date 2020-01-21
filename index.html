@@ -89,6 +89,60 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-instalacion-virtual-cable-audio" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/21/instalacion-virtual-cable-audio/" class="article-date">
+  <time datetime="2020-01-21T16:06:29.000Z" itemprop="datePublished">21/01/2020</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/21/instalacion-virtual-cable-audio/">Instalación de cable de audio virtual</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde SDR# a cualquier programa externo.<br>Para ello vamos a utilizar un software que nos va a permitir pasar el audio desde la salida de SDR# a la entrada de otro programa.</p>
+<p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
+<h2 id="Instalacion-de-VB-Cable"><a href="#Instalacion-de-VB-Cable" class="headerlink" title="Instalación de VB-Cable."></a>Instalación de VB-Cable.</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/" target="_blank" rel="noopener"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-audio-web.jpg" class="" title="Descarga de VB-Cable">
+
+<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
+<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
+
+<p>Hacemos click en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
+<h2 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#."></a>Configuración de SDR#.</h2><p>Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" title="SDRSharp output">
+
+<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/" data-id="ck5o5hc2a0001g2y2gqgs5l81" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Virtual-Audio-Cable/" rel="tag">Virtual Audio Cable</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-instalacion-rtlsdr-windows" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/01/19/instalacion-rtlsdr-windows/" class="article-date">
@@ -204,7 +258,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sdr-es.com/2020/01/19/instalacion-rtlsdr-windows/" data-id="ck5o1ynkn0000xby2giog46zn" class="article-share-link">Compartir</a>
+      <a data-url="http://sdr-es.com/2020/01/19/instalacion-rtlsdr-windows/" data-id="ck5o5hc250000g2y220c25saf" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RTL-SDR/" rel="tag">RTL-SDR</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
@@ -230,6 +284,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2020/01/21/instalacion-virtual-cable-audio/">Instalación de cable de audio virtual</a>
+          </li>
+        
+          <li>
             <a href="/2020/01/19/instalacion-rtlsdr-windows/">Instalación de dispositivos RTL-SDR en Windows</a>
           </li>
         
@@ -245,7 +303,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL-SDR/" rel="tag">RTL-SDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL-SDR/" rel="tag">RTL-SDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Virtual-Audio-Cable/" rel="tag">Virtual Audio Cable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
     </div>
   </div>
 

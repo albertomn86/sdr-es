@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-01-21T15:47:09.726Z</updated>
+  <updated>2020-01-21T17:22:51.858Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Instalación de cable de audio virtual</title>
+    <link href="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/"/>
+    <id>http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/</id>
+    <published>2020-01-21T16:06:29.000Z</published>
+    <updated>2020-01-21T17:22:51.858Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde SDR# a cualquier programa externo.&lt;br&gt;Para ello
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Virtual Audio Cable" scheme="http://sdr-es.com/tags/Virtual-Audio-Cable/"/>
+    
+  </entry>
   
   <entry>
     <title>Instalación de dispositivos RTL-SDR en Windows</title>
