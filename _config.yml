@@ -5,8 +5,8 @@
 # Site
 title: SDR en español
 subtitle: 'Web de referencia para los amantes de los dispositivos SDR'
-description: ''
-keywords: sdr, ham, radio, amateur, rtl, rtl-sdr
+description: 'Web de referencia para los amantes de los dispositivos SDR'
+keywords: [sdr, ham, radio, amateur, rtl, rtl-sdr]
 author: Alberto MN
 language: es
 timezone: 'Europe/Madrid'
@@ -102,3 +102,17 @@ deploy:
   repo: git@github.com:albertomn86/sdr-es.git
   branch: gh-pages
   message: Deploy website
+
+# RSS feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: favicon.ico
+  autodiscovery: true
+  template:
