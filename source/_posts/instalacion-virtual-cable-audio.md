@@ -7,9 +7,11 @@ tags: ['Virtual Audio Cable', SDRSharp, Windows]
 Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde SDR# a cualquier programa externo.
 Para ello vamos a utilizar un software que nos va a permitir pasar el audio desde la salida de SDR# a la entrada de otro programa.
 
-Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) **VB-Cable**.
+<!-- more -->
 
 ## Instalación de VB-Cable.
+
+Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) **VB-Cable**.
 
 Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:
 

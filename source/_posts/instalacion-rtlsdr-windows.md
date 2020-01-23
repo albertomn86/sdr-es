@@ -8,6 +8,8 @@ En este tutorial vamos a ver cómo instalar nuestro nuevo dispositivo RTL-SDR en
 
 Existen varias alternativas para Windows, pero en este tutorial vamos a instalar y configurar SDR# (SDR Sharp), ya que es el más conocido y utilizado.
 
+<!-- more -->
+
 ## Instalación de SDR#.
 
 El primer paso es descargar el software que necesitamos para poder usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo click en el siguiente enlace:
