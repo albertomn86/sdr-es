@@ -6,15 +6,42 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-01-23T21:09:21.617Z</updated>
+  <updated>2020-02-18T20:12:38.380Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
-    <name>Alberto MN</name>
+    <name>SDR en español</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ajuste de frecuencia en recepción de satélites</title>
+    <link href="http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/"/>
+    <id>http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/</id>
+    <published>2020-02-18T11:45:55.000Z</published>
+    <updated>2020-02-18T20:12:38.380Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Cuando realizamos seguimiento de satélites nos encontramos con que la frecuencia en la que deberíamos recibir una señal no se ajusta con la que estamos recibiendo y además cambia durante el pase. Esto se debe al conocido como &lt;strong&gt;efecto Doppler&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;El efecto Doppler, llamado así por el físico austriaco Christian Andreas Doppler, es el cambio de frecuencia asociado a la alta velocidad que presenta el satélite con respecto a una estación terrestre.&lt;/p&gt;
+&lt;p&gt;Usando Orbitron y el plugin DDETracker podemos hacer que SDR# realice la correción y el ajuste de la frecuencia de recepción de forma automática y en tiempo real. De esta forma evitaremos el tener que ajustarla manualmente y tendremos siempre la señal correctamente centrada.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
+      <category term="Orbitron" scheme="http://sdr-es.com/tags/Orbitron/"/>
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>Seguimiento de satélites con Orbitron</title>
@@ -31,9 +58,9 @@
     
     
     
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
-    
       <category term="Orbitron" scheme="http://sdr-es.com/tags/Orbitron/"/>
+    
+      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
     
   </entry>
   
@@ -76,11 +103,11 @@
     
     
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
-    
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
   </entry>
   
