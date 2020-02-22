@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-02-18T20:12:38.380Z</updated>
+  <updated>2020-02-22T12:15:21.352Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recepción del satélite FUNcube-1</title>
+    <link href="http://sdr-es.com/2020/02/22/recepcion-funcube1/"/>
+    <id>http://sdr-es.com/2020/02/22/recepcion-funcube1/</id>
+    <published>2020-02-22T10:37:32.000Z</published>
+    <updated>2020-02-22T12:15:21.352Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;El satélite FUNcube-1 es un &lt;a href=&quot;https://es.wikipedia.org/wiki/CubeSat&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CubeSat&lt;/a&gt; construido por AMSAT-UK con fines educativos.&lt;br&gt;Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Cubesat" scheme="http://sdr-es.com/tags/Cubesat/"/>
+    
+  </entry>
   
   <entry>
     <title>Ajuste de frecuencia en recepción de satélites</title>
