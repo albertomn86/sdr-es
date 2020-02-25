@@ -18,7 +18,7 @@ Como parte de su misión, FUNcube-1 está equipado con distintos sensores que mo
 | **COSPAR ID**   | 2013-066AE |
 | **Tamaño**      | 1U CubeSat (0,98 Kg) |
 | **Lanzamiento** | 21 de Noviembre de 2013 |
-| **Señal**       | 145.935 MHz BPSK |
+| **Señal**       | 145.935 MHz 1k2 BPSK |
 | **Web**         | https://funcube.org.uk/ |
 
 ## Recepción.
