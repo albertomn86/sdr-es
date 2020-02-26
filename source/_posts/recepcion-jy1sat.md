@@ -19,7 +19,7 @@ En este artículo veremos como recibir la telemetría y las imágenes.
 | **COSPAR ID**   | 2018-099AX |
 | **Tamaño**      | 1U CubeSat (1.11 Kg) |
 | **Lanzamiento** | 3 de Diciembre de 2018 |
-| **Señal**       | 145.840 MHz 1k2 BPSK |
+| **Señal**       | 145.840 MHz (1200 bps BPSK) |
 | **Web**         | https://www.cpf.jo/en/our-initiatives/masar |
 
 ## Recepción.
@@ -42,9 +42,9 @@ Los datos para DDETracker son los siguientes:
 
 ## Decodificación.
 
-Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el FUNcube-1. Podemos descargarlo desde el siguiente enlace:
+Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el [FUNcube-1](https://sdr-es.com/2020/02/22/recepcion-funcube1/). Podemos descargarlo desde el siguiente enlace:
 
-[<center>JY1Sat Dashboard v1189</center>](hhttps://download.funcube.org.uk/JY1Sat_Dashboard_v1189.msi)
+[<center>JY1Sat Dashboard v1189</center>](https://download.funcube.org.uk/JY1Sat_Dashboard_v1189.msi)
 
 Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.
 
