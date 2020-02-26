@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-02-25T20:30:38.495Z</updated>
+  <updated>2020-02-26T09:27:54.201Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Recepción del satélite NAYIF-1</title>
+    <link href="http://sdr-es.com/2020/02/26/recepcion-nayif1/"/>
+    <id>http://sdr-es.com/2020/02/26/recepcion-nayif1/</id>
+    <published>2020-02-26T08:32:14.000Z</published>
+    <updated>2020-02-26T09:27:54.201Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;El satélite JY1-SAT es un CubeSat construido por estudiante de la &lt;em&gt;Emirates Institution for Advanced Science and Technology (EIAST)&lt;/em&gt;, en colaboración con la &lt;em&gt;American University of Sharjah (AUS)&lt;/em&gt;.&lt;br&gt;JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.&lt;br&gt;Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Cubesat" scheme="http://sdr-es.com/tags/Cubesat/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Recepción del satélite JY1-SAT</title>
     <link href="http://sdr-es.com/2020/02/25/recepcion-jy1sat/"/>
     <id>http://sdr-es.com/2020/02/25/recepcion-jy1sat/</id>
     <published>2020-02-25T19:45:38.000Z</published>
-    <updated>2020-02-25T20:30:38.495Z</updated>
+    <updated>2020-02-26T09:28:13.399Z</updated>
     
     <summary type="html">
     
@@ -46,7 +71,7 @@
     <link href="http://sdr-es.com/2020/02/22/recepcion-funcube1/"/>
     <id>http://sdr-es.com/2020/02/22/recepcion-funcube1/</id>
     <published>2020-02-22T10:37:32.000Z</published>
-    <updated>2020-02-25T20:30:33.916Z</updated>
+    <updated>2020-02-26T09:28:01.726Z</updated>
     
     <summary type="html">
     
