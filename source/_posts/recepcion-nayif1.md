@@ -4,8 +4,8 @@ date: 2020-02-26 09:32:14
 tags: [Windows, Satélites, Cubesat, SDRSharp]
 ---
 
-El satélite JY1-SAT es un CubeSat construido por estudiante de la _Emirates Institution for Advanced Science and Technology (EIAST)_, en colaboración con la _American University of Sharjah (AUS)_.
-JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.
+El satélite NAYIF-1 es un CubeSat construido por estudiante de la _Emirates Institution for Advanced Science and Technology (EIAST)_, en colaboración con la _American University of Sharjah (AUS)_.
+NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.
 Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.
 
 <!-- more -->

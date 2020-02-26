@@ -1,9 +1,13 @@
 ---
-title: Listado de frecuencias
-date: 2020-02-10 12:23:56
+title: Listado de frecuencias en HF
+date: 2020-02-26 18:23:56
 ---
 
+<script src="freq_download.js"></script>
+
 Listado de frecuencias encontradas y recogidas por los miembros del grupo.
+
+<button type="button" id="download_button" style="padding: 5px 10px;">Descargar XML</button>
 
 | Frecuencia   | Descripción              | Tipo   | Modo | Ancho de banda | Lugar de recepción | Receptor      | Antena |
 |--------------|--------------------------|--------|------|----------------|--------------------|---------------|--------|
@@ -19,7 +23,10 @@ Listado de frecuencias encontradas y recogidas por los miembros del grupo.
 | 7.230 KHz    | Radio Tiganesti E1       | DRM    | USB  | 10 KHz         | Granada            | AIRSPY HF+    | Turnstile |
 | 7.545 KHz    | Radio GOS                | DRM    | USB  | 10 KHz         | Granada            | AIRSPY HF+    | Turnstile |
 | 7.878,4 KHz  | DWD Hamburgo             | WEFAX  | USB  | 3 KHz          | Guadalajara        | RTL-SDR V3    | Loop 65cm |
+| 8.825 KHz    | Aviación Civil           | Voz    | USB  | 3 KHz          | Barcelona          | Yaesu FT-2000 | Cushcraft R8 |
+| 9.705 KHz    | Radio Francés            | Voz    | AM   | 10 KHz         | Granada            | AIRSPY HF+    | YouLoop |
 | 10.100,8 KHz | DWD Hamburgo             | RTTY   | USB  | 1,5 KHz        | Granada            | AIRSPY HF+    | YouLoop |
+| 11.610 KHz   | Radio Árabe              | Voz    | AM   | 10 KHz         | Granada            | AIRSPY HF+    | YouLoop |
 | 13.882,5 KHz | DWD Hamburgo             | WEFAX  | USB  | 3 KHz          | Granada            | AIRSPY HF+    | Turnstile |
 | 15.104 KHz   | Radio Kuwait             | DRM    | USB  | 10 KHz         | Granada            | AIRSPY HF+    | YouLoop |
 | 15.180 KHz   | Radio China Int.         | Voz    | AM   | 10 KHz         | Granada            | AIRSPY HF+    | YouLoop |
