@@ -9,7 +9,7 @@ Para ello vamos a utilizar un software que nos va a permitir pasar el audio desd
 
 <!-- more -->
 
-## Instalación de VB-Cable.
+## Instalación de VB-Cable
 
 Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) **VB-Cable**.
 
@@ -29,7 +29,7 @@ Hacemos click en **Install Driver** y esperamos a que se complete la instalació
 Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.
 
 
-## Configuración de SDR#.
+## Configuración de SDR#
 
 Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en **Output** y seleccionar **\[MME\] CABLE Input ...**.
 

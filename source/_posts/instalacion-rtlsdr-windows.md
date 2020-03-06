@@ -10,7 +10,7 @@ Existen varias alternativas para Windows, pero en este tutorial vamos a instalar
 
 <!-- more -->
 
-## Instalación de SDR#.
+## Instalación de SDR#
 
 El primer paso es descargar el software que necesitamos para poder usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo click en el siguiente enlace:
 
@@ -21,7 +21,7 @@ El primer paso es descargar el software que necesitamos para poder usar nuestro 
 Hacemos click en _Download_ y esperamos a que se descargue.
 Una vez descargado el archivo ZIP, extraemos su contenido en el directorio deseado. En este ejemplo vamos a usar el directorio _C:/SDR_.
 
-## Instalación de los drivers.
+## Instalación de los drivers
 
 El siguiente paso es descargar los drivers para nuestro dispositivo RTL-SDR. Para ello, el propio SDR# trae un script que nos descarga estos drivers directamente. Solo tenemos que ejecutar el archivo **install-rtlsdr.bat** que encontraremos en el directorio en el que acabamos de extraer SDR#.
 
@@ -47,7 +47,7 @@ Una vez lo tengamos seleccionado correctamente, hacemos click en **Replace Drive
 
 {% asset_img zadig5.jpg "Zadig instalado" %}
 
-## Configuración de SDR#.
+## Configuración de SDR#
 
 Ya tenemos nuestro dispositivo conectado e instalado. Es el turno ahora de decirle a SDR# que utilice nuestro dispositivo.
 Para ello vamos al directorio en el que hemos instalado SDR# y ejecutamos **SDRSharp.exe** para iniciar el programa.
@@ -79,7 +79,7 @@ Con todo ya configurado, solo queda pulsar el botón de **Start/Stop** para empe
 
 {% asset_img sdrsharp_running.jpg "SDR# recibiendo" %}
 
-## Ajuste de la ganancia.
+## Ajuste de la ganancia
 
 En este último paso vamos a ajustar la ganancia de nuestro dispositivo manualmente. Como hemos visto anteriormente, el ajuste de la ganancia se puede dejar para que el dispositivo lo haga automáticamente. El problema es que este ajuste muy pocas veces se hace correctamente, por lo que es muy recomendable hacerlo manualmente. Para ello sintonizamos cualquier señal en la frecuencia para la que vamos a ajustar la ganancia y abrimos los ajustes del dispositivo.
 Ahora el objetivo es ajustar el valor de **RF Gain** hasta que consigamos el mejor valor de SNR (Signal to Noise Ratio).

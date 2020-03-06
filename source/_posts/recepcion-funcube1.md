@@ -9,7 +9,7 @@ Como parte de su misión, FUNcube-1 está equipado con distintos sensores que mo
 
 <!-- more -->
 
-## Datos del satélite.
+## Datos del satélite
 
 | Satélite        | FUNcube-1 (AO-73) |
 |-----------------|---|
@@ -21,7 +21,7 @@ Como parte de su misión, FUNcube-1 está equipado con distintos sensores que mo
 | **Señal**       | 145.935 MHz (1200 bps BPSK) |
 | **Web**         | https://funcube.org.uk/ |
 
-## Recepción.
+## Recepción
 
 FUNcube-1 envía los datos de telemetría en la frecuencia **145.935 MHz**. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo ["Ajuste de frecuencia en recepción de satélites"](https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/).
 
@@ -39,7 +39,7 @@ Los datos para DDETracker son los siguientes:
 {% asset_img SDRSharp_FUNcube1.png "SDRSharp FUNcube-1" %}
 
 
-## Decodificación.
+## Decodificación
 
 Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:
 

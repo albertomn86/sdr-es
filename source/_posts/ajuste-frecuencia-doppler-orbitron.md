@@ -14,7 +14,7 @@ Usando Orbitron y el plugin DDETracker podemos hacer que SDR# realice la correci
 <!-- more -->
 
 
-## Corrección automática de la frecuencia con Orbitron.
+## Corrección automática de la frecuencia con Orbitron
 
 En el post anterior ["Seguimiento de satélites con Orbitron"](https://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/) vimos como instalar y configurar este programa para realizar el seguimiento de satélites. Este programa también nos va a permitir corregir en tiempo real la frecuencia del satélite que estemos siguiendo, y además podremos enviar esta frecuencia a SDR# para que la ajuste de manera automática. De esta forma no tendremos que preocuparnos por ajustarla manualmente y tendremos siempre la señal perfectamente sintonizada.
 
@@ -32,7 +32,7 @@ Ahora introducimos la frecuencia en MHz en la etiqueta **DNLINK**.
 Los demás datos son opcionales, pero podemos completarlos para tener más información sobre el satélite.
 
 
-## Instalación de DDETracker.
+## Instalación de DDETracker
 
 El siguiente paso es instalar un plugin en SDR# que nos permita cambiar la frecuencia de forma automática.
 En este ejemplo vamos a usar el plugin **DDETracker** que podemos descargar desde el siguiente link:
@@ -72,7 +72,7 @@ Ahora que tenemos el plugin instalado, iniciamos SDR# y deberíamos ver el nuevo
 {% asset_img dde-plugin.jpg "DDETracker" %}
 
 
-## Conexión con DDETracker.
+## Conexión con DDETracker
 
 Ahora ya podemos decirle a Orbitron que mande los datos a SDR#. Para ello vamos a Orbitron y seleccionamos en Driver _"SDRSharp"_ y hacemos click en el botón de conexión:
 
@@ -83,7 +83,7 @@ Ahora ya podemos ver que DDETracker recibe los datos del satélite que tenemos a
 {% asset_img dde-active.jpg "DDETracker activo" %}
 
 
-## Configurar satélites en DDETracker.
+## Configurar satélites en DDETracker
 
 Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.
 Para introducir los datos, hacemos click en sobre el botón Config que aparece en el plugin y se abrirá una ventana para introducir los datos.

@@ -10,7 +10,7 @@ Este satélite envía datos de telemetría y mensajes que pueden ser recibidos c
 
 <!-- more -->
 
-## Datos del satélite.
+## Datos del satélite
 
 | Satélite        | NAYIF-1 (EO-88) |
 |-----------------|---|
@@ -22,7 +22,7 @@ Este satélite envía datos de telemetría y mensajes que pueden ser recibidos c
 | **Señal**       | 145.940 MHz (1200 bps BPSK) |
 | **Web**         | https://www.mbrsc.ae/satellite-programme/nayif-1 |
 
-## Recepción.
+## Recepción
 
 NAYIF-1 envía los datos de telemetría en la frecuencia **145.940 MHz**. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.
 
@@ -40,7 +40,7 @@ Los datos para DDETracker son los siguientes:
 {% asset_img sdrsharp.png "SDRSharp NAYIF-1" %}
 
 
-## Decodificación.
+## Decodificación
 
 Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el [FUNcube-1](https://sdr-es.com/2020/02/22/recepcion-funcube1/) y [JY1-SAT](https://sdr-es.com/2020/02/25/recepcion-jy1sat/). Podemos descargarlo desde el siguiente enlace:
 

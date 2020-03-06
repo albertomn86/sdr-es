@@ -9,7 +9,7 @@ Existen distintos programas para Windows que realizan esta predicción. Uno de e
 
 <!-- more -->
 
-## Instalación de Orbitron.
+## Instalación de Orbitron
 
 El primer paso es descargar Orbitron desde su web: [http://www.stoff.pl/downloads.php](http://www.stoff.pl/downloads.php)
 
@@ -19,7 +19,7 @@ Ejecutamos ahora el programa haciendo doble click en **Orbitron.exe** y se nos a
 
 {% asset_img orbitron.jpg "Orbitron" %}
 
-## Configuración de Orbitron.
+## Configuración de Orbitron
 
 Vamos ahora a configurar Orbitron con los ajustes básicos.
 

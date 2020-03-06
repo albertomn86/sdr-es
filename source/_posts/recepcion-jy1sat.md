@@ -10,7 +10,7 @@ En este artículo veremos como recibir la telemetría y las imágenes.
 
 <!-- more -->
 
-## Datos del satélite.
+## Datos del satélite
 
 | Satélite        | JY1-SAT (JO-97) |
 |-----------------|---|
@@ -22,7 +22,7 @@ En este artículo veremos como recibir la telemetría y las imágenes.
 | **Señal**       | 145.840 MHz (1200 bps BPSK) |
 | **Web**         | https://www.cpf.jo/en/our-initiatives/masar |
 
-## Recepción.
+## Recepción
 
 JY1-SAT envía los datos de telemetría y las imágenes en la frecuencia **145.840 MHz**. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.
 
@@ -40,7 +40,7 @@ Los datos para DDETracker son los siguientes:
 {% asset_img sdrsharp.png "SDRSharp JY1-SAT" %}
 
 
-## Decodificación.
+## Decodificación
 
 Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el [FUNcube-1](https://sdr-es.com/2020/02/22/recepcion-funcube1/). Podemos descargarlo desde el siguiente enlace:
 
