@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-156538909-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>Recepción de satélites Inmarsat | SDR en español</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Inmarsat es un proveedor de comunicaciones vía satélite con sede en Reino Unido. La constelación de satélites Inmarsat se compone actualmente de 12 satélites geoestacionarios que proporcionan cobertur">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recepción de satélites Inmarsat">
+<meta property="og:url" content="http://sdr-es.com/2020/03/06/recepcion-inmarsat/index.html">
+<meta property="og:site_name" content="SDR en español">
+<meta property="og:description" content="Inmarsat es un proveedor de comunicaciones vía satélite con sede en Reino Unido. La constelación de satélites Inmarsat se compone actualmente de 12 satélites geoestacionarios que proporcionan cobertur">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="http://sdr-es.com/2020/03/06/recepcion-inmarsat/antenna_nooelec.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/06/recepcion-inmarsat/antena_patch.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/06/recepcion-inmarsat/antena_patch_medidas.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/06/recepcion-inmarsat/antena_activa.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/06/recepcion-inmarsat/antena_helix.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/06/recepcion-inmarsat/antena_helix_parabolica.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/06/recepcion-inmarsat/antena_qfh.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/06/recepcion-inmarsat/lna.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/06/recepcion-inmarsat/lna2.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/06/recepcion-inmarsat/inmarsat.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/06/recepcion-inmarsat/sdrsharp.jpg">
+<meta property="article:published_time" content="2020-03-06T10:22:33.000Z">
+<meta property="article:modified_time" content="2020-03-06T17:39:56.064Z">
+<meta property="article:author" content="SDR en español">
+<meta property="article:tag" content="Satélites">
+<meta property="article:tag" content="Inmarsat">
+<meta property="article:tag" content="L-Band">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sdr-es.com/2020/03/06/recepcion-inmarsat/antenna_nooelec.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SDR en español</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Web de referencia para los amantes de los dispositivos SDR</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Inicio</a>
+        
+          <a class="main-nav-link" href="/archives">Archivo</a>
+        
+          <a class="main-nav-link" href="/frecuencias">Frecuencias</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sdr-es.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-recepcion-inmarsat" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/06/recepcion-inmarsat/" class="article-date">
+  <time datetime="2020-03-06T10:22:33.000Z" itemprop="datePublished">06/03/2020</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Recepción de satélites Inmarsat
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Inmarsat es un proveedor de comunicaciones vía satélite con sede en Reino Unido. La constelación de satélites Inmarsat se compone actualmente de 12 satélites geoestacionarios que proporcionan cobertura en el 90% del planeta.<br>Inmarsat utiliza sus satélites de tercera y cuarta generación para ofrecer servicios de comunicaciones utilizando la <strong>banda L</strong> (1 a 2 GHz). Estos servicios son:</p>
+<ul>
+<li><p><strong>AERO</strong>. Es la versión de ACARS a través de satélite. Son mensajes enviados desde los controles aéreos en tierra a los aviones en vuelo.</p>
+</li>
+<li><p><strong>SafetyNET (SDT-C)</strong>. Es un servicio de comunicaciones por satélite para embarcaciones. Ofrecen servicio de mensajería entre barcos, mensajes de alerta, partes meteorológicos, mensajes de rescate, etc.</p>
+</li>
+</ul>
+<p>En este artículo nos centraremos en cómo poder recibir la señal y en los sucesivos artieculos veremos como poder recibir datos de cada uno de estos servicios.</p>
+<a id="more"></a>
+
+<h2 id="Antenas"><a href="#Antenas" class="headerlink" title="Antenas"></a>Antenas</h2><p>Existen diferentes tipos de antenas que nos permiten recibir la señal de los satélites en la banda L. A continuación veremos algunos ejemplos de antenas que podemos utilizar.</p>
+<h3 id="Antena-patch-PCB"><a href="#Antena-patch-PCB" class="headerlink" title="Antena patch PCB"></a>Antena patch PCB</h3><p>Nooelec comercializa una antena específica para Inmarsat y que podemos adquirir desde su tienda en Estados Unidos o desde España a través de Amazon. Para poder recibir la señal tendremos que acompañarla de un LNA.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencia</th>
+<th>Ganancia</th>
+<th>Especificaciones</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1546 - 1554 MHz</td>
+<td>~3.5 dBi</td>
+<td><a href="https://www.nooelec.com/store/downloads/dl/file/id/91/product/314/inmarsat_antenna_datasheet_revision_1.pdf" target="_blank" rel="noopener">Datasheet</a></td>
+</tr>
+</tbody></table>
+<img src="/2020/03/06/recepcion-inmarsat/antenna_nooelec.jpg" class="" title="Antena Nooelec">
+
+
+<h3 id="Antena-patch-air-gap"><a href="#Antena-patch-air-gap" class="headerlink" title="Antena patch air-gap"></a>Antena patch air-gap</h3><p>Esta antena se comercializaba para Outernet (ahora <a href="https://othernet.is/" target="_blank" rel="noopener">Othernet</a>) en 2016 y quedó descatalogada cuando cambiaron de satélite y de banda. Aunque ya no se comercializa, podemos encontrar algunas existencias en eBay. Con esta antena necesitaremos un LNA para recibir la señal del satélite.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencia</th>
+<th>Ganancia</th>
+<th>Especificaciones</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1525 - 1559 MHz</td>
+<td>8 dBi</td>
+<td><a href="https://othernet.is/products/l-band-patch-antenna" target="_blank" rel="noopener">Othernet</a></td>
+</tr>
+</tbody></table>
+<img src="/2020/03/06/recepcion-inmarsat/antena_patch.jpg" class="" title="Antena Patch">
+
+<p>También podemos optar por construir nuestra propia antena. Las medidas son las que se indican en la siguiente imagen.<br>Podemos encontrar más información sobre esta antena en <a href="https://www.semanticscholar.org/paper/Design-of-a-parabolic-patch-antenna-in-band-L%2C-with-DavidAguirre-Yanyachi/8eaf743c9569e60b1891e964026693766f2727a4" target="_blank" rel="noopener">este enlace</a>.</p>
+<img src="/2020/03/06/recepcion-inmarsat/antena_patch_medidas.jpg" class="" title="Antena Patch medidas">
+
+
+<h3 id="Antena-patch-activa"><a href="#Antena-patch-activa" class="headerlink" title="Antena patch activa"></a>Antena patch activa</h3><p>El blog <strong>RTL-SDR.com</strong> puso a la venta en 2019 una antena para banda L que podemos usar para Inmarsat. Podemos adquirirla desde su propia tienda online.<br>Se trata de una antena activa que amplifica y filtra la señal, por lo que no necesitaremos un LNA.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencia</th>
+<th>Ganancia</th>
+<th>Especificaciones</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1525 – 1637 MHz</td>
+<td>-</td>
+<td><a href="https://www.rtl-sdr.com/preorder-sale-active-l-band-1525-1637-inmarsat-to-iridium-patch-antenna-set-for-34-95/" target="_blank" rel="noopener">RTL-SDR</a></td>
+</tr>
+</tbody></table>
+<img src="/2020/03/06/recepcion-inmarsat/antena_activa.jpg" class="" title="Antena de RTL-SDR.com">
+
+
+<h3 id="Antena-helicoidal"><a href="#Antena-helicoidal" class="headerlink" title="Antena helicoidal"></a>Antena helicoidal</h3><p>Este tipo de antenas se pueden utilizar en combinación con un reflector parabólico o directamente. En los siguientes enlaces podemos ver ambas opciones con ganancias entre comprendidas entre 10 dBi y 16 dBi.</p>
+<ul>
+<li><p><a href="http://www.satellitenwelt.de/l-band.htm" target="_blank" rel="noopener">Antena helicoidal</a>.</p>
+<img src="/2020/03/06/recepcion-inmarsat/antena_helix.jpg" class="" title="Antena helicoidal">
+</li>
+<li><p><a href="https://diebastelkammer.wordpress.com/2014/09/21/helix-antenne-fur-parabolspiegel-um-inmarsat-zu-empfangen/" target="_blank" rel="noopener">Antena helicoidal con reflector parabólico</a>.</p>
+<img src="/2020/03/06/recepcion-inmarsat/antena_helix_parabolica.jpg" class="" title="Antena helicoidal + parabólica">
+
+
+</li>
+</ul>
+<h3 id="Antena-helicoidal-cuadrifilar"><a href="#Antena-helicoidal-cuadrifilar" class="headerlink" title="Antena helicoidal cuadrifilar"></a>Antena helicoidal cuadrifilar</h3><p>Estas antenas también nos permiten recibir en la banda L. En el siguiente enlace podemos ver como se pueden usar antenas recicladas de radiosondas Vaisala RS92 para recibir la señal del satélite.</p>
+<p><a href="https://rfhead.net/archives/665" target="_blank" rel="noopener">Re-purposing Vaisala RS92 Radiosondes as L-Band Active Antennae</a></p>
+<img src="/2020/03/06/recepcion-inmarsat/antena_qfh.jpg" class="" title="Radiosonda Vaisala">
+
+
+<h2 id="Amplificacion-de-la-senal"><a href="#Amplificacion-de-la-senal" class="headerlink" title="Amplificación de la señal"></a>Amplificación de la señal</h2><p>Si usamos una antena pasiva para la recepción de señales desde el satélite Inmarsat, vamos a necesitar amplificarla para poder recibirla correctamente. Para ello usaremos un amplificador o LNA. Existen distintos tipos de LNA que supuestamente abarcan también la banda L, pero lo ideal es utilizar un LNA específico para Inmarsat.<br>Nooelec ofrece dos modelos que podemos adquirir desde su tienda en Estados Unidos o desde Amazon.</p>
+<h3 id="Nooelec-SAWbird-iO"><a href="#Nooelec-SAWbird-iO" class="headerlink" title="Nooelec SAWbird iO"></a>Nooelec SAWbird iO</h3><p>Este modelo de LNA incorpora filtro SAW centrado en la frecuencia en la que tenemos los servicios de Inmarsat y se alimenta mediante Bias-T.</p>
+<img src="/2020/03/06/recepcion-inmarsat/lna.jpg" class="" title="Nooelec SAWbird iO">
+
+<h3 id="Nooelec-SAWbird-iO-1"><a href="#Nooelec-SAWbird-iO-1" class="headerlink" title="Nooelec SAWbird+ iO"></a>Nooelec SAWbird+ iO</h3><p>Este modelo mejora el filtro de la versión anterior y añade otras dos opciones para poder alimentarlo. Además de la opción de alimentarlo mediante Bias-T, incorpora dos pines para conectarle alimentación externa y también un conector micro-USB para alimentarlo por USB. También ofrece una versión <em>Premium</em> con caja metálica.<br><strong>Este modelo necesita un DC block para poder usarse con dispositivos SDR que no lleven diodo de protección ESD.</strong> De lo contrario, tendremos paso de corriente desde el LNA al dispositivo SDR y no podremos recibir la señal correctamente. Los últimos modelos de Nooelec NESDR SMArt llevan este filtro, pero la mayoría de dispositivos, como por ejemplo el V3 de RTL-SDR.com, no lo llevan.</p>
+<img src="/2020/03/06/recepcion-inmarsat/lna2.jpg" class="" title="Nooelec SAWbird+ iO">
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal basta con apuntar nuestra antena a cualquiera de los satélites de los que tangamos cobertura. En España tenemos cobertura del satélite <strong>Inmarsat-4A F4 (Alphasat)</strong> en 24.8°E y del <strong>Inmarsat-3 F5</strong> en 54°O.</p>
+<img src="/2020/03/06/recepcion-inmarsat/inmarsat.jpg" class="" title="Inmarsat">
+
+<p>Ahora abrimos el SDR#, subimos la ganancia del SDR al máximo y ajustamos la antena hasta recibir el máximo posible de señal.</p>
+<img src="/2020/03/06/recepcion-inmarsat/sdrsharp.jpg" class="" title="SDR# Inmarsat">
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sdr-es.com/2020/03/06/recepcion-inmarsat/" data-id="ck7ggvvtn0007bny28kbs1eqn" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Inmarsat/" rel="tag">Inmarsat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/L-Band/" rel="tag">L-Band</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Satelites/" rel="tag">Satélites</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/26/recepcion-nayif1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Viejo</strong>
+      <div class="article-nav-title">Recepción del satélite NAYIF-1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/03/06/recepcion-inmarsat/">Recepción de satélites Inmarsat</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/26/recepcion-nayif1/">Recepción del satélite NAYIF-1</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/25/recepcion-jy1sat/">Recepción del satélite JY1-SAT</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/22/recepcion-funcube1/">Recepción del satélite FUNcube-1</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/18/ajuste-frecuencia-doppler-orbitron/">Ajuste de frecuencia en recepción de satélites</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cubesat/" rel="tag">Cubesat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Inmarsat/" rel="tag">Inmarsat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/L-Band/" rel="tag">L-Band</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orbitron/" rel="tag">Orbitron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL-SDR/" rel="tag">RTL-SDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Satelites/" rel="tag">Satélites</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Virtual-Audio-Cable/" rel="tag">Virtual Audio Cable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">marzo 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">febrero 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">enero 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 SDR en español<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Inicio</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archivo</a>
+  
+    <a href="/frecuencias" class="mobile-nav-link">Frecuencias</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

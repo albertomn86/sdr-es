@@ -39,7 +39,7 @@ ga('send', 'pageview');
 <meta property="og:image" content="http://sdr-es.com/2020/01/19/instalacion-rtlsdr-windows/sdrsharp_running.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/01/19/instalacion-rtlsdr-windows/ganancia.jpg">
 <meta property="article:published_time" content="2020-01-19T18:26:40.000Z">
-<meta property="article:modified_time" content="2020-01-23T21:09:49.690Z">
+<meta property="article:modified_time" content="2020-03-05T11:48:02.322Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="SDRSharp">
 <meta property="article:tag" content="Windows">
@@ -126,12 +126,12 @@ ga('send', 'pageview');
 <p>Existen varias alternativas para Windows, pero en este tutorial vamos a instalar y configurar SDR# (SDR Sharp), ya que es el más conocido y utilizado.</p>
 <a id="more"></a>
 
-<h2 id="Instalacion-de-SDR"><a href="#Instalacion-de-SDR" class="headerlink" title="Instalación de SDR#."></a>Instalación de SDR#.</h2><p>El primer paso es descargar el software que necesitamos para poder usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo click en el siguiente enlace:</p>
+<h2 id="Instalacion-de-SDR"><a href="#Instalacion-de-SDR" class="headerlink" title="Instalación de SDR#"></a>Instalación de SDR#</h2><p>El primer paso es descargar el software que necesitamos para poder usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo click en el siguiente enlace:</p>
 <p><a href="https://airspy.com/download/" target="_blank" rel="noopener"><center>https://airspy.com/download/</center></a></p>
 <img src="/2020/01/19/instalacion-rtlsdr-windows/descarga.jpg" class="" title="Descarga de SDR#">
 
 <p>Hacemos click en <em>Download</em> y esperamos a que se descargue.<br>Una vez descargado el archivo ZIP, extraemos su contenido en el directorio deseado. En este ejemplo vamos a usar el directorio <em>C:/SDR</em>.</p>
-<h2 id="Instalacion-de-los-drivers"><a href="#Instalacion-de-los-drivers" class="headerlink" title="Instalación de los drivers."></a>Instalación de los drivers.</h2><p>El siguiente paso es descargar los drivers para nuestro dispositivo RTL-SDR. Para ello, el propio SDR# trae un script que nos descarga estos drivers directamente. Solo tenemos que ejecutar el archivo <strong>install-rtlsdr.bat</strong> que encontraremos en el directorio en el que acabamos de extraer SDR#.</p>
+<h2 id="Instalacion-de-los-drivers"><a href="#Instalacion-de-los-drivers" class="headerlink" title="Instalación de los drivers"></a>Instalación de los drivers</h2><p>El siguiente paso es descargar los drivers para nuestro dispositivo RTL-SDR. Para ello, el propio SDR# trae un script que nos descarga estos drivers directamente. Solo tenemos que ejecutar el archivo <strong>install-rtlsdr.bat</strong> que encontraremos en el directorio en el que acabamos de extraer SDR#.</p>
 <img src="/2020/01/19/instalacion-rtlsdr-windows/bat.jpg" class="" title="install-rtlsdr.bat">
 
 <p>Una vez el script termine nos pedirá que pulsemos una tecla para finalizar.</p>
@@ -147,7 +147,7 @@ ga('send', 'pageview');
 <p>Una vez lo tengamos seleccionado correctamente, hacemos click en <strong>Replace Driver</strong> y esperamos a que se instalen los nuevos drivers.</p>
 <img src="/2020/01/19/instalacion-rtlsdr-windows/zadig5.jpg" class="" title="Zadig instalado">
 
-<h2 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#."></a>Configuración de SDR#.</h2><p>Ya tenemos nuestro dispositivo conectado e instalado. Es el turno ahora de decirle a SDR# que utilice nuestro dispositivo.<br>Para ello vamos al directorio en el que hemos instalado SDR# y ejecutamos <strong>SDRSharp.exe</strong> para iniciar el programa.</p>
+<h2 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h2><p>Ya tenemos nuestro dispositivo conectado e instalado. Es el turno ahora de decirle a SDR# que utilice nuestro dispositivo.<br>Para ello vamos al directorio en el que hemos instalado SDR# y ejecutamos <strong>SDRSharp.exe</strong> para iniciar el programa.</p>
 <p>Una vez abierto, hacemos click en <strong>Source</strong> y seleccionamos <strong>RTL-SDR (USB)</strong>.</p>
 <img src="/2020/01/19/instalacion-rtlsdr-windows/sdrsharp_source.jpg" class="" title="Seleccionando dispositivo">
 
@@ -209,7 +209,7 @@ ga('send', 'pageview');
 <p>Con todo ya configurado, solo queda pulsar el botón de <strong>Start/Stop</strong> para empezar a recibir.</p>
 <img src="/2020/01/19/instalacion-rtlsdr-windows/sdrsharp_running.jpg" class="" title="SDR# recibiendo">
 
-<h2 id="Ajuste-de-la-ganancia"><a href="#Ajuste-de-la-ganancia" class="headerlink" title="Ajuste de la ganancia."></a>Ajuste de la ganancia.</h2><p>En este último paso vamos a ajustar la ganancia de nuestro dispositivo manualmente. Como hemos visto anteriormente, el ajuste de la ganancia se puede dejar para que el dispositivo lo haga automáticamente. El problema es que este ajuste muy pocas veces se hace correctamente, por lo que es muy recomendable hacerlo manualmente. Para ello sintonizamos cualquier señal en la frecuencia para la que vamos a ajustar la ganancia y abrimos los ajustes del dispositivo.<br>Ahora el objetivo es ajustar el valor de <strong>RF Gain</strong> hasta que consigamos el mejor valor de SNR (Signal to Noise Ratio).</p>
+<h2 id="Ajuste-de-la-ganancia"><a href="#Ajuste-de-la-ganancia" class="headerlink" title="Ajuste de la ganancia"></a>Ajuste de la ganancia</h2><p>En este último paso vamos a ajustar la ganancia de nuestro dispositivo manualmente. Como hemos visto anteriormente, el ajuste de la ganancia se puede dejar para que el dispositivo lo haga automáticamente. El problema es que este ajuste muy pocas veces se hace correctamente, por lo que es muy recomendable hacerlo manualmente. Para ello sintonizamos cualquier señal en la frecuencia para la que vamos a ajustar la ganancia y abrimos los ajustes del dispositivo.<br>Ahora el objetivo es ajustar el valor de <strong>RF Gain</strong> hasta que consigamos el mejor valor de SNR (Signal to Noise Ratio).</p>
 <img src="/2020/01/19/instalacion-rtlsdr-windows/ganancia.jpg" class="" title="Ajuste de la ganancia manualmente">
 
 <p>Una vez tengamos la ganancia ajustada, ya tendremos listo nuestro dispositivo SDR.</p>
@@ -217,7 +217,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sdr-es.com/2020/01/19/instalacion-rtlsdr-windows/" data-id="ck73onwgu0002zdy2dj7d3sgr" class="article-share-link">Compartir</a>
+      <a data-url="http://sdr-es.com/2020/01/19/instalacion-rtlsdr-windows/" data-id="ck7ggvvtd0001bny2buui3v3e" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RTL-SDR/" rel="tag">RTL-SDR</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
@@ -255,6 +255,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2020/03/06/recepcion-inmarsat/">Recepción de satélites Inmarsat</a>
+          </li>
+        
+          <li>
             <a href="/2020/02/26/recepcion-nayif1/">Recepción del satélite NAYIF-1</a>
           </li>
         
@@ -270,10 +274,6 @@ ga('send', 'pageview');
             <a href="/2020/02/18/ajuste-frecuencia-doppler-orbitron/">Ajuste de frecuencia en recepción de satélites</a>
           </li>
         
-          <li>
-            <a href="/2020/01/23/seguimiento-satelites-orbitron/">Seguimiento de satélites con Orbitron</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -286,7 +286,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cubesat/" rel="tag">Cubesat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orbitron/" rel="tag">Orbitron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL-SDR/" rel="tag">RTL-SDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Satelites/" rel="tag">Satélites</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Virtual-Audio-Cable/" rel="tag">Virtual Audio Cable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cubesat/" rel="tag">Cubesat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Inmarsat/" rel="tag">Inmarsat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/L-Band/" rel="tag">L-Band</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orbitron/" rel="tag">Orbitron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL-SDR/" rel="tag">RTL-SDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Satelites/" rel="tag">Satélites</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Virtual-Audio-Cable/" rel="tag">Virtual Audio Cable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
     </div>
   </div>
 
@@ -296,7 +296,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archivos</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">febrero 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">enero 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">marzo 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">febrero 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">enero 2020</a></li></ul>
     </div>
   </div>
 

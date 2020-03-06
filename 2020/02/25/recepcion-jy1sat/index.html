@@ -35,7 +35,7 @@ ga('send', 'pageview');
 <meta property="og:image" content="http://sdr-es.com/2020/02/25/recepcion-jy1sat/JY1SatAudioId8.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/02/25/recepcion-jy1sat/JY1SatAudioId9.jpg">
 <meta property="article:published_time" content="2020-02-25T19:45:38.000Z">
-<meta property="article:modified_time" content="2020-02-26T09:28:13.399Z">
+<meta property="article:modified_time" content="2020-03-05T11:46:57.552Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="Satélites">
 <meta property="article:tag" content="SDRSharp">
@@ -122,7 +122,7 @@ ga('send', 'pageview');
         <p>El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan’s Crown Prince Foundation.<br>JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-6. Además de las funciones habituales de FUNcube, el satélite envía imágenes en formato SSDV.<br>En este artículo veremos como recibir la telemetría y las imágenes.</p>
 <a id="more"></a>
 
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite."></a>Datos del satélite.</h2><table>
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
 <thead>
 <tr>
 <th>Satélite</th>
@@ -158,13 +158,13 @@ ga('send', 'pageview');
 <td><a href="https://www.cpf.jo/en/our-initiatives/masar" target="_blank" rel="noopener">https://www.cpf.jo/en/our-initiatives/masar</a></td>
 </tr>
 </tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción."></a>Recepción.</h2><p>JY1-SAT envía los datos de telemetría y las imágenes en la frecuencia <strong>145.840 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>JY1-SAT envía los datos de telemetría y las imágenes en la frecuencia <strong>145.840 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
 <p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145840000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
 <img src="/2020/02/25/recepcion-jy1sat/sdrsharp.png" class="" title="SDRSharp JY1-SAT">
 
 
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación."></a>Decodificación.</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="https://sdr-es.com/2020/02/22/recepcion-funcube1/">FUNcube-1</a>. Podemos descargarlo desde el siguiente enlace:</p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="https://sdr-es.com/2020/02/22/recepcion-funcube1/">FUNcube-1</a>. Podemos descargarlo desde el siguiente enlace:</p>
 <p><a href="https://download.funcube.org.uk/JY1Sat_Dashboard_v1189.msi" target="_blank" rel="noopener"><center>JY1Sat Dashboard v1189</center></a></p>
 <p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
 <p>El siguiente paso es configurarlo. Para ello hacemos click en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
@@ -189,7 +189,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sdr-es.com/2020/02/25/recepcion-jy1sat/" data-id="ck73onwh20007zdy2gf063oma" class="article-share-link">Compartir</a>
+      <a data-url="http://sdr-es.com/2020/02/25/recepcion-jy1sat/" data-id="ck7ggvvtk0005bny21nku8fbk" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cubesat/" rel="tag">Cubesat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Satelites/" rel="tag">Satélites</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
@@ -232,6 +232,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2020/03/06/recepcion-inmarsat/">Recepción de satélites Inmarsat</a>
+          </li>
+        
+          <li>
             <a href="/2020/02/26/recepcion-nayif1/">Recepción del satélite NAYIF-1</a>
           </li>
         
@@ -247,10 +251,6 @@ ga('send', 'pageview');
             <a href="/2020/02/18/ajuste-frecuencia-doppler-orbitron/">Ajuste de frecuencia en recepción de satélites</a>
           </li>
         
-          <li>
-            <a href="/2020/01/23/seguimiento-satelites-orbitron/">Seguimiento de satélites con Orbitron</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -263,7 +263,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cubesat/" rel="tag">Cubesat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orbitron/" rel="tag">Orbitron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL-SDR/" rel="tag">RTL-SDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Satelites/" rel="tag">Satélites</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Virtual-Audio-Cable/" rel="tag">Virtual Audio Cable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cubesat/" rel="tag">Cubesat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Inmarsat/" rel="tag">Inmarsat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/L-Band/" rel="tag">L-Band</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orbitron/" rel="tag">Orbitron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL-SDR/" rel="tag">RTL-SDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Satelites/" rel="tag">Satélites</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Virtual-Audio-Cable/" rel="tag">Virtual Audio Cable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
     </div>
   </div>
 
@@ -273,7 +273,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archivos</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">febrero 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">enero 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">marzo 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">febrero 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">enero 2020</a></li></ul>
     </div>
   </div>
 
