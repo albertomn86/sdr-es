@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-03-06T17:39:56.064Z</updated>
+  <updated>2020-03-06T18:02:49.460Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://sdr-es.com/2020/03/06/recepcion-inmarsat/"/>
     <id>http://sdr-es.com/2020/03/06/recepcion-inmarsat/</id>
     <published>2020-03-06T10:22:33.000Z</published>
-    <updated>2020-03-06T17:39:56.064Z</updated>
+    <updated>2020-03-06T18:02:49.460Z</updated>
     
     <summary type="html">
     
@@ -32,7 +32,7 @@
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;SafetyNET (SDT-C)&lt;/strong&gt;. Es un servicio de comunicaciones por satélite para embarcaciones. Ofrecen servicio de mensajería entre barcos, mensajes de alerta, partes meteorológicos, mensajes de rescate, etc.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;En este artículo nos centraremos en cómo poder recibir la señal y en los sucesivos artieculos veremos como poder recibir datos de cada uno de estos servicios.&lt;/p&gt;
+&lt;p&gt;En este artículo nos centraremos en cómo poder recibir la señal y en los sucesivos artículos veremos como recibir datos de cada uno de estos servicios.&lt;/p&gt;
     
     </summary>
     
