@@ -81,8 +81,8 @@ Estas antenas también nos permiten recibir en la banda L. En el siguiente enlac
 
 ## Amplificación de la señal
 
-Si usamos una antena pasiva para la recepción de señales desde el satélite Inmarsat, vamos a necesitar amplificarla para poder recibirla correctamente. Para ello usaremos un amplificador o LNA. Existen distintos tipos de LNA que supuestamente abarcan también la banda L, pero lo ideal es utilizar un LNA específico para Inmarsat.
-Nooelec ofrece dos modelos que podemos adquirir desde su tienda en Estados Unidos o desde Amazon.
+Si usamos una antena pasiva para la recepción de señales desde el satélite Inmarsat, vamos a necesitar amplificarla para poder recibirla correctamente. Para ello usaremos un amplificador o LNA. Existen distintos tipos de LNA que abarcan también la banda L, y además existen modelos específicos para Inmarsat.
+Nooelec ofrece dos modelos de LNA para Inmarsat que podemos adquirir desde su tienda en Estados Unidos o desde Amazon España.
 
 ### Nooelec SAWbird iO
 
@@ -104,6 +104,6 @@ Para recibir la señal basta con apuntar nuestra antena a cualquiera de los sat�
 
 {% asset_img inmarsat.jpg "Inmarsat" %}
 
-Ahora abrimos el SDR#, subimos la ganancia del SDR al máximo y ajustamos la antena hasta recibir el máximo posible de señal.
+Ahora iniciamos SDR#, subimos la ganancia del SDR al máximo y ajustamos la antena hasta recibir el máximo posible de señal.
 
 {% asset_img sdrsharp.jpg "SDR# Inmarsat" %}
