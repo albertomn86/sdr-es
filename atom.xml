@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-03-09T17:12:59.152Z</updated>
+  <updated>2020-03-09T17:33:44.340Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/"/>
     <id>http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/</id>
     <published>2020-03-09T11:46:44.000Z</published>
-    <updated>2020-03-09T17:12:59.152Z</updated>
+    <updated>2020-03-09T17:33:44.340Z</updated>
     
     <summary type="html">
     
@@ -33,13 +33,13 @@
     
       <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
     
       <category term="Inmarsat" scheme="http://sdr-es.com/tags/Inmarsat/"/>
     
       <category term="L-Band" scheme="http://sdr-es.com/tags/L-Band/"/>
-    
-      <category term="SDR#" scheme="http://sdr-es.com/tags/SDR/"/>
     
   </entry>
   
