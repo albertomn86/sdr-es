@@ -18,21 +18,28 @@ ga('send', 'pageview');
 
 
   
-  <title>Recepción de mensajes Inmarsat STD-C | SDR en español</title>
+  <title>Recepción de mensajes Inmarsat Aero | SDR en español</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="En el artículo “Recepción de satélites Inmarsat” vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open">
+  <meta name="description" content="Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.En este artículo veremos como decodificar y recibir mensajes Aero. Inmarsat A">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Recepción de mensajes Inmarsat STD-C">
-<meta property="og:url" content="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/index.html">
+<meta property="og:title" content="Recepción de mensajes Inmarsat Aero">
+<meta property="og:url" content="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/index.html">
 <meta property="og:site_name" content="SDR en español">
-<meta property="og:description" content="En el artículo “Recepción de satélites Inmarsat” vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open">
+<meta property="og:description" content="Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.En este artículo veremos como decodificar y recibir mensajes Aero. Inmarsat A">
 <meta property="og:locale" content="es_ES">
-<meta property="og:image" content="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/scytale_magicline.jpg">
-<meta property="og:image" content="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/scytale_ui.jpg">
-<meta property="og:image" content="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/sdrsharp.jpg">
-<meta property="og:image" content="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/scytale_messages.jpg">
-<meta property="article:published_time" content="2020-03-09T11:46:44.000Z">
-<meta property="article:modified_time" content="2020-03-09T17:33:44.340Z">
+<meta property="og:image" content="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/jaero_config.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/acars_600_sdr.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/acars_600_jaero.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/acars_600_planelog.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/acars_1200_sdr.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/acars_1200_jaero.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/aero_sdr.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/aero_jaero.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/aero_planelog.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/aero_call_sdr.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/aero_call_jaero.jpg">
+<meta property="article:published_time" content="2020-03-10T11:26:30.000Z">
+<meta property="article:modified_time" content="2020-03-10T18:31:21.734Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="Satélites">
 <meta property="article:tag" content="SDRSharp">
@@ -40,7 +47,7 @@ ga('send', 'pageview');
 <meta property="article:tag" content="Inmarsat">
 <meta property="article:tag" content="L-Band">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/scytale_magicline.jpg">
+<meta name="twitter:image" content="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/jaero_config.jpg">
   
     <link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
   
@@ -95,10 +102,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-recepcion-std-c-inmarsat" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-recepcion-aero-inmarsat" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/03/09/recepcion-std-c-inmarsat/" class="article-date">
-  <time datetime="2020-03-09T11:46:44.000Z" itemprop="datePublished">09/03/2020</time>
+    <a href="/2020/03/10/recepcion-aero-inmarsat/" class="article-date">
+  <time datetime="2020-03-10T11:26:30.000Z" itemprop="datePublished">10/03/2020</time>
 </a>
     
   </div>
@@ -109,7 +116,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      Recepción de mensajes Inmarsat STD-C
+      Recepción de mensajes Inmarsat Aero
     </h1>
   
 
@@ -117,39 +124,65 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>En el artículo <a href="https://sdr-es.com/2020/03/06/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
+        <p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
+<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a href="https://es.wikipedia.org/wiki/ACARS" target="_blank" rel="noopener">ACARS</a>, ADS-C, fax y voz digital.</p>
 <a id="more"></a>
 
-<p>Lo primero será descargar los binarios desde el repositorio de Scytale-C desde el siguiente link:</p>
-<p><a href="https://bitbucket.org/scytalec/scytalec/downloads/" target="_blank" rel="noopener"><center>https://bitbucket.org/scytalec/scytalec/downloads/</center></a></p>
-<p>Necesitamos descargar el plugin para SDR# (<strong>x64-SDRSharp.ScytaleC-10213.zip</strong>) y la interfaz de usuario (<strong>x64-ScytaleC.QuickUI-17010.zip</strong>).</p>
-<h2 id="Instalacion-del-plugin-en-SDR"><a href="#Instalacion-del-plugin-en-SDR" class="headerlink" title="Instalación del plugin en SDR#"></a>Instalación del plugin en SDR#</h2><p>El siguiente paso es instalar el plugin en SDR#. Para ello basta con extraer el contenido del archivo <strong>x64-SDRSharp.ScytaleC-10213.zip</strong> dentro del directorio de instalación de SDR#. Los dos archivos de texto no son necesarios.</p>
-<p>Una vez extraído el contenido, insertamos la siguiente línea de texto dentro del archivo <em><strong>Plugins.xml</strong></em>, que encontraremos dentro de la carpeta de instalación de SDR#.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;add key&#x3D;&quot;ScytaleC&quot; value&#x3D;&quot;SDRSharp.ScytaleC.ScytaleCPlugin,SDRSharp.ScytaleC&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<p>Para decodificar este protocolo utilizaremos el software Open Source <strong>JAERO</strong>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://github.com/jontio/JAERO/releases/download/v1.0.4.11/JAERO-x64-setup.exe" target="_blank" rel="noopener"><center>JAERO x64 v1.0.4.11</center></a></p>
+<p>Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos click en <em>Tools</em> y en <em>Settings</em>. Esto abre la ventana de ajustes de JAERO.</p>
+<img src="/2020/03/10/recepcion-aero-inmarsat/jaero_config.jpg" class="" title="Configuración JAERO">
+
+<p>El primer ajuste es indicarle en el apartado de <em>Soundcard</em> que le vamos a pasar el audio desde SDR# por el cable de audio virtual.<br>El siguiente ajuste es indicarle la ubicación de la base de datos con los datos de las aeronaves. Para ello en el apartado <em>Database</em> nos aseguramos de que la ruta es correcta y le damos a <strong>Download</strong> para que se descargue una base de datos actualizada. Si todo ha ido bien, deberíamos tener un archivo CSV con los datos en la ruta indicada.</p>
+<p>Para recibir datos bastaría con sintonizar SDR# en la frecuencia requerida y ajustar JAERO para que decodifique los mensajes.</p>
+<p>Inmarsat emite la señal en diferentes modulaciones y frecuencias. A continuación veremos ejemplos cada una.</p>
+<h2 id="Aero-600-bps"><a href="#Aero-600-bps" class="headerlink" title="Aero 600 bps"></a>Aero 600 bps</h2><ul>
+<li><strong>Modulación:</strong> Aviation-BPSK.</li>
+<li><strong>Ancho de banda:</strong> 800 Hz.</li>
+<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_sdr.jpg" class="" title="AERO 600 bps">
 </br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_jaero.jpg" class="" title="AERO 600 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_planelog.jpg" class="" title="AERO 600 bps planelog">
 
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_magicline.jpg" class="" title="Magicline de Scytale-C">
 
-<p>Ahora reiniciamos SDR# y tendremos el plugin instalado.</p>
-<h2 id="Instalacion-de-la-interfaz-de-usuario-de-Scytale-C"><a href="#Instalacion-de-la-interfaz-de-usuario-de-Scytale-C" class="headerlink" title="Instalación de la interfaz de usuario de Scytale-C"></a>Instalación de la interfaz de usuario de Scytale-C</h2><p>Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente extraemos el contenido del archivo <strong>x64-ScytaleC.QuickUI-17010.zip</strong> que hemos descargado anteriormente en el directorio deseado. Por ejemplo en <em>C:/SDR/ScytaleC</em>.</p>
-<p>Para iniciar el programa basta con hacer doble click en <strong>ScytaleC.QuickUI.exe</strong>. Al iniciar el programa se muestra un mensaje sobre la confidencialidad que debemos leer detenidamente.</p>
-<p><strong>Algunos mensajes que se reciben con Scytale-C van a un destinatario en concreto y pueden contener información sensible. Si no somos los destinatarios de dichos mensajes, debemos proceder a la eliminación de los mismos y no reenviarlos ni publicarlos bajo ningún concepto.</strong></p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_ui.jpg" class="" title="UI Scytale-C">
+<h2 id="Aero-1200-bps"><a href="#Aero-1200-bps" class="headerlink" title="Aero 1200 bps"></a>Aero 1200 bps</h2><ul>
+<li><strong>Modulación:</strong> Aviation-BPSK.</li>
+<li><strong>Ancho de banda:</strong> 1600 Hz.</li>
+<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_sdr.jpg" class="" title="AERO 1200 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_jaero.jpg" class="" title="AERO 1200 bps">
 
-<h2 id="Recepcion-y-visualizacion-de-mensajes"><a href="#Recepcion-y-visualizacion-de-mensajes" class="headerlink" title="Recepción y visualización de mensajes"></a>Recepción y visualización de mensajes</h2><p>Vamos ahora a recibir mensajes desde Inmarsat. Si ya tenemos nuestra antena orientada y conectada, iniciamos SDR# y buscamos las frecuencias de SDT-C (sobre 1.539,500 MHz en Inmarsat-4A F4).</p>
-<p>Una vez las tengamos localizadas, sintonizamos una de las señales en modo <strong>USB</strong> y ancho de banda de <strong>4 KHz</strong>.</p>
-<p>Iniciamos a continuación el plugin marcando la casilla <em><strong>“Enabled”</strong></em>. También marcamos <em><strong>“Auto Tracking”</strong></em> para que ajuste la señal de forma automática.</p>
-<p>Si la señal es buena, veremos que aparece <em><strong>“Locked”</strong></em> en el plugin.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/sdrsharp.jpg" class="" title="Plugin Scytale-C">
 
-<p>Con SDR# ya recibiendo la señal correctamente pasamos a la interfaz de usuario de Scytale-C. El plugin y esta interfaz se comunican por UDP de forma local y vienen configurados con el puerto 15003 por defecto.</p>
-<p>Para que nos lleguen los mensajes bastaría con hacer click en el botón de Play/Stop. Si todo ha ido bien, comenzaremos a recibirlos.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_messages.jpg" class="" title="Scytale-C Mensajes">
+<h2 id="Aero-H-Aero-H"><a href="#Aero-H-Aero-H" class="headerlink" title="Aero-H, Aero-H+"></a>Aero-H, Aero-H+</h2><ul>
+<li><strong>Modulación:</strong> Aviation-QPSK</li>
+<li><strong>Ancho de banda:</strong> 10,5 KHz</li>
+<li><strong>Frecuencia:</strong> 1546,0 - 1546,2 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_sdr.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_jaero.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_planelog.jpg" class="" title="AERO 10.5k planelog">
+
+
+<h2 id="Voz-Digital"><a href="#Voz-Digital" class="headerlink" title="Voz Digital"></a>Voz Digital</h2><ul>
+<li><strong>Modulación:</strong> Aviation-QPSK.</li>
+<li><strong>Ancho de banda:</strong> 6 KHz.</li>
+<li><strong>Frecuencia:</strong> 1546,13 - 1546,18 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_sdr.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_jaero.jpg" class="" title="AERO 10.5k">
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/" data-id="ck7m8hkuk0009o4y26hsrb45f" class="article-share-link">Compartir</a>
+      <a data-url="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/" data-id="ck7m8hkud0005o4y24mwof14o" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Inmarsat/" rel="tag">Inmarsat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/L-Band/" rel="tag">L-Band</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Satelites/" rel="tag">Satélites</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
@@ -160,19 +193,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2020/03/10/recepcion-aero-inmarsat/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Nuevo</strong>
-      <div class="article-nav-title">
-        
-          Recepción de mensajes Inmarsat Aero
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/06/recepcion-inmarsat/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/03/09/recepcion-std-c-inmarsat/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Viejo</strong>
-      <div class="article-nav-title">Recepción de satélites Inmarsat</div>
+      <div class="article-nav-title">Recepción de mensajes Inmarsat STD-C</div>
     </a>
   
 </nav>

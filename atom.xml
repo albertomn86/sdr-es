@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-03-09T17:33:44.340Z</updated>
+  <updated>2020-03-10T18:31:21.734Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recepción de mensajes Inmarsat Aero</title>
+    <link href="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/"/>
+    <id>http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/</id>
+    <published>2020-03-10T11:26:30.000Z</published>
+    <updated>2020-03-10T18:31:21.734Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.&lt;br&gt;En este artículo veremos como decodificar y recibir mensajes Aero.&lt;/p&gt;
+&lt;p&gt;Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes &lt;a href=&quot;https://es.wikipedia.org/wiki/ACARS&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ACARS&lt;/a&gt;, ADS-C, fax y voz digital.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Inmarsat" scheme="http://sdr-es.com/tags/Inmarsat/"/>
+    
+      <category term="L-Band" scheme="http://sdr-es.com/tags/L-Band/"/>
+    
+  </entry>
   
   <entry>
     <title>Recepción de mensajes Inmarsat STD-C</title>
