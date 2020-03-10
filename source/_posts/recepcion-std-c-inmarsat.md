@@ -1,7 +1,7 @@
 ---
 title: Recepción de mensajes Inmarsat STD-C
 date: 2020-03-09 12:46:44
-tags: [Satélites, Inmarsat, L-Band, SDR#, Windows]
+tags: [Satélites, Inmarsat, L-Band, SDRSharp, Windows]
 ---
 
 En el artículo ["Recepción de satélites Inmarsat"](https://sdr-es.com/2020/03/06/recepcion-inmarsat/) vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.
