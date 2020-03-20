@@ -3,15 +3,15 @@ search: Buscar
 tags: Tags
 tagcloud: Nube de Tags
 tweets: Tweets
-prev: Previo
+prev: Anterior
 next: Siguiente
 comment: Comentarios
 archive_a: Archivos
 archive_b: "Archivos: %s"
 page: Página %d
 recent_posts: Posts recientes
-newer: Nuevo
-older: Viejo
+newer: Siguiente
+older: Anterior
 share: Compartir
 powered_by: Construido por
 rss_feed: RSS
