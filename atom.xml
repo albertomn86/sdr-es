@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-03-10T18:31:21.734Z</updated>
+  <updated>2020-03-20T11:45:44.696Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Elección del dispositivo SDR</title>
+    <link href="http://sdr-es.com/2020/03/16/eleccion-sdr/"/>
+    <id>http://sdr-es.com/2020/03/16/eleccion-sdr/</id>
+    <published>2020-03-16T11:07:36.000Z</published>
+    <updated>2020-03-20T11:45:44.696Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.&lt;br&gt;La finalidad este artículo es orientarnos para escoger el dispositivo que más se ajuste a nuestras necesidades y casos de uso. Para ello se han seleccionado algunos de los dispositivos más conocidos y que habitualmente se recomiendan, y se ha elaborado una breve descripción de cada uno de ellos con algunas de sus características más reseñables.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+  </entry>
   
   <entry>
     <title>Recepción de mensajes Inmarsat Aero</title>
