@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-03-21T20:18:49.765Z</updated>
+  <updated>2020-03-27T19:21:43.516Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recepción de satélites meteorológicos Meteor-M</title>
+    <link href="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/"/>
+    <id>http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/</id>
+    <published>2020-03-27T11:10:49.000Z</published>
+    <updated>2020-03-27T19:21:43.516Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.&lt;/p&gt;
+&lt;p&gt;La serie Meteor-M fue planificada para la primera década del siglo XXI e incluiría tres nuevos satélites con dos diseños diferentes. El objetivo principal de los dos primeros satélites (Meteor-M N1 y Meteor-M N2) sería proveer de información meteorológica, así como la monitorización de la capa de ozono, los niveles de radiación en el espacio y la observación de los mares y la capa de hielo. El tercero (Meteor-M N3) incorporaría una antena radar de nueva generación para la observación oceánica.&lt;br&gt;Estos satélites transmiten imágenes en formato &lt;a href=&quot;https://en.wikipedia.org/wiki/Low-rate_picture_transmission&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LRPT&lt;/a&gt; en 137 MHz y en formato &lt;a href=&quot;https://en.wikipedia.org/wiki/High-resolution_picture_transmission&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;HRPT&lt;/a&gt; en 1,7 GHz. En este articulo veremos como recibir la señal con nuestro dispositivo SDR y obtener las imágenes LRPT.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
+    
+  </entry>
   
   <entry>
     <title>Recepción de satélites meteorológicos NOAA</title>
@@ -308,11 +334,11 @@
     
     
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
-    
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
   </entry>
   
