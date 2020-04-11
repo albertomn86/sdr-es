@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-03-27T19:21:43.516Z</updated>
+  <updated>2020-04-11T19:21:20.083Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Instalación de SPY Server en Raspberry Pi</title>
+    <link href="http://sdr-es.com/2020/04/11/instalacion-spyserver-raspberrypi/"/>
+    <id>http://sdr-es.com/2020/04/11/instalacion-spyserver-raspberrypi/</id>
+    <published>2020-04-11T09:10:42.000Z</published>
+    <updated>2020-04-11T19:21:20.083Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.&lt;br&gt;En este artículo veremos como instalar SPY Server en una Raspberry Pi.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
+      <category term="SPY Server" scheme="http://sdr-es.com/tags/SPY-Server/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Instalación de dispositivos RTL-SDR en Raspberry Pi</title>
+    <link href="http://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/"/>
+    <id>http://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/</id>
+    <published>2020-04-10T07:40:15.000Z</published>
+    <updated>2020-04-11T19:06:46.640Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Recepción de satélites meteorológicos Meteor-M</title>
@@ -323,11 +375,11 @@
     <link href="http://sdr-es.com/2020/01/19/instalacion-rtlsdr-windows/"/>
     <id>http://sdr-es.com/2020/01/19/instalacion-rtlsdr-windows/</id>
     <published>2020-01-19T18:26:40.000Z</published>
-    <updated>2020-03-05T11:48:02.322Z</updated>
+    <updated>2020-04-11T19:06:53.061Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;En este tutorial vamos a ver cómo instalar nuestro nuevo dispositivo RTL-SDR en Windows 10.&lt;/p&gt;
+      &lt;p&gt;En este tutorial vamos a ver como instalar nuestro nuevo dispositivo RTL-SDR en Windows 10.&lt;/p&gt;
 &lt;p&gt;Existen varias alternativas para Windows, pero en este tutorial vamos a instalar y configurar SDR# (SDR Sharp), ya que es el más conocido y utilizado.&lt;/p&gt;
     
     </summary>
