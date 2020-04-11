@@ -4,7 +4,7 @@ date: 2020-01-19 19:26:40
 tags: [RTL-SDR, SDRSharp, Windows]
 ---
 
-En este tutorial vamos a ver cómo instalar nuestro nuevo dispositivo RTL-SDR en Windows 10.
+En este tutorial vamos a ver como instalar nuestro nuevo dispositivo RTL-SDR en Windows 10.
 
 Existen varias alternativas para Windows, pero en este tutorial vamos a instalar y configurar SDR# (SDR Sharp), ya que es el más conocido y utilizado.
 

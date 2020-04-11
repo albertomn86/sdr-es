@@ -6,7 +6,7 @@ tags: [RTL-SDR, SDRSharp, Raspberry Pi, Linux]
 
 
 
-En este tutorial veremos cómo instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.
+En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.
 
 <!-- more -->
 
