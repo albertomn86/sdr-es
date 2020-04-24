@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-04-11T19:21:20.083Z</updated>
+  <updated>2020-04-24T19:23:38.318Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Instalación de estación terrestre con SatNOGS</title>
+    <link href="http://sdr-es.com/2020/04/24/instalacion-satnogs/"/>
+    <id>http://sdr-es.com/2020/04/24/instalacion-satnogs/</id>
+    <published>2020-04-24T14:34:55.000Z</published>
+    <updated>2020-04-24T19:23:38.318Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://satnogs.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SatNOGS&lt;/a&gt; (Satellite Networked Open Ground Station) es una plataforma de software y hardware de código abierto con el propósito de crear una red global de estaciones terrestres de seguimiento de satélites.&lt;/p&gt;
+&lt;p&gt;En este artículo veremos como instalar una estación terrestre para el seguimiento de satélites de forma desatendida. Para ello vamos a utilizar un dispositivo SDR y una Raspberry Pi con el software SatNOGS.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+      <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Instalación de SPY Server en Raspberry Pi</title>
     <link href="http://sdr-es.com/2020/04/11/instalacion-spyserver-raspberrypi/"/>
     <id>http://sdr-es.com/2020/04/11/instalacion-spyserver-raspberrypi/</id>
     <published>2020-04-11T09:10:42.000Z</published>
-    <updated>2020-04-11T19:21:20.083Z</updated>
+    <updated>2020-04-20T08:54:04.175Z</updated>
     
     <summary type="html">
     
@@ -375,7 +403,7 @@
     <link href="http://sdr-es.com/2020/01/19/instalacion-rtlsdr-windows/"/>
     <id>http://sdr-es.com/2020/01/19/instalacion-rtlsdr-windows/</id>
     <published>2020-01-19T18:26:40.000Z</published>
-    <updated>2020-04-11T19:06:53.061Z</updated>
+    <updated>2020-04-16T10:34:41.556Z</updated>
     
     <summary type="html">
     
