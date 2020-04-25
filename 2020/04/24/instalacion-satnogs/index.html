@@ -47,7 +47,7 @@ ga('send', 'pageview');
 <meta property="og:image" content="http://sdr-es.com/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_sat.png">
 <meta property="og:image" content="http://sdr-es.com/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_sat_2.png">
 <meta property="article:published_time" content="2020-04-24T14:34:55.000Z">
-<meta property="article:modified_time" content="2020-04-24T19:23:38.318Z">
+<meta property="article:modified_time" content="2020-04-25T18:09:57.860Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="Satélites">
 <meta property="article:tag" content="SDRSharp">
@@ -159,7 +159,7 @@ ga('send', 'pageview');
 <img src="/2020/04/24/instalacion-satnogs/satnogs_api_key.png" class="" width="900" title="SatNOGS API Key">
 
 
-<h3 id="Descargar-imagen-de-SatNOGS-para-Raspberry-Pi"><a href="#Descargar-imagen-de-SatNOGS-para-Raspberry-Pi" class="headerlink" title="Descargar imagen de SatNOGS para Raspberry Pi"></a>Descargar imagen de SatNOGS para Raspberry Pi</h3><p>Vamos ahora a preparar la Raspberry Pi. Para ello vamos a instalar la imagen que hay creada de SatNOGS y que podemos descargar desde la siguiente página:</p>
+<h3 id="Descargar-imagen-de-SatNOGS-para-Raspberry-Pi"><a href="#Descargar-imagen-de-SatNOGS-para-Raspberry-Pi" class="headerlink" title="Descargar imagen de SatNOGS para Raspberry Pi"></a>Descargar imagen de SatNOGS para Raspberry Pi</h3><p>Vamos ahora a preparar la Raspberry Pi. Para ello vamos a instalar la imagen que hay creada del cliente de SatNOGS y que podemos descargar desde la siguiente página:</p>
 <p><a href="https://gitlab.com/librespacefoundation/satnogs/satnogs-pi-gen/-/tags" target="_blank" rel="noopener"><center>https://gitlab.com/librespacefoundation/satnogs/satnogs-pi-gen/-/tags</center></a></p>
 <p>Aquí descargamos la última versión disponible.</p>
 <img src="/2020/04/24/instalacion-satnogs/descarga_imagen.png" class="" width="900" title="Descarga imagen SatNOGS">
@@ -184,7 +184,7 @@ ga('send', 'pageview');
 <img src="/2020/04/24/instalacion-satnogs/raspi-config_advanced.png" class="" title="Configuración de Raspberry Pi">
 
 <p>Por último, reiniciamos la Raspberry Pi para que se apliquen los cambios.</p>
-<h3 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h3><p>Turno ahora de configurar SatNOGS. Para ello ejecutamos el siguiente comando:</p>
+<h3 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h3><p>Turno ahora de configurar el cliente SatNOGS. Para ello ejecutamos el siguiente comando:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo satnogs-setup</span><br></pre></td></tr></table></figure>
 
 <p>Se mostrará el menú principal de opciones:</p>
@@ -279,11 +279,72 @@ ga('send', 'pageview');
 <img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_sat_2.png" class="" title="SatNOGS Nuevo pase">
 
 <p>Cuando se completen los pases que hemos programado, podemos ver el <em>“waterfall”</em> del pase, el audio y los datos o imágenes obtenidas.</p>
+<h3 id="Utilizacion-de-LNA"><a href="#Utilizacion-de-LNA" class="headerlink" title="Utilización de LNA"></a>Utilización de LNA</h3><p>Incorporar un LNA a nuestra estación nos ayudará a mejorar la recepción de los satélites. Si disponemos de un LNA con alimentación mediante Bias-T y utilizamos un dispositivo SDR como el RTL-SDR V3, tendremos que activar la alimentación del mismo.</p>
+<p>A continuación veremos como hacer que SatNOGS active de forma automática el Bias-T de nuestro RTL-SDR cuando vaya a recibir un pase y lo desactive al finalizar.</p>
+<p>Necesitamos instalar la utilidad <code>rtl_biast</code> que será la encargada de activar y desactivar el Bias-T del dispositivo SDR. Para ello accedemos por ssh a la Raspberry Pi y realizamos los siguientes pasos:</p>
+<ol>
+<li>Descargar el código fuente.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;rtlsdrblog&#x2F;rtl_biast.git</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Instalar las dependencias necesarias para compilar.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install cmake libusb-1.0-0-dev</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Accedemos a la carpeta descargada.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd rtl_biast</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Generamos el <em>makefile</em>.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake .</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>Compilamos.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>Copiamos el binario compilado a <code>/usr/bin</code>.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp src&#x2F;rtl_biast &#x2F;usr&#x2F;bin</span><br></pre></td></tr></table></figure>
+
+<p>Por último, nos aseguramos de que funciona correctamente ejecutando:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rtl_biast</span><br></pre></td></tr></table></figure>
+
+<p>Debemos obtener una salida como la siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Found Rafael Micro R820T tuner</span><br></pre></td></tr></table></figure>
+
+<p>Ahora vamos a configurar el cliente SatNOGS para que active y desactive el Bias-T de forma automática.</p>
+<p>Accedemos al menú de configuración mediante:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo satnogs-setup</span><br></pre></td></tr></table></figure>
+
+<p>Vamos a <strong><em>Advanced</em></strong> y <strong><em>Pre/post observation scripts</em></strong> y establecemos los siguientes ajustes:</p>
+<table>
+<thead>
+<tr>
+<th>Ajuste</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SATNOGS_PRE_OBSERVATION_SCRIPT</td>
+<td><code>/usr/bin/rtl_biast -b 1</code></td>
+</tr>
+<tr>
+<td>SATNOGS_POST_OBSERVATION_SCRIPT</td>
+<td><code>/usr/bin/rtl_biast -b 0</code></td>
+</tr>
+</tbody></table>
+<p>Para finalizar volvemos al menú principal y le damos a <strong><em>Apply</em></strong> para que se apliquen los ajustes.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://sdr-es.com/2020/04/24/instalacion-satnogs/" data-id="ck9eldfs40005tky24bvi5g3a" class="article-share-link">Compartir</a>
+      <a data-url="http://sdr-es.com/2020/04/24/instalacion-satnogs/" data-id="ck9fxxaev000933y20zo63gue" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RTL-SDR/" rel="tag">RTL-SDR</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Raspberry-Pi/" rel="tag">Raspberry Pi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SatNOGS/" rel="tag">SatNOGS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Satelites/" rel="tag">Satélites</a></li></ul>
