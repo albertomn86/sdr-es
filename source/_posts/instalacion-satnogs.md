@@ -50,7 +50,7 @@ Hacemos click en _API Key_ y copiamos nuestro token.
 
 ### Descargar imagen de SatNOGS para Raspberry Pi
 
-Vamos ahora a preparar la Raspberry Pi. Para ello vamos a instalar la imagen que hay creada de SatNOGS y que podemos descargar desde la siguiente página:
+Vamos ahora a preparar la Raspberry Pi. Para ello vamos a instalar la imagen que hay creada del cliente de SatNOGS y que podemos descargar desde la siguiente página:
 
 [<center>https://gitlab.com/librespacefoundation/satnogs/satnogs-pi-gen/-/tags</center>](https://gitlab.com/librespacefoundation/satnogs/satnogs-pi-gen/-/tags)
 
@@ -90,7 +90,7 @@ Por último, reiniciamos la Raspberry Pi para que se apliquen los cambios.
 
 ### Configuración de SatNOGS
 
-Turno ahora de configurar SatNOGS. Para ello ejecutamos el siguiente comando:
+Turno ahora de configurar el cliente SatNOGS. Para ello ejecutamos el siguiente comando:
 
 ```
 sudo satnogs-setup
@@ -175,3 +175,81 @@ Seleccionamos el satélite que queremos seguir e indicamos un intervalos de tiem
 {% asset_img satnogs_nuevo_pase_sat_2.png "SatNOGS Nuevo pase" %}
 
 Cuando se completen los pases que hemos programado, podemos ver el _"waterfall"_ del pase, el audio y los datos o imágenes obtenidas.
+
+
+### Utilización de LNA
+
+Incorporar un LNA a nuestra estación nos ayudará a mejorar la recepción de los satélites. Si disponemos de un LNA con alimentación mediante Bias-T y utilizamos un dispositivo SDR como el RTL-SDR V3, tendremos que activar la alimentación del mismo.
+
+A continuación veremos como hacer que SatNOGS active de forma automática el Bias-T de nuestro RTL-SDR cuando vaya a recibir un pase y lo desactive al finalizar.
+
+Necesitamos instalar la utilidad `rtl_biast` que será la encargada de activar y desactivar el Bias-T del dispositivo SDR. Para ello accedemos por ssh a la Raspberry Pi y realizamos los siguientes pasos:
+
+1. Descargar el código fuente.
+
+```
+git clone https://github.com/rtlsdrblog/rtl_biast.git
+```
+
+2. Instalar las dependencias necesarias para compilar.
+
+```
+sudo apt install cmake libusb-1.0-0-dev
+```
+
+3. Accedemos a la carpeta descargada.
+
+```
+cd rtl_biast
+```
+
+4. Generamos el _makefile_.
+
+```
+cmake .
+```
+
+5. Compilamos.
+
+```
+make
+```
+
+6. Copiamos el binario compilado a `/usr/bin`.
+
+```
+sudo cp src/rtl_biast /usr/bin
+```
+
+Por último, nos aseguramos de que funciona correctamente ejecutando:
+
+```
+rtl_biast
+```
+
+Debemos obtener una salida como la siguiente:
+
+```
+Found 1 device(s):
+  0:  Realtek, RTL2838UHIDIR, SN: 08201703
+
+Using device 0: Generic RTL2832U OEM
+Found Rafael Micro R820T tuner
+```
+
+Ahora vamos a configurar el cliente SatNOGS para que active y desactive el Bias-T de forma automática.
+
+Accedemos al menú de configuración mediante:
+
+```
+sudo satnogs-setup
+```
+
+Vamos a **_Advanced_** y **_Pre/post observation scripts_** y establecemos los siguientes ajustes:
+
+| Ajuste | Valor |
+| --- | --- |
+| SATNOGS_PRE_OBSERVATION_SCRIPT | `/usr/bin/rtl_biast -b 1` |
+| SATNOGS_POST_OBSERVATION_SCRIPT | `/usr/bin/rtl_biast -b 0` |
+
+Para finalizar volvemos al menú principal y le damos a **_Apply_** para que se apliquen los ajustes.
