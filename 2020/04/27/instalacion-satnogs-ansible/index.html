@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-156538909-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>Instalación de estación terrestre con SatNOGS (II) | SDR en español</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="En el artículo anterior “Instalación de estación terrestre con SatNOGS” vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imag">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Instalación de estación terrestre con SatNOGS (II)">
+<meta property="og:url" content="http://sdr-es.com/2020/04/27/instalacion-satnogs-ansible/index.html">
+<meta property="og:site_name" content="SDR en español">
+<meta property="og:description" content="En el artículo anterior “Instalación de estación terrestre con SatNOGS” vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imag">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="http://sdr-es.com/2020/04/27/instalacion-satnogs-ansible/satnogs-config.png">
+<meta property="article:published_time" content="2020-04-27T14:34:55.000Z">
+<meta property="article:modified_time" content="2020-04-27T21:16:43.843Z">
+<meta property="article:author" content="SDR en español">
+<meta property="article:tag" content="Satélites">
+<meta property="article:tag" content="RTL-SDR">
+<meta property="article:tag" content="SatNOGS">
+<meta property="article:tag" content="Raspberry Pi">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sdr-es.com/2020/04/27/instalacion-satnogs-ansible/satnogs-config.png">
+  
+    <link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SDR en español</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Web de referencia para los amantes de los dispositivos SDR</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Inicio</a>
+        
+          <a class="main-nav-link" href="/archives">Archivo</a>
+        
+          <a class="main-nav-link" href="/frecuencias">Frecuencias</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sdr-es.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-instalacion-satnogs-ansible" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/27/instalacion-satnogs-ansible/" class="article-date">
+  <time datetime="2020-04-27T14:34:55.000Z" itemprop="datePublished">27/04/2020</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Instalación de estación terrestre con SatNOGS (II)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>En el artículo anterior <a href="https://sdr-es.com/2020/04/24/instalacion-satnogs/">“Instalación de estación terrestre con SatNOGS”</a> vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.<br>En este artículo veremos como realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.</p>
+<a id="more"></a>
+
+
+<p>Si bien este artículo se centra en la instalación en una Raspberry Pi, es posible realizar la instalación en otros dispositivos Linux mediante este mismo procedimiento. El <em>playbook</em> de Ansible que vamos a utilizar es compatible con las siguientes distribuciones y versiones:</p>
+<ul>
+<li><strong>Debian:</strong> <em>stretch</em>, <em>buster</em>.</li>
+<li><strong>Raspbian:</strong> <em>stretch</em>, <em>buster</em>.</li>
+</ul>
+<h3 id="Instalacion-de-Ansible"><a href="#Instalacion-de-Ansible" class="headerlink" title="Instalación de Ansible"></a>Instalación de Ansible</h3><p>Lo primero que haremos será instalar la última versión de Ansible. Para ello seguimos los siguientes pasos:</p>
+<ol>
+<li>Añadir el repositorio de Ansible.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;deb http:&#x2F;&#x2F;ppa.launchpad.net&#x2F;ansible&#x2F;ansible&#x2F;ubuntu trusty main&quot; | sudo tee -a &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Añadir la clave del repositorio.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Actualizar lista de repositorios.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Instalar Ansible.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y ansible</span><br></pre></td></tr></table></figure>
+
+<h3 id="Instalacion-del-cliente-Ansible-de-SatNOGS"><a href="#Instalacion-del-cliente-Ansible-de-SatNOGS" class="headerlink" title="Instalación del cliente Ansible de SatNOGS"></a>Instalación del cliente Ansible de SatNOGS</h3><p>A continuación vamos a descargar e instalar el instalador del cliente SatNOGS.</p>
+<ol>
+<li>Instalamos las dependencias que vamos a necesitar:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y git needrestart</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Descargamos el repositorio:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b stable https:&#x2F;&#x2F;gitlab.com&#x2F;librespacefoundation&#x2F;satnogs&#x2F;satnogs-client-ansible.git</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Accedemos a la carpeta descargada:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd satnogs-client-ansible</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Copiamos y renombramos el siguiente directorio:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -r production.dist production</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>Ahora editamos el archivo <code>hosts</code> con nuestros datos de conexión SSH a la Raspberry Pi:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano production&#x2F;inventory&#x2F;hosts</span><br></pre></td></tr></table></figure>
+
+<p>Debemos editar el <em>host</em>, el usuario y la clave:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">all:</span><br><span class="line">  hosts:</span><br><span class="line">    satnogs:</span><br><span class="line">      ansible_host: &#39;localhost&#39;</span><br><span class="line">      ansible_user: &#39;pi&#39;</span><br><span class="line">      ansible_ssh_pass: &#39;raspberry&#39;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>Comprobamos la conexión SSH:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh pi@localhost true</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>Por último ejecutamos el <em>playbook</em>:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible-playbook -i production&#x2F;inventory -K site.yml</span><br></pre></td></tr></table></figure>
+
+<p>La instalación tardará unos minutos (pueden ser bastantes dependiendo de nuestra conexión y la CPU de la Raspberry Pi) y al finalizar mostrará un mensaje como el siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- Play recap -</span><br><span class="line">  satnogs                    : ok&#x3D;121  changed&#x3D;49   unreachable&#x3D;0    failed&#x3D;0    rescued&#x3D;0    ignored&#x3D;0</span><br></pre></td></tr></table></figure>
+
+<h3 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h3><p>Los pasos para la configuración del cliente son idénticos a los descritos en el artículo anterior en este mismo apartado.</p>
+<p>La única observación es que ahora al tener más de un dispositivo SDR conectado, debemos indicar cual de ellos debe utilizar.<br>Necesitaremos el número de serie del dispositivo para diferenciarlos. Para extraerlo usamos la herramienta <code>rtl_test</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pi@raspberrypi:~ $ rtl_test</span><br><span class="line">Found 2 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line">  1:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>En este caso vamos a utilizar el segundo dispositivo, y por lo tanto se lo debemos indicar a SatNOGS. Para ello en <strong><em>Basic configuration options</em></strong> realizaremos el siguiente cambio:</p>
+<table>
+<thead>
+<tr>
+<th>Ajuste</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SATNOGS_SOAPY_RX_DEVICE</td>
+<td>Dispositivo SDR que vamos a usar y número de serie: <code>driver=rtlsdr,serial=08201703</code>.</td>
+</tr>
+</tbody></table>
+<img src="/2020/04/27/instalacion-satnogs-ansible/satnogs-config.png" class="" title="SatNOGS Setup">
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://sdr-es.com/2020/04/27/instalacion-satnogs-ansible/" data-id="ck9izjv4x000aevy23amoe96j" class="article-share-link">Compartir</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RTL-SDR/" rel="tag">RTL-SDR</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Raspberry-Pi/" rel="tag">Raspberry Pi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SatNOGS/" rel="tag">SatNOGS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Satelites/" rel="tag">Satélites</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/24/instalacion-satnogs/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Anterior</strong>
+      <div class="article-nav-title">Instalación de estación terrestre con SatNOGS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Posts recientes</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/04/27/instalacion-satnogs-ansible/">Instalación de estación terrestre con SatNOGS (II)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/24/instalacion-satnogs/">Instalación de estación terrestre con SatNOGS</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/11/instalacion-spyserver-raspberrypi/">Instalación de SPY Server en Raspberry Pi</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/10/instalacion-rtlsdr-raspberrypi/">Instalación de dispositivos RTL-SDR en Raspberry Pi</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/27/recepcion-satelites-meteorologicos-meteor/">Recepción de satélites meteorológicos Meteor-M</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cubesat/" rel="tag">Cubesat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Inmarsat/" rel="tag">Inmarsat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/L-Band/" rel="tag">L-Band</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orbitron/" rel="tag">Orbitron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RTL-SDR/" rel="tag">RTL-SDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/" rel="tag">Raspberry Pi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDRSharp/" rel="tag">SDRSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SPY-Server/" rel="tag">SPY Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SatNOGS/" rel="tag">SatNOGS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Satelites/" rel="tag">Satélites</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Satelites-meteorologicos/" rel="tag">Satélites meteorológicos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Virtual-Audio-Cable/" rel="tag">Virtual Audio Cable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivos</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">abril 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">marzo 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">febrero 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">enero 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 SDR en español<br>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Inicio</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archivo</a>
+  
+    <a href="/frecuencias" class="mobile-nav-link">Frecuencias</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

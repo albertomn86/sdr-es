@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-04-27T11:22:08.660Z</updated>
+  <updated>2020-04-27T21:16:43.843Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Instalación de estación terrestre con SatNOGS (II)</title>
+    <link href="http://sdr-es.com/2020/04/27/instalacion-satnogs-ansible/"/>
+    <id>http://sdr-es.com/2020/04/27/instalacion-satnogs-ansible/</id>
+    <published>2020-04-27T14:34:55.000Z</published>
+    <updated>2020-04-27T21:16:43.843Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;En el artículo anterior &lt;a href=&quot;https://sdr-es.com/2020/04/24/instalacion-satnogs/&quot;&gt;“Instalación de estación terrestre con SatNOGS”&lt;/a&gt; vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.&lt;br&gt;En este artículo veremos como realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
+    
+      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Instalación de estación terrestre con SatNOGS</title>
     <link href="http://sdr-es.com/2020/04/24/instalacion-satnogs/"/>
     <id>http://sdr-es.com/2020/04/24/instalacion-satnogs/</id>
     <published>2020-04-24T14:34:55.000Z</published>
-    <updated>2020-04-27T11:22:08.660Z</updated>
+    <updated>2020-04-27T19:32:40.941Z</updated>
     
     <summary type="html">
     
@@ -34,13 +61,11 @@
     
       <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
-    
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
       <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
+    
+      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
   </entry>
   
@@ -49,7 +74,7 @@
     <link href="http://sdr-es.com/2020/04/11/instalacion-spyserver-raspberrypi/"/>
     <id>http://sdr-es.com/2020/04/11/instalacion-spyserver-raspberrypi/</id>
     <published>2020-04-11T09:10:42.000Z</published>
-    <updated>2020-04-20T08:54:04.175Z</updated>
+    <updated>2020-04-27T21:18:27.186Z</updated>
     
     <summary type="html">
     
