@@ -67,7 +67,7 @@ Una vez descargado el archivo, extraemos la imagen y la grabamos en la tarjeta S
 
 Ahora vamos a configurar algunos aspectos esenciales en nuestra Raspberry Pi.
 
-Una vez que tengamos la Raspberry Pi iniciada, accedemos a ella mediante ssh y ejecutamos el siguiente comando:
+Una vez que tengamos la Raspberry Pi iniciada, accedemos a ella mediante SSH (usuario **"pi"** y clave **"raspberry"**) y ejecutamos el siguiente comando:
 
 ```
 sudo raspi-config
@@ -80,7 +80,7 @@ Se nos muestra en pantalla el menú de la herramienta de configuración de la Ra
 Los ajustes básicos que debemos llevar a cabo son:
 
 - Cambiar la clave por defecto.
-- Configurar la zona horaria a UTC.
+- Configurar la zona horaria a UTC. En _Localisation Options_, _Change Timezone_, _None of the above_, _UTC_.
 - Expandir el sistema de archivos. En _Advanced Options_, primera opción:
 
 {% asset_img raspi-config_advanced.png "Configuración de Raspberry Pi" %}
@@ -183,7 +183,7 @@ Incorporar un LNA a nuestra estación nos ayudará a mejorar la recepción de lo
 
 A continuación veremos como hacer que SatNOGS active de forma automática el Bias-T de nuestro RTL-SDR cuando vaya a recibir un pase y lo desactive al finalizar.
 
-Necesitamos instalar la utilidad `rtl_biast` que será la encargada de activar y desactivar el Bias-T del dispositivo SDR. Para ello accedemos por ssh a la Raspberry Pi y realizamos los siguientes pasos:
+Necesitamos instalar la utilidad `rtl_biast` que será la encargada de activar y desactivar el Bias-T del dispositivo SDR. Para ello accedemos por SSH a la Raspberry Pi y realizamos los siguientes pasos:
 
 1. Descargar el código fuente.
 
