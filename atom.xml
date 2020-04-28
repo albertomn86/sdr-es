@@ -35,11 +35,11 @@
     
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
+      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
       <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
-      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+      <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
     
   </entry>
   
@@ -63,9 +63,9 @@
     
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
-    
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+      <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
     
   </entry>
   
@@ -88,9 +88,9 @@
     
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
       <category term="SPY Server" scheme="http://sdr-es.com/tags/SPY-Server/"/>
     
@@ -115,9 +115,9 @@
     
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
   </entry>
   
