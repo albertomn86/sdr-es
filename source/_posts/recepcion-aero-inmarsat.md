@@ -2,6 +2,7 @@
 title: Recepción de mensajes Inmarsat Aero
 date: 2020-03-10 12:26:30
 tags: [Satélites, Inmarsat, L-Band, SDRSharp, Windows]
+author: AlbertoMN
 ---
 
 Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.

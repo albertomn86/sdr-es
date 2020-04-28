@@ -11,7 +11,7 @@ En este artículo veremos como instalar una estación terrestre para el seguimie
 
 <!-- more -->
 
-### Registrar nuestra estación en la red
+## Registrar nuestra estación en la red
 
 El primer paso será registrarnos en la red de SatNOGS para obtener nuestro identificador de estación y la _API key_.
 Para ello vamos a la web de SatNOGS mediante el siguiente enlace:
@@ -48,7 +48,7 @@ Hacemos click en _API Key_ y copiamos nuestro token.
 {% asset_img satnogs_api_key.png 900 "SatNOGS API Key" %}
 
 
-### Descargar imagen de SatNOGS para Raspberry Pi
+## Descargar imagen de SatNOGS para Raspberry Pi
 
 Vamos ahora a preparar la Raspberry Pi. Para ello vamos a instalar la imagen que hay creada del cliente de SatNOGS y que podemos descargar desde la siguiente página:
 
@@ -63,7 +63,7 @@ Una vez descargado el archivo, extraemos la imagen y la grabamos en la tarjeta S
 {% asset_img grabar_imagen.png "Win32 Disk Imager" %}
 
 
-### Configuración de Raspberry Pi
+## Configuración de Raspberry Pi
 
 Ahora vamos a configurar algunos aspectos esenciales en nuestra Raspberry Pi.
 
@@ -88,7 +88,7 @@ Los ajustes básicos que debemos llevar a cabo son:
 Por último, reiniciamos la Raspberry Pi para que se apliquen los cambios.
 
 
-### Configuración de SatNOGS
+## Configuración de SatNOGS
 
 Turno ahora de configurar el cliente SatNOGS. Para ello ejecutamos el siguiente comando:
 
@@ -148,7 +148,7 @@ Si todo ha ido bien tendremos la siguiente salida:
            └─27871 /var/lib/satnogs/bin/python3 /var/lib/satnogs/bin/satnogs-client
 ```
 
-### Programar seguimientos en SatNOGS
+## Programar seguimientos en SatNOGS
 
 Con nuestra Raspberry Pi finalmente configurada, es el momento de comprobar que todo funciona correctamente y podemos realizar el seguimiento de satélites.
 
@@ -177,7 +177,7 @@ Seleccionamos el satélite que queremos seguir e indicamos un intervalos de tiem
 Cuando se completen los pases que hemos programado, podemos ver el _"waterfall"_ del pase, el audio y los datos o imágenes obtenidas.
 
 
-### Utilización de LNA
+## Utilización de LNA
 
 Incorporar un LNA a nuestra estación nos ayudará a mejorar la recepción de los satélites. Si disponemos de un LNA con alimentación mediante Bias-T y utilizamos un dispositivo SDR como el RTL-SDR V3, tendremos que activar la alimentación del mismo.
 

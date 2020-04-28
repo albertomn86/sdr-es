@@ -2,6 +2,7 @@
 title: "Recepción del satélite JY1-SAT"
 date: 2020-02-25 20:45:38
 tags: [Windows, Satélites, Cubesat, SDRSharp]
+author: AlbertoMN
 ---
 
 El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan's Crown Prince Foundation.

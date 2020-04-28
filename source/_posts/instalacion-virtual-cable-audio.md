@@ -2,6 +2,7 @@
 title: Instalación de cable de audio virtual
 date: 2020-01-21 17:06:29
 tags: ['Virtual Audio Cable', SDRSharp, Windows]
+author: AlbertoMN
 ---
 
 Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde SDR# a cualquier programa externo.

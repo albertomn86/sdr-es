@@ -2,6 +2,7 @@
 title: Elección del dispositivo SDR
 date: 2020-03-16 12:07:36
 tags: RTL-SDR
+author: AlbertoMN
 ---
 
 Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.

@@ -17,7 +17,7 @@ Si bien este artículo se centra en la instalación en una Raspberry Pi, es posi
 - **Raspbian:** _stretch_, _buster_.
 
 
-### Instalación de Ansible
+## Instalación de Ansible
 
 Lo primero que haremos será instalar la última versión de Ansible. Para ello seguimos los siguientes pasos:
 
@@ -45,7 +45,7 @@ sudo apt update
 sudo apt install -y ansible
 ```
 
-### Instalación del cliente Ansible de SatNOGS
+## Instalación del cliente Ansible de SatNOGS
 
 A continuación vamos a descargar e instalar el instalador del cliente SatNOGS.
 
@@ -110,7 +110,7 @@ La instalación tardará unos minutos (pueden ser bastantes dependiendo de nuest
   satnogs                    : ok=121  changed=49   unreachable=0    failed=0    rescued=0    ignored=0
 ```
 
-### Configuración de SatNOGS
+## Configuración de SatNOGS
 
 Los pasos para la configuración del cliente son idénticos a los descritos en el artículo anterior en este mismo apartado.
 

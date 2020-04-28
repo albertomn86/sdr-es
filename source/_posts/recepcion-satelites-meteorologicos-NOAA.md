@@ -2,6 +2,7 @@
 title: Recepción de satélites meteorológicos NOAA
 date: 2020-03-20 13:16:52
 tags: [Windows, Satélites, Satélites meteorológicos, SDRSharp]
+author: AlbertoMN
 ---
 
 Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (*National Oceanic and Atmospheric Administration*). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.
