@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>SDR en español</title>
   <icon>http://sdr-es.com/favicon.ico</icon>
-  <subtitle>Web de referencia para los amantes de los dispositivos SDR</subtitle>
+  
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-04-27T21:16:43.843Z</updated>
+  <updated>2020-04-28T18:11:28.594Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://sdr-es.com/2020/04/27/instalacion-satnogs-ansible/"/>
     <id>http://sdr-es.com/2020/04/27/instalacion-satnogs-ansible/</id>
     <published>2020-04-27T14:34:55.000Z</published>
-    <updated>2020-04-27T21:16:43.843Z</updated>
+    <updated>2020-04-28T18:11:28.594Z</updated>
     
     <summary type="html">
     
@@ -37,9 +37,9 @@
     
       <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
     
-      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
       <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
+      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
   </entry>
   
@@ -48,7 +48,7 @@
     <link href="http://sdr-es.com/2020/04/24/instalacion-satnogs/"/>
     <id>http://sdr-es.com/2020/04/24/instalacion-satnogs/</id>
     <published>2020-04-24T14:34:55.000Z</published>
-    <updated>2020-04-27T19:32:40.941Z</updated>
+    <updated>2020-04-28T18:11:12.605Z</updated>
     
     <summary type="html">
     
@@ -74,7 +74,7 @@
     <link href="http://sdr-es.com/2020/04/11/instalacion-spyserver-raspberrypi/"/>
     <id>http://sdr-es.com/2020/04/11/instalacion-spyserver-raspberrypi/</id>
     <published>2020-04-11T09:10:42.000Z</published>
-    <updated>2020-04-27T21:18:27.186Z</updated>
+    <updated>2020-04-28T18:10:47.052Z</updated>
     
     <summary type="html">
     
@@ -88,9 +88,9 @@
     
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
       <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
+      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
       <category term="SPY Server" scheme="http://sdr-es.com/tags/SPY-Server/"/>
     
@@ -101,7 +101,7 @@
     <link href="http://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/"/>
     <id>http://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/</id>
     <published>2020-04-10T07:40:15.000Z</published>
-    <updated>2020-04-11T19:06:46.640Z</updated>
+    <updated>2020-04-28T18:12:05.452Z</updated>
     
     <summary type="html">
     
@@ -115,9 +115,9 @@
     
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
       <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
+      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
   </entry>
   
@@ -126,7 +126,7 @@
     <link href="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/"/>
     <id>http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/</id>
     <published>2020-03-27T11:10:49.000Z</published>
-    <updated>2020-03-27T19:21:43.516Z</updated>
+    <updated>2020-04-28T18:08:41.927Z</updated>
     
     <summary type="html">
     
@@ -152,7 +152,7 @@
     <link href="http://sdr-es.com/2020/03/20/recepcion-satelites-meteorologicos-NOAA/"/>
     <id>http://sdr-es.com/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</id>
     <published>2020-03-20T12:16:52.000Z</published>
-    <updated>2020-03-21T20:18:49.765Z</updated>
+    <updated>2020-04-28T18:08:28.282Z</updated>
     
     <summary type="html">
     
@@ -178,7 +178,7 @@
     <link href="http://sdr-es.com/2020/03/16/eleccion-sdr/"/>
     <id>http://sdr-es.com/2020/03/16/eleccion-sdr/</id>
     <published>2020-03-16T11:07:36.000Z</published>
-    <updated>2020-03-20T11:45:44.696Z</updated>
+    <updated>2020-04-28T18:12:37.524Z</updated>
     
     <summary type="html">
     
@@ -197,7 +197,7 @@
     <link href="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/"/>
     <id>http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/</id>
     <published>2020-03-10T11:26:30.000Z</published>
-    <updated>2020-03-10T18:31:21.734Z</updated>
+    <updated>2020-04-28T18:10:15.115Z</updated>
     
     <summary type="html">
     
@@ -225,7 +225,7 @@
     <link href="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/"/>
     <id>http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/</id>
     <published>2020-03-09T11:46:44.000Z</published>
-    <updated>2020-03-09T17:33:44.340Z</updated>
+    <updated>2020-04-28T18:08:17.996Z</updated>
     
     <summary type="html">
     
@@ -252,7 +252,7 @@
     <link href="http://sdr-es.com/2020/03/06/recepcion-inmarsat/"/>
     <id>http://sdr-es.com/2020/03/06/recepcion-inmarsat/</id>
     <published>2020-03-06T10:22:33.000Z</published>
-    <updated>2020-03-09T11:55:02.755Z</updated>
+    <updated>2020-04-28T18:09:05.595Z</updated>
     
     <summary type="html">
     
@@ -282,7 +282,7 @@
     <link href="http://sdr-es.com/2020/02/26/recepcion-nayif1/"/>
     <id>http://sdr-es.com/2020/02/26/recepcion-nayif1/</id>
     <published>2020-02-26T08:32:14.000Z</published>
-    <updated>2020-03-05T11:47:13.753Z</updated>
+    <updated>2020-04-28T18:08:50.853Z</updated>
     
     <summary type="html">
     
@@ -307,7 +307,7 @@
     <link href="http://sdr-es.com/2020/02/25/recepcion-jy1sat/"/>
     <id>http://sdr-es.com/2020/02/25/recepcion-jy1sat/</id>
     <published>2020-02-25T19:45:38.000Z</published>
-    <updated>2020-03-05T11:46:57.552Z</updated>
+    <updated>2020-04-28T18:08:57.309Z</updated>
     
     <summary type="html">
     
@@ -332,7 +332,7 @@
     <link href="http://sdr-es.com/2020/02/22/recepcion-funcube1/"/>
     <id>http://sdr-es.com/2020/02/22/recepcion-funcube1/</id>
     <published>2020-02-22T10:37:32.000Z</published>
-    <updated>2020-03-05T11:46:40.550Z</updated>
+    <updated>2020-04-28T18:10:05.237Z</updated>
     
     <summary type="html">
     
@@ -357,7 +357,7 @@
     <link href="http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/"/>
     <id>http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/</id>
     <published>2020-02-18T11:45:55.000Z</published>
-    <updated>2020-03-05T11:48:18.251Z</updated>
+    <updated>2020-04-28T18:12:47.337Z</updated>
     
     <summary type="html">
     
@@ -384,7 +384,7 @@
     <link href="http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/"/>
     <id>http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/</id>
     <published>2020-01-23T18:06:58.000Z</published>
-    <updated>2020-03-05T11:47:27.885Z</updated>
+    <updated>2020-04-28T18:08:03.226Z</updated>
     
     <summary type="html">
     
@@ -405,7 +405,7 @@
     <link href="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/"/>
     <id>http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/</id>
     <published>2020-01-21T16:06:29.000Z</published>
-    <updated>2020-03-05T11:47:35.669Z</updated>
+    <updated>2020-04-28T18:10:24.244Z</updated>
     
     <summary type="html">
     
@@ -428,7 +428,7 @@
     <link href="http://sdr-es.com/2020/01/19/instalacion-rtlsdr-windows/"/>
     <id>http://sdr-es.com/2020/01/19/instalacion-rtlsdr-windows/</id>
     <published>2020-01-19T18:26:40.000Z</published>
-    <updated>2020-04-16T10:34:41.556Z</updated>
+    <updated>2020-04-28T18:11:42.005Z</updated>
     
     <summary type="html">
     
