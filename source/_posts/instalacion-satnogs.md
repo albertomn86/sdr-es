@@ -2,7 +2,7 @@
 title: Instalación de estación terrestre con SatNOGS
 date: 2020-04-24 16:34:55
 tags: [SatNOGS, RTL-SDR, Raspberry Pi, Satélites]
-coauthor: AlbertoMN
+author: AlbertoMN
 ---
 
 [SatNOGS](https://satnogs.org/) (Satellite Networked Open Ground Station) es una plataforma de software y hardware de código abierto con el propósito de crear una red global de estaciones terrestres de seguimiento de satélites.
