@@ -3,6 +3,7 @@ title: Listado de frecuencias en HF
 date: 2020-02-26 18:23:56
 ---
 
+<script src="jquery-3.5.0.min.js"></script>
 <script src="freq_download.js"></script>
 
 Listado de frecuencias encontradas y recogidas por los miembros del grupo.
@@ -13,8 +14,15 @@ Listado de frecuencias encontradas y recogidas por los miembros del grupo.
 |--------------|--------------------------|--------|------|----------------|--------------------|---------------|--------|
 | 249 KHz      | Emisora comercial        | Voz    | AM   | 10 KHz         | Guadalajara        | RTL-SDR V3    | YouLoop |
 | 319 KHz      | NDB Colmenar Viejo "ECV" | CW     | AM   | 10 KHz         | Guadalajara        | RTL-SDR V3    | YouLoop |
+| 412 KHz      | NDB Granada              | CW     | AM   | 10 KHz         | Granada            | AIRSPY HF+    | YouLoop |
 | 421 KHz      | NDB Getafe "GE"          | CW     | AM   | 10 KHz         | Guadalajara        | RTL-SDR V3    | YouLoop |
+| 729 KHz      | Emisora comercial RNE    | Voz    | AM   | 10 KHz         | Málaga             | RTL-SDR V3    | YouLoop |
+| 1.260 KHz    | Radio SER Gibraltar      | Voz    | AM   | 10 KHz         | Málaga             | RTL-SDR V3    | YouLoop |
+| 1.883 KHz    | Ayuda Navegación CLYDE   | CW     | LSB  | 3 KHz          | Barcelona          | Yaesu FT-2000 | Long Wire 42M |
+| 2.680 KHz    | Estación de números 4XZ  | CW     | CW   | 500 Hz         | Barcelona          | Yaesu FT-2000 | Long Wire 42M |
 | 3.413 KHz    | SHANNON VOLMET           | Voz    | USB  | 3 KHz          | Guadalajara        | RTL-SDR V3    | Loop 65cm |
+| 3.413 KHz    | SHANNON VOLMET           | Voz    | USB  | 3 KHz          | Barcelona          | Yaesu FT-2000 | Long Wire 42M |
+| 3.434,4 KHz  | Barcos pesca             | Voz    | USB  | 3 KHz          | Barcelona          | Yaesu FT-2000 | Long Wire 42M |
 | 4.610 KHz    | WEFAX Nothwood           | Datos  | USB  | 4 KHz          | Barcelona          | Yaesu FT-2000 | Long Wire 42M |
 | 5.450 KHz    | GIBRALTAR VOLMET         | Voz    | USB  | 3 KHz          | Guadalajara        | RTL-SDR V3    | Loop 65cm |
 | 5.505 KHz    | SHANNON VOLMET           | Voz    | USB  | 3 KHz          | Guadalajara        | RTL-SDR V3    | Loop 65cm |
@@ -29,6 +37,7 @@ Listado de frecuencias encontradas y recogidas por los miembros del grupo.
 | 11.610 KHz   | Radio Árabe              | Voz    | AM   | 10 KHz         | Granada            | AIRSPY HF+    | YouLoop |
 | 13.882,5 KHz | DWD Hamburgo             | WEFAX  | USB  | 3 KHz          | Granada            | AIRSPY HF+    | Turnstile |
 | 15.104 KHz   | Radio Kuwait             | DRM    | USB  | 10 KHz         | Granada            | AIRSPY HF+    | YouLoop |
+| 15.115 KHz   | Voice of Nigeria         | DRM    | USB  | 10 KHz         | Granada            | AIRSPY HF+    | YouLoop |
 | 15.180 KHz   | Radio China Int.         | Voz    | AM   | 10 KHz         | Granada            | AIRSPY HF+    | YouLoop |
 | 15.460 KHz   | Radio Int. Rumanía       | Voz    | AM   | 10 KHz         | Granada            | AIRSPY HF+    | YouLoop |
 | 15.380 KHz   | Radio Árabe              | Voz    | AM   | 10 KHz         | Granada            | AIRSPY HF+    | YouLoop |
