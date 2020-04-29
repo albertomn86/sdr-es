@@ -67,9 +67,20 @@
     lang   : 'es'
   };
 </script>
-
-<link href="https://unpkg.com/ilyabirman-likely@2/release/likely.css" rel="stylesheet">
-
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
   <title>Instalación de estación terrestre con SatNOGS | SDR en español</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156538909-1"></script>
@@ -483,7 +494,13 @@
 
     
     
-    
+    <div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
 
       <footer class="post-footer">
           
@@ -493,15 +510,6 @@
               <a href="/tags/Raspberry-Pi/" rel="tag"><i class="fa fa-tag"></i> Raspberry Pi</a>
               <a href="/tags/SatNOGS/" rel="tag"><i class="fa fa-tag"></i> SatNOGS</a>
           </div>
-
-        <div class="likely">
-          <div class="facebook">Compartir</div>
-          <div class="twitter" data-via="sdr_esp">Compartir</div>
-          <div class="linkedin">Compartir</div>
-          <div class="telegram">Enviar</div>
-          <div class="whatsapp">Enviar</div>
-        </div>
-        <script src="https://unpkg.com/ilyabirman-likely@2/release/likely.js" type="text/javascript"></script>
           
 
 <div>
@@ -719,5 +727,14 @@
 
   
 
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "topCenter";
+        pbOptions.networks = "Twitter,Facebook,Linkedin,Reddit,GoogleBookmarks";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
 </body>
 </html>
