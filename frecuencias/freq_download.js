@@ -1,5 +1,5 @@
 function generate() {
-    var list = document.getElementsByClassName("article-entry").item(0).getElementsByTagName("tr");
+    var list = document.getElementsByClassName("table-container").item(0).getElementsByTagName("tr");
 
     var doc = document.implementation.createDocument("", "", null);
     var main = doc.createElement("ArrayOfMemoryEntry");
@@ -28,9 +28,9 @@ function generate() {
     return formatXml("<?xml version=\"1.0\"?>" + doc.documentElement.outerHTML);
 }
 
-document.ready = function() {
+window.addEventListener('DOMContentLoaded', () => {
     document.getElementById("download_button").addEventListener("click", download);
-};
+});
 
 
 function download() {
