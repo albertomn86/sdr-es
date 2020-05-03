@@ -145,7 +145,7 @@ sudo dpkg -i mlat-client_0.2.11_armhf.deb
 
 [<center>https://www.radarbox.com/register</center>](https://www.radarbox.com/register)
 
-4. Una vez registrados necesitamos vincular nuestro receptor con RadarBox. Para ello usaremos la cave que nos genera _rbfeeder_ la primera vez que se conecta al servidor. Consultamos la clave con el comando:
+4. Una vez registrados necesitamos vincular nuestro receptor con RadarBox. Para ello usaremos la clave que nos genera _rbfeeder_ la primera vez que se conecta al servidor. Consultamos la clave con el comando:
 ```
 sudo rbfeeder --showkey --no-start
 ```
