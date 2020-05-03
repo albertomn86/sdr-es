@@ -499,6 +499,108 @@
       </tags>
   </entry>
   <entry>
+    <title>Instalación de estación terrestre con SatNOGS (II)</title>
+    <url>/2020/04/27/instalacion-satnogs-ansible/</url>
+    <content><![CDATA[<p>En el artículo anterior <a href="https://sdr-es.com/2020/04/24/instalacion-satnogs/">“Instalación de estación terrestre con SatNOGS”</a> vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.<br>En este artículo veremos como realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.</p>
+<a id="more"></a>
+
+
+<p>Si bien este artículo se centra en la instalación en una Raspberry Pi, es posible realizar la instalación en otros dispositivos Linux mediante este mismo procedimiento. El <em>playbook</em> de Ansible que vamos a utilizar es compatible con las siguientes distribuciones y versiones:</p>
+<ul>
+<li><strong>Debian:</strong> <em>stretch</em>, <em>buster</em>.</li>
+<li><strong>Raspbian:</strong> <em>stretch</em>, <em>buster</em>.</li>
+</ul>
+<h2 id="Instalacion-de-Ansible"><a href="#Instalacion-de-Ansible" class="headerlink" title="Instalación de Ansible"></a>Instalación de Ansible</h2><p>Lo primero que haremos será instalar la última versión de Ansible. Para ello seguimos los siguientes pasos:</p>
+<ol>
+<li>Añadir el repositorio de Ansible.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo &quot;deb http:&#x2F;&#x2F;ppa.launchpad.net&#x2F;ansible&#x2F;ansible&#x2F;ubuntu trusty main&quot; | sudo tee -a &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Añadir la clave del repositorio.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Actualizar lista de repositorios.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Instalar Ansible.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y ansible</span><br></pre></td></tr></table></figure>
+
+<h2 id="Instalacion-del-cliente-Ansible-de-SatNOGS"><a href="#Instalacion-del-cliente-Ansible-de-SatNOGS" class="headerlink" title="Instalación del cliente Ansible de SatNOGS"></a>Instalación del cliente Ansible de SatNOGS</h2><p>A continuación vamos a descargar e instalar el instalador del cliente SatNOGS.</p>
+<ol>
+<li>Instalamos las dependencias que vamos a necesitar:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y git needrestart</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Descargamos el repositorio:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b stable https:&#x2F;&#x2F;gitlab.com&#x2F;librespacefoundation&#x2F;satnogs&#x2F;satnogs-client-ansible.git</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Accedemos a la carpeta descargada:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd satnogs-client-ansible</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Copiamos y renombramos el siguiente directorio:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp -r production.dist production</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>Ahora editamos el archivo <code>hosts</code> con nuestros datos de conexión SSH a la Raspberry Pi:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano production&#x2F;inventory&#x2F;hosts</span><br></pre></td></tr></table></figure>
+
+<p>Debemos editar el <em>host</em>, el usuario y la clave:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">all:</span><br><span class="line">  hosts:</span><br><span class="line">    satnogs:</span><br><span class="line">      ansible_host: &#39;localhost&#39;</span><br><span class="line">      ansible_user: &#39;pi&#39;</span><br><span class="line">      ansible_ssh_pass: &#39;raspberry&#39;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>Comprobamos la conexión SSH:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh pi@localhost true</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>Por último ejecutamos el <em>playbook</em>:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ansible-playbook -i production&#x2F;inventory -K site.yml</span><br></pre></td></tr></table></figure>
+
+<p>La instalación tardará unos minutos (pueden ser bastantes dependiendo de nuestra conexión y la CPU de la Raspberry Pi) y al finalizar mostrará un mensaje como el siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- Play recap -</span><br><span class="line">  satnogs                    : ok&#x3D;121  changed&#x3D;49   unreachable&#x3D;0    failed&#x3D;0    rescued&#x3D;0    ignored&#x3D;0</span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h2><p>Los pasos para la configuración del cliente son idénticos a los descritos en el artículo anterior en este mismo apartado.</p>
+<p>La única observación es que ahora al tener más de un dispositivo SDR conectado, debemos indicar cual de ellos debe utilizar.<br>Necesitaremos el número de serie del dispositivo para diferenciarlos. Para extraerlo usamos la herramienta <code>rtl_test</code>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ rtl_test</span><br><span class="line">Found 2 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line">  1:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>En este caso vamos a utilizar el segundo dispositivo, y por lo tanto se lo debemos indicar a SatNOGS. Para ello en <strong><em>Basic configuration options</em></strong> realizaremos el siguiente cambio:</p>
+<table>
+<thead>
+<tr>
+<th>Ajuste</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SATNOGS_SOAPY_RX_DEVICE</td>
+<td>Dispositivo SDR que vamos a usar y número de serie: <code>driver=rtlsdr,serial=08201703</code>.</td>
+</tr>
+</tbody></table>
+<img src="/2020/04/27/instalacion-satnogs-ansible/satnogs-config.png" class="" title="SatNOGS Setup">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>RTL-SDR</tag>
+        <tag>Raspberry Pi</tag>
+        <tag>Linux</tag>
+        <tag>SatNOGS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Instalación de estación terrestre con SatNOGS</title>
     <url>/2020/04/24/instalacion-satnogs/</url>
     <content><![CDATA[<p><a href="https://satnogs.org/" target="_blank" rel="noopener">SatNOGS</a> (Satellite Networked Open Ground Station) es una plataforma de software y hardware de código abierto con el propósito de crear una red global de estaciones terrestres de seguimiento de satélites.</p>
@@ -718,105 +820,30 @@
       </tags>
   </entry>
   <entry>
-    <title>Instalación de estación terrestre con SatNOGS (II)</title>
-    <url>/2020/04/27/instalacion-satnogs-ansible/</url>
-    <content><![CDATA[<p>En el artículo anterior <a href="https://sdr-es.com/2020/04/24/instalacion-satnogs/">“Instalación de estación terrestre con SatNOGS”</a> vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.<br>En este artículo veremos como realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.</p>
+    <title>Instalación de cable de audio virtual</title>
+    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
+    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde SDR# a cualquier programa externo.<br>Para ello vamos a utilizar un software que nos va a permitir pasar el audio desde la salida de SDR# a la entrada de otro programa.</p>
 <a id="more"></a>
 
+<h2 id="Instalacion-de-VB-Cable"><a href="#Instalacion-de-VB-Cable" class="headerlink" title="Instalación de VB-Cable"></a>Instalación de VB-Cable</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
+<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/" target="_blank" rel="noopener"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-audio-web.jpg" class="" title="Descarga de VB-Cable">
 
-<p>Si bien este artículo se centra en la instalación en una Raspberry Pi, es posible realizar la instalación en otros dispositivos Linux mediante este mismo procedimiento. El <em>playbook</em> de Ansible que vamos a utilizar es compatible con las siguientes distribuciones y versiones:</p>
-<ul>
-<li><strong>Debian:</strong> <em>stretch</em>, <em>buster</em>.</li>
-<li><strong>Raspbian:</strong> <em>stretch</em>, <em>buster</em>.</li>
-</ul>
-<h2 id="Instalacion-de-Ansible"><a href="#Instalacion-de-Ansible" class="headerlink" title="Instalación de Ansible"></a>Instalación de Ansible</h2><p>Lo primero que haremos será instalar la última versión de Ansible. Para ello seguimos los siguientes pasos:</p>
-<ol>
-<li>Añadir el repositorio de Ansible.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo &quot;deb http:&#x2F;&#x2F;ppa.launchpad.net&#x2F;ansible&#x2F;ansible&#x2F;ubuntu trusty main&quot; | sudo tee -a &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br></pre></td></tr></table></figure>
+<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
+<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
 
-<ol start="2">
-<li>Añadir la clave del repositorio.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367</span><br></pre></td></tr></table></figure>
+<p>Hacemos click en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
+<h2 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h2><p>Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" title="SDRSharp output">
 
-<ol start="3">
-<li>Actualizar lista de repositorios.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Instalar Ansible.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y ansible</span><br></pre></td></tr></table></figure>
-
-<h2 id="Instalacion-del-cliente-Ansible-de-SatNOGS"><a href="#Instalacion-del-cliente-Ansible-de-SatNOGS" class="headerlink" title="Instalación del cliente Ansible de SatNOGS"></a>Instalación del cliente Ansible de SatNOGS</h2><p>A continuación vamos a descargar e instalar el instalador del cliente SatNOGS.</p>
-<ol>
-<li>Instalamos las dependencias que vamos a necesitar:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y git needrestart</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Descargamos el repositorio:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b stable https:&#x2F;&#x2F;gitlab.com&#x2F;librespacefoundation&#x2F;satnogs&#x2F;satnogs-client-ansible.git</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Accedemos a la carpeta descargada:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd satnogs-client-ansible</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Copiamos y renombramos el siguiente directorio:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp -r production.dist production</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>Ahora editamos el archivo <code>hosts</code> con nuestros datos de conexión SSH a la Raspberry Pi:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano production&#x2F;inventory&#x2F;hosts</span><br></pre></td></tr></table></figure>
-
-<p>Debemos editar el <em>host</em>, el usuario y la clave:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">all:</span><br><span class="line">  hosts:</span><br><span class="line">    satnogs:</span><br><span class="line">      ansible_host: &#39;localhost&#39;</span><br><span class="line">      ansible_user: &#39;pi&#39;</span><br><span class="line">      ansible_ssh_pass: &#39;raspberry&#39;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>Comprobamos la conexión SSH:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh pi@localhost true</span><br></pre></td></tr></table></figure>
-
-<ol start="7">
-<li>Por último ejecutamos el <em>playbook</em>:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ansible-playbook -i production&#x2F;inventory -K site.yml</span><br></pre></td></tr></table></figure>
-
-<p>La instalación tardará unos minutos (pueden ser bastantes dependiendo de nuestra conexión y la CPU de la Raspberry Pi) y al finalizar mostrará un mensaje como el siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- Play recap -</span><br><span class="line">  satnogs                    : ok&#x3D;121  changed&#x3D;49   unreachable&#x3D;0    failed&#x3D;0    rescued&#x3D;0    ignored&#x3D;0</span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h2><p>Los pasos para la configuración del cliente son idénticos a los descritos en el artículo anterior en este mismo apartado.</p>
-<p>La única observación es que ahora al tener más de un dispositivo SDR conectado, debemos indicar cual de ellos debe utilizar.<br>Necesitaremos el número de serie del dispositivo para diferenciarlos. Para extraerlo usamos la herramienta <code>rtl_test</code>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ rtl_test</span><br><span class="line">Found 2 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line">  1:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<p>En este caso vamos a utilizar el segundo dispositivo, y por lo tanto se lo debemos indicar a SatNOGS. Para ello en <strong><em>Basic configuration options</em></strong> realizaremos el siguiente cambio:</p>
-<table>
-<thead>
-<tr>
-<th>Ajuste</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>SATNOGS_SOAPY_RX_DEVICE</td>
-<td>Dispositivo SDR que vamos a usar y número de serie: <code>driver=rtlsdr,serial=08201703</code>.</td>
-</tr>
-</tbody></table>
-<img src="/2020/04/27/instalacion-satnogs-ansible/satnogs-config.png" class="" title="SatNOGS Setup">
+<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
 ]]></content>
       <tags>
-        <tag>Satélites</tag>
-        <tag>RTL-SDR</tag>
-        <tag>Raspberry Pi</tag>
-        <tag>Linux</tag>
-        <tag>SatNOGS</tag>
+        <tag>SDRSharp</tag>
+        <tag>Windows</tag>
+        <tag>Virtual Audio Cable</tag>
       </tags>
   </entry>
   <entry>
@@ -879,33 +906,6 @@
         <tag>Raspberry Pi</tag>
         <tag>Linux</tag>
         <tag>SPY Server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de cable de audio virtual</title>
-    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
-    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde SDR# a cualquier programa externo.<br>Para ello vamos a utilizar un software que nos va a permitir pasar el audio desde la salida de SDR# a la entrada de otro programa.</p>
-<a id="more"></a>
-
-<h2 id="Instalacion-de-VB-Cable"><a href="#Instalacion-de-VB-Cable" class="headerlink" title="Instalación de VB-Cable"></a>Instalación de VB-Cable</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
-<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/" target="_blank" rel="noopener"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-audio-web.jpg" class="" title="Descarga de VB-Cable">
-
-<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
-<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
-
-<p>Hacemos click en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
-<h2 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h2><p>Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" title="SDRSharp output">
-
-<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
-]]></content>
-      <tags>
-        <tag>SDRSharp</tag>
-        <tag>Windows</tag>
-        <tag>Virtual Audio Cable</tag>
       </tags>
   </entry>
   <entry>
@@ -1558,6 +1558,151 @@
         <tag>Windows</tag>
         <tag>Inmarsat</tag>
         <tag>L-Band</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de mensajes ADS-B en Raspberry Pi</title>
+    <url>/2020/05/03/seguimiento-aviones-raspberry-pi/</url>
+    <content><![CDATA[<p>ADS-B (<em>Automatic Dependent Surveillance Broadcast</em>) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.</p>
+<p>En este artículo veremos como convertir una Raspberry Pi en un receptor de mensajes ADS-B y poder determinar y visualizar la posición de las aeronaves que sobrevuelan nuestra ubicación.</p>
+<a id="more"></a>
+
+<p>Lo primero que haremos será instalar nuestro dispositivo SDR, si todavía no lo hemos hecho, siguiendo los pasos descritos en <a href="https://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
+<h3 id="Instalacion-de-dump1090"><a href="#Instalacion-de-dump1090" class="headerlink" title="Instalación de dump1090"></a>Instalación de dump1090</h3><p>Vamos a instalar la versión de <em>dump1090</em> mantenida por FlightAware, ya que está actualizada y nos instala y levanta un servidor web en el que podemos ver las aeronaves sobre el mapa sin muchas complicaciones.</p>
+<p>El primer paso es instalar el repositorio de FlightAware en nuestra Raspberry Pi dependiendo de la versión de Raspbian que tengamos. También podemos generar paquetes para otras distribuciones siguiendo los pasos descritos <a href="https://github.com/flightaware/dump1090" target="_blank" rel="noopener">aquí</a>.</p>
+<p>Si no conocemos la versión de Raspbian, podemos consultarla ejecutando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;os-release | grep VERSION_CODENAME</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Repositorio para <strong>Raspbian Buster</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;flightaware.com&#x2F;adsb&#x2F;piaware&#x2F;files&#x2F;packages&#x2F;pool&#x2F;piaware&#x2F;p&#x2F;piaware-support&#x2F;piaware-repository_3.8.1_all.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_3.8.1_all.deb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Repositorio para <strong>Raspbian Stretch</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;flightaware.com&#x2F;adsb&#x2F;piaware&#x2F;files&#x2F;packages&#x2F;pool&#x2F;piaware&#x2F;p&#x2F;piaware-support&#x2F;piaware-repository_3.8.1~bpo9+1_all.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_3.8.1~bpo9+1_all.deb</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>Una vez instalado el repositorio correspondiente ejecutamos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+
+<p>Ahora instalamos <em>dump1090</em>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y dump1090-fa</span><br></pre></td></tr></table></figure>
+
+<p>Podemos ajustar las opciones de <em>dump1090</em> en su archivo de configuración:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;dump1090-fa</span><br></pre></td></tr></table></figure>
+
+<p>Editamos la siguiente línea con la ganancia y valor de PPM. Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en <em>device-index</em>.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">RECEIVER_OPTIONS&#x3D;&quot;--device-index 0 --gain -10 --ppm 0&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Reiniciamos el servicio para que se apliquen los cambios.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service dump1090-fa restart</span><br></pre></td></tr></table></figure>
+
+<p>Por último, accedemos a nuestra Raspberry Pi desde cualquier navegador web:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;IP_RASPBERRY:8080&#x2F;</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/dump1090.jpg" class="" width="900" title="dump1090 FlightAware">
+
+
+<h3 id="Enviar-datos-a-FlightAware"><a href="#Enviar-datos-a-FlightAware" class="headerlink" title="Enviar datos a FlightAware"></a>Enviar datos a FlightAware</h3><p>FlightAware es una compañía con sede en Houston (TX, Estados Unidos) que ofrece servicios de software y datos para aviación. Esta compañía ofrece información de seguimiento de aeronaves de forma gratuita desde su página web y sus aplicaciones para móviles. Es actualmente la mayor plataforma de seguimiento de vuelos.</p>
+<p>Podemos reenviar los datos de seguimiento a FlightAware desde nuestra Raspberry Pi. Estos serán utilizados para el seguimiento a nivel global y a cambio recibiremos una suscripción <em><a href="https://flightaware.com/commercial/premium/" target="_blank" rel="noopener">Enterprise</a></em>.</p>
+<p>Los pasos para enviar los datos son los siguientes:</p>
+<ol>
+<li>Lo primero será registrarnos en FlightAware:</li>
+</ol>
+<p><a href="https://es.flightaware.com/account/join" target="_blank" rel="noopener"><center>https://es.flightaware.com/account/join</center></a></p>
+<ol start="2">
+<li><p>Instalamos <em>piaware</em>. Este software será el encargado de establecer la comunicación con el servidor de FlightAware para enviar los datos y recibir ajustes.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y piaware</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Podemos ajustar <em>piaware</em> para que se actualice de forma automática y para que podamos actualizarlo desde la interfaz web de FlightAware.<br>Si queremos que se actualice automático ejecutamos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-auto-updates yes</span><br></pre></td></tr></table></figure>
+<p>Si queremos que se pueda hacer de forma manual vía web ejecutamos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-manual-updates yes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Reiniciamos el servicio para que se apliquen los ajustes.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service piaware restart</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Accedemos a la siguiente dirección para vincular nuestra Raspberry Pi con la cuenta que acabamos de crear. Si accedemos desde la misma dirección IP que tiene la Raspberry Pi, la detectará de forma automática.</p>
+</li>
+</ol>
+<p><a href="https://flightaware.com/adsb/piaware/claim" target="_blank" rel="noopener"><center>https://flightaware.com/adsb/piaware/claim</center></a></p>
+<ol start="6">
+<li>Vamos a nuestro panel de control y abrimos las opciones de configuración.</li>
+</ol>
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/flightaware-panel.png" class="" width="900" title="FlightAware">
+
+<ol start="7">
+<li>Por último, introducimos nuestros datos de latitud, longitud y altitud para poder usar el seguimiento con MLAT y reiniciamos el servicio desde la propia web pulsando el botón <em>Send</em>.</li>
+</ol>
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/flightaware-config.jpg" class="" title="FlightAware">
+
+
+<h3 id="Enviar-datos-a-AirNav-RadarBox"><a href="#Enviar-datos-a-AirNav-RadarBox" class="headerlink" title="Enviar datos a AirNav RadarBox"></a>Enviar datos a AirNav RadarBox</h3><p>RadarBox es una compañía con sede en Tampa (FL, Estados Unidos) que ofrece servicios de información de vuelos. Podemos compartir los datos que recibimos en nuestra Raspberry Pi con RadarBox y a cambio obtendremos una suscripción <em><a href="https://www.radarbox.com/subscribe" target="_blank" rel="noopener">Business</a></em>.</p>
+<p>Las pasos que seguiremos son los siguientes:</p>
+<ol>
+<li><p>Instalamos <em>rbfeeder</em>. Será el programa que envíe los datos al servidor.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - http:&#x2F;&#x2F;apt.rb24.com&#x2F;inst_rbfeeder.sh)&quot;</span><br></pre></td></tr></table></figure>
+<p>Cuando pregunte si queremos instalar <code>dump978-rb</code> le decimos que no.</p>
+</li>
+<li><p>Instalamos el cliente de MLAT. La siguiente versión es para Raspbian. Si necesitamos paquete para otra versión, podemos generarlo siguiendo los pasos descritos <a href="https://github.com/mutability/mlat-client" target="_blank" rel="noopener">aquí</a>.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;sdr-es.com&#x2F;2020&#x2F;05&#x2F;03&#x2F;seguimiento-aviones-raspberry-pi&#x2F;mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Nos registramos en RadarBox.</p>
+</li>
+</ol>
+<p><a href="https://www.radarbox.com/register" target="_blank" rel="noopener"><center>https://www.radarbox.com/register</center></a></p>
+<ol start="4">
+<li><p>Una vez registrados necesitamos vincular nuestro receptor con RadarBox. Para ello usaremos la clave que nos genera <em>rbfeeder</em> la primera vez que se conecta al servidor. Consultamos la clave con el comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo rbfeeder --showkey --no-start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Accedemos a esta dirección, introducimos nuestra clave en <em>Sharing Key</em> y pulsamos en <strong>CLAIM!</strong>.</p>
+</li>
+</ol>
+<p><a href="https://www.radarbox.com/raspberry-pi/claim" target="_blank" rel="noopener"><center>https://www.radarbox.com/raspberry-pi/claim</center></a></p>
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/radarbox-claim.jpg" class="" width="900" title="RadarBox">
+
+
+<ol start="6">
+<li>Por último introducimos nuestras coordenadas cuando nos lo pida.</li>
+</ol>
+<h3 id="Enviar-datos-a-Flightradar24"><a href="#Enviar-datos-a-Flightradar24" class="headerlink" title="Enviar datos a Flightradar24"></a>Enviar datos a Flightradar24</h3><p>Flightradar24 es una compañía europea con sede en Estocolmo (Suecia) que ofrece servicios de información de vuelos. Compartiendo nuestros datos con Flightradar24 obtendremos una suscripción <em><a href="https://www.flightradar24.com/premium" target="_blank" rel="noopener">Business</a></em>.</p>
+<p>Lo primero sera registrarse en Flightradar24.</p>
+<p><a href="https://www.flightradar24.com/premium/signup" target="_blank" rel="noopener"><center>https://www.flightradar24.com/premium/signup</center></a></p>
+<p>Para enviar los datos debemos descargar e instalar <em>fr24feed</em>. Para ello ejecutamos el siguiente comando y seguimos los pasos del asistente de instalación.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https:&#x2F;&#x2F;repo-feed.flightradar24.com&#x2F;install_fr24_rpi.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>Introducir el correo electrónico con el que nos hemos registrado.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 1.1 - Enter your email address (username@domain.tld)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Si tenemos ya una clave previa la introducimos. En caso contrario lo dejamos en blanco.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 1.2 - If you used to feed FR24 with ADS-B data before, enter your sharing key.</span><br><span class="line">If you don&#39;t remember your sharing key, you can find it in your account on the website under &quot;My data sharing&quot;.</span><br><span class="line">https:&#x2F;&#x2F;www.flightradar24.com&#x2F;account&#x2F;data-sharing</span><br><span class="line"></span><br><span class="line">Otherwise leave this field empty and continue.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Introducimos <code>yes</code> para activar MLAT.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 1.3 - Would you like to participate in MLAT calculations? (yes&#x2F;no)$:yes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Introducimos nuestras coordenadas y altitud.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">IMPORTANT: For MLAT calculations the antenna&#39;s location should be entered very precise!</span><br><span class="line"></span><br><span class="line">Step 3.A - Enter antenna&#39;s latitude (DD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.B - Enter antenna&#39;s longitude (DDD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.C - Enter antenna&#39;s altitude above the sea level (in feet)</span><br><span class="line"></span><br><span class="line">Using latitude: 37.XXXX, longitude: -3.XXXX, altitude: 720ft above sea level</span><br><span class="line"></span><br><span class="line">Validating email&#x2F;location information...OK</span><br><span class="line"></span><br><span class="line">The closest airport found is ICAO:LEGR IATA:GRX near Granada.</span><br><span class="line"></span><br><span class="line">Latitude: 37.188728</span><br><span class="line">Longitude: -3.777350</span><br><span class="line">Country: Spain</span><br><span class="line"></span><br><span class="line">Flightradar24 may, if needed, use your email address to contact you regarding your data feed.</span><br><span class="line"></span><br><span class="line">Would you like to continue using these settings?</span><br><span class="line"></span><br><span class="line">Enter your choice (yes&#x2F;no)$:yes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Introducimos <code>yes</code> para que usar la configuración automática y que utilice la instancia de <em>dump1090</em> que ya tenemos instalada.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">We have detected that you already have a dump1090 instance running. We can therefore automatically configure the FR24 feeder to use existing receiver configuration, or you can manually configure all the parameters.</span><br><span class="line"></span><br><span class="line">Would you like to use autoconfig (*yes*&#x2F;no)$:yes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Activamos el log si queremos. No es necesario.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 6 - Please select desired logfile mode:</span><br><span class="line"> 0 -  Disabled</span><br><span class="line"> 1 -  48 hour, 24h rotation</span><br><span class="line"> 2 -  72 hour, 24h rotation</span><br><span class="line">Select logfile mode (0-2)$:0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Por último, reiniciamos el servicio.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart fr24feed</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>RTL-SDR</tag>
+        <tag>Raspberry Pi</tag>
+        <tag>ADS-B</tag>
+        <tag>dump1090</tag>
       </tags>
   </entry>
   <entry>

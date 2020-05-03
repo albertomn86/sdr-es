@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sdr-es.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="ADS-B (Automatic Dependent Surveillance Broadcast) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recepción de mensajes ADS-B en Raspberry Pi">
+<meta property="og:url" content="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/index.html">
+<meta property="og:site_name" content="SDR en español">
+<meta property="og:description" content="ADS-B (Automatic Dependent Surveillance Broadcast) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permit">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/dump1090.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/flightaware-panel.png">
+<meta property="og:image" content="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/flightaware-config.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/radarbox-claim.jpg">
+<meta property="article:published_time" content="2020-05-03T08:56:04.000Z">
+<meta property="article:modified_time" content="2020-05-03T18:50:59.529Z">
+<meta property="article:author" content="SDR en español">
+<meta property="article:tag" content="RTL-SDR">
+<meta property="article:tag" content="Raspberry Pi">
+<meta property="article:tag" content="ADS-B">
+<meta property="article:tag" content="dump1090">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/dump1090.jpg">
+
+<link rel="canonical" href="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'es'
+  };
+</script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <title>Recepción de mensajes ADS-B en Raspberry Pi | SDR en español</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156538909-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-156538909-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Cambiar a barra de navegación">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">SDR en español</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archivo</a>
+
+  </li>
+        <li class="menu-item menu-item-frequencies">
+
+    <a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Buscando..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
+    <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SDR en español">
+      <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SDR en español">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Recepción de mensajes ADS-B en Raspberry Pi
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Publicado el</span>
+              
+
+              <time title="Creado por: 03/05/2020 10:56:04 / Modificado por: 20:50:59" itemprop="dateCreated datePublished" datetime="2020-05-03T10:56:04+02:00">03/05/2020</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-user"></i>
+                </span>
+                <span class="post-meta-item-text">Creado por</span>
+                <span>AlbertoMN</span>
+              </span>
+
+          
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>ADS-B (<em>Automatic Dependent Surveillance Broadcast</em>) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.</p>
+<p>En este artículo veremos como convertir una Raspberry Pi en un receptor de mensajes ADS-B y poder determinar y visualizar la posición de las aeronaves que sobrevuelan nuestra ubicación.</p>
+<a id="more"></a>
+
+<p>Lo primero que haremos será instalar nuestro dispositivo SDR, si todavía no lo hemos hecho, siguiendo los pasos descritos en <a href="https://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
+<h3 id="Instalacion-de-dump1090"><a href="#Instalacion-de-dump1090" class="headerlink" title="Instalación de dump1090"></a>Instalación de dump1090</h3><p>Vamos a instalar la versión de <em>dump1090</em> mantenida por FlightAware, ya que está actualizada y nos instala y levanta un servidor web en el que podemos ver las aeronaves sobre el mapa sin muchas complicaciones.</p>
+<p>El primer paso es instalar el repositorio de FlightAware en nuestra Raspberry Pi dependiendo de la versión de Raspbian que tengamos. También podemos generar paquetes para otras distribuciones siguiendo los pasos descritos <a href="https://github.com/flightaware/dump1090" target="_blank" rel="noopener">aquí</a>.</p>
+<p>Si no conocemos la versión de Raspbian, podemos consultarla ejecutando:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;os-release | grep VERSION_CODENAME</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Repositorio para <strong>Raspbian Buster</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;flightaware.com&#x2F;adsb&#x2F;piaware&#x2F;files&#x2F;packages&#x2F;pool&#x2F;piaware&#x2F;p&#x2F;piaware-support&#x2F;piaware-repository_3.8.1_all.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_3.8.1_all.deb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Repositorio para <strong>Raspbian Stretch</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;flightaware.com&#x2F;adsb&#x2F;piaware&#x2F;files&#x2F;packages&#x2F;pool&#x2F;piaware&#x2F;p&#x2F;piaware-support&#x2F;piaware-repository_3.8.1~bpo9+1_all.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_3.8.1~bpo9+1_all.deb</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>Una vez instalado el repositorio correspondiente ejecutamos:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+
+<p>Ahora instalamos <em>dump1090</em>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y dump1090-fa</span><br></pre></td></tr></table></figure>
+
+<p>Podemos ajustar las opciones de <em>dump1090</em> en su archivo de configuración:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;dump1090-fa</span><br></pre></td></tr></table></figure>
+
+<p>Editamos la siguiente línea con la ganancia y valor de PPM. Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en <em>device-index</em>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RECEIVER_OPTIONS&#x3D;&quot;--device-index 0 --gain -10 --ppm 0&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Reiniciamos el servicio para que se apliquen los cambios.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service dump1090-fa restart</span><br></pre></td></tr></table></figure>
+
+<p>Por último, accedemos a nuestra Raspberry Pi desde cualquier navegador web:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;IP_RASPBERRY:8080&#x2F;</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/dump1090.jpg" class="" width="900" title="dump1090 FlightAware">
+
+
+<h3 id="Enviar-datos-a-FlightAware"><a href="#Enviar-datos-a-FlightAware" class="headerlink" title="Enviar datos a FlightAware"></a>Enviar datos a FlightAware</h3><p>FlightAware es una compañía con sede en Houston (TX, Estados Unidos) que ofrece servicios de software y datos para aviación. Esta compañía ofrece información de seguimiento de aeronaves de forma gratuita desde su página web y sus aplicaciones para móviles. Es actualmente la mayor plataforma de seguimiento de vuelos.</p>
+<p>Podemos reenviar los datos de seguimiento a FlightAware desde nuestra Raspberry Pi. Estos serán utilizados para el seguimiento a nivel global y a cambio recibiremos una suscripción <em><a href="https://flightaware.com/commercial/premium/" target="_blank" rel="noopener">Enterprise</a></em>.</p>
+<p>Los pasos para enviar los datos son los siguientes:</p>
+<ol>
+<li>Lo primero será registrarnos en FlightAware:</li>
+</ol>
+<p><a href="https://es.flightaware.com/account/join" target="_blank" rel="noopener"><center>https://es.flightaware.com/account/join</center></a></p>
+<ol start="2">
+<li><p>Instalamos <em>piaware</em>. Este software será el encargado de establecer la comunicación con el servidor de FlightAware para enviar los datos y recibir ajustes.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y piaware</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Podemos ajustar <em>piaware</em> para que se actualice de forma automática y para que podamos actualizarlo desde la interfaz web de FlightAware.<br>Si queremos que se actualice automático ejecutamos:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo piaware-config allow-auto-updates yes</span><br></pre></td></tr></table></figure>
+<p>Si queremos que se pueda hacer de forma manual vía web ejecutamos:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo piaware-config allow-manual-updates yes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Reiniciamos el servicio para que se apliquen los ajustes.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service piaware restart</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Accedemos a la siguiente dirección para vincular nuestra Raspberry Pi con la cuenta que acabamos de crear. Si accedemos desde la misma dirección IP que tiene la Raspberry Pi, la detectará de forma automática.</p>
+</li>
+</ol>
+<p><a href="https://flightaware.com/adsb/piaware/claim" target="_blank" rel="noopener"><center>https://flightaware.com/adsb/piaware/claim</center></a></p>
+<ol start="6">
+<li>Vamos a nuestro panel de control y abrimos las opciones de configuración.</li>
+</ol>
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/flightaware-panel.png" class="" width="900" title="FlightAware">
+
+<ol start="7">
+<li>Por último, introducimos nuestros datos de latitud, longitud y altitud para poder usar el seguimiento con MLAT y reiniciamos el servicio desde la propia web pulsando el botón <em>Send</em>.</li>
+</ol>
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/flightaware-config.jpg" class="" title="FlightAware">
+
+
+<h3 id="Enviar-datos-a-AirNav-RadarBox"><a href="#Enviar-datos-a-AirNav-RadarBox" class="headerlink" title="Enviar datos a AirNav RadarBox"></a>Enviar datos a AirNav RadarBox</h3><p>RadarBox es una compañía con sede en Tampa (FL, Estados Unidos) que ofrece servicios de información de vuelos. Podemos compartir los datos que recibimos en nuestra Raspberry Pi con RadarBox y a cambio obtendremos una suscripción <em><a href="https://www.radarbox.com/subscribe" target="_blank" rel="noopener">Business</a></em>.</p>
+<p>Las pasos que seguiremos son los siguientes:</p>
+<ol>
+<li><p>Instalamos <em>rbfeeder</em>. Será el programa que envíe los datos al servidor.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - http:&#x2F;&#x2F;apt.rb24.com&#x2F;inst_rbfeeder.sh)&quot;</span><br></pre></td></tr></table></figure>
+<p>Cuando pregunte si queremos instalar <code>dump978-rb</code> le decimos que no.</p>
+</li>
+<li><p>Instalamos el cliente de MLAT. La siguiente versión es para Raspbian. Si necesitamos paquete para otra versión, podemos generarlo siguiendo los pasos descritos <a href="https://github.com/mutability/mlat-client" target="_blank" rel="noopener">aquí</a>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;sdr-es.com&#x2F;2020&#x2F;05&#x2F;03&#x2F;seguimiento-aviones-raspberry-pi&#x2F;mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Nos registramos en RadarBox.</p>
+</li>
+</ol>
+<p><a href="https://www.radarbox.com/register" target="_blank" rel="noopener"><center>https://www.radarbox.com/register</center></a></p>
+<ol start="4">
+<li><p>Una vez registrados necesitamos vincular nuestro receptor con RadarBox. Para ello usaremos la clave que nos genera <em>rbfeeder</em> la primera vez que se conecta al servidor. Consultamos la clave con el comando:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rbfeeder --showkey --no-start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Accedemos a esta dirección, introducimos nuestra clave en <em>Sharing Key</em> y pulsamos en <strong>CLAIM!</strong>.</p>
+</li>
+</ol>
+<p><a href="https://www.radarbox.com/raspberry-pi/claim" target="_blank" rel="noopener"><center>https://www.radarbox.com/raspberry-pi/claim</center></a></p>
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/radarbox-claim.jpg" class="" width="900" title="RadarBox">
+
+
+<ol start="6">
+<li>Por último introducimos nuestras coordenadas cuando nos lo pida.</li>
+</ol>
+<h3 id="Enviar-datos-a-Flightradar24"><a href="#Enviar-datos-a-Flightradar24" class="headerlink" title="Enviar datos a Flightradar24"></a>Enviar datos a Flightradar24</h3><p>Flightradar24 es una compañía europea con sede en Estocolmo (Suecia) que ofrece servicios de información de vuelos. Compartiendo nuestros datos con Flightradar24 obtendremos una suscripción <em><a href="https://www.flightradar24.com/premium" target="_blank" rel="noopener">Business</a></em>.</p>
+<p>Lo primero sera registrarse en Flightradar24.</p>
+<p><a href="https://www.flightradar24.com/premium/signup" target="_blank" rel="noopener"><center>https://www.flightradar24.com/premium/signup</center></a></p>
+<p>Para enviar los datos debemos descargar e instalar <em>fr24feed</em>. Para ello ejecutamos el siguiente comando y seguimos los pasos del asistente de instalación.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https:&#x2F;&#x2F;repo-feed.flightradar24.com&#x2F;install_fr24_rpi.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>Introducir el correo electrónico con el que nos hemos registrado.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Step 1.1 - Enter your email address (username@domain.tld)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Si tenemos ya una clave previa la introducimos. En caso contrario lo dejamos en blanco.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Step 1.2 - If you used to feed FR24 with ADS-B data before, enter your sharing key.</span><br><span class="line">If you don&#39;t remember your sharing key, you can find it in your account on the website under &quot;My data sharing&quot;.</span><br><span class="line">https:&#x2F;&#x2F;www.flightradar24.com&#x2F;account&#x2F;data-sharing</span><br><span class="line"></span><br><span class="line">Otherwise leave this field empty and continue.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Introducimos <code>yes</code> para activar MLAT.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Step 1.3 - Would you like to participate in MLAT calculations? (yes&#x2F;no)$:yes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Introducimos nuestras coordenadas y altitud.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">IMPORTANT: For MLAT calculations the antenna&#39;s location should be entered very precise!</span><br><span class="line"></span><br><span class="line">Step 3.A - Enter antenna&#39;s latitude (DD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.B - Enter antenna&#39;s longitude (DDD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.C - Enter antenna&#39;s altitude above the sea level (in feet)</span><br><span class="line"></span><br><span class="line">Using latitude: 37.XXXX, longitude: -3.XXXX, altitude: 720ft above sea level</span><br><span class="line"></span><br><span class="line">Validating email&#x2F;location information...OK</span><br><span class="line"></span><br><span class="line">The closest airport found is ICAO:LEGR IATA:GRX near Granada.</span><br><span class="line"></span><br><span class="line">Latitude: 37.188728</span><br><span class="line">Longitude: -3.777350</span><br><span class="line">Country: Spain</span><br><span class="line"></span><br><span class="line">Flightradar24 may, if needed, use your email address to contact you regarding your data feed.</span><br><span class="line"></span><br><span class="line">Would you like to continue using these settings?</span><br><span class="line"></span><br><span class="line">Enter your choice (yes&#x2F;no)$:yes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Introducimos <code>yes</code> para que usar la configuración automática y que utilice la instancia de <em>dump1090</em> que ya tenemos instalada.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">We have detected that you already have a dump1090 instance running. We can therefore automatically configure the FR24 feeder to use existing receiver configuration, or you can manually configure all the parameters.</span><br><span class="line"></span><br><span class="line">Would you like to use autoconfig (*yes*&#x2F;no)$:yes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Activamos el log si queremos. No es necesario.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Step 6 - Please select desired logfile mode:</span><br><span class="line"> 0 -  Disabled</span><br><span class="line"> 1 -  48 hour, 24h rotation</span><br><span class="line"> 2 -  72 hour, 24h rotation</span><br><span class="line">Select logfile mode (0-2)$:0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Por último, reiniciamos el servicio.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart fr24feed</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    <div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/RTL-SDR/" rel="tag"><i class="fa fa-tag"></i> RTL-SDR</a>
+              <a href="/tags/Raspberry-Pi/" rel="tag"><i class="fa fa-tag"></i> Raspberry Pi</a>
+              <a href="/tags/ADS-B/" rel="tag"><i class="fa fa-tag"></i> ADS-B</a>
+              <a href="/tags/dump1090/" rel="tag"><i class="fa fa-tag"></i> dump1090</a>
+          </div>
+          
+
+<div>
+<ul class="post-copyright">
+  <!--
+  <li class="post-copyright-author">
+    <strong>Autor de la entrada:  </strong>AlbertoMN
+  </li>
+  <li class="post-copyright-link">
+    <strong>Enlace a la entrada: </strong>
+    <a href="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/" title="Recepción de mensajes ADS-B en Raspberry Pi">http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/</a>
+  </li>
+  -->
+  <li class="post-copyright-license">
+    <strong>Copyright:  </strong>Todos los artículos de este sitio están licenciados bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> a no ser que se especifique una licencia adicional.
+  </li>
+</ul>
+</div>
+
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/27/instalacion-satnogs-ansible/" rel="prev" title="Instalación de estación terrestre con SatNOGS (II)">
+      <i class="fa fa-chevron-left"></i> Instalación de estación terrestre con SatNOGS (II)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Contenidos
+        </li>
+        <li class="sidebar-nav-overview">
+          Inicio
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalacion-de-dump1090"><span class="nav-number">1.</span> <span class="nav-text">Instalación de dump1090</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enviar-datos-a-FlightAware"><span class="nav-number">2.</span> <span class="nav-text">Enviar datos a FlightAware</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enviar-datos-a-AirNav-RadarBox"><span class="nav-number">3.</span> <span class="nav-text">Enviar datos a AirNav RadarBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enviar-datos-a-Flightradar24"><span class="nav-number">4.</span> <span class="nav-text">Enviar datos a Flightradar24</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SDR en español"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">SDR en español</p>
+  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">entradas</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/sdr_es" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_es" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class=""></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SDR en español</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "topCenter";
+        pbOptions.networks = "Twitter,Facebook,Linkedin,Reddit,GoogleBookmarks";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+</body>
+</html>
