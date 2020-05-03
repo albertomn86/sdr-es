@@ -1,99 +1,243 @@
 ---
-title: seguimiento aviones raspberri pi
-date: 2020-04-20 10:56:04
-tags:
+title: Recepción de mensajes ADS-B en Raspberry Pi
+date: 2020-05-03 10:56:04
+tags: [RTL-SDR, ADS-B, Raspberry Pi, dump1090]
+author: AlbertoMN
 ---
 
-```
-sudo apt-get install build-essential librtlsdr-dev git libncurses5-dev
-```
+ADS-B (_Automatic Dependent Surveillance Broadcast_) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.
+
+En este artículo veremos como convertir una Raspberry Pi en un receptor de mensajes ADS-B y poder determinar y visualizar la posición de las aeronaves que sobrevuelan nuestra ubicación.
+
+<!-- more -->
+
+Lo primero que haremos será instalar nuestro dispositivo SDR, si todavía no lo hemos hecho, siguiendo los pasos descritos en ["Instalación de dispositivos RTL-SDR en Raspberry Pi"](https://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/).
+
+### Instalación de dump1090
+
+Vamos a instalar la versión de _dump1090_ mantenida por FlightAware, ya que está actualizada y nos instala y levanta un servidor web en el que podemos ver las aeronaves sobre el mapa sin muchas complicaciones.
+
+El primer paso es instalar el repositorio de FlightAware en nuestra Raspberry Pi dependiendo de la versión de Raspbian que tengamos. También podemos generar paquetes para otras distribuciones siguiendo los pasos descritos [aquí](https://github.com/flightaware/dump1090).
+
+Si no conocemos la versión de Raspbian, podemos consultarla ejecutando:
 
 ```
-git clone https://github.com/flightaware/dump1090.git
+cat /etc/os-release | grep VERSION_CODENAME
 ```
 
+- Repositorio para **Raspbian Buster**:
 ```
-cd dump1090
+wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_3.8.1_all.deb
+```
+```
+sudo dpkg -i piaware-repository_3.8.1_all.deb
 ```
 
+- Repositorio para **Raspbian Stretch**:
 ```
-make BLADERF=no
+wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_3.8.1~bpo9+1_all.deb
+```
+```
+sudo dpkg -i piaware-repository_3.8.1~bpo9+1_all.deb
 ```
 
+Una vez instalado el repositorio correspondiente ejecutamos:
 ```
------------------------------------------------------------------------------
-| dump1090 ModeS Receiver                                      dump1090-fa  |
-| build options: ENABLE_RTLSDR ENABLE_BLADERF                               |
------------------------------------------------------------------------------
+sudo apt update
+```
 
---device-type <type>     Select SDR type (default: rtlsdr)
+Ahora instalamos _dump1090_:
+```
+sudo apt install -y dump1090-fa
+```
 
-      rtlsdr-specific options (use with --device-type rtlsdr)
+Podemos ajustar las opciones de _dump1090_ en su archivo de configuración:
+```
+sudo nano /etc/default/dump1090-fa
+```
 
---device <index|serial>  select device by index or serial number
---enable-agc             enable digital AGC (not tuner AGC!)
---ppm <correction>       set oscillator frequency correction in PPM
---direct <0|1|2>         set direct sampling mode
+Editamos la siguiente línea con la ganancia y valor de PPM. Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en _device-index_.
 
-      ifile-specific options (use with --ifile)
+```
+RECEIVER_OPTIONS="--device-index 0 --gain -10 --ppm 0"
+```
 
---ifile <path>           read samples from given file ('-' for stdin)
---iformat <type>         set sample format (UC8, SC16, SC16Q11)
---throttle               process samples at the original capture speed
+Reiniciamos el servicio para que se apliquen los cambios.
+```
+sudo service dump1090-fa restart
+```
 
-      Common options
+Por último, accedemos a nuestra Raspberry Pi desde cualquier navegador web:
+```
+http://IP_RASPBERRY:8080/
+```
 
---gain <db>              Set gain (default: max gain. Use -10 for auto-gain)
---freq <hz>              Set frequency (default: 1090 Mhz)
---interactive            Interactive mode refreshing data on screen. Implies --throttle
---interactive-ttl <sec>  Remove from list if idle for <sec> (default: 60)
---raw                    Show only messages hex values
---net                    Enable networking
---modeac                 Enable decoding of SSR Modes 3/A & 3/C
---no-modeac-auto         Don't enable Mode A/C if requested by a Beast connection
---net-only               Enable just networking, no RTL device or file used
---net-bind-address <ip>  IP address to bind to (default: Any; Use 127.0.0.1 for private)
---net-ri-port <ports>    TCP raw input listen ports  (default: 30001)
---net-ro-port <ports>    TCP raw output listen ports (default: 30002)
---net-sbs-port <ports>   TCP BaseStation output listen ports (default: 30003)
---net-bi-port <ports>    TCP Beast input listen ports  (default: 30004,30104)
---net-bo-port <ports>    TCP Beast output listen ports (default: 30005)
---net-ro-size <size>     TCP output minimum size (default: 0)
---net-ro-interval <rate> TCP output memory flush rate in seconds (default: 0)
---net-heartbeat <rate>   TCP heartbeat rate in seconds (default: 60 sec; 0 to disable)
---net-buffer <n>         TCP buffer size 64Kb * (2^n) (default: n=0, 64Kb)
---net-verbatim           Make Beast-format output connections default to verbatim mode
-                         (forward all messages, without applying CRC corrections)
---forward-mlat           Allow forwarding of received mlat results to output ports
---lat <latitude>         Reference/receiver latitude for surface posn (opt)
---lon <longitude>        Reference/receiver longitude for surface posn (opt)
---max-range <distance>   Absolute maximum range for position decoding (in nm, default: 300)
---fix                    Enable single-bits error correction using CRC
-                         (specify twice for two-bit error correction)
---no-fix                 Disable error correction using CRC
---no-crc-check           Disable messages with broken CRC (discouraged)
---mlat                   display raw messages in Beast ascii mode
---stats                  With --ifile print stats at exit. No other output
---stats-range            Collect/show range histogram
---stats-every <seconds>  Show and reset stats every <seconds> seconds
---onlyaddr               Show only ICAO addresses (testing purposes)
---metric                 Use metric units (meters, km/h, ...)
---gnss                   Show altitudes as HAE/GNSS (with H suffix) when available
---snip <level>           Strip IQ file removing samples < level
---debug <flags>          Debug mode (verbose), see README for details
---quiet                  Disable output to stdout. Use for daemon applications
---show-only <addr>       Show only messages from the given ICAO on stdout
---write-json <dir>       Periodically write json output to <dir> (for serving by a separate webserver)
---write-json-every <t>   Write json output every t seconds (default 1)
---json-location-accuracy <n>  Accuracy of receiver location in json metadata: 0=no location, 1=approximate, 2=exact
---dcfilter               Apply a 1Hz DC filter to input data (requires more CPU)
---help                   Show this help
+{% asset_img dump1090.jpg 900 "dump1090 FlightAware" %}
 
-Debug mode flags: d = Log frames decoded with errors
-                  D = Log frames decoded with zero errors
-                  c = Log frames with bad CRC
-                  C = Log frames with good CRC
-                  p = Log frames with bad preamble
-                  n = Log network debugging info
-                  j = Log frames to frames.js, loadable by debug.html
+
+### Enviar datos a FlightAware
+
+FlightAware es una compañía con sede en Houston (TX, Estados Unidos) que ofrece servicios de software y datos para aviación. Esta compañía ofrece información de seguimiento de aeronaves de forma gratuita desde su página web y sus aplicaciones para móviles. Es actualmente la mayor plataforma de seguimiento de vuelos.
+
+Podemos reenviar los datos de seguimiento a FlightAware desde nuestra Raspberry Pi. Estos serán utilizados para el seguimiento a nivel global y a cambio recibiremos una suscripción _[Enterprise](https://flightaware.com/commercial/premium/)_.
+
+Los pasos para enviar los datos son los siguientes:
+
+1. Lo primero será registrarnos en FlightAware:
+
+[<center>https://es.flightaware.com/account/join</center>](https://es.flightaware.com/account/join)
+
+
+2. Instalamos _piaware_. Este software será el encargado de establecer la comunicación con el servidor de FlightAware para enviar los datos y recibir ajustes.
+```
+sudo apt install -y piaware
+```
+
+3. Podemos ajustar _piaware_ para que se actualice de forma automática y para que podamos actualizarlo desde la interfaz web de FlightAware.
+Si queremos que se actualice automático ejecutamos:
+```
+sudo piaware-config allow-auto-updates yes
+```
+Si queremos que se pueda hacer de forma manual vía web ejecutamos:
+```
+sudo piaware-config allow-manual-updates yes
+```
+
+4. Reiniciamos el servicio para que se apliquen los ajustes.
+```
+sudo service piaware restart
+```
+
+5. Accedemos a la siguiente dirección para vincular nuestra Raspberry Pi con la cuenta que acabamos de crear. Si accedemos desde la misma dirección IP que tiene la Raspberry Pi, la detectará de forma automática.
+
+[<center>https://flightaware.com/adsb/piaware/claim</center>](https://flightaware.com/adsb/piaware/claim)
+
+6. Vamos a nuestro panel de control y abrimos las opciones de configuración.
+
+{% asset_img flightaware-panel.png 900 "FlightAware" %}
+
+7. Por último, introducimos nuestros datos de latitud, longitud y altitud para poder usar el seguimiento con MLAT y reiniciamos el servicio desde la propia web pulsando el botón _Send_.
+
+{% asset_img flightaware-config.jpg "FlightAware" %}
+
+
+### Enviar datos a AirNav RadarBox
+
+RadarBox es una compañía con sede en Tampa (FL, Estados Unidos) que ofrece servicios de información de vuelos. Podemos compartir los datos que recibimos en nuestra Raspberry Pi con RadarBox y a cambio obtendremos una suscripción _[Business](https://www.radarbox.com/subscribe)_.
+
+Las pasos que seguiremos son los siguientes:
+
+1. Instalamos _rbfeeder_. Será el programa que envíe los datos al servidor.
+```
+sudo bash -c "$(wget -O - http://apt.rb24.com/inst_rbfeeder.sh)"
+```
+Cuando pregunte si queremos instalar `dump978-rb` le decimos que no.
+
+2. Instalamos el cliente de MLAT. La siguiente versión es para Raspbian. Si necesitamos paquete para otra versión, podemos generarlo siguiendo los pasos descritos [aquí](https://github.com/mutability/mlat-client).
+```
+wget https://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/mlat-client_0.2.11_armhf.deb
+```
+```
+sudo dpkg -i mlat-client_0.2.11_armhf.deb
+```
+
+3. Nos registramos en RadarBox.
+
+[<center>https://www.radarbox.com/register</center>](https://www.radarbox.com/register)
+
+4. Una vez registrados necesitamos vincular nuestro receptor con RadarBox. Para ello usaremos la cave que nos genera _rbfeeder_ la primera vez que se conecta al servidor. Consultamos la clave con el comando:
+```
+sudo rbfeeder --showkey --no-start
+```
+
+5. Accedemos a esta dirección, introducimos nuestra clave en _Sharing Key_ y pulsamos en **CLAIM!**.
+
+[<center>https://www.radarbox.com/raspberry-pi/claim</center>](https://www.radarbox.com/raspberry-pi/claim)
+
+{% asset_img radarbox-claim.jpg 900 "RadarBox" %}
+
+
+6. Por último introducimos nuestras coordenadas cuando nos lo pida.
+
+
+
+### Enviar datos a Flightradar24
+
+Flightradar24 es una compañía europea con sede en Estocolmo (Suecia) que ofrece servicios de información de vuelos. Compartiendo nuestros datos con Flightradar24 obtendremos una suscripción _[Business](https://www.flightradar24.com/premium)_.
+
+Lo primero sera registrarse en Flightradar24.
+
+[<center>https://www.flightradar24.com/premium/signup</center>](https://www.flightradar24.com/premium/signup)
+
+
+Para enviar los datos debemos descargar e instalar _fr24feed_. Para ello ejecutamos el siguiente comando y seguimos los pasos del asistente de instalación.
+```
+sudo bash -c "$(wget -O - https://repo-feed.flightradar24.com/install_fr24_rpi.sh)"
+```
+
+1. Introducir el correo electrónico con el que nos hemos registrado.
+```
+Step 1.1 - Enter your email address (username@domain.tld)
+```
+
+2. Si tenemos ya una clave previa la introducimos. En caso contrario lo dejamos en blanco.
+```
+Step 1.2 - If you used to feed FR24 with ADS-B data before, enter your sharing key.
+If you don't remember your sharing key, you can find it in your account on the website under "My data sharing".
+https://www.flightradar24.com/account/data-sharing
+
+Otherwise leave this field empty and continue.
+```
+
+3. Introducimos `yes` para activar MLAT.
+```
+Step 1.3 - Would you like to participate in MLAT calculations? (yes/no)$:yes
+```
+
+4. Introducimos nuestras coordenadas y altitud.
+```
+IMPORTANT: For MLAT calculations the antenna's location should be entered very precise!
+
+Step 3.A - Enter antenna's latitude (DD.DDDD)
+
+Step 3.B - Enter antenna's longitude (DDD.DDDD)
+
+Step 3.C - Enter antenna's altitude above the sea level (in feet)
+
+Using latitude: 37.XXXX, longitude: -3.XXXX, altitude: 720ft above sea level
+
+Validating email/location information...OK
+
+The closest airport found is ICAO:LEGR IATA:GRX near Granada.
+
+Latitude: 37.188728
+Longitude: -3.777350
+Country: Spain
+
+Flightradar24 may, if needed, use your email address to contact you regarding your data feed.
+
+Would you like to continue using these settings?
+
+Enter your choice (yes/no)$:yes
+```
+
+5. Introducimos `yes` para que usar la configuración automática y que utilice la instancia de _dump1090_ que ya tenemos instalada.
+```
+We have detected that you already have a dump1090 instance running. We can therefore automatically configure the FR24 feeder to use existing receiver configuration, or you can manually configure all the parameters.
+
+Would you like to use autoconfig (*yes*/no)$:yes
+```
+
+6. Activamos el log si queremos. No es necesario.
+```
+Step 6 - Please select desired logfile mode:
+ 0 -  Disabled
+ 1 -  48 hour, 24h rotation
+ 2 -  72 hour, 24h rotation
+Select logfile mode (0-2)$:0
+```
+
+7. Por último, reiniciamos el servicio.
+```
+sudo systemctl restart fr24feed
 ```
