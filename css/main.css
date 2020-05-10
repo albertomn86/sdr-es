@@ -297,7 +297,6 @@ th,
 td {
   font-weight: normal;
   padding: 8px;
-  text-align: left;
   vertical-align: middle;
 }
 th,
@@ -1223,7 +1222,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #a80344;
+  background: #0466d4;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1987,10 +1986,10 @@ pre .javascript .function {
   width: 90%;
 }
 .reward-container button {
-  background: #ff2a2a;
-  border: 0;
-  border-radius: 5px;
-  color: #fff;
+  background: transparent;
+  border: 1px solid #fc6423;
+  border-radius: 0;
+  color: #fc6423;
   cursor: pointer;
   line-height: 2;
   outline: 0;
@@ -1998,7 +1997,9 @@ pre .javascript .function {
   vertical-align: text-top;
 }
 .reward-container button:hover {
-  background: #f55;
+  background: #fc6423;
+  border: 1px solid transparent;
+  color: #fa9366;
 }
 #qr {
   padding-top: 20px;
@@ -2021,6 +2022,44 @@ pre .javascript .function {
   list-style: none;
   margin: 2em 0 0;
   padding: 0.5em 1em;
+}
+.followme {
+  align-items: center;
+  background: var(--card-bg-color);
+  border-left: 3px solid #ff2a2a;
+  color: #bbb;
+  margin: 2em 0 1em 0;
+  padding: 1em 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.followme .social-list {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.followme .social-list .social-item {
+  margin: 0.5em 2em;
+}
+@media (max-width: 991px) {
+  .followme .social-list .social-item {
+    margin: 0.5em 0.75em;
+  }
+}
+.followme .social-list .social-link {
+  border: 0;
+  display: inline-block;
+  text-align: center;
+}
+.followme .social-list .social-link .icon {
+  font-size: 1.75em;
+  height: 1.75em;
+  width: 1.75em;
+}
+.followme .social-list .social-link .label {
+  display: block;
+  font-size: 14px;
 }
 .category-all-page .category-all-title {
   text-align: center;

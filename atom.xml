@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-05-03T18:50:59.529Z</updated>
+  <updated>2020-05-10T17:13:27.466Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
+    <link href="http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/"/>
+    <id>http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</id>
+    <published>2020-05-10T12:40:22.000Z</published>
+    <updated>2020-05-10T17:13:27.466Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;En este artículo vamos a ver como instalar y configurar &lt;a href=&quot;https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CSVUserlistBrowser&lt;/a&gt; para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>Recepción de mensajes ADS-B en Raspberry Pi</title>
