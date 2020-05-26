@@ -44,7 +44,7 @@ Para iniciar el programa basta con hacer doble click en **ScytaleC.QuickUI.exe**
 
 ## Recepción y visualización de mensajes
 
-Vamos ahora a recibir mensajes desde Inmarsat. Si ya tenemos nuestra antena orientada y conectada, iniciamos SDR# y buscamos las frecuencias de SDT-C (sobre 1.539,500 MHz en Inmarsat-4A F4).
+Vamos ahora a recibir mensajes desde Inmarsat. Si ya tenemos nuestra antena orientada y conectada, iniciamos SDR# y buscamos las frecuencias de SDT-C. En Inmarsat-4A F4 las encontramos en 1.537,100 MHz para NCS y sobre 1.539,500 MHz para los canales LES TDM.
 
 Una vez las tengamos localizadas, sintonizamos una de las señales en modo **USB** y ancho de banda de **4 KHz**.
 
