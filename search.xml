@@ -77,109 +77,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
-    <url>/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</url>
-    <content><![CDATA[<p>En este artículo vamos a ver como instalar y configurar <a href="https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm" target="_blank" rel="noopener">CSVUserlistBrowser</a> para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.</p>
-<a id="more"></a>
-
-<h2 id="Instalacion-y-configuracion"><a href="#Instalacion-y-configuracion" class="headerlink" title="Instalación y configuración"></a>Instalación y configuración</h2><p>Los pasos para instalar y configurar CSVUserlistBrowser son los siguientes:</p>
-<ol>
-<li>Descargamos CSVUserlistBrowser desde el siguiente enlace:</li>
-</ol>
-<p><a href="CSVUserlistBrowser.zip"><center>https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip</center></a></p>
-<ol start="2">
-<li>Extraemos el contenido del archivo ZIP y ejecutamos <strong><em>CSVUserlistBrowser.exe</em></strong>. En la ventana que aparece marcamos el programa con el que queremos comunicarnos (en nuestro caso SDR#) y hacemos click en <strong>OK</strong>.</li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-select.png" class="" title="CSVUserlistBrowser">
-
-<ol start="3">
-<li>El programa del paso anterior nos genera un nuevo ejecutable para cada programa que hemos seleccionado. En este caso nos habrá generado el nuevo ejecutable <strong><em>SDRSHARP-CSVUserlistBrowser.exe</em></strong>.</li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-SDRSHARP.png" class="" width="900" title="CSVUserlistBrowser">
-
-<ol start="4">
-<li>Vamos ahora a introducir nuestras coordenadas para poder descargar las bases de datos de nuestra zona. Para ello hacemos click en el menú <strong>Tools</strong> y en <strong>QTH manager</strong>. En esta ventana introducimos nuestras coordenadas. Para finalizar guardamos haciendo click en <strong>Save details</strong> y cerramos en <strong>Close/Cancel</strong>.</li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-QTH-Manager.png" class="" width="700" title="CSVUserlistBrowser">
-
-<ol start="5">
-<li><p>El siguiente paso es descargar las bases de datos de frecuencias. Para ello hacemos click en el menú <strong>Web</strong> y en <strong>Downloader/Converter</strong>. En esta ventana tendremos que hacer click en los botones de <strong>Download</strong> para descargar cada una de las bases de datos.</p>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-Downloader.png" class="" title="CSVUserlistBrowser">
-<p>Una vez descargadas, hacemos click en <strong>Close</strong>.<br>Estas bases de datos se actualizan regularmente, por lo que tendremos que repetir la descarga para tener siempre los datos actualizados.<br>Las URLs de descarga también se actualizan. Podemos consultar las actuales en <a href="https://www.df8ry.de/htmlen/csvub/%F0%9F%91%B6firststeps.htm" target="_blank" rel="noopener">df8ry.de</a>.</p>
-</li>
-<li><p>El último paso es cargar las bases de datos en el programa para poder usarlas. Para cargarlas hacemos click en el menú <strong>File</strong>, <strong>Open CSV userlist</strong> y seleccionamos el archivo que queramos cargar.</p>
-</li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-cargada.png" class="" width="900" title="CSVUserlistBrowser">
-
-<ol start="7">
-<li>Para cargar otra lista, hacemos click en el menú <strong>View list</strong> y seleccionamos una posición libre. Después repetimos el paso anterior para cargar la lista. Si queremos que al iniciar el programa se nos muestra una base de datos u otra, podemos indicarlo en el menú <strong>Autoload</strong>.</li>
-</ol>
-<h2 id="Conexion-con-SDR"><a href="#Conexion-con-SDR" class="headerlink" title="Conexión con SDR#"></a>Conexión con SDR#</h2><p>SDR# se comunica con CSVUserlistBrowser mediante un <em>plugin</em>. Este plugin viene en archivo ZIP que nos descargamos en el primer paso del apartado anterior.<br>Dentro del directorio extraído encontramos el directorio <strong><em>Plugins</em></strong>, y dentro de este tendremos un directorio que contiene el archivo DLL correspondiente a la versión de SDR# que estemos usando. Es importante elegir la versión correcta para que funcione.</p>
-<p>Una vez tengamos clara la versión a instalar, procedemos a instalar el <em>plugin</em> en SDR# de la forma habitual:</p>
-<ol>
-<li><p>Copiar el archivo <strong><em>SDRSharp.DF8RYDatabridge.dll</em></strong> dentro del directorio de instalación de SDR#.</p>
-</li>
-<li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro del directorio de instalación de SDR#.</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"DF8RYDatabridge"</span> <span class="attr">value</span>=<span class="string">"SDRSharp.DF8RYDatabridge.DF8RYDatabridgePlugin,SDRSharp.DF8RYDatabridge"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp.png" class="" width="900" title="Plugin CSVUserlistBrowser">
-
-
-<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Para poder controlar las frecuencias desde CSVUserlistBrowser, tenemos que marcar <strong>Enable RX1</strong> en el plugin de SDR#. Ahora cuando seleccionemos una frecuencia haciendo doble click en CSVUserlistBrowser, se cambiará de forma automática en SDR#.</p>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp_2.png" class="" width="900" title="SDR# y CSVUserlistBrowser">
-]]></content>
-      <tags>
-        <tag>SDRSharp</tag>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de dispositivos RTL-SDR en Raspberry Pi</title>
-    <url>/2020/04/10/instalacion-rtlsdr-raspberrypi/</url>
-    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.</p>
-<a id="more"></a>
-
-<img src="/2020/04/10/instalacion-rtlsdr-raspberrypi/raspberry-pi-3.png" class="" title="Raspberry Pi 3">
-
-<p>Vamos a instalar los drivers y librerias necesarias para usar el dispositivo SDR. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install rtl-sdr librtlsdr-dev</span><br></pre></td></tr></table></figure>
-
-<p>Una vez instalado el dispositivo le daremos permisos a los usuarios no <em>root</em> para poder usar el dispositivo. Para ello seguiremos los siguientes pasos para crear una regla <em>udev</em>.</p>
-<ol>
-<li>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para obtener la lista de dispositivos USB conectados:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lsusb</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Buscamos en la lista el dispositivo SDR y nos fijamos en los identificadores de fabricante y de dispositivo. En este caso son <strong>0bda</strong> y <strong>2838</strong> respectivamente.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Bus 001 Device 004: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Ahora creamos un archivo de reglas nuevo:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;udev&#x2F;rules.d&#x2F;rtl-sdr.rules</span><br></pre></td></tr></table></figure>
-
-<p>Y añadimos la siguiente regla modificando los identificadores si fuese necesario para que correspondan con los obtenidos en el paso anterior:</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">SUBSYSTEMS==<span class="string">"usb"</span>, ATTRS&#123;idVendor&#125;==<span class="string">"0bda"</span>, ATTRS&#123;idProduct&#125;==<span class="string">"2838"</span>, MODE:=<span class="string">"0666"</span></span><br></pre></td></tr></table></figure>
-
-<p>Por último desconectamos el dispostivo SDR y lo volvemos a conectar para que se aplique la regla y ejecutamos el siguiente comando para comprobar que el dispositivo funciona correctamente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
-
-<p>Si todo está correctamente instalado veremos una salida como la siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 82020715</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Detached kernel driver</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br><span class="line">Allocating 15 zero-copy buffers</span><br><span class="line">lost at least 140 bytes</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>SDRSharp</tag>
-        <tag>RTL-SDR</tag>
-        <tag>Raspberry Pi</tag>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Elección del dispositivo SDR</title>
     <url>/2020/03/16/eleccion-sdr/</url>
     <content><![CDATA[<p>Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.<br>La finalidad este artículo es orientarnos para escoger el dispositivo que más se ajuste a nuestras necesidades y casos de uso. Para ello se han seleccionado algunos de los dispositivos más conocidos y que habitualmente se recomiendan, y se ha elaborado una breve descripción de cada uno de ellos con algunas de sus características más reseñables.</p>
@@ -458,6 +355,66 @@
       </tags>
   </entry>
   <entry>
+    <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
+    <url>/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</url>
+    <content><![CDATA[<p>En este artículo vamos a ver como instalar y configurar <a href="https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm" target="_blank" rel="noopener">CSVUserlistBrowser</a> para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.</p>
+<a id="more"></a>
+
+<h2 id="Instalacion-y-configuracion"><a href="#Instalacion-y-configuracion" class="headerlink" title="Instalación y configuración"></a>Instalación y configuración</h2><p>Los pasos para instalar y configurar CSVUserlistBrowser son los siguientes:</p>
+<ol>
+<li>Descargamos CSVUserlistBrowser desde el siguiente enlace:</li>
+</ol>
+<p><a href="https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip" target="_blank" rel="noopener"><center>https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip</center></a></p>
+<ol start="2">
+<li>Extraemos el contenido del archivo ZIP y ejecutamos <strong><em>CSVUserlistBrowser.exe</em></strong>. En la ventana que aparece marcamos el programa con el que queremos comunicarnos (en nuestro caso SDR#) y hacemos click en <strong>OK</strong>.</li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-select.png" class="" title="CSVUserlistBrowser">
+
+<ol start="3">
+<li>El programa del paso anterior nos genera un nuevo ejecutable para cada programa que hemos seleccionado. En este caso nos habrá generado el nuevo ejecutable <strong><em>SDRSHARP-CSVUserlistBrowser.exe</em></strong>.</li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-SDRSHARP.png" class="" width="900" title="CSVUserlistBrowser">
+
+<ol start="4">
+<li>Vamos ahora a introducir nuestras coordenadas para poder descargar las bases de datos de nuestra zona. Para ello hacemos click en el menú <strong>Tools</strong> y en <strong>QTH manager</strong>. En esta ventana introducimos nuestras coordenadas. Para finalizar guardamos haciendo click en <strong>Save details</strong> y cerramos en <strong>Close/Cancel</strong>.</li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-QTH-Manager.png" class="" width="700" title="CSVUserlistBrowser">
+
+<ol start="5">
+<li><p>El siguiente paso es descargar las bases de datos de frecuencias. Para ello hacemos click en el menú <strong>Web</strong> y en <strong>Downloader/Converter</strong>. En esta ventana tendremos que hacer click en los botones de <strong>Download</strong> para descargar cada una de las bases de datos.</p>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-Downloader.png" class="" title="CSVUserlistBrowser">
+<p>Una vez descargadas, hacemos click en <strong>Close</strong>.<br>Estas bases de datos se actualizan regularmente, por lo que tendremos que repetir la descarga para tener siempre los datos actualizados.<br>Las URLs de descarga también se actualizan. Podemos consultar las actuales en <a href="https://www.df8ry.de/htmlen/csvub/%F0%9F%91%B6firststeps.htm" target="_blank" rel="noopener">df8ry.de</a>.</p>
+</li>
+<li><p>El último paso es cargar las bases de datos en el programa para poder usarlas. Para cargarlas hacemos click en el menú <strong>File</strong>, <strong>Open CSV userlist</strong> y seleccionamos el archivo que queramos cargar.</p>
+</li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-cargada.png" class="" width="900" title="CSVUserlistBrowser">
+
+<ol start="7">
+<li>Para cargar otra lista, hacemos click en el menú <strong>View list</strong> y seleccionamos una posición libre. Después repetimos el paso anterior para cargar la lista. Si queremos que al iniciar el programa se nos muestra una base de datos u otra, podemos indicarlo en el menú <strong>Autoload</strong>.</li>
+</ol>
+<h2 id="Conexion-con-SDR"><a href="#Conexion-con-SDR" class="headerlink" title="Conexión con SDR#"></a>Conexión con SDR#</h2><p>SDR# se comunica con CSVUserlistBrowser mediante un <em>plugin</em>. Este plugin viene en archivo ZIP que nos descargamos en el primer paso del apartado anterior.<br>Dentro del directorio extraído encontramos el directorio <strong><em>Plugins</em></strong>, y dentro de este tendremos un directorio que contiene el archivo DLL correspondiente a la versión de SDR# que estemos usando. Es importante elegir la versión correcta para que funcione.</p>
+<p>Una vez tengamos clara la versión a instalar, procedemos a instalar el <em>plugin</em> en SDR# de la forma habitual:</p>
+<ol>
+<li><p>Copiar el archivo <strong><em>SDRSharp.DF8RYDatabridge.dll</em></strong> dentro del directorio de instalación de SDR#.</p>
+</li>
+<li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro del directorio de instalación de SDR#.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"DF8RYDatabridge"</span> <span class="attr">value</span>=<span class="string">"SDRSharp.DF8RYDatabridge.DF8RYDatabridgePlugin,SDRSharp.DF8RYDatabridge"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp.png" class="" width="900" title="Plugin CSVUserlistBrowser">
+
+
+<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Para poder controlar las frecuencias desde CSVUserlistBrowser, tenemos que marcar <strong>Enable RX1</strong> en el plugin de SDR#. Ahora cuando seleccionemos una frecuencia haciendo doble click en CSVUserlistBrowser, se cambiará de forma automática en SDR#.</p>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp_2.png" class="" width="900" title="SDR# y CSVUserlistBrowser">
+]]></content>
+      <tags>
+        <tag>SDRSharp</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Instalación de dispositivos RTL-SDR en Windows</title>
     <url>/2020/01/19/instalacion-rtlsdr-windows/</url>
     <content><![CDATA[<p>En este tutorial vamos a ver como instalar nuestro nuevo dispositivo RTL-SDR en Windows 10.</p>
@@ -556,6 +513,49 @@
         <tag>SDRSharp</tag>
         <tag>Windows</tag>
         <tag>RTL-SDR</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalación de dispositivos RTL-SDR en Raspberry Pi</title>
+    <url>/2020/04/10/instalacion-rtlsdr-raspberrypi/</url>
+    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.</p>
+<a id="more"></a>
+
+<img src="/2020/04/10/instalacion-rtlsdr-raspberrypi/raspberry-pi-3.png" class="" title="Raspberry Pi 3">
+
+<p>Vamos a instalar los drivers y librerias necesarias para usar el dispositivo SDR. Para ello ejecutamos el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install rtl-sdr librtlsdr-dev</span><br></pre></td></tr></table></figure>
+
+<p>Una vez instalado el dispositivo le daremos permisos a los usuarios no <em>root</em> para poder usar el dispositivo. Para ello seguiremos los siguientes pasos para crear una regla <em>udev</em>.</p>
+<ol>
+<li>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para obtener la lista de dispositivos USB conectados:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lsusb</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Buscamos en la lista el dispositivo SDR y nos fijamos en los identificadores de fabricante y de dispositivo. En este caso son <strong>0bda</strong> y <strong>2838</strong> respectivamente.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Bus 001 Device 004: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Ahora creamos un archivo de reglas nuevo:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;udev&#x2F;rules.d&#x2F;rtl-sdr.rules</span><br></pre></td></tr></table></figure>
+
+<p>Y añadimos la siguiente regla modificando los identificadores si fuese necesario para que correspondan con los obtenidos en el paso anterior:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">SUBSYSTEMS==<span class="string">"usb"</span>, ATTRS&#123;idVendor&#125;==<span class="string">"0bda"</span>, ATTRS&#123;idProduct&#125;==<span class="string">"2838"</span>, MODE:=<span class="string">"0666"</span></span><br></pre></td></tr></table></figure>
+
+<p>Por último desconectamos el dispostivo SDR y lo volvemos a conectar para que se aplique la regla y ejecutamos el siguiente comando para comprobar que el dispositivo funciona correctamente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
+
+<p>Si todo está correctamente instalado veremos una salida como la siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 82020715</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Detached kernel driver</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br><span class="line">Allocating 15 zero-copy buffers</span><br><span class="line">lost at least 140 bytes</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>SDRSharp</tag>
+        <tag>RTL-SDR</tag>
+        <tag>Raspberry Pi</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -658,68 +658,6 @@
         <tag>Raspberry Pi</tag>
         <tag>Linux</tag>
         <tag>SatNOGS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de SPY Server en Raspberry Pi</title>
-    <url>/2020/04/11/instalacion-spyserver-raspberrypi/</url>
-    <content><![CDATA[<p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos como instalar SPY Server en una Raspberry Pi.</p>
-<a id="more"></a>
-
-<p>Para usar SPY Server en nuestra Raspberry Pi <strong>necesitamos en primer lugar tener instalado el dispositivo SDR</strong>. Si nuestro dispositivo es un RTL-SDR debemos seguir los pasos descritos en el artículo <a href="https://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
-<h2 id="Instalar-SPY-Server"><a href="#Instalar-SPY-Server" class="headerlink" title="Instalar SPY Server"></a>Instalar SPY Server</h2><p>SPY Server está disponible ya compilado para procesadores ARM de 32 bits, por lo que bastaría con descargarlo a nuestra Raspberry Pi para que funcione.</p>
-<p>Lo primero que haremos será crear un directorio nuevo para los archivos de SPY Server:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir SPY_Server &amp;&amp; cd $_</span><br></pre></td></tr></table></figure>
-
-<p>Descargamos SPY Server usando el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;airspy.com&#x2F;downloads&#x2F;spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
-
-<p>Extraemos el contenido:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar -xzf spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
-
-<p>SPY Server funciona correctamente con los valores por defecto. También detecta el dispositivo SDR de forma automática y selecciona el primero disponible. Si necesitamos realizar algún ajuste debemos editar el archivo <strong>spyserver.config</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano spyserver.config</span><br></pre></td></tr></table></figure>
-
-<p>Por último ejecutamos SPY Server:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;spyserver spyserver.config</span><br></pre></td></tr></table></figure>
-
-<p>Si todo ha ido bien, nos mostrará una salida como la siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SPY Server v2.0.1700</span><br><span class="line">Copyright (C) 2016-2018 Youssef Touil - https:&#x2F;&#x2F;airspy.com</span><br><span class="line">Reading the configuration file: spyserver.config</span><br><span class="line">Listening for connections on 0.0.0.0:5555</span><br></pre></td></tr></table></figure>
-
-
-<p>Necesitamos que SPY Server funcione de forma autónoma en la Raspberry Pi y que se inicie de forma automática cuando esta se reinicie. Para ello vamos a lanzar SPY Server como un servicio.</p>
-<p>Lo primero será crear un archivo <em>unit</em> con la información del servicio:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service</span><br></pre></td></tr></table></figure>
-
-<p>El contenido del archivo será el siguiente (modificar las rutas si es necesario):</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;SPY Server</span><br><span class="line">After&#x3D;network.target</span><br><span class="line">StartLimitIntervalSec&#x3D;0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">Restart&#x3D;always</span><br><span class="line">RestartSec&#x3D;1</span><br><span class="line">User&#x3D;pi</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server</span><br><span class="line">ExecStart&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver spyserver.config</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
-
-<p>Ahora vamos a cargar el servicio en el arranque mediante el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable spyserver</span><br></pre></td></tr></table></figure>
-
-<p>Por último iniciamos el servicio:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start spyserver</span><br></pre></td></tr></table></figure>
-
-<p>Para consultar el estado del servicio ejecutamos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl status spyserver</span><br></pre></td></tr></table></figure>
-
-<p>Si todo está correcto tendremos la siguiente salida:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● spyserver.service - SPY Server</span><br><span class="line">   Loaded: loaded (&#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Fri 2020-04-10 21:45:26 CEST; 13s ago</span><br><span class="line"> Main PID: 20788 (spyserver)</span><br><span class="line">    Tasks: 2 (limit: 2200)</span><br><span class="line">   Memory: 252.0K</span><br><span class="line">   CGroup: &#x2F;system.slice&#x2F;spyserver.service</span><br><span class="line">           └─20788 &#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver</span><br><span class="line"></span><br><span class="line">Apr 10 21:45:26 raspberrypi systemd[1]: Started SPY Server.</span><br></pre></td></tr></table></figure>
-
-<h2 id="Conectar-SDR-a-SPY-Server"><a href="#Conectar-SDR-a-SPY-Server" class="headerlink" title="Conectar SDR# a SPY Server"></a>Conectar SDR# a SPY Server</h2><p>El último paso será conectarnos a nuestro servidor desde SDR#. Para ello seleccionamos <strong>SPY Server Network</strong> en el desplegable de seleción de fuentes e introducimos la dirección IP del servidor de la siguiente forma:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdr:&#x2F;&#x2F;IP_RASPBERRY:5555</span><br></pre></td></tr></table></figure>
-<br>
-<img src="/2020/04/11/instalacion-spyserver-raspberrypi/conectar.png" class="" title="Conexión">
-
-<p>Por último hacemos click en la <strong>C</strong> para conectarnos.</p>
-<img src="/2020/04/11/instalacion-spyserver-raspberrypi/sdr_sharp.png" class="" width="900" title="SDR#">
-]]></content>
-      <tags>
-        <tag>SDRSharp</tag>
-        <tag>RTL-SDR</tag>
-        <tag>Raspberry Pi</tag>
-        <tag>Linux</tag>
-        <tag>SPY Server</tag>
       </tags>
   </entry>
   <entry>
@@ -942,30 +880,65 @@
       </tags>
   </entry>
   <entry>
-    <title>Instalación de cable de audio virtual</title>
-    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
-    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde SDR# a cualquier programa externo.<br>Para ello vamos a utilizar un software que nos va a permitir pasar el audio desde la salida de SDR# a la entrada de otro programa.</p>
+    <title>Instalación de SPY Server en Raspberry Pi</title>
+    <url>/2020/04/11/instalacion-spyserver-raspberrypi/</url>
+    <content><![CDATA[<p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos como instalar SPY Server en una Raspberry Pi.</p>
 <a id="more"></a>
 
-<h2 id="Instalacion-de-VB-Cable"><a href="#Instalacion-de-VB-Cable" class="headerlink" title="Instalación de VB-Cable"></a>Instalación de VB-Cable</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
-<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/" target="_blank" rel="noopener"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-audio-web.jpg" class="" title="Descarga de VB-Cable">
+<p>Para usar SPY Server en nuestra Raspberry Pi <strong>necesitamos en primer lugar tener instalado el dispositivo SDR</strong>. Si nuestro dispositivo es un RTL-SDR debemos seguir los pasos descritos en el artículo <a href="https://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
+<h2 id="Instalar-SPY-Server"><a href="#Instalar-SPY-Server" class="headerlink" title="Instalar SPY Server"></a>Instalar SPY Server</h2><p>SPY Server está disponible ya compilado para procesadores ARM de 32 bits, por lo que bastaría con descargarlo a nuestra Raspberry Pi para que funcione.</p>
+<p>Lo primero que haremos será crear un directorio nuevo para los archivos de SPY Server:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir SPY_Server &amp;&amp; cd $_</span><br></pre></td></tr></table></figure>
 
-<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
-<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
+<p>Descargamos SPY Server usando el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;airspy.com&#x2F;downloads&#x2F;spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
 
-<p>Hacemos click en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
-<h2 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h2><p>Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" title="SDRSharp output">
+<p>Extraemos el contenido:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar -xzf spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
 
-<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+<p>SPY Server funciona correctamente con los valores por defecto. También detecta el dispositivo SDR de forma automática y selecciona el primero disponible. Si necesitamos realizar algún ajuste debemos editar el archivo <strong>spyserver.config</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano spyserver.config</span><br></pre></td></tr></table></figure>
+
+<p>Por último ejecutamos SPY Server:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;spyserver spyserver.config</span><br></pre></td></tr></table></figure>
+
+<p>Si todo ha ido bien, nos mostrará una salida como la siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SPY Server v2.0.1700</span><br><span class="line">Copyright (C) 2016-2018 Youssef Touil - https:&#x2F;&#x2F;airspy.com</span><br><span class="line">Reading the configuration file: spyserver.config</span><br><span class="line">Listening for connections on 0.0.0.0:5555</span><br></pre></td></tr></table></figure>
+
+
+<p>Necesitamos que SPY Server funcione de forma autónoma en la Raspberry Pi y que se inicie de forma automática cuando esta se reinicie. Para ello vamos a lanzar SPY Server como un servicio.</p>
+<p>Lo primero será crear un archivo <em>unit</em> con la información del servicio:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service</span><br></pre></td></tr></table></figure>
+
+<p>El contenido del archivo será el siguiente (modificar las rutas si es necesario):</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;SPY Server</span><br><span class="line">After&#x3D;network.target</span><br><span class="line">StartLimitIntervalSec&#x3D;0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">Restart&#x3D;always</span><br><span class="line">RestartSec&#x3D;1</span><br><span class="line">User&#x3D;pi</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server</span><br><span class="line">ExecStart&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver spyserver.config</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>Ahora vamos a cargar el servicio en el arranque mediante el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable spyserver</span><br></pre></td></tr></table></figure>
+
+<p>Por último iniciamos el servicio:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start spyserver</span><br></pre></td></tr></table></figure>
+
+<p>Para consultar el estado del servicio ejecutamos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl status spyserver</span><br></pre></td></tr></table></figure>
+
+<p>Si todo está correcto tendremos la siguiente salida:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● spyserver.service - SPY Server</span><br><span class="line">   Loaded: loaded (&#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Fri 2020-04-10 21:45:26 CEST; 13s ago</span><br><span class="line"> Main PID: 20788 (spyserver)</span><br><span class="line">    Tasks: 2 (limit: 2200)</span><br><span class="line">   Memory: 252.0K</span><br><span class="line">   CGroup: &#x2F;system.slice&#x2F;spyserver.service</span><br><span class="line">           └─20788 &#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver</span><br><span class="line"></span><br><span class="line">Apr 10 21:45:26 raspberrypi systemd[1]: Started SPY Server.</span><br></pre></td></tr></table></figure>
+
+<h2 id="Conectar-SDR-a-SPY-Server"><a href="#Conectar-SDR-a-SPY-Server" class="headerlink" title="Conectar SDR# a SPY Server"></a>Conectar SDR# a SPY Server</h2><p>El último paso será conectarnos a nuestro servidor desde SDR#. Para ello seleccionamos <strong>SPY Server Network</strong> en el desplegable de seleción de fuentes e introducimos la dirección IP del servidor de la siguiente forma:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdr:&#x2F;&#x2F;IP_RASPBERRY:5555</span><br></pre></td></tr></table></figure>
+<br>
+<img src="/2020/04/11/instalacion-spyserver-raspberrypi/conectar.png" class="" title="Conexión">
+
+<p>Por último hacemos click en la <strong>C</strong> para conectarnos.</p>
+<img src="/2020/04/11/instalacion-spyserver-raspberrypi/sdr_sharp.png" class="" width="900" title="SDR#">
 ]]></content>
       <tags>
         <tag>SDRSharp</tag>
-        <tag>Windows</tag>
-        <tag>Virtual Audio Cable</tag>
+        <tag>RTL-SDR</tag>
+        <tag>Raspberry Pi</tag>
+        <tag>Linux</tag>
+        <tag>SPY Server</tag>
       </tags>
   </entry>
   <entry>
@@ -1032,6 +1005,33 @@
         <tag>Windows</tag>
         <tag>Inmarsat</tag>
         <tag>L-Band</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalación de cable de audio virtual</title>
+    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
+    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde SDR# a cualquier programa externo.<br>Para ello vamos a utilizar un software que nos va a permitir pasar el audio desde la salida de SDR# a la entrada de otro programa.</p>
+<a id="more"></a>
+
+<h2 id="Instalacion-de-VB-Cable"><a href="#Instalacion-de-VB-Cable" class="headerlink" title="Instalación de VB-Cable"></a>Instalación de VB-Cable</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
+<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/" target="_blank" rel="noopener"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-audio-web.jpg" class="" title="Descarga de VB-Cable">
+
+<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
+<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
+
+<p>Hacemos click en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
+<h2 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h2><p>Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" title="SDRSharp output">
+
+<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+]]></content>
+      <tags>
+        <tag>SDRSharp</tag>
+        <tag>Windows</tag>
+        <tag>Virtual Audio Cable</tag>
       </tags>
   </entry>
   <entry>
@@ -1209,74 +1209,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción del satélite NAYIF-1</title>
-    <url>/2020/02/26/recepcion-nayif1/</url>
-    <content><![CDATA[<p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.</p>
-<a id="more"></a>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>NAYIF-1 (EO-88)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>EIAST y AUS</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>42017</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2017-008BX</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (1.32 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>15 de Febrero de 2017</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145.940 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://www.mbrsc.ae/satellite-programme/nayif-1" target="_blank" rel="noopener">https://www.mbrsc.ae/satellite-programme/nayif-1</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/2020/02/26/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
-
-
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="https://sdr-es.com/2020/02/22/recepcion-funcube1/">FUNcube-1</a> y <a href="https://sdr-es.com/2020/02/25/recepcion-jy1sat/">JY1-SAT</a>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi" target="_blank" rel="noopener"><center>Nayif-1 Dashboard v1040</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos click en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/2020/02/26/recepcion-nayif1/config.png" class="" title="NAYIF-1 Dashboard Configuración">
-
-<p>Hacemos click en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos click en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/2020/02/26/recepcion-nayif1/telem.png" class="" title="NAYIF-1 Dashboard Telemetría">
-
-<p><em>Mensajes:</em></p>
-<img src="/2020/02/26/recepcion-nayif1/messages.png" class="" title="NAYIF-1 Dashboard Mensajes">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>SDRSharp</tag>
-        <tag>Windows</tag>
-        <tag>Cubesat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción del satélite JY1-SAT</title>
     <url>/2020/02/25/recepcion-jy1sat/</url>
     <content><![CDATA[<p>El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan’s Crown Prince Foundation.<br>JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-6. Además de las funciones habituales de FUNcube, el satélite envía imágenes en formato SSDV.<br>En este artículo veremos como recibir la telemetría y las imágenes.</p>
@@ -1351,6 +1283,213 @@
         <tag>SDRSharp</tag>
         <tag>Windows</tag>
         <tag>Cubesat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción del satélite NAYIF-1</title>
+    <url>/2020/02/26/recepcion-nayif1/</url>
+    <content><![CDATA[<p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.</p>
+<a id="more"></a>
+
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>NAYIF-1 (EO-88)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>EIAST y AUS</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>42017</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2017-008BX</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (1.32 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>15 de Febrero de 2017</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>145.940 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://www.mbrsc.ae/satellite-programme/nayif-1" target="_blank" rel="noopener">https://www.mbrsc.ae/satellite-programme/nayif-1</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/2020/02/26/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
+
+
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="https://sdr-es.com/2020/02/22/recepcion-funcube1/">FUNcube-1</a> y <a href="https://sdr-es.com/2020/02/25/recepcion-jy1sat/">JY1-SAT</a>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi" target="_blank" rel="noopener"><center>Nayif-1 Dashboard v1040</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos click en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/2020/02/26/recepcion-nayif1/config.png" class="" title="NAYIF-1 Dashboard Configuración">
+
+<p>Hacemos click en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos click en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/2020/02/26/recepcion-nayif1/telem.png" class="" title="NAYIF-1 Dashboard Telemetría">
+
+<p><em>Mensajes:</em></p>
+<img src="/2020/02/26/recepcion-nayif1/messages.png" class="" title="NAYIF-1 Dashboard Mensajes">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>SDRSharp</tag>
+        <tag>Windows</tag>
+        <tag>Cubesat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de satélites meteorológicos NOAA</title>
+    <url>/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</url>
+    <content><![CDATA[<p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
+<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato <a href="https://en.wikipedia.org/wiki/Automatic_picture_transmission" target="_blank" rel="noopener">APT</a>.</p>
+<a id="more"></a>
+
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/apt.jpg" class="" width="500" title="Imagen APT de satélite NOAA">
+
+
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Actualmente podemos recibir imágenes APT desde los siguientes satélites meteorológicos NOAA.</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>NOAA 15</th>
+<th>NOAA 18</th>
+<th>NOAA 19</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>NORAD ID</strong></td>
+<td>25338</td>
+<td>28654</td>
+<td>33591</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>1998-030A</td>
+<td>2005-018A</td>
+<td>2009-005A</td>
+</tr>
+<tr>
+<td><strong>Masa de lanzamiento</strong></td>
+<td>1.457 Kg</td>
+<td>1.457 Kg</td>
+<td>1.440 Kg</td>
+</tr>
+<tr>
+<td><strong>Fecha de lanzamiento</strong></td>
+<td>13 de Mayo de 1998</td>
+<td>20 de Mayo de 2005</td>
+<td>6 de Febrero de 2009</td>
+</tr>
+<tr>
+<td><strong>Señal APT</strong></td>
+<td>137,620 MHz</td>
+<td>137,9125 MHz</td>
+<td>137,100 MHz</td>
+</tr>
+</tbody></table>
+<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://wxtoimgrestored.xyz/" target="_blank" rel="noopener"><center>https://wxtoimgrestored.xyz/</center></a></p>
+<p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
+<ol>
+<li>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Ground Station Location…&quot;</strong></em>. En esta ventana introducimos nuestras coordenadas y altitud.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
+
+<ol start="2">
+<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ellos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Recording Options&quot;</strong></em>. Aquí seleccionamos nuestro cable de audio virtual.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
+
+<ol start="3">
+<li>Marcamos la opción de resincronizado en <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Resync&quot;</strong></em>.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
+
+<ol start="4">
+<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Auto Processing Options…&quot;</strong></em> y marcamos <em><strong>&quot;Create image(s)&quot;</strong></em>. Después hacemos click en <em><strong>&quot;Image Settings…&quot;</strong></em> y elegimos las imágenes que queramos.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
+
+<ol start="5">
+<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <em><strong>&quot;File&quot;</strong></em> y hacemos click en <em><strong>&quot;Update Keplers&quot;</strong></em>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
+
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p>Para recibir el pase tenemos que sacar el audio de SDR# mediante el cable de audio virtual y tener WXtoImg abierto. Una vez el satélite comience a verse sobre el horizonte, SDR# iniciará el seguimiento y WXtoImg comenzará a recibir y procesar la señal.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/sdr_sharp.jpg" class="" title="SDR#">
+
+<p>Es importante asegurarse que el volumen de la salida de SDR# sea el adecuado. Podemos ver el nivel que llega a WXtoImg en la esquina inferior derecha. Para que la imagen se genere correctamente, el indicador de nivel de volumen debe mantenerse en color verde durante todo el pase.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recibiendo.jpg" class="" title="WXtoImg">
+
+<p>Al finalizar el pase WXtoImg dejara de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" title="WXtoImg">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>SDRSharp</tag>
+        <tag>Windows</tag>
+        <tag>Satélites meteorológicos</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de mensajes Inmarsat STD-C</title>
+    <url>/2020/03/09/recepcion-std-c-inmarsat/</url>
+    <content><![CDATA[<p>En el artículo <a href="https://sdr-es.com/2020/03/06/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
+<a id="more"></a>
+
+<p>Lo primero será descargar los binarios desde el repositorio de Scytale-C desde el siguiente link:</p>
+<p><a href="https://bitbucket.org/scytalec/scytalec/downloads/" target="_blank" rel="noopener"><center>https://bitbucket.org/scytalec/scytalec/downloads/</center></a></p>
+<p>Necesitamos descargar el plugin para SDR# (<strong>x64-SDRSharp.ScytaleC-10213.zip</strong>) y la interfaz de usuario (<strong>x64-ScytaleC.QuickUI-17010.zip</strong>).</p>
+<h2 id="Instalacion-del-plugin-en-SDR"><a href="#Instalacion-del-plugin-en-SDR" class="headerlink" title="Instalación del plugin en SDR#"></a>Instalación del plugin en SDR#</h2><p>El siguiente paso es instalar el plugin en SDR#. Para ello basta con extraer el contenido del archivo <strong>x64-SDRSharp.ScytaleC-10213.zip</strong> dentro del directorio de instalación de SDR#. Los dos archivos de texto no son necesarios.</p>
+<p>Una vez extraído el contenido, insertamos la siguiente línea de texto dentro del archivo <em><strong>Plugins.xml</strong></em>, que encontraremos dentro de la carpeta de instalación de SDR#.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;add key&#x3D;&quot;ScytaleC&quot; value&#x3D;&quot;SDRSharp.ScytaleC.ScytaleCPlugin,SDRSharp.ScytaleC&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+</br>
+
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_magicline.jpg" class="" title="Magicline de Scytale-C">
+
+<p>Ahora reiniciamos SDR# y tendremos el plugin instalado.</p>
+<h2 id="Instalacion-de-la-interfaz-de-usuario-de-Scytale-C"><a href="#Instalacion-de-la-interfaz-de-usuario-de-Scytale-C" class="headerlink" title="Instalación de la interfaz de usuario de Scytale-C"></a>Instalación de la interfaz de usuario de Scytale-C</h2><p>Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente extraemos el contenido del archivo <strong>x64-ScytaleC.QuickUI-17010.zip</strong> que hemos descargado anteriormente en el directorio deseado. Por ejemplo en <em>C:/SDR/ScytaleC</em>.</p>
+<p>Para iniciar el programa basta con hacer doble click en <strong>ScytaleC.QuickUI.exe</strong>. Al iniciar el programa se muestra un mensaje sobre la confidencialidad que debemos leer detenidamente.</p>
+<p><strong>Algunos mensajes que se reciben con Scytale-C van a un destinatario en concreto y pueden contener información sensible. Si no somos los destinatarios de dichos mensajes, debemos proceder a la eliminación de los mismos y no reenviarlos ni publicarlos bajo ningún concepto.</strong></p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_ui.jpg" class="" title="UI Scytale-C">
+
+<h2 id="Recepcion-y-visualizacion-de-mensajes"><a href="#Recepcion-y-visualizacion-de-mensajes" class="headerlink" title="Recepción y visualización de mensajes"></a>Recepción y visualización de mensajes</h2><p>Vamos ahora a recibir mensajes desde Inmarsat. Si ya tenemos nuestra antena orientada y conectada, iniciamos SDR# y buscamos las frecuencias de SDT-C. En Inmarsat-4A F4 las encontramos en 1.537,100 MHz para NCS y sobre 1.539,500 MHz para los canales LES TDM.</p>
+<p>Una vez las tengamos localizadas, sintonizamos una de las señales en modo <strong>USB</strong> y ancho de banda de <strong>4 KHz</strong>.</p>
+<p>Iniciamos a continuación el plugin marcando la casilla <em><strong>“Enabled”</strong></em>. También marcamos <em><strong>“Auto Tracking”</strong></em> para que ajuste la señal de forma automática.</p>
+<p>Si la señal es buena, veremos que aparece <em><strong>“Locked”</strong></em> en el plugin.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/sdrsharp.jpg" class="" title="Plugin Scytale-C">
+
+<p>Con SDR# ya recibiendo la señal correctamente pasamos a la interfaz de usuario de Scytale-C. El plugin y esta interfaz se comunican por UDP de forma local y vienen configurados con el puerto 15003 por defecto.</p>
+<p>Para que nos lleguen los mensajes bastaría con hacer click en el botón de Play/Stop. Si todo ha ido bien, comenzaremos a recibirlos.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_messages.jpg" class="" title="Scytale-C Mensajes">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>SDRSharp</tag>
+        <tag>Windows</tag>
+        <tag>Inmarsat</tag>
+        <tag>L-Band</tag>
       </tags>
   </entry>
   <entry>
@@ -1479,181 +1618,6 @@
         <tag>SDRSharp</tag>
         <tag>Windows</tag>
         <tag>Satélites meteorológicos</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de satélites meteorológicos NOAA</title>
-    <url>/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</url>
-    <content><![CDATA[<p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
-<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato <a href="https://en.wikipedia.org/wiki/Automatic_picture_transmission" target="_blank" rel="noopener">APT</a>.</p>
-<a id="more"></a>
-
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/apt.jpg" class="" width="500" title="Imagen APT de satélite NOAA">
-
-
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Actualmente podemos recibir imágenes APT desde los siguientes satélites meteorológicos NOAA.</p>
-<table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>NOAA 15</th>
-<th>NOAA 18</th>
-<th>NOAA 19</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>NORAD ID</strong></td>
-<td>25338</td>
-<td>28654</td>
-<td>33591</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>1998-030A</td>
-<td>2005-018A</td>
-<td>2009-005A</td>
-</tr>
-<tr>
-<td><strong>Masa de lanzamiento</strong></td>
-<td>1.457 Kg</td>
-<td>1.457 Kg</td>
-<td>1.440 Kg</td>
-</tr>
-<tr>
-<td><strong>Fecha de lanzamiento</strong></td>
-<td>13 de Mayo de 1998</td>
-<td>20 de Mayo de 2005</td>
-<td>6 de Febrero de 2009</td>
-</tr>
-<tr>
-<td><strong>Señal APT</strong></td>
-<td>137,620 MHz</td>
-<td>137,9125 MHz</td>
-<td>137,100 MHz</td>
-</tr>
-</tbody></table>
-<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://wxtoimgrestored.xyz/" target="_blank" rel="noopener"><center>https://wxtoimgrestored.xyz/</center></a></p>
-<p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
-<ol>
-<li>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Ground Station Location…&quot;</strong></em>. En esta ventana introducimos nuestras coordenadas y altitud.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
-
-<ol start="2">
-<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ellos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Recording Options&quot;</strong></em>. Aquí seleccionamos nuestro cable de audio virtual.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
-
-<ol start="3">
-<li>Marcamos la opción de resincronizado en <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Resync&quot;</strong></em>.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
-
-<ol start="4">
-<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Auto Processing Options…&quot;</strong></em> y marcamos <em><strong>&quot;Create image(s)&quot;</strong></em>. Después hacemos click en <em><strong>&quot;Image Settings…&quot;</strong></em> y elegimos las imágenes que queramos.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
-
-<ol start="5">
-<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <em><strong>&quot;File&quot;</strong></em> y hacemos click en <em><strong>&quot;Update Keplers&quot;</strong></em>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
-
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
-<p>Para recibir el pase tenemos que sacar el audio de SDR# mediante el cable de audio virtual y tener WXtoImg abierto. Una vez el satélite comience a verse sobre el horizonte, SDR# iniciará el seguimiento y WXtoImg comenzará a recibir y procesar la señal.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/sdr_sharp.jpg" class="" title="SDR#">
-
-<p>Es importante asegurarse que el volumen de la salida de SDR# sea el adecuado. Podemos ver el nivel que llega a WXtoImg en la esquina inferior derecha. Para que la imagen se genere correctamente, el indicador de nivel de volumen debe mantenerse en color verde durante todo el pase.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recibiendo.jpg" class="" title="WXtoImg">
-
-<p>Al finalizar el pase WXtoImg dejara de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" title="WXtoImg">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>SDRSharp</tag>
-        <tag>Windows</tag>
-        <tag>Satélites meteorológicos</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de mensajes Inmarsat STD-C</title>
-    <url>/2020/03/09/recepcion-std-c-inmarsat/</url>
-    <content><![CDATA[<p>En el artículo <a href="https://sdr-es.com/2020/03/06/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
-<a id="more"></a>
-
-<p>Lo primero será descargar los binarios desde el repositorio de Scytale-C desde el siguiente link:</p>
-<p><a href="https://bitbucket.org/scytalec/scytalec/downloads/" target="_blank" rel="noopener"><center>https://bitbucket.org/scytalec/scytalec/downloads/</center></a></p>
-<p>Necesitamos descargar el plugin para SDR# (<strong>x64-SDRSharp.ScytaleC-10213.zip</strong>) y la interfaz de usuario (<strong>x64-ScytaleC.QuickUI-17010.zip</strong>).</p>
-<h2 id="Instalacion-del-plugin-en-SDR"><a href="#Instalacion-del-plugin-en-SDR" class="headerlink" title="Instalación del plugin en SDR#"></a>Instalación del plugin en SDR#</h2><p>El siguiente paso es instalar el plugin en SDR#. Para ello basta con extraer el contenido del archivo <strong>x64-SDRSharp.ScytaleC-10213.zip</strong> dentro del directorio de instalación de SDR#. Los dos archivos de texto no son necesarios.</p>
-<p>Una vez extraído el contenido, insertamos la siguiente línea de texto dentro del archivo <em><strong>Plugins.xml</strong></em>, que encontraremos dentro de la carpeta de instalación de SDR#.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;add key&#x3D;&quot;ScytaleC&quot; value&#x3D;&quot;SDRSharp.ScytaleC.ScytaleCPlugin,SDRSharp.ScytaleC&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
-</br>
-
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_magicline.jpg" class="" title="Magicline de Scytale-C">
-
-<p>Ahora reiniciamos SDR# y tendremos el plugin instalado.</p>
-<h2 id="Instalacion-de-la-interfaz-de-usuario-de-Scytale-C"><a href="#Instalacion-de-la-interfaz-de-usuario-de-Scytale-C" class="headerlink" title="Instalación de la interfaz de usuario de Scytale-C"></a>Instalación de la interfaz de usuario de Scytale-C</h2><p>Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente extraemos el contenido del archivo <strong>x64-ScytaleC.QuickUI-17010.zip</strong> que hemos descargado anteriormente en el directorio deseado. Por ejemplo en <em>C:/SDR/ScytaleC</em>.</p>
-<p>Para iniciar el programa basta con hacer doble click en <strong>ScytaleC.QuickUI.exe</strong>. Al iniciar el programa se muestra un mensaje sobre la confidencialidad que debemos leer detenidamente.</p>
-<p><strong>Algunos mensajes que se reciben con Scytale-C van a un destinatario en concreto y pueden contener información sensible. Si no somos los destinatarios de dichos mensajes, debemos proceder a la eliminación de los mismos y no reenviarlos ni publicarlos bajo ningún concepto.</strong></p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_ui.jpg" class="" title="UI Scytale-C">
-
-<h2 id="Recepcion-y-visualizacion-de-mensajes"><a href="#Recepcion-y-visualizacion-de-mensajes" class="headerlink" title="Recepción y visualización de mensajes"></a>Recepción y visualización de mensajes</h2><p>Vamos ahora a recibir mensajes desde Inmarsat. Si ya tenemos nuestra antena orientada y conectada, iniciamos SDR# y buscamos las frecuencias de SDT-C (sobre 1.539,500 MHz en Inmarsat-4A F4).</p>
-<p>Una vez las tengamos localizadas, sintonizamos una de las señales en modo <strong>USB</strong> y ancho de banda de <strong>4 KHz</strong>.</p>
-<p>Iniciamos a continuación el plugin marcando la casilla <em><strong>“Enabled”</strong></em>. También marcamos <em><strong>“Auto Tracking”</strong></em> para que ajuste la señal de forma automática.</p>
-<p>Si la señal es buena, veremos que aparece <em><strong>“Locked”</strong></em> en el plugin.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/sdrsharp.jpg" class="" title="Plugin Scytale-C">
-
-<p>Con SDR# ya recibiendo la señal correctamente pasamos a la interfaz de usuario de Scytale-C. El plugin y esta interfaz se comunican por UDP de forma local y vienen configurados con el puerto 15003 por defecto.</p>
-<p>Para que nos lleguen los mensajes bastaría con hacer click en el botón de Play/Stop. Si todo ha ido bien, comenzaremos a recibirlos.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_messages.jpg" class="" title="Scytale-C Mensajes">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>SDRSharp</tag>
-        <tag>Windows</tag>
-        <tag>Inmarsat</tag>
-        <tag>L-Band</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Seguimiento de satélites con Orbitron</title>
-    <url>/2020/01/23/seguimiento-satelites-orbitron/</url>
-    <content><![CDATA[<p>Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.<br>Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.</p>
-<a id="more"></a>
-
-<h2 id="Instalacion-de-Orbitron"><a href="#Instalacion-de-Orbitron" class="headerlink" title="Instalación de Orbitron"></a>Instalación de Orbitron</h2><p>El primer paso es descargar Orbitron desde su web: <a href="http://www.stoff.pl/downloads.php" target="_blank" rel="noopener">http://www.stoff.pl/downloads.php</a></p>
-<p>Tenemos la opción de descargarnos el instalador o un archivo ZIP. En este ejemplo vamos a descargar el ZIP y lo vamos a extraer en el directorio <em>C:\SDR\Orbitron</em>.</p>
-<p>Ejecutamos ahora el programa haciendo doble click en <strong>Orbitron.exe</strong> y se nos abrirá la interfaz del programa. Nos pedirá que actualicemos los archivo de TLE al iniciar, a lo que le decimos que no. Más adelante veremos qué son estos archivos y cómo actualizarlos.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron.jpg" class="" title="Orbitron">
-
-<h2 id="Configuracion-de-Orbitron"><a href="#Configuracion-de-Orbitron" class="headerlink" title="Configuración de Orbitron"></a>Configuración de Orbitron</h2><p>Vamos ahora a configurar Orbitron con los ajustes básicos.</p>
-<p>El primer ajuste es indicarle nuestra localización. Para ello vamos a la pestaña Location e introducimos nuestros datos. Si no los sabemos podemos buscar nuestra ciudad (o las más cercana) en el listado que tenemos a la derecha. Lo ideal es meter los valores más exactos posibles.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-location.jpg" class="" title="Orbitron Location">
-
-<p>Una vez los tengamos introducidos correctamente, hacemos click en <strong>Choose</strong> para seleccionar esta ubicación.</p>
-<p>El siguiente paso es seleccionar el archivo con los TLE de los satélites que vamos a seguir.<br>Estos archivos TLE contienen un listado de objetos que orbitan la Tierra con sus respectivos elementos orbitales en formato TLE <em>(two-line element set)</em>. Con estos elementos, y usando la fórmula adecuada, podemos estimar la posición y velocidad del objeto en cualquier instante de tiempo pasado o futuro.</p>
-<p>Aquí tenemos varias opciones, utilizar los archivos TLE descargados por Orbitron, o bien crear un archivo con los satélites que nos interesen. Si optamos por la primera opción, necesitamos primeramente actualizar los archivos TLE. Para ello abrimos la ventana de ajustes de Orbitron presionando las teclas <strong><em>Alt+F5</em></strong>, o bien hacemos click en el siguiente punto y seleccionamos <strong>Setup</strong>:</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-setup.jpg" class="" title="Orbitron Setup">
-
-<p>Vamos a la pestaña <strong>TLE updater</strong> y hacemos click en el siguiente icono:</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/setup-tle.jpg" class="" title="Actualizar TLE">
-
-<p>Una vez se actualicen los archivos, cerramos esa ventana y hacemos click en <strong>Load TLE</strong> y seleccionamos el archivo que contenga los satélites que queremos seguir. En este caso vamos a elegir un archivo que contiene los TLE de algunos satélites que nos interesan.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/load-tle.jpg" class="" title="Cargar archivo">
-
-<p>Ahora bastaría con ir seleccionando los satélites que queremos seguir y se mostrarán sobre el mapa.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-loaded.jpg" class="" title="Orbitron">
-
-<p>En siguientes tutoriales veremos cómo conectar Orbitron con SDR# para realizar seguimientos automáticos.</p>
-]]></content>
-      <tags>
-        <tag>Orbitron</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -1799,6 +1763,42 @@
         <tag>Raspberry Pi</tag>
         <tag>ADS-B</tag>
         <tag>dump1090</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Seguimiento de satélites con Orbitron</title>
+    <url>/2020/01/23/seguimiento-satelites-orbitron/</url>
+    <content><![CDATA[<p>Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.<br>Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.</p>
+<a id="more"></a>
+
+<h2 id="Instalacion-de-Orbitron"><a href="#Instalacion-de-Orbitron" class="headerlink" title="Instalación de Orbitron"></a>Instalación de Orbitron</h2><p>El primer paso es descargar Orbitron desde su web: <a href="http://www.stoff.pl/downloads.php" target="_blank" rel="noopener">http://www.stoff.pl/downloads.php</a></p>
+<p>Tenemos la opción de descargarnos el instalador o un archivo ZIP. En este ejemplo vamos a descargar el ZIP y lo vamos a extraer en el directorio <em>C:\SDR\Orbitron</em>.</p>
+<p>Ejecutamos ahora el programa haciendo doble click en <strong>Orbitron.exe</strong> y se nos abrirá la interfaz del programa. Nos pedirá que actualicemos los archivo de TLE al iniciar, a lo que le decimos que no. Más adelante veremos qué son estos archivos y cómo actualizarlos.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron.jpg" class="" title="Orbitron">
+
+<h2 id="Configuracion-de-Orbitron"><a href="#Configuracion-de-Orbitron" class="headerlink" title="Configuración de Orbitron"></a>Configuración de Orbitron</h2><p>Vamos ahora a configurar Orbitron con los ajustes básicos.</p>
+<p>El primer ajuste es indicarle nuestra localización. Para ello vamos a la pestaña Location e introducimos nuestros datos. Si no los sabemos podemos buscar nuestra ciudad (o las más cercana) en el listado que tenemos a la derecha. Lo ideal es meter los valores más exactos posibles.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-location.jpg" class="" title="Orbitron Location">
+
+<p>Una vez los tengamos introducidos correctamente, hacemos click en <strong>Choose</strong> para seleccionar esta ubicación.</p>
+<p>El siguiente paso es seleccionar el archivo con los TLE de los satélites que vamos a seguir.<br>Estos archivos TLE contienen un listado de objetos que orbitan la Tierra con sus respectivos elementos orbitales en formato TLE <em>(two-line element set)</em>. Con estos elementos, y usando la fórmula adecuada, podemos estimar la posición y velocidad del objeto en cualquier instante de tiempo pasado o futuro.</p>
+<p>Aquí tenemos varias opciones, utilizar los archivos TLE descargados por Orbitron, o bien crear un archivo con los satélites que nos interesen. Si optamos por la primera opción, necesitamos primeramente actualizar los archivos TLE. Para ello abrimos la ventana de ajustes de Orbitron presionando las teclas <strong><em>Alt+F5</em></strong>, o bien hacemos click en el siguiente punto y seleccionamos <strong>Setup</strong>:</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-setup.jpg" class="" title="Orbitron Setup">
+
+<p>Vamos a la pestaña <strong>TLE updater</strong> y hacemos click en el siguiente icono:</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/setup-tle.jpg" class="" title="Actualizar TLE">
+
+<p>Una vez se actualicen los archivos, cerramos esa ventana y hacemos click en <strong>Load TLE</strong> y seleccionamos el archivo que contenga los satélites que queremos seguir. En este caso vamos a elegir un archivo que contiene los TLE de algunos satélites que nos interesan.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/load-tle.jpg" class="" title="Cargar archivo">
+
+<p>Ahora bastaría con ir seleccionando los satélites que queremos seguir y se mostrarán sobre el mapa.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-loaded.jpg" class="" title="Orbitron">
+
+<p>En siguientes tutoriales veremos cómo conectar Orbitron con SDR# para realizar seguimientos automáticos.</p>
+]]></content>
+      <tags>
+        <tag>Orbitron</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
 </search>
