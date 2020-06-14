@@ -18,6 +18,8 @@ Si ya tenemos el dispositivo, el siguiente paso es instalarlo.
 
 [- Instalación de dispositivos RTL-SDR en Raspberry Pi](/2020/04/10/instalacion-rtlsdr-raspberrypi/)
 
+[- Instalación de dispositivos RTL-SDR en macOS](/2020/06/14/instalacion-rtlsdr-macos/)
+
 # Identificando señales
 
 Si tenemos todo ya instalado y configurado, es el momento de empezar a recibir señales.
