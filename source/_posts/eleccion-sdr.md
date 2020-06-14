@@ -12,11 +12,11 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 
 | Dispositivo | Sintonizador | Ancho de Banda | Rango frecuencias | Bias Tee | Precio |
 | --- | --- | --: | --- | --- | --: |
-| RTL-SDR Blog V3           | R820T2 | 2.4 MHz | 500 kHz – 1766 MHz | Sí | ~27€ |
-| Nooelec NESDR SMArt v4    | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | No | ~27€ |
-| Nooelec NESDR SMArTee v2  | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | Sí | ~27€ |
-| Nooelec NESDR SMArt XTR   | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | No | ~40€ |
-| Nooelec NESDR SMArTee XTR | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | Sí | ~40€ |
+| RTL-SDR Blog V3           | R820T2 | 2.4 MHz | 500 kHz – 1766 MHz | Sí | ~28€ |
+| Nooelec NESDR SMArt v4    | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | No | ~37€ |
+| Nooelec NESDR SMArTee v2  | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | Sí | ~36€ |
+| Nooelec NESDR SMArt XTR   | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | No | ~44€ |
+| Nooelec NESDR SMArTee XTR | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | Sí | ~46€ |
 | Nooelec NESDR Nano 3      | R820T2 | 2.4 MHz | 25 MHz - 1700 MHz | No | ~32€ |
 | Airspy Mini               | R820T2 |  6 MHz | 24 MHz - 1700 MHz | Sí | ~140€ |
 | Airspy R2                 | R820T2 |  10 MHz | 24 MHz - 1700 MHz | Sí | ~235€ |
@@ -143,7 +143,7 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 
 {% asset_img hfplusdiscovery.jpg 400 "Airspy HF+ Discovery" %}
 
-- **Ancho de banda:** Hasta 610 kHz (660 kHz mediante ajuste).
+- **Ancho de banda:** Hasta 912 kHz.
 - **ADC:** 18-bit DDC.
 - **Rango de frecuencias:** 0.5 kHz - 31 MHz (HF) y 60 - 260 MHz (VHF).
 - **Bias-Tee:** No.
@@ -156,7 +156,7 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 
 {% asset_img hfplusdual.jpg "Airspy HF+ Dual Port" %}
 
-- **Ancho de banda:** Hasta 660 kHz.
+- **Ancho de banda:** Hasta 912 kHz.
 - **ADC:** 18-bit DDC.
 - **Rango de frecuencias:** 9 kHz - 31 MHz (HF) y 60 - 260 MHz (VHF).
 - **Bias-Tee:** No.
