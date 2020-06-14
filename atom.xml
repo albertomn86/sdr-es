@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-05-30T11:19:24.098Z</updated>
+  <updated>2020-06-14T09:12:14.872Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Instalación de dispositivos RTL-SDR en macOS</title>
+    <link href="http://sdr-es.com/2020/06/14/instalacion-rtlsdr-macos/"/>
+    <id>http://sdr-es.com/2020/06/14/instalacion-rtlsdr-macos/</id>
+    <published>2020-06-14T08:32:42.000Z</published>
+    <updated>2020-06-14T09:12:14.872Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en macOS. También veremos como instalar CubicSDR para poder usarlo.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="macOS" scheme="http://sdr-es.com/tags/macOS/"/>
+    
+      <category term="CubicSDR" scheme="http://sdr-es.com/tags/CubicSDR/"/>
+    
+  </entry>
   
   <entry>
     <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
@@ -78,9 +101,9 @@
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -106,9 +129,9 @@
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -131,9 +154,9 @@
     
     
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
-    
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -158,9 +181,9 @@
     
     
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
-    
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -184,11 +207,11 @@
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
       <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
     
@@ -210,11 +233,11 @@
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
       <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
     
@@ -255,11 +278,11 @@
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
       <category term="Inmarsat" scheme="http://sdr-es.com/tags/Inmarsat/"/>
     
@@ -282,11 +305,11 @@
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
       <category term="Inmarsat" scheme="http://sdr-es.com/tags/Inmarsat/"/>
     
@@ -339,11 +362,11 @@
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
       <category term="Cubesat" scheme="http://sdr-es.com/tags/Cubesat/"/>
     
@@ -364,11 +387,11 @@
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
       <category term="Cubesat" scheme="http://sdr-es.com/tags/Cubesat/"/>
     
@@ -389,11 +412,11 @@
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
       <category term="Cubesat" scheme="http://sdr-es.com/tags/Cubesat/"/>
     
@@ -416,13 +439,13 @@
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
-      <category term="Orbitron" scheme="http://sdr-es.com/tags/Orbitron/"/>
-    
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
+      <category term="Orbitron" scheme="http://sdr-es.com/tags/Orbitron/"/>
     
   </entry>
   
@@ -441,9 +464,9 @@
     
     
     
-      <category term="Orbitron" scheme="http://sdr-es.com/tags/Orbitron/"/>
-    
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="Orbitron" scheme="http://sdr-es.com/tags/Orbitron/"/>
     
   </entry>
   
@@ -452,11 +475,11 @@
     <link href="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/"/>
     <id>http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/</id>
     <published>2020-01-21T16:06:29.000Z</published>
-    <updated>2020-05-01T13:51:43.544Z</updated>
+    <updated>2020-06-14T10:07:23.374Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde SDR# a cualquier programa externo.&lt;br&gt;Para ello vamos a utilizar un software que nos va a permitir pasar el audio desde la salida de SDR# a la entrada de otro programa.&lt;/p&gt;
+      &lt;p&gt;Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.&lt;/p&gt;
     
     </summary>
     
@@ -465,6 +488,10 @@
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="macOS" scheme="http://sdr-es.com/tags/macOS/"/>
+    
+      <category term="CubicSDR" scheme="http://sdr-es.com/tags/CubicSDR/"/>
     
       <category term="Virtual Audio Cable" scheme="http://sdr-es.com/tags/Virtual-Audio-Cable/"/>
     
@@ -486,11 +513,11 @@
     
     
     
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
-    
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
   </entry>
   

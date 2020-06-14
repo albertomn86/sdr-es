@@ -19,24 +19,30 @@
     var CONFIG = {"hostname":"sdr-es.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde SDR# a cualquier programa externo.Para ello vamos a utilizar un software que nos va a permitir pasar el audio desde">
+  <meta name="description" content="Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que con">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Instalación de cable de audio virtual">
 <meta property="og:url" content="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/index.html">
 <meta property="og:site_name" content="SDR en español">
-<meta property="og:description" content="Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde SDR# a cualquier programa externo.Para ello vamos a utilizar un software que nos va a permitir pasar el audio desde">
+<meta property="og:description" content="Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que con">
 <meta property="og:locale" content="es_ES">
-<meta property="og:image" content="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/virtual-audio-web.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/cubicsdr-audio.jpg">
 <meta property="article:published_time" content="2020-01-21T16:06:29.000Z">
-<meta property="article:modified_time" content="2020-05-01T13:51:43.544Z">
+<meta property="article:modified_time" content="2020-06-14T10:07:23.374Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="SDRSharp">
 <meta property="article:tag" content="Windows">
+<meta property="article:tag" content="macOS">
+<meta property="article:tag" content="CubicSDR">
 <meta property="article:tag" content="Virtual Audio Cable">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/virtual-audio-web.jpg">
+<meta name="twitter:image" content="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg">
 
 <link rel="canonical" href="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">
 
@@ -247,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 01/05/2020 15:51:43" itemprop="dateModified" datetime="2020-05-01T15:51:43+02:00">01/05/2020</time>
+                <time title="Modificado por: 14/06/2020 12:07:23" itemprop="dateModified" datetime="2020-06-14T12:07:23+02:00">14/06/2020</time>
               </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -269,23 +275,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde SDR# a cualquier programa externo.<br>Para ello vamos a utilizar un software que nos va a permitir pasar el audio desde la salida de SDR# a la entrada de otro programa.</p>
+        <p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.</p>
 <a id="more"></a>
 
-<h2 id="Instalacion-de-VB-Cable"><a href="#Instalacion-de-VB-Cable" class="headerlink" title="Instalación de VB-Cable"></a>Instalación de VB-Cable</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
+<h2 id="Instalacion-de-VB-Cable-en-Windows"><a href="#Instalacion-de-VB-Cable-en-Windows" class="headerlink" title="Instalación de VB-Cable en Windows"></a>Instalación de VB-Cable en Windows</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
 <p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
 <p><a href="https://www.vb-audio.com/Cable/" target="_blank" rel="noopener"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-audio-web.jpg" class="" title="Descarga de VB-Cable">
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg" class="" width="900" title="Descarga de VB-Cable">
 
 <p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
 <p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
 <img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
 
 <p>Hacemos click en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
-<h2 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h2><p>Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" title="SDRSharp output">
+<h3 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h3><p>Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" width="800" title="SDRSharp output">
 
-<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+<h2 id="Instalacion-de-VB-Cable-en-macOS"><a href="#Instalacion-de-VB-Cable-en-macOS" class="headerlink" title="Instalación de VB-Cable en macOS"></a>Instalación de VB-Cable en macOS</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/" target="_blank" rel="noopener"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg" class="" width="900" title="Descarga de VB-Cable">
+
+<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado ejecutamos el instalador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg" class="" title="Instalación de VB-Cable">
+
+<p>Seguimos los pasos del asistente para instalar VB-Audio.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg" class="" title="Instalación de VB-Cable">
+
+<h3 id="Configuracion-de-CubicSDR"><a href="#Configuracion-de-CubicSDR" class="headerlink" title="Configuración de CubicSDR"></a>Configuración de CubicSDR</h3><p>Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos click en <strong>Audio Out</strong> y seleccionamos <em><strong>VB Audio: VB-Cable</strong></em></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/cubicsdr-audio.jpg" class="" width="900" title="CubicSDR audio output">
+
+<p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
 
     </div>
 
@@ -353,6 +373,8 @@
           <div class="post-tags">
               <a href="/tags/SDRSharp/" rel="tag"><i class="fa fa-tag"></i> SDRSharp</a>
               <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
+              <a href="/tags/macOS/" rel="tag"><i class="fa fa-tag"></i> macOS</a>
+              <a href="/tags/CubicSDR/" rel="tag"><i class="fa fa-tag"></i> CubicSDR</a>
               <a href="/tags/Virtual-Audio-Cable/" rel="tag"><i class="fa fa-tag"></i> Virtual Audio Cable</a>
           </div>
           
@@ -446,7 +468,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion-de-VB-Cable"><span class="nav-number">1.</span> <span class="nav-text">Instalación de VB-Cable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuracion-de-SDR"><span class="nav-number">2.</span> <span class="nav-text">Configuración de SDR#</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion-de-VB-Cable-en-Windows"><span class="nav-number">1.</span> <span class="nav-text">Instalación de VB-Cable en Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuracion-de-SDR"><span class="nav-number">1.1.</span> <span class="nav-text">Configuración de SDR#</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion-de-VB-Cable-en-macOS"><span class="nav-number">2.</span> <span class="nav-text">Instalación de VB-Cable en macOS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuracion-de-CubicSDR"><span class="nav-number">2.1.</span> <span class="nav-text">Configuración de CubicSDR</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -462,13 +484,13 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">entradas</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
