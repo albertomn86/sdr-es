@@ -56,7 +56,8 @@ Podemos ajustar las opciones de _dump1090_ en su archivo de configuración:
 sudo nano /etc/default/dump1090-fa
 ```
 
-Editamos la siguiente línea con la ganancia y valor de PPM. Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en _device-index_.
+Editamos la siguiente línea con la ganancia y valor de PPM. Es aconsejable establecer un valor para la ganancia, ya que por defecto el nivel viene establecido en automático (-10) y no siempre proporciona buenos resultados.
+Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en _device-index_.
 
 ```
 RECEIVER_OPTIONS="--device-index 0 --gain -10 --ppm 0"
@@ -73,6 +74,21 @@ http://IP_RASPBERRY:8080/
 ```
 
 {% asset_img dump1090.jpg 900 "dump1090 FlightAware" %}
+
+Esta interfaz web utiliza el puerto 8080 por defecto. Si queremos cambiarlo editamos el archivo de configuración de _Lighttpd_:
+```
+sudo nano /etc/lighttpd/conf-enabled/89-dump1090-fa.conf
+```
+
+Editamos la siguiente línea y modificamos el puerto 8080 por el que queramos utilizar:
+```
+$SERVER["socket"] == ":8080" {
+```
+
+Por último reiniciamos el servicio para que se apliquen los cambios:
+```
+sudo service lighttpd restart
+```
 
 
 ### Enviar datos a FlightAware
