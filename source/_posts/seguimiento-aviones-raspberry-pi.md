@@ -93,7 +93,7 @@ sudo service lighttpd restart
 
 ### Enviar datos a FlightAware
 
-FlightAware es una compañía con sede en Houston (TX, Estados Unidos) que ofrece servicios de software y datos para aviación. Esta compañía ofrece información de seguimiento de aeronaves de forma gratuita desde su página web y sus aplicaciones para móviles. Es actualmente la mayor plataforma de seguimiento de vuelos.
+[FlightAware](https://flightaware.com/) es una compañía con sede en Houston (TX, Estados Unidos) que ofrece servicios de software y datos para aviación. Esta compañía ofrece información de seguimiento de aeronaves de forma gratuita desde su página web y sus aplicaciones para móviles. Es actualmente la mayor plataforma de seguimiento de vuelos.
 
 Podemos reenviar los datos de seguimiento a FlightAware desde nuestra Raspberry Pi. Estos serán utilizados para el seguimiento a nivel global y a cambio recibiremos una suscripción _[Enterprise](https://flightaware.com/commercial/premium/)_.
 
@@ -139,7 +139,7 @@ sudo service piaware restart
 
 ### Enviar datos a AirNav RadarBox
 
-RadarBox es una compañía con sede en Tampa (FL, Estados Unidos) que ofrece servicios de información de vuelos. Podemos compartir los datos que recibimos en nuestra Raspberry Pi con RadarBox y a cambio obtendremos una suscripción _[Business](https://www.radarbox.com/subscribe)_.
+[RadarBox](https://www.radarbox.com/) es una compañía con sede en Tampa (FL, Estados Unidos) que ofrece servicios de información de vuelos. Podemos compartir los datos que recibimos en nuestra Raspberry Pi con RadarBox y a cambio obtendremos una suscripción _[Business](https://www.radarbox.com/subscribe)_.
 
 Las pasos que seguiremos son los siguientes:
 
@@ -176,10 +176,42 @@ sudo rbfeeder --showkey --no-start
 6. Por último introducimos nuestras coordenadas cuando nos lo pida.
 
 
+### Enviar datos a ADS-B Exchange
+
+[ADS-B Exchange](https://www.adsbexchange.com/) es un servicio colaborativo de datos de seguimiento y es la mayor fuente de datos de vuelos **sin filtrar**. En este caso no obtendremos beneficios como suscripciones, ya que este servicio ofrece todos los datos de forma **gratuita para fines no comerciales**.
+
+Para enviar nuestros datos a ADS-B Exchange tendremos que ejecutar un script de instalación que realizará el proceso de forma sencilla. Para ello ejecutamos el siguiente comando:
+```
+sudo bash -c "$(wget -nv -O - https://raw.githubusercontent.com/adsbxchange/adsb-exchange/master/install.sh)"
+```
+
+Se iniciará un asistente instalación en el que debemos indicar un nombre para nuestro _feeder_ y nuestra posición para los cálculos de MLAT.
+
+{% asset_img adsb-script.png "Asistente instalación ADS-B Exchange" %}
+
+Una vez finalice el asistente, ya estaremos conectados y enviando datos a ADS-B Exchange. Para conocer el estado del servicio tenemos los siguientes enlaces:
+
+- Comprobar el estado de nuestro _feeder_: https://adsbexchange.com/myip/
+- Comprobar el estado de los servidores de MLAT: http://adsbx.org/sync
+
+Opcionalmente, podemos instalar la herramienta proporcionada por ADS-B Exchange para ver online los datos que estamos enviando desde nuestro receptor en tiempo real. Para instalarla basta con ejecutar el siguiente comando:
+```
+sudo bash -c "$(wget -nv -O - https://raw.githubusercontent.com/adsbxchange/adsbexchange-stats/master/stats.sh)"
+```
+
+Una vez instalada, ejecutamos el siguiente comando para obtener nuestra URL personalizada en la que consultar los datos:
+```
+adsbexchange-showurl
+```
+
+Obtendremos una URL que debemos copiar e introducir en el navegador web. Una vez accedemos, tendremos dos enlaces que nos llevarán a una página con los datos de las aeronaves que estamos recibiendo en nuestra estación y a un visor con el mapa en tiempo real. Podemos consultar el funcionamiento de las distintas opciones del visor en [este enlace](https://www.adsbexchange.com/map-help/).
+
+{% asset_img adsb-exchange.jpg 900 "ADS-B Exchange" %}
+
 
 ### Enviar datos a Flightradar24
 
-Flightradar24 es una compañía europea con sede en Estocolmo (Suecia) que ofrece servicios de información de vuelos. Compartiendo nuestros datos con Flightradar24 obtendremos una suscripción _[Business](https://www.flightradar24.com/premium)_.
+[Flightradar24](https://www.flightradar24.com/) es una compañía europea con sede en Estocolmo (Suecia) que ofrece servicios de información de vuelos. Compartiendo nuestros datos con Flightradar24 obtendremos una suscripción _[Business](https://www.flightradar24.com/premium)_.
 
 Lo primero sera registrarse en Flightradar24.
 
