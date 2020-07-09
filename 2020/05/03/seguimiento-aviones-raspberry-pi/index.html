@@ -30,8 +30,10 @@
 <meta property="og:image" content="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/flightaware-panel.png">
 <meta property="og:image" content="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/flightaware-config.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/radarbox-claim.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/adsb-script.png">
+<meta property="og:image" content="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/adsb-exchange.jpg">
 <meta property="article:published_time" content="2020-05-03T08:56:04.000Z">
-<meta property="article:modified_time" content="2020-05-03T18:50:59.529Z">
+<meta property="article:modified_time" content="2020-07-09T17:37:48.114Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="RTL-SDR">
 <meta property="article:tag" content="Raspberry Pi">
@@ -241,10 +243,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Publicado el</span>
-              
 
-              <time title="Creado por: 03/05/2020 10:56:04 / Modificado por: 20:50:59" itemprop="dateCreated datePublished" datetime="2020-05-03T10:56:04+02:00">03/05/2020</time>
+              <time title="Creado por: 03/05/2020 10:56:04" itemprop="dateCreated datePublished" datetime="2020-05-03T10:56:04+02:00">03/05/2020</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Editado el</span>
+                <time title="Modificado por: 09/07/2020 19:37:48" itemprop="dateModified" datetime="2020-07-09T19:37:48+02:00">09/07/2020</time>
+              </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-user"></i>
@@ -295,7 +303,7 @@
 <p>Podemos ajustar las opciones de <em>dump1090</em> en su archivo de configuración:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;dump1090-fa</span><br></pre></td></tr></table></figure>
 
-<p>Editamos la siguiente línea con la ganancia y valor de PPM. Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en <em>device-index</em>.</p>
+<p>Editamos la siguiente línea con la ganancia y valor de PPM. Es aconsejable establecer un valor para la ganancia, ya que por defecto el nivel viene establecido en automático (-10) y no siempre proporciona buenos resultados.<br>Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en <em>device-index</em>.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RECEIVER_OPTIONS&#x3D;&quot;--device-index 0 --gain -10 --ppm 0&quot;</span><br></pre></td></tr></table></figure>
 
 <p>Reiniciamos el servicio para que se apliquen los cambios.</p>
@@ -306,8 +314,17 @@
 
 <img src="/2020/05/03/seguimiento-aviones-raspberry-pi/dump1090.jpg" class="" width="900" title="dump1090 FlightAware">
 
+<p>Esta interfaz web utiliza el puerto 8080 por defecto. Si queremos cambiarlo editamos el archivo de configuración de <em>Lighttpd</em>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;lighttpd&#x2F;conf-enabled&#x2F;89-dump1090-fa.conf</span><br></pre></td></tr></table></figure>
 
-<h3 id="Enviar-datos-a-FlightAware"><a href="#Enviar-datos-a-FlightAware" class="headerlink" title="Enviar datos a FlightAware"></a>Enviar datos a FlightAware</h3><p>FlightAware es una compañía con sede en Houston (TX, Estados Unidos) que ofrece servicios de software y datos para aviación. Esta compañía ofrece información de seguimiento de aeronaves de forma gratuita desde su página web y sus aplicaciones para móviles. Es actualmente la mayor plataforma de seguimiento de vuelos.</p>
+<p>Editamos la siguiente línea y modificamos el puerto 8080 por el que queramos utilizar:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$SERVER[&quot;socket&quot;] &#x3D;&#x3D; &quot;:8080&quot; &#123;</span><br></pre></td></tr></table></figure>
+
+<p>Por último reiniciamos el servicio para que se apliquen los cambios:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service lighttpd restart</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Enviar-datos-a-FlightAware"><a href="#Enviar-datos-a-FlightAware" class="headerlink" title="Enviar datos a FlightAware"></a>Enviar datos a FlightAware</h3><p><a href="https://flightaware.com/" target="_blank" rel="noopener">FlightAware</a> es una compañía con sede en Houston (TX, Estados Unidos) que ofrece servicios de software y datos para aviación. Esta compañía ofrece información de seguimiento de aeronaves de forma gratuita desde su página web y sus aplicaciones para móviles. Es actualmente la mayor plataforma de seguimiento de vuelos.</p>
 <p>Podemos reenviar los datos de seguimiento a FlightAware desde nuestra Raspberry Pi. Estos serán utilizados para el seguimiento a nivel global y a cambio recibiremos una suscripción <em><a href="https://flightaware.com/commercial/premium/" target="_blank" rel="noopener">Enterprise</a></em>.</p>
 <p>Los pasos para enviar los datos son los siguientes:</p>
 <ol>
@@ -341,7 +358,7 @@
 <img src="/2020/05/03/seguimiento-aviones-raspberry-pi/flightaware-config.jpg" class="" title="FlightAware">
 
 
-<h3 id="Enviar-datos-a-AirNav-RadarBox"><a href="#Enviar-datos-a-AirNav-RadarBox" class="headerlink" title="Enviar datos a AirNav RadarBox"></a>Enviar datos a AirNav RadarBox</h3><p>RadarBox es una compañía con sede en Tampa (FL, Estados Unidos) que ofrece servicios de información de vuelos. Podemos compartir los datos que recibimos en nuestra Raspberry Pi con RadarBox y a cambio obtendremos una suscripción <em><a href="https://www.radarbox.com/subscribe" target="_blank" rel="noopener">Business</a></em>.</p>
+<h3 id="Enviar-datos-a-AirNav-RadarBox"><a href="#Enviar-datos-a-AirNav-RadarBox" class="headerlink" title="Enviar datos a AirNav RadarBox"></a>Enviar datos a AirNav RadarBox</h3><p><a href="https://www.radarbox.com/" target="_blank" rel="noopener">RadarBox</a> es una compañía con sede en Tampa (FL, Estados Unidos) que ofrece servicios de información de vuelos. Podemos compartir los datos que recibimos en nuestra Raspberry Pi con RadarBox y a cambio obtendremos una suscripción <em><a href="https://www.radarbox.com/subscribe" target="_blank" rel="noopener">Business</a></em>.</p>
 <p>Las pasos que seguiremos son los siguientes:</p>
 <ol>
 <li><p>Instalamos <em>rbfeeder</em>. Será el programa que envíe los datos al servidor.</p>
@@ -370,7 +387,29 @@
 <ol start="6">
 <li>Por último introducimos nuestras coordenadas cuando nos lo pida.</li>
 </ol>
-<h3 id="Enviar-datos-a-Flightradar24"><a href="#Enviar-datos-a-Flightradar24" class="headerlink" title="Enviar datos a Flightradar24"></a>Enviar datos a Flightradar24</h3><p>Flightradar24 es una compañía europea con sede en Estocolmo (Suecia) que ofrece servicios de información de vuelos. Compartiendo nuestros datos con Flightradar24 obtendremos una suscripción <em><a href="https://www.flightradar24.com/premium" target="_blank" rel="noopener">Business</a></em>.</p>
+<h3 id="Enviar-datos-a-ADS-B-Exchange"><a href="#Enviar-datos-a-ADS-B-Exchange" class="headerlink" title="Enviar datos a ADS-B Exchange"></a>Enviar datos a ADS-B Exchange</h3><p><a href="https://www.adsbexchange.com/" target="_blank" rel="noopener">ADS-B Exchange</a> es un servicio colaborativo de datos de seguimiento y es la mayor fuente de datos de vuelos <strong>sin filtrar</strong>. En este caso no obtendremos beneficios como suscripciones, ya que este servicio ofrece todos los datos de forma <strong>gratuita para fines no comerciales</strong>.</p>
+<p>Para enviar nuestros datos a ADS-B Exchange tendremos que ejecutar un script de instalación que realizará el proceso de forma sencilla. Para ello ejecutamos el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;adsbxchange&#x2F;adsb-exchange&#x2F;master&#x2F;install.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Se iniciará un asistente instalación en el que debemos indicar un nombre para nuestro <em>feeder</em> y nuestra posición para los cálculos de MLAT.</p>
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/adsb-script.png" class="" title="Asistente instalación ADS-B Exchange">
+
+<p>Una vez finalice el asistente, ya estaremos conectados y enviando datos a ADS-B Exchange. Para conocer el estado del servicio tenemos los siguientes enlaces:</p>
+<ul>
+<li>Comprobar el estado de nuestro <em>feeder</em>: <a href="https://adsbexchange.com/myip/" target="_blank" rel="noopener">https://adsbexchange.com/myip/</a></li>
+<li>Comprobar el estado de los servidores de MLAT: <a href="http://adsbx.org/sync" target="_blank" rel="noopener">http://adsbx.org/sync</a></li>
+</ul>
+<p>Opcionalmente, podemos instalar la herramienta proporcionada por ADS-B Exchange para ver online los datos que estamos enviando desde nuestro receptor en tiempo real. Para instalarla basta con ejecutar el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;adsbxchange&#x2F;adsbexchange-stats&#x2F;master&#x2F;stats.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Una vez instalada, ejecutamos el siguiente comando para obtener nuestra URL personalizada en la que consultar los datos:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adsbexchange-showurl</span><br></pre></td></tr></table></figure>
+
+<p>Obtendremos una URL que debemos copiar e introducir en el navegador web. Una vez accedemos, tendremos dos enlaces que nos llevarán a una página con los datos de las aeronaves que estamos recibiendo en nuestra estación y a un visor con el mapa en tiempo real. Podemos consultar el funcionamiento de las distintas opciones del visor en <a href="https://www.adsbexchange.com/map-help/" target="_blank" rel="noopener">este enlace</a>.</p>
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/adsb-exchange.jpg" class="" width="900" title="ADS-B Exchange">
+
+
+<h3 id="Enviar-datos-a-Flightradar24"><a href="#Enviar-datos-a-Flightradar24" class="headerlink" title="Enviar datos a Flightradar24"></a>Enviar datos a Flightradar24</h3><p><a href="https://www.flightradar24.com/" target="_blank" rel="noopener">Flightradar24</a> es una compañía europea con sede en Estocolmo (Suecia) que ofrece servicios de información de vuelos. Compartiendo nuestros datos con Flightradar24 obtendremos una suscripción <em><a href="https://www.flightradar24.com/premium" target="_blank" rel="noopener">Business</a></em>.</p>
 <p>Lo primero sera registrarse en Flightradar24.</p>
 <p><a href="https://www.flightradar24.com/premium/signup" target="_blank" rel="noopener"><center>https://www.flightradar24.com/premium/signup</center></a></p>
 <p>Para enviar los datos debemos descargar e instalar <em>fr24feed</em>. Para ello ejecutamos el siguiente comando y seguimos los pasos del asistente de instalación.</p>
@@ -560,7 +599,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalacion-de-dump1090"><span class="nav-number">1.</span> <span class="nav-text">Instalación de dump1090</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enviar-datos-a-FlightAware"><span class="nav-number">2.</span> <span class="nav-text">Enviar datos a FlightAware</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enviar-datos-a-AirNav-RadarBox"><span class="nav-number">3.</span> <span class="nav-text">Enviar datos a AirNav RadarBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enviar-datos-a-Flightradar24"><span class="nav-number">4.</span> <span class="nav-text">Enviar datos a Flightradar24</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalacion-de-dump1090"><span class="nav-number">1.</span> <span class="nav-text">Instalación de dump1090</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enviar-datos-a-FlightAware"><span class="nav-number">2.</span> <span class="nav-text">Enviar datos a FlightAware</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enviar-datos-a-AirNav-RadarBox"><span class="nav-number">3.</span> <span class="nav-text">Enviar datos a AirNav RadarBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enviar-datos-a-ADS-B-Exchange"><span class="nav-number">4.</span> <span class="nav-text">Enviar datos a ADS-B Exchange</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enviar-datos-a-Flightradar24"><span class="nav-number">5.</span> <span class="nav-text">Enviar datos a Flightradar24</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
