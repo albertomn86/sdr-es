@@ -111,7 +111,7 @@ Volvemos ahora al menú principal y vamos a **_Basic configuration options_**. A
 | --- | --- |
 | SATNOGS_API_TOKEN | API key obtenida anteriormente. |
 | SATNOGS_SOAPY_RX_DEVICE | Dispositivo SDR que vamos a usar.<br>Para el RTL-SDR introducimos `driver=rtlsdr`.<br>Para otros dispositivos consultar en https://github.com/pothosware/SoapyRTLSDR/wiki (apartado _Modules_). |
-| SATNOGS_ANTENNA | Para el ara el RTL-SDR introducimos `RX`.<br>Para otros dispositivos debemos consultar el valor usando el comando `SoapySDRUtil --probe 2>&1 \| grep Antennas`.|
+| SATNOGS_ANTENNA | Para el RTL-SDR introducimos `RX`.<br>Para otros dispositivos debemos consultar el valor usando el comando `SoapySDRUtil --probe 2>&1 \| grep Antennas`.|
 | SATNOGS_RX_SAMP_RATE | _Sample rate_ del dispositivo.<br>Para el RTL-SDR introducimos `2.048e6`. |
 | SATNOGS_STATION_ELEV | Altitud de nuestra estación. |
 | SATNOGS_STATION_ID | Identificador de nuestra estación obtenido anteriormente. |
