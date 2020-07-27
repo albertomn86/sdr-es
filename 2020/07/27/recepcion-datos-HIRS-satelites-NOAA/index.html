@@ -19,28 +19,28 @@
     var CONFIG = {"hostname":"sdr-es.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="El satélite NAYIF-1 es un CubeSat construido por estudiante de la Emirates Institution for Advanced Science and Technology (EIAST), en colaboración con la American University of Sharjah (AUS).NAYIF-1">
+  <meta name="description" content="Como vimos en el artículo “Recepción de satélites meteorológicos NOAA”, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Recepción del satélite NAYIF-1">
-<meta property="og:url" content="http://sdr-es.com/2020/02/26/recepcion-nayif1/index.html">
+<meta property="og:title" content="Recepción de datos del instrumental HIRS de los satélites NOAA">
+<meta property="og:url" content="http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/index.html">
 <meta property="og:site_name" content="SDR en español">
-<meta property="og:description" content="El satélite NAYIF-1 es un CubeSat construido por estudiante de la Emirates Institution for Advanced Science and Technology (EIAST), en colaboración con la American University of Sharjah (AUS).NAYIF-1">
+<meta property="og:description" content="Como vimos en el artículo “Recepción de satélites meteorológicos NOAA”, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además">
 <meta property="og:locale" content="es_ES">
-<meta property="og:image" content="http://sdr-es.com/2020/02/26/recepcion-nayif1/sdrsharp.png">
-<meta property="og:image" content="http://sdr-es.com/2020/02/26/recepcion-nayif1/config.png">
-<meta property="og:image" content="http://sdr-es.com/2020/02/26/recepcion-nayif1/telem.png">
-<meta property="og:image" content="http://sdr-es.com/2020/02/26/recepcion-nayif1/messages.png">
-<meta property="article:published_time" content="2020-02-26T08:32:14.000Z">
-<meta property="article:modified_time" content="2020-05-01T13:51:43.547Z">
+<meta property="og:image" content="http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/Compo.png">
+<meta property="article:published_time" content="2020-07-27T18:19:04.000Z">
+<meta property="article:modified_time" content="2020-07-27T20:34:35.536Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="Satélites">
 <meta property="article:tag" content="SDRSharp">
 <meta property="article:tag" content="Windows">
-<meta property="article:tag" content="Cubesat">
+<meta property="article:tag" content="Satélites meteorológicos">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://sdr-es.com/2020/02/26/recepcion-nayif1/sdrsharp.png">
+<meta name="twitter:image" content="http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg">
 
-<link rel="canonical" href="http://sdr-es.com/2020/02/26/recepcion-nayif1/">
+<link rel="canonical" href="http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/">
 
 
 <script id="page-configurations">
@@ -66,7 +66,7 @@
   padding: 1px 4px;
 }
 </style>
-  <title>Recepción del satélite NAYIF-1 | SDR en español</title>
+  <title>Recepción de datos del instrumental HIRS de los satélites NOAA | SDR en español</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156538909-1"></script>
     <script>
@@ -219,7 +219,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
-    <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/02/26/recepcion-nayif1/">
+    <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -232,7 +232,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Recepción del satélite NAYIF-1
+          Recepción de datos del instrumental HIRS de los satélites NOAA
         </h1>
 
         <div class="post-meta">
@@ -241,16 +241,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Publicado el</span>
+              
 
-              <time title="Creado por: 26/02/2020 09:32:14" itemprop="dateCreated datePublished" datetime="2020-02-26T09:32:14+01:00">26/02/2020</time>
+              <time title="Creado por: 27/07/2020 20:19:04 / Modificado por: 22:34:35" itemprop="dateCreated datePublished" datetime="2020-07-27T20:19:04+02:00">27/07/2020</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 01/05/2020 15:51:43" itemprop="dateModified" datetime="2020-05-01T15:51:43+02:00">01/05/2020</time>
-              </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-user"></i>
@@ -271,63 +265,62 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.</p>
+        <p>Como vimos en el artículo <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
+<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
 <a id="more"></a>
 
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
+<table>
 <thead>
 <tr>
 <th>Satélite</th>
-<th>NAYIF-1 (EO-88)</th>
+<th>Frecuencia</th>
+<th>Estado</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>Operador</strong></td>
-<td>EIAST y AUS</td>
+<td>NOAA 15</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html" target="_blank" rel="noopener">Consultar</a></td>
 </tr>
 <tr>
-<td><strong>NORAD ID</strong></td>
-<td>42017</td>
+<td>NOAA 18</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html" target="_blank" rel="noopener">Consultar</a></td>
 </tr>
 <tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2017-008BX</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (1.32 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>15 de Febrero de 2017</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145.940 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://www.mbrsc.ae/satellite-programme/nayif-1" target="_blank" rel="noopener">https://www.mbrsc.ae/satellite-programme/nayif-1</a></td>
+<td>NOAA 19</td>
+<td>137.770 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html" target="_blank" rel="noopener">Consultar</a></td>
 </tr>
 </tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/2020/02/26/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
+<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
+<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
+<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
+<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
 
 
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="https://sdr-es.com/2020/02/22/recepcion-funcube1/">FUNcube-1</a> y <a href="https://sdr-es.com/2020/02/25/recepcion-jy1sat/">JY1-SAT</a>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi" target="_blank" rel="noopener"><center>Nayif-1 Dashboard v1040</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos click en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/2020/02/26/recepcion-nayif1/config.png" class="" title="NAYIF-1 Dashboard Configuración">
+<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip" target="_blank" rel="noopener"><center>Project Desert Tortoise - Demodulator</center></a></p>
+<p>Una vez descargado, extraemos el contenido del archivo.</p>
+<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
 
-<p>Hacemos click en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos click en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/2020/02/26/recepcion-nayif1/telem.png" class="" title="NAYIF-1 Dashboard Telemetría">
+<p>Para demodular el archivo basta con hacer click encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
+<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre <em><strong>minorFrames_xxxx.txt</strong></em>.</p>
+<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation" target="_blank" rel="noopener">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
+<p><a href="https://noaa_hirs_decoder.surge.sh/download.html" target="_blank" rel="noopener"><center>NOAA HIRS Decoder</center></a></p>
+<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/" target="_blank" rel="noopener">web oficial de Oracle</a>.</p>
+<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
+<p>Ahora le pasamos el archivo <em><strong>minorFrames_xxxx.txt</strong></em> como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar).</p>
+<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio <em>output/minorFrames_xxxx</em>.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
 
-<p><em>Mensajes:</em></p>
-<img src="/2020/02/26/recepcion-nayif1/messages.png" class="" title="NAYIF-1 Dashboard Mensajes">
+<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
 
     </div>
 
@@ -396,7 +389,7 @@
               <a href="/tags/Satelites/" rel="tag"><i class="fa fa-tag"></i> Satélites</a>
               <a href="/tags/SDRSharp/" rel="tag"><i class="fa fa-tag"></i> SDRSharp</a>
               <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
-              <a href="/tags/Cubesat/" rel="tag"><i class="fa fa-tag"></i> Cubesat</a>
+              <a href="/tags/Satelites-meteorologicos/" rel="tag"><i class="fa fa-tag"></i> Satélites meteorológicos</a>
           </div>
           
 
@@ -408,7 +401,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Enlace a la entrada: </strong>
-    <a href="http://sdr-es.com/2020/02/26/recepcion-nayif1/" title="Recepción del satélite NAYIF-1">http://sdr-es.com/2020/02/26/recepcion-nayif1/</a>
+    <a href="http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/" title="Recepción de datos del instrumental HIRS de los satélites NOAA">http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</a>
   </li>
   -->
   <li class="post-copyright-license">
@@ -424,13 +417,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/02/25/recepcion-jy1sat/" rel="prev" title="Recepción del satélite JY1-SAT">
-      <i class="fa fa-chevron-left"></i> Recepción del satélite JY1-SAT
+    <a href="/2020/06/14/instalacion-rtlsdr-macos/" rel="prev" title="Instalación de dispositivos RTL-SDR en macOS">
+      <i class="fa fa-chevron-left"></i> Instalación de dispositivos RTL-SDR en macOS
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/03/06/recepcion-inmarsat/" rel="next" title="Recepción de satélites Inmarsat">
-      Recepción de satélites Inmarsat <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -489,7 +479,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Datos-del-satelite"><span class="nav-number">1.</span> <span class="nav-text">Datos del satélite</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recepcion"><span class="nav-number">2.</span> <span class="nav-text">Recepción</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decodificacion"><span class="nav-number">3.</span> <span class="nav-text">Decodificación</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Datos-de-los-satelites"><span class="nav-number">1.</span> <span class="nav-text">Datos de los satélites</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recepcion"><span class="nav-number">2.</span> <span class="nav-text">Recepción</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Demodular-la-senal"><span class="nav-number">3.</span> <span class="nav-text">Demodular la señal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decodificacion"><span class="nav-number">4.</span> <span class="nav-text">Decodificación</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
