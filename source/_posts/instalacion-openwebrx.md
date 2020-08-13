@@ -1,5 +1,5 @@
 ---
-title: Instalación de OpenWebRX
+title: Instalar receptor SDR online con OpenWebRX
 date: 2020-08-13 17:36:20
 tags: [OpenWebRX, RTL-SDR, Raspberry Pi, Linux]
 author: AlbertoMN
