@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-07-27T20:34:35.536Z</updated>
+  <updated>2020-08-13T19:52:51.583Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Instalar receptor SDR online con OpenWebRX</title>
+    <link href="http://sdr-es.com/2020/08/13/instalacion-openwebrx/"/>
+    <id>http://sdr-es.com/2020/08/13/instalacion-openwebrx/</id>
+    <published>2020-08-13T15:36:20.000Z</published>
+    <updated>2020-08-13T19:52:51.583Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://www.openwebrx.de/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OpenWebRX&lt;/a&gt; es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, simplemente accediendo desde un navegador web.&lt;/p&gt;
+&lt;p&gt;Este proyecto &lt;em&gt;Open Source&lt;/em&gt; nació en 2015 de mano de András Retzler (HA7ILM). Pero a finales de 2019, el autor abandonó el proyecto y es cuando &lt;a href=&quot;https://github.com/jketterl&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Jakob Ketterl&lt;/a&gt; retomó el desarrollo del proyecto añadiendo nuevas funcionalidades y mejorando el software. El proyecto comenzó a ganar popularidad y cuenta actualmente con un gran número de colaboradores.&lt;/p&gt;
+&lt;p&gt;En este artículo veremos cómo instalar OpenWebRX en una Raspberry Pi usando su código fuente. Existen otras opciones disponibles para instalar este software, como imágenes para tarjetas SD, paquetes, imágenes para Docker, pero presentan algunas carencias o bien son más complejas. El proceso de instalación manual que vamos a seguir es similar para cualquier distribución Linux, lo que nos aporta más posibilidades.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
+    
+      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Recepción de datos del instrumental HIRS de los satélites NOAA</title>
@@ -131,11 +158,11 @@
     
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
+      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
       <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
-      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+      <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
     
   </entry>
   
@@ -159,9 +186,9 @@
     
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
-    
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+      <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
     
   </entry>
   
@@ -184,9 +211,9 @@
     
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
       <category term="SPY Server" scheme="http://sdr-es.com/tags/SPY-Server/"/>
     
@@ -211,9 +238,9 @@
     
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
   </entry>
   
@@ -493,33 +520,6 @@
       <category term="Orbitron" scheme="http://sdr-es.com/tags/Orbitron/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Instalación de cable de audio virtual</title>
-    <link href="http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/"/>
-    <id>http://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/</id>
-    <published>2020-01-21T16:06:29.000Z</published>
-    <updated>2020-06-14T10:07:23.374Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
-    
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
-    
-      <category term="macOS" scheme="http://sdr-es.com/tags/macOS/"/>
-    
-      <category term="CubicSDR" scheme="http://sdr-es.com/tags/CubicSDR/"/>
-    
-      <category term="Virtual Audio Cable" scheme="http://sdr-es.com/tags/Virtual-Audio-Cable/"/>
     
   </entry>
   
