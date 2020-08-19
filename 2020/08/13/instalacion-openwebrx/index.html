@@ -28,7 +28,7 @@
 <meta property="og:locale" content="es_ES">
 <meta property="og:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx.jpg">
 <meta property="article:published_time" content="2020-08-13T15:36:20.000Z">
-<meta property="article:modified_time" content="2020-08-13T19:52:51.583Z">
+<meta property="article:modified_time" content="2020-08-19T09:11:17.489Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="RTL-SDR">
 <meta property="article:tag" content="OpenWebRX">
@@ -238,10 +238,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Publicado el</span>
-              
 
-              <time title="Creado por: 13/08/2020 17:36:20 / Modificado por: 21:52:51" itemprop="dateCreated datePublished" datetime="2020-08-13T17:36:20+02:00">13/08/2020</time>
+              <time title="Creado por: 13/08/2020 17:36:20" itemprop="dateCreated datePublished" datetime="2020-08-13T17:36:20+02:00">13/08/2020</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Editado el</span>
+                <time title="Modificado por: 19/08/2020 11:11:17" itemprop="dateModified" datetime="2020-08-19T11:11:17+02:00">19/08/2020</time>
+              </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-user"></i>
@@ -292,6 +298,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..&#x2F;..</span><br></pre></td></tr></table></figure>
+
+<h3 id="Instalar-js8py"><a href="#Instalar-js8py" class="headerlink" title="Instalar js8py"></a>Instalar js8py</h3><p>Librería para decodificar la salida de JS8Call.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;js8py.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd js8py</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo python3 setup.py install</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
 
 <h3 id="Instalar-SoapySDR-Opcional"><a href="#Instalar-SoapySDR-Opcional" class="headerlink" title="Instalar SoapySDR (Opcional)"></a>Instalar SoapySDR (Opcional)</h3><p>Si vamos a utilizar un dispositivo distinto del RTL-SDR tendremos que instalar SoapySDR para poder usarlo.<br>Los pasos para su instalación son los siguientes:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libsoapysdr0.6 libsoapysdr-dev soapysdr-tools soapysdr-module-all</span><br></pre></td></tr></table></figure>
@@ -492,7 +504,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-dependencias-de-instalacion"><span class="nav-number">1.</span> <span class="nav-text">Instalar dependencias de instalación</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-librerias"><span class="nav-number">2.</span> <span class="nav-text">Instalar librerías</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-CSDR"><span class="nav-number">2.1.</span> <span class="nav-text">Instalar CSDR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-OWRX-Connector"><span class="nav-number">2.2.</span> <span class="nav-text">Instalar OWRX Connector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-SoapySDR-Opcional"><span class="nav-number">2.3.</span> <span class="nav-text">Instalar SoapySDR (Opcional)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clonar-repositorio-de-OpenWebRX"><span class="nav-number">3.</span> <span class="nav-text">Clonar repositorio de OpenWebRX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuracion"><span class="nav-number">4.</span> <span class="nav-text">Configuración</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-como-servicio"><span class="nav-number">5.</span> <span class="nav-text">Instalar como servicio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-paquetes-adicionales"><span class="nav-number">6.</span> <span class="nav-text">Instalar paquetes adicionales</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-dependencias-de-instalacion"><span class="nav-number">1.</span> <span class="nav-text">Instalar dependencias de instalación</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-librerias"><span class="nav-number">2.</span> <span class="nav-text">Instalar librerías</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-CSDR"><span class="nav-number">2.1.</span> <span class="nav-text">Instalar CSDR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-OWRX-Connector"><span class="nav-number">2.2.</span> <span class="nav-text">Instalar OWRX Connector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-js8py"><span class="nav-number">2.3.</span> <span class="nav-text">Instalar js8py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-SoapySDR-Opcional"><span class="nav-number">2.4.</span> <span class="nav-text">Instalar SoapySDR (Opcional)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clonar-repositorio-de-OpenWebRX"><span class="nav-number">3.</span> <span class="nav-text">Clonar repositorio de OpenWebRX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuracion"><span class="nav-number">4.</span> <span class="nav-text">Configuración</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-como-servicio"><span class="nav-number">5.</span> <span class="nav-text">Instalar como servicio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-paquetes-adicionales"><span class="nav-number">6.</span> <span class="nav-text">Instalar paquetes adicionales</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
