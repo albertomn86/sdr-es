@@ -86,6 +86,23 @@ sudo make install
 cd ../..
 ```
 
+### Instalar js8py
+
+Librería para decodificar la salida de JS8Call.
+
+```
+git clone https://github.com/jketterl/js8py.git
+```
+```
+cd js8py
+```
+```
+sudo python3 setup.py install
+```
+```
+cd ..
+```
+
 ### Instalar SoapySDR (Opcional)
 
 Si vamos a utilizar un dispositivo distinto del RTL-SDR tendremos que instalar SoapySDR para poder usarlo.
