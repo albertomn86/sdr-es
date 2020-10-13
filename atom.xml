@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-08-31T17:08:19.108Z</updated>
+  <updated>2020-10-13T19:42:01.700Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recepción de los satélites CAS-4</title>
+    <link href="http://sdr-es.com/2020/10/10/recepcion-cas4/"/>
+    <id>http://sdr-es.com/2020/10/10/recepcion-cas4/</id>
+    <published>2020-10-10T17:23:32.000Z</published>
+    <updated>2020-10-13T19:42:01.700Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Los satélites CAS-4A y CAS-4B son unos micro-satélites construidos por Zhuhai Orbita Control Engineering Ltd. para el sistema orbital de observación terrestre de China. Su principal componente es una cámara de 1,98m de resolución. Estos satélites envían datos de telemetría en VHF, y son estos datos los que vamos a recibir, decodificar y visualizar en este artículo.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>Instalar receptor SDR online con OpenWebRX</title>
@@ -33,9 +56,9 @@
     
     
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
-    
       <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -455,7 +478,7 @@
     <link href="http://sdr-es.com/2020/02/22/recepcion-funcube1/"/>
     <id>http://sdr-es.com/2020/02/22/recepcion-funcube1/</id>
     <published>2020-02-22T10:37:32.000Z</published>
-    <updated>2020-05-01T13:51:43.545Z</updated>
+    <updated>2020-10-07T18:03:41.726Z</updated>
     
     <summary type="html">
     
@@ -497,27 +520,6 @@
       <category term="Orbitron" scheme="http://sdr-es.com/tags/Orbitron/"/>
     
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
-    
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Seguimiento de satélites con Orbitron</title>
-    <link href="http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/"/>
-    <id>http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/</id>
-    <published>2020-01-23T18:06:58.000Z</published>
-    <updated>2020-05-01T13:51:43.550Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.&lt;br&gt;Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Orbitron" scheme="http://sdr-es.com/tags/Orbitron/"/>
     
       <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
     
