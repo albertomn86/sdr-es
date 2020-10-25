@@ -19,28 +19,27 @@
     var CONFIG = {"hostname":"sdr-es.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low E">
+  <meta name="description" content="Digital Radio Mondiale (DRM), en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Seguimiento de satélites con Orbitron">
-<meta property="og:url" content="http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/index.html">
+<meta property="og:title" content="Recibir radio digital mundial (DRM)">
+<meta property="og:url" content="http://sdr-es.com/2020/10/25/recibir-drm/index.html">
 <meta property="og:site_name" content="SDR en español">
-<meta property="og:description" content="Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low E">
+<meta property="og:description" content="Digital Radio Mondiale (DRM), en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radi">
 <meta property="og:locale" content="es_ES">
-<meta property="og:image" content="http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/orbitron.jpg">
-<meta property="og:image" content="http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/orbitron-location.jpg">
-<meta property="og:image" content="http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/orbitron-setup.jpg">
-<meta property="og:image" content="http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/setup-tle.jpg">
-<meta property="og:image" content="http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/load-tle.jpg">
-<meta property="og:image" content="http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/orbitron-loaded.jpg">
-<meta property="article:published_time" content="2020-01-23T18:06:58.000Z">
-<meta property="article:modified_time" content="2020-05-01T13:51:43.550Z">
+<meta property="og:image" content="http://sdr-es.com/2020/10/25/recibir-drm/logo.png">
+<meta property="og:image" content="http://sdr-es.com/2020/10/25/recibir-drm/input.png">
+<meta property="og:image" content="http://sdr-es.com/2020/10/25/recibir-drm/dream.png">
+<meta property="og:image" content="http://sdr-es.com/2020/10/25/recibir-drm/sdrSharp.png">
+<meta property="article:published_time" content="2020-10-25T10:52:23.000Z">
+<meta property="article:modified_time" content="2020-10-25T13:00:04.537Z">
 <meta property="article:author" content="SDR en español">
-<meta property="article:tag" content="Orbitron">
+<meta property="article:tag" content="SDRSharp">
 <meta property="article:tag" content="Windows">
+<meta property="article:tag" content="DRM">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/orbitron.jpg">
+<meta name="twitter:image" content="http://sdr-es.com/2020/10/25/recibir-drm/logo.png">
 
-<link rel="canonical" href="http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/">
+<link rel="canonical" href="http://sdr-es.com/2020/10/25/recibir-drm/">
 
 
 <script id="page-configurations">
@@ -66,7 +65,7 @@
   padding: 1px 4px;
 }
 </style>
-  <title>Seguimiento de satélites con Orbitron | SDR en español</title>
+  <title>Recibir radio digital mundial (DRM) | SDR en español</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156538909-1"></script>
     <script>
@@ -219,7 +218,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
-    <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/">
+    <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/10/25/recibir-drm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -232,7 +231,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Seguimiento de satélites con Orbitron
+          Recibir radio digital mundial (DRM)
         </h1>
 
         <div class="post-meta">
@@ -241,16 +240,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Publicado el</span>
+              
 
-              <time title="Creado por: 23/01/2020 19:06:58" itemprop="dateCreated datePublished" datetime="2020-01-23T19:06:58+01:00">23/01/2020</time>
+              <time title="Creado por: 25/10/2020 11:52:23 / Modificado por: 14:00:04" itemprop="dateCreated datePublished" datetime="2020-10-25T11:52:23+01:00">25/10/2020</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 01/05/2020 15:51:43" itemprop="dateModified" datetime="2020-05-01T15:51:43+02:00">01/05/2020</time>
-              </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-user"></i>
@@ -271,33 +264,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.<br>Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.</p>
+        <p><a href="https://www.drm.org/" target="_blank" rel="noopener">Digital Radio Mondiale (DRM)</a>, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.<br>DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.<br>En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.</p>
 <a id="more"></a>
 
-<h2 id="Instalacion-de-Orbitron"><a href="#Instalacion-de-Orbitron" class="headerlink" title="Instalación de Orbitron"></a>Instalación de Orbitron</h2><p>El primer paso es descargar Orbitron desde su web: <a href="http://www.stoff.pl/downloads.php" target="_blank" rel="noopener">http://www.stoff.pl/downloads.php</a></p>
-<p>Tenemos la opción de descargarnos el instalador o un archivo ZIP. En este ejemplo vamos a descargar el ZIP y lo vamos a extraer en el directorio <em>C:\SDR\Orbitron</em>.</p>
-<p>Ejecutamos ahora el programa haciendo doble click en <strong>Orbitron.exe</strong> y se nos abrirá la interfaz del programa. Nos pedirá que actualicemos los archivo de TLE al iniciar, a lo que le decimos que no. Más adelante veremos qué son estos archivos y cómo actualizarlos.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron.jpg" class="" title="Orbitron">
+<img src="/2020/10/25/recibir-drm/logo.png" class="" width="300" title="DRM logo">
 
-<h2 id="Configuracion-de-Orbitron"><a href="#Configuracion-de-Orbitron" class="headerlink" title="Configuración de Orbitron"></a>Configuración de Orbitron</h2><p>Vamos ahora a configurar Orbitron con los ajustes básicos.</p>
-<p>El primer ajuste es indicarle nuestra localización. Para ello vamos a la pestaña Location e introducimos nuestros datos. Si no los sabemos podemos buscar nuestra ciudad (o las más cercana) en el listado que tenemos a la derecha. Lo ideal es meter los valores más exactos posibles.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-location.jpg" class="" title="Orbitron Location">
+<p>Encontraremos las emisiones DRM30 por debajo de los 30 MHz. Habitualmente suelen ser emisiones no continuadas, por lo que no necesariamente vamos a encontrar dichas emisiones siempre. Podemos consultar los horarios actualizados de las mismas en el siguiente enlace:</p>
+<p><a href="https://www.drm.org/what-can-i-hear/broadcast-schedule-2/" target="_blank" rel="noopener"><center>DRM Broadcast Schedule</center></a></p>
+<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el <a href="/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software <a href="https://sourceforge.net/projects/drm/" target="_blank" rel="noopener">Dream AM/DRM Receiver</a> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/" target="_blank" rel="noopener"><center>Dream AM/DRM Receiver</center></a></p>
+<p>Este programa está disponible para varios sistemas operativos, incluso podemos descargar el código fuente y compilarlo si queremos.<br>Para nuestro ejemplo, descargamos la versión 2.1.1 para Windows (<a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/dream-2.1.1-win32-svn808-df.zip/download" target="_blank" rel="noopener">dream-2.1.1-win32-svn808-df.zip</a>). La versión 2.2 es muy similar pero presenta algunos errores de funcionamiento. Si aun así queremos probar esta versión, podemos descargarla desde <a href="https://www.reddit.com/r/RTLSDR/comments/grp6m2/dream_v221_for_windows_with_xheaac_support/" target="_blank" rel="noopener">aquí</a>.</p>
+<p>Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.<br>Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos y los guardamos en el directorio de Dream:</p>
+<ul>
+<li><a href="faad2_drm.dll">faad2_drm.dll</a></li>
+<li><a href="libfaac.dll">libfaac.dll</a></li>
+</ul>
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em>, <em>Sound Card</em>, <em>Signal Input</em> y en <em>Device</em> seleccionamos el <strong>cable de audio virtual</strong>.</p>
+<img src="/2020/10/25/recibir-drm/input.png" class="" width="800" title="Entrada audio">
 
-<p>Una vez los tengamos introducidos correctamente, hacemos click en <strong>Choose</strong> para seleccionar esta ubicación.</p>
-<p>El siguiente paso es seleccionar el archivo con los TLE de los satélites que vamos a seguir.<br>Estos archivos TLE contienen un listado de objetos que orbitan la Tierra con sus respectivos elementos orbitales en formato TLE <em>(two-line element set)</em>. Con estos elementos, y usando la fórmula adecuada, podemos estimar la posición y velocidad del objeto en cualquier instante de tiempo pasado o futuro.</p>
-<p>Aquí tenemos varias opciones, utilizar los archivos TLE descargados por Orbitron, o bien crear un archivo con los satélites que nos interesen. Si optamos por la primera opción, necesitamos primeramente actualizar los archivos TLE. Para ello abrimos la ventana de ajustes de Orbitron presionando las teclas <strong><em>Alt+F5</em></strong>, o bien hacemos click en el siguiente punto y seleccionamos <strong>Setup</strong>:</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-setup.jpg" class="" title="Orbitron Setup">
 
-<p>Vamos a la pestaña <strong>TLE updater</strong> y hacemos click en el siguiente icono:</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/setup-tle.jpg" class="" title="Actualizar TLE">
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Una vez tenemos el programa escuchando por el cable de audio virtual, procedemos a sintonizar una emisión de DRM con SDR#. Usaremos el <strong>modo USB</strong> y un <strong>ancho de banda de 10 KHz</strong>.<br>Cuando Dream detecte la señal, veremos datos de la emisión en la ventana y comenzará a escucharse si tenemos señal suficiente. Los tres indicadores señalados en la siguiente imagen deben estar activos para poder escuchar el audio.</p>
+<img src="/2020/10/25/recibir-drm/dream.png" class="" width="700" title="Dream">
 
-<p>Una vez se actualicen los archivos, cerramos esa ventana y hacemos click en <strong>Load TLE</strong> y seleccionamos el archivo que contenga los satélites que queremos seguir. En este caso vamos a elegir un archivo que contiene los TLE de algunos satélites que nos interesan.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/load-tle.jpg" class="" title="Cargar archivo">
 
-<p>Ahora bastaría con ir seleccionando los satélites que queremos seguir y se mostrarán sobre el mapa.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-loaded.jpg" class="" title="Orbitron">
-
-<p>En siguientes tutoriales veremos cómo conectar Orbitron con SDR# para realizar seguimientos automáticos.</p>
+<img src="/2020/10/25/recibir-drm/sdrSharp.png" class="" width="900" title="SDR# + Dream">
 
     </div>
 
@@ -363,8 +353,9 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/Orbitron/" rel="tag"><i class="fa fa-tag"></i> Orbitron</a>
+              <a href="/tags/SDRSharp/" rel="tag"><i class="fa fa-tag"></i> SDRSharp</a>
               <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
+              <a href="/tags/DRM/" rel="tag"><i class="fa fa-tag"></i> DRM</a>
           </div>
           
 
@@ -376,7 +367,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Enlace a la entrada: </strong>
-    <a href="http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/" title="Seguimiento de satélites con Orbitron">http://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/</a>
+    <a href="http://sdr-es.com/2020/10/25/recibir-drm/" title="Recibir radio digital mundial (DRM)">http://sdr-es.com/2020/10/25/recibir-drm/</a>
   </li>
   -->
   <li class="post-copyright-license">
@@ -392,13 +383,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/01/21/instalacion-virtual-cable-audio/" rel="prev" title="Instalación de cable de audio virtual">
-      <i class="fa fa-chevron-left"></i> Instalación de cable de audio virtual
+    <a href="/2020/10/10/recepcion-cas4/" rel="prev" title="Recepción de los satélites CAS-4">
+      <i class="fa fa-chevron-left"></i> Recepción de los satélites CAS-4
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/02/18/ajuste-frecuencia-doppler-orbitron/" rel="next" title="Ajuste de frecuencia en recepción de satélites">
-      Ajuste de frecuencia en recepción de satélites <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -457,7 +445,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion-de-Orbitron"><span class="nav-number">1.</span> <span class="nav-text">Instalación de Orbitron</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuracion-de-Orbitron"><span class="nav-number">2.</span> <span class="nav-text">Configuración de Orbitron</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion-del-software"><span class="nav-number">1.</span> <span class="nav-text">Instalación del software</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuracion"><span class="nav-number">2.</span> <span class="nav-text">Configuración</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recepcion"><span class="nav-number">3.</span> <span class="nav-text">Recepción</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
