@@ -200,9 +200,9 @@
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -228,9 +228,9 @@
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -253,9 +253,9 @@
     
     
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
-    
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -280,9 +280,9 @@
     
     
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
-    
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
