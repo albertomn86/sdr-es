@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-10-25T13:00:04.537Z</updated>
+  <updated>2020-12-26T19:33:36.261Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recibir imágenes SSTV desde la ISS</title>
+    <link href="http://sdr-es.com/2020/12/26/recibir-sstv-iss/"/>
+    <id>http://sdr-es.com/2020/12/26/recibir-sstv-iss/</id>
+    <published>2020-12-26T17:15:55.000Z</published>
+    <updated>2020-12-26T19:33:36.261Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://www.ariss.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ARISS&lt;/a&gt; organiza ocasionalmente eventos conmemorativos en los que se envían imágenes &lt;a href=&quot;https://es.wikipedia.org/wiki/SSTV&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SSTV&lt;/a&gt; desde la ISS (&lt;em&gt;International Space Station&lt;/em&gt;). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+      <category term="ISS" scheme="http://sdr-es.com/tags/ISS/"/>
+    
+      <category term="SSTV" scheme="http://sdr-es.com/tags/SSTV/"/>
+    
+  </entry>
   
   <entry>
     <title>Recibir radio digital mundial (DRM)</title>
@@ -81,11 +106,11 @@
     
       <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
-    
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
       <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
+      <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
     
   </entry>
   
@@ -200,9 +225,9 @@
     
     
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
-    
       <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -228,9 +253,9 @@
     
     
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
-    
       <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -253,9 +278,9 @@
     
     
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
-    
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -280,9 +305,9 @@
     
     
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
-    
       <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
       <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -481,31 +506,6 @@
     <summary type="html">
     
       &lt;p&gt;El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan’s Crown Prince Foundation.&lt;br&gt;JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-6. Además de las funciones habituales de FUNcube, el satélite envía imágenes en formato SSDV.&lt;br&gt;En este artículo veremos como recibir la telemetría y las imágenes.&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
-    
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
-    
-      <category term="Cubesat" scheme="http://sdr-es.com/tags/Cubesat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Recepción del satélite FUNcube-1</title>
-    <link href="http://sdr-es.com/2020/02/22/recepcion-funcube1/"/>
-    <id>http://sdr-es.com/2020/02/22/recepcion-funcube1/</id>
-    <published>2020-02-22T10:37:32.000Z</published>
-    <updated>2020-10-07T18:03:41.726Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;El satélite FUNcube-1 es un &lt;a href=&quot;https://es.wikipedia.org/wiki/CubeSat&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CubeSat&lt;/a&gt; construido por AMSAT-UK con fines educativos.&lt;br&gt;Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.&lt;/p&gt;
     
     </summary>
     
