@@ -1,7 +1,7 @@
 ---
 title: Instalación de cable de audio virtual
 date: 2020-01-21 17:06:29
-tags: ['Virtual Audio Cable', SDRSharp, Windows, macOS, CubicSDR]
+tags: ['Virtual Audio Cable', Instalación, Windows, macOS]
 author: AlbertoMN
 ---
 

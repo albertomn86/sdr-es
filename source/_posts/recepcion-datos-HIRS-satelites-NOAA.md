@@ -1,7 +1,7 @@
 ---
 title: Recepción de datos del instrumental HIRS de los satélites NOAA
 date: 2020-07-27 20:19:04
-tags: [Windows, Satélites, Satélites meteorológicos, SDRSharp]
+tags: [Satélites, Satélites meteorológicos, NOAA]
 author: AlbertoMN
 ---
 

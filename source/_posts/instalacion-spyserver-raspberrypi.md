@@ -1,7 +1,7 @@
 ---
 title: Instalación de SPY Server en Raspberry Pi
 date: 2020-04-11 11:10:42
-tags: [RTL-SDR, SDRSharp, Raspberry Pi, Linux, SPY Server]
+tags: [RTL-SDR, SDRSharp, Raspberry Pi, Linux, SPY Server, Instalación]
 author: AlbertoMN
 coauthor: Ronda
 ---

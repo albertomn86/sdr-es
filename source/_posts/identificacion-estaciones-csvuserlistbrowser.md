@@ -1,7 +1,7 @@
 ---
 title: Identificación de estaciones de radiodifusión con CSVUserlistBrowser
 date: 2020-05-10 14:40:22
-tags: [SDRSharp, Windows]
+tags: [HF]
 author: AlbertoMN
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Seguimiento de satélites con Orbitron
 date: 2020-01-23 19:06:58
-tags: [Orbitron, Windows]
+tags: [Orbitron, Satélites]
 author: AlbertoMN
 ---
 

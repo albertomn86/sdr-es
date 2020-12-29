@@ -1,7 +1,7 @@
 ---
 title: Recepción de mensajes Inmarsat Aero
 date: 2020-03-10 12:26:30
-tags: [Satélites, Inmarsat, L-Band, SDRSharp, Windows]
+tags: [Satélites, Inmarsat, L-Band]
 author: AlbertoMN
 ---
 

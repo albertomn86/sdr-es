@@ -1,7 +1,7 @@
 ---
 title: Instalación de dispositivos RTL-SDR en Windows
 date: 2020-01-19 19:26:40
-tags: [RTL-SDR, SDRSharp, Windows]
+tags: [RTL-SDR, SDRSharp, Windows, Instalación]
 author: AlbertoMN
 ---
 

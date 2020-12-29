@@ -1,7 +1,7 @@
 ---
 title: "Recepción de los satélites CAS-4"
 date: 2020-10-10 19:23:32
-tags: [Windows, Satélites, SDRSharp]
+tags: [KISS, Satélites]
 author: AlbertoMN
 ---
 

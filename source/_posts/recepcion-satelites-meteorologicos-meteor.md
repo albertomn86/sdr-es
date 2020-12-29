@@ -1,7 +1,7 @@
 ---
 title: Recepción de satélites meteorológicos Meteor-M
 date: 2020-03-27 12:10:49
-tags: [Windows, Satélites, Satélites meteorológicos, SDRSharp]
+tags: [Satélites, Satélites meteorológicos]
 author: AlbertoMN
 ---
 

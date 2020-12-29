@@ -1,7 +1,7 @@
 ---
 title: "Recepción del satélite FUNcube-1"
 date: 2020-02-22 11:37:32
-tags: [Windows, Satélites, Cubesat, SDRSharp]
+tags: [Satélites, Cubesat]
 author: AlbertoMN
 ---
 

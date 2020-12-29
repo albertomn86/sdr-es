@@ -1,7 +1,7 @@
 ---
 title: Instalación de dispositivos RTL-SDR en macOS
 date: 2020-06-14 10:32:42
-tags: [RTL-SDR, macOS, CubicSDR]
+tags: [RTL-SDR, macOS, CubicSDR, Instalación]
 author: AlbertoMN
 ---
 

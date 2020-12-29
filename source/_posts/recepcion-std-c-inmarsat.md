@@ -1,7 +1,7 @@
 ---
 title: Recepción de mensajes Inmarsat STD-C
 date: 2020-03-09 12:46:44
-tags: [Satélites, Inmarsat, L-Band, SDRSharp, Windows]
+tags: [Satélites, Inmarsat, L-Band]
 author: AlbertoMN
 ---
 

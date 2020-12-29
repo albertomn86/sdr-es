@@ -1,7 +1,7 @@
 ---
 title: "Recepción del satélite JY1-SAT"
 date: 2020-02-25 20:45:38
-tags: [Windows, Satélites, Cubesat, SDRSharp]
+tags: [Satélites, Cubesat]
 author: AlbertoMN
 ---
 

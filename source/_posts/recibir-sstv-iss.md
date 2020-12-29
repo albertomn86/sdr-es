@@ -1,7 +1,7 @@
 ---
 title: Recibir imágenes SSTV desde la ISS
 date: 2020-12-26 18:15:55
-tags: [ISS, SSTV, Windows, SDRSharp]
+tags: [ISS, SSTV]
 author: AlbertoMN
 ---
 
@@ -21,7 +21,7 @@ Los datos para DDETracker son los siguientes:
     ```
     radio_Start
     radio_modulation_type<NFM>
-    radio_bandwidth_Hz<25000>
+    radio_bandwidth_Hz<20000>
     radio_center_frequency_Hz<145800000>
     radio_tracking_frequency_On
     ```

@@ -1,7 +1,7 @@
 ---
 title: Instalación de estación terrestre con SatNOGS (II)
 date: 2020-04-27 16:34:55
-tags: [SatNOGS, RTL-SDR, Linux, Raspberry Pi, Satélites]
+tags: [SatNOGS, Linux, Raspberry Pi, Satélites, Instalación]
 author: AlbertoMN
 ---
 

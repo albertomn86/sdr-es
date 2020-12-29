@@ -1,7 +1,7 @@
 ---
 title: Recepción de satélites meteorológicos NOAA
 date: 2020-03-20 13:16:52
-tags: [Windows, Satélites, Satélites meteorológicos, SDRSharp]
+tags: [Satélites, Satélites meteorológicos, NOAA]
 author: AlbertoMN
 ---
 

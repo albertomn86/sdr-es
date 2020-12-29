@@ -1,7 +1,7 @@
 ---
 title: Recibir radio digital mundial (DRM)
 date: 2020-10-25 11:52:23
-tags: [DRM, Windows, SDRSharp]
+tags: [DRM, HF]
 author: AlbertoMN
 ---
 

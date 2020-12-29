@@ -1,7 +1,7 @@
 ---
 title: Ajuste de frecuencia en recepción de satélites
 date: 2020-02-18 12:45:55
-tags: [Satélites, Orbitron, SDRSharp, Windows]
+tags: [Satélites, Orbitron]
 author: AlbertoMN
 ---
 

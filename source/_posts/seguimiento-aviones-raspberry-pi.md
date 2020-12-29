@@ -1,7 +1,7 @@
 ---
 title: Recepción de mensajes ADS-B en Raspberry Pi
 date: 2020-05-03 10:56:04
-tags: [RTL-SDR, ADS-B, Raspberry Pi, dump1090]
+tags: [ADS-B, Raspberry Pi, dump1090]
 author: AlbertoMN
 ---
 

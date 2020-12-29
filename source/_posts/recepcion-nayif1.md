@@ -1,7 +1,7 @@
 ---
 title: "Recepción del satélite NAYIF-1"
 date: 2020-02-26 09:32:14
-tags: [Windows, Satélites, Cubesat, SDRSharp]
+tags: [Satélites, Cubesat]
 author: AlbertoMN
 ---
 
