@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.3.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png">
@@ -12,14 +14,15 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"sdr-es.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-
-  <meta name="description" content="OpenWebRX es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, s">
+<meta name="description" content="OpenWebRX es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Instalar receptor SDR online con OpenWebRX">
 <meta property="og:url" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/index.html">
@@ -28,19 +31,20 @@
 <meta property="og:locale" content="es_ES">
 <meta property="og:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx.jpg">
 <meta property="article:published_time" content="2020-08-13T15:36:20.000Z">
-<meta property="article:modified_time" content="2020-08-31T17:08:19.108Z">
+<meta property="article:modified_time" content="2020-08-13T15:36:20.000Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="RTL-SDR">
+<meta property="article:tag" content="OpenWebRX">
 <meta property="article:tag" content="Raspberry Pi">
 <meta property="article:tag" content="Linux">
-<meta property="article:tag" content="OpenWebRX">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx.jpg">
+
 
 <link rel="canonical" href="http://sdr-es.com/2020/08/13/instalacion-openwebrx/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -48,8 +52,7 @@
     isPost : true,
     lang   : 'es'
   };
-</script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+</script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
 #needsharebutton-postbottom {
   cursor: pointer;
   height: 26px;
@@ -63,7 +66,7 @@
   padding: 1px 4px;
 }
 </style>
-  <title>Instalar receptor SDR online con OpenWebRX | SDR en español</title>
+<title>Instalar receptor SDR online con OpenWebRX | SDR en español</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156538909-1"></script>
     <script>
@@ -78,54 +81,64 @@
 
 
 
-
-
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
 <link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Cambiar a barra de navegación">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="Cambiar a barra de navegación" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">SDR en español</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -138,29 +151,12 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a>
-
-  </li>
-        <li class="menu-item menu-item-first-steps">
-
-    <a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a>
-
-  </li>
-        <li class="menu-item menu-item-frequencies">
-
-    <a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a>
-
-  </li>
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li>
+        <li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li>
+        <li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
         </a>
@@ -171,23 +167,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Buscando..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -195,308 +190,18 @@
   </div>
 
 </div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
-    <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/08/13/instalacion-openwebrx/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="SDR en español">
-      <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SDR en español">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Instalar receptor SDR online con OpenWebRX
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Publicado el</span>
-
-              <time title="Creado por: 13/08/2020 17:36:20" itemprop="dateCreated datePublished" datetime="2020-08-13T17:36:20+02:00">13/08/2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 31/08/2020 19:08:19" itemprop="dateModified" datetime="2020-08-31T19:08:19+02:00">31/08/2020</time>
-              </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-user"></i>
-                </span>
-                <span class="post-meta-item-text">Creado por</span>
-                <span>AlbertoMN</span>
-              </span>
-
-          
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p><a href="https://www.openwebrx.de/" target="_blank" rel="noopener">OpenWebRX</a> es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, simplemente accediendo desde un navegador web.</p>
-<p>Este proyecto <em>Open Source</em> nació en 2015 de mano de András Retzler (HA7ILM). Pero a finales de 2019, el autor abandonó el proyecto y es cuando <a href="https://github.com/jketterl" target="_blank" rel="noopener">Jakob Ketterl</a> retomó el desarrollo del proyecto añadiendo nuevas funcionalidades y mejorando el software. El proyecto comenzó a ganar popularidad y cuenta actualmente con un gran número de colaboradores.</p>
-<p>En este artículo veremos cómo instalar OpenWebRX en una Raspberry Pi usando su código fuente. Existen otras opciones disponibles para instalar este software, como imágenes para tarjetas SD, paquetes, imágenes para Docker, pero presentan algunas carencias o bien son más complejas. El proceso de instalación manual que vamos a seguir es similar para cualquier distribución Linux, lo que nos aporta más posibilidades.</p>
-<a id="more"></a>
-
-<img src="/2020/08/13/instalacion-openwebrx/openwebrx.jpg" class="" width="900" title="OpenWebRX">
-
-<h2 id="Instalar-dependencias-de-instalacion"><a href="#Instalar-dependencias-de-instalacion" class="headerlink" title="Instalar dependencias de instalación"></a>Instalar dependencias de instalación</h2><p>Para poder compilar e instalar las librerías necesarias necesitamos una serie de dependencias. Para instalarlas ejecutamos los siguientes comandos:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git build-essential cmake libfftw3-dev python3 python3-setuptools rtl-sdr netcat libitpp-dev libsndfile-dev librtlsdr-dev automake autoconf libtool pkg-config</span><br></pre></td></tr></table></figure>
-
-<h2 id="Instalar-librerias"><a href="#Instalar-librerias" class="headerlink" title="Instalar librerías"></a>Instalar librerías</h2><h3 id="Instalar-CSDR"><a href="#Instalar-CSDR" class="headerlink" title="Instalar CSDR"></a>Instalar CSDR</h3><p><em>CSDR</em> es la librería encargada de gestionar el dispositivo SDR. Siguiendo los pasos expuestos a continuación podremos compilarla e instalarla.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;csdr.git</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd csdr</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autoreconf -i</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
-
-<h3 id="Instalar-OWRX-Connector"><a href="#Instalar-OWRX-Connector" class="headerlink" title="Instalar OWRX Connector"></a>Instalar OWRX Connector</h3><p><em>OWRX Connector</em> es la librería encargada de conectar la interfaz del SDR con OpenWebRX. Instalamos siguiendo los pasos descritos a continuación.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;owrx_connector.git</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd owrx_connector</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir build</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd build</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake ..</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..&#x2F;..</span><br></pre></td></tr></table></figure>
-
-<h3 id="Instalar-js8py"><a href="#Instalar-js8py" class="headerlink" title="Instalar js8py"></a>Instalar js8py</h3><p>Librería para decodificar la salida de JS8Call.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;js8py.git</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd js8py</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo python3 setup.py install</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
-
-<h3 id="Instalar-SoapySDR-Opcional"><a href="#Instalar-SoapySDR-Opcional" class="headerlink" title="Instalar SoapySDR (Opcional)"></a>Instalar SoapySDR (Opcional)</h3><p>Si vamos a utilizar un dispositivo distinto del RTL-SDR tendremos que instalar SoapySDR para poder usarlo.<br>Los pasos para su instalación son los siguientes:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libsoapysdr0.6 libsoapysdr-dev soapysdr-tools soapysdr-module-all</span><br></pre></td></tr></table></figure>
-
-<p>Si no encuentra la librería “libsoapysdr0.6”, reemplazar por “libsoapysdr0.7”.</p>
-<h2 id="Clonar-repositorio-de-OpenWebRX"><a href="#Clonar-repositorio-de-OpenWebRX" class="headerlink" title="Clonar repositorio de OpenWebRX"></a>Clonar repositorio de OpenWebRX</h2><p>Descargamos la última versión estable disponible. Consultar el listado de versiones <a href="https://github.com/jketterl/openwebrx/tags" target="_blank" rel="noopener">aquí</a>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b 0.19.1 https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;openwebrx.git</span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El archivo de configuración se encuentra dentro del repositorio que acabamos de clonar. Para editarlo lo abrimos con el editor:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano config_webrx.py</span><br></pre></td></tr></table></figure>
-
-<p>Este archivo contiene muchos ajustes que podemos modificar. El ajuste principal que vamos a ver es el de configurar los dispositivos SDR. Para ello abrimos el archivo y buscamos el siguiente fragmento:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">sdrs &#x3D; &#123;</span><br><span class="line">    &quot;rtlsdr&quot;: &#123;</span><br><span class="line">        &quot;name&quot;: &quot;RTL-SDR USB Stick&quot;,</span><br><span class="line">        &quot;type&quot;: &quot;rtl_sdr&quot;,</span><br><span class="line">        &quot;ppm&quot;: 0,</span><br><span class="line">        # you can change this if you use an upconverter. formula is:</span><br><span class="line">        # center_freq + lfo_offset &#x3D; actual frequency on the sdr</span><br><span class="line">        # &quot;lfo_offset&quot;: 0,</span><br><span class="line">        &quot;profiles&quot;: &#123;</span><br><span class="line">            &quot;70cm&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;70cm Relais&quot;,</span><br><span class="line">                &quot;center_freq&quot;: 438800000,</span><br><span class="line">                &quot;rf_gain&quot;: 30,</span><br><span class="line">                &quot;samp_rate&quot;: 2400000,</span><br><span class="line">                &quot;start_freq&quot;: 439275000,</span><br><span class="line">                &quot;start_mod&quot;: &quot;nfm&quot;,</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;2m&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;2m komplett&quot;,</span><br><span class="line">                &quot;center_freq&quot;: 145000000,</span><br><span class="line">                &quot;rf_gain&quot;: 30,</span><br><span class="line">                &quot;samp_rate&quot;: 2400000,</span><br><span class="line">                &quot;start_freq&quot;: 145725000,</span><br><span class="line">                &quot;start_mod&quot;: &quot;nfm&quot;,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<p>Ahora lo editamos con los datos de nuestro/os dispositivos conectados. A continuación se muestra un breve descripción de esta configuración:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">sdrs &#x3D; &#123;</span><br><span class="line">    &quot;[NOMBRE_DEL_AJUSTE]&quot;: &#123;</span><br><span class="line">        &quot;name&quot;: &quot;[NOMBRE_DEL_DISPOSITIVO: Nombre descriptivo que se mostrará en el selector.]&quot;,</span><br><span class="line">        &quot;type&quot;: &quot;[TIPO_DISPOSITIVO: rtl_sdr, rtl_sdr_soapy, sdrplay, hackrf, airspy, airspyhf, fifi_sdr, perseussdr, lime_sdr, pluto_sdr,soapy_remote.]&quot;,</span><br><span class="line">        &quot;device&quot;: &quot;[NUMERO_SERIE: Añadir en caso de que tengamos varios dispositivos RTL-SDR.]&quot;,</span><br><span class="line">        &quot;ppm&quot;: [VALOR_PPM],</span><br><span class="line">        &quot;lfo_offset&quot;: [VALOR_DESPLAZAMIENTO: Añadir si usamos Up&#x2F;Down converter.],</span><br><span class="line">        &quot;profiles&quot;: &#123;</span><br><span class="line">            &quot;[NOMBRE_DEL_PERFIL]&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;[DESCRIPCION: Nombre que se mostrará en el selector.]&quot;,</span><br><span class="line">                &quot;center_freq&quot;: [FRECUENCIA_CENTRAL],</span><br><span class="line">                &quot;rf_gain&quot;: [GANANCIA_DEL_SDR: Ganancia para esta frecuencia.],</span><br><span class="line">                &quot;samp_rate&quot;: [SAMPLE_RATE],</span><br><span class="line">                &quot;start_freq&quot;: [FRECUENCIA_DE_INICIO],</span><br><span class="line">                &quot;start_mod&quot;: &quot;[MODO_DE_INICIO]&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Modificamos el ajuste añadiendo o quitando tantos dispositivos y perfiles como queramos.</p>
-<h2 id="Instalar-como-servicio"><a href="#Instalar-como-servicio" class="headerlink" title="Instalar como servicio"></a>Instalar como servicio</h2><p>El último paso es instalar OpenWebRX como servicio para que se inicie de forma automática al iniciar el sistema. Para ello vamos a añadir un nuevo servicio:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;openwebrx.service</span><br></pre></td></tr></table></figure>
-
-<p>Añadimos lo siguiente, modificando si fuese necesario:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;OpenWebRX</span><br><span class="line">After&#x3D;network.target</span><br><span class="line">StartLimitIntervalSec&#x3D;0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">Restart&#x3D;always</span><br><span class="line">RestartSec&#x3D;1</span><br><span class="line">User&#x3D;pi</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;home&#x2F;pi&#x2F;openwebrx</span><br><span class="line">ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;python3 &#x2F;home&#x2F;pi&#x2F;openwebrx&#x2F;openwebrx.py</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
-
-<p>Activamos para que se inicie de forma automática:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable openwebrx</span><br></pre></td></tr></table></figure>
-
-<p>Iniciamos el servicio:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start openwebrx</span><br></pre></td></tr></table></figure>
-
-<p>Ahora ya podemos acceder desde cualquier navegador introduciendo la dirección IP de la Raspberry Pi y el puerto 8073 (podemos cambiarlo en los ajustes):</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;[DIRECCION_IP:8073]</span><br></pre></td></tr></table></figure>
-
-<h2 id="Instalar-paquetes-adicionales"><a href="#Instalar-paquetes-adicionales" class="headerlink" title="Instalar paquetes adicionales"></a>Instalar paquetes adicionales</h2><p>Tenemos la posibilidad de añadir nuevos paquetes a OpenWebRX para decodificar ciertos modos digitales:</p>
-<ul>
-<li>JS8Call.</li>
-<li>APRS.</li>
-<li>WSJT-X (FT8, FT4, WSPR, JT65, JT9).</li>
-<li>Voz digital (DMR, YSF).</li>
-</ul>
-<p>La guía de instalación de todos estos paquetes se encuentra en el manual oficial de instalación de OpenWebRX del que se ha obtenido la información para este artículo:</p>
-<p><a href="https://github.com/jketterl/openwebrx/wiki/Manual-Package-installation-(including-digital-voice)" target="_blank" rel="noopener"><center>https://github.com/jketterl/openwebrx/wiki/Manual-Package-installation-(including-digital-voice)</center></a></p>
-
-    </div>
-
-    
-    
-    <div class="post-widgets">
-      <div id="needsharebutton-postbottom">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
-    </div>
         
-
-  <div class="followme">
-    <p>Síguenos en nuestros otros canales</p>
-
-    <div class="social-list">
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://twitter.com/sdr_esp">
-            <span class="icon">
-              <i class="fab fa-twitter"></i>
-            </span>
-
-            <span class="label">Twitter</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA">
-            <span class="icon">
-              <i class="fab fa-youtube"></i>
-            </span>
-
-            <span class="label">YouTube</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://t.me/sdr_es">
-            <span class="icon">
-              <i class="fab fa-telegram-plane"></i>
-            </span>
-
-            <span class="label">Telegram</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
-            <span class="icon">
-              <i class="fa fa-rss"></i>
-            </span>
-
-            <span class="label">RSS</span>
-          </a>
-        </div>
-    </div>
-  </div>
-
-
-      <footer class="post-footer">
-          
-          <div class="post-tags">
-              <a href="/tags/RTL-SDR/" rel="tag"><i class="fa fa-tag"></i> RTL-SDR</a>
-              <a href="/tags/Raspberry-Pi/" rel="tag"><i class="fa fa-tag"></i> Raspberry Pi</a>
-              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
-              <a href="/tags/OpenWebRX/" rel="tag"><i class="fa fa-tag"></i> OpenWebRX</a>
-          </div>
-          
-
-<div>
-<ul class="post-copyright">
-  <!--
-  <li class="post-copyright-author">
-    <strong>Autor de la entrada:  </strong>AlbertoMN
-  </li>
-  <li class="post-copyright-link">
-    <strong>Enlace a la entrada: </strong>
-    <a href="http://sdr-es.com/2020/08/13/instalacion-openwebrx/" title="Instalar receptor SDR online con OpenWebRX">http://sdr-es.com/2020/08/13/instalacion-openwebrx/</a>
-  </li>
-  -->
-  <li class="post-copyright-license">
-    <strong>Copyright:  </strong>Todos los artículos de este sitio están licenciados bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> a no ser que se especifique una licencia adicional.
-  </li>
-</ul>
-</div>
-
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/" rel="prev" title="Recepción de datos del instrumental HIRS de los satélites NOAA">
-      <i class="fa fa-chevron-left"></i> Recepción de datos del instrumental HIRS de los satélites NOAA
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/10/10/recepcion-cas4/" rel="next" title="Recepción de los satélites CAS-4">
-      Recepción de los satélites CAS-4 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
   
-  
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
-    <div class="sidebar-inner">
 
-      <ul class="sidebar-nav motion-element">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Contenidos
         </li>
@@ -505,20 +210,21 @@
         </li>
       </ul>
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-dependencias-de-instalacion"><span class="nav-number">1.</span> <span class="nav-text">Instalar dependencias de instalación</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-librerias"><span class="nav-number">2.</span> <span class="nav-text">Instalar librerías</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-CSDR"><span class="nav-number">2.1.</span> <span class="nav-text">Instalar CSDR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-OWRX-Connector"><span class="nav-number">2.2.</span> <span class="nav-text">Instalar OWRX Connector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-js8py"><span class="nav-number">2.3.</span> <span class="nav-text">Instalar js8py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-SoapySDR-Opcional"><span class="nav-number">2.4.</span> <span class="nav-text">Instalar SoapySDR (Opcional)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clonar-repositorio-de-OpenWebRX"><span class="nav-number">3.</span> <span class="nav-text">Clonar repositorio de OpenWebRX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuracion"><span class="nav-number">4.</span> <span class="nav-text">Configuración</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-como-servicio"><span class="nav-number">5.</span> <span class="nav-text">Instalar como servicio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-paquetes-adicionales"><span class="nav-number">6.</span> <span class="nav-text">Instalar paquetes adicionales</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-dependencias-de-instalacion"><span class="nav-number">1.</span> <span class="nav-text">Instalar dependencias de instalación</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-librerias"><span class="nav-number">2.</span> <span class="nav-text">Instalar librerías</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-CSDR"><span class="nav-number">2.1.</span> <span class="nav-text">Instalar CSDR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-OWRX-Connector"><span class="nav-number">2.2.</span> <span class="nav-text">Instalar OWRX Connector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-js8py"><span class="nav-number">2.3.</span> <span class="nav-text">Instalar js8py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-SoapySDR-Opcional"><span class="nav-number">2.4.</span> <span class="nav-text">Instalar SoapySDR (Opcional)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clonar-repositorio-de-OpenWebRX"><span class="nav-number">3.</span> <span class="nav-text">Clonar repositorio de OpenWebRX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuracion"><span class="nav-number">4.</span> <span class="nav-text">Configuración</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-como-servicio"><span class="nav-number">5.</span> <span class="nav-text">Instalar como servicio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-paquetes-adicionales"><span class="nav-number">6.</span> <span class="nav-text">Instalar paquetes adicionales</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="SDR en español"
       src="/images/avatar.gif">
   <p class="site-author-name" itemprop="name">SDR en español</p>
   <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
 </div>
-<div class="site-state-wrap motion-element">
+<div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
@@ -529,12 +235,12 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
+  <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
         <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
       </span>
@@ -551,24 +257,306 @@
 
 
 
+        </div>
       </div>
-
     </div>
   </aside>
-  <div id="sidebar-dimmer"></div>
+  <div class="sidebar-dimmer"></div>
 
 
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
+    <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/08/13/instalacion-openwebrx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SDR en español">
+      <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SDR en español">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Instalar receptor SDR online con OpenWebRX
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
+
+      <time title="Creado por: 13/08/2020 17:36:20" itemprop="dateCreated datePublished" datetime="2020-08-13T17:36:20+02:00">13/08/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>AlbertoMN</span>
+    </span>
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><a target="_blank" rel="noopener" href="https://www.openwebrx.de/">OpenWebRX</a> es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, simplemente accediendo desde un navegador web.</p>
+<p>Este proyecto <em>Open Source</em> nació en 2015 de mano de András Retzler (HA7ILM). Pero a finales de 2019, el autor abandonó el proyecto y es cuando <a target="_blank" rel="noopener" href="https://github.com/jketterl">Jakob Ketterl</a> retomó el desarrollo del proyecto añadiendo nuevas funcionalidades y mejorando el software. El proyecto comenzó a ganar popularidad y cuenta actualmente con un gran número de colaboradores.</p>
+<p>En este artículo veremos cómo instalar OpenWebRX en una Raspberry Pi usando su código fuente. Existen otras opciones disponibles para instalar este software, como imágenes para tarjetas SD, paquetes, imágenes para Docker, pero presentan algunas carencias o bien son más complejas. El proceso de instalación manual que vamos a seguir es similar para cualquier distribución Linux, lo que nos aporta más posibilidades.</p>
+<a id="more"></a>
+
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx.jpg" class="" width="900" title="OpenWebRX">
+
+<h2 id="Instalar-dependencias-de-instalacion"><a href="#Instalar-dependencias-de-instalacion" class="headerlink" title="Instalar dependencias de instalación"></a>Instalar dependencias de instalación</h2><p>Para poder compilar e instalar las librerías necesarias necesitamos una serie de dependencias. Para instalarlas ejecutamos los siguientes comandos:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git build-essential cmake libfftw3-dev python3 python3-setuptools rtl-sdr netcat libitpp-dev libsndfile-dev librtlsdr-dev automake autoconf libtool pkg-config</span><br></pre></td></tr></table></figure>
+<h2 id="Instalar-librerias"><a href="#Instalar-librerias" class="headerlink" title="Instalar librerías"></a>Instalar librerías</h2><h3 id="Instalar-CSDR"><a href="#Instalar-CSDR" class="headerlink" title="Instalar CSDR"></a>Instalar CSDR</h3><p><em>CSDR</em> es la librería encargada de gestionar el dispositivo SDR. Siguiendo los pasos expuestos a continuación podremos compilarla e instalarla.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;csdr.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd csdr</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autoreconf -i</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
+<h3 id="Instalar-OWRX-Connector"><a href="#Instalar-OWRX-Connector" class="headerlink" title="Instalar OWRX Connector"></a>Instalar OWRX Connector</h3><p><em>OWRX Connector</em> es la librería encargada de conectar la interfaz del SDR con OpenWebRX. Instalamos siguiendo los pasos descritos a continuación.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;owrx_connector.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd owrx_connector</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir build</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd build</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake ..</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..&#x2F;..</span><br></pre></td></tr></table></figure>
+<h3 id="Instalar-js8py"><a href="#Instalar-js8py" class="headerlink" title="Instalar js8py"></a>Instalar js8py</h3><p>Librería para decodificar la salida de JS8Call.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;js8py.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd js8py</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo python3 setup.py install</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
+<h3 id="Instalar-SoapySDR-Opcional"><a href="#Instalar-SoapySDR-Opcional" class="headerlink" title="Instalar SoapySDR (Opcional)"></a>Instalar SoapySDR (Opcional)</h3><p>Si vamos a utilizar un dispositivo distinto del RTL-SDR tendremos que instalar SoapySDR para poder usarlo.<br>Los pasos para su instalación son los siguientes:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libsoapysdr0.6 libsoapysdr-dev soapysdr-tools soapysdr-module-all</span><br></pre></td></tr></table></figure>
+<p>Si no encuentra la librería “libsoapysdr0.6”, reemplazar por “libsoapysdr0.7”.</p>
+<h2 id="Clonar-repositorio-de-OpenWebRX"><a href="#Clonar-repositorio-de-OpenWebRX" class="headerlink" title="Clonar repositorio de OpenWebRX"></a>Clonar repositorio de OpenWebRX</h2><p>Descargamos la última versión estable disponible. Consultar el listado de versiones <a target="_blank" rel="noopener" href="https://github.com/jketterl/openwebrx/tags">aquí</a>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b 0.19.1 https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;openwebrx.git</span><br></pre></td></tr></table></figure>
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El archivo de configuración se encuentra dentro del repositorio que acabamos de clonar. Para editarlo lo abrimos con el editor:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano config_webrx.py</span><br></pre></td></tr></table></figure>
+<p>Este archivo contiene muchos ajustes que podemos modificar. El ajuste principal que vamos a ver es el de configurar los dispositivos SDR. Para ello abrimos el archivo y buscamos el siguiente fragmento:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">sdrs &#x3D; &#123;</span><br><span class="line">    &quot;rtlsdr&quot;: &#123;</span><br><span class="line">        &quot;name&quot;: &quot;RTL-SDR USB Stick&quot;,</span><br><span class="line">        &quot;type&quot;: &quot;rtl_sdr&quot;,</span><br><span class="line">        &quot;ppm&quot;: 0,</span><br><span class="line">        # you can change this if you use an upconverter. formula is:</span><br><span class="line">        # center_freq + lfo_offset &#x3D; actual frequency on the sdr</span><br><span class="line">        # &quot;lfo_offset&quot;: 0,</span><br><span class="line">        &quot;profiles&quot;: &#123;</span><br><span class="line">            &quot;70cm&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;70cm Relais&quot;,</span><br><span class="line">                &quot;center_freq&quot;: 438800000,</span><br><span class="line">                &quot;rf_gain&quot;: 30,</span><br><span class="line">                &quot;samp_rate&quot;: 2400000,</span><br><span class="line">                &quot;start_freq&quot;: 439275000,</span><br><span class="line">                &quot;start_mod&quot;: &quot;nfm&quot;,</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;2m&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;2m komplett&quot;,</span><br><span class="line">                &quot;center_freq&quot;: 145000000,</span><br><span class="line">                &quot;rf_gain&quot;: 30,</span><br><span class="line">                &quot;samp_rate&quot;: 2400000,</span><br><span class="line">                &quot;start_freq&quot;: 145725000,</span><br><span class="line">                &quot;start_mod&quot;: &quot;nfm&quot;,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>Ahora lo editamos con los datos de nuestro/os dispositivos conectados. A continuación se muestra un breve descripción de esta configuración:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">sdrs &#x3D; &#123;</span><br><span class="line">    &quot;[NOMBRE_DEL_AJUSTE]&quot;: &#123;</span><br><span class="line">        &quot;name&quot;: &quot;[NOMBRE_DEL_DISPOSITIVO: Nombre descriptivo que se mostrará en el selector.]&quot;,</span><br><span class="line">        &quot;type&quot;: &quot;[TIPO_DISPOSITIVO: rtl_sdr, rtl_sdr_soapy, sdrplay, hackrf, airspy, airspyhf, fifi_sdr, perseussdr, lime_sdr, pluto_sdr,soapy_remote.]&quot;,</span><br><span class="line">        &quot;device&quot;: &quot;[NUMERO_SERIE: Añadir en caso de que tengamos varios dispositivos RTL-SDR.]&quot;,</span><br><span class="line">        &quot;ppm&quot;: [VALOR_PPM],</span><br><span class="line">        &quot;lfo_offset&quot;: [VALOR_DESPLAZAMIENTO: Añadir si usamos Up&#x2F;Down converter.],</span><br><span class="line">        &quot;profiles&quot;: &#123;</span><br><span class="line">            &quot;[NOMBRE_DEL_PERFIL]&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;[DESCRIPCION: Nombre que se mostrará en el selector.]&quot;,</span><br><span class="line">                &quot;center_freq&quot;: [FRECUENCIA_CENTRAL],</span><br><span class="line">                &quot;rf_gain&quot;: [GANANCIA_DEL_SDR: Ganancia para esta frecuencia.],</span><br><span class="line">                &quot;samp_rate&quot;: [SAMPLE_RATE],</span><br><span class="line">                &quot;start_freq&quot;: [FRECUENCIA_DE_INICIO],</span><br><span class="line">                &quot;start_mod&quot;: &quot;[MODO_DE_INICIO]&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Modificamos el ajuste añadiendo o quitando tantos dispositivos y perfiles como queramos.</p>
+<h2 id="Instalar-como-servicio"><a href="#Instalar-como-servicio" class="headerlink" title="Instalar como servicio"></a>Instalar como servicio</h2><p>El último paso es instalar OpenWebRX como servicio para que se inicie de forma automática al iniciar el sistema. Para ello vamos a añadir un nuevo servicio:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;openwebrx.service</span><br></pre></td></tr></table></figure>
+<p>Añadimos lo siguiente, modificando si fuese necesario:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;OpenWebRX</span><br><span class="line">After&#x3D;network.target</span><br><span class="line">StartLimitIntervalSec&#x3D;0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">Restart&#x3D;always</span><br><span class="line">RestartSec&#x3D;1</span><br><span class="line">User&#x3D;pi</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;home&#x2F;pi&#x2F;openwebrx</span><br><span class="line">ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;python3 &#x2F;home&#x2F;pi&#x2F;openwebrx&#x2F;openwebrx.py</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+<p>Activamos para que se inicie de forma automática:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable openwebrx</span><br></pre></td></tr></table></figure>
+<p>Iniciamos el servicio:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start openwebrx</span><br></pre></td></tr></table></figure>
+<p>Ahora ya podemos acceder desde cualquier navegador introduciendo la dirección IP de la Raspberry Pi y el puerto 8073 (podemos cambiarlo en los ajustes):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;[DIRECCION_IP:8073]</span><br></pre></td></tr></table></figure>
+<h2 id="Instalar-paquetes-adicionales"><a href="#Instalar-paquetes-adicionales" class="headerlink" title="Instalar paquetes adicionales"></a>Instalar paquetes adicionales</h2><p>Tenemos la posibilidad de añadir nuevos paquetes a OpenWebRX para decodificar ciertos modos digitales:</p>
+<ul>
+<li>JS8Call.</li>
+<li>APRS.</li>
+<li>WSJT-X (FT8, FT4, WSPR, JT65, JT9).</li>
+<li>Voz digital (DMR, YSF).</li>
+</ul>
+<p>La guía de instalación de todos estos paquetes se encuentra en el manual oficial de instalación de OpenWebRX del que se ha obtenido la información para este artículo:</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jketterl/openwebrx/wiki/Manual-Package-installation-(including-digital-voice)"><center>https://github.com/jketterl/openwebrx/wiki/Manual-Package-installation-(including-digital-voice)</center></a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Artículos relacionados</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/04/10/instalacion-rtlsdr-raspberrypi/" rel="bookmark">Instalación de dispositivos RTL-SDR en Raspberry Pi</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/04/11/instalacion-spyserver-raspberrypi/" rel="bookmark">Instalación de SPY Server en Raspberry Pi</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/04/27/instalacion-satnogs-ansible/" rel="bookmark">Instalación de estación terrestre con SatNOGS (II)</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/03/16/eleccion-sdr/" rel="bookmark">Elección del dispositivo SDR</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/06/14/instalacion-rtlsdr-macos/" rel="bookmark">Instalación de dispositivos RTL-SDR en macOS</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
       </div>
-    </main>
+    </div>
+          <div class="followme">
+  <span>Síguenos en nuestros otros canales</span>
 
-    <footer class="footer">
-      <div class="footer-inner">
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://twitter.com/sdr_esp">
+          <span class="icon">
+            <i class="fab fa-twitter"></i>
+          </span>
+
+          <span class="label">Twitter</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA">
+          <span class="icon">
+            <i class="fab fa-youtube"></i>
+          </span>
+
+          <span class="label">YouTube</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://t.me/sdr_es">
+          <span class="icon">
+            <i class="fab fa-telegram-plane"></i>
+          </span>
+
+          <span class="label">Telegram</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/RTL-SDR/" rel="tag"><i class="fa fa-tag"></i> RTL-SDR</a>
+              <a href="/tags/OpenWebRX/" rel="tag"><i class="fa fa-tag"></i> OpenWebRX</a>
+              <a href="/tags/Raspberry-Pi/" rel="tag"><i class="fa fa-tag"></i> Raspberry Pi</a>
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          </div>
+          
+
+<div class="post-copyright">
+<ul>
+  <!--
+  <li class="post-copyright-author">
+      <strong>Written by:  </strong>AlbertoMN
+  </li>
+  <li class="post-copyright-link">
+      <strong>Enlace a la entrada: </strong>
+      <a href="http://sdr-es.com/2020/08/13/instalacion-openwebrx/" title="Instalar receptor SDR online con OpenWebRX">http://sdr-es.com/2020/08/13/instalacion-openwebrx/</a>
+  </li>
+  -->
+  <li class="post-copyright-license">
+    <strong>Copyright:  </strong>Todos los artículos de este sitio están licenciados bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> a no ser que se especifique una licencia adicional.
+  </li>
+</ul>
+</div>
+
+
         
 
-        
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/" rel="prev" title="Recepción de datos del instrumental HIRS de los satélites NOAA">
+                  <i class="fa fa-chevron-left"></i> Recepción de datos del instrumental HIRS de los satélites NOAA
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/10/10/recepcion-cas4/" rel="next" title="Recepción de los satélites CAS-4">
+                  Recepción de los satélites CAS-4 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
@@ -577,42 +565,13 @@
   <span class="author" itemprop="copyrightHolder">SDR en español</span>
 </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 <script src="/js/local-search.js"></script>
@@ -622,16 +581,11 @@
 
 
 
-
-
-
-
-
-
-
   
 
-  
+
+
+
 
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
   <script>

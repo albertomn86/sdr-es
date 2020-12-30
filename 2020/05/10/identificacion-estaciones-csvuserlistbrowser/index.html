@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.3.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png">
@@ -12,14 +14,15 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"sdr-es.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-
-  <meta name="description" content="En este artículo vamos a ver como instalar y configurar CSVUserlistBrowser para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de da">
+<meta name="description" content="En este artículo vamos a ver como instalar y configurar CSVUserlistBrowser para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de da">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Identificación de estaciones de radiodifusión con CSVUserlistBrowser">
 <meta property="og:url" content="http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/index.html">
@@ -34,17 +37,17 @@
 <meta property="og:image" content="http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp.png">
 <meta property="og:image" content="http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp_2.png">
 <meta property="article:published_time" content="2020-05-10T12:40:22.000Z">
-<meta property="article:modified_time" content="2020-08-31T17:08:19.095Z">
+<meta property="article:modified_time" content="2020-05-10T12:40:22.000Z">
 <meta property="article:author" content="SDR en español">
-<meta property="article:tag" content="SDRSharp">
-<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="HF">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-select.png">
+
 
 <link rel="canonical" href="http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -52,8 +55,7 @@
     isPost : true,
     lang   : 'es'
   };
-</script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+</script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
 #needsharebutton-postbottom {
   cursor: pointer;
   height: 26px;
@@ -67,7 +69,7 @@
   padding: 1px 4px;
 }
 </style>
-  <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser | SDR en español</title>
+<title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser | SDR en español</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156538909-1"></script>
     <script>
@@ -82,54 +84,64 @@
 
 
 
-
-
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
 <link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Cambiar a barra de navegación">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="Cambiar a barra de navegación" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">SDR en español</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -142,29 +154,12 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a>
-
-  </li>
-        <li class="menu-item menu-item-first-steps">
-
-    <a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a>
-
-  </li>
-        <li class="menu-item menu-item-frequencies">
-
-    <a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a>
-
-  </li>
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li>
+        <li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li>
+        <li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
         </a>
@@ -175,23 +170,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Buscando..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -199,27 +193,104 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Contenidos
+        </li>
+        <li class="sidebar-nav-overview">
+          Inicio
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion-y-configuracion"><span class="nav-number">1.</span> <span class="nav-text">Instalación y configuración</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conexion-con-SDR"><span class="nav-number">2.</span> <span class="nav-text">Conexión con SDR#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Funcionamiento"><span class="nav-number">3.</span> <span class="nav-text">Funcionamiento</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SDR en español"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">SDR en español</p>
+  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">entradas</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/sdr_es" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_es" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
-            
+    <div class="main-inner post posts-expand">
 
-    
+
+  
+
+
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
     <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -236,32 +307,27 @@
           Identificación de estaciones de radiodifusión con CSVUserlistBrowser
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Publicado el</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
 
-              <time title="Creado por: 10/05/2020 14:40:22" itemprop="dateCreated datePublished" datetime="2020-05-10T14:40:22+02:00">10/05/2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 31/08/2020 19:08:19" itemprop="dateModified" datetime="2020-08-31T19:08:19+02:00">31/08/2020</time>
-              </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-user"></i>
-                </span>
-                <span class="post-meta-item-text">Creado por</span>
-                <span>AlbertoMN</span>
-              </span>
+      <time title="Creado por: 10/05/2020 14:40:22" itemprop="dateCreated datePublished" datetime="2020-05-10T14:40:22+02:00">10/05/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>AlbertoMN</span>
+    </span>
 
-          
   
+  
+</div>
 
         </div>
       </header>
@@ -270,16 +336,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-        <p>En este artículo vamos a ver como instalar y configurar <a href="https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm" target="_blank" rel="noopener">CSVUserlistBrowser</a> para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.</p>
+        <p>En este artículo vamos a ver como instalar y configurar <a target="_blank" rel="noopener" href="https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm">CSVUserlistBrowser</a> para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.</p>
 <a id="more"></a>
 
 <h2 id="Instalacion-y-configuracion"><a href="#Instalacion-y-configuracion" class="headerlink" title="Instalación y configuración"></a>Instalación y configuración</h2><p>Los pasos para instalar y configurar CSVUserlistBrowser son los siguientes:</p>
 <ol>
 <li>Descargamos CSVUserlistBrowser desde el siguiente enlace:</li>
 </ol>
-<p><a href="https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip" target="_blank" rel="noopener"><center>https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip</center></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip"><center>https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip</center></a></p>
 <ol start="2">
 <li>Extraemos el contenido del archivo ZIP y ejecutamos <strong><em>CSVUserlistBrowser.exe</em></strong>. En la ventana que aparece marcamos el programa con el que queremos comunicarnos (en nuestro caso SDR#) y hacemos click en <strong>OK</strong>.</li>
 </ol>
@@ -298,7 +362,7 @@
 <ol start="5">
 <li><p>El siguiente paso es descargar las bases de datos de frecuencias. Para ello hacemos click en el menú <strong>Web</strong> y en <strong>Downloader/Converter</strong>. En esta ventana tendremos que hacer click en los botones de <strong>Download</strong> para descargar cada una de las bases de datos.</p>
 <img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-Downloader.png" class="" title="CSVUserlistBrowser">
-<p>Una vez descargadas, hacemos click en <strong>Close</strong>.<br>Estas bases de datos se actualizan regularmente, por lo que tendremos que repetir la descarga para tener siempre los datos actualizados.<br>Las URLs de descarga también se actualizan. Podemos consultar las actuales en <a href="https://www.df8ry.de/htmlen/csvub/%F0%9F%91%B6firststeps.htm" target="_blank" rel="noopener">df8ry.de</a>.</p>
+<p>Una vez descargadas, hacemos click en <strong>Close</strong>.<br>Estas bases de datos se actualizan regularmente, por lo que tendremos que repetir la descarga para tener siempre los datos actualizados.<br>Las URLs de descarga también se actualizan. Podemos consultar las actuales en <a target="_blank" rel="noopener" href="https://www.df8ry.de/htmlen/csvub/%F0%9F%91%B6firststeps.htm">df8ry.de</a>.</p>
 </li>
 <li><p>El último paso es cargar las bases de datos en el programa para poder usarlas. Para cargarlas hacemos click en el menú <strong>File</strong>, <strong>Open CSV userlist</strong> y seleccionamos el archivo que queramos cargar.</p>
 </li>
@@ -314,13 +378,12 @@
 <li><p>Copiar el archivo <strong><em>SDRSharp.DF8RYDatabridge.dll</em></strong> dentro del directorio de instalación de SDR#.</p>
 </li>
 <li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro del directorio de instalación de SDR#.</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"DF8RYDatabridge"</span> <span class="attr">value</span>=<span class="string">"SDRSharp.DF8RYDatabridge.DF8RYDatabridgePlugin,SDRSharp.DF8RYDatabridge"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">&quot;DF8RYDatabridge&quot;</span> <span class="attr">value</span>=<span class="string">&quot;SDRSharp.DF8RYDatabridge.DF8RYDatabridgePlugin,SDRSharp.DF8RYDatabridge&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp.png" class="" width="900" title="Plugin CSVUserlistBrowser">
 
 
+</li>
+</ol>
 <h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Para poder controlar las frecuencias desde CSVUserlistBrowser, tenemos que marcar <strong>Enable RX1</strong> en el plugin de SDR#. Ahora cuando seleccionemos una frecuencia haciendo doble click en CSVUserlistBrowser, se cambiará de forma automática en SDR#.</p>
 <img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp_2.png" class="" width="900" title="SDR# y CSVUserlistBrowser">
 
@@ -328,80 +391,84 @@
 
     
     
-    <div class="post-widgets">
+    
+      
+  <div class="popular-posts-header">Artículos relacionados</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/10/25/recibir-drm/" rel="bookmark">Recibir radio digital mundial (DRM)</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer"><div class="post-widgets">
       <div id="needsharebutton-postbottom">
         <span class="btn">
           <i class="fa fa-share-alt" aria-hidden="true"></i>
         </span>
       </div>
     </div>
-        
+          <div class="followme">
+  <span>Síguenos en nuestros otros canales</span>
 
-  <div class="followme">
-    <p>Síguenos en nuestros otros canales</p>
+  <div class="social-list">
 
-    <div class="social-list">
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://twitter.com/sdr_esp">
+          <span class="icon">
+            <i class="fab fa-twitter"></i>
+          </span>
 
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://twitter.com/sdr_esp">
-            <span class="icon">
-              <i class="fab fa-twitter"></i>
-            </span>
+          <span class="label">Twitter</span>
+        </a>
+      </div>
 
-            <span class="label">Twitter</span>
-          </a>
-        </div>
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA">
+          <span class="icon">
+            <i class="fab fa-youtube"></i>
+          </span>
 
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA">
-            <span class="icon">
-              <i class="fab fa-youtube"></i>
-            </span>
+          <span class="label">YouTube</span>
+        </a>
+      </div>
 
-            <span class="label">YouTube</span>
-          </a>
-        </div>
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://t.me/sdr_es">
+          <span class="icon">
+            <i class="fab fa-telegram-plane"></i>
+          </span>
 
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://t.me/sdr_es">
-            <span class="icon">
-              <i class="fab fa-telegram-plane"></i>
-            </span>
+          <span class="label">Telegram</span>
+        </a>
+      </div>
 
-            <span class="label">Telegram</span>
-          </a>
-        </div>
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
 
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
-            <span class="icon">
-              <i class="fa fa-rss"></i>
-            </span>
-
-            <span class="label">RSS</span>
-          </a>
-        </div>
-    </div>
+          <span class="label">RSS</span>
+        </a>
+      </div>
   </div>
+</div>
 
-
-      <footer class="post-footer">
-          
           <div class="post-tags">
-              <a href="/tags/SDRSharp/" rel="tag"><i class="fa fa-tag"></i> SDRSharp</a>
-              <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
+              <a href="/tags/HF/" rel="tag"><i class="fa fa-tag"></i> HF</a>
           </div>
           
 
-<div>
-<ul class="post-copyright">
+<div class="post-copyright">
+<ul>
   <!--
   <li class="post-copyright-author">
-    <strong>Autor de la entrada:  </strong>AlbertoMN
+      <strong>Written by:  </strong>AlbertoMN
   </li>
   <li class="post-copyright-link">
-    <strong>Enlace a la entrada: </strong>
-    <a href="http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/" title="Identificación de estaciones de radiodifusión con CSVUserlistBrowser">http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</a>
+      <strong>Enlace a la entrada: </strong>
+      <a href="http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/" title="Identificación de estaciones de radiodifusión con CSVUserlistBrowser">http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</a>
   </li>
   -->
   <li class="post-copyright-license">
@@ -413,29 +480,27 @@
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/05/03/seguimiento-aviones-raspberry-pi/" rel="prev" title="Recepción de mensajes ADS-B en Raspberry Pi">
-      <i class="fa fa-chevron-left"></i> Recepción de mensajes ADS-B en Raspberry Pi
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/06/14/instalacion-rtlsdr-macos/" rel="next" title="Instalación de dispositivos RTL-SDR en macOS">
-      Instalación de dispositivos RTL-SDR en macOS <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/05/03/seguimiento-aviones-raspberry-pi/" rel="prev" title="Recepción de mensajes ADS-B en Raspberry Pi">
+                  <i class="fa fa-chevron-left"></i> Recepción de mensajes ADS-B en Raspberry Pi
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/06/14/instalacion-rtlsdr-macos/" rel="next" title="Instalación de dispositivos RTL-SDR en macOS">
+                  Instalación de dispositivos RTL-SDR en macOS <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-          
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -444,7 +509,7 @@
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
     if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
       if (activeTab) {
         activeTab.click();
       }
@@ -453,97 +518,19 @@
   if (CONFIG.comments.storage) {
     window.addEventListener('tabs:click', event => {
       if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
+      const commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
   }
 </script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Contenidos
-        </li>
-        <li class="sidebar-nav-overview">
-          Inicio
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion-y-configuracion"><span class="nav-number">1.</span> <span class="nav-text">Instalación y configuración</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conexion-con-SDR"><span class="nav-number">2.</span> <span class="nav-text">Conexión con SDR#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Funcionamiento"><span class="nav-number">3.</span> <span class="nav-text">Funcionamiento</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="SDR en español"
-      src="/images/avatar.gif">
-  <p class="site-author-name" itemprop="name">SDR en español</p>
-  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">25</span>
-          <span class="site-state-item-name">entradas</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">22</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://t.me/sdr_es" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_es" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
@@ -552,42 +539,13 @@
   <span class="author" itemprop="copyrightHolder">SDR en español</span>
 </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 <script src="/js/local-search.js"></script>
@@ -597,16 +555,11 @@
 
 
 
-
-
-
-
-
-
-
   
 
-  
+
+
+
 
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
   <script>

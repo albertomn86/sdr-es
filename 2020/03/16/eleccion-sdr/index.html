@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.3.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png">
@@ -12,14 +14,15 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"sdr-es.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-
-  <meta name="description" content="Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos poco">
+<meta name="description" content="Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos poco">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Elección del dispositivo SDR">
 <meta property="og:url" content="http://sdr-es.com/2020/03/16/eleccion-sdr/index.html">
@@ -42,16 +45,17 @@
 <meta property="og:image" content="http://sdr-es.com/2020/03/16/eleccion-sdr/RSPduo.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/03/16/eleccion-sdr/kiwisdr.jpg">
 <meta property="article:published_time" content="2020-03-16T11:07:36.000Z">
-<meta property="article:modified_time" content="2020-10-07T17:07:30.751Z">
+<meta property="article:modified_time" content="2020-03-16T11:07:36.000Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="RTL-SDR">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://sdr-es.com/2020/03/16/eleccion-sdr/SDR-generico.jpg">
 
+
 <link rel="canonical" href="http://sdr-es.com/2020/03/16/eleccion-sdr/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -59,8 +63,7 @@
     isPost : true,
     lang   : 'es'
   };
-</script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+</script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
 #needsharebutton-postbottom {
   cursor: pointer;
   height: 26px;
@@ -74,7 +77,7 @@
   padding: 1px 4px;
 }
 </style>
-  <title>Elección del dispositivo SDR | SDR en español</title>
+<title>Elección del dispositivo SDR | SDR en español</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156538909-1"></script>
     <script>
@@ -89,54 +92,64 @@
 
 
 
-
-
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
 <link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Cambiar a barra de navegación">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="Cambiar a barra de navegación" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">SDR en español</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -149,29 +162,12 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a>
-
-  </li>
-        <li class="menu-item menu-item-first-steps">
-
-    <a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a>
-
-  </li>
-        <li class="menu-item menu-item-frequencies">
-
-    <a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a>
-
-  </li>
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li>
+        <li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li>
+        <li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
         </a>
@@ -182,23 +178,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Buscando..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -206,27 +201,104 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Contenidos
+        </li>
+        <li class="sidebar-nav-overview">
+          Inicio
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Modelos-genericos"><span class="nav-number">1.</span> <span class="nav-text">Modelos genéricos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RTL-SDR-Blog-V3"><span class="nav-number">2.</span> <span class="nav-text">RTL-SDR Blog V3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nooelec-NESDR-SMArt-v4"><span class="nav-number">3.</span> <span class="nav-text">Nooelec NESDR SMArt v4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nooelec-NESDR-SMArTee-v2"><span class="nav-number">4.</span> <span class="nav-text">Nooelec NESDR SMArTee v2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nooelec-NESDR-SMArt-XTR"><span class="nav-number">5.</span> <span class="nav-text">Nooelec NESDR SMArt XTR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nooelec-NESDR-SMArTee-XTR"><span class="nav-number">6.</span> <span class="nav-text">Nooelec NESDR SMArTee XTR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nooelec-NESDR-Nano-3"><span class="nav-number">7.</span> <span class="nav-text">Nooelec NESDR Nano 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Airspy-Mini"><span class="nav-number">8.</span> <span class="nav-text">Airspy Mini</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Airspy-R2"><span class="nav-number">9.</span> <span class="nav-text">Airspy R2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Airspy-HF-Discovery"><span class="nav-number">10.</span> <span class="nav-text">Airspy HF+ Discovery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Airspy-HF-Dual-Port"><span class="nav-number">11.</span> <span class="nav-text">Airspy HF+ Dual Port</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDRplay-RSP1A"><span class="nav-number">12.</span> <span class="nav-text">SDRplay RSP1A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDRplay-RSPdx"><span class="nav-number">13.</span> <span class="nav-text">SDRplay RSPdx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDRplay-RSPduo"><span class="nav-number">14.</span> <span class="nav-text">SDRplay RSPduo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KiwiSDR"><span class="nav-number">15.</span> <span class="nav-text">KiwiSDR</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SDR en español"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">SDR en español</p>
+  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">entradas</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/sdr_es" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_es" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
-            
+    <div class="main-inner post posts-expand">
 
-    
+
+  
+
+
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
     <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/03/16/eleccion-sdr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -243,32 +315,27 @@
           Elección del dispositivo SDR
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Publicado el</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
 
-              <time title="Creado por: 16/03/2020 12:07:36" itemprop="dateCreated datePublished" datetime="2020-03-16T12:07:36+01:00">16/03/2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 07/10/2020 19:07:30" itemprop="dateModified" datetime="2020-10-07T19:07:30+02:00">07/10/2020</time>
-              </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-user"></i>
-                </span>
-                <span class="post-meta-item-text">Creado por</span>
-                <span>AlbertoMN</span>
-              </span>
+      <time title="Creado por: 16/03/2020 12:07:36" itemprop="dateCreated datePublished" datetime="2020-03-16T12:07:36+01:00">16/03/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>AlbertoMN</span>
+    </span>
 
-          
   
+  
+</div>
 
         </div>
       </header>
@@ -277,8 +344,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <p>Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.<br>La finalidad este artículo es orientarnos para escoger el dispositivo que más se ajuste a nuestras necesidades y casos de uso. Para ello se han seleccionado algunos de los dispositivos más conocidos y que habitualmente se recomiendan, y se ha elaborado una breve descripción de cada uno de ellos con algunas de sus características más reseñables.</p>
 <a id="more"></a>
 
@@ -286,131 +351,131 @@
 <thead>
 <tr>
 <th>Dispositivo</th>
-<th>Sintonizador</th>
+<th align="center">Sintonizador</th>
 <th align="right">Ancho de Banda</th>
 <th>Rango frecuencias</th>
-<th>Bias Tee</th>
+<th align="center">Bias Tee</th>
 <th align="right">Precio</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Modelos genéricos</td>
-<td>R820T2</td>
+<td align="center">R820T2</td>
 <td align="right">2.4 MHz</td>
 <td>25 MHz – 1700 MHz</td>
-<td>No</td>
+<td align="center">No</td>
 <td align="right">~10€</td>
 </tr>
 <tr>
 <td>RTL-SDR Blog V3</td>
-<td>R820T2</td>
+<td align="center">R820T2</td>
 <td align="right">2.4 MHz</td>
 <td>500 kHz – 1766 MHz</td>
-<td>Sí</td>
+<td align="center">Sí</td>
 <td align="right">~28€</td>
 </tr>
 <tr>
 <td>Nooelec NESDR SMArt v4</td>
-<td>R820T2</td>
+<td align="center">R820T2</td>
 <td align="right">2.4 MHz</td>
 <td>25 MHz - 1750 MHz</td>
-<td>No</td>
+<td align="center">No</td>
 <td align="right">~32€</td>
 </tr>
 <tr>
 <td>Nooelec NESDR SMArTee v2</td>
-<td>R820T2</td>
+<td align="center">R820T2</td>
 <td align="right">2.4 MHz</td>
 <td>25 MHz - 1750 MHz</td>
-<td>Sí</td>
+<td align="center">Sí</td>
 <td align="right">~36€</td>
 </tr>
 <tr>
 <td>Nooelec NESDR SMArt XTR</td>
-<td>E4000</td>
+<td align="center">E4000</td>
 <td align="right">2.4 MHz</td>
 <td>65 MHz - 2300 MHz</td>
-<td>No</td>
+<td align="center">No</td>
 <td align="right">~44€</td>
 </tr>
 <tr>
 <td>Nooelec NESDR SMArTee XTR</td>
-<td>E4000</td>
+<td align="center">E4000</td>
 <td align="right">2.4 MHz</td>
 <td>65 MHz - 2300 MHz</td>
-<td>Sí</td>
+<td align="center">Sí</td>
 <td align="right">~46€</td>
 </tr>
 <tr>
 <td>Nooelec NESDR Nano 3</td>
-<td>R820T2</td>
+<td align="center">R820T2</td>
 <td align="right">2.4 MHz</td>
 <td>25 MHz - 1700 MHz</td>
-<td>No</td>
+<td align="center">No</td>
 <td align="right">~32€</td>
 </tr>
 <tr>
 <td>Airspy Mini</td>
-<td>R820T2</td>
+<td align="center">R820T2</td>
 <td align="right">6 MHz</td>
 <td>24 MHz - 1700 MHz</td>
-<td>Sí</td>
+<td align="center">Sí</td>
 <td align="right">~140€</td>
 </tr>
 <tr>
 <td>Airspy R2</td>
-<td>R820T2</td>
+<td align="center">R820T2</td>
 <td align="right">10 MHz</td>
 <td>24 MHz - 1700 MHz</td>
-<td>Sí</td>
+<td align="center">Sí</td>
 <td align="right">~235€</td>
 </tr>
 <tr>
 <td>Airspy HF+ Discovery</td>
-<td>-</td>
+<td align="center">-</td>
 <td align="right">610 kHz</td>
 <td>0.5 kHz - 31 MHz, 60 - 260 MHz</td>
-<td>No</td>
+<td align="center">No</td>
 <td align="right">~210€</td>
 </tr>
 <tr>
 <td>Airspy HF+ Dual Port</td>
-<td>-</td>
+<td align="center">-</td>
 <td align="right">610 kHz</td>
 <td>9 kHz - 31 MHz, 60 - 260 MHz</td>
-<td>No</td>
+<td align="center">No</td>
 <td align="right">~240€</td>
 </tr>
 <tr>
 <td>SDRplay RSP1A</td>
-<td>-</td>
+<td align="center">-</td>
 <td align="right">10 MHz</td>
 <td>1 kHz - 2000 MHz</td>
-<td>Sí</td>
+<td align="center">Sí</td>
 <td align="right">~115€</td>
 </tr>
 <tr>
 <td>SDRplay RSPdx</td>
-<td>-</td>
+<td align="center">-</td>
 <td align="right">10 MHz</td>
 <td>1 kHz - 2000 MHz</td>
-<td>Sí</td>
+<td align="center">Sí</td>
 <td align="right">~228€</td>
 </tr>
 <tr>
 <td>SDRplay RSPduo</td>
-<td>-</td>
+<td align="center">-</td>
 <td align="right">10 MHz</td>
 <td>1 kHz - 2000 MHz</td>
-<td>Sí</td>
+<td align="center">Sí</td>
 <td align="right">~290€</td>
 </tr>
 <tr>
 <td>KiwiSDR</td>
-<td>-</td>
+<td align="center">-</td>
 <td align="right">32 MHz</td>
 <td>10 KHz - 30 MHz</td>
-<td>No</td>
+<td align="center">No</td>
 <td align="right">~330€</td>
 </tr>
 </tbody></table>
@@ -437,7 +502,7 @@
 <li><strong>TCXO:</strong> 1 PPM.</li>
 <li><strong>Conector:</strong> SMA hembra.</li>
 <li>Disponible en RTL-SDR.com y Astroradio.</li>
-<li>Más información: <a href="https://www.rtl-sdr.com/wp-content/uploads/2018/02/RTL-SDR-Blog-V3-Datasheet.pdf" target="_blank" rel="noopener">Datasheet (PDF)</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="https://www.rtl-sdr.com/wp-content/uploads/2018/02/RTL-SDR-Blog-V3-Datasheet.pdf">Datasheet (PDF)</a>.</li>
 </ul>
 <h2 id="Nooelec-NESDR-SMArt-v4"><a href="#Nooelec-NESDR-SMArt-v4" class="headerlink" title="Nooelec NESDR SMArt v4"></a>Nooelec NESDR SMArt v4</h2><img src="/2020/03/16/eleccion-sdr/smartv4.jpg" class="" width="500" title="Nooelec NESDR SMArt v4">
 
@@ -450,7 +515,7 @@
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> SMA hembra.</li>
 <li>Disponible en nooelec.com y Amazon España.</li>
-<li>Más información: <a href="https://www.nooelec.com/store/sdr/sdr-receivers/nesdr-smart-sdr.html" target="_blank" rel="noopener">Nooelec</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="https://www.nooelec.com/store/sdr/sdr-receivers/nesdr-smart-sdr.html">Nooelec</a>.</li>
 </ul>
 <h2 id="Nooelec-NESDR-SMArTee-v2"><a href="#Nooelec-NESDR-SMArTee-v2" class="headerlink" title="Nooelec NESDR SMArTee v2"></a>Nooelec NESDR SMArTee v2</h2><img src="/2020/03/16/eleccion-sdr/smarteev2.jpg" class="" width="500" title="Nooelec NESDR SMArTee v2">
 
@@ -463,7 +528,7 @@
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> SMA hembra.</li>
 <li>Disponible en nooelec.com y Amazon España.</li>
-<li>Más información: <a href="https://www.nooelec.com/store/sdr/sdr-receivers/nesdr-smartee-sdr.html" target="_blank" rel="noopener">Nooelec</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="https://www.nooelec.com/store/sdr/sdr-receivers/nesdr-smartee-sdr.html">Nooelec</a>.</li>
 </ul>
 <h2 id="Nooelec-NESDR-SMArt-XTR"><a href="#Nooelec-NESDR-SMArt-XTR" class="headerlink" title="Nooelec NESDR SMArt XTR"></a>Nooelec NESDR SMArt XTR</h2><img src="/2020/03/16/eleccion-sdr/smartxtr.jpg" class="" width="450" title="Nooelec NESDR SMArt XTR">
 
@@ -476,7 +541,7 @@
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> SMA hembra.</li>
 <li>Disponible en nooelec.com y Amazon España.</li>
-<li>Más información: <a href="https://www.nooelec.com/store/sdr/sdr-receivers/nesdr-smart-xtr-sdr.html" target="_blank" rel="noopener">Nooelec</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="https://www.nooelec.com/store/sdr/sdr-receivers/nesdr-smart-xtr-sdr.html">Nooelec</a>.</li>
 </ul>
 <h2 id="Nooelec-NESDR-SMArTee-XTR"><a href="#Nooelec-NESDR-SMArTee-XTR" class="headerlink" title="Nooelec NESDR SMArTee XTR"></a>Nooelec NESDR SMArTee XTR</h2><img src="/2020/03/16/eleccion-sdr/smarteextr.jpg" class="" width="500" title="Nooelec NESDR SMArTee XTR">
 
@@ -489,7 +554,7 @@
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> SMA hembra.</li>
 <li>Disponible en nooelec.com y Amazon España.</li>
-<li>Más información: <a href="https://www.nooelec.com/store/sdr/sdr-receivers/nesdr-smartee-xtr-sdr.html" target="_blank" rel="noopener">Nooelec</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="https://www.nooelec.com/store/sdr/sdr-receivers/nesdr-smartee-xtr-sdr.html">Nooelec</a>.</li>
 </ul>
 <h2 id="Nooelec-NESDR-Nano-3"><a href="#Nooelec-NESDR-Nano-3" class="headerlink" title="Nooelec NESDR Nano 3"></a>Nooelec NESDR Nano 3</h2><img src="/2020/03/16/eleccion-sdr/nano3.jpg" class="" width="200" title="Nooelec NESDR Nano 3">
 
@@ -502,7 +567,7 @@
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> MCX hembra. Incluye adaptador a SMA hembra.</li>
 <li>Disponible en nooelec.com y Amazon España.</li>
-<li>Más información: <a href="https://www.nooelec.com/store/sdr/sdr-receivers/nesdr-nano-three.html" target="_blank" rel="noopener">Nooelec</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="https://www.nooelec.com/store/sdr/sdr-receivers/nesdr-nano-three.html">Nooelec</a>.</li>
 </ul>
 <h2 id="Airspy-Mini"><a href="#Airspy-Mini" class="headerlink" title="Airspy Mini"></a>Airspy Mini</h2><img src="/2020/03/16/eleccion-sdr/airspymini.jpg" class="" width="400" title="Airspy Mini">
 
@@ -515,7 +580,7 @@
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> SMA hembra.</li>
 <li>Disponible en WiMo.</li>
-<li>Más información: <a href="https://airspy.com/airspy-mini/" target="_blank" rel="noopener">Airspy</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="https://airspy.com/airspy-mini/">Airspy</a>.</li>
 </ul>
 <h2 id="Airspy-R2"><a href="#Airspy-R2" class="headerlink" title="Airspy R2"></a>Airspy R2</h2><img src="/2020/03/16/eleccion-sdr/airspyr2.jpg" class="" width="350" title="Airspy R2">
 
@@ -528,7 +593,7 @@
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> SMA hembra.</li>
 <li>Disponible en WiMo.</li>
-<li>Más información: <a href="https://airspy.com/airspy-r2/" target="_blank" rel="noopener">Airspy</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="https://airspy.com/airspy-r2/">Airspy</a>.</li>
 </ul>
 <h2 id="Airspy-HF-Discovery"><a href="#Airspy-HF-Discovery" class="headerlink" title="Airspy HF+ Discovery"></a>Airspy HF+ Discovery</h2><img src="/2020/03/16/eleccion-sdr/hfplusdiscovery.jpg" class="" width="400" title="Airspy HF+ Discovery">
 
@@ -540,7 +605,7 @@
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> SMA hembra.</li>
 <li>Disponible en Astroradio y WiMo.</li>
-<li>Más información: <a href="https://airspy.com/airspy-hf-discovery" target="_blank" rel="noopener">Airspy</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="https://airspy.com/airspy-hf-discovery">Airspy</a>.</li>
 </ul>
 <h2 id="Airspy-HF-Dual-Port"><a href="#Airspy-HF-Dual-Port" class="headerlink" title="Airspy HF+ Dual Port"></a>Airspy HF+ Dual Port</h2><img src="/2020/03/16/eleccion-sdr/hfplusdual.jpg" class="" title="Airspy HF+ Dual Port">
 
@@ -552,7 +617,7 @@
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> 2 x SMA hembra.</li>
 <li>Disponible en Astroradio y WiMo.</li>
-<li>Más información: <a href="https://airspy.com/airspy-hf-plus" target="_blank" rel="noopener">Airspy</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="https://airspy.com/airspy-hf-plus">Airspy</a>.</li>
 </ul>
 <h2 id="SDRplay-RSP1A"><a href="#SDRplay-RSP1A" class="headerlink" title="SDRplay RSP1A"></a>SDRplay RSP1A</h2><img src="/2020/03/16/eleccion-sdr/RSP1A.jpg" class="" width="550" title="SDRplay RSP1A">
 
@@ -564,7 +629,7 @@
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> SMA hembra.</li>
 <li>Disponible en sdrplay.com y Astroradio.</li>
-<li>Más información: <a href="https://www.sdrplay.com/docs/RSP1Adatasheetv1.9.pdf" target="_blank" rel="noopener">Datasheet (PDF)</a>, <a href="https://www.sdrplay.com/wp-content/uploads/2018/01/RSP1A-Technical-Information-R1P1.pdf" target="_blank" rel="noopener">Información técnica (PDF)</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="https://www.sdrplay.com/docs/RSP1Adatasheetv1.9.pdf">Datasheet (PDF)</a>, <a target="_blank" rel="noopener" href="https://www.sdrplay.com/wp-content/uploads/2018/01/RSP1A-Technical-Information-R1P1.pdf">Información técnica (PDF)</a>.</li>
 </ul>
 <h2 id="SDRplay-RSPdx"><a href="#SDRplay-RSPdx" class="headerlink" title="SDRplay RSPdx"></a>SDRplay RSPdx</h2><img src="/2020/03/16/eleccion-sdr/RSPdx.jpg" class="" width="500" title="SDRplay RSPdx">
 
@@ -576,7 +641,7 @@
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> 2 x SMA hembra, 1 x BNC (hasta 200 MHz). Seleccionables por software.</li>
 <li>Disponible en sdrplay.com y Astroradio.</li>
-<li>Más información: <a href="https://www.sdrplay.com/resources/RSPdxDatasheet.pdf" target="_blank" rel="noopener">Datasheet (PDF)</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="https://www.sdrplay.com/resources/RSPdxDatasheet.pdf">Datasheet (PDF)</a>.</li>
 </ul>
 <h2 id="SDRplay-RSPduo"><a href="#SDRplay-RSPduo" class="headerlink" title="SDRplay RSPduo"></a>SDRplay RSPduo</h2><img src="/2020/03/16/eleccion-sdr/RSPduo.jpg" class="" width="550" title="SDRplay RSPduo">
 
@@ -588,7 +653,7 @@
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> 2 x SMA hembra, 1 x Conector alta impedancia (1kHz - 30MHz) . Seleccionables por software.</li>
 <li>Disponible en sdrplay.com y Astroradio.</li>
-<li>Más información: <a href="https://www.sdrplay.com/wp-content/uploads/2018/05/RSPduoDatasheetV0.6.pdf" target="_blank" rel="noopener">Datasheet (PDF)</a>, <a href="https://www.sdrplay.com/wp-content/uploads/2018/06/RSPDuo-Technical-Information-R1P1.pdf" target="_blank" rel="noopener">Información técnica (PDF)</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="https://www.sdrplay.com/wp-content/uploads/2018/05/RSPduoDatasheetV0.6.pdf">Datasheet (PDF)</a>, <a target="_blank" rel="noopener" href="https://www.sdrplay.com/wp-content/uploads/2018/06/RSPDuo-Technical-Information-R1P1.pdf">Información técnica (PDF)</a>.</li>
 </ul>
 <h2 id="KiwiSDR"><a href="#KiwiSDR" class="headerlink" title="KiwiSDR"></a>KiwiSDR</h2><img src="/2020/03/16/eleccion-sdr/kiwisdr.jpg" class="" width="400" title="KiwiSDR">
 
@@ -599,86 +664,103 @@
 <li><strong>Conector:</strong> 2 x SMA hembra, antena RX + antena GPS.</li>
 <li>WebSDR con interfaz web OpenWebSDR.</li>
 <li>Disponible en Amazon y WiMo. Se vende en un kit compuesto de receptor KiwiSDR, BeagleBone, antena GPS y tarjeta MicroSD con sistema operativo.</li>
-<li>Más información: <a href="http://kiwisdr.com/" target="_blank" rel="noopener">kiwisdr.com</a>.</li>
+<li>Más información: <a target="_blank" rel="noopener" href="http://kiwisdr.com/">kiwisdr.com</a>.</li>
 </ul>
 
     </div>
 
     
     
-    <div class="post-widgets">
+    
+      
+  <div class="popular-posts-header">Artículos relacionados</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/08/13/instalacion-openwebrx/" rel="bookmark">Instalar receptor SDR online con OpenWebRX</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/06/14/instalacion-rtlsdr-macos/" rel="bookmark">Instalación de dispositivos RTL-SDR en macOS</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/04/10/instalacion-rtlsdr-raspberrypi/" rel="bookmark">Instalación de dispositivos RTL-SDR en Raspberry Pi</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/01/19/instalacion-rtlsdr-windows/" rel="bookmark">Instalación de dispositivos RTL-SDR en Windows</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/04/11/instalacion-spyserver-raspberrypi/" rel="bookmark">Instalación de SPY Server en Raspberry Pi</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer"><div class="post-widgets">
       <div id="needsharebutton-postbottom">
         <span class="btn">
           <i class="fa fa-share-alt" aria-hidden="true"></i>
         </span>
       </div>
     </div>
-        
+          <div class="followme">
+  <span>Síguenos en nuestros otros canales</span>
 
-  <div class="followme">
-    <p>Síguenos en nuestros otros canales</p>
+  <div class="social-list">
 
-    <div class="social-list">
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://twitter.com/sdr_esp">
+          <span class="icon">
+            <i class="fab fa-twitter"></i>
+          </span>
 
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://twitter.com/sdr_esp">
-            <span class="icon">
-              <i class="fab fa-twitter"></i>
-            </span>
+          <span class="label">Twitter</span>
+        </a>
+      </div>
 
-            <span class="label">Twitter</span>
-          </a>
-        </div>
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA">
+          <span class="icon">
+            <i class="fab fa-youtube"></i>
+          </span>
 
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA">
-            <span class="icon">
-              <i class="fab fa-youtube"></i>
-            </span>
+          <span class="label">YouTube</span>
+        </a>
+      </div>
 
-            <span class="label">YouTube</span>
-          </a>
-        </div>
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://t.me/sdr_es">
+          <span class="icon">
+            <i class="fab fa-telegram-plane"></i>
+          </span>
 
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://t.me/sdr_es">
-            <span class="icon">
-              <i class="fab fa-telegram-plane"></i>
-            </span>
+          <span class="label">Telegram</span>
+        </a>
+      </div>
 
-            <span class="label">Telegram</span>
-          </a>
-        </div>
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
 
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
-            <span class="icon">
-              <i class="fa fa-rss"></i>
-            </span>
-
-            <span class="label">RSS</span>
-          </a>
-        </div>
-    </div>
+          <span class="label">RSS</span>
+        </a>
+      </div>
   </div>
+</div>
 
-
-      <footer class="post-footer">
-          
           <div class="post-tags">
               <a href="/tags/RTL-SDR/" rel="tag"><i class="fa fa-tag"></i> RTL-SDR</a>
           </div>
           
 
-<div>
-<ul class="post-copyright">
+<div class="post-copyright">
+<ul>
   <!--
   <li class="post-copyright-author">
-    <strong>Autor de la entrada:  </strong>AlbertoMN
+      <strong>Written by:  </strong>AlbertoMN
   </li>
   <li class="post-copyright-link">
-    <strong>Enlace a la entrada: </strong>
-    <a href="http://sdr-es.com/2020/03/16/eleccion-sdr/" title="Elección del dispositivo SDR">http://sdr-es.com/2020/03/16/eleccion-sdr/</a>
+      <strong>Enlace a la entrada: </strong>
+      <a href="http://sdr-es.com/2020/03/16/eleccion-sdr/" title="Elección del dispositivo SDR">http://sdr-es.com/2020/03/16/eleccion-sdr/</a>
   </li>
   -->
   <li class="post-copyright-license">
@@ -690,29 +772,27 @@
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/03/10/recepcion-aero-inmarsat/" rel="prev" title="Recepción de mensajes Inmarsat Aero">
-      <i class="fa fa-chevron-left"></i> Recepción de mensajes Inmarsat Aero
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/" rel="next" title="Recepción de satélites meteorológicos NOAA">
-      Recepción de satélites meteorológicos NOAA <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/03/10/recepcion-aero-inmarsat/" rel="prev" title="Recepción de mensajes Inmarsat Aero">
+                  <i class="fa fa-chevron-left"></i> Recepción de mensajes Inmarsat Aero
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/" rel="next" title="Recepción de satélites meteorológicos NOAA">
+                  Recepción de satélites meteorológicos NOAA <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-          
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -721,7 +801,7 @@
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
     if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
       if (activeTab) {
         activeTab.click();
       }
@@ -730,97 +810,19 @@
   if (CONFIG.comments.storage) {
     window.addEventListener('tabs:click', event => {
       if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
+      const commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
   }
 </script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Contenidos
-        </li>
-        <li class="sidebar-nav-overview">
-          Inicio
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Modelos-genericos"><span class="nav-number">1.</span> <span class="nav-text">Modelos genéricos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RTL-SDR-Blog-V3"><span class="nav-number">2.</span> <span class="nav-text">RTL-SDR Blog V3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nooelec-NESDR-SMArt-v4"><span class="nav-number">3.</span> <span class="nav-text">Nooelec NESDR SMArt v4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nooelec-NESDR-SMArTee-v2"><span class="nav-number">4.</span> <span class="nav-text">Nooelec NESDR SMArTee v2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nooelec-NESDR-SMArt-XTR"><span class="nav-number">5.</span> <span class="nav-text">Nooelec NESDR SMArt XTR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nooelec-NESDR-SMArTee-XTR"><span class="nav-number">6.</span> <span class="nav-text">Nooelec NESDR SMArTee XTR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nooelec-NESDR-Nano-3"><span class="nav-number">7.</span> <span class="nav-text">Nooelec NESDR Nano 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Airspy-Mini"><span class="nav-number">8.</span> <span class="nav-text">Airspy Mini</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Airspy-R2"><span class="nav-number">9.</span> <span class="nav-text">Airspy R2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Airspy-HF-Discovery"><span class="nav-number">10.</span> <span class="nav-text">Airspy HF+ Discovery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Airspy-HF-Dual-Port"><span class="nav-number">11.</span> <span class="nav-text">Airspy HF+ Dual Port</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDRplay-RSP1A"><span class="nav-number">12.</span> <span class="nav-text">SDRplay RSP1A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDRplay-RSPdx"><span class="nav-number">13.</span> <span class="nav-text">SDRplay RSPdx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDRplay-RSPduo"><span class="nav-number">14.</span> <span class="nav-text">SDRplay RSPduo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KiwiSDR"><span class="nav-number">15.</span> <span class="nav-text">KiwiSDR</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="SDR en español"
-      src="/images/avatar.gif">
-  <p class="site-author-name" itemprop="name">SDR en español</p>
-  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">25</span>
-          <span class="site-state-item-name">entradas</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">22</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://t.me/sdr_es" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_es" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
@@ -829,42 +831,13 @@
   <span class="author" itemprop="copyrightHolder">SDR en español</span>
 </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 <script src="/js/local-search.js"></script>
@@ -874,16 +847,11 @@
 
 
 
-
-
-
-
-
-
-
   
 
-  
+
+
+
 
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
   <script>

@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.3.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png">
@@ -12,14 +14,15 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"sdr-es.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-
-  <meta name="description" content="Web de referencia para los amantes de los dispositivos SDR">
+<meta name="description" content="Web de referencia para los amantes de los dispositivos SDR">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SDR en español">
 <meta property="og:url" content="http://sdr-es.com/page/2/index.html">
@@ -36,10 +39,11 @@
 <meta property="article:tag" content="satellite">
 <meta name="twitter:card" content="summary">
 
+
 <link rel="canonical" href="http://sdr-es.com/page/2/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -47,8 +51,7 @@
     isPost : false,
     lang   : 'es'
   };
-</script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+</script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
 #needsharebutton-postbottom {
   cursor: pointer;
   height: 26px;
@@ -62,7 +65,7 @@
   padding: 1px 4px;
 }
 </style>
-  <title>SDR en español</title>
+<title>SDR en español</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156538909-1"></script>
     <script>
@@ -77,54 +80,64 @@
 
 
 
-
-
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
 <link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Cambiar a barra de navegación">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="Cambiar a barra de navegación" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">SDR en español</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -137,29 +150,12 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a>
-
-  </li>
-        <li class="menu-item menu-item-first-steps">
-
-    <a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a>
-
-  </li>
-        <li class="menu-item menu-item-frequencies">
-
-    <a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a>
-
-  </li>
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li>
+        <li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li>
+        <li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
         </a>
@@ -170,23 +166,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="Buscando..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -194,26 +189,102 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Contenidos
+        </li>
+        <li class="sidebar-nav-overview">
+          Inicio
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SDR en español"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">SDR en español</p>
+  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">entradas</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/sdr_es" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_es" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content index posts-expand">
-            
-      
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
     <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/04/11/instalacion-spyserver-raspberrypi/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -227,35 +298,28 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/11/instalacion-spyserver-raspberrypi/" class="post-title-link" itemprop="url">Instalación de SPY Server en Raspberry Pi</a>
+          <a href="/2020/04/11/instalacion-spyserver-raspberrypi/" class="post-title-link" itemprop="url">Instalación de SPY Server en Raspberry Pi</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Publicado el</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
 
-              <time title="Creado por: 11/04/2020 11:10:42" itemprop="dateCreated datePublished" datetime="2020-04-11T11:10:42+02:00">11/04/2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 01/05/2020 15:51:43" itemprop="dateModified" datetime="2020-05-01T15:51:43+02:00">01/05/2020</time>
-              </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-user"></i>
-                </span>
-                <span class="post-meta-item-text">Creado por</span>
-                <span>AlbertoMN</span>
-              </span>
+      <time title="Creado por: 11/04/2020 11:10:42" itemprop="dateCreated datePublished" datetime="2020-04-11T11:10:42+02:00">11/04/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>AlbertoMN</span>
+    </span>
 
-          
+  
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-copyright"></i>
@@ -263,6 +327,7 @@
     <span class="post-meta-item-text">Coautor: </span><span>Ronda</span>
   </span>
   
+</div>
 
         </div>
       </header>
@@ -271,8 +336,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos como instalar SPY Server en una Raspberry Pi.</p>
           <!--noindex-->
             <div class="post-button">
@@ -288,18 +351,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
     <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -313,36 +383,30 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/10/instalacion-rtlsdr-raspberrypi/" class="post-title-link" itemprop="url">Instalación de dispositivos RTL-SDR en Raspberry Pi</a>
+          <a href="/2020/04/10/instalacion-rtlsdr-raspberrypi/" class="post-title-link" itemprop="url">Instalación de dispositivos RTL-SDR en Raspberry Pi</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Publicado el</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
 
-              <time title="Creado por: 10/04/2020 09:40:15" itemprop="dateCreated datePublished" datetime="2020-04-10T09:40:15+02:00">10/04/2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 01/05/2020 15:51:43" itemprop="dateModified" datetime="2020-05-01T15:51:43+02:00">01/05/2020</time>
-              </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-user"></i>
-                </span>
-                <span class="post-meta-item-text">Creado por</span>
-                <span>AlbertoMN</span>
-              </span>
+      <time title="Creado por: 10/04/2020 09:40:15" itemprop="dateCreated datePublished" datetime="2020-04-10T09:40:15+02:00">10/04/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>AlbertoMN</span>
+    </span>
 
-          
   
+  
+</div>
 
         </div>
       </header>
@@ -351,8 +415,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.</p>
           <!--noindex-->
             <div class="post-button">
@@ -368,18 +430,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
     <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -393,36 +462,30 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/27/recepcion-satelites-meteorologicos-meteor/" class="post-title-link" itemprop="url">Recepción de satélites meteorológicos Meteor-M</a>
+          <a href="/2020/03/27/recepcion-satelites-meteorologicos-meteor/" class="post-title-link" itemprop="url">Recepción de satélites meteorológicos Meteor-M</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Publicado el</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
 
-              <time title="Creado por: 27/03/2020 12:10:49" itemprop="dateCreated datePublished" datetime="2020-03-27T12:10:49+01:00">27/03/2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 01/05/2020 15:51:43" itemprop="dateModified" datetime="2020-05-01T15:51:43+02:00">01/05/2020</time>
-              </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-user"></i>
-                </span>
-                <span class="post-meta-item-text">Creado por</span>
-                <span>AlbertoMN</span>
-              </span>
+      <time title="Creado por: 27/03/2020 12:10:49" itemprop="dateCreated datePublished" datetime="2020-03-27T12:10:49+01:00">27/03/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>AlbertoMN</span>
+    </span>
 
-          
   
+  
+</div>
 
         </div>
       </header>
@@ -431,10 +494,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.</p>
-<p>La serie Meteor-M fue planificada para la primera década del siglo XXI e incluiría tres nuevos satélites con dos diseños diferentes. El objetivo principal de los dos primeros satélites (Meteor-M N1 y Meteor-M N2) sería proveer de información meteorológica, así como la monitorización de la capa de ozono, los niveles de radiación en el espacio y la observación de los mares y la capa de hielo. El tercero (Meteor-M N3) incorporaría una antena radar de nueva generación para la observación oceánica.<br>Estos satélites transmiten imágenes en formato <a href="https://en.wikipedia.org/wiki/Low-rate_picture_transmission" target="_blank" rel="noopener">LRPT</a> en 137 MHz y en formato <a href="https://en.wikipedia.org/wiki/High-resolution_picture_transmission" target="_blank" rel="noopener">HRPT</a> en 1,7 GHz. En este articulo veremos como recibir la señal con nuestro dispositivo SDR y obtener las imágenes LRPT.</p>
+<p>La serie Meteor-M fue planificada para la primera década del siglo XXI e incluiría tres nuevos satélites con dos diseños diferentes. El objetivo principal de los dos primeros satélites (Meteor-M N1 y Meteor-M N2) sería proveer de información meteorológica, así como la monitorización de la capa de ozono, los niveles de radiación en el espacio y la observación de los mares y la capa de hielo. El tercero (Meteor-M N3) incorporaría una antena radar de nueva generación para la observación oceánica.<br>Estos satélites transmiten imágenes en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Low-rate_picture_transmission">LRPT</a> en 137 MHz y en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/High-resolution_picture_transmission">HRPT</a> en 1,7 GHz. En este articulo veremos como recibir la señal con nuestro dispositivo SDR y obtener las imágenes LRPT.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/27/recepcion-satelites-meteorologicos-meteor/#more" rel="contents">
@@ -449,18 +510,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
     <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/03/20/recepcion-satelites-meteorologicos-NOAA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -474,36 +542,30 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/" class="post-title-link" itemprop="url">Recepción de satélites meteorológicos NOAA</a>
+          <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/" class="post-title-link" itemprop="url">Recepción de satélites meteorológicos NOAA</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Publicado el</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
 
-              <time title="Creado por: 20/03/2020 13:16:52" itemprop="dateCreated datePublished" datetime="2020-03-20T13:16:52+01:00">20/03/2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 01/05/2020 15:51:43" itemprop="dateModified" datetime="2020-05-01T15:51:43+02:00">01/05/2020</time>
-              </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-user"></i>
-                </span>
-                <span class="post-meta-item-text">Creado por</span>
-                <span>AlbertoMN</span>
-              </span>
+      <time title="Creado por: 20/03/2020 13:16:52" itemprop="dateCreated datePublished" datetime="2020-03-20T13:16:52+01:00">20/03/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>AlbertoMN</span>
+    </span>
 
-          
   
+  
+</div>
 
         </div>
       </header>
@@ -512,10 +574,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
-<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato <a href="https://en.wikipedia.org/wiki/Automatic_picture_transmission" target="_blank" rel="noopener">APT</a>.</p>
+<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Automatic_picture_transmission">APT</a>.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/#more" rel="contents">
@@ -530,18 +590,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
     <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/03/16/eleccion-sdr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -555,36 +622,30 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/16/eleccion-sdr/" class="post-title-link" itemprop="url">Elección del dispositivo SDR</a>
+          <a href="/2020/03/16/eleccion-sdr/" class="post-title-link" itemprop="url">Elección del dispositivo SDR</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Publicado el</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
 
-              <time title="Creado por: 16/03/2020 12:07:36" itemprop="dateCreated datePublished" datetime="2020-03-16T12:07:36+01:00">16/03/2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 07/10/2020 19:07:30" itemprop="dateModified" datetime="2020-10-07T19:07:30+02:00">07/10/2020</time>
-              </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-user"></i>
-                </span>
-                <span class="post-meta-item-text">Creado por</span>
-                <span>AlbertoMN</span>
-              </span>
+      <time title="Creado por: 16/03/2020 12:07:36" itemprop="dateCreated datePublished" datetime="2020-03-16T12:07:36+01:00">16/03/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>AlbertoMN</span>
+    </span>
 
-          
   
+  
+</div>
 
         </div>
       </header>
@@ -593,8 +654,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.<br>La finalidad este artículo es orientarnos para escoger el dispositivo que más se ajuste a nuestras necesidades y casos de uso. Para ello se han seleccionado algunos de los dispositivos más conocidos y que habitualmente se recomiendan, y se ha elaborado una breve descripción de cada uno de ellos con algunas de sus características más reseñables.</p>
           <!--noindex-->
             <div class="post-button">
@@ -610,18 +669,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
     <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -635,36 +701,30 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/10/recepcion-aero-inmarsat/" class="post-title-link" itemprop="url">Recepción de mensajes Inmarsat Aero</a>
+          <a href="/2020/03/10/recepcion-aero-inmarsat/" class="post-title-link" itemprop="url">Recepción de mensajes Inmarsat Aero</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Publicado el</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
 
-              <time title="Creado por: 10/03/2020 12:26:30" itemprop="dateCreated datePublished" datetime="2020-03-10T12:26:30+01:00">10/03/2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 01/05/2020 15:51:43" itemprop="dateModified" datetime="2020-05-01T15:51:43+02:00">01/05/2020</time>
-              </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-user"></i>
-                </span>
-                <span class="post-meta-item-text">Creado por</span>
-                <span>AlbertoMN</span>
-              </span>
+      <time title="Creado por: 10/03/2020 12:26:30" itemprop="dateCreated datePublished" datetime="2020-03-10T12:26:30+01:00">10/03/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>AlbertoMN</span>
+    </span>
 
-          
   
+  
+</div>
 
         </div>
       </header>
@@ -673,10 +733,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
-<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a href="https://es.wikipedia.org/wiki/ACARS" target="_blank" rel="noopener">ACARS</a>, ADS-C, fax y voz digital.</p>
+<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a target="_blank" rel="noopener" href="https://es.wikipedia.org/wiki/ACARS">ACARS</a>, ADS-C, fax y voz digital.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/10/recepcion-aero-inmarsat/#more" rel="contents">
@@ -691,18 +749,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
     <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -716,36 +781,30 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/09/recepcion-std-c-inmarsat/" class="post-title-link" itemprop="url">Recepción de mensajes Inmarsat STD-C</a>
+          <a href="/2020/03/09/recepcion-std-c-inmarsat/" class="post-title-link" itemprop="url">Recepción de mensajes Inmarsat STD-C</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Publicado el</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
 
-              <time title="Creado por: 09/03/2020 12:46:44" itemprop="dateCreated datePublished" datetime="2020-03-09T12:46:44+01:00">09/03/2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 31/08/2020 19:08:19" itemprop="dateModified" datetime="2020-08-31T19:08:19+02:00">31/08/2020</time>
-              </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-user"></i>
-                </span>
-                <span class="post-meta-item-text">Creado por</span>
-                <span>AlbertoMN</span>
-              </span>
+      <time title="Creado por: 09/03/2020 12:46:44" itemprop="dateCreated datePublished" datetime="2020-03-09T12:46:44+01:00">09/03/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>AlbertoMN</span>
+    </span>
 
-          
   
+  
+</div>
 
         </div>
       </header>
@@ -754,8 +813,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>En el artículo <a href="https://sdr-es.com/2020/03/06/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
           <!--noindex-->
             <div class="post-button">
@@ -771,18 +828,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
     <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/03/06/recepcion-inmarsat/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -796,36 +860,30 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/06/recepcion-inmarsat/" class="post-title-link" itemprop="url">Recepción de satélites Inmarsat</a>
+          <a href="/2020/03/06/recepcion-inmarsat/" class="post-title-link" itemprop="url">Recepción de satélites Inmarsat</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Publicado el</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
 
-              <time title="Creado por: 06/03/2020 11:22:33" itemprop="dateCreated datePublished" datetime="2020-03-06T11:22:33+01:00">06/03/2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 01/05/2020 15:51:43" itemprop="dateModified" datetime="2020-05-01T15:51:43+02:00">01/05/2020</time>
-              </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-user"></i>
-                </span>
-                <span class="post-meta-item-text">Creado por</span>
-                <span>AlbertoMN</span>
-              </span>
+      <time title="Creado por: 06/03/2020 11:22:33" itemprop="dateCreated datePublished" datetime="2020-03-06T11:22:33+01:00">06/03/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>AlbertoMN</span>
+    </span>
 
-          
   
+  
+</div>
 
         </div>
       </header>
@@ -834,8 +892,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>Inmarsat es un proveedor de comunicaciones vía satélite con sede en Reino Unido. La constelación de satélites Inmarsat se compone actualmente de 12 satélites geoestacionarios que proporcionan cobertura en el 90% del planeta.<br>Inmarsat utiliza sus satélites de tercera y cuarta generación para ofrecer servicios de comunicaciones utilizando la <strong>banda L</strong> (1 a 2 GHz). Estos servicios son:</p>
 <ul>
 <li><p><strong>AERO</strong>. Es la versión de ACARS a través de satélite. Son mensajes enviados desde los controles aéreos en tierra a los aviones en vuelo.</p>
@@ -858,18 +914,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
     <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/02/26/recepcion-nayif1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -883,36 +946,30 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/26/recepcion-nayif1/" class="post-title-link" itemprop="url">Recepción del satélite NAYIF-1</a>
+          <a href="/2020/02/26/recepcion-nayif1/" class="post-title-link" itemprop="url">Recepción del satélite NAYIF-1</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Publicado el</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
 
-              <time title="Creado por: 26/02/2020 09:32:14" itemprop="dateCreated datePublished" datetime="2020-02-26T09:32:14+01:00">26/02/2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 01/05/2020 15:51:43" itemprop="dateModified" datetime="2020-05-01T15:51:43+02:00">01/05/2020</time>
-              </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-user"></i>
-                </span>
-                <span class="post-meta-item-text">Creado por</span>
-                <span>AlbertoMN</span>
-              </span>
+      <time title="Creado por: 26/02/2020 09:32:14" itemprop="dateCreated datePublished" datetime="2020-02-26T09:32:14+01:00">26/02/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>AlbertoMN</span>
+    </span>
 
-          
   
+  
+</div>
 
         </div>
       </header>
@@ -921,8 +978,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.</p>
           <!--noindex-->
             <div class="post-button">
@@ -938,18 +993,25 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="es">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
     <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2020/02/25/recepcion-jy1sat/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -963,36 +1025,30 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/25/recepcion-jy1sat/" class="post-title-link" itemprop="url">Recepción del satélite JY1-SAT</a>
+          <a href="/2020/02/25/recepcion-jy1sat/" class="post-title-link" itemprop="url">Recepción del satélite JY1-SAT</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Publicado el</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
 
-              <time title="Creado por: 25/02/2020 20:45:38" itemprop="dateCreated datePublished" datetime="2020-02-25T20:45:38+01:00">25/02/2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 01/05/2020 15:51:43" itemprop="dateModified" datetime="2020-05-01T15:51:43+02:00">01/05/2020</time>
-              </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-user"></i>
-                </span>
-                <span class="post-meta-item-text">Creado por</span>
-                <span>AlbertoMN</span>
-              </span>
+      <time title="Creado por: 25/02/2020 20:45:38" itemprop="dateCreated datePublished" datetime="2020-02-25T20:45:38+01:00">25/02/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>AlbertoMN</span>
+    </span>
 
-          
   
+  
+</div>
 
         </div>
       </header>
@@ -1001,8 +1057,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan’s Crown Prince Foundation.<br>JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-6. Además de las funciones habituales de FUNcube, el satélite envía imágenes en formato SSDV.<br>En este artículo veremos como recibir la telemetría y las imágenes.</p>
           <!--noindex-->
             <div class="post-button">
@@ -1018,24 +1072,21 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
-  
-  
-  
+</div>
 
 
-  
+
+
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Página anterior"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Página siguiente"></i></a>
   </nav>
 
-
-
-          </div>
-          
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1044,7 +1095,7 @@
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
     if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
       if (activeTab) {
         activeTab.click();
       }
@@ -1053,96 +1104,19 @@
   if (CONFIG.comments.storage) {
     window.addEventListener('tabs:click', event => {
       if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
+      const commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
   }
 </script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Contenidos
-        </li>
-        <li class="sidebar-nav-overview">
-          Inicio
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="SDR en español"
-      src="/images/avatar.gif">
-  <p class="site-author-name" itemprop="name">SDR en español</p>
-  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">25</span>
-          <span class="site-state-item-name">entradas</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">22</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://t.me/sdr_es" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_es" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
@@ -1151,42 +1125,13 @@
   <span class="author" itemprop="copyrightHolder">SDR en español</span>
 </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 <script src="/js/local-search.js"></script>
@@ -1196,16 +1141,11 @@
 
 
 
-
-
-
-
-
-
-
   
 
-  
+
+
+
 
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
   <script>

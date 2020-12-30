@@ -3,10 +3,10 @@
   <title>SDR en español</title>
   <icon>http://sdr-es.com/favicon.ico</icon>
   
-  <link href="/atom.xml" rel="self"/>
+  <link href="http://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-12-26T19:33:36.261Z</updated>
+  <updated>2020-12-26T17:15:55.000Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -21,23 +21,17 @@
     <link href="http://sdr-es.com/2020/12/26/recibir-sstv-iss/"/>
     <id>http://sdr-es.com/2020/12/26/recibir-sstv-iss/</id>
     <published>2020-12-26T17:15:55.000Z</published>
-    <updated>2020-12-26T19:33:36.261Z</updated>
+    <updated>2020-12-26T17:15:55.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;https://www.ariss.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ARISS&lt;/a&gt; organiza ocasionalmente eventos conmemorativos en los que se envían imágenes &lt;a href=&quot;https://es.wikipedia.org/wiki/SSTV&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SSTV&lt;/a&gt; desde la ISS (&lt;em&gt;International Space Station&lt;/em&gt;). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.ariss.org/&quot;&gt;ARISS&lt;/a&gt; organiza ocasionalmente eventos conmemorativos en los que se envían imágenes &lt;a href=&quot;https://es.wikipedia.org/wiki/SSTV&quot;&gt;SSTV&lt;/a&gt; desde la ISS (&lt;em&gt;International Space Station&lt;/em&gt;). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.&lt;/p&gt;</summary>
     
     
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    <category term="ISS" scheme="http://sdr-es.com/tags/ISS/"/>
     
-      <category term="ISS" scheme="http://sdr-es.com/tags/ISS/"/>
-    
-      <category term="SSTV" scheme="http://sdr-es.com/tags/SSTV/"/>
+    <category term="SSTV" scheme="http://sdr-es.com/tags/SSTV/"/>
     
   </entry>
   
@@ -46,21 +40,17 @@
     <link href="http://sdr-es.com/2020/10/25/recibir-drm/"/>
     <id>http://sdr-es.com/2020/10/25/recibir-drm/</id>
     <published>2020-10-25T10:52:23.000Z</published>
-    <updated>2020-10-25T13:00:04.537Z</updated>
+    <updated>2020-10-25T10:52:23.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;https://www.drm.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Digital Radio Mondiale (DRM)&lt;/a&gt;, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.&lt;br&gt;DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.&lt;br&gt;En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.drm.org/&quot;&gt;Digital Radio Mondiale (DRM)&lt;/a&gt;, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.&lt;br&gt;DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.&lt;br&gt;En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.&lt;/p&gt;</summary>
     
     
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    <category term="HF" scheme="http://sdr-es.com/tags/HF/"/>
     
-      <category term="DRM" scheme="http://sdr-es.com/tags/DRM/"/>
+    <category term="DRM" scheme="http://sdr-es.com/tags/DRM/"/>
     
   </entry>
   
@@ -69,21 +59,17 @@
     <link href="http://sdr-es.com/2020/10/10/recepcion-cas4/"/>
     <id>http://sdr-es.com/2020/10/10/recepcion-cas4/</id>
     <published>2020-10-10T17:23:32.000Z</published>
-    <updated>2020-10-13T19:42:01.700Z</updated>
+    <updated>2020-10-10T17:23:32.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;Los satélites CAS-4A y CAS-4B son unos micro-satélites construidos por Zhuhai Orbita Control Engineering Ltd. para el sistema orbital de observación terrestre de China. Su principal componente es una cámara de 1,98m de resolución. Estos satélites envían datos de telemetría en VHF, y son estos datos los que vamos a recibir, decodificar y visualizar en este artículo.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;Los satélites CAS-4A y CAS-4B son unos micro-satélites construidos por Zhuhai Orbita Control Engineering Ltd. para el sistema orbital de observación terrestre de China. Su principal componente es una cámara de 1,98m de resolución. Estos satélites envían datos de telemetría en VHF, y son estos datos los que vamos a recibir, decodificar y visualizar en este artículo.&lt;/p&gt;</summary>
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    <category term="KISS" scheme="http://sdr-es.com/tags/KISS/"/>
     
   </entry>
   
@@ -92,25 +78,23 @@
     <link href="http://sdr-es.com/2020/08/13/instalacion-openwebrx/"/>
     <id>http://sdr-es.com/2020/08/13/instalacion-openwebrx/</id>
     <published>2020-08-13T15:36:20.000Z</published>
-    <updated>2020-08-31T17:08:19.108Z</updated>
+    <updated>2020-08-13T15:36:20.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;https://www.openwebrx.de/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OpenWebRX&lt;/a&gt; es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, simplemente accediendo desde un navegador web.&lt;/p&gt;
-&lt;p&gt;Este proyecto &lt;em&gt;Open Source&lt;/em&gt; nació en 2015 de mano de András Retzler (HA7ILM). Pero a finales de 2019, el autor abandonó el proyecto y es cuando &lt;a href=&quot;https://github.com/jketterl&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Jakob Ketterl&lt;/a&gt; retomó el desarrollo del proyecto añadiendo nuevas funcionalidades y mejorando el software. El proyecto comenzó a ganar popularidad y cuenta actualmente con un gran número de colaboradores.&lt;/p&gt;
-&lt;p&gt;En este artículo veremos cómo instalar OpenWebRX en una Raspberry Pi usando su código fuente. Existen otras opciones disponibles para instalar este software, como imágenes para tarjetas SD, paquetes, imágenes para Docker, pero presentan algunas carencias o bien son más complejas. El proceso de instalación manual que vamos a seguir es similar para cualquier distribución Linux, lo que nos aporta más posibilidades.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.openwebrx.de/&quot;&gt;OpenWebRX&lt;/a&gt; es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, simplemente accediendo desde un navegador web.&lt;/p&gt;
+&lt;p&gt;Este proyecto &lt;em&gt;Open Source&lt;/em&gt; nació en 2015 de mano de András Retzler (HA7ILM). Pero a finales de 2019, el autor abandonó el proyecto y es cuando &lt;a href=&quot;https://github.com/jketterl&quot;&gt;Jakob Ketterl&lt;/a&gt; retomó el desarrollo del proyecto añadiendo nuevas funcionalidades y mejorando el software. El proyecto comenzó a ganar popularidad y cuenta actualmente con un gran número de colaboradores.&lt;/p&gt;
+&lt;p&gt;En este artículo veremos cómo instalar OpenWebRX en una Raspberry Pi usando su código fuente. Existen otras opciones disponibles para instalar este software, como imágenes para tarjetas SD, paquetes, imágenes para Docker, pero presentan algunas carencias o bien son más complejas. El proceso de instalación manual que vamos a seguir es similar para cualquier distribución Linux, lo que nos aporta más posibilidades.&lt;/p&gt;</summary>
     
     
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
     
-      <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
+    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
   </entry>
   
@@ -119,24 +103,20 @@
     <link href="http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/"/>
     <id>http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</id>
     <published>2020-07-27T18:19:04.000Z</published>
-    <updated>2020-08-31T17:08:19.129Z</updated>
+    <updated>2020-07-27T18:19:04.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;Como vimos en el artículo &lt;a href=&quot;/2020/03/20/recepcion-satelites-meteorologicos-NOAA/&quot;&gt;“Recepción de satélites meteorológicos NOAA”&lt;/a&gt;, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.&lt;/p&gt;
-&lt;p&gt;El HIRS &lt;em&gt;(High Resolution Infrared Radiation Sounder)&lt;/em&gt; es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.&lt;br&gt;Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;Como vimos en el artículo &lt;a href=&quot;/2020/03/20/recepcion-satelites-meteorologicos-NOAA/&quot;&gt;“Recepción de satélites meteorológicos NOAA”&lt;/a&gt;, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.&lt;/p&gt;
+&lt;p&gt;El HIRS &lt;em&gt;(High Resolution Infrared Radiation Sounder)&lt;/em&gt; es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.&lt;br&gt;Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.&lt;/p&gt;</summary>
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
     
-      <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
+    <category term="NOAA" scheme="http://sdr-es.com/tags/NOAA/"/>
     
   </entry>
   
@@ -145,21 +125,21 @@
     <link href="http://sdr-es.com/2020/06/14/instalacion-rtlsdr-macos/"/>
     <id>http://sdr-es.com/2020/06/14/instalacion-rtlsdr-macos/</id>
     <published>2020-06-14T08:32:42.000Z</published>
-    <updated>2020-08-31T17:08:19.113Z</updated>
+    <updated>2020-06-14T08:32:42.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en macOS. También veremos como instalar CubicSDR para poder usarlo.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en macOS. También veremos como instalar CubicSDR para poder usarlo.&lt;/p&gt;</summary>
     
     
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="macOS" scheme="http://sdr-es.com/tags/macOS/"/>
+    <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="CubicSDR" scheme="http://sdr-es.com/tags/CubicSDR/"/>
+    <category term="macOS" scheme="http://sdr-es.com/tags/macOS/"/>
+    
+    <category term="CubicSDR" scheme="http://sdr-es.com/tags/CubicSDR/"/>
+    
+    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
   </entry>
   
@@ -168,19 +148,15 @@
     <link href="http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/"/>
     <id>http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</id>
     <published>2020-05-10T12:40:22.000Z</published>
-    <updated>2020-08-31T17:08:19.095Z</updated>
+    <updated>2020-05-10T12:40:22.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;En este artículo vamos a ver como instalar y configurar &lt;a href=&quot;https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CSVUserlistBrowser&lt;/a&gt; para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;En este artículo vamos a ver como instalar y configurar &lt;a href=&quot;https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm&quot;&gt;CSVUserlistBrowser&lt;/a&gt; para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.&lt;/p&gt;</summary>
     
     
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    <category term="HF" scheme="http://sdr-es.com/tags/HF/"/>
     
   </entry>
   
@@ -189,24 +165,20 @@
     <link href="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/"/>
     <id>http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/</id>
     <published>2020-05-03T08:56:04.000Z</published>
-    <updated>2020-08-31T17:08:19.137Z</updated>
+    <updated>2020-05-03T08:56:04.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;ADS-B (&lt;em&gt;Automatic Dependent Surveillance Broadcast&lt;/em&gt;) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.&lt;/p&gt;
-&lt;p&gt;En este artículo veremos como convertir una Raspberry Pi en un receptor de mensajes ADS-B y poder determinar y visualizar la posición de las aeronaves que sobrevuelan nuestra ubicación.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;ADS-B (&lt;em&gt;Automatic Dependent Surveillance Broadcast&lt;/em&gt;) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.&lt;/p&gt;
+&lt;p&gt;En este artículo veremos como convertir una Raspberry Pi en un receptor de mensajes ADS-B y poder determinar y visualizar la posición de las aeronaves que sobrevuelan nuestra ubicación.&lt;/p&gt;</summary>
     
     
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
-      <category term="ADS-B" scheme="http://sdr-es.com/tags/ADS-B/"/>
+    <category term="ADS-B" scheme="http://sdr-es.com/tags/ADS-B/"/>
     
-      <category term="dump1090" scheme="http://sdr-es.com/tags/dump1090/"/>
+    <category term="dump1090" scheme="http://sdr-es.com/tags/dump1090/"/>
     
   </entry>
   
@@ -215,25 +187,23 @@
     <link href="http://sdr-es.com/2020/04/27/instalacion-satnogs-ansible/"/>
     <id>http://sdr-es.com/2020/04/27/instalacion-satnogs-ansible/</id>
     <published>2020-04-27T14:34:55.000Z</published>
-    <updated>2020-05-01T13:51:43.516Z</updated>
+    <updated>2020-04-27T14:34:55.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;En el artículo anterior &lt;a href=&quot;https://sdr-es.com/2020/04/24/instalacion-satnogs/&quot;&gt;“Instalación de estación terrestre con SatNOGS”&lt;/a&gt; vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.&lt;br&gt;En este artículo veremos como realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;En el artículo anterior &lt;a href=&quot;https://sdr-es.com/2020/04/24/instalacion-satnogs/&quot;&gt;“Instalación de estación terrestre con SatNOGS”&lt;/a&gt; vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.&lt;br&gt;En este artículo veremos como realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.&lt;/p&gt;</summary>
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
-      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
-      <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
+    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
+    
+    <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
     
   </entry>
   
@@ -242,24 +212,22 @@
     <link href="http://sdr-es.com/2020/04/24/instalacion-satnogs/"/>
     <id>http://sdr-es.com/2020/04/24/instalacion-satnogs/</id>
     <published>2020-04-24T14:34:55.000Z</published>
-    <updated>2020-08-31T17:08:19.123Z</updated>
+    <updated>2020-04-24T14:34:55.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;https://satnogs.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SatNOGS&lt;/a&gt; (Satellite Networked Open Ground Station) es una plataforma de software y hardware de código abierto con el propósito de crear una red global de estaciones terrestres de seguimiento de satélites.&lt;/p&gt;
-&lt;p&gt;En este artículo veremos como instalar una estación terrestre para el seguimiento de satélites de forma desatendida. Para ello vamos a utilizar un dispositivo SDR y una Raspberry Pi con el software SatNOGS.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://satnogs.org/&quot;&gt;SatNOGS&lt;/a&gt; (Satellite Networked Open Ground Station) es una plataforma de software y hardware de código abierto con el propósito de crear una red global de estaciones terrestres de seguimiento de satélites.&lt;/p&gt;
+&lt;p&gt;En este artículo veremos como instalar una estación terrestre para el seguimiento de satélites de forma desatendida. Para ello vamos a utilizar un dispositivo SDR y una Raspberry Pi con el software SatNOGS.&lt;/p&gt;</summary>
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
-      <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
+    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
+    
+    <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
     
   </entry>
   
@@ -268,25 +236,25 @@
     <link href="http://sdr-es.com/2020/04/11/instalacion-spyserver-raspberrypi/"/>
     <id>http://sdr-es.com/2020/04/11/instalacion-spyserver-raspberrypi/</id>
     <published>2020-04-11T09:10:42.000Z</published>
-    <updated>2020-05-01T13:51:43.543Z</updated>
+    <updated>2020-04-11T09:10:42.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.&lt;br&gt;En este artículo veremos como instalar SPY Server en una Raspberry Pi.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.&lt;br&gt;En este artículo veremos como instalar SPY Server en una Raspberry Pi.&lt;/p&gt;</summary>
     
     
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
-      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
-      <category term="SPY Server" scheme="http://sdr-es.com/tags/SPY-Server/"/>
+    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
+    
+    <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+    <category term="SPY Server" scheme="http://sdr-es.com/tags/SPY-Server/"/>
     
   </entry>
   
@@ -295,23 +263,23 @@
     <link href="http://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/"/>
     <id>http://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/</id>
     <published>2020-04-10T07:40:15.000Z</published>
-    <updated>2020-05-01T13:51:43.515Z</updated>
+    <updated>2020-04-10T07:40:15.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.&lt;/p&gt;</summary>
     
     
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-      <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
-      <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
+    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
+    
+    <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
   </entry>
   
@@ -320,24 +288,18 @@
     <link href="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/"/>
     <id>http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/</id>
     <published>2020-03-27T11:10:49.000Z</published>
-    <updated>2020-05-01T13:51:43.548Z</updated>
+    <updated>2020-03-27T11:10:49.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.&lt;/p&gt;
-&lt;p&gt;La serie Meteor-M fue planificada para la primera década del siglo XXI e incluiría tres nuevos satélites con dos diseños diferentes. El objetivo principal de los dos primeros satélites (Meteor-M N1 y Meteor-M N2) sería proveer de información meteorológica, así como la monitorización de la capa de ozono, los niveles de radiación en el espacio y la observación de los mares y la capa de hielo. El tercero (Meteor-M N3) incorporaría una antena radar de nueva generación para la observación oceánica.&lt;br&gt;Estos satélites transmiten imágenes en formato &lt;a href=&quot;https://en.wikipedia.org/wiki/Low-rate_picture_transmission&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LRPT&lt;/a&gt; en 137 MHz y en formato &lt;a href=&quot;https://en.wikipedia.org/wiki/High-resolution_picture_transmission&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;HRPT&lt;/a&gt; en 1,7 GHz. En este articulo veremos como recibir la señal con nuestro dispositivo SDR y obtener las imágenes LRPT.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.&lt;/p&gt;
+&lt;p&gt;La serie Meteor-M fue planificada para la primera década del siglo XXI e incluiría tres nuevos satélites con dos diseños diferentes. El objetivo principal de los dos primeros satélites (Meteor-M N1 y Meteor-M N2) sería proveer de información meteorológica, así como la monitorización de la capa de ozono, los niveles de radiación en el espacio y la observación de los mares y la capa de hielo. El tercero (Meteor-M N3) incorporaría una antena radar de nueva generación para la observación oceánica.&lt;br&gt;Estos satélites transmiten imágenes en formato &lt;a href=&quot;https://en.wikipedia.org/wiki/Low-rate_picture_transmission&quot;&gt;LRPT&lt;/a&gt; en 137 MHz y en formato &lt;a href=&quot;https://en.wikipedia.org/wiki/High-resolution_picture_transmission&quot;&gt;HRPT&lt;/a&gt; en 1,7 GHz. En este articulo veremos como recibir la señal con nuestro dispositivo SDR y obtener las imágenes LRPT.&lt;/p&gt;</summary>
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
-    
-      <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
+    <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
     
   </entry>
   
@@ -346,24 +308,20 @@
     <link href="http://sdr-es.com/2020/03/20/recepcion-satelites-meteorologicos-NOAA/"/>
     <id>http://sdr-es.com/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</id>
     <published>2020-03-20T12:16:52.000Z</published>
-    <updated>2020-05-01T13:51:43.548Z</updated>
+    <updated>2020-03-20T12:16:52.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (&lt;em&gt;National Oceanic and Atmospheric Administration&lt;/em&gt;). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.&lt;/p&gt;
-&lt;p&gt;Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato &lt;a href=&quot;https://en.wikipedia.org/wiki/Automatic_picture_transmission&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;APT&lt;/a&gt;.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (&lt;em&gt;National Oceanic and Atmospheric Administration&lt;/em&gt;). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.&lt;/p&gt;
+&lt;p&gt;Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato &lt;a href=&quot;https://en.wikipedia.org/wiki/Automatic_picture_transmission&quot;&gt;APT&lt;/a&gt;.&lt;/p&gt;</summary>
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
     
-      <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
+    <category term="NOAA" scheme="http://sdr-es.com/tags/NOAA/"/>
     
   </entry>
   
@@ -372,17 +330,15 @@
     <link href="http://sdr-es.com/2020/03/16/eleccion-sdr/"/>
     <id>http://sdr-es.com/2020/03/16/eleccion-sdr/</id>
     <published>2020-03-16T11:07:36.000Z</published>
-    <updated>2020-10-07T17:07:30.751Z</updated>
+    <updated>2020-03-16T11:07:36.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.&lt;br&gt;La finalidad este artículo es orientarnos para escoger el dispositivo que más se ajuste a nuestras necesidades y casos de uso. Para ello se han seleccionado algunos de los dispositivos más conocidos y que habitualmente se recomiendan, y se ha elaborado una breve descripción de cada uno de ellos con algunas de sus características más reseñables.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.&lt;br&gt;La finalidad este artículo es orientarnos para escoger el dispositivo que más se ajuste a nuestras necesidades y casos de uso. Para ello se han seleccionado algunos de los dispositivos más conocidos y que habitualmente se recomiendan, y se ha elaborado una breve descripción de cada uno de ellos con algunas de sus características más reseñables.&lt;/p&gt;</summary>
     
     
     
-      <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+    <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
   </entry>
   
@@ -391,26 +347,20 @@
     <link href="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/"/>
     <id>http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/</id>
     <published>2020-03-10T11:26:30.000Z</published>
-    <updated>2020-05-01T13:51:43.544Z</updated>
+    <updated>2020-03-10T11:26:30.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.&lt;br&gt;En este artículo veremos como decodificar y recibir mensajes Aero.&lt;/p&gt;
-&lt;p&gt;Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes &lt;a href=&quot;https://es.wikipedia.org/wiki/ACARS&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ACARS&lt;/a&gt;, ADS-C, fax y voz digital.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.&lt;br&gt;En este artículo veremos como decodificar y recibir mensajes Aero.&lt;/p&gt;
+&lt;p&gt;Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes &lt;a href=&quot;https://es.wikipedia.org/wiki/ACARS&quot;&gt;ACARS&lt;/a&gt;, ADS-C, fax y voz digital.&lt;/p&gt;</summary>
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    <category term="Inmarsat" scheme="http://sdr-es.com/tags/Inmarsat/"/>
     
-      <category term="Inmarsat" scheme="http://sdr-es.com/tags/Inmarsat/"/>
-    
-      <category term="L-Band" scheme="http://sdr-es.com/tags/L-Band/"/>
+    <category term="L-Band" scheme="http://sdr-es.com/tags/L-Band/"/>
     
   </entry>
   
@@ -419,25 +369,19 @@
     <link href="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/"/>
     <id>http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/</id>
     <published>2020-03-09T11:46:44.000Z</published>
-    <updated>2020-08-31T17:08:19.137Z</updated>
+    <updated>2020-03-09T11:46:44.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;En el artículo &lt;a href=&quot;https://sdr-es.com/2020/03/06/recepcion-inmarsat/&quot;&gt;“Recepción de satélites Inmarsat”&lt;/a&gt; vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.&lt;br&gt;Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;En el artículo &lt;a href=&quot;https://sdr-es.com/2020/03/06/recepcion-inmarsat/&quot;&gt;“Recepción de satélites Inmarsat”&lt;/a&gt; vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.&lt;br&gt;Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.&lt;/p&gt;</summary>
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    <category term="Inmarsat" scheme="http://sdr-es.com/tags/Inmarsat/"/>
     
-      <category term="Inmarsat" scheme="http://sdr-es.com/tags/Inmarsat/"/>
-    
-      <category term="L-Band" scheme="http://sdr-es.com/tags/L-Band/"/>
+    <category term="L-Band" scheme="http://sdr-es.com/tags/L-Band/"/>
     
   </entry>
   
@@ -446,28 +390,26 @@
     <link href="http://sdr-es.com/2020/03/06/recepcion-inmarsat/"/>
     <id>http://sdr-es.com/2020/03/06/recepcion-inmarsat/</id>
     <published>2020-03-06T10:22:33.000Z</published>
-    <updated>2020-05-01T13:51:43.545Z</updated>
+    <updated>2020-03-06T10:22:33.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;Inmarsat es un proveedor de comunicaciones vía satélite con sede en Reino Unido. La constelación de satélites Inmarsat se compone actualmente de 12 satélites geoestacionarios que proporcionan cobertura en el 90% del planeta.&lt;br&gt;Inmarsat utiliza sus satélites de tercera y cuarta generación para ofrecer servicios de comunicaciones utilizando la &lt;strong&gt;banda L&lt;/strong&gt; (1 a 2 GHz). Estos servicios son:&lt;/p&gt;
+    <summary type="html">&lt;p&gt;Inmarsat es un proveedor de comunicaciones vía satélite con sede en Reino Unido. La constelación de satélites Inmarsat se compone actualmente de 12 satélites geoestacionarios que proporcionan cobertura en el 90% del planeta.&lt;br&gt;Inmarsat utiliza sus satélites de tercera y cuarta generación para ofrecer servicios de comunicaciones utilizando la &lt;strong&gt;banda L&lt;/strong&gt; (1 a 2 GHz). Estos servicios son:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;AERO&lt;/strong&gt;. Es la versión de ACARS a través de satélite. Son mensajes enviados desde los controles aéreos en tierra a los aviones en vuelo.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;SafetyNET (SDT-C)&lt;/strong&gt;. Es un servicio de comunicaciones por satélite para embarcaciones. Ofrecen servicio de mensajería entre barcos, mensajes de alerta, partes meteorológicos, mensajes de rescate, etc.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;En este artículo nos centraremos en cómo poder recibir la señal y en los sucesivos artículos veremos como recibir datos de cada uno de estos servicios.&lt;/p&gt;
-    
-    </summary>
+&lt;p&gt;En este artículo nos centraremos en cómo poder recibir la señal y en los sucesivos artículos veremos como recibir datos de cada uno de estos servicios.&lt;/p&gt;</summary>
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="Inmarsat" scheme="http://sdr-es.com/tags/Inmarsat/"/>
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="L-Band" scheme="http://sdr-es.com/tags/L-Band/"/>
+    <category term="Inmarsat" scheme="http://sdr-es.com/tags/Inmarsat/"/>
+    
+    <category term="L-Band" scheme="http://sdr-es.com/tags/L-Band/"/>
     
   </entry>
   
@@ -476,23 +418,17 @@
     <link href="http://sdr-es.com/2020/02/26/recepcion-nayif1/"/>
     <id>http://sdr-es.com/2020/02/26/recepcion-nayif1/</id>
     <published>2020-02-26T08:32:14.000Z</published>
-    <updated>2020-05-01T13:51:43.547Z</updated>
+    <updated>2020-02-26T08:32:14.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;El satélite NAYIF-1 es un CubeSat construido por estudiante de la &lt;em&gt;Emirates Institution for Advanced Science and Technology (EIAST)&lt;/em&gt;, en colaboración con la &lt;em&gt;American University of Sharjah (AUS)&lt;/em&gt;.&lt;br&gt;NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.&lt;br&gt;Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;El satélite NAYIF-1 es un CubeSat construido por estudiante de la &lt;em&gt;Emirates Institution for Advanced Science and Technology (EIAST)&lt;/em&gt;, en colaboración con la &lt;em&gt;American University of Sharjah (AUS)&lt;/em&gt;.&lt;br&gt;NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.&lt;br&gt;Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.&lt;/p&gt;</summary>
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
-    
-      <category term="Cubesat" scheme="http://sdr-es.com/tags/Cubesat/"/>
+    <category term="Cubesat" scheme="http://sdr-es.com/tags/Cubesat/"/>
     
   </entry>
   
@@ -501,23 +437,17 @@
     <link href="http://sdr-es.com/2020/02/25/recepcion-jy1sat/"/>
     <id>http://sdr-es.com/2020/02/25/recepcion-jy1sat/</id>
     <published>2020-02-25T19:45:38.000Z</published>
-    <updated>2020-05-01T13:51:43.546Z</updated>
+    <updated>2020-02-25T19:45:38.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan’s Crown Prince Foundation.&lt;br&gt;JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-6. Además de las funciones habituales de FUNcube, el satélite envía imágenes en formato SSDV.&lt;br&gt;En este artículo veremos como recibir la telemetría y las imágenes.&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan’s Crown Prince Foundation.&lt;br&gt;JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-6. Además de las funciones habituales de FUNcube, el satélite envía imágenes en formato SSDV.&lt;br&gt;En este artículo veremos como recibir la telemetría y las imágenes.&lt;/p&gt;</summary>
     
     
     
-      <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-      <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
-    
-      <category term="Cubesat" scheme="http://sdr-es.com/tags/Cubesat/"/>
+    <category term="Cubesat" scheme="http://sdr-es.com/tags/Cubesat/"/>
     
   </entry>
   
