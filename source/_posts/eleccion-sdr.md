@@ -11,7 +11,7 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 <!-- more -->
 
 | Dispositivo | Sintonizador | Ancho de Banda | Rango frecuencias | Bias Tee | Precio |
-| --- | --- | --: | --- | --- | --: |
+| --- | :-: | --: | --- | :-: | --: |
 | Modelos genéricos         | R820T2 | 2.4 MHz | 25 MHz – 1700 MHz | No | ~10€ |
 | RTL-SDR Blog V3           | R820T2 | 2.4 MHz | 500 kHz – 1766 MHz | Sí | ~28€ |
 | Nooelec NESDR SMArt v4    | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | No | ~32€ |
