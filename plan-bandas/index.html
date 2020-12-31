@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="Datos obtenidos de IARU Band Plans R1 Banda HFBanda de 160mDurante el día es una banda de sólo alcance local y además con mucho ruido. En cambio de noche se abre la propagación regional, nacional e in">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Plan de bandas de la IARU (Región 1)">
+<meta property="og:url" content="http://sdr-es.com/plan-bandas/index.html">
+<meta property="og:site_name" content="SDR en español">
+<meta property="og:description" content="Datos obtenidos de IARU Band Plans R1 Banda HFBanda de 160mDurante el día es una banda de sólo alcance local y además con mucho ruido. En cambio de noche se abre la propagación regional, nacional e in">
+<meta property="og:locale" content="es_ES">
+<meta property="article:published_time" content="2020-11-22T19:47:35.000Z">
+<meta property="article:modified_time" content="2020-11-22T19:47:35.000Z">
+<meta property="article:author" content="SDR en español">
+<meta property="article:tag" content="sdr">
+<meta property="article:tag" content="ham">
+<meta property="article:tag" content="radio">
+<meta property="article:tag" content="amateur">
+<meta property="article:tag" content="rtl">
+<meta property="article:tag" content="rtl-sdr">
+<meta property="article:tag" content="satellite">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://sdr-es.com/plan-bandas/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'es'
+  };
+</script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+<title>Plan de bandas de la IARU (Región 1) | SDR en español
+</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156538909-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-156538909-1');
+      }
+    </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Cambiar a barra de navegación" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">SDR en español</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li>
+        <li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li>
+        <li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li>
+        <li class="menu-item menu-item-bands-plan"><a href="/plan-bandas/" rel="section"><i class="fa fa-broadcast-tower fa-fw"></i>Plan bandas IARU</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Buscando..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Contenidos
+        </li>
+        <li class="sidebar-nav-overview">
+          Inicio
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Banda-HF"><span class="nav-number">1.</span> <span class="nav-text">Banda HF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-160m"><span class="nav-number">1.1.</span> <span class="nav-text">Banda de 160m</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-80m"><span class="nav-number">1.2.</span> <span class="nav-text">Banda de 80m</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-40m"><span class="nav-number">1.3.</span> <span class="nav-text">Banda de 40m</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-30m"><span class="nav-number">1.4.</span> <span class="nav-text">Banda de 30m</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-20m"><span class="nav-number">1.5.</span> <span class="nav-text">Banda de 20m</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-17m"><span class="nav-number">1.6.</span> <span class="nav-text">Banda de 17m</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-15m"><span class="nav-number">1.7.</span> <span class="nav-text">Banda de 15m</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-12m"><span class="nav-number">1.8.</span> <span class="nav-text">Banda de 12m</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-10m"><span class="nav-number">1.9.</span> <span class="nav-text">Banda de 10m</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Banda-VHF"><span class="nav-number">2.</span> <span class="nav-text">Banda VHF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-6m"><span class="nav-number">2.1.</span> <span class="nav-text">Banda de 6m</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-2m"><span class="nav-number">2.2.</span> <span class="nav-text">Banda de 2m</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Banda-UHF"><span class="nav-number">3.</span> <span class="nav-text">Banda UHF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-70cm"><span class="nav-number">3.1.</span> <span class="nav-text">Banda de 70cm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-23cm"><span class="nav-number">3.2.</span> <span class="nav-text">Banda de 23cm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Banda-de-13cm"><span class="nav-number">3.3.</span> <span class="nav-text">Banda de 13cm</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SDR en español"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">SDR en español</p>
+  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">entradas</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/sdr_es" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_es" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner page posts-expand">
+  
+  
+
+
+    
+    
+    
+    <div class="post-block" lang="es"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">Plan de bandas de la IARU (Región 1)
+</h1>
+
+<div class="post-meta-container">
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <p>Datos obtenidos de <a target="_blank" rel="noopener" href="https://www.iaru-r1.org/on-the-air/band-plans/">IARU Band Plans R1</a></p>
+<h2 id="Banda-HF"><a href="#Banda-HF" class="headerlink" title="Banda HF"></a>Banda HF</h2><h3 id="Banda-de-160m"><a href="#Banda-de-160m" class="headerlink" title="Banda de 160m"></a>Banda de 160m</h3><p>Durante el día es una banda de sólo alcance local y además con mucho ruido. En cambio de noche se abre la propagación regional, nacional e internacional.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias (KHz)</th>
+<th>Ancho de banda (Hz)</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.810 - 1.838</td>
+<td>200</td>
+<td>CW</td>
+<td>1.836 KHz: centro de actividad QRP</td>
+</tr>
+<tr>
+<td>1.838 - 1.840</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td></td>
+</tr>
+<tr>
+<td>1.840 - 1.843</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Modos digitales</td>
+</tr>
+<tr>
+<td>1.843 - 2.000</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Banda-de-80m"><a href="#Banda-de-80m" class="headerlink" title="Banda de 80m"></a>Banda de 80m</h3><p>La banda de 80m es una banda baja, o banda nocturna, por sus características de propagación.</p>
+<p>Es una banda que está prácticamente cerrada de día, pero que de noche permite una gran actividad. Es sumamente sensible a la interferencia por ruido atmosférico (QRN) y al fading,</p>
+<p>Es muy popular en los concursos de radioaficionados, ya que al igual que la banda de 40m, es una banda que funciona bien por la noche aún en períodos de baja actividad solar. Pero a diferencia de la banda de 40m, la banda de 80m tiene mucho más ancho de banda, por lo que es más confortable para quienes quieren usarla para una conversación periódica entre radioaficionados.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias (KHz)</th>
+<th>Ancho de banda (Hz)</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3.500 - 3.510</td>
+<td>200</td>
+<td>CW</td>
+<td>Prioridad para operaciones intercontinentales</td>
+</tr>
+<tr>
+<td>3.510 - 3.560</td>
+<td>200</td>
+<td>CW</td>
+<td>Preferido para concursos CW, 3.555 KHz: centro actividad QRS CW</td>
+</tr>
+<tr>
+<td>3.560 - 3.570</td>
+<td>200</td>
+<td>CW</td>
+<td>3.560 KHz: centro de actividad QRP CW</td>
+</tr>
+<tr>
+<td>3.580 - 3.590</td>
+<td>200</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales</td>
+</tr>
+<tr>
+<td>3.580 - 3.590</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales</td>
+</tr>
+<tr>
+<td>3.590 - 3.600</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>3.600 - 3.620</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>3.600 - 3.650</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Preferido para concursos SSB, 3.630 KHz: centro actividad de voz digital</td>
+</tr>
+<tr>
+<td>3.650 - 3.700</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>3.690 KHz: centro de actividad QRP SSB</td>
+</tr>
+<tr>
+<td>3.700 - 3.800</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Preferido para concursos SSB<br>3.725 KHz: centro de actividad de imagen<br>3.760 KHz: centro de actividad de emergencia de la Región 1</td>
+</tr>
+<tr>
+<td>3.775 - 3.800</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Preferido para concursos SSB. Prioridad para operaciones intercontinentales</td>
+</tr>
+</tbody></table>
+<h3 id="Banda-de-40m"><a href="#Banda-de-40m" class="headerlink" title="Banda de 40m"></a>Banda de 40m</h3><p>La banda de 40m se usa para establecer contactos de todos los rangos de distancia: regional, nacional, e intercontinental.</p>
+<p>Es una de las bandas de radioaficionados más importantes, pese a su ancho de banda de 100 a 300 KHz según los países, por varias razones.<br>En primer lugar, es una banda de gran alcance, y que tiene una buena propagación incluso en los períodos más desfavorables del ciclo solar.<br>Eso hace que frecuentemente esté congestionada, sobre todo durante la noche.<br>Por esa misma razón, es una banda sumamente utilizada durante los concursos de radioaficionados, lo que agrava la congestión.<br>En segundo lugar, la frecuencia permite a los radioaficionados construir equipos sin grandes dificultades técnicas, sobre todo, de estabilidad de osciladores.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias (KHz)</th>
+<th>Ancho de banda (Hz)</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>7.000 - 7.040</td>
+<td>200</td>
+<td>CW</td>
+<td>7.030 KHz: centro de actividad QRP CW</td>
+</tr>
+<tr>
+<td>7.040 - 7.047</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales</td>
+</tr>
+<tr>
+<td>7.047 - 7.050</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>7.050 - 7.053</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>7.053 - 7.060</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Modos digitales</td>
+</tr>
+<tr>
+<td>7.060 - 7.100</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Preferido para concursos SSB<br>7.070 KHz: centro de actividad de voz digital<br>7.090 KHz: centro de actividad QRP SSB</td>
+</tr>
+<tr>
+<td>7.100 - 7.130</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>7.110 KHz: centro de actividad de emergencia de la Región 1</td>
+</tr>
+<tr>
+<td>7.130 - 7.200</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Preferido para concursos SSB. 7.165 KHz: centro de actividad de imagen</td>
+</tr>
+<tr>
+<td>7.175 - 7.200</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Preferido para concursos SSB. Prioridad para operaciones intercontinentales</td>
+</tr>
+</tbody></table>
+<h3 id="Banda-de-30m"><a href="#Banda-de-30m" class="headerlink" title="Banda de 30m"></a>Banda de 30m</h3><p>Conexiones DX por la capa F2 de la ionosfera son posibles durante las 24 horas.</p>
+<p>Por su estrecho ancho de banda (apenas 50 KHz), es una banda limitada a la radiotelegrafía y las comunicaciones digitales. Por la gran calidad de la propagación, debido a su frecuencia de 10 MHz, es una banda refugio para los radiotelegrafistas en épocas de baja actividad solar, cuando la propagación en otras bandas es muy pobre.</p>
+<p>Banda bisagra, combina las ventajas de las bandas diurnas y de las bandas nocturnas. Contactos de 2000 km o más son posibles todo el día; la absorción por la capa D es insignificante, lo que permite utilizarla de día en períodos de baja actividad solar.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias (KHz)</th>
+<th>Ancho de banda (Hz)</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10.100 - 10.130</td>
+<td>200</td>
+<td>CW</td>
+<td>10.116 KHz: centro de actividad QRP CW</td>
+</tr>
+<tr>
+<td>10.130 - 10.150</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales</td>
+</tr>
+</tbody></table>
+<h3 id="Banda-de-20m"><a href="#Banda-de-20m" class="headerlink" title="Banda de 20m"></a>Banda de 20m</h3><p>La banda de 20 m es la banda reina del DX, por varias razones:</p>
+<p>Es casi siempre utilizable por propagación via capa F2, permitiendo magníficos contactos lejanos<br>El ruido de la banda es muy bajo.<br>Es la primera banda alta, caracterizada por su desaparición por falta de ionización durante la noche, y por la poca absorción de la capa D.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias (KHz)</th>
+<th>Ancho de banda (Hz)</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>14.000 - 14.060</td>
+<td>200</td>
+<td>CW</td>
+<td>Preferido para concursos CW, 14.055 KHz: centro actividad QRS</td>
+</tr>
+<tr>
+<td>14.060 - 14.070</td>
+<td>200</td>
+<td>CW</td>
+<td>14.060 KHz: centro de actividad QRP CW</td>
+</tr>
+<tr>
+<td>14.070 - 14.089</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales</td>
+</tr>
+<tr>
+<td>14.089 - 14.099</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>14.099 - 14.101</td>
+<td></td>
+<td>Balizas internacionales</td>
+<td>Exclusivamente para balizas</td>
+</tr>
+<tr>
+<td>14.101 - 14.112</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>14.112 - 14.125</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td></td>
+</tr>
+<tr>
+<td>14.125 - 14.300</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Preferido para concursos SSB<br>14.130 KHz: centro de actividad de voz digital<br>14.195 ± 5: prioridad para expediciones<br>14.230 KHz: centro de actividad de imagen<br>14.285 KHz: centro de actividad QRP SSB</td>
+</tr>
+<tr>
+<td>14.300 - 14.350</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>14.300 KHz: centro de actividad de emergencia mundial</td>
+</tr>
+</tbody></table>
+<h3 id="Banda-de-17m"><a href="#Banda-de-17m" class="headerlink" title="Banda de 17m"></a>Banda de 17m</h3><p>Básicamente tiene las mismas características que la banda de 20m, pero es mucho más afectada por los ciclos solares de 11 años. En períodos de baja actividad solar, la banda puede estar abierta solamente en intervalos del día de mayor exposición solar, lo que reduce su utilización a unas pocas horas.</p>
+<p>Sin embargo, siendo una banda WARC, los concursos están prohibidos, lo que permite hacer contactos más sociables y con más espacio para quienes quieren usarla.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias (KHz)</th>
+<th>Ancho de banda (Hz)</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>18.068 - 18.095</td>
+<td>200</td>
+<td>CW</td>
+<td>18.086 KHz: centro de actividad QRP CW</td>
+</tr>
+<tr>
+<td>18.095 - 18.105</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales</td>
+</tr>
+<tr>
+<td>18.105 - 18.109</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>18.109 - 18.111</td>
+<td></td>
+<td>Balizas internacionales</td>
+<td>Exclusivamente para balizas</td>
+</tr>
+<tr>
+<td>18.111 - 18.120</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>18.120 - 18.168</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>18.120 KHz: centro de actividad QRP SSB<br>18.150 KHz: centro de actividad de voz digital<br>18.160 KHz: centro de actividad de emergencia mundial</td>
+</tr>
+</tbody></table>
+<h3 id="Banda-de-15m"><a href="#Banda-de-15m" class="headerlink" title="Banda de 15m"></a>Banda de 15m</h3><p>Al igual que la banda de 17m, es una excelente banda DX en caso de fuerte actividad solar, pero es muy dependiente de la ionización. Es una banda únicamente de propagación diurna.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias (KHz)</th>
+<th>Ancho de banda (Hz)</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>21.000 - 21.070</td>
+<td>200</td>
+<td>CW</td>
+<td>21.055 KHz: centro actividad QRS<br>21.060 KHz: centro actividad QRP</td>
+</tr>
+<tr>
+<td>21.070 - 21.090</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales</td>
+</tr>
+<tr>
+<td>21.090 - 21.110</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>21.110 - 21.120</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas), no SSB</td>
+</tr>
+<tr>
+<td>21.120 - 21.149</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td></td>
+</tr>
+<tr>
+<td>21.149 - 21.151</td>
+<td></td>
+<td>Balizas internacionales</td>
+<td>Exclusivamente para balizas</td>
+</tr>
+<tr>
+<td>21.151 - 21.450</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>21.180 KHz: centro de actividad de voz digital<br>21.285 KHz: centro de actividad QRP SSB<br>21.340 KHz: centro de actividad de imagen<br>21.360 KHz: centro de actividad de emergencia mundial</td>
+</tr>
+</tbody></table>
+<h3 id="Banda-de-12m"><a href="#Banda-de-12m" class="headerlink" title="Banda de 12m"></a>Banda de 12m</h3><p>Al igual que la banda de 15m, es una banda diurna, aunque con algo mayor distancia de salto, lo que la convierte en una excelente banda DX en períodos de alta actividad solar.</p>
+<p>Básicamente tiene las mismas características que la banda de 15m, pero se ve más afectada por los ciclos solares de 11 años. En períodos de baja actividad solar, la banda puede estar abierta solamente en intervalos del día de mayor exposición solar, lo que reduce su utilización a unas pocas horas. Durante los períodos de baja actividad solar, puede parecer permanentemente muerta, no hay tráfico.</p>
+<p>Esta banda solamente tiene 100 KHz de ancho de banda. Sin embargo, siendo una banda WARC, los concursos están prohibidos, lo que permite hacer contactos más sociables y con más espacio para todos quienes quieren usarla.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias (KHz)</th>
+<th>Ancho de banda (Hz)</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>24.890 - 24.915</td>
+<td>200</td>
+<td>CW</td>
+<td>24.906 KHz: centro de actividad QRP CW</td>
+</tr>
+<tr>
+<td>24.915 - 24.925</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales</td>
+</tr>
+<tr>
+<td>24.925 - 24.929</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>24.929 - 24.931</td>
+<td></td>
+<td>Balizas internacionales</td>
+<td>Exclusivamente para balizas</td>
+</tr>
+<tr>
+<td>24.931 - 24.940</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>24.940 - 24.990</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>24.950 KHz: centro de actividad QRP SSB<br>24.960 KHz: centro de actividad de voz digital</td>
+</tr>
+</tbody></table>
+<h3 id="Banda-de-10m"><a href="#Banda-de-10m" class="headerlink" title="Banda de 10m"></a>Banda de 10m</h3><p>La banda de 10m es la última banda HF. Por esa razón comparte algunos modos de propagación de las bandas VHF.</p>
+<p>Banda dependiente de la ionización (y por ende, del ciclo solar), la banda se abre con la aurora y puede seguir siendo usable aún algunas horas luego del ocaso.</p>
+<p>Comparte con la banda de 6m una actividad Esporádica-E entre mayo y agosto (esto es aplicable al hemisferio norte de nuestro planeta, para el hemisferio sur esta condición se da de noviembre a febrero), lo que la asemeja a las bandas VHF.</p>
+<p>Tiene un ancho de banda respetable (1700 KHz, 17 veces más que la banda de 40m), y entre otras ventajas, tiene entre 28,200 y 28,300 MHz varias balizas que permiten monitorear la propagación.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias (KHz)</th>
+<th>Ancho de banda (Hz)</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>28.000 - 28.070</td>
+<td>200</td>
+<td>CW</td>
+<td>28.055 KHz: centro actividad QRS<br>28.060 KHz: centro de actividad QRP</td>
+</tr>
+<tr>
+<td>28.070 - 28.120</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales</td>
+</tr>
+<tr>
+<td>28.120 - 28.150</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>28.150 - 28.190</td>
+<td>500</td>
+<td>Modos de banda estrecha</td>
+<td></td>
+</tr>
+<tr>
+<td>28.190 - 28.199</td>
+<td></td>
+<td>Balizas internacionales</td>
+<td>Balizas de la Región 1 a tiempo compartido</td>
+</tr>
+<tr>
+<td>28.199 - 28.201</td>
+<td></td>
+<td>Balizas internacionales</td>
+<td>Balizas mundiales a tiempo compartido</td>
+</tr>
+<tr>
+<td>28.201 - 28.225</td>
+<td></td>
+<td>Balizas internacionales</td>
+<td>Balizas en servicio continuo</td>
+</tr>
+<tr>
+<td>28.225 - 28.300</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Balizas</td>
+</tr>
+<tr>
+<td>28.300 - 28.320</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>28.320 - 29.000</td>
+<td>2.700</td>
+<td>Todos los modos</td>
+<td>28.330 KHz: centro de actividad de voz digital<br>28.360 KHz: centro de actividad QRP SSB<br>28.680 KHz: centro de actividad de imagen</td>
+</tr>
+<tr>
+<td>29.000 - 29.100</td>
+<td>6.000</td>
+<td>Todos los modos</td>
+<td></td>
+</tr>
+<tr>
+<td>29.100 - 29.200</td>
+<td>6.000</td>
+<td>Todos los modos</td>
+<td>FM simplex. Canales de 10 KHz</td>
+</tr>
+<tr>
+<td>29.200 - 29.300</td>
+<td>6.000</td>
+<td>Todos los modos</td>
+<td>Modos digitales, estaciones de datos automáticas (desatendidas)</td>
+</tr>
+<tr>
+<td>29.300 - 29.510</td>
+<td>6.000</td>
+<td>Satélites</td>
+<td>Bajada de satélites</td>
+</tr>
+<tr>
+<td>29.510 - 29.520</td>
+<td></td>
+<td>Canal de reserva</td>
+<td></td>
+</tr>
+<tr>
+<td>29.520 - 29.590</td>
+<td>6.000</td>
+<td>Todos los modos</td>
+<td>Entrada de repetidores FM (RH1 - RH8)</td>
+</tr>
+<tr>
+<td>29.600</td>
+<td>6.000</td>
+<td>Todos los modos</td>
+<td>Canal de llamada FM</td>
+</tr>
+<tr>
+<td>29.610</td>
+<td>6.000</td>
+<td>Todos los modos</td>
+<td>Repetidor FM simplex</td>
+</tr>
+<tr>
+<td>29.620 - 29.700</td>
+<td>6.000</td>
+<td>Todos los modos</td>
+<td>Salida de repetidores FM (RH1 - RH8)</td>
+</tr>
+</tbody></table>
+<h2 id="Banda-VHF"><a href="#Banda-VHF" class="headerlink" title="Banda VHF"></a>Banda VHF</h2><h3 id="Banda-de-6m"><a href="#Banda-de-6m" class="headerlink" title="Banda de 6m"></a>Banda de 6m</h3><p>Esta banda presenta prácticamente todos los modos de propagación de la HF y de la VHF. Sin embargo, el modo Esporádico-E, que aparece preferentemente en verano, es sumamente apreciado por los contactos a grandes distancias (miles de kilómetros) que permite este modo.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias<br>(KHz)</th>
+<th>Ancho de banda<br>(-6 dB)</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>50.000 - 50.030</td>
+<td>500 Hz</td>
+<td>Proyecto de Balizas Sincronizadas</td>
+<td>50.000 - 50.010 Región 1<br>50.012 - 50.020 Región 2<br>50.020 - 50.030 Región 3</td>
+</tr>
+<tr>
+<td>50.030 - 50.100</td>
+<td>500 Hz</td>
+<td>Telegrafía</td>
+<td>50.050 Centro de actividad internacional en CW<br>50.090 Centro de actividad internacional en CW</td>
+</tr>
+<tr>
+<td>50.100 - 50.200</td>
+<td>2.700 Hz</td>
+<td>SSB y Telegrafía</td>
+<td>50.100 - 50.130 Segmento preferente para contactos internacionales. Centro de actividad 50.110<br>50.130 - 50.200 Segmento internacional. Centro de actividad 50.150</td>
+</tr>
+<tr>
+<td>50.200 - 50.300</td>
+<td>2.700 Hz</td>
+<td>SSBy  Telegrafía</td>
+<td>Uso general<br>50.285 Para uso en banda cruzada</td>
+</tr>
+<tr>
+<td>50.300 - 50.400</td>
+<td>2.700 Hz</td>
+<td>MGM y Banda estrecha</td>
+<td>50.305 Centro de actividad PSK<br>50.310 - 50.320 Centro de actividad EME<br>50.320 - 50.380 Centro de actividad MS</td>
+</tr>
+<tr>
+<td>50.400 - 50.500</td>
+<td>1.000 Hz</td>
+<td>MGM y Telegrafía</td>
+<td>Balizas en exclusiva<br>50.401 Balizas WSPR (+/- 500 Hz)</td>
+</tr>
+<tr>
+<td>50.500 - 52.000</td>
+<td>12 KHz</td>
+<td>Todos los modos</td>
+<td>50.510 SSTV<br>50.540 - 50.580 Pasarelas de voz a Internet en simplex FM<br>50.550 Frecuencia de imagen<br>50.600 RTTY<br>50.620 - 50.750 Comunicaciones digitales<br>50.630 Llamada DV (voz digital)<br>51.210 - 51.390 Entrada repetidores FM/DV, canales de 20 KHz<br>51.410 - 51.590 FM/DV simplex<br>51.510 Frecuencia de llamada en FM<br>51.810 - 51.990 Salida de repetidores FM<br></td>
+</tr>
+<tr>
+<td>50.500 - 50.700</td>
+<td>-</td>
+<td>Todos los modos</td>
+<td>50.540 - 50.580 Gateways de voz por internet FM/DV simplex<br>50.600 - 50.700 Comunicaciones digitales incluyendo llamas DV en 50.630</td>
+</tr>
+<tr>
+<td>50.700 - 50.900</td>
+<td>12 KHz</td>
+<td>Voz FM/Digital</td>
+<td>50.710 - 50.890 Salida de repetidores FM/DV</td>
+</tr>
+<tr>
+<td>50.900 - 51.200</td>
+<td>-</td>
+<td>Todos los modos</td>
+<td>Para experimentos de banda ancha</td>
+</tr>
+<tr>
+<td>51.200 - 51.400</td>
+<td>12 KHz</td>
+<td>Voz FM/Digital</td>
+<td>50.710 - 50.890 Entrada de repetidores FM/DV</td>
+</tr>
+<tr>
+<td>51.400 - 52.000</td>
+<td>-</td>
+<td>Todos los modos</td>
+<td>51.410 - 590 FM/DV Simplex<br>51.510 Frecuencia de llamada FM<br>51.810 – 51.990 Canales de salida repetidores FM/DV<br>Para experimentos de banda ancha</td>
+</tr>
+<tr>
+<td>52.000 - 54.000</td>
+<td>500 KHz</td>
+<td>Todos los modos</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Banda-de-2m"><a href="#Banda-de-2m" class="headerlink" title="Banda de 2m"></a>Banda de 2m</h3><p>Banda VHF, local por excelencia, es muy utilizada por los radioaficionados locales para mantenerse en contacto en un radio de unos 160 km.<br>La propagación en esta banda es favorable durante la mañana y en verano; también existen condiciones favorables durante las lluvias de meteoritos, las auroras boreales (donde por la gran distorsión, se usa la telegrafía de baja velocidad), y las Esporádicas-E. En algunos de estos casos, se han obtenido rendimientos superiores a los 400 km.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias (KHz)</th>
+<th>Ancho de banda<br>(-6 dB)</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>144.000 - 144.025</td>
+<td>2.700 Hz</td>
+<td>Todos los modos</td>
+<td>Satélites. Solo enlaces descendentes</td>
+</tr>
+<tr>
+<td>144.025 - 144.100</td>
+<td>500 Hz</td>
+<td>Telegrafía</td>
+<td>144.050 Centro de actividad<br>114.100 MS aleatorio</td>
+</tr>
+<tr>
+<td>144.100 - 144.150</td>
+<td>500 Hz</td>
+<td>Telegrafía<br>MGM</td>
+<td>144.110 - 144.160 EME (rebote lunar), MGM</td>
+</tr>
+<tr>
+<td>144.150 - 144.400</td>
+<td>2.700 Hz</td>
+<td>Telegrafía<br>MGM<br>SSB</td>
+<td>144.195 - 144.205 MS SSB aleatorio<br>144.300 Centro de actividad SSB</td>
+</tr>
+<tr>
+<td>144.400 - 144.490</td>
+<td>500 Hz</td>
+<td>Telegrafía<br>MGM</td>
+<td>Balizas en exclusiva</td>
+</tr>
+<tr>
+<td>144.491 - 144.493</td>
+<td>500 Hz</td>
+<td>EMGM</td>
+<td>MGM experimental</td>
+</tr>
+<tr>
+<td>144.500 - 144.794</td>
+<td>20 KHz</td>
+<td>Todos los modos</td>
+<td>144.500 Centro de actividad (SSTV, Fax, …)<br>144.600 Centro de actividad (MGM, RTTY, …)<br>144.750 Llamada/respuesta ATV</td>
+</tr>
+<tr>
+<td>144.794 - 144.9695</td>
+<td>12 KHz</td>
+<td>MGM<br>Comunicaciones digitales</td>
+<td>144.800 APRS<br>144.8125 - 144.8625 DV - Pasarela de voz a Internet</td>
+</tr>
+<tr>
+<td>144.975 - 145.194</td>
+<td>12 KHz</td>
+<td>FM/Voz digital (DV)</td>
+<td>Entrada de repetidores en exclusiva</td>
+</tr>
+<tr>
+<td>145.194 - 145.206</td>
+<td>12 KHz</td>
+<td>FM/Voz digital</td>
+<td>Comunicaciones espaciales</td>
+</tr>
+<tr>
+<td>145.206 - 145.5625</td>
+<td>12 KHz</td>
+<td>FM/Voz digital</td>
+<td>145.2375 - 145.3375 Pasarela de voz a Internet en FM<br>145.375 Llamada de voz digital<br>145.500 Llamada FM</td>
+</tr>
+<tr>
+<td>145.5750 - 145.7935</td>
+<td>12 KHz</td>
+<td>FM/Voz digital</td>
+<td>Salida de repetidores en exclusiva</td>
+</tr>
+<tr>
+<td>145.794 - 145.804</td>
+<td>12 KHz</td>
+<td>FM/Voz digital</td>
+<td>Comunicaciones espaciales</td>
+</tr>
+<tr>
+<td>145.806 - 146.000</td>
+<td>12 KHz</td>
+<td>Todos los modos</td>
+<td>Satélites en exclusiva</td>
+</tr>
+</tbody></table>
+<h2 id="Banda-UHF"><a href="#Banda-UHF" class="headerlink" title="Banda UHF"></a>Banda UHF</h2><h3 id="Banda-de-70cm"><a href="#Banda-de-70cm" class="headerlink" title="Banda de 70cm"></a>Banda de 70cm</h3><p>En esta banda pueden alcanzarse varios cientos de kilómetros en condiciones favorables, a condición de tener equipos potentes y redes de antenas para aumentar la ganancia.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias (KHz)</th>
+<th>Ancho de banda<br>(-6 dB)</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>430.000 - 431.975</td>
+<td>20 KHz</td>
+<td>Todos los modos</td>
+<td>430.025 - 430.375 Salida repetidores FM, desplazamiento de 1,6 MHz<br>430.400 - 430.575 Enlaces de comunicaciones digitales<br>430.600 - 430.925 Repetidores de comunicaciones digitales<br>430.925 - 431.025 Canales multimodo<br>431.050 - 431.825 Entrada repetidores, desplazamiento de 7,6 MHz<br>431.625 - 431.975 Entrada repetidores, desplazamiento de 1,6 MHz</td>
+</tr>
+<tr>
+<td>432.000 - 432.100</td>
+<td>500 Hz</td>
+<td>Telegrafía y MGM</td>
+<td>432.050 Centro de actividad en telegrafía</td>
+</tr>
+<tr>
+<td>432.100 - 432.400</td>
+<td>2700 Hz</td>
+<td>Telegrafía,<br>SSB, MGM</td>
+<td>432.200 Centro de actividad en SSB<br>432.350 Centro de actividad llamada-respuesta<br>432.370 Centro de actividad Meteo Scatter</td>
+</tr>
+<tr>
+<td>432.400 - 432.490</td>
+<td>500 Hz</td>
+<td>Telegrafía<br>MGM</td>
+<td>Balizas en exclusiva</td>
+</tr>
+<tr>
+<td>432.500 - 432.975</td>
+<td>12 KHz</td>
+<td>Todos los modos</td>
+<td>432.500 Frecuencia nueva APRS<br>Entrada repetidores, canales de 25 KHz, desplazamiento de 2 MHz (canales: 432.600 - 432.975)</td>
+</tr>
+<tr>
+<td>433.000 - 433.375</td>
+<td>12 KHz</td>
+<td>FM<br>Voz digital</td>
+<td>Entrada repetidores, canales de 25 KHz, desplazamiento de 1,6 MHz (canales: 433.000-433.375)</td>
+</tr>
+<tr>
+<td>433.400 - 433.575</td>
+<td>12 KHz</td>
+<td>FM<br>Voz digital</td>
+<td>433.400 SSTV (FM/AFSK)<br>433.450 Llamada voz digital<br>433.500 Llamada FM</td>
+</tr>
+<tr>
+<td>433.600 - 434.000</td>
+<td>-</td>
+<td>Todos los modos</td>
+<td>433.625 - 433.775 Comunicaciones digitales<br>434.000 Frecuencia central para experimentos digitales</td>
+</tr>
+<tr>
+<td>434.000 - 434.594</td>
+<td>12 KHz</td>
+<td>Todos los modos y ATV</td>
+<td>434.450 - 434.5475 Canales para comunicaciones digitales</td>
+</tr>
+<tr>
+<td>434.594 - 434.981</td>
+<td>12 KHz</td>
+<td>Todos los modos</td>
+<td>434.600 – 434.975 Salida repetidores, canales de 12,5 KHz, desplazamiento de 2 MHz</td>
+</tr>
+<tr>
+<td>435.000 - 436.000</td>
+<td>-</td>
+<td>Satélites</td>
+<td></td>
+</tr>
+<tr>
+<td>436.000 - 438.000</td>
+<td>-</td>
+<td>Satélites y DATV/datos</td>
+<td>Centro de actividad DATV y datos</td>
+</tr>
+<tr>
+<td>438.000 - 440.000</td>
+<td>-</td>
+<td>Todos los modos</td>
+<td>438.025 - 438.175 Comunicaciones digitales<br>438.200 - 438.525 Repetidores de comunicaciones digitales<br>438.550 - 438.625 Canales multimodo<br>438.650 - 439.425 Salida repetidores<br>439.800 - 439.975 Enlace de comunicaciones digitales</td>
+</tr>
+</tbody></table>
+<h3 id="Banda-de-23cm"><a href="#Banda-de-23cm" class="headerlink" title="Banda de 23cm"></a>Banda de 23cm</h3><p>Banda de iniciación a las técnicas de microondas para los radioaficionados.<br>Perteneciente a la UHF (Ultra High Frecuency),tiene un gran interés por sus especiales características.<br>Como principal ventaja se considera su gran ancho de banda, permitiendo realizar emisiones de TV. También es empleada para enlaces con satélites de aficionado y modos de propagación muy especializados, como el rebote lunar.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias (MHz)</th>
+<th>Ancho de banda<br>(-6 dB)</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1240,000 - 1240,500</td>
+<td>2700</td>
+<td>Todos los modos</td>
+<td>Reservado para el futuro</td>
+</tr>
+<tr>
+<td>1240,500 - 1240,750</td>
+<td>500</td>
+<td>Telegrafía y MGM</td>
+<td>Balizas (reservado para el futuro)</td>
+</tr>
+<tr>
+<td>1240,750 - 1241,000</td>
+<td>20 KHz</td>
+<td>FM y Voz Digital</td>
+<td>Reservado para el futuro</td>
+</tr>
+<tr>
+<td>1241,000 - 1243,250</td>
+<td>20 KHz</td>
+<td>Todos los modos</td>
+<td>1242.025 - 1242.250 Salida repetidores<br>1242.275 - 1242.700 Salida repetidores<br>1242.725 - 1243.250 Comunicaciones digitales</td>
+</tr>
+<tr>
+<td>1243,250 - 1260,000</td>
+<td>*</td>
+<td>(D)ATV</td>
+<td>1258.150 - 1259.350 Salida repetidores</td>
+</tr>
+<tr>
+<td>1260,000 - 1270,000</td>
+<td>*</td>
+<td>Servicios satélite</td>
+<td></td>
+</tr>
+<tr>
+<td>1270,000 - 1272,000</td>
+<td>20 KHz</td>
+<td>Todos los modos</td>
+<td>1270.025 - 1270.700 Entrada repetidores<br>1270.725 - 1271.250 Comunicaciones digitales</td>
+</tr>
+<tr>
+<td>1272,000 - 1290,994</td>
+<td>*</td>
+<td>(D)ATV</td>
+<td></td>
+</tr>
+<tr>
+<td>1290,994 - 1291,481</td>
+<td>20 KHz</td>
+<td>FM y Voz Digital</td>
+<td>Entrada repetidores, canales 25 KHz</td>
+</tr>
+<tr>
+<td>1291,494 - 1296,000</td>
+<td>*</td>
+<td>Todos los modos</td>
+<td>1293.150 - 1294.350 Entrada repetidores R20 - R68</td>
+</tr>
+<tr>
+<td>1296,000 - 1296,150</td>
+<td>500</td>
+<td>Telegrafía y MGM</td>
+<td>1296.000 - 1296.025 Rebote lunar<br>1296.138 Centro de actividad PSK31</td>
+</tr>
+<tr>
+<td>1296,150 - 1296,800</td>
+<td>2700</td>
+<td>MGM, Telegrafía y SSB</td>
+<td>1296.200 Centro de actividad de banda estrecha<br>1296.400 - 1296.600 Entrada transpondedor lineal<br>1296.500 FAX<br>1296.600 Centro de actividad de banda estrecha (MGM, RTTY, …)<br>1296.600 - 1296.700 Salida transpondedor lineal<br>1296.741 - 1296.743 MGM experimental (500Hz)<br>1296.750 - 1296.800 Balizas locales</td>
+</tr>
+<tr>
+<td>1296,800 - 1296,994</td>
+<td>500</td>
+<td>MGM y Telegrafía</td>
+<td>Exclusivo balizas</td>
+</tr>
+<tr>
+<td>1296,994 - 1297,481</td>
+<td>20 KHz</td>
+<td>FM y Voz Digital</td>
+<td>Salida repetidores, canales 25 KHz</td>
+</tr>
+<tr>
+<td>1297,494 - 1297,981</td>
+<td>20 KHz</td>
+<td>FM y Voz Digital</td>
+<td>1297.500 SM20<br>1297.500 Centro de actividad FM<br>1297.725 Frecuencia de llamada de voz digital<br>1297.900 - 1297.975 Gateways de internet FM simplex<br>1297.975 SM39</td>
+</tr>
+<tr>
+<td>1298,000 - 1299,000</td>
+<td>20 KHz</td>
+<td>Todos los modos</td>
+<td>1298.025 RS1<br>1298.975 RS39</td>
+</tr>
+<tr>
+<td>1299,000 - 1299,750</td>
+<td>150 KHz</td>
+<td>Todos los modos</td>
+<td>Asignado como 5 canales de 150 KHz para Digital Data (DD)<br>Centrales: 1299.075, 1299.225, 1299.375, 1299.525, 1299.675 MHz (+/- 75KHz)</td>
+</tr>
+<tr>
+<td>1299,750 - 1300,000</td>
+<td>20 KHz</td>
+<td>Todos los modos</td>
+<td>8 canales de 25 KHz (disponibles para uso FM/DV)<br>Centrales: 1299.775-1299.975</td>
+</tr>
+</tbody></table>
+<p><em>(*) Anchura máxima según legislación nacional.</em></p>
+<h3 id="Banda-de-13cm"><a href="#Banda-de-13cm" class="headerlink" title="Banda de 13cm"></a>Banda de 13cm</h3><p>La banda de 13 centímetros es una parte del espectro de radio UHF asignada internacionalmente al uso de radioaficionados y satélites de aficionados a título secundario. La banda de radioaficionados es entre 2300 MHz y 2450 MHz, y de ese modo dentro de la banda S.</p>
+<table>
+<thead>
+<tr>
+<th>Frecuencias (MHz)</th>
+<th>Ancho de banda</th>
+<th>Modos preferidos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2300,000 - 2320,000</td>
+<td>20 KHz</td>
+<td>Todos los modos</td>
+<td>2304 - 2306 Segmento de banda estrecha en países donde el segmento 2320 - 2322 no esté disponible<br>2308 - 2310 Segmento de banda estrecha en HB</td>
+</tr>
+<tr>
+<td>2320,000 - 2320,800</td>
+<td>-</td>
+<td>Todos los modos</td>
+<td>2320.000 - 2320.025 EME<br>2320.200 Centro de actividad SSB<br>2320.750 - 2320.800 Balizas locales (10W ERP máx)</td>
+</tr>
+<tr>
+<td>2320,800 - 2321,000</td>
+<td>-</td>
+<td>Telegrafía y MGM</td>
+<td>Exclusivo balizas</td>
+</tr>
+<tr>
+<td>2321,000 - 2322,000</td>
+<td>20 KHz</td>
+<td>Voz digital / FM</td>
+<td>Voz simplex y repetidores</td>
+</tr>
+<tr>
+<td>2322,000 - 2400,000</td>
+<td>-</td>
+<td>Todos los modos</td>
+<td>2322.000-2355.000 ATV<br>2355.000-2365.000 Comunicaciones digitales<br>2365.000-2370.000 Repetidores<br>2370.000-2392.000 ATV<br>2392.000-2400.000 Comunicaciones digitales</td>
+</tr>
+<tr>
+<td>2400,000 - 2450,000</td>
+<td></td>
+<td>Satélite aficionados</td>
+<td>2400 - 2402 Segmento de banda estrecha en países donde el segmento 2320 - 2322 o esté disponible<br>2427.00 - 2443.00 ATV si el satélite no usa este segmento</td>
+</tr>
+</tbody></table>
+
+      </div>
+      
+      
+      
+    </div>
+
+    
+    
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class=""></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SDR en español</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Twitter,Facebook,Linkedin,Reddit,GoogleBookmarks";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+</body>
+</html>

@@ -1,136 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Ajuste de frecuencia en recepción de satélites</title>
-    <url>/2020/02/18/ajuste-frecuencia-doppler-orbitron/</url>
-    <content><![CDATA[<p>Cuando realizamos seguimiento de satélites nos encontramos con que la frecuencia en la que deberíamos recibir una señal no se ajusta con la que estamos recibiendo y además cambia durante el pase. Esto se debe al conocido como <strong>efecto Doppler</strong>.</p>
-<p>El efecto Doppler, llamado así por el físico austriaco Christian Andreas Doppler, es el cambio de frecuencia asociado a la alta velocidad que presenta el satélite con respecto a una estación terrestre.</p>
-<p>Usando Orbitron y el plugin DDETracker podemos hacer que SDR# realice la correción y el ajuste de la frecuencia de recepción de forma automática y en tiempo real. De esta forma evitaremos el tener que ajustarla manualmente y tendremos siempre la señal correctamente centrada.</p>
-<a id="more"></a>
-
-
-<h2 id="Correccion-automatica-de-la-frecuencia-con-Orbitron"><a href="#Correccion-automatica-de-la-frecuencia-con-Orbitron" class="headerlink" title="Corrección automática de la frecuencia con Orbitron"></a>Corrección automática de la frecuencia con Orbitron</h2><p>En el post anterior <a href="https://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/">“Seguimiento de satélites con Orbitron”</a> vimos como instalar y configurar este programa para realizar el seguimiento de satélites. Este programa también nos va a permitir corregir en tiempo real la frecuencia del satélite que estemos siguiendo, y además podremos enviar esta frecuencia a SDR# para que la ajuste de manera automática. De esta forma no tendremos que preocuparnos por ajustarla manualmente y tendremos siempre la señal perfectamente sintonizada.</p>
-<p>El primer paso es indicarle a Orbitron la frecuencia del satélite para que pueda llevar a cabo el ajuste. Para ello seleccionamos el satélite para marcarlo como activo y vamos a la pestaña <em>Sat/Orbit info</em>.</p>
-<p>Hacemos doble click en el cuadro de texto de la derecha para que nos cargue la plantilla por defecto.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-plantilla.jpg" class="" title="Orbitron">
-
-<p>Ahora introducimos la frecuencia en MHz en la etiqueta <strong>DNLINK</strong>.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-dnlink.jpg" class="" title="Introducir frecuencia en Orbitron">
-
-<p>Los demás datos son opcionales, pero podemos completarlos para tener más información sobre el satélite.</p>
-<h2 id="Instalacion-de-DDETracker"><a href="#Instalacion-de-DDETracker" class="headerlink" title="Instalación de DDETracker"></a>Instalación de DDETracker</h2><p>El siguiente paso es instalar un plugin en SDR# que nos permita cambiar la frecuencia de forma automática.<br>En este ejemplo vamos a usar el plugin <strong>DDETracker</strong> que podemos descargar desde el siguiente link:</p>
-<p><a href="http://rtl-sdr.ru/uploads/download/ddetracker.zip"><center>http://rtl-sdr.ru/uploads/download/ddetracker.zip</center></a></p>
-<p>Una vez descargado el archivo y descomprimido, tenemos que incorporarlo a SDR#. Para ello seguimos los siguientes pasos:</p>
-<ol>
-<li><p>Copiamos los archivos que se indican en la siguiente captura dentro de la carpeta de instalacion de SDR#.</p>
- <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-archivos.jpg" class="" title="Archivos de DDETracker">
-</li>
-<li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro de la carpeta de SDR#.</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;add key&#x3D;&quot;DDE Tracking Client&quot; value&#x3D;&quot;SDRSharp.DDETracker.DdeTrackingPlugin,SDRSharp.DDETracker&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
- </br>
- <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-magicline.jpg" class="" title="Magicline de DDETracker">
-
-
-</li>
-</ol>
-<ol start="3">
-<li><p>Añadimos las siguientes líneas al archivo de configuración de Orbitron <em><strong>Setup.cfg</strong></em>, que encontramos dentro de la carpeta <em>Config</em> en el directorio de instalación de Orbitron.<br> Debemos indicar la ruta completa en la que hemos colocado el archivo <em>SDRSharpDriverDDE.exe</em> en el paso 1.</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Drivers]</span><br><span class="line">SDRSharp&#x3D;C:\SDR\SDRSharp\SDRSharpDriverDDE.exe</span><br></pre></td></tr></table></figure>
- </br>
- <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-config.jpg" class="" title="Orbitron">
-
-<p> Por último, reiniciamos Orbitron para aplicar los cambios.</p>
-</li>
-</ol>
-<p>Ahora que tenemos el plugin instalado, iniciamos SDR# y deberíamos ver el nuevo plugin en la lista. Lo iniciaremos haciendo click en <em>Scheduler</em>.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-plugin.jpg" class="" title="DDETracker">
-
-
-<h2 id="Conexion-con-DDETracker"><a href="#Conexion-con-DDETracker" class="headerlink" title="Conexión con DDETracker"></a>Conexión con DDETracker</h2><p>Ahora ya podemos decirle a Orbitron que mande los datos a SDR#. Para ello vamos a Orbitron y seleccionamos en Driver <em>“SDRSharp”</em> y hacemos click en el botón de conexión:</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-driver.jpg" class="" title="Orbitron">
-
-<p>Ahora ya podemos ver que DDETracker recibe los datos del satélite que tenemos activo en Orbitron.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-active.jpg" class="" title="DDETracker activo">
-
-
-<h2 id="Configurar-satelites-en-DDETracker"><a href="#Configurar-satelites-en-DDETracker" class="headerlink" title="Configurar satélites en DDETracker"></a>Configurar satélites en DDETracker</h2><p>Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.<br>Para introducir los datos, hacemos click en sobre el botón Config que aparece en el plugin y se abrirá una ventana para introducir los datos.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-config.jpg" class="" title="DDETracker config">
-
-
-<p>Hacemos click en <em>“Add new satellite”</em> para crear un nuevo satélite.<br>Lo primero es introducir el nombre. Este nombre debe coincidir exactamente con el nombre del satélite que aparece en el plugin.<br>Si el nombre es muy largo o contiene caracteres especiales, podremos usar el asterisco (*) para omitir ciertas partes.</p>
-<p>Como podemos ver en la ventana tenemos dos bloques para introducir las acciones que SDR# debe realizar. En el bloque <strong>AOS</strong> (Acquisition of Signal) le diremos qué debe hacer cuando el satélite comience a verse sobre el horizonte en nuestra posición y en el bloque inferior <strong>LOS</strong> (Loss Of Signal) le indicamos que hará cuando termine el pase.</p>
-<p>Estas acciones podemos escribirlas manualmente o seleccionarlas de la columna de la derecha e ir insertando con el botón “<strong>&lt;&lt;</strong>“ dónde corresponda.</p>
-<p>En el caso de nuestro ejemplo haremos las siguientes acciones:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br><strong>LOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_tracking_frequency_Off</span><br><span class="line">radio_Stop</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-configured.jpg" class="" title="DDETracker FUNCUBE">
-
-<p>Con esto ya tendríamos los datos del satélite introducidos. Ahora cuando el satélite se acerque a nuestra posición, SDR# se iniciará para recibir la señal de forma automática y se detendrá cuando el satélite desaparezca por el horizonte.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/sdr-sharp.jpg" class="" title="DDETracker activo">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Orbitron</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
-    <url>/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</url>
-    <content><![CDATA[<p>En este artículo vamos a ver como instalar y configurar <a href="https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm">CSVUserlistBrowser</a> para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.</p>
-<a id="more"></a>
-
-<h2 id="Instalacion-y-configuracion"><a href="#Instalacion-y-configuracion" class="headerlink" title="Instalación y configuración"></a>Instalación y configuración</h2><p>Los pasos para instalar y configurar CSVUserlistBrowser son los siguientes:</p>
-<ol>
-<li>Descargamos CSVUserlistBrowser desde el siguiente enlace:</li>
-</ol>
-<p><a href="https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip"><center>https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip</center></a></p>
-<ol start="2">
-<li>Extraemos el contenido del archivo ZIP y ejecutamos <strong><em>CSVUserlistBrowser.exe</em></strong>. En la ventana que aparece marcamos el programa con el que queremos comunicarnos (en nuestro caso SDR#) y hacemos click en <strong>OK</strong>.</li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-select.png" class="" title="CSVUserlistBrowser">
-
-<ol start="3">
-<li>El programa del paso anterior nos genera un nuevo ejecutable para cada programa que hemos seleccionado. En este caso nos habrá generado el nuevo ejecutable <strong><em>SDRSHARP-CSVUserlistBrowser.exe</em></strong>.</li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-SDRSHARP.png" class="" width="900" title="CSVUserlistBrowser">
-
-<ol start="4">
-<li>Vamos ahora a introducir nuestras coordenadas para poder descargar las bases de datos de nuestra zona. Para ello hacemos click en el menú <strong>Tools</strong> y en <strong>QTH manager</strong>. En esta ventana introducimos nuestras coordenadas. Para finalizar guardamos haciendo click en <strong>Save details</strong> y cerramos en <strong>Close/Cancel</strong>.</li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-QTH-Manager.png" class="" width="700" title="CSVUserlistBrowser">
-
-<ol start="5">
-<li><p>El siguiente paso es descargar las bases de datos de frecuencias. Para ello hacemos click en el menú <strong>Web</strong> y en <strong>Downloader/Converter</strong>. En esta ventana tendremos que hacer click en los botones de <strong>Download</strong> para descargar cada una de las bases de datos.</p>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-Downloader.png" class="" title="CSVUserlistBrowser">
-<p>Una vez descargadas, hacemos click en <strong>Close</strong>.<br>Estas bases de datos se actualizan regularmente, por lo que tendremos que repetir la descarga para tener siempre los datos actualizados.<br>Las URLs de descarga también se actualizan. Podemos consultar las actuales en <a href="https://www.df8ry.de/htmlen/csvub/%F0%9F%91%B6firststeps.htm">df8ry.de</a>.</p>
-</li>
-<li><p>El último paso es cargar las bases de datos en el programa para poder usarlas. Para cargarlas hacemos click en el menú <strong>File</strong>, <strong>Open CSV userlist</strong> y seleccionamos el archivo que queramos cargar.</p>
-</li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-cargada.png" class="" width="900" title="CSVUserlistBrowser">
-
-<ol start="7">
-<li>Para cargar otra lista, hacemos click en el menú <strong>View list</strong> y seleccionamos una posición libre. Después repetimos el paso anterior para cargar la lista. Si queremos que al iniciar el programa se nos muestra una base de datos u otra, podemos indicarlo en el menú <strong>Autoload</strong>.</li>
-</ol>
-<h2 id="Conexion-con-SDR"><a href="#Conexion-con-SDR" class="headerlink" title="Conexión con SDR#"></a>Conexión con SDR#</h2><p>SDR# se comunica con CSVUserlistBrowser mediante un <em>plugin</em>. Este plugin viene en archivo ZIP que nos descargamos en el primer paso del apartado anterior.<br>Dentro del directorio extraído encontramos el directorio <strong><em>Plugins</em></strong>, y dentro de este tendremos un directorio que contiene el archivo DLL correspondiente a la versión de SDR# que estemos usando. Es importante elegir la versión correcta para que funcione.</p>
-<p>Una vez tengamos clara la versión a instalar, procedemos a instalar el <em>plugin</em> en SDR# de la forma habitual:</p>
-<ol>
-<li><p>Copiar el archivo <strong><em>SDRSharp.DF8RYDatabridge.dll</em></strong> dentro del directorio de instalación de SDR#.</p>
-</li>
-<li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro del directorio de instalación de SDR#.</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">&quot;DF8RYDatabridge&quot;</span> <span class="attr">value</span>=<span class="string">&quot;SDRSharp.DF8RYDatabridge.DF8RYDatabridgePlugin,SDRSharp.DF8RYDatabridge&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp.png" class="" width="900" title="Plugin CSVUserlistBrowser">
-
-
-</li>
-</ol>
-<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Para poder controlar las frecuencias desde CSVUserlistBrowser, tenemos que marcar <strong>Enable RX1</strong> en el plugin de SDR#. Ahora cuando seleccionemos una frecuencia haciendo doble click en CSVUserlistBrowser, se cambiará de forma automática en SDR#.</p>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp_2.png" class="" width="900" title="SDR# y CSVUserlistBrowser">
-]]></content>
-      <tags>
-        <tag>HF</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Elección del dispositivo SDR</title>
     <url>/2020/03/16/eleccion-sdr/</url>
     <content><![CDATA[<p>Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.<br>La finalidad este artículo es orientarnos para escoger el dispositivo que más se ajuste a nuestras necesidades y casos de uso. Para ello se han seleccionado algunos de los dispositivos más conocidos y que habitualmente se recomiendan, y se ha elaborado una breve descripción de cada uno de ellos con algunas de sus características más reseñables.</p>
@@ -461,6 +331,136 @@
       </tags>
   </entry>
   <entry>
+    <title>Ajuste de frecuencia en recepción de satélites</title>
+    <url>/2020/02/18/ajuste-frecuencia-doppler-orbitron/</url>
+    <content><![CDATA[<p>Cuando realizamos seguimiento de satélites nos encontramos con que la frecuencia en la que deberíamos recibir una señal no se ajusta con la que estamos recibiendo y además cambia durante el pase. Esto se debe al conocido como <strong>efecto Doppler</strong>.</p>
+<p>El efecto Doppler, llamado así por el físico austriaco Christian Andreas Doppler, es el cambio de frecuencia asociado a la alta velocidad que presenta el satélite con respecto a una estación terrestre.</p>
+<p>Usando Orbitron y el plugin DDETracker podemos hacer que SDR# realice la correción y el ajuste de la frecuencia de recepción de forma automática y en tiempo real. De esta forma evitaremos el tener que ajustarla manualmente y tendremos siempre la señal correctamente centrada.</p>
+<a id="more"></a>
+
+
+<h2 id="Correccion-automatica-de-la-frecuencia-con-Orbitron"><a href="#Correccion-automatica-de-la-frecuencia-con-Orbitron" class="headerlink" title="Corrección automática de la frecuencia con Orbitron"></a>Corrección automática de la frecuencia con Orbitron</h2><p>En el post anterior <a href="https://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/">“Seguimiento de satélites con Orbitron”</a> vimos como instalar y configurar este programa para realizar el seguimiento de satélites. Este programa también nos va a permitir corregir en tiempo real la frecuencia del satélite que estemos siguiendo, y además podremos enviar esta frecuencia a SDR# para que la ajuste de manera automática. De esta forma no tendremos que preocuparnos por ajustarla manualmente y tendremos siempre la señal perfectamente sintonizada.</p>
+<p>El primer paso es indicarle a Orbitron la frecuencia del satélite para que pueda llevar a cabo el ajuste. Para ello seleccionamos el satélite para marcarlo como activo y vamos a la pestaña <em>Sat/Orbit info</em>.</p>
+<p>Hacemos doble click en el cuadro de texto de la derecha para que nos cargue la plantilla por defecto.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-plantilla.jpg" class="" title="Orbitron">
+
+<p>Ahora introducimos la frecuencia en MHz en la etiqueta <strong>DNLINK</strong>.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-dnlink.jpg" class="" title="Introducir frecuencia en Orbitron">
+
+<p>Los demás datos son opcionales, pero podemos completarlos para tener más información sobre el satélite.</p>
+<h2 id="Instalacion-de-DDETracker"><a href="#Instalacion-de-DDETracker" class="headerlink" title="Instalación de DDETracker"></a>Instalación de DDETracker</h2><p>El siguiente paso es instalar un plugin en SDR# que nos permita cambiar la frecuencia de forma automática.<br>En este ejemplo vamos a usar el plugin <strong>DDETracker</strong> que podemos descargar desde el siguiente link:</p>
+<p><a href="http://rtl-sdr.ru/uploads/download/ddetracker.zip"><center>http://rtl-sdr.ru/uploads/download/ddetracker.zip</center></a></p>
+<p>Una vez descargado el archivo y descomprimido, tenemos que incorporarlo a SDR#. Para ello seguimos los siguientes pasos:</p>
+<ol>
+<li><p>Copiamos los archivos que se indican en la siguiente captura dentro de la carpeta de instalacion de SDR#.</p>
+ <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-archivos.jpg" class="" title="Archivos de DDETracker">
+</li>
+<li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro de la carpeta de SDR#.</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;add key&#x3D;&quot;DDE Tracking Client&quot; value&#x3D;&quot;SDRSharp.DDETracker.DdeTrackingPlugin,SDRSharp.DDETracker&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+ </br>
+ <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-magicline.jpg" class="" title="Magicline de DDETracker">
+
+
+</li>
+</ol>
+<ol start="3">
+<li><p>Añadimos las siguientes líneas al archivo de configuración de Orbitron <em><strong>Setup.cfg</strong></em>, que encontramos dentro de la carpeta <em>Config</em> en el directorio de instalación de Orbitron.<br> Debemos indicar la ruta completa en la que hemos colocado el archivo <em>SDRSharpDriverDDE.exe</em> en el paso 1.</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Drivers]</span><br><span class="line">SDRSharp&#x3D;C:\SDR\SDRSharp\SDRSharpDriverDDE.exe</span><br></pre></td></tr></table></figure>
+ </br>
+ <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-config.jpg" class="" title="Orbitron">
+
+<p> Por último, reiniciamos Orbitron para aplicar los cambios.</p>
+</li>
+</ol>
+<p>Ahora que tenemos el plugin instalado, iniciamos SDR# y deberíamos ver el nuevo plugin en la lista. Lo iniciaremos haciendo click en <em>Scheduler</em>.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-plugin.jpg" class="" title="DDETracker">
+
+
+<h2 id="Conexion-con-DDETracker"><a href="#Conexion-con-DDETracker" class="headerlink" title="Conexión con DDETracker"></a>Conexión con DDETracker</h2><p>Ahora ya podemos decirle a Orbitron que mande los datos a SDR#. Para ello vamos a Orbitron y seleccionamos en Driver <em>“SDRSharp”</em> y hacemos click en el botón de conexión:</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-driver.jpg" class="" title="Orbitron">
+
+<p>Ahora ya podemos ver que DDETracker recibe los datos del satélite que tenemos activo en Orbitron.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-active.jpg" class="" title="DDETracker activo">
+
+
+<h2 id="Configurar-satelites-en-DDETracker"><a href="#Configurar-satelites-en-DDETracker" class="headerlink" title="Configurar satélites en DDETracker"></a>Configurar satélites en DDETracker</h2><p>Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.<br>Para introducir los datos, hacemos click en sobre el botón Config que aparece en el plugin y se abrirá una ventana para introducir los datos.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-config.jpg" class="" title="DDETracker config">
+
+
+<p>Hacemos click en <em>“Add new satellite”</em> para crear un nuevo satélite.<br>Lo primero es introducir el nombre. Este nombre debe coincidir exactamente con el nombre del satélite que aparece en el plugin.<br>Si el nombre es muy largo o contiene caracteres especiales, podremos usar el asterisco (*) para omitir ciertas partes.</p>
+<p>Como podemos ver en la ventana tenemos dos bloques para introducir las acciones que SDR# debe realizar. En el bloque <strong>AOS</strong> (Acquisition of Signal) le diremos qué debe hacer cuando el satélite comience a verse sobre el horizonte en nuestra posición y en el bloque inferior <strong>LOS</strong> (Loss Of Signal) le indicamos que hará cuando termine el pase.</p>
+<p>Estas acciones podemos escribirlas manualmente o seleccionarlas de la columna de la derecha e ir insertando con el botón “<strong>&lt;&lt;</strong>“ dónde corresponda.</p>
+<p>En el caso de nuestro ejemplo haremos las siguientes acciones:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br><strong>LOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_tracking_frequency_Off</span><br><span class="line">radio_Stop</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-configured.jpg" class="" title="DDETracker FUNCUBE">
+
+<p>Con esto ya tendríamos los datos del satélite introducidos. Ahora cuando el satélite se acerque a nuestra posición, SDR# se iniciará para recibir la señal de forma automática y se detendrá cuando el satélite desaparezca por el horizonte.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/sdr-sharp.jpg" class="" title="DDETracker activo">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Orbitron</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
+    <url>/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</url>
+    <content><![CDATA[<p>En este artículo vamos a ver como instalar y configurar <a href="https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm">CSVUserlistBrowser</a> para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.</p>
+<a id="more"></a>
+
+<h2 id="Instalacion-y-configuracion"><a href="#Instalacion-y-configuracion" class="headerlink" title="Instalación y configuración"></a>Instalación y configuración</h2><p>Los pasos para instalar y configurar CSVUserlistBrowser son los siguientes:</p>
+<ol>
+<li>Descargamos CSVUserlistBrowser desde el siguiente enlace:</li>
+</ol>
+<p><a href="https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip"><center>https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip</center></a></p>
+<ol start="2">
+<li>Extraemos el contenido del archivo ZIP y ejecutamos <strong><em>CSVUserlistBrowser.exe</em></strong>. En la ventana que aparece marcamos el programa con el que queremos comunicarnos (en nuestro caso SDR#) y hacemos click en <strong>OK</strong>.</li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-select.png" class="" title="CSVUserlistBrowser">
+
+<ol start="3">
+<li>El programa del paso anterior nos genera un nuevo ejecutable para cada programa que hemos seleccionado. En este caso nos habrá generado el nuevo ejecutable <strong><em>SDRSHARP-CSVUserlistBrowser.exe</em></strong>.</li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-SDRSHARP.png" class="" width="900" title="CSVUserlistBrowser">
+
+<ol start="4">
+<li>Vamos ahora a introducir nuestras coordenadas para poder descargar las bases de datos de nuestra zona. Para ello hacemos click en el menú <strong>Tools</strong> y en <strong>QTH manager</strong>. En esta ventana introducimos nuestras coordenadas. Para finalizar guardamos haciendo click en <strong>Save details</strong> y cerramos en <strong>Close/Cancel</strong>.</li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-QTH-Manager.png" class="" width="700" title="CSVUserlistBrowser">
+
+<ol start="5">
+<li><p>El siguiente paso es descargar las bases de datos de frecuencias. Para ello hacemos click en el menú <strong>Web</strong> y en <strong>Downloader/Converter</strong>. En esta ventana tendremos que hacer click en los botones de <strong>Download</strong> para descargar cada una de las bases de datos.</p>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-Downloader.png" class="" title="CSVUserlistBrowser">
+<p>Una vez descargadas, hacemos click en <strong>Close</strong>.<br>Estas bases de datos se actualizan regularmente, por lo que tendremos que repetir la descarga para tener siempre los datos actualizados.<br>Las URLs de descarga también se actualizan. Podemos consultar las actuales en <a href="https://www.df8ry.de/htmlen/csvub/%F0%9F%91%B6firststeps.htm">df8ry.de</a>.</p>
+</li>
+<li><p>El último paso es cargar las bases de datos en el programa para poder usarlas. Para cargarlas hacemos click en el menú <strong>File</strong>, <strong>Open CSV userlist</strong> y seleccionamos el archivo que queramos cargar.</p>
+</li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-cargada.png" class="" width="900" title="CSVUserlistBrowser">
+
+<ol start="7">
+<li>Para cargar otra lista, hacemos click en el menú <strong>View list</strong> y seleccionamos una posición libre. Después repetimos el paso anterior para cargar la lista. Si queremos que al iniciar el programa se nos muestra una base de datos u otra, podemos indicarlo en el menú <strong>Autoload</strong>.</li>
+</ol>
+<h2 id="Conexion-con-SDR"><a href="#Conexion-con-SDR" class="headerlink" title="Conexión con SDR#"></a>Conexión con SDR#</h2><p>SDR# se comunica con CSVUserlistBrowser mediante un <em>plugin</em>. Este plugin viene en archivo ZIP que nos descargamos en el primer paso del apartado anterior.<br>Dentro del directorio extraído encontramos el directorio <strong><em>Plugins</em></strong>, y dentro de este tendremos un directorio que contiene el archivo DLL correspondiente a la versión de SDR# que estemos usando. Es importante elegir la versión correcta para que funcione.</p>
+<p>Una vez tengamos clara la versión a instalar, procedemos a instalar el <em>plugin</em> en SDR# de la forma habitual:</p>
+<ol>
+<li><p>Copiar el archivo <strong><em>SDRSharp.DF8RYDatabridge.dll</em></strong> dentro del directorio de instalación de SDR#.</p>
+</li>
+<li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro del directorio de instalación de SDR#.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">&quot;DF8RYDatabridge&quot;</span> <span class="attr">value</span>=<span class="string">&quot;SDRSharp.DF8RYDatabridge.DF8RYDatabridgePlugin,SDRSharp.DF8RYDatabridge&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp.png" class="" width="900" title="Plugin CSVUserlistBrowser">
+
+
+</li>
+</ol>
+<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Para poder controlar las frecuencias desde CSVUserlistBrowser, tenemos que marcar <strong>Enable RX1</strong> en el plugin de SDR#. Ahora cuando seleccionemos una frecuencia haciendo doble click en CSVUserlistBrowser, se cambiará de forma automática en SDR#.</p>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp_2.png" class="" width="900" title="SDR# y CSVUserlistBrowser">
+]]></content>
+      <tags>
+        <tag>HF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Instalar receptor SDR online con OpenWebRX</title>
     <url>/2020/08/13/instalacion-openwebrx/</url>
     <content><![CDATA[<p><a href="https://www.openwebrx.de/">OpenWebRX</a> es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, simplemente accediendo desde un navegador web.</p>
@@ -709,6 +709,94 @@
         <tag>Instalación</tag>
         <tag>SDRSharp</tag>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalación de estación terrestre con SatNOGS (II)</title>
+    <url>/2020/04/27/instalacion-satnogs-ansible/</url>
+    <content><![CDATA[<p>En el artículo anterior <a href="https://sdr-es.com/2020/04/24/instalacion-satnogs/">“Instalación de estación terrestre con SatNOGS”</a> vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.<br>En este artículo veremos como realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.</p>
+<a id="more"></a>
+
+
+<p>Si bien este artículo se centra en la instalación en una Raspberry Pi, es posible realizar la instalación en otros dispositivos Linux mediante este mismo procedimiento. El <em>playbook</em> de Ansible que vamos a utilizar es compatible con las siguientes distribuciones y versiones:</p>
+<ul>
+<li><strong>Debian:</strong> <em>stretch</em>, <em>buster</em>.</li>
+<li><strong>Raspbian:</strong> <em>stretch</em>, <em>buster</em>.</li>
+</ul>
+<h2 id="Instalacion-de-Ansible"><a href="#Instalacion-de-Ansible" class="headerlink" title="Instalación de Ansible"></a>Instalación de Ansible</h2><p>Lo primero que haremos será instalar la última versión de Ansible. Para ello seguimos los siguientes pasos:</p>
+<ol>
+<li>Añadir el repositorio de Ansible.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo &quot;deb http:&#x2F;&#x2F;ppa.launchpad.net&#x2F;ansible&#x2F;ansible&#x2F;ubuntu trusty main&quot; | sudo tee -a &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Añadir la clave del repositorio.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>Actualizar lista de repositorios.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>Instalar Ansible.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y ansible</span><br></pre></td></tr></table></figure>
+<h2 id="Instalacion-del-cliente-Ansible-de-SatNOGS"><a href="#Instalacion-del-cliente-Ansible-de-SatNOGS" class="headerlink" title="Instalación del cliente Ansible de SatNOGS"></a>Instalación del cliente Ansible de SatNOGS</h2><p>A continuación vamos a descargar e instalar el instalador del cliente SatNOGS.</p>
+<ol>
+<li>Instalamos las dependencias que vamos a necesitar:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y git needrestart</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Descargamos el repositorio:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b stable https:&#x2F;&#x2F;gitlab.com&#x2F;librespacefoundation&#x2F;satnogs&#x2F;satnogs-client-ansible.git</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>Accedemos a la carpeta descargada:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd satnogs-client-ansible</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>Copiamos y renombramos el siguiente directorio:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp -r production.dist production</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>Ahora editamos el archivo <code>hosts</code> con nuestros datos de conexión SSH a la Raspberry Pi:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano production&#x2F;inventory&#x2F;hosts</span><br></pre></td></tr></table></figure>
+<p>Debemos editar el <em>host</em>, el usuario y la clave:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">all:</span><br><span class="line">  hosts:</span><br><span class="line">    satnogs:</span><br><span class="line">      ansible_host: &#39;localhost&#39;</span><br><span class="line">      ansible_user: &#39;pi&#39;</span><br><span class="line">      ansible_ssh_pass: &#39;raspberry&#39;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>Comprobamos la conexión SSH:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh pi@localhost true</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>Por último ejecutamos el <em>playbook</em>:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ansible-playbook -i production&#x2F;inventory -K site.yml</span><br></pre></td></tr></table></figure>
+<p>La instalación tardará unos minutos (pueden ser bastantes dependiendo de nuestra conexión y la CPU de la Raspberry Pi) y al finalizar mostrará un mensaje como el siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- Play recap -</span><br><span class="line">  satnogs                    : ok&#x3D;121  changed&#x3D;49   unreachable&#x3D;0    failed&#x3D;0    rescued&#x3D;0    ignored&#x3D;0</span><br></pre></td></tr></table></figure>
+<h2 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h2><p>Los pasos para la configuración del cliente son idénticos a los descritos en el artículo anterior en este mismo apartado.</p>
+<p>La única observación es que ahora al tener más de un dispositivo SDR conectado, debemos indicar cual de ellos debe utilizar.<br>Necesitaremos el número de serie del dispositivo para diferenciarlos. Para extraerlo usamos la herramienta <code>rtl_test</code>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ rtl_test</span><br><span class="line">Found 2 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line">  1:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>En este caso vamos a utilizar el segundo dispositivo, y por lo tanto se lo debemos indicar a SatNOGS. Para ello en <strong><em>Basic configuration options</em></strong> realizaremos el siguiente cambio:</p>
+<table>
+<thead>
+<tr>
+<th>Ajuste</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SATNOGS_SOAPY_RX_DEVICE</td>
+<td>Dispositivo SDR que vamos a usar y número de serie: <code>driver=rtlsdr,serial=08201703</code>.</td>
+</tr>
+</tbody></table>
+<img src="/2020/04/27/instalacion-satnogs-ansible/satnogs-config.png" class="" title="SatNOGS Setup">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Raspberry Pi</tag>
+        <tag>Linux</tag>
+        <tag>Instalación</tag>
+        <tag>SatNOGS</tag>
       </tags>
   </entry>
   <entry>
@@ -969,6 +1057,48 @@
       </tags>
   </entry>
   <entry>
+    <title>Instalación de cable de audio virtual</title>
+    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
+    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.</p>
+<a id="more"></a>
+
+<h2 id="Instalacion-de-VB-Cable-en-Windows"><a href="#Instalacion-de-VB-Cable-en-Windows" class="headerlink" title="Instalación de VB-Cable en Windows"></a>Instalación de VB-Cable en Windows</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
+<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg" class="" width="900" title="Descarga de VB-Cable">
+
+<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
+<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
+
+<p>Hacemos click en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
+<h3 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h3><p>Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" width="800" title="SDRSharp output">
+
+<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+<h2 id="Instalacion-de-VB-Cable-en-macOS"><a href="#Instalacion-de-VB-Cable-en-macOS" class="headerlink" title="Instalación de VB-Cable en macOS"></a>Instalación de VB-Cable en macOS</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg" class="" width="900" title="Descarga de VB-Cable">
+
+<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado ejecutamos el instalador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg" class="" title="Instalación de VB-Cable">
+
+<p>Seguimos los pasos del asistente para instalar VB-Audio.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg" class="" title="Instalación de VB-Cable">
+
+<h3 id="Configuracion-de-CubicSDR"><a href="#Configuracion-de-CubicSDR" class="headerlink" title="Configuración de CubicSDR"></a>Configuración de CubicSDR</h3><p>Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos click en <strong>Audio Out</strong> y seleccionamos <em><strong>VB Audio: VB-Cable</strong></em></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/cubicsdr-audio.jpg" class="" width="900" title="CubicSDR audio output">
+
+<p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+]]></content>
+      <tags>
+        <tag>macOS</tag>
+        <tag>Instalación</tag>
+        <tag>Windows</tag>
+        <tag>Virtual Audio Cable</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recepción de mensajes Inmarsat Aero</title>
     <url>/2020/03/10/recepcion-aero-inmarsat/</url>
     <content><![CDATA[<p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
@@ -1030,319 +1160,6 @@
         <tag>Satélites</tag>
         <tag>Inmarsat</tag>
         <tag>L-Band</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de estación terrestre con SatNOGS (II)</title>
-    <url>/2020/04/27/instalacion-satnogs-ansible/</url>
-    <content><![CDATA[<p>En el artículo anterior <a href="https://sdr-es.com/2020/04/24/instalacion-satnogs/">“Instalación de estación terrestre con SatNOGS”</a> vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.<br>En este artículo veremos como realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.</p>
-<a id="more"></a>
-
-
-<p>Si bien este artículo se centra en la instalación en una Raspberry Pi, es posible realizar la instalación en otros dispositivos Linux mediante este mismo procedimiento. El <em>playbook</em> de Ansible que vamos a utilizar es compatible con las siguientes distribuciones y versiones:</p>
-<ul>
-<li><strong>Debian:</strong> <em>stretch</em>, <em>buster</em>.</li>
-<li><strong>Raspbian:</strong> <em>stretch</em>, <em>buster</em>.</li>
-</ul>
-<h2 id="Instalacion-de-Ansible"><a href="#Instalacion-de-Ansible" class="headerlink" title="Instalación de Ansible"></a>Instalación de Ansible</h2><p>Lo primero que haremos será instalar la última versión de Ansible. Para ello seguimos los siguientes pasos:</p>
-<ol>
-<li>Añadir el repositorio de Ansible.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo &quot;deb http:&#x2F;&#x2F;ppa.launchpad.net&#x2F;ansible&#x2F;ansible&#x2F;ubuntu trusty main&quot; | sudo tee -a &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>Añadir la clave del repositorio.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>Actualizar lista de repositorios.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>Instalar Ansible.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y ansible</span><br></pre></td></tr></table></figure>
-<h2 id="Instalacion-del-cliente-Ansible-de-SatNOGS"><a href="#Instalacion-del-cliente-Ansible-de-SatNOGS" class="headerlink" title="Instalación del cliente Ansible de SatNOGS"></a>Instalación del cliente Ansible de SatNOGS</h2><p>A continuación vamos a descargar e instalar el instalador del cliente SatNOGS.</p>
-<ol>
-<li>Instalamos las dependencias que vamos a necesitar:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y git needrestart</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>Descargamos el repositorio:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b stable https:&#x2F;&#x2F;gitlab.com&#x2F;librespacefoundation&#x2F;satnogs&#x2F;satnogs-client-ansible.git</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>Accedemos a la carpeta descargada:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd satnogs-client-ansible</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>Copiamos y renombramos el siguiente directorio:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp -r production.dist production</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>Ahora editamos el archivo <code>hosts</code> con nuestros datos de conexión SSH a la Raspberry Pi:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano production&#x2F;inventory&#x2F;hosts</span><br></pre></td></tr></table></figure>
-<p>Debemos editar el <em>host</em>, el usuario y la clave:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">all:</span><br><span class="line">  hosts:</span><br><span class="line">    satnogs:</span><br><span class="line">      ansible_host: &#39;localhost&#39;</span><br><span class="line">      ansible_user: &#39;pi&#39;</span><br><span class="line">      ansible_ssh_pass: &#39;raspberry&#39;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>Comprobamos la conexión SSH:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh pi@localhost true</span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>Por último ejecutamos el <em>playbook</em>:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ansible-playbook -i production&#x2F;inventory -K site.yml</span><br></pre></td></tr></table></figure>
-<p>La instalación tardará unos minutos (pueden ser bastantes dependiendo de nuestra conexión y la CPU de la Raspberry Pi) y al finalizar mostrará un mensaje como el siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- Play recap -</span><br><span class="line">  satnogs                    : ok&#x3D;121  changed&#x3D;49   unreachable&#x3D;0    failed&#x3D;0    rescued&#x3D;0    ignored&#x3D;0</span><br></pre></td></tr></table></figure>
-<h2 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h2><p>Los pasos para la configuración del cliente son idénticos a los descritos en el artículo anterior en este mismo apartado.</p>
-<p>La única observación es que ahora al tener más de un dispositivo SDR conectado, debemos indicar cual de ellos debe utilizar.<br>Necesitaremos el número de serie del dispositivo para diferenciarlos. Para extraerlo usamos la herramienta <code>rtl_test</code>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ rtl_test</span><br><span class="line">Found 2 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line">  1:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>En este caso vamos a utilizar el segundo dispositivo, y por lo tanto se lo debemos indicar a SatNOGS. Para ello en <strong><em>Basic configuration options</em></strong> realizaremos el siguiente cambio:</p>
-<table>
-<thead>
-<tr>
-<th>Ajuste</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>SATNOGS_SOAPY_RX_DEVICE</td>
-<td>Dispositivo SDR que vamos a usar y número de serie: <code>driver=rtlsdr,serial=08201703</code>.</td>
-</tr>
-</tbody></table>
-<img src="/2020/04/27/instalacion-satnogs-ansible/satnogs-config.png" class="" title="SatNOGS Setup">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Raspberry Pi</tag>
-        <tag>Linux</tag>
-        <tag>Instalación</tag>
-        <tag>SatNOGS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de cable de audio virtual</title>
-    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
-    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.</p>
-<a id="more"></a>
-
-<h2 id="Instalacion-de-VB-Cable-en-Windows"><a href="#Instalacion-de-VB-Cable-en-Windows" class="headerlink" title="Instalación de VB-Cable en Windows"></a>Instalación de VB-Cable en Windows</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
-<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg" class="" width="900" title="Descarga de VB-Cable">
-
-<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
-<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
-
-<p>Hacemos click en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
-<h3 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h3><p>Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" width="800" title="SDRSharp output">
-
-<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
-<h2 id="Instalacion-de-VB-Cable-en-macOS"><a href="#Instalacion-de-VB-Cable-en-macOS" class="headerlink" title="Instalación de VB-Cable en macOS"></a>Instalación de VB-Cable en macOS</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg" class="" width="900" title="Descarga de VB-Cable">
-
-<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado ejecutamos el instalador.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg" class="" title="Instalación de VB-Cable">
-
-<p>Seguimos los pasos del asistente para instalar VB-Audio.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg" class="" title="Instalación de VB-Cable">
-
-<h3 id="Configuracion-de-CubicSDR"><a href="#Configuracion-de-CubicSDR" class="headerlink" title="Configuración de CubicSDR"></a>Configuración de CubicSDR</h3><p>Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos click en <strong>Audio Out</strong> y seleccionamos <em><strong>VB Audio: VB-Cable</strong></em></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/cubicsdr-audio.jpg" class="" width="900" title="CubicSDR audio output">
-
-<p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
-]]></content>
-      <tags>
-        <tag>macOS</tag>
-        <tag>Instalación</tag>
-        <tag>Windows</tag>
-        <tag>Virtual Audio Cable</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de los satélites CAS-4</title>
-    <url>/2020/10/10/recepcion-cas4/</url>
-    <content><![CDATA[<p>Los satélites CAS-4A y CAS-4B son unos micro-satélites construidos por Zhuhai Orbita Control Engineering Ltd. para el sistema orbital de observación terrestre de China. Su principal componente es una cámara de 1,98m de resolución. Estos satélites envían datos de telemetría en VHF, y son estos datos los que vamos a recibir, decodificar y visualizar en este artículo.</p>
-<a id="more"></a>
-
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>ZHUHAI-1 01 (CAS-4A)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>Zhuhai Orbita Control Engineering Co. Ltd.</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>42761</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2017-034D</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>Microsatélite 494Lx499Wx630H mm (55 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>15 de Junio de 2017</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>Telemetría: 145,835 MHz (AX.25 4,8k Baud GMSK) <br> Baliza: 145,855 MHz (CW) <br> Transpondedor linear: 145,870 MHz (Bajada) - 435,220 MHz (Subida)</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>ZHUHAI-1 02 (CAS-4B)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>Zhuhai Orbita Control Engineering Co. Ltd.</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>42759</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2017-034B</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>Microsatélite 494Lx499Wx630H mm (55 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>15 de Junio de 2017</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>Telemetría: 145,890 MHz (AX.25 4,8k Baud GMSK) <br> Baliza: 145,910 MHz (CW) <br> Transpondedor linear: 145,925 MHz (Bajada) - 435,280 MHz (Subida)</td>
-</tr>
-</tbody></table>
-<img src="/2020/10/10/recepcion-cas4/satelite.jpg" class="" width="600" title="Satélites CAS-4">
-
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Los satélites envían los datos de telemetría en las frecuencias <strong>145.835 MHz</strong> (CAS-4A) y <strong>145.890 MHz</strong> (CAS-4B). Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;nfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;10000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
-<h2 id="Decodificar-la-senal"><a href="#Decodificar-la-senal" class="headerlink" title="Decodificar la señal"></a>Decodificar la señal</h2><p>Estos satélites utilizan el protocolo AX.25 en modo KISS. Para decodificar este modo necesitamos instalar el software <a href="http://uz7.ho.ua/packetradio.htm">Packet-Radio TNC</a> que utiliza la tarjeta de sonido de nuestro ordenador como un modem para AX.25.<br>Podemos descargar el programa desde el siguiente enlace:<br><a href="http://uz7.ho.ua/modem_beta/hs_soundmodem21.zip"><center>Descargar High-Speed SoundModem by UZ7HO</center></a></p>
-<p>Una vez descargado el archivo, extraemos el contenido en el directorio que queramos. Posteriormente ejecutamos el archivo <strong><em>hs_soundmodem.exe</em></strong> y se nos abrirá la interfaz del programa.</p>
-<p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em> y en <strong>Input device</strong> seleccionamos el <a href="/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a>. También debemos activar el <strong>KISS Server Port</strong>.</p>
-<img src="/2020/10/10/recepcion-cas4/HS_SoundModem_settings.png" class="" width="400" title="Ajustes de HS SoundModem">
-
-<p>Por último, seleccionamos el modo <strong>FSK G3RUH 4800bd</strong> en la ventana principal del programa.</p>
-<img src="/2020/10/10/recepcion-cas4/HS_SoundModem.png" class="" width="370" title="HS SoundModem">
-
-
-<h2 id="Procesar-los-datos"><a href="#Procesar-los-datos" class="headerlink" title="Procesar los datos"></a>Procesar los datos</h2><p>Una vez tenemos la parte que decodifica la señal, necesitamos configurar la parte que se va a encargar de procesar los datos en modo KISS decodificados y generar un archivo con todos los mensajes para su posterior visualización. Para ello vamos a usar el software <strong>GetKISS</strong> de <a href="https://www.dk3wn.info/wp/ueber-mich/">DK3WN</a>, que podemos descargar desde el siguiente enlace:<br><a href="https://www.dk3wn.info/files/getkiss.zip"><center>Descargar GetKISS</center></a></p>
-<p>Una vez descargado y extraído el contenido, tenemos que editar algunos ajustes en el archivo <strong><em>conf.ini</em></strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#</span><br><span class="line"># This is the ini file for GetKISS</span><br><span class="line">#</span><br><span class="line"># use tcp port 52002 for ubuntu decoder and port 8100 for windows soundmodem</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">FILE_PATH &#x3D; D:\Amateurfunk &lt;-- Carpeta en la que se guardarán los datos</span><br><span class="line">#</span><br><span class="line">CALLSIGN &#x3D; DK3WN</span><br><span class="line">#</span><br><span class="line"># use QTH height in km</span><br><span class="line">#</span><br><span class="line">QTH_LAT &#x3D; 49.7 &lt;-- Latitud</span><br><span class="line">QTH_LONG &#x3D; 8.95  &lt;-- Longitud</span><br><span class="line">QTH_HEIGHT &#x3D; 0.2 &lt;-- Altitud en kilómetros</span><br><span class="line">#</span><br><span class="line">TLEFILE &#x3D; D:\Amateurfunk\Orbitron\TLE\amateur.txt &lt;-- Archivo TLE que contenga los satélites CAS-4</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line">#TCP_SERVER &#x3D; 192.168.178.28</span><br><span class="line">#TCP_PORT &#x3D; 52002</span><br><span class="line"></span><br><span class="line">TCP_SERVER &#x3D; localhost</span><br><span class="line">TCP_PORT &#x3D; 8100</span><br></pre></td></tr></table></figure>
-<p>Una vez modificado el archivo, iniciamos el programa haciendo clic en <strong>getkiss.exe</strong>. Es posible que nos de algún error al iniciar si no tenemos instalados ciertos componentes Active-X. Para solucionarlo debemos descargar el siguiente archivo que contiene los archivos OCX que suelen faltar:<br><a href="https://www.dk3wn.info/files/ocx.zip"><center>Descargar archivos OCX</center></a></p>
-<p>Una vez descargado, extraemos el archivo OCX que falte dentro de la carpeta en la que hemos guardado GetKISS en el paso anterior. Después registramos el archivo OCX en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.OCX</span><br></pre></td></tr></table></figure>
-<img src="/2020/10/10/recepcion-cas4/regsvr32.png" class="" width="800" title="regsvr32">
-
-<p>Si todo ha ido bien, al ejecutar el programa GetKISS nos debe aparecer una ventana como la siguiente:</p>
-<img src="/2020/10/10/recepcion-cas4/GetKISS.png" class="" width="600" title="GetKISS">
-
-<p>Ahora debemos seleccionar el satélite que vamos a recibir (CAS-4A o CAS-4B). Si el satélite seleccionado está sobre el horizonte, nos aparecerá debajo la posición de este en color verde.</p>
-<p>Por último, marcamos la casilla <strong>TCP client</strong>. Si tenemos el programa <strong>HS SounModem</strong> iniciado y correctamente configurado, debe conectarse y mostrar el indicador de color verde.</p>
-<h2 id="Recibiendo-el-pase"><a href="#Recibiendo-el-pase" class="headerlink" title="Recibiendo el pase"></a>Recibiendo el pase</h2><p>Si tenemos todos los pasos anteriores correctamente configurados, toca ahora esperar a que pasen los satélites y comenzar a recibir mensajes.</p>
-<img src="/2020/10/10/recepcion-cas4/CAS-4B.png" class="" width="800" title="CAS-4B">
-<br/>
-<img src="/2020/10/10/recepcion-cas4/CAS-4A.png" class="" width="800" title="CAS-4A">
-
-
-<h2 id="Decodificando-la-telemetria"><a href="#Decodificando-la-telemetria" class="headerlink" title="Decodificando la telemetría"></a>Decodificando la telemetría</h2><p>Una vez hemos recibido el pase de uno de de estos satélites, y si todo ha ido bien, tendremos un archivo generado con los datos dentro la carpeta que le indicamos a GetKISS en el archivo de configuración. Para visualizar estos datos vamos a usar el programa <strong>CAS-4 Telemetry Beacon Decoder</strong> de <a href="https://www.dk3wn.info/wp/ueber-mich/">DK3WN</a>, que podemos descargar desde el siguiente enlace:<br><a href="https://www.dk3wn.info/files/cas4ab.zip"><center>Descargar CAS-4AB digital telemetry decoder v.0.2</center></a></p>
-<p>Una vez descargado, extraemos el contenido y ejecutamos el programa. Puede que nos de problemas con los archivos OCX, pero podemos solucionarlos siguiendo los pasos descritos anteriormente.</p>
-<p>Una vez abierto, vamos a <strong>File</strong>, <strong>Open Kissfile</strong> y seleccionamos el archivo <em>.kss</em> que queramos visualizar.</p>
-<img src="/2020/10/10/recepcion-cas4/decoder.png" class="" width="500" title="CAS-4 Telemetry Decoder">
-
-
-<h2 id="Agradecimientos"><a href="#Agradecimientos" class="headerlink" title="Agradecimientos"></a>Agradecimientos</h2><p>Gracias a <a href="http://uz7.ho.ua/">Andrei (UZ7HO)</a> y a <a href="https://www.dk3wn.info/wp/ueber-mich/">Mike Rupprecht (DK3WN)</a> por crear y compartir algunos de los programas usados en este artículo.<br>Si te han parecido útiles y quieres agradecer su trabajo, puedes realizarles un donativo desde su web.</p>
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>KISS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de datos del instrumental HIRS de los satélites NOAA</title>
-    <url>/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</url>
-    <content><![CDATA[<p>Como vimos en el artículo <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
-<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
-<a id="more"></a>
-
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
-<table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>Frecuencia</th>
-<th>Estado</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>NOAA 15</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
-</tr>
-<tr>
-<td>NOAA 18</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
-</tr>
-<tr>
-<td>NOAA 19</td>
-<td>137.770 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
-<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
-<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
-<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
-<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
-
-
-<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
-<p>Una vez descargado, extraemos el contenido del archivo.</p>
-<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
-
-<p>Para demodular el archivo basta con hacer click encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
-<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre _<strong>minorFrames_xxxx.txt</strong>_.</p>
-<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
-<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
-<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
-<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
-<p>Ahora le pasamos el archivo _<strong>minorFrames_xxxx.txt</strong>_ como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar).</p>
-<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio _output/minorFrames_xxxx_.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
-
-<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
       </tags>
   </entry>
   <entry>
@@ -1515,6 +1332,189 @@
         <tag>Satélites</tag>
         <tag>Inmarsat</tag>
         <tag>L-Band</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de datos del instrumental HIRS de los satélites NOAA</title>
+    <url>/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</url>
+    <content><![CDATA[<p>Como vimos en el artículo <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
+<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
+<a id="more"></a>
+
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>Frecuencia</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NOAA 15</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 18</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 19</td>
+<td>137.770 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
+<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
+<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
+<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
+<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
+
+
+<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
+<p>Una vez descargado, extraemos el contenido del archivo.</p>
+<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
+
+<p>Para demodular el archivo basta con hacer click encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
+<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre _<strong>minorFrames_xxxx.txt</strong>_.</p>
+<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
+<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
+<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
+<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
+<p>Ahora le pasamos el archivo _<strong>minorFrames_xxxx.txt</strong>_ como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar).</p>
+<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio _output/minorFrames_xxxx_.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
+
+<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de los satélites CAS-4</title>
+    <url>/2020/10/10/recepcion-cas4/</url>
+    <content><![CDATA[<p>Los satélites CAS-4A y CAS-4B son unos micro-satélites construidos por Zhuhai Orbita Control Engineering Ltd. para el sistema orbital de observación terrestre de China. Su principal componente es una cámara de 1,98m de resolución. Estos satélites envían datos de telemetría en VHF, y son estos datos los que vamos a recibir, decodificar y visualizar en este artículo.</p>
+<a id="more"></a>
+
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>ZHUHAI-1 01 (CAS-4A)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>Zhuhai Orbita Control Engineering Co. Ltd.</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>42761</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2017-034D</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>Microsatélite 494Lx499Wx630H mm (55 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>15 de Junio de 2017</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>Telemetría: 145,835 MHz (AX.25 4,8k Baud GMSK) <br> Baliza: 145,855 MHz (CW) <br> Transpondedor linear: 145,870 MHz (Bajada) - 435,220 MHz (Subida)</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>ZHUHAI-1 02 (CAS-4B)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>Zhuhai Orbita Control Engineering Co. Ltd.</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>42759</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2017-034B</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>Microsatélite 494Lx499Wx630H mm (55 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>15 de Junio de 2017</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>Telemetría: 145,890 MHz (AX.25 4,8k Baud GMSK) <br> Baliza: 145,910 MHz (CW) <br> Transpondedor linear: 145,925 MHz (Bajada) - 435,280 MHz (Subida)</td>
+</tr>
+</tbody></table>
+<img src="/2020/10/10/recepcion-cas4/satelite.jpg" class="" width="600" title="Satélites CAS-4">
+
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Los satélites envían los datos de telemetría en las frecuencias <strong>145.835 MHz</strong> (CAS-4A) y <strong>145.890 MHz</strong> (CAS-4B). Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;nfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;10000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<h2 id="Decodificar-la-senal"><a href="#Decodificar-la-senal" class="headerlink" title="Decodificar la señal"></a>Decodificar la señal</h2><p>Estos satélites utilizan el protocolo AX.25 en modo KISS. Para decodificar este modo necesitamos instalar el software <a href="http://uz7.ho.ua/packetradio.htm">Packet-Radio TNC</a> que utiliza la tarjeta de sonido de nuestro ordenador como un modem para AX.25.<br>Podemos descargar el programa desde el siguiente enlace:<br><a href="http://uz7.ho.ua/modem_beta/hs_soundmodem21.zip"><center>Descargar High-Speed SoundModem by UZ7HO</center></a></p>
+<p>Una vez descargado el archivo, extraemos el contenido en el directorio que queramos. Posteriormente ejecutamos el archivo <strong><em>hs_soundmodem.exe</em></strong> y se nos abrirá la interfaz del programa.</p>
+<p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em> y en <strong>Input device</strong> seleccionamos el <a href="/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a>. También debemos activar el <strong>KISS Server Port</strong>.</p>
+<img src="/2020/10/10/recepcion-cas4/HS_SoundModem_settings.png" class="" width="400" title="Ajustes de HS SoundModem">
+
+<p>Por último, seleccionamos el modo <strong>FSK G3RUH 4800bd</strong> en la ventana principal del programa.</p>
+<img src="/2020/10/10/recepcion-cas4/HS_SoundModem.png" class="" width="370" title="HS SoundModem">
+
+
+<h2 id="Procesar-los-datos"><a href="#Procesar-los-datos" class="headerlink" title="Procesar los datos"></a>Procesar los datos</h2><p>Una vez tenemos la parte que decodifica la señal, necesitamos configurar la parte que se va a encargar de procesar los datos en modo KISS decodificados y generar un archivo con todos los mensajes para su posterior visualización. Para ello vamos a usar el software <strong>GetKISS</strong> de <a href="https://www.dk3wn.info/wp/ueber-mich/">DK3WN</a>, que podemos descargar desde el siguiente enlace:<br><a href="https://www.dk3wn.info/files/getkiss.zip"><center>Descargar GetKISS</center></a></p>
+<p>Una vez descargado y extraído el contenido, tenemos que editar algunos ajustes en el archivo <strong><em>conf.ini</em></strong>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#</span><br><span class="line"># This is the ini file for GetKISS</span><br><span class="line">#</span><br><span class="line"># use tcp port 52002 for ubuntu decoder and port 8100 for windows soundmodem</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">FILE_PATH &#x3D; D:\Amateurfunk &lt;-- Carpeta en la que se guardarán los datos</span><br><span class="line">#</span><br><span class="line">CALLSIGN &#x3D; DK3WN</span><br><span class="line">#</span><br><span class="line"># use QTH height in km</span><br><span class="line">#</span><br><span class="line">QTH_LAT &#x3D; 49.7 &lt;-- Latitud</span><br><span class="line">QTH_LONG &#x3D; 8.95  &lt;-- Longitud</span><br><span class="line">QTH_HEIGHT &#x3D; 0.2 &lt;-- Altitud en kilómetros</span><br><span class="line">#</span><br><span class="line">TLEFILE &#x3D; D:\Amateurfunk\Orbitron\TLE\amateur.txt &lt;-- Archivo TLE que contenga los satélites CAS-4</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line">#TCP_SERVER &#x3D; 192.168.178.28</span><br><span class="line">#TCP_PORT &#x3D; 52002</span><br><span class="line"></span><br><span class="line">TCP_SERVER &#x3D; localhost</span><br><span class="line">TCP_PORT &#x3D; 8100</span><br></pre></td></tr></table></figure>
+<p>Una vez modificado el archivo, iniciamos el programa haciendo clic en <strong>getkiss.exe</strong>. Es posible que nos de algún error al iniciar si no tenemos instalados ciertos componentes Active-X. Para solucionarlo debemos descargar el siguiente archivo que contiene los archivos OCX que suelen faltar:<br><a href="https://www.dk3wn.info/files/ocx.zip"><center>Descargar archivos OCX</center></a></p>
+<p>Una vez descargado, extraemos el archivo OCX que falte dentro de la carpeta en la que hemos guardado GetKISS en el paso anterior. Después registramos el archivo OCX en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.OCX</span><br></pre></td></tr></table></figure>
+<img src="/2020/10/10/recepcion-cas4/regsvr32.png" class="" width="800" title="regsvr32">
+
+<p>Si todo ha ido bien, al ejecutar el programa GetKISS nos debe aparecer una ventana como la siguiente:</p>
+<img src="/2020/10/10/recepcion-cas4/GetKISS.png" class="" width="600" title="GetKISS">
+
+<p>Ahora debemos seleccionar el satélite que vamos a recibir (CAS-4A o CAS-4B). Si el satélite seleccionado está sobre el horizonte, nos aparecerá debajo la posición de este en color verde.</p>
+<p>Por último, marcamos la casilla <strong>TCP client</strong>. Si tenemos el programa <strong>HS SounModem</strong> iniciado y correctamente configurado, debe conectarse y mostrar el indicador de color verde.</p>
+<h2 id="Recibiendo-el-pase"><a href="#Recibiendo-el-pase" class="headerlink" title="Recibiendo el pase"></a>Recibiendo el pase</h2><p>Si tenemos todos los pasos anteriores correctamente configurados, toca ahora esperar a que pasen los satélites y comenzar a recibir mensajes.</p>
+<img src="/2020/10/10/recepcion-cas4/CAS-4B.png" class="" width="800" title="CAS-4B">
+<br/>
+<img src="/2020/10/10/recepcion-cas4/CAS-4A.png" class="" width="800" title="CAS-4A">
+
+
+<h2 id="Decodificando-la-telemetria"><a href="#Decodificando-la-telemetria" class="headerlink" title="Decodificando la telemetría"></a>Decodificando la telemetría</h2><p>Una vez hemos recibido el pase de uno de de estos satélites, y si todo ha ido bien, tendremos un archivo generado con los datos dentro la carpeta que le indicamos a GetKISS en el archivo de configuración. Para visualizar estos datos vamos a usar el programa <strong>CAS-4 Telemetry Beacon Decoder</strong> de <a href="https://www.dk3wn.info/wp/ueber-mich/">DK3WN</a>, que podemos descargar desde el siguiente enlace:<br><a href="https://www.dk3wn.info/files/cas4ab.zip"><center>Descargar CAS-4AB digital telemetry decoder v.0.2</center></a></p>
+<p>Una vez descargado, extraemos el contenido y ejecutamos el programa. Puede que nos de problemas con los archivos OCX, pero podemos solucionarlos siguiendo los pasos descritos anteriormente.</p>
+<p>Una vez abierto, vamos a <strong>File</strong>, <strong>Open Kissfile</strong> y seleccionamos el archivo <em>.kss</em> que queramos visualizar.</p>
+<img src="/2020/10/10/recepcion-cas4/decoder.png" class="" width="500" title="CAS-4 Telemetry Decoder">
+
+
+<h2 id="Agradecimientos"><a href="#Agradecimientos" class="headerlink" title="Agradecimientos"></a>Agradecimientos</h2><p>Gracias a <a href="http://uz7.ho.ua/">Andrei (UZ7HO)</a> y a <a href="https://www.dk3wn.info/wp/ueber-mich/">Mike Rupprecht (DK3WN)</a> por crear y compartir algunos de los programas usados en este artículo.<br>Si te han parecido útiles y quieres agradecer su trabajo, puedes realizarles un donativo desde su web.</p>
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>KISS</tag>
       </tags>
   </entry>
   <entry>
@@ -1979,6 +1979,42 @@
       </tags>
   </entry>
   <entry>
+    <title>Seguimiento de satélites con Orbitron</title>
+    <url>/2020/01/23/seguimiento-satelites-orbitron/</url>
+    <content><![CDATA[<p>Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.<br>Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.</p>
+<a id="more"></a>
+
+<h2 id="Instalacion-de-Orbitron"><a href="#Instalacion-de-Orbitron" class="headerlink" title="Instalación de Orbitron"></a>Instalación de Orbitron</h2><p>El primer paso es descargar Orbitron desde su web: <a href="http://www.stoff.pl/downloads.php">http://www.stoff.pl/downloads.php</a></p>
+<p>Tenemos la opción de descargarnos el instalador o un archivo ZIP. En este ejemplo vamos a descargar el ZIP y lo vamos a extraer en el directorio <em>C:\SDR\Orbitron</em>.</p>
+<p>Ejecutamos ahora el programa haciendo doble click en <strong>Orbitron.exe</strong> y se nos abrirá la interfaz del programa. Nos pedirá que actualicemos los archivo de TLE al iniciar, a lo que le decimos que no. Más adelante veremos qué son estos archivos y cómo actualizarlos.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron.jpg" class="" title="Orbitron">
+
+<h2 id="Configuracion-de-Orbitron"><a href="#Configuracion-de-Orbitron" class="headerlink" title="Configuración de Orbitron"></a>Configuración de Orbitron</h2><p>Vamos ahora a configurar Orbitron con los ajustes básicos.</p>
+<p>El primer ajuste es indicarle nuestra localización. Para ello vamos a la pestaña Location e introducimos nuestros datos. Si no los sabemos podemos buscar nuestra ciudad (o las más cercana) en el listado que tenemos a la derecha. Lo ideal es meter los valores más exactos posibles.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-location.jpg" class="" title="Orbitron Location">
+
+<p>Una vez los tengamos introducidos correctamente, hacemos click en <strong>Choose</strong> para seleccionar esta ubicación.</p>
+<p>El siguiente paso es seleccionar el archivo con los TLE de los satélites que vamos a seguir.<br>Estos archivos TLE contienen un listado de objetos que orbitan la Tierra con sus respectivos elementos orbitales en formato TLE <em>(two-line element set)</em>. Con estos elementos, y usando la fórmula adecuada, podemos estimar la posición y velocidad del objeto en cualquier instante de tiempo pasado o futuro.</p>
+<p>Aquí tenemos varias opciones, utilizar los archivos TLE descargados por Orbitron, o bien crear un archivo con los satélites que nos interesen. Si optamos por la primera opción, necesitamos primeramente actualizar los archivos TLE. Para ello abrimos la ventana de ajustes de Orbitron presionando las teclas <strong><em>Alt+F5</em></strong>, o bien hacemos click en el siguiente punto y seleccionamos <strong>Setup</strong>:</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-setup.jpg" class="" title="Orbitron Setup">
+
+<p>Vamos a la pestaña <strong>TLE updater</strong> y hacemos click en el siguiente icono:</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/setup-tle.jpg" class="" title="Actualizar TLE">
+
+<p>Una vez se actualicen los archivos, cerramos esa ventana y hacemos click en <strong>Load TLE</strong> y seleccionamos el archivo que contenga los satélites que queremos seguir. En este caso vamos a elegir un archivo que contiene los TLE de algunos satélites que nos interesan.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/load-tle.jpg" class="" title="Cargar archivo">
+
+<p>Ahora bastaría con ir seleccionando los satélites que queremos seguir y se mostrarán sobre el mapa.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-loaded.jpg" class="" title="Orbitron">
+
+<p>En siguientes tutoriales veremos cómo conectar Orbitron con SDR# para realizar seguimientos automáticos.</p>
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Orbitron</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recepción de mensajes ADS-B en Raspberry Pi</title>
     <url>/2020/05/03/seguimiento-aviones-raspberry-pi/</url>
     <content><![CDATA[<p>ADS-B (<em>Automatic Dependent Surveillance Broadcast</em>) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.</p>
@@ -2103,42 +2139,6 @@ Si queremos que se pueda hacer de forma manual vía web ejecutamos:<figure class
         <tag>Raspberry Pi</tag>
         <tag>ADS-B</tag>
         <tag>dump1090</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Seguimiento de satélites con Orbitron</title>
-    <url>/2020/01/23/seguimiento-satelites-orbitron/</url>
-    <content><![CDATA[<p>Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.<br>Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.</p>
-<a id="more"></a>
-
-<h2 id="Instalacion-de-Orbitron"><a href="#Instalacion-de-Orbitron" class="headerlink" title="Instalación de Orbitron"></a>Instalación de Orbitron</h2><p>El primer paso es descargar Orbitron desde su web: <a href="http://www.stoff.pl/downloads.php">http://www.stoff.pl/downloads.php</a></p>
-<p>Tenemos la opción de descargarnos el instalador o un archivo ZIP. En este ejemplo vamos a descargar el ZIP y lo vamos a extraer en el directorio <em>C:\SDR\Orbitron</em>.</p>
-<p>Ejecutamos ahora el programa haciendo doble click en <strong>Orbitron.exe</strong> y se nos abrirá la interfaz del programa. Nos pedirá que actualicemos los archivo de TLE al iniciar, a lo que le decimos que no. Más adelante veremos qué son estos archivos y cómo actualizarlos.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron.jpg" class="" title="Orbitron">
-
-<h2 id="Configuracion-de-Orbitron"><a href="#Configuracion-de-Orbitron" class="headerlink" title="Configuración de Orbitron"></a>Configuración de Orbitron</h2><p>Vamos ahora a configurar Orbitron con los ajustes básicos.</p>
-<p>El primer ajuste es indicarle nuestra localización. Para ello vamos a la pestaña Location e introducimos nuestros datos. Si no los sabemos podemos buscar nuestra ciudad (o las más cercana) en el listado que tenemos a la derecha. Lo ideal es meter los valores más exactos posibles.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-location.jpg" class="" title="Orbitron Location">
-
-<p>Una vez los tengamos introducidos correctamente, hacemos click en <strong>Choose</strong> para seleccionar esta ubicación.</p>
-<p>El siguiente paso es seleccionar el archivo con los TLE de los satélites que vamos a seguir.<br>Estos archivos TLE contienen un listado de objetos que orbitan la Tierra con sus respectivos elementos orbitales en formato TLE <em>(two-line element set)</em>. Con estos elementos, y usando la fórmula adecuada, podemos estimar la posición y velocidad del objeto en cualquier instante de tiempo pasado o futuro.</p>
-<p>Aquí tenemos varias opciones, utilizar los archivos TLE descargados por Orbitron, o bien crear un archivo con los satélites que nos interesen. Si optamos por la primera opción, necesitamos primeramente actualizar los archivos TLE. Para ello abrimos la ventana de ajustes de Orbitron presionando las teclas <strong><em>Alt+F5</em></strong>, o bien hacemos click en el siguiente punto y seleccionamos <strong>Setup</strong>:</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-setup.jpg" class="" title="Orbitron Setup">
-
-<p>Vamos a la pestaña <strong>TLE updater</strong> y hacemos click en el siguiente icono:</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/setup-tle.jpg" class="" title="Actualizar TLE">
-
-<p>Una vez se actualicen los archivos, cerramos esa ventana y hacemos click en <strong>Load TLE</strong> y seleccionamos el archivo que contenga los satélites que queremos seguir. En este caso vamos a elegir un archivo que contiene los TLE de algunos satélites que nos interesan.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/load-tle.jpg" class="" title="Cargar archivo">
-
-<p>Ahora bastaría con ir seleccionando los satélites que queremos seguir y se mostrarán sobre el mapa.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-loaded.jpg" class="" title="Orbitron">
-
-<p>En siguientes tutoriales veremos cómo conectar Orbitron con SDR# para realizar seguimientos automáticos.</p>
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Orbitron</tag>
       </tags>
   </entry>
 </search>
