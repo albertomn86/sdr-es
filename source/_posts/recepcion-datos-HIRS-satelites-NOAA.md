@@ -2,7 +2,7 @@
 title: Recepción de datos del instrumental HIRS de los satélites NOAA
 date: 2020-07-27 20:19:04
 tags: [Satélites, Satélites meteorológicos, NOAA]
-author: AlbertoMN
+author: EA7KOO
 ---
 
 Como vimos en el artículo ["Recepción de satélites meteorológicos NOAA"](/2020/03/20/recepcion-satelites-meteorologicos-NOAA/), es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.

@@ -2,7 +2,7 @@
 title: "Recepción del satélite FUNcube-1"
 date: 2020-02-22 11:37:32
 tags: [Satélites, Cubesat]
-author: AlbertoMN
+author: EA7KOO
 ---
 
 El satélite FUNcube-1 es un [CubeSat](https://es.wikipedia.org/wiki/CubeSat) construido por AMSAT-UK con fines educativos.

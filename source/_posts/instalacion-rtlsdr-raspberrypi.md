@@ -2,7 +2,7 @@
 title: Instalación de dispositivos RTL-SDR en Raspberry Pi
 date: 2020-04-10 09:40:15
 tags: [RTL-SDR, SDRSharp, Raspberry Pi, Linux, Instalación]
-author: AlbertoMN
+author: EA7KOO
 ---
 
 

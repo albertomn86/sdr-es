@@ -2,7 +2,7 @@
 title: "Recepción de satélites Inmarsat"
 date: 2020-03-06 11:22:33
 tags: [Satélites, Inmarsat, L-Band]
-author: AlbertoMN
+author: EA7KOO
 ---
 
 Inmarsat es un proveedor de comunicaciones vía satélite con sede en Reino Unido. La constelación de satélites Inmarsat se compone actualmente de 12 satélites geoestacionarios que proporcionan cobertura en el 90% del planeta.

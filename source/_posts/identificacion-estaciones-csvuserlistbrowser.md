@@ -2,7 +2,7 @@
 title: Identificación de estaciones de radiodifusión con CSVUserlistBrowser
 date: 2020-05-10 14:40:22
 tags: [HF]
-author: AlbertoMN
+author: EA7KOO
 ---
 
 En este artículo vamos a ver como instalar y configurar [CSVUserlistBrowser](https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm) para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.
