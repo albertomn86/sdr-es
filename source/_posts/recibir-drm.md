@@ -2,7 +2,7 @@
 title: Recibir radio digital mundial (DRM)
 date: 2020-10-25 11:52:23
 tags: [DRM, HF]
-author: AlbertoMN
+author: EA7KOO
 ---
 
 [Digital Radio Mondiale (DRM)](https://www.drm.org/), en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.

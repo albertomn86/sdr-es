@@ -2,7 +2,7 @@
 title: "Recepción del satélite NAYIF-1"
 date: 2020-02-26 09:32:14
 tags: [Satélites, Cubesat]
-author: AlbertoMN
+author: EA7KOO
 ---
 
 El satélite NAYIF-1 es un CubeSat construido por estudiante de la _Emirates Institution for Advanced Science and Technology (EIAST)_, en colaboración con la _American University of Sharjah (AUS)_.

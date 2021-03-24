@@ -2,7 +2,7 @@
 title: Instalar receptor SDR online con OpenWebRX
 date: 2020-08-13 17:36:20
 tags: [OpenWebRX, RTL-SDR, Raspberry Pi, Linux]
-author: AlbertoMN
+author: EA7KOO
 ---
 
 [OpenWebRX](https://www.openwebrx.de/) es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, simplemente accediendo desde un navegador web.

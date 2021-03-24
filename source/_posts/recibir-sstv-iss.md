@@ -2,7 +2,7 @@
 title: Recibir imágenes SSTV desde la ISS
 date: 2020-12-26 18:15:55
 tags: [ISS, SSTV]
-author: AlbertoMN
+author: EA7KOO
 ---
 
 [ARISS](https://www.ariss.org/) organiza ocasionalmente eventos conmemorativos en los que se envían imágenes [SSTV](https://es.wikipedia.org/wiki/SSTV) desde la ISS (_International Space Station_). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.
