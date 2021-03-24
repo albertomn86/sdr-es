@@ -52,7 +52,7 @@ Los datos para DDETracker son los siguientes:
 
 Estos satélites utilizan el protocolo AX.25 en modo KISS. Para decodificar este modo necesitamos instalar el software [Packet-Radio TNC](http://uz7.ho.ua/packetradio.htm) que utiliza la tarjeta de sonido de nuestro ordenador como un modem para AX.25.
 Podemos descargar el programa desde el siguiente enlace:
-[<center>Descargar High-Speed SoundModem by UZ7HO</center>](http://uz7.ho.ua/modem_beta/hs_soundmodem21.zip)
+[<center>Descargar High-Speed SoundModem by UZ7HO</center>](http://uz7.ho.ua/modem_beta/hs_soundmodem27.zip)
 
 Una vez descargado el archivo, extraemos el contenido en el directorio que queramos. Posteriormente ejecutamos el archivo **_hs\_soundmodem.exe_** y se nos abrirá la interfaz del programa.
 
