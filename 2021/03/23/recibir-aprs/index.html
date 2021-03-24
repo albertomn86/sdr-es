@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="APRS (Automatic Packet Reporting System) es un sistema de radioaficionado para comunicaciones digitales que utiliza tramas AX.25. Estos paquetes pueden contener cualquier tipo de mensaje, así como tam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recibir APRS">
+<meta property="og:url" content="http://sdr-es.com/2021/03/23/recibir-aprs/index.html">
+<meta property="og:site_name" content="SDR en español">
+<meta property="og:description" content="APRS (Automatic Packet Reporting System) es un sistema de radioaficionado para comunicaciones digitales que utiliza tramas AX.25. Estos paquetes pueden contener cualquier tipo de mensaje, así como tam">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="http://sdr-es.com/2021/03/23/recibir-aprs/SDRSharp.png">
+<meta property="og:image" content="http://sdr-es.com/2021/03/23/recibir-aprs/soundModemMode.png">
+<meta property="og:image" content="http://sdr-es.com/2021/03/23/recibir-aprs/UISS.png">
+<meta property="og:image" content="http://sdr-es.com/2021/03/23/recibir-aprs/SoundModemDatos.png">
+<meta property="og:image" content="http://sdr-es.com/2021/03/23/recibir-aprs/UISSDatos.png">
+<meta property="og:image" content="http://sdr-es.com/2021/03/23/recibir-aprs/UISSMap.png">
+<meta property="og:image" content="http://sdr-es.com/2021/03/23/recibir-aprs/SoundModemDataISS.png">
+<meta property="og:image" content="http://sdr-es.com/2021/03/23/recibir-aprs/UISSDataISS.png">
+<meta property="og:image" content="http://sdr-es.com/2021/03/23/recibir-aprs/UISSMapISS.png">
+<meta property="article:published_time" content="2021-03-23T20:02:24.000Z">
+<meta property="article:modified_time" content="2021-03-23T20:02:24.000Z">
+<meta property="article:author" content="SDR en español">
+<meta property="article:tag" content="APRS">
+<meta property="article:tag" content="ISS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sdr-es.com/2021/03/23/recibir-aprs/SDRSharp.png">
+
+
+<link rel="canonical" href="http://sdr-es.com/2021/03/23/recibir-aprs/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'es'
+  };
+</script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+<title>Recibir APRS | SDR en español</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156538909-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-156538909-1');
+      }
+    </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Cambiar a barra de navegación" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">SDR en español</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li>
+        <li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li>
+        <li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li>
+        <li class="menu-item menu-item-bands-plan"><a href="/plan-bandas/" rel="section"><i class="fa fa-broadcast-tower fa-fw"></i>Plan bandas IARU</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Buscando..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Contenidos
+        </li>
+        <li class="sidebar-nav-overview">
+          Inicio
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion-del-software"><span class="nav-number">1.</span> <span class="nav-text">Instalación del software</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SoundModem"><span class="nav-number">1.1.</span> <span class="nav-text">SoundModem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UISS"><span class="nav-number">1.2.</span> <span class="nav-text">UISS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UISS-MapView"><span class="nav-number">1.2.1.</span> <span class="nav-text">UISS-MapView</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recibir-APRS"><span class="nav-number">2.</span> <span class="nav-text">Recibir APRS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recibir-APRS-desde-la-ISS"><span class="nav-number">3.</span> <span class="nav-text">Recibir APRS desde la ISS</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SDR en español"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">SDR en español</p>
+  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">entradas</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/sdr_es" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_es" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
+    <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2021/03/23/recibir-aprs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SDR en español">
+      <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SDR en español">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Recibir APRS
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
+
+      <time title="Creado por: 23/03/2021 21:02:24" itemprop="dateCreated datePublished" datetime="2021-03-23T21:02:24+01:00">23/03/2021</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>EA7KOO</span>
+    </span>
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>APRS <em>(Automatic Packet Reporting System)</em> es un sistema de radioaficionado para comunicaciones digitales que utiliza tramas <a target="_blank" rel="noopener" href="https://es.wikipedia.org/wiki/Protocolo_AX.25">AX.25</a>. Estos paquetes pueden contener cualquier tipo de mensaje, así como también telemetría y datos de estaciones meteorológicas.<br>En este artículo veremos como recibir y decodificar estos paquetes usando nuestro dispositivo SDR, tanto los provenientes desde cualquier estación terrestre como los que se pueden recibir desde la Estación Espacial Internacional.</p>
+<a id="more"></a>
+
+<img src="/2021/03/23/recibir-aprs/SDRSharp.png" class="" width="900" title="Paquete APRS en SDR#">
+
+<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este artículo usaremos SDR# para recibir la señal y sacar el audio mediante el <a href="/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa.</p>
+<p>Para decodificar y visualizar los paquetes de datos usaremos los programas que vamos a ver a continuación.</p>
+<h3 id="SoundModem"><a href="#SoundModem" class="headerlink" title="SoundModem"></a>SoundModem</h3><p>Para decodificar estos paquetes de datos usaremos el software <a target="_blank" rel="noopener" href="http://uz7.ho.ua/packetradio.htm">Packet-Radio TNC</a> que utiliza la tarjeta de sonido de nuestro ordenador como un modem para AX.25.<br>Podemos descargarlo desde el siguiente enlace:</p>
+<p><a target="_blank" rel="noopener" href="http://uz7.ho.ua/modem_beta/soundmodem113.zip"><center>Descargar SoundModem by UZ7HO</center></a></p>
+<p>Una vez descargado el archivo, extraemos su contenido en el directorio que queramos.</p>
+<p>Posteriormente ejecutamos el archivo <strong><em>soundmodem.exe</em></strong> y se nos abrirá la interfaz del programa.</p>
+<p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em> y en <strong>Input device</strong> seleccionamos el <a href="/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a>.</p>
+<p>Por último, seleccionamos el modo <strong>AFSK AX.25 1200bd</strong> en la ventana principal del programa.</p>
+<img src="/2021/03/23/recibir-aprs/soundModemMode.png" class="" width="370" title="SoundModem">
+
+<h3 id="UISS"><a href="#UISS" class="headerlink" title="UISS"></a>UISS</h3><p>UISS es un programa que nos permite visualizar los datos contenidos en los paquetes que vamos recibiendo. Si bien el programa anterior ya nos facilita los mensajes decodificados, usaremos UISS para verlos de una forma más clara y poder aprovechar toda la información contenida en ellos.</p>
+<p>Lo primero será descargar el programa desde el siguiente enlace:</p>
+<p><a target="_blank" rel="noopener" href="http://users.belgacom.net/mysoftware/UISS_Setup.exe"><center>Descargar UISS by ON6MU</center></a></p>
+<p>Una vez descargado lo ejecutamos y seguimos el asistente para instalar el programa. Durante la instalación en el paso de “Select components” nos volverá a instalar una versión antigua de SoundModem. Lo más sencillo es dejar que la instale (aunque no la vamos a utilizar) y así no tendremos que configurar nada más.</p>
+<h4 id="UISS-MapView"><a href="#UISS-MapView" class="headerlink" title="UISS-MapView"></a>UISS-MapView</h4><p>También vamos a instalar el módulo <a target="_blank" rel="noopener" href="http://users.belgacom.net/hamradio/uissmodules.htm#UISSMapView">UISS-MapView</a> para UISS que nos va a permitir visualizar la posición de las estaciones que recibamos en un mapa.<br>Para instalarlo basta con descargar el módulo desde el siguiente enlace y extraerlo el directorio en el que hemos instalado UISS previamente.</p>
+<p><a target="_blank" rel="noopener" href="http://www.qsl.net/on6mu/download/UIMapView_UISS_Addon.zip"><center>Descargar UISS-MapView</center></a></p>
+<p>Por último iniciamos SoundModem y después UISS. La primera vez que iniciemos UISS nos pedirá que introduzcamos nuestro indicativo, si lo tenemos, o cualquier otro texto en caso contrario ya que no vamos a emitir nada.<br>Si todo está correctamente instalado, veremos una ventana como la siguiente en la que podemos leer que UISS se ha conectado correctamente a SoundModem.</p>
+<img src="/2021/03/23/recibir-aprs/UISS.png" class="" width="500" title="UISS">
+
+
+<h2 id="Recibir-APRS"><a href="#Recibir-APRS" class="headerlink" title="Recibir APRS"></a>Recibir APRS</h2><p>Con todo ya configurado, es el momento de comenzar a recibir paquetes de datos. Para ello iniciamos SDR# o el programa que vayamos a utilizar y sintonizamos cualquiera de las frecuencias asignadas para APRS. Para la región 1, en la que se encuentra España, tenemos las siguientes frecuencias:</p>
+<ul>
+<li><strong>144,800 MHz</strong> (Frecuencia principal).</li>
+<li>432,500 MHz (Frecuencia alternativa).</li>
+</ul>
+<p>Para latinoamérica (región 2) la frecuencia es 144,390 MHz.</p>
+<p>Usaremos el modo <strong>WFM</strong> y un ancho de banda de <strong>10 KHz</strong>.</p>
+<p>Conforme vayan llegando paquetes veremos que se van mostrando por pantalla los mensajes.</p>
+<img src="/2021/03/23/recibir-aprs/SoundModemDatos.png" class="" width="500" title="SoundModem">
+
+<img src="/2021/03/23/recibir-aprs/UISSDatos.png" class="" width="500" title="UISS">
+
+<img src="/2021/03/23/recibir-aprs/UISSMap.png" class="" width="500" title="UISS Mapa">
+
+<h2 id="Recibir-APRS-desde-la-ISS"><a href="#Recibir-APRS-desde-la-ISS" class="headerlink" title="Recibir APRS desde la ISS"></a>Recibir APRS desde la ISS</h2><p>La Estación Espacial Internacional (ISS por sus siglas en inglés) lleva a bordo un transpondedor que funciona como repetidor APRS, el cual podemos recibir de una forma muy similar al ejemplo anterior. En este caso la principal diferencia es que tendremos que realizar los pasos habituales para el <a href="/2020/02/18/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;WFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;10000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145825000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br>Una vez comenzamos a recibir el pase de la ISS, veremos que aparecen los mensajes recibidos por pantalla.</p>
+<img src="/2021/03/23/recibir-aprs/SoundModemDataISS.png" class="" width="500" title="SoundModem">
+
+<img src="/2021/03/23/recibir-aprs/UISSDataISS.png" class="" width="500" title="UISS">
+
+<img src="/2021/03/23/recibir-aprs/UISSMapISS.png" class="" width="500" title="UISS Mapa">
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Artículos relacionados</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/12/26/recibir-sstv-iss/" rel="bookmark">Recibir imágenes SSTV desde la ISS</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+          <div class="followme">
+  <span>Síguenos en nuestros otros canales</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://twitter.com/sdr_esp">
+          <span class="icon">
+            <i class="fab fa-twitter"></i>
+          </span>
+
+          <span class="label">Twitter</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA">
+          <span class="icon">
+            <i class="fab fa-youtube"></i>
+          </span>
+
+          <span class="label">YouTube</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://t.me/sdr_es">
+          <span class="icon">
+            <i class="fab fa-telegram-plane"></i>
+          </span>
+
+          <span class="label">Telegram</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/APRS/" rel="tag"><i class="fa fa-tag"></i> APRS</a>
+              <a href="/tags/ISS/" rel="tag"><i class="fa fa-tag"></i> ISS</a>
+          </div>
+          
+
+<div class="post-copyright">
+<ul>
+  <!--
+  <li class="post-copyright-author">
+      <strong>Written by:  </strong>EA7KOO
+  </li>
+  <li class="post-copyright-link">
+      <strong>Enlace a la entrada: </strong>
+      <a href="http://sdr-es.com/2021/03/23/recibir-aprs/" title="Recibir APRS">http://sdr-es.com/2021/03/23/recibir-aprs/</a>
+  </li>
+  -->
+  <li class="post-copyright-license">
+    <strong>Copyright:  </strong>Todos los artículos de este sitio están licenciados bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> a no ser que se especifique una licencia adicional.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/12/26/recibir-sstv-iss/" rel="prev" title="Recibir imágenes SSTV desde la ISS">
+                  <i class="fa fa-chevron-left"></i> Recibir imágenes SSTV desde la ISS
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class=""></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SDR en español</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Twitter,Facebook,Linkedin,Reddit,GoogleBookmarks";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+</body>
+</html>

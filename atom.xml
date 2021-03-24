@@ -6,7 +6,7 @@
   <link href="http://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2020-12-26T17:15:55.000Z</updated>
+  <updated>2021-03-23T20:02:24.000Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recibir APRS</title>
+    <link href="http://sdr-es.com/2021/03/23/recibir-aprs/"/>
+    <id>http://sdr-es.com/2021/03/23/recibir-aprs/</id>
+    <published>2021-03-23T20:02:24.000Z</published>
+    <updated>2021-03-23T20:02:24.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;APRS &lt;em&gt;(Automatic Packet Reporting System)&lt;/em&gt; es un sistema de radioaficionado para comunicaciones digitales que utiliza tramas &lt;a href=&quot;https://es.wikipedia.org/wiki/Protocolo_AX.25&quot;&gt;AX.25&lt;/a&gt;. Estos paquetes pueden contener cualquier tipo de mensaje, así como también telemetría y datos de estaciones meteorológicas.&lt;br&gt;En este artículo veremos como recibir y decodificar estos paquetes usando nuestro dispositivo SDR, tanto los provenientes desde cualquier estación terrestre como los que se pueden recibir desde la Estación Espacial Internacional.&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="APRS" scheme="http://sdr-es.com/tags/APRS/"/>
+    
+    <category term="ISS" scheme="http://sdr-es.com/tags/ISS/"/>
+    
+  </entry>
   
   <entry>
     <title>Recibir imágenes SSTV desde la ISS</title>
@@ -88,9 +107,9 @@
     
     
     
-    <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
-    
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+    <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
     
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -195,13 +214,13 @@
     
     
     
-    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
-    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
     <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
     <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
+    
+    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
     <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
     
@@ -221,11 +240,11 @@
     
     
     
-    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
     <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
     <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
+    
+    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
     <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
     
@@ -246,11 +265,11 @@
     
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
+    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
+    
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
     <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
-    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
     <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
@@ -273,11 +292,11 @@
     
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
+    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
+    
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
     <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
-    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
     <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
@@ -422,25 +441,6 @@
     
     
     <summary type="html">&lt;p&gt;El satélite NAYIF-1 es un CubeSat construido por estudiante de la &lt;em&gt;Emirates Institution for Advanced Science and Technology (EIAST)&lt;/em&gt;, en colaboración con la &lt;em&gt;American University of Sharjah (AUS)&lt;/em&gt;.&lt;br&gt;NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.&lt;br&gt;Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
-    <category term="Cubesat" scheme="http://sdr-es.com/tags/Cubesat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Recepción del satélite JY1-SAT</title>
-    <link href="http://sdr-es.com/2020/02/25/recepcion-jy1sat/"/>
-    <id>http://sdr-es.com/2020/02/25/recepcion-jy1sat/</id>
-    <published>2020-02-25T19:45:38.000Z</published>
-    <updated>2020-02-25T19:45:38.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan’s Crown Prince Foundation.&lt;br&gt;JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-6. Además de las funciones habituales de FUNcube, el satélite envía imágenes en formato SSDV.&lt;br&gt;En este artículo veremos como recibir la telemetría y las imágenes.&lt;/p&gt;</summary>
     
     
     

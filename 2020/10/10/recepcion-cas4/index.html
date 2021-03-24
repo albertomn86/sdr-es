@@ -235,13 +235,13 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">entradas</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -412,7 +412,7 @@
 <h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Los satélites envían los datos de telemetría en las frecuencias <strong>145.835 MHz</strong> (CAS-4A) y <strong>145.890 MHz</strong> (CAS-4B). Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
 <p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;nfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;10000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
-<h2 id="Decodificar-la-senal"><a href="#Decodificar-la-senal" class="headerlink" title="Decodificar la señal"></a>Decodificar la señal</h2><p>Estos satélites utilizan el protocolo AX.25 en modo KISS. Para decodificar este modo necesitamos instalar el software <a target="_blank" rel="noopener" href="http://uz7.ho.ua/packetradio.htm">Packet-Radio TNC</a> que utiliza la tarjeta de sonido de nuestro ordenador como un modem para AX.25.<br>Podemos descargar el programa desde el siguiente enlace:<br><a target="_blank" rel="noopener" href="http://uz7.ho.ua/modem_beta/hs_soundmodem21.zip"><center>Descargar High-Speed SoundModem by UZ7HO</center></a></p>
+<h2 id="Decodificar-la-senal"><a href="#Decodificar-la-senal" class="headerlink" title="Decodificar la señal"></a>Decodificar la señal</h2><p>Estos satélites utilizan el protocolo AX.25 en modo KISS. Para decodificar este modo necesitamos instalar el software <a target="_blank" rel="noopener" href="http://uz7.ho.ua/packetradio.htm">Packet-Radio TNC</a> que utiliza la tarjeta de sonido de nuestro ordenador como un modem para AX.25.<br>Podemos descargar el programa desde el siguiente enlace:<br><a target="_blank" rel="noopener" href="http://uz7.ho.ua/modem_beta/hs_soundmodem27.zip"><center>Descargar High-Speed SoundModem by UZ7HO</center></a></p>
 <p>Una vez descargado el archivo, extraemos el contenido en el directorio que queramos. Posteriormente ejecutamos el archivo <strong><em>hs_soundmodem.exe</em></strong> y se nos abrirá la interfaz del programa.</p>
 <p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em> y en <strong>Input device</strong> seleccionamos el <a href="/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a>. También debemos activar el <strong>KISS Server Port</strong>.</p>
 <img src="/2020/10/10/recepcion-cas4/HS_SoundModem_settings.png" class="" width="400" title="Ajustes de HS SoundModem">
