@@ -27,18 +27,18 @@ cat /etc/os-release | grep VERSION_CODENAME
 
 - Repositorio para **Raspbian Buster**:
 ```
-wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_3.8.1_all.deb
+wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_5.0_all.deb
 ```
 ```
-sudo dpkg -i piaware-repository_3.8.1_all.deb
+sudo dpkg -i piaware-repository_5.0_all.deb
 ```
 
 - Repositorio para **Raspbian Stretch**:
 ```
-wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_3.8.1~bpo9+1_all.deb
+wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_5.0~bpo9+1_all.deb
 ```
 ```
-sudo dpkg -i piaware-repository_3.8.1~bpo9+1_all.deb
+sudo dpkg -i piaware-repository_5.0~bpo9+1_all.deb
 ```
 
 Una vez instalado el repositorio correspondiente ejecutamos:
