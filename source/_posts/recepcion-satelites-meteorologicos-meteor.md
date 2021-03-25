@@ -139,7 +139,7 @@ Los datos para DDETracker son los siguientes:
     radio_modulation_type<wfm>
     radio_center_frequency_Hz<137100000>
     radio_frequency_Hz<137100000>
-    radio_bandwidth_Hz<100000>
+    radio_bandwidth_Hz<120000>
     QPSK_demodulator_Start
     send_tracking_frequency_On
     start_programm_Path<C:\SDR\MeteorM2\Decoder\M2_LRPT_Decoder.exe>

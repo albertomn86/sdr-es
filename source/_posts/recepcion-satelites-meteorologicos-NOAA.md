@@ -29,9 +29,9 @@ Actualmente podemos recibir imágenes APT desde los siguientes satélites meteor
 
 ## Instalación de WXtoImg
 
-Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar **SDR#** y el software **WXtoImg** para Windows. Podemos descargarlo desde el siguiente enlace:
+Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar **SDR#** y el software **WXtoImg** para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la version beta 2.11.2):
 
-[<center>https://wxtoimgrestored.xyz/</center>](https://wxtoimgrestored.xyz/)
+[<center>Descargar WXtoImg</center>](https://wxtoimgrestored.xyz/downloads/)
 
 Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:
 
