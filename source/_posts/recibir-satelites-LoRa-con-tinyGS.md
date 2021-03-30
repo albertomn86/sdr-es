@@ -90,7 +90,7 @@ Los valores básicos que debemos introducir son los siguientes:
 
 Podemos ver una descripción más detallada de todos los parámetros en [la web del proyecto](https://github.com/G4lile0/tinyGS/wiki/Ground-Station-configuration).
 
-Una vez introducimos los datos, hacemos clic en **_Apply_** para aplicar los ajustes y reiniciamos la estación.
+Una vez introducidos los datos, hacemos clic en **_Apply_** para aplicar los ajustes y reiniciamos la estación.
 
 {% asset_img board.jpg "HELTEC" %}
 
@@ -108,7 +108,7 @@ También podemos ver el estado de nuestra estación accediendo por red local a e
 
 {% asset_img board-wifi.jpg "HELTEC" %}
 
-Una vez la tenemos, accedemos mediante el navegador y en el menú hacemos clic en **_Station dashboard_**.
+Una vez la tenemos, accedemos mediante el navegador y en el menú hacemos clic en **_Station dashboard_**. Nos pedirá unos datos de acceso que son **"admin"** para el nombre de usuario y la contraseña es la que le hemos indicado en el paso previo de configuración.
 
 {% asset_img tinygs-dashboard.png 600 "TinyGS" %}
 
