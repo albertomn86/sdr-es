@@ -140,4 +140,4 @@ Si queremos ver la recepción de los mensajes en tiempo real, podemos acceder al
 
 ## Agradecimientos
 
-Finalmente quiero dar mis agradecimientos y reconocimiento a todo el equipo que conforma el proyecto TinyGS y a todos los colaboradores que hacen lo posible.
+Finalmente quiero dar mis agradecimientos y reconocimiento a todo el equipo que conforma el proyecto TinyGS y a todos los colaboradores que lo hacen posible.
