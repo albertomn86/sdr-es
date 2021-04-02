@@ -6,7 +6,7 @@
   <link href="http://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2021-03-30T16:55:34.000Z</updated>
+  <updated>2021-04-02T15:06:10.000Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recibir APRS en macOS con Gqrx</title>
+    <link href="http://sdr-es.com/2021/04/02/recibir-aprs-macos-con-gqrx/"/>
+    <id>http://sdr-es.com/2021/04/02/recibir-aprs-macos-con-gqrx/</id>
+    <published>2021-04-02T15:06:10.000Z</published>
+    <updated>2021-04-02T15:06:10.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando &lt;a href=&quot;https://gqrx.dk/&quot;&gt;Gqrx&lt;/a&gt;.&lt;br&gt;El APRS, es un protocolo de comunicaciones basado en AX.25, usado en el envío de telemetría, paquetes de datos meteorológicos,  posicionamiento GPS, etc. En este caso nos ocuparemos del envío de mensajería entre estaciones de radioaficionados, en la que la Estación Espacial (ISS) es una estación repetidora.&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="macOS" scheme="http://sdr-es.com/tags/macOS/"/>
+    
+    <category term="APRS" scheme="http://sdr-es.com/tags/APRS/"/>
+    
+    <category term="ISS" scheme="http://sdr-es.com/tags/ISS/"/>
+    
+    <category term="Gqrx" scheme="http://sdr-es.com/tags/Gqrx/"/>
+    
+  </entry>
   
   <entry>
     <title>Recibir satélites LoRa</title>
@@ -130,9 +153,9 @@
     
     
     
-    <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
-    
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+    <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
     
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
@@ -415,34 +438,6 @@
     
     
     <summary type="html">&lt;p&gt;En el artículo &lt;a href=&quot;https://sdr-es.com/2020/03/06/recepcion-inmarsat/&quot;&gt;“Recepción de satélites Inmarsat”&lt;/a&gt; vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.&lt;br&gt;Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
-    <category term="Inmarsat" scheme="http://sdr-es.com/tags/Inmarsat/"/>
-    
-    <category term="L-Band" scheme="http://sdr-es.com/tags/L-Band/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Recepción de satélites Inmarsat</title>
-    <link href="http://sdr-es.com/2020/03/06/recepcion-inmarsat/"/>
-    <id>http://sdr-es.com/2020/03/06/recepcion-inmarsat/</id>
-    <published>2020-03-06T10:22:33.000Z</published>
-    <updated>2020-03-06T10:22:33.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Inmarsat es un proveedor de comunicaciones vía satélite con sede en Reino Unido. La constelación de satélites Inmarsat se compone actualmente de 12 satélites geoestacionarios que proporcionan cobertura en el 90% del planeta.&lt;br&gt;Inmarsat utiliza sus satélites de tercera y cuarta generación para ofrecer servicios de comunicaciones utilizando la &lt;strong&gt;banda L&lt;/strong&gt; (1 a 2 GHz). Estos servicios son:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;AERO&lt;/strong&gt;. Es la versión de ACARS a través de satélite. Son mensajes enviados desde los controles aéreos en tierra a los aviones en vuelo.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;SafetyNET (SDT-C)&lt;/strong&gt;. Es un servicio de comunicaciones por satélite para embarcaciones. Ofrecen servicio de mensajería entre barcos, mensajes de alerta, partes meteorológicos, mensajes de rescate, etc.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;En este artículo nos centraremos en cómo poder recibir la señal y en los sucesivos artículos veremos como recibir datos de cada uno de estos servicios.&lt;/p&gt;</summary>
     
     
     
