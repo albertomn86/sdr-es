@@ -244,13 +244,13 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">entradas</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -364,26 +364,26 @@
 <h2 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalación"></a>Instalación</h2><p>Para la instalación seguiremos el método sencillo, que consiste en descargar un programa que realiza la instalación del <em>firmware</em> de forma automática. Para ello accedemos al siguiente enlace para obtener la última versión disponible de TinyGS:</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/G4lile0/tinyGS/releases/"><center>TinyGS releases</center></a></p>
 <p>Buscamos el instalador en los archivos adjuntos de la última <em>release</em> y descargamos la versión adecuada para el sistema operativo que estemos usando.</p>
-<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/assets.png" class="" title="TinyGS">
+<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/assets.png" class="" title="TinyGS - Releases">
 
 <p>Una vez descargado, extraemos el programa y lo ejecutamos.</p>
-<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/tinygs-upload.png" class="" title="TinyGS">
+<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/tinygs-upload.png" class="" title="TinyGS Uploader">
 
 <p>Ahora seleccionamos el puerto COM en el que tenemos conectada nuestra placa y hacemos clic en <strong><em>Upload tinyGS firmware!</em></strong>.<br>Si no nos aparece el puerto COM para seleccionar, debemos asegurarnos de que la placa está bien conectada y que tenemos los controladores previamente instalados.</p>
 <p>Una vez termine de grabarse nuestra placa, esta se reiniciará (puede tardar algunos minutos) y quedará lista para el siguiente paso.</p>
 <h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><h3 id="Solicitar-datos-de-acceso"><a href="#Solicitar-datos-de-acceso" class="headerlink" title="Solicitar datos de acceso"></a>Solicitar datos de acceso</h3><p>El primer paso para la configuración de nuestra estación será la obtención de nuestros datos de acceso al servidor MQTT del proyecto. Este servidor es el encargado de recolectar los paquetes de datos de los satélites que reciben las distintas estaciones conectadas, así como de la  gestión de las mismas. Para obtener los datos de acceso del servidor debemos acceder al canal del proyecto en Telegram mediante el siguiente enlace:<br><a target="_blank" rel="noopener" href="https://t.me/joinchat/DmYSElZahiJGwHX6jCzB3Q"><center>tinyGS Community</center></a></p>
 <p>Una vez nos unimos al grupo podremos ver un mensaje de bienvenida como el siguiente:</p>
-<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/telegram-welcome.png" class="" title="TinyGS">
+<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/telegram-welcome.png" class="" title="Telegram grupo TinyGS">
 
 <p>Para solicitar nuestros datos de acceso debemos iniciar una conversación con el <em>bot</em> del proyecto haciendo clic en el botón <strong><em>Open private chat</em></strong> que aparece en el mensaje.<br>Ahora se nos abrirá un nuevo chat con el <em>bot</em> al que enviaremos el mensaje <strong>“/mqtt”</strong>. El <em>bot</em> nos responderá con nuestros datos de acceso que debemos anotar y, por supuesto, no debemos compartir con nadie.</p>
-<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/telegram-mqtt.png" class="" width="400" title="Telegram">
+<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/telegram-mqtt.png" class="" width="400" title="Telegram TinyGS bot mqtt">
 
 <h3 id="Configurar-la-estacion"><a href="#Configurar-la-estacion" class="headerlink" title="Configurar la estación"></a>Configurar la estación</h3><p>Una vez tenemos nuestra placa con el <em>firmware</em> instalado y hemos conseguido nuestros datos de acceso, el siguiente paso es configurar la estación.<br>Si hemos seguido los pasos de esta guía, a estas alturas nuestra estación ya debe haberse reiniciado y debe mostrar por pantalla que está lista para la configuración.</p>
 <p>Para acceder a la interfaz de configuración debemos conectarnos primeramente a la red inalámbrica que la propia estación ha creado.</p>
 <img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/tinygs-red.png" class="" title="TinyGS">
 
 <p>Una vez estemos conectados a esta red, debemos abrir el navegador web y acceder a la dirección <strong>192.168.4.1</strong>. Se nos mostrará un menú con opciones como el siguiente:</p>
-<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/tinygs-configure.png" class="" width="500" title="TinyGS">
+<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/tinygs-configure.png" class="" width="500" title="Telegram TinyGS bot configure">
 
 <p>Hacemos clic en <strong><em>Configure parameters</em></strong> e introducimos los parámetros de configuración de nuestra estación.<br>Los valores básicos que debemos introducir son los siguientes:</p>
 <table>
@@ -440,33 +440,33 @@
 </tbody></table>
 <p>Podemos ver una descripción más detallada de todos los parámetros en <a target="_blank" rel="noopener" href="https://github.com/G4lile0/tinyGS/wiki/Ground-Station-configuration">la web del proyecto</a>.</p>
 <p>Una vez introducidos los datos, hacemos clic en <strong><em>Apply</em></strong> para aplicar los ajustes y reiniciamos la estación.</p>
-<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/board.jpg" class="" title="HELTEC">
+<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/board.jpg" class="" title="HELTEC V2">
 
 <h2 id="Acceder-a-nuestra-estacion"><a href="#Acceder-a-nuestra-estacion" class="headerlink" title="Acceder a nuestra estación"></a>Acceder a nuestra estación</h2><p>Si hemos llegado hasta este paso sin problemas, nuestra estación ya debería estar conectada al servidor MQTT y lista para recibir datos desde los satélites.<br>Si queremos comprobar el estado de nuestra estación o bien realizar ajustes en la misma tenemos varias formas de interactuar con ella.</p>
 <p>La primera forma sería lógicamente mirando la pantalla de la estación. En ella podremos ver el estado de la misma, así como el satélite que está escuchando y el último paquete recibido.</p>
 <p>Otra forma sería usando el <em>bot</em> privado de Telegram que hemos usado previamente para obtener los datos de acceso al servidor.<br>Bastaría con enviarle al <em>bot</em> el mensaje “<strong>/stations</strong>“ y nos devolverá un listado con nuestras estaciones conectadas y algunos datos de las mismas.</p>
 <p>También podemos ver el estado de nuestra estación accediendo por red local a ella. Para ello necesitamos conocer previamente la dirección IP de la misma, siendo la forma más sencilla de obtenerla la propia pantalla.</p>
-<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/board-wifi.jpg" class="" title="HELTEC">
+<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/board-wifi.jpg" class="" title="Dirección IP">
 
 <p>Una vez la tenemos, accedemos mediante el navegador y en el menú hacemos clic en <strong><em>Station dashboard</em></strong>. Nos pedirá unos datos de acceso que son <strong>“admin”</strong> para el nombre de usuario y la contraseña es la que le hemos indicado en el paso previo de configuración.</p>
-<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/tinygs-dashboard.png" class="" width="600" title="TinyGS">
+<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/tinygs-dashboard.png" class="" width="600" title="TinyGS Dashboard">
 
 <p>Por último, la forma más completa de consultar el estado y de ver todos los paquetes recibidos, sería desde la web <a target="_blank" rel="noopener" href="https://tinygs.com/">https://tinygs.com</a></p>
 <p>Si accedemos directamente a esta web solo podremos ver los datos públicos de las estaciones y no podremos interactuar con nuestra estación. Para acceder a nuestro propio panel de usuario en la web necesitamos un enlace personalizado que vamos a obtener desde el <em>bot</em> de Telegram. Para que nos genere un enlace le enviamos el mensaje “<strong>/weblogin</strong>“ y nos responderá con un enlace temporal que usaremos para acceder a la web. Sobra decir que este enlace no debe ser compartido con nadie, ya que le estaríamos dando el control de nuestra estación.</p>
-<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/tinygs-web.png" class="" width="600" title="TinyGS">
+<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/tinygs-web.png" class="" width="600" title="TinyGS Web">
 
 <h2 id="Recepcion-de-paquetes"><a href="#Recepcion-de-paquetes" class="headerlink" title="Recepción de paquetes"></a>Recepción de paquetes</h2><p>Si tenemos nuestra estación activa y conectada la red MQTT y a la antena, la recepción de los paquetes de datos se hará de forma automática y desatendida. La estación recibe desde el servidor los ajustes de escucha para el satélite que va a realizar el pase sobre nuestra posición y se prepara para recibir la señal. Podemos ver fácilmente el satélite activo en la pantalla:</p>
-<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/board-next.jpg" class="" title="HELTEC">
+<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/board-next.jpg" class="" title="Satélite activo">
 
 <p>Una vez se reciba un paquete de datos, este se enviará al servidor y se mostrará en pantalla la palabra <strong><em>CONFIRMED</em></strong>.</p>
-<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/board-confirmed.jpg" class="" title="HELTEC">
+<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/board-confirmed.jpg" class="" title="Paquete confirmado">
 
 <p>Si hemos recibido el paquete, pero por cualquier motivo nos ha llegado incompleto o corrupto, veremos un mensaje como el siguiente:</p>
-<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/board-error.jpg" class="" title="HELTEC">
+<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/board-error.jpg" class="" title="Paquete descartado">
 
 <p>Esto quiere decir que el mensaje no ha superado la verificación mediante CRC (código de redundancia cíclica) y no es válido.</p>
 <p>Si queremos ver la recepción de los mensajes en tiempo real, podemos acceder al canal de Telegram <a target="_blank" rel="noopener" href="https://t.me/tinyGS_Telemetry">TinyGS Telemetry</a> y ver si nuestros mensajes se están subiendo correctamente al servidor.</p>
-<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/telegram-telemetry.png" class="" width="400" title="HELTEC">
+<img src="/2021/03/30/recibir-satelites-LoRa-con-tinyGS/telegram-telemetry.png" class="" width="400" title="Telegram grupo telemetría">
 
 <h2 id="Agradecimientos"><a href="#Agradecimientos" class="headerlink" title="Agradecimientos"></a>Agradecimientos</h2><p>Finalmente quiero dar mis agradecimientos y reconocimiento a todo el equipo que conforma el proyecto TinyGS y a todos los colaboradores que lo hacen posible.</p>
 
@@ -482,16 +482,16 @@
       <div class="popular-posts-title"><a href="/2020/02/22/recepcion-funcube1/" rel="bookmark">Recepción del satélite FUNcube-1</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2020/02/26/recepcion-nayif1/" rel="bookmark">Recepción del satélite NAYIF-1</a></div>
+      <div class="popular-posts-title"><a href="/2020/02/25/recepcion-jy1sat/" rel="bookmark">Recepción del satélite JY1-SAT</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2020/02/25/recepcion-jy1sat/" rel="bookmark">Recepción del satélite JY1-SAT</a></div>
+      <div class="popular-posts-title"><a href="/2020/02/26/recepcion-nayif1/" rel="bookmark">Recepción del satélite NAYIF-1</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/2020/02/18/ajuste-frecuencia-doppler-orbitron/" rel="bookmark">Ajuste de frecuencia en recepción de satélites</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2020/04/24/instalacion-satnogs/" rel="bookmark">Instalación de estación terrestre con SatNOGS</a></div>
+      <div class="popular-posts-title"><a href="/2020/04/27/instalacion-satnogs-ansible/" rel="bookmark">Instalación de estación terrestre con SatNOGS (II)</a></div>
     </li>
   </ul>
 
