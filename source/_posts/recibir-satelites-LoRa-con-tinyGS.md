@@ -32,11 +32,11 @@ Para la instalación seguiremos el método sencillo, que consiste en descargar u
 
 Buscamos el instalador en los archivos adjuntos de la última _release_ y descargamos la versión adecuada para el sistema operativo que estemos usando.
 
-{% asset_img assets.png "TinyGS" %}
+{% asset_img assets.png "TinyGS - Releases" %}
 
 Una vez descargado, extraemos el programa y lo ejecutamos.
 
-{% asset_img tinygs-upload.png "TinyGS" %}
+{% asset_img tinygs-upload.png "TinyGS Uploader" %}
 
 Ahora seleccionamos el puerto COM en el que tenemos conectada nuestra placa y hacemos clic en **_Upload tinyGS firmware!_**.
 Si no nos aparece el puerto COM para seleccionar, debemos asegurarnos de que la placa está bien conectada y que tenemos los controladores previamente instalados.
@@ -51,12 +51,12 @@ El primer paso para la configuración de nuestra estación será la obtención d
 
 Una vez nos unimos al grupo podremos ver un mensaje de bienvenida como el siguiente:
 
-{% asset_img telegram-welcome.png "TinyGS" %}
+{% asset_img telegram-welcome.png "Telegram grupo TinyGS" %}
 
 Para solicitar nuestros datos de acceso debemos iniciar una conversación con el _bot_ del proyecto haciendo clic en el botón **_Open private chat_** que aparece en el mensaje.
 Ahora se nos abrirá un nuevo chat con el _bot_ al que enviaremos el mensaje **"/mqtt"**. El _bot_ nos responderá con nuestros datos de acceso que debemos anotar y, por supuesto, no debemos compartir con nadie.
 
-{% asset_img telegram-mqtt.png 400 "Telegram" %}
+{% asset_img telegram-mqtt.png 400 "Telegram TinyGS bot mqtt" %}
 
 ### Configurar la estación
 
@@ -69,7 +69,7 @@ Para acceder a la interfaz de configuración debemos conectarnos primeramente a 
 
 Una vez estemos conectados a esta red, debemos abrir el navegador web y acceder a la dirección **192.168.4.1**. Se nos mostrará un menú con opciones como el siguiente:
 
-{% asset_img tinygs-configure.png 500 "TinyGS" %}
+{% asset_img tinygs-configure.png 500 "Telegram TinyGS bot configure" %}
 
 Hacemos clic en **_Configure parameters_** e introducimos los parámetros de configuración de nuestra estación.
 Los valores básicos que debemos introducir son los siguientes:
@@ -92,7 +92,7 @@ Podemos ver una descripción más detallada de todos los parámetros en [la web 
 
 Una vez introducidos los datos, hacemos clic en **_Apply_** para aplicar los ajustes y reiniciamos la estación.
 
-{% asset_img board.jpg "HELTEC" %}
+{% asset_img board.jpg "HELTEC V2" %}
 
 ## Acceder a nuestra estación
 
@@ -106,37 +106,37 @@ Bastaría con enviarle al _bot_ el mensaje "**/stations**" y nos devolverá un l
 
 También podemos ver el estado de nuestra estación accediendo por red local a ella. Para ello necesitamos conocer previamente la dirección IP de la misma, siendo la forma más sencilla de obtenerla la propia pantalla.
 
-{% asset_img board-wifi.jpg "HELTEC" %}
+{% asset_img board-wifi.jpg "Dirección IP" %}
 
 Una vez la tenemos, accedemos mediante el navegador y en el menú hacemos clic en **_Station dashboard_**. Nos pedirá unos datos de acceso que son **"admin"** para el nombre de usuario y la contraseña es la que le hemos indicado en el paso previo de configuración.
 
-{% asset_img tinygs-dashboard.png 600 "TinyGS" %}
+{% asset_img tinygs-dashboard.png 600 "TinyGS Dashboard" %}
 
 Por último, la forma más completa de consultar el estado y de ver todos los paquetes recibidos, sería desde la web https://tinygs.com
 
 Si accedemos directamente a esta web solo podremos ver los datos públicos de las estaciones y no podremos interactuar con nuestra estación. Para acceder a nuestro propio panel de usuario en la web necesitamos un enlace personalizado que vamos a obtener desde el _bot_ de Telegram. Para que nos genere un enlace le enviamos el mensaje "**/weblogin**" y nos responderá con un enlace temporal que usaremos para acceder a la web. Sobra decir que este enlace no debe ser compartido con nadie, ya que le estaríamos dando el control de nuestra estación.
 
-{% asset_img tinygs-web.png 600 "TinyGS" %}
+{% asset_img tinygs-web.png 600 "TinyGS Web" %}
 
 ## Recepción de paquetes
 
 Si tenemos nuestra estación activa y conectada la red MQTT y a la antena, la recepción de los paquetes de datos se hará de forma automática y desatendida. La estación recibe desde el servidor los ajustes de escucha para el satélite que va a realizar el pase sobre nuestra posición y se prepara para recibir la señal. Podemos ver fácilmente el satélite activo en la pantalla:
 
-{% asset_img board-next.jpg "HELTEC" %}
+{% asset_img board-next.jpg "Satélite activo" %}
 
 Una vez se reciba un paquete de datos, este se enviará al servidor y se mostrará en pantalla la palabra **_CONFIRMED_**.
 
-{% asset_img board-confirmed.jpg "HELTEC" %}
+{% asset_img board-confirmed.jpg "Paquete confirmado" %}
 
 Si hemos recibido el paquete, pero por cualquier motivo nos ha llegado incompleto o corrupto, veremos un mensaje como el siguiente:
 
-{% asset_img board-error.jpg "HELTEC" %}
+{% asset_img board-error.jpg "Paquete descartado" %}
 
 Esto quiere decir que el mensaje no ha superado la verificación mediante CRC (código de redundancia cíclica) y no es válido.
 
 Si queremos ver la recepción de los mensajes en tiempo real, podemos acceder al canal de Telegram [TinyGS Telemetry](https://t.me/tinyGS_Telemetry) y ver si nuestros mensajes se están subiendo correctamente al servidor.
 
-{% asset_img telegram-telemetry.png 400 "HELTEC" %}
+{% asset_img telegram-telemetry.png 400 "Telegram grupo telemetría" %}
 
 ## Agradecimientos
 
