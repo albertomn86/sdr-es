@@ -825,6 +825,163 @@
       </tags>
   </entry>
   <entry>
+    <title>Instalación de SPY Server en Raspberry Pi</title>
+    <url>/2020/04/11/instalacion-spyserver-raspberrypi/</url>
+    <content><![CDATA[<p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos como instalar SPY Server en una Raspberry Pi.</p>
+<a id="more"></a>
+
+<p>Para usar SPY Server en nuestra Raspberry Pi <strong>necesitamos en primer lugar tener instalado el dispositivo SDR</strong>. Si nuestro dispositivo es un RTL-SDR debemos seguir los pasos descritos en el artículo <a href="https://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
+<h2 id="Instalar-SPY-Server"><a href="#Instalar-SPY-Server" class="headerlink" title="Instalar SPY Server"></a>Instalar SPY Server</h2><p>SPY Server está disponible ya compilado para procesadores ARM de 32 bits, por lo que bastaría con descargarlo a nuestra Raspberry Pi para que funcione.</p>
+<p>Lo primero que haremos será crear un directorio nuevo para los archivos de SPY Server:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir SPY_Server &amp;&amp; cd $_</span><br></pre></td></tr></table></figure>
+<p>Descargamos SPY Server usando el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;airspy.com&#x2F;downloads&#x2F;spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
+<p>Extraemos el contenido:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar -xzf spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
+<p>SPY Server funciona correctamente con los valores por defecto. También detecta el dispositivo SDR de forma automática y selecciona el primero disponible. Si necesitamos realizar algún ajuste debemos editar el archivo <strong>spyserver.config</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano spyserver.config</span><br></pre></td></tr></table></figure>
+<p>Por último ejecutamos SPY Server:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;spyserver spyserver.config</span><br></pre></td></tr></table></figure>
+<p>Si todo ha ido bien, nos mostrará una salida como la siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SPY Server v2.0.1700</span><br><span class="line">Copyright (C) 2016-2018 Youssef Touil - https:&#x2F;&#x2F;airspy.com</span><br><span class="line">Reading the configuration file: spyserver.config</span><br><span class="line">Listening for connections on 0.0.0.0:5555</span><br></pre></td></tr></table></figure>
+
+<p>Necesitamos que SPY Server funcione de forma autónoma en la Raspberry Pi y que se inicie de forma automática cuando esta se reinicie. Para ello vamos a lanzar SPY Server como un servicio.</p>
+<p>Lo primero será crear un archivo <em>unit</em> con la información del servicio:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service</span><br></pre></td></tr></table></figure>
+<p>El contenido del archivo será el siguiente (modificar las rutas si es necesario):</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;SPY Server</span><br><span class="line">After&#x3D;network.target</span><br><span class="line">StartLimitIntervalSec&#x3D;0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">Restart&#x3D;always</span><br><span class="line">RestartSec&#x3D;1</span><br><span class="line">User&#x3D;pi</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server</span><br><span class="line">ExecStart&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver spyserver.config</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+<p>Ahora vamos a cargar el servicio en el arranque mediante el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable spyserver</span><br></pre></td></tr></table></figure>
+<p>Por último iniciamos el servicio:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start spyserver</span><br></pre></td></tr></table></figure>
+<p>Para consultar el estado del servicio ejecutamos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl status spyserver</span><br></pre></td></tr></table></figure>
+<p>Si todo está correcto tendremos la siguiente salida:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● spyserver.service - SPY Server</span><br><span class="line">   Loaded: loaded (&#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Fri 2020-04-10 21:45:26 CEST; 13s ago</span><br><span class="line"> Main PID: 20788 (spyserver)</span><br><span class="line">    Tasks: 2 (limit: 2200)</span><br><span class="line">   Memory: 252.0K</span><br><span class="line">   CGroup: &#x2F;system.slice&#x2F;spyserver.service</span><br><span class="line">           └─20788 &#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver</span><br><span class="line"></span><br><span class="line">Apr 10 21:45:26 raspberrypi systemd[1]: Started SPY Server.</span><br></pre></td></tr></table></figure>
+<h2 id="Conectar-SDR-a-SPY-Server"><a href="#Conectar-SDR-a-SPY-Server" class="headerlink" title="Conectar SDR# a SPY Server"></a>Conectar SDR# a SPY Server</h2><p>El último paso será conectarnos a nuestro servidor desde SDR#. Para ello seleccionamos <strong>SPY Server Network</strong> en el desplegable de seleción de fuentes e introducimos la dirección IP del servidor de la siguiente forma:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdr:&#x2F;&#x2F;IP_RASPBERRY:5555</span><br></pre></td></tr></table></figure>
+<br>
+<img src="/2020/04/11/instalacion-spyserver-raspberrypi/conectar.png" class="" title="Conexión">
+
+<p>Por último hacemos click en la <strong>C</strong> para conectarnos.</p>
+<img src="/2020/04/11/instalacion-spyserver-raspberrypi/sdr_sharp.png" class="" width="900" title="SDR#">
+]]></content>
+      <tags>
+        <tag>RTL-SDR</tag>
+        <tag>Linux</tag>
+        <tag>Raspberry Pi</tag>
+        <tag>Instalación</tag>
+        <tag>SDRSharp</tag>
+        <tag>SPY Server</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalación de cable de audio virtual</title>
+    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
+    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.</p>
+<a id="more"></a>
+
+<h2 id="Instalacion-de-VB-Cable-en-Windows"><a href="#Instalacion-de-VB-Cable-en-Windows" class="headerlink" title="Instalación de VB-Cable en Windows"></a>Instalación de VB-Cable en Windows</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
+<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg" class="" width="900" title="Descarga de VB-Cable">
+
+<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
+<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
+
+<p>Hacemos click en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
+<h3 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h3><p>Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" width="800" title="SDRSharp output">
+
+<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+<h2 id="Instalacion-de-VB-Cable-en-macOS"><a href="#Instalacion-de-VB-Cable-en-macOS" class="headerlink" title="Instalación de VB-Cable en macOS"></a>Instalación de VB-Cable en macOS</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg" class="" width="900" title="Descarga de VB-Cable">
+
+<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado ejecutamos el instalador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg" class="" title="Instalación de VB-Cable">
+
+<p>Seguimos los pasos del asistente para instalar VB-Audio.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg" class="" title="Instalación de VB-Cable">
+
+<h3 id="Configuracion-de-CubicSDR"><a href="#Configuracion-de-CubicSDR" class="headerlink" title="Configuración de CubicSDR"></a>Configuración de CubicSDR</h3><p>Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos click en <strong>Audio Out</strong> y seleccionamos <em><strong>VB Audio: VB-Cable</strong></em></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/cubicsdr-audio.jpg" class="" width="900" title="CubicSDR audio output">
+
+<p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+]]></content>
+      <tags>
+        <tag>macOS</tag>
+        <tag>Instalación</tag>
+        <tag>Windows</tag>
+        <tag>Virtual Audio Cable</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de mensajes Inmarsat Aero</title>
+    <url>/2020/03/10/recepcion-aero-inmarsat/</url>
+    <content><![CDATA[<p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
+<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a href="https://es.wikipedia.org/wiki/ACARS">ACARS</a>, ADS-C, fax y voz digital.</p>
+<a id="more"></a>
+
+<p>Para decodificar este protocolo utilizaremos el software Open Source <strong>JAERO</strong>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://github.com/jontio/JAERO/releases/download/v1.0.4.11/JAERO-x64-setup.exe"><center>JAERO x64 v1.0.4.11</center></a></p>
+<p>Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos click en <em>Tools</em> y en <em>Settings</em>. Esto abre la ventana de ajustes de JAERO.</p>
+<img src="/2020/03/10/recepcion-aero-inmarsat/jaero_config.jpg" class="" title="Configuración JAERO">
+
+<p>El primer ajuste es indicarle en el apartado de <em>Soundcard</em> que le vamos a pasar el audio desde SDR# por el cable de audio virtual.<br>El siguiente ajuste es indicarle la ubicación de la base de datos con los datos de las aeronaves. Para ello en el apartado <em>Database</em> nos aseguramos de que la ruta es correcta y le damos a <strong>Download</strong> para que se descargue una base de datos actualizada. Si todo ha ido bien, deberíamos tener un archivo CSV con los datos en la ruta indicada.</p>
+<p>Para recibir datos bastaría con sintonizar SDR# en la frecuencia requerida y ajustar JAERO para que decodifique los mensajes.</p>
+<p>Inmarsat emite la señal en diferentes modulaciones y frecuencias. A continuación veremos ejemplos cada una.</p>
+<h2 id="Aero-600-bps"><a href="#Aero-600-bps" class="headerlink" title="Aero 600 bps"></a>Aero 600 bps</h2><ul>
+<li><strong>Modulación:</strong> Aviation-BPSK.</li>
+<li><strong>Ancho de banda:</strong> 800 Hz.</li>
+<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_sdr.jpg" class="" title="AERO 600 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_jaero.jpg" class="" title="AERO 600 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_planelog.jpg" class="" title="AERO 600 bps planelog">
+
+
+<h2 id="Aero-1200-bps"><a href="#Aero-1200-bps" class="headerlink" title="Aero 1200 bps"></a>Aero 1200 bps</h2><ul>
+<li><strong>Modulación:</strong> Aviation-BPSK.</li>
+<li><strong>Ancho de banda:</strong> 1600 Hz.</li>
+<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_sdr.jpg" class="" title="AERO 1200 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_jaero.jpg" class="" title="AERO 1200 bps">
+
+
+<h2 id="Aero-H-Aero-H"><a href="#Aero-H-Aero-H" class="headerlink" title="Aero-H, Aero-H+"></a>Aero-H, Aero-H+</h2><ul>
+<li><strong>Modulación:</strong> Aviation-QPSK</li>
+<li><strong>Ancho de banda:</strong> 10,5 KHz</li>
+<li><strong>Frecuencia:</strong> 1546,0 - 1546,2 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_sdr.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_jaero.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_planelog.jpg" class="" title="AERO 10.5k planelog">
+
+
+<h2 id="Voz-Digital"><a href="#Voz-Digital" class="headerlink" title="Voz Digital"></a>Voz Digital</h2><ul>
+<li><strong>Modulación:</strong> Aviation-QPSK.</li>
+<li><strong>Ancho de banda:</strong> 6 KHz.</li>
+<li><strong>Frecuencia:</strong> 1546,13 - 1546,18 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_sdr.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_jaero.jpg" class="" title="AERO 10.5k">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Inmarsat</tag>
+        <tag>L-Band</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Instalación de estación terrestre con SatNOGS</title>
     <url>/2020/04/24/instalacion-satnogs/</url>
     <content><![CDATA[<p><a href="https://satnogs.org/">SatNOGS</a> (Satellite Networked Open Ground Station) es una plataforma de software y hardware de código abierto con el propósito de crear una red global de estaciones terrestres de seguimiento de satélites.</p>
@@ -1031,163 +1188,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Instalación de SPY Server en Raspberry Pi</title>
-    <url>/2020/04/11/instalacion-spyserver-raspberrypi/</url>
-    <content><![CDATA[<p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos como instalar SPY Server en una Raspberry Pi.</p>
-<a id="more"></a>
-
-<p>Para usar SPY Server en nuestra Raspberry Pi <strong>necesitamos en primer lugar tener instalado el dispositivo SDR</strong>. Si nuestro dispositivo es un RTL-SDR debemos seguir los pasos descritos en el artículo <a href="https://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
-<h2 id="Instalar-SPY-Server"><a href="#Instalar-SPY-Server" class="headerlink" title="Instalar SPY Server"></a>Instalar SPY Server</h2><p>SPY Server está disponible ya compilado para procesadores ARM de 32 bits, por lo que bastaría con descargarlo a nuestra Raspberry Pi para que funcione.</p>
-<p>Lo primero que haremos será crear un directorio nuevo para los archivos de SPY Server:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir SPY_Server &amp;&amp; cd $_</span><br></pre></td></tr></table></figure>
-<p>Descargamos SPY Server usando el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;airspy.com&#x2F;downloads&#x2F;spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
-<p>Extraemos el contenido:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar -xzf spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
-<p>SPY Server funciona correctamente con los valores por defecto. También detecta el dispositivo SDR de forma automática y selecciona el primero disponible. Si necesitamos realizar algún ajuste debemos editar el archivo <strong>spyserver.config</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano spyserver.config</span><br></pre></td></tr></table></figure>
-<p>Por último ejecutamos SPY Server:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;spyserver spyserver.config</span><br></pre></td></tr></table></figure>
-<p>Si todo ha ido bien, nos mostrará una salida como la siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SPY Server v2.0.1700</span><br><span class="line">Copyright (C) 2016-2018 Youssef Touil - https:&#x2F;&#x2F;airspy.com</span><br><span class="line">Reading the configuration file: spyserver.config</span><br><span class="line">Listening for connections on 0.0.0.0:5555</span><br></pre></td></tr></table></figure>
-
-<p>Necesitamos que SPY Server funcione de forma autónoma en la Raspberry Pi y que se inicie de forma automática cuando esta se reinicie. Para ello vamos a lanzar SPY Server como un servicio.</p>
-<p>Lo primero será crear un archivo <em>unit</em> con la información del servicio:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service</span><br></pre></td></tr></table></figure>
-<p>El contenido del archivo será el siguiente (modificar las rutas si es necesario):</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;SPY Server</span><br><span class="line">After&#x3D;network.target</span><br><span class="line">StartLimitIntervalSec&#x3D;0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">Restart&#x3D;always</span><br><span class="line">RestartSec&#x3D;1</span><br><span class="line">User&#x3D;pi</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server</span><br><span class="line">ExecStart&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver spyserver.config</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
-<p>Ahora vamos a cargar el servicio en el arranque mediante el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable spyserver</span><br></pre></td></tr></table></figure>
-<p>Por último iniciamos el servicio:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start spyserver</span><br></pre></td></tr></table></figure>
-<p>Para consultar el estado del servicio ejecutamos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl status spyserver</span><br></pre></td></tr></table></figure>
-<p>Si todo está correcto tendremos la siguiente salida:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● spyserver.service - SPY Server</span><br><span class="line">   Loaded: loaded (&#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Fri 2020-04-10 21:45:26 CEST; 13s ago</span><br><span class="line"> Main PID: 20788 (spyserver)</span><br><span class="line">    Tasks: 2 (limit: 2200)</span><br><span class="line">   Memory: 252.0K</span><br><span class="line">   CGroup: &#x2F;system.slice&#x2F;spyserver.service</span><br><span class="line">           └─20788 &#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver</span><br><span class="line"></span><br><span class="line">Apr 10 21:45:26 raspberrypi systemd[1]: Started SPY Server.</span><br></pre></td></tr></table></figure>
-<h2 id="Conectar-SDR-a-SPY-Server"><a href="#Conectar-SDR-a-SPY-Server" class="headerlink" title="Conectar SDR# a SPY Server"></a>Conectar SDR# a SPY Server</h2><p>El último paso será conectarnos a nuestro servidor desde SDR#. Para ello seleccionamos <strong>SPY Server Network</strong> en el desplegable de seleción de fuentes e introducimos la dirección IP del servidor de la siguiente forma:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdr:&#x2F;&#x2F;IP_RASPBERRY:5555</span><br></pre></td></tr></table></figure>
-<br>
-<img src="/2020/04/11/instalacion-spyserver-raspberrypi/conectar.png" class="" title="Conexión">
-
-<p>Por último hacemos click en la <strong>C</strong> para conectarnos.</p>
-<img src="/2020/04/11/instalacion-spyserver-raspberrypi/sdr_sharp.png" class="" width="900" title="SDR#">
-]]></content>
-      <tags>
-        <tag>RTL-SDR</tag>
-        <tag>Linux</tag>
-        <tag>Raspberry Pi</tag>
-        <tag>Instalación</tag>
-        <tag>SDRSharp</tag>
-        <tag>SPY Server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de cable de audio virtual</title>
-    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
-    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.</p>
-<a id="more"></a>
-
-<h2 id="Instalacion-de-VB-Cable-en-Windows"><a href="#Instalacion-de-VB-Cable-en-Windows" class="headerlink" title="Instalación de VB-Cable en Windows"></a>Instalación de VB-Cable en Windows</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
-<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg" class="" width="900" title="Descarga de VB-Cable">
-
-<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
-<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
-
-<p>Hacemos click en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
-<h3 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h3><p>Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" width="800" title="SDRSharp output">
-
-<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
-<h2 id="Instalacion-de-VB-Cable-en-macOS"><a href="#Instalacion-de-VB-Cable-en-macOS" class="headerlink" title="Instalación de VB-Cable en macOS"></a>Instalación de VB-Cable en macOS</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg" class="" width="900" title="Descarga de VB-Cable">
-
-<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado ejecutamos el instalador.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg" class="" title="Instalación de VB-Cable">
-
-<p>Seguimos los pasos del asistente para instalar VB-Audio.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg" class="" title="Instalación de VB-Cable">
-
-<h3 id="Configuracion-de-CubicSDR"><a href="#Configuracion-de-CubicSDR" class="headerlink" title="Configuración de CubicSDR"></a>Configuración de CubicSDR</h3><p>Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos click en <strong>Audio Out</strong> y seleccionamos <em><strong>VB Audio: VB-Cable</strong></em></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/cubicsdr-audio.jpg" class="" width="900" title="CubicSDR audio output">
-
-<p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
-]]></content>
-      <tags>
-        <tag>macOS</tag>
-        <tag>Instalación</tag>
-        <tag>Windows</tag>
-        <tag>Virtual Audio Cable</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de mensajes Inmarsat Aero</title>
-    <url>/2020/03/10/recepcion-aero-inmarsat/</url>
-    <content><![CDATA[<p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
-<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a href="https://es.wikipedia.org/wiki/ACARS">ACARS</a>, ADS-C, fax y voz digital.</p>
-<a id="more"></a>
-
-<p>Para decodificar este protocolo utilizaremos el software Open Source <strong>JAERO</strong>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://github.com/jontio/JAERO/releases/download/v1.0.4.11/JAERO-x64-setup.exe"><center>JAERO x64 v1.0.4.11</center></a></p>
-<p>Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos click en <em>Tools</em> y en <em>Settings</em>. Esto abre la ventana de ajustes de JAERO.</p>
-<img src="/2020/03/10/recepcion-aero-inmarsat/jaero_config.jpg" class="" title="Configuración JAERO">
-
-<p>El primer ajuste es indicarle en el apartado de <em>Soundcard</em> que le vamos a pasar el audio desde SDR# por el cable de audio virtual.<br>El siguiente ajuste es indicarle la ubicación de la base de datos con los datos de las aeronaves. Para ello en el apartado <em>Database</em> nos aseguramos de que la ruta es correcta y le damos a <strong>Download</strong> para que se descargue una base de datos actualizada. Si todo ha ido bien, deberíamos tener un archivo CSV con los datos en la ruta indicada.</p>
-<p>Para recibir datos bastaría con sintonizar SDR# en la frecuencia requerida y ajustar JAERO para que decodifique los mensajes.</p>
-<p>Inmarsat emite la señal en diferentes modulaciones y frecuencias. A continuación veremos ejemplos cada una.</p>
-<h2 id="Aero-600-bps"><a href="#Aero-600-bps" class="headerlink" title="Aero 600 bps"></a>Aero 600 bps</h2><ul>
-<li><strong>Modulación:</strong> Aviation-BPSK.</li>
-<li><strong>Ancho de banda:</strong> 800 Hz.</li>
-<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_sdr.jpg" class="" title="AERO 600 bps">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_jaero.jpg" class="" title="AERO 600 bps">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_planelog.jpg" class="" title="AERO 600 bps planelog">
-
-
-<h2 id="Aero-1200-bps"><a href="#Aero-1200-bps" class="headerlink" title="Aero 1200 bps"></a>Aero 1200 bps</h2><ul>
-<li><strong>Modulación:</strong> Aviation-BPSK.</li>
-<li><strong>Ancho de banda:</strong> 1600 Hz.</li>
-<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_sdr.jpg" class="" title="AERO 1200 bps">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_jaero.jpg" class="" title="AERO 1200 bps">
-
-
-<h2 id="Aero-H-Aero-H"><a href="#Aero-H-Aero-H" class="headerlink" title="Aero-H, Aero-H+"></a>Aero-H, Aero-H+</h2><ul>
-<li><strong>Modulación:</strong> Aviation-QPSK</li>
-<li><strong>Ancho de banda:</strong> 10,5 KHz</li>
-<li><strong>Frecuencia:</strong> 1546,0 - 1546,2 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_sdr.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_jaero.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_planelog.jpg" class="" title="AERO 10.5k planelog">
-
-
-<h2 id="Voz-Digital"><a href="#Voz-Digital" class="headerlink" title="Voz Digital"></a>Voz Digital</h2><ul>
-<li><strong>Modulación:</strong> Aviation-QPSK.</li>
-<li><strong>Ancho de banda:</strong> 6 KHz.</li>
-<li><strong>Frecuencia:</strong> 1546,13 - 1546,18 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_sdr.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_jaero.jpg" class="" title="AERO 10.5k">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Inmarsat</tag>
-        <tag>L-Band</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción de los satélites CAS-4</title>
     <url>/2020/10/10/recepcion-cas4/</url>
     <content><![CDATA[<p>Los satélites CAS-4A y CAS-4B son unos micro-satélites construidos por Zhuhai Orbita Control Engineering Ltd. para el sistema orbital de observación terrestre de China. Su principal componente es una cámara de 1,98m de resolución. Estos satélites envían datos de telemetría en VHF, y son estos datos los que vamos a recibir, decodificar y visualizar en este artículo.</p>
@@ -1371,72 +1371,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción del satélite FUNcube-1</title>
-    <url>/2020/02/22/recepcion-funcube1/</url>
-    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
-<a id="more"></a>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>FUNcube-1 (AO-73)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>AMSAT-UK</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>39444</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2013-066AE</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (0,98 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>21 de Noviembre de 2013</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145.935 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/2020/02/22/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
-
-
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos click en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
-
-<p>Hacemos click en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos click en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
-
-<p><em>Mensajes:</em></p>
-<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Cubesat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción de satélites Inmarsat</title>
     <url>/2020/03/06/recepcion-inmarsat/</url>
     <content><![CDATA[<p>Inmarsat es un proveedor de comunicaciones vía satélite con sede en Reino Unido. La constelación de satélites Inmarsat se compone actualmente de 12 satélites geoestacionarios que proporcionan cobertura en el 90% del planeta.<br>Inmarsat utiliza sus satélites de tercera y cuarta generación para ofrecer servicios de comunicaciones utilizando la <strong>banda L</strong> (1 a 2 GHz). Estos servicios son:</p>
@@ -1540,6 +1474,103 @@
         <tag>Satélites</tag>
         <tag>Inmarsat</tag>
         <tag>L-Band</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de satélites meteorológicos NOAA</title>
+    <url>/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</url>
+    <content><![CDATA[<p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
+<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato <a href="https://en.wikipedia.org/wiki/Automatic_picture_transmission">APT</a>.</p>
+<a id="more"></a>
+
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/apt.jpg" class="" width="500" title="Imagen APT de satélite NOAA">
+
+
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Actualmente podemos recibir imágenes APT desde los siguientes satélites meteorológicos NOAA.</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>NOAA 15</th>
+<th>NOAA 18</th>
+<th>NOAA 19</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>NORAD ID</strong></td>
+<td>25338</td>
+<td>28654</td>
+<td>33591</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>1998-030A</td>
+<td>2005-018A</td>
+<td>2009-005A</td>
+</tr>
+<tr>
+<td><strong>Masa de lanzamiento</strong></td>
+<td>1.457 Kg</td>
+<td>1.457 Kg</td>
+<td>1.440 Kg</td>
+</tr>
+<tr>
+<td><strong>Fecha de lanzamiento</strong></td>
+<td>13 de Mayo de 1998</td>
+<td>20 de Mayo de 2005</td>
+<td>6 de Febrero de 2009</td>
+</tr>
+<tr>
+<td><strong>Señal APT</strong></td>
+<td>137,620 MHz</td>
+<td>137,9125 MHz</td>
+<td>137,100 MHz</td>
+</tr>
+</tbody></table>
+<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la version beta 2.11.2):</p>
+<p><a href="https://wxtoimgrestored.xyz/downloads/"><center>Descargar WXtoImg</center></a></p>
+<p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
+<ol>
+<li>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Ground Station Location…&quot;</strong></em>. En esta ventana introducimos nuestras coordenadas y altitud.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
+
+<ol start="2">
+<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ellos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Recording Options&quot;</strong></em>. Aquí seleccionamos nuestro cable de audio virtual.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
+
+<ol start="3">
+<li>Marcamos la opción de resincronizado en <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Resync&quot;</strong></em>.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
+
+<ol start="4">
+<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Auto Processing Options…&quot;</strong></em> y marcamos <em><strong>&quot;Create image(s)&quot;</strong></em>. Después hacemos click en <em><strong>&quot;Image Settings…&quot;</strong></em> y elegimos las imágenes que queramos.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
+
+<ol start="5">
+<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <em><strong>&quot;File&quot;</strong></em> y hacemos click en <em><strong>&quot;Update Keplers&quot;</strong></em>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
+
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br>Para recibir el pase tenemos que sacar el audio de SDR# mediante el cable de audio virtual y tener WXtoImg abierto. Una vez el satélite comience a verse sobre el horizonte, SDR# iniciará el seguimiento y WXtoImg comenzará a recibir y procesar la señal.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/sdr_sharp.jpg" class="" title="SDR#">
+
+<p>Es importante asegurarse que el volumen de la salida de SDR# sea el adecuado. Podemos ver el nivel que llega a WXtoImg en la esquina inferior derecha. Para que la imagen se genere correctamente, el indicador de nivel de volumen debe mantenerse en color verde durante todo el pase.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recibiendo.jpg" class="" title="WXtoImg">
+
+<p>Al finalizar el pase WXtoImg dejara de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" title="WXtoImg">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
       </tags>
   </entry>
   <entry>
@@ -1684,100 +1715,69 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción de satélites meteorológicos NOAA</title>
-    <url>/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</url>
-    <content><![CDATA[<p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
-<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato <a href="https://en.wikipedia.org/wiki/Automatic_picture_transmission">APT</a>.</p>
+    <title>Recepción del satélite FUNcube-1</title>
+    <url>/2020/02/22/recepcion-funcube1/</url>
+    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
 <a id="more"></a>
 
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/apt.jpg" class="" width="500" title="Imagen APT de satélite NOAA">
-
-
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Actualmente podemos recibir imágenes APT desde los siguientes satélites meteorológicos NOAA.</p>
-<table>
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
 <thead>
 <tr>
 <th>Satélite</th>
-<th>NOAA 15</th>
-<th>NOAA 18</th>
-<th>NOAA 19</th>
+<th>FUNcube-1 (AO-73)</th>
 </tr>
 </thead>
 <tbody><tr>
+<td><strong>Operador</strong></td>
+<td>AMSAT-UK</td>
+</tr>
+<tr>
 <td><strong>NORAD ID</strong></td>
-<td>25338</td>
-<td>28654</td>
-<td>33591</td>
+<td>39444</td>
 </tr>
 <tr>
 <td><strong>COSPAR ID</strong></td>
-<td>1998-030A</td>
-<td>2005-018A</td>
-<td>2009-005A</td>
+<td>2013-066AE</td>
 </tr>
 <tr>
-<td><strong>Masa de lanzamiento</strong></td>
-<td>1.457 Kg</td>
-<td>1.457 Kg</td>
-<td>1.440 Kg</td>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (0,98 Kg)</td>
 </tr>
 <tr>
-<td><strong>Fecha de lanzamiento</strong></td>
-<td>13 de Mayo de 1998</td>
-<td>20 de Mayo de 2005</td>
-<td>6 de Febrero de 2009</td>
+<td><strong>Lanzamiento</strong></td>
+<td>21 de Noviembre de 2013</td>
 </tr>
 <tr>
-<td><strong>Señal APT</strong></td>
-<td>137,620 MHz</td>
-<td>137,9125 MHz</td>
-<td>137,100 MHz</td>
+<td><strong>Señal</strong></td>
+<td>145.935 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
 </tr>
 </tbody></table>
-<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la version beta 2.11.2):</p>
-<p><a href="https://wxtoimgrestored.xyz/downloads/"><center>Descargar WXtoImg</center></a></p>
-<p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
-<ol>
-<li>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Ground Station Location…&quot;</strong></em>. En esta ventana introducimos nuestras coordenadas y altitud.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
-
-<ol start="2">
-<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ellos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Recording Options&quot;</strong></em>. Aquí seleccionamos nuestro cable de audio virtual.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
-
-<ol start="3">
-<li>Marcamos la opción de resincronizado en <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Resync&quot;</strong></em>.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
-
-<ol start="4">
-<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Auto Processing Options…&quot;</strong></em> y marcamos <em><strong>&quot;Create image(s)&quot;</strong></em>. Después hacemos click en <em><strong>&quot;Image Settings…&quot;</strong></em> y elegimos las imágenes que queramos.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
-
-<ol start="5">
-<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <em><strong>&quot;File&quot;</strong></em> y hacemos click en <em><strong>&quot;Update Keplers&quot;</strong></em>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
-
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br>Para recibir el pase tenemos que sacar el audio de SDR# mediante el cable de audio virtual y tener WXtoImg abierto. Una vez el satélite comience a verse sobre el horizonte, SDR# iniciará el seguimiento y WXtoImg comenzará a recibir y procesar la señal.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/sdr_sharp.jpg" class="" title="SDR#">
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/2020/02/22/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
 
-<p>Es importante asegurarse que el volumen de la salida de SDR# sea el adecuado. Podemos ver el nivel que llega a WXtoImg en la esquina inferior derecha. Para que la imagen se genere correctamente, el indicador de nivel de volumen debe mantenerse en color verde durante todo el pase.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recibiendo.jpg" class="" title="WXtoImg">
 
-<p>Al finalizar el pase WXtoImg dejara de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" title="WXtoImg">
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos click en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
+
+<p>Hacemos click en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos click en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
+
+<p><em>Mensajes:</em></p>
+<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
 ]]></content>
       <tags>
         <tag>Satélites</tag>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
+        <tag>Cubesat</tag>
       </tags>
   </entry>
   <entry>
@@ -2127,11 +2127,11 @@
 </tr>
 <tr>
 <td>Latitude</td>
-<td>Latitud. Formato decimal con signo menos para latitud sur.</td>
+<td>Latitud. Valor con 3 dígitos decimales. Signo menos para latitud sur.</td>
 </tr>
 <tr>
 <td>Longitude</td>
-<td>Longitud. Formato decimal con signo menos para longitud oeste.</td>
+<td>Longitud. Valor con 3 dígitos decimales. Signo menos para longitud oeste.</td>
 </tr>
 <tr>
 <td>Timezone</td>
