@@ -80,8 +80,8 @@ Los valores básicos que debemos introducir son los siguientes:
 | Password for this dashboard | Clave de acceso que queramos para entrar al panel de datos web. |
 | WiFi SSID                   | Nombre de la red WiFi a la que se conectará la estación. |
 | WiFi password               | Clave de la red WiFi a la que se conectará la estación. |
-| Latitude                    | Latitud. Formato decimal con signo menos para latitud sur.|
-| Longitude                   | Longitud. Formato decimal con signo menos para longitud oeste.|
+| Latitude                    | Latitud. Valor con 3 dígitos decimales. Signo menos para latitud sur. |
+| Longitude                   | Longitud. Valor con 3 dígitos decimales. Signo menos para longitud oeste. |
 | Timezone                    | Nuestra zona horaria. |
 | MQTT Username               | Nombre de usuario que hemos obtenido en el paso anterior. |
 | MQTT Password               | Contraseña que hemos obtenido en el paso anterior. |
