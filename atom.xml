@@ -6,7 +6,7 @@
   <link href="http://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2021-04-05T17:40:25.000Z</updated>
+  <updated>2021-04-10T12:25:54.000Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Construcción de antena QFH para satélites meteorológicos</title>
+    <link href="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/"/>
+    <id>http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/</id>
+    <published>2021-04-10T12:25:54.000Z</published>
+    <updated>2021-04-10T12:25:54.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello realizaremos nuestra antena para que resuene en 137,500 MHz.&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Antenas" scheme="http://sdr-es.com/tags/Antenas/"/>
+    
+    <category term="QFH" scheme="http://sdr-es.com/tags/QFH/"/>
+    
+    <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
+    
+    <category term="NOAA" scheme="http://sdr-es.com/tags/NOAA/"/>
+    
+  </entry>
   
   <entry>
     <title>Instalación de SDRPlay RSP2 en Debian Testing</title>
@@ -423,28 +446,6 @@
     
     
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Recepción de mensajes Inmarsat Aero</title>
-    <link href="http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/"/>
-    <id>http://sdr-es.com/2020/03/10/recepcion-aero-inmarsat/</id>
-    <published>2020-03-10T11:26:30.000Z</published>
-    <updated>2020-03-10T11:26:30.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.&lt;br&gt;En este artículo veremos como decodificar y recibir mensajes Aero.&lt;/p&gt;
-&lt;p&gt;Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes &lt;a href=&quot;https://es.wikipedia.org/wiki/ACARS&quot;&gt;ACARS&lt;/a&gt;, ADS-C, fax y voz digital.&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
-    <category term="Inmarsat" scheme="http://sdr-es.com/tags/Inmarsat/"/>
-    
-    <category term="L-Band" scheme="http://sdr-es.com/tags/L-Band/"/>
     
   </entry>
   
