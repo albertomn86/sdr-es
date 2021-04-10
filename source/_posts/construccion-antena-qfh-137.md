@@ -90,7 +90,7 @@ Por último, colocamos el tapón al tubo y ponemos el conector que queramos al c
 
 ## Ajuste de la antena
 
-Para finalizar la construcción de nuestra antena, vamos a medirla usando un analizador de antenas **NanoVNA**. Si hemos seguido los pasos de esta guía y hemos usado las medidas indicadas, la antena debe resonar sobre los 130 MHz ya que las medidas de las varillas son un poco más largas para poder colocar las tuercas con facilidad. Para ajustar la antena a la frecuencia exacta debemos ajustar la distancia entre las pletinas de aluminio de la siguiente manera:
+Para finalizar la construcción de nuestra antena, vamos a medirla usando un analizador de antenas **NanoVNA**. Si hemos seguido los pasos de esta guía y hemos usado las medidas indicadas, la antena debe resonar sobre los 135 MHz ya que las medidas de las varillas son un poco más largas para poder colocar las tuercas con facilidad. Para ajustar la antena a la frecuencia exacta debemos ajustar la distancia entre las pletinas de aluminio de la siguiente manera:
 
 - Para el _loop_ largo **282 mm**.
 - Para el _loop_ corto **268 mm**.
