@@ -11,7 +11,7 @@ Listado de frecuencias encontradas y recogidas por los miembros del grupo.
 <button type="button" id="download_button" style="padding: 5px 10px;">Descargar XML</button>
 
 | Frecuencia   | Descripción              | Tipo   | Modo | Ancho de banda | Lugar de recepción | Receptor      | Antena  |
-|--------------|--------------------------|--------|------|----------------|--------------------|---------------|---------|
+|-------------:|--------------------------|--------|:----:|---------------:|--------------------|---------------|---------|
 | 153 KHz      | Radio Antena Satelor     | Voz    | AM   | 10 KHz         | Cáceres            | AIRSPY HF+    | YouLoop |
 | 171 KHz      | Radio Mediterranee       | Voz    | AM   | 10 KHz         | Cáceres            | AIRSPY HF+    | YouLoop |
 | 198 KHz      | BBC 4 UK                 | Voz    | AM   | 10 KHz         | Cáceres            | AIRSPY HF+    | YouLoop |
