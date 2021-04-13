@@ -197,11 +197,11 @@
     
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
     <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
     
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
   </entry>
   
@@ -304,9 +304,9 @@
     
     <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
     <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
@@ -353,9 +353,9 @@
     
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
     <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
@@ -380,9 +380,9 @@
     
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
     <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
