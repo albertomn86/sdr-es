@@ -71,6 +71,133 @@
       </tags>
   </entry>
   <entry>
+    <title>Construcción de antena QFH para satélites meteorológicos</title>
+    <url>/2021/04/10/construccion-antena-qfh-137/</url>
+    <content><![CDATA[<p>En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello realizaremos nuestra antena para que resuene en 137,500 MHz.</p>
+<span id="more"></span>
+
+<h2 id="Materiales-necesarios"><a href="#Materiales-necesarios" class="headerlink" title="Materiales necesarios"></a>Materiales necesarios</h2><p>El listado de materiales que se muestra a continuación es el que yo he empleado para la construcción de esta antena. En mi caso he empleado pletina de aluminio junto con varilla de acero. Esta combinación presenta el problema de la <a href="https://es.wikipedia.org/wiki/Corrosi%C3%B3n_galv%C3%A1nica">corrosión galvánica</a> que puede ser un problema en zonas húmedas. Si vamos a instalar la antena a la intemperie en una zona húmeda, lo ideal es evitar la combinación de estos materiales y usar otros, si queremos que nuestra antena nos dure bastante tiempo.</p>
+<table>
+<thead>
+<tr>
+<th align="right">Cantidad (uds.)</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1,5 m</td>
+<td>Tubo de PVC Ø 40 mm</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td>Tapón para tubo de PVC Ø 40 mm</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Varilla roscada acero Ø 5 mm</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Pletina aluminio 2 mm x 10 mm</td>
+</tr>
+<tr>
+<td align="right">32</td>
+<td>Tuerca Ø 5 mm</td>
+</tr>
+<tr>
+<td align="right">28</td>
+<td>Arandela Ø 5 mm</td>
+</tr>
+<tr>
+<td align="right">20 cm</td>
+<td>Cable de cobre</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Terminal faston redondo Ø 5 mm</td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td>Cable coaxial 50Ω</td>
+</tr>
+</tbody></table>
+<img src="/2021/04/10/construccion-antena-qfh-137/materiales.jpg" class="" width="800" title="Materiales">
+
+<h2 id="Construccion"><a href="#Construccion" class="headerlink" title="Construcción"></a>Construcción</h2><p>Empezamos cortando el tubo de PVC a la medida que queramos. En mi caso voy a usar el propio tubo como parte del mástil de colocación de la antena, por lo que voy a usar una longitud total de 1,5 metros. Si lo preferimos, podemos dejar el tubo más largo o más corto según nos interese.</p>
+<p>Una vez cortado, vamos a hacer los agujeros por los que pasaremos las varillas posteriormente.<br>Para los agujeros superiores podemos ayudarnos de la plantilla que se genera en <a href="http://jcoppens.com/ant/qfh/calc.en.php">la web de John Coppens</a> en el apartado de <em>“Generate a drilling template”</em>, indicando el diámetro del tubo (40 mm) y el diámetro del soporte horizontal (5 mm).<br>Le damos primeramente a <em>Calculate</em> en el apartado superior de <em>“Input data”</em> y después a <em>Generate</em>. Esto nos crea un PDF que podemos imprimir y usar para marcar los agujeros y que queden centrados. Recordar que <strong>solo vamos a utilizar esta plantilla para marcar la distribución de los agujeros superiores en el perímetro del tubo y no debemos hacer caso a las medidas que indica</strong>.</p>
+<img src="/2021/04/10/construccion-antena-qfh-137/plantilla.jpg" class="" title="Plantilla">
+
+<p>Las medidas (<strong>en milímetros</strong>) que usaremos son las siguientes (las dimensiones no están a escala):</p>
+<img src="/2021/04/10/construccion-antena-qfh-137/medidas_tubo.png" class="" title="Medidas tubo">
+
+
+<p>El siguiente paso será cortar y taladrar las pletinas de aluminio. Cortaremos dos pletinas por cada longitud usando el siguiente esquema:</p>
+<img src="/2021/04/10/construccion-antena-qfh-137/medidas_pletinas.png" class="" title="Medidas pletinas">
+
+<p>Por último, cortamos las varillas roscadas para obtener las siguientes piezas:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Medidas (en mm)</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">300</td>
+<td>Varilla inferior para <em>loop</em> largo.</td>
+</tr>
+<tr>
+<td align="center">280</td>
+<td>Varilla inferior para <em>loop</em> corto.</td>
+</tr>
+<tr>
+<td align="center">155</td>
+<td>(2 unidades) Varilla superior para <em>loop</em> largo.</td>
+</tr>
+<tr>
+<td align="center">145</td>
+<td>(2 unidades) Varilla superior para <em>loop</em> corto.</td>
+</tr>
+</tbody></table>
+<img src="/2021/04/10/construccion-antena-qfh-137/piezas.jpg" class="" width="900" title="Piezas cortadas">
+
+<h3 id="Montaje"><a href="#Montaje" class="headerlink" title="Montaje"></a>Montaje</h3><p>Una vez tenemos las piezas preparadas, comenzamos el proceso de montaje empezando por las varillas roscadas.</p>
+<img src="/2021/04/10/construccion-antena-qfh-137/antena_varillas.jpg" class="" width="400" title="Antena con varillas colocadas">
+
+<p>El siguiente paso es colocar las pletinas, pero primero tendremos que darles la forma. La manera más sencilla de hacerlo es primero hacerles el arco y posteriormente hacerles el giro. Es conveniente dejarlas bien dobladas antes de colocarlas para que no apliquen tensión a las varillas.</p>
+<img src="/2021/04/10/construccion-antena-qfh-137/antena_pletinas.jpg" class="" width="400" title="Antena con pletinas colocadas">
+
+<p>A continuación vamos a colocar el cable coaxial. La longitud del cable será la que estimemos necesaria y el tipo de cable podemos usar cualquiera. Es recomendable usar un cable no muy grueso y de bajas pérdidas. En mi caso he usado un cable <em>Aircell-5</em>.</p>
+<p>Hacemos un agujero del mismo diámetro del cable en la parte superior del tubo por debajo de las varillas y pasamos el cable coaxial. Es recomendable que pasemos bastante cable para poder trabajar con comodidad.<br>Ahora necesitamos sacar dos conexiones desde el vivo del coaxial y otras dos desde la malla. Para ello yo he utilizado trozos de cable de cobre a los que he soldado una arandela, aunque lo recomendable es usar los terminales faston.</p>
+<img src="/2021/04/10/construccion-antena-qfh-137/conexiones.jpg" class="" width="600" title="Conexiones">
+
+<p>Ahora insertamos los terminales en las varillas conforme el siguiente esquema:</p>
+<img src="/2021/04/10/construccion-antena-qfh-137/conexiones_qfh.png" class="" width="400" title="Vista superior de la antena">
+
+<p>Siendo A y B los lados que conforma el <em>loop</em> largo y el <em>loop</em> corto C y D, conectaremos los terminales con el vivo del coaxial a las varillas A y C y los terminales con la malla a las varillas B y D.</p>
+<img src="/2021/04/10/construccion-antena-qfh-137/conexiones_interior.jpg" class="" width="500" title="Conexiones">
+
+<p>Una vez conectados, ajustamos el cable que queda dentro del tubo con cuidado y le damos 4 vueltas para hacer una <a href="https://es.wikipedia.org/wiki/Bobina_de_choque">bobina choque</a>. Aquí podemos hacer otro agujero y pasar el resto del cable por dentro de la antena, o bien podemos dejarlo por fuera.</p>
+<img src="/2021/04/10/construccion-antena-qfh-137/choque.jpg" class="" width="500" title="Choque">
+
+<p>Por último, colocamos el tapón al tubo y ponemos el conector que queramos al cable y ya tenemos lista nuestra antena a falta de ajustarla a la frecuencia exacta.</p>
+<h2 id="Ajuste-de-la-antena"><a href="#Ajuste-de-la-antena" class="headerlink" title="Ajuste de la antena"></a>Ajuste de la antena</h2><p>Para finalizar la construcción de nuestra antena, vamos a medirla usando un analizador de antenas <strong>NanoVNA</strong>. Si hemos seguido los pasos de esta guía y hemos usado las medidas indicadas, la antena debe resonar sobre los 135 MHz ya que las medidas de las varillas son un poco más largas para poder colocar las tuercas con facilidad. Para ajustar la antena a la frecuencia exacta debemos ajustar la distancia entre las pletinas de aluminio de la siguiente manera:</p>
+<ul>
+<li>Para el <em>loop</em> largo <strong>282 mm</strong>.</li>
+<li>Para el <em>loop</em> corto <strong>268 mm</strong>.</li>
+</ul>
+<p>Para la parte superior habrá que sumar a esta distancia la separación entre los conectores.</p>
+<p>Una vez ajustada, nos dará unos resultados similares a los siguientes:</p>
+<img src="/2021/04/10/construccion-antena-qfh-137/nanovna.jpg" class="" width="600" title="NanoVNA">
+]]></content>
+      <tags>
+        <tag>Antenas</tag>
+        <tag>QFH</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Elección del dispositivo SDR</title>
     <url>/2020/03/16/eleccion-sdr/</url>
     <content><![CDATA[<p>Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.<br>La finalidad este artículo es orientarnos para escoger el dispositivo que más se ajuste a nuestras necesidades y casos de uso. Para ello se han seleccionado algunos de los dispositivos más conocidos y que habitualmente se recomiendan, y se ha elaborado una breve descripción de cada uno de ellos con algunas de sus características más reseñables.</p>
@@ -401,133 +528,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Construcción de antena QFH para satélites meteorológicos</title>
-    <url>/2021/04/10/construccion-antena-qfh-137/</url>
-    <content><![CDATA[<p>En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello realizaremos nuestra antena para que resuene en 137,500 MHz.</p>
-<span id="more"></span>
-
-<h2 id="Materiales-necesarios"><a href="#Materiales-necesarios" class="headerlink" title="Materiales necesarios"></a>Materiales necesarios</h2><p>El listado de materiales que se muestra a continuación es el que yo he empleado para la construcción de esta antena. En mi caso he empleado pletina de aluminio junto con varilla de acero. Esta combinación presenta el problema de la <a href="https://es.wikipedia.org/wiki/Corrosi%C3%B3n_galv%C3%A1nica">corrosión galvánica</a> que puede ser un problema en zonas húmedas. Si vamos a instalar la antena a la intemperie en una zona húmeda, lo ideal es evitar la combinación de estos materiales y usar otros, si queremos que nuestra antena nos dure bastante tiempo.</p>
-<table>
-<thead>
-<tr>
-<th align="right">Cantidad (uds.)</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">1,5 m</td>
-<td>Tubo de PVC Ø 40 mm</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td>Tapón para tubo de PVC Ø 40 mm</td>
-</tr>
-<tr>
-<td align="right">2</td>
-<td>Varilla roscada acero Ø 5 mm</td>
-</tr>
-<tr>
-<td align="right">4</td>
-<td>Pletina aluminio 2 mm x 10 mm</td>
-</tr>
-<tr>
-<td align="right">32</td>
-<td>Tuerca Ø 5 mm</td>
-</tr>
-<tr>
-<td align="right">28</td>
-<td>Arandela Ø 5 mm</td>
-</tr>
-<tr>
-<td align="right">20 cm</td>
-<td>Cable de cobre</td>
-</tr>
-<tr>
-<td align="right">4</td>
-<td>Terminal faston redondo Ø 5 mm</td>
-</tr>
-<tr>
-<td align="right">-</td>
-<td>Cable coaxial 50Ω</td>
-</tr>
-</tbody></table>
-<img src="/2021/04/10/construccion-antena-qfh-137/materiales.jpg" class="" width="800" title="Materiales">
-
-<h2 id="Construccion"><a href="#Construccion" class="headerlink" title="Construcción"></a>Construcción</h2><p>Empezamos cortando el tubo de PVC a la medida que queramos. En mi caso voy a usar el propio tubo como parte del mástil de colocación de la antena, por lo que voy a usar una longitud total de 1,5 metros. Si lo preferimos, podemos dejar el tubo más largo o más corto según nos interese.</p>
-<p>Una vez cortado, vamos a hacer los agujeros por los que pasaremos las varillas posteriormente.<br>Para los agujeros superiores podemos ayudarnos de la plantilla que se genera en <a href="http://jcoppens.com/ant/qfh/calc.en.php">la web de John Coppens</a> en el apartado de <em>“Generate a drilling template”</em>, indicando el diámetro del tubo (40 mm) y el diámetro del soporte horizontal (5 mm).<br>Le damos primeramente a <em>Calculate</em> en el apartado superior de <em>“Input data”</em> y después a <em>Generate</em>. Esto nos crea un PDF que podemos imprimir y usar para marcar los agujeros y que queden centrados. Recordar que <strong>solo vamos a utilizar esta plantilla para marcar la distribución de los agujeros superiores en el perímetro del tubo y no debemos hacer caso a las medidas que indica</strong>.</p>
-<img src="/2021/04/10/construccion-antena-qfh-137/plantilla.jpg" class="" title="Plantilla">
-
-<p>Las medidas (<strong>en milímetros</strong>) que usaremos son las siguientes (las dimensiones no están a escala):</p>
-<img src="/2021/04/10/construccion-antena-qfh-137/medidas_tubo.png" class="" title="Medidas tubo">
-
-
-<p>El siguiente paso será cortar y taladrar las pletinas de aluminio. Cortaremos dos pletinas por cada longitud usando el siguiente esquema:</p>
-<img src="/2021/04/10/construccion-antena-qfh-137/medidas_pletinas.png" class="" title="Medidas pletinas">
-
-<p>Por último, cortamos las varillas roscadas para obtener las siguientes piezas:</p>
-<table>
-<thead>
-<tr>
-<th align="center">Medidas (en mm)</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">300</td>
-<td>Varilla inferior para <em>loop</em> largo.</td>
-</tr>
-<tr>
-<td align="center">280</td>
-<td>Varilla inferior para <em>loop</em> corto.</td>
-</tr>
-<tr>
-<td align="center">155</td>
-<td>(2 unidades) Varilla superior para <em>loop</em> largo.</td>
-</tr>
-<tr>
-<td align="center">145</td>
-<td>(2 unidades) Varilla superior para <em>loop</em> corto.</td>
-</tr>
-</tbody></table>
-<img src="/2021/04/10/construccion-antena-qfh-137/piezas.jpg" class="" width="900" title="Piezas cortadas">
-
-<h3 id="Montaje"><a href="#Montaje" class="headerlink" title="Montaje"></a>Montaje</h3><p>Una vez tenemos las piezas preparadas, comenzamos el proceso de montaje empezando por las varillas roscadas.</p>
-<img src="/2021/04/10/construccion-antena-qfh-137/antena_varillas.jpg" class="" width="400" title="Antena con varillas colocadas">
-
-<p>El siguiente paso es colocar las pletinas, pero primero tendremos que darles la forma. La manera más sencilla de hacerlo es primero hacerles el arco y posteriormente hacerles el giro. Es conveniente dejarlas bien dobladas antes de colocarlas para que no apliquen tensión a las varillas.</p>
-<img src="/2021/04/10/construccion-antena-qfh-137/antena_pletinas.jpg" class="" width="400" title="Antena con pletinas colocadas">
-
-<p>A continuación vamos a colocar el cable coaxial. La longitud del cable será la que estimemos necesaria y el tipo de cable podemos usar cualquiera. Es recomendable usar un cable no muy grueso y de bajas pérdidas. En mi caso he usado un cable <em>Aircell-5</em>.</p>
-<p>Hacemos un agujero del mismo diámetro del cable en la parte superior del tubo por debajo de las varillas y pasamos el cable coaxial. Es recomendable que pasemos bastante cable para poder trabajar con comodidad.<br>Ahora necesitamos sacar dos conexiones desde el vivo del coaxial y otras dos desde la malla. Para ello yo he utilizado trozos de cable de cobre a los que he soldado una arandela, aunque lo recomendable es usar los terminales faston.</p>
-<img src="/2021/04/10/construccion-antena-qfh-137/conexiones.jpg" class="" width="600" title="Conexiones">
-
-<p>Ahora insertamos los terminales en las varillas conforme el siguiente esquema:</p>
-<img src="/2021/04/10/construccion-antena-qfh-137/conexiones_qfh.png" class="" width="400" title="Vista superior de la antena">
-
-<p>Siendo A y B los lados que conforma el <em>loop</em> largo y el <em>loop</em> corto C y D, conectaremos los terminales con el vivo del coaxial a las varillas A y C y los terminales con la malla a las varillas B y D.</p>
-<img src="/2021/04/10/construccion-antena-qfh-137/conexiones_interior.jpg" class="" width="500" title="Conexiones">
-
-<p>Una vez conectados, ajustamos el cable que queda dentro del tubo con cuidado y le damos 4 vueltas para hacer una <a href="https://es.wikipedia.org/wiki/Bobina_de_choque">bobina choque</a>. Aquí podemos hacer otro agujero y pasar el resto del cable por dentro de la antena, o bien podemos dejarlo por fuera.</p>
-<img src="/2021/04/10/construccion-antena-qfh-137/choque.jpg" class="" width="500" title="Choque">
-
-<p>Por último, colocamos el tapón al tubo y ponemos el conector que queramos al cable y ya tenemos lista nuestra antena a falta de ajustarla a la frecuencia exacta.</p>
-<h2 id="Ajuste-de-la-antena"><a href="#Ajuste-de-la-antena" class="headerlink" title="Ajuste de la antena"></a>Ajuste de la antena</h2><p>Para finalizar la construcción de nuestra antena, vamos a medirla usando un analizador de antenas <strong>NanoVNA</strong>. Si hemos seguido los pasos de esta guía y hemos usado las medidas indicadas, la antena debe resonar sobre los 135 MHz ya que las medidas de las varillas son un poco más largas para poder colocar las tuercas con facilidad. Para ajustar la antena a la frecuencia exacta debemos ajustar la distancia entre las pletinas de aluminio de la siguiente manera:</p>
-<ul>
-<li>Para el <em>loop</em> largo <strong>282 mm</strong>.</li>
-<li>Para el <em>loop</em> corto <strong>268 mm</strong>.</li>
-</ul>
-<p>Para la parte superior habrá que sumar a esta distancia la separación entre los conectores.</p>
-<p>Una vez ajustada, nos dará unos resultados similares a los siguientes:</p>
-<img src="/2021/04/10/construccion-antena-qfh-137/nanovna.jpg" class="" width="600" title="NanoVNA">
-]]></content>
-      <tags>
-        <tag>Antenas</tag>
-        <tag>QFH</tag>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
     <url>/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</url>
     <content><![CDATA[<p>En este artículo vamos a ver como instalar y configurar <a href="https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm">CSVUserlistBrowser</a> para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.</p>
@@ -582,6 +582,34 @@
 ]]></content>
       <tags>
         <tag>HF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalación de SDRPlay RSP2 en Debian Testing</title>
+    <url>/2021/04/05/instalacion-SDRPlay-RSP2-debian-testing/</url>
+    <content><![CDATA[<p>Esto son solo notas tomadas al vuelo mientras he instalado y probado la versión citada del driver/API de SDRPlay RSP2 en Debian Testing x64. Han sido realizadas en una máquina con el SO recién instalado y los paquetes <em>Soapy</em> mínimamente necesarios, aunque según el caso y la instalación pudieran ser necesarios otros más para cumplir dependencias.</p>
+<span id="more"></span>
+
+<p>Todos los paquetes Soapy para la mayoría de dispositivos SDR están incluidos en la distribución, a excepción de SDRPlay que hay que compilarlo según sus instrucciones. Previamente hay que instalar el paquete <strong>libsoapysdr-dev</strong>.<br>Si no se quiere, no es necesario instalar los módulos Soapy para el resto de dispositivos si no se van a usar.</p>
+<p>Primeramente, hay que descargar y ejecutar el driver/API (la más actual en este momento es la API 3.07) desde la web de sdrplay.com (Linux x86, distribución Other).<br>Se descarga un archivo <strong>.run</strong> al que hay que darle permisos con el comando <strong>chmod</strong> y se ejecuta. No es necesario hacerlo con <em>sudo</em> en un primer momento ya que tras la lectura y aprobación de la licencia, preguntará la contraseña si se da el caso.</p>
+<p>Tras la instalación, indica que para iniciar o parar el servicio de SDRPlay se hace con los respectivos comandos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start sdrplay</span><br><span class="line">sudo systemctl stop sdrplay</span><br></pre></td></tr></table></figure>
+
+<p>Es aconsejable aquí reiniciar el sistema para que dicho servicio arranque bien.</p>
+<p>Después, hay que compilar el soporte de SoapySDR para SDRPlay (SoapySDRPlay). Para ello es necesario, como se ha comentado al principio, instalar el paquete <strong>libsoapysdr-dev</strong>. Además necesitaremos el paquete <strong>cmake</strong>.<br>A continuación, nos descargamos el zip con el código fuente desde <a href="https://github.com/pothosware/SoapySDRPlay3/archive/refs/heads/master.zip">su repositorio en GitHub</a> (en mi caso he tenido problemas con “git clone” y similares ya que siempre pedía usuario y contraseña de GitHub y para esto no es necesario). Descomprimimos el paquete ZIP en un directorio y hacemos la siguiente secuencia de pasos:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
+
+<p>Comprobar si la compilación e instalación nos ha fallado o no, ya que pudiera ser necesaria la instalación de algún paquete adicional.</p>
+<p>Para comprobar que todo está bien, ejecutaremos los siguientes comandos:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SoapySDRUtil -info <span class="comment"># En los Available Factories nos debe aparecer, entre otros, SDRPlay.</span></span><br><span class="line">SoapySDRUtil --probe=<span class="string">&quot;driver=sdrplay&quot;</span> <span class="comment"># Para ver información más detallada del SDRPlay.</span></span><br></pre></td></tr></table></figure>
+
+<p>Por último, queda arrancar la aplicación SDR que pueda utilizar SoapySDR. Yo utilizo principalmente 2: CubicSDR y GQRX.<br>Para CubicSDR, observo últimamente que da problemas con el módulo para RFSpace al arrancar (yo no lo tengo, así que he desinstalado el paquete soapysdr0.7-module-rfspace). Si CubicSDR arranca bien, se deberá poder ver el dispositivo SDRPlay.</p>
+<p>Para GQRX, igual. Al arrancarlo debería encontrar el SDRPlay sin mayores problemas.</p>
+<p>Las aplicaciones de SDR que he probado son las que trae Debian Testing en sus repositorios que, a día de hoy son CubicSDR 0.2.5 y GQRX 2.14.4. También he probado el receptor DAB/DAB+ welle.io que viene en el repositorio.</p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>SDRPlay</tag>
       </tags>
   </entry>
   <entry>
@@ -668,37 +696,9 @@
 ]]></content>
       <tags>
         <tag>RTL-SDR</tag>
+        <tag>Linux</tag>
         <tag>OpenWebRX</tag>
         <tag>Raspberry Pi</tag>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de SDRPlay RSP2 en Debian Testing</title>
-    <url>/2021/04/05/instalacion-SDRPlay-RSP2-debian-testing/</url>
-    <content><![CDATA[<p>Esto son solo notas tomadas al vuelo mientras he instalado y probado la versión citada del driver/API de SDRPlay RSP2 en Debian Testing x64. Han sido realizadas en una máquina con el SO recién instalado y los paquetes <em>Soapy</em> mínimamente necesarios, aunque según el caso y la instalación pudieran ser necesarios otros más para cumplir dependencias.</p>
-<span id="more"></span>
-
-<p>Todos los paquetes Soapy para la mayoría de dispositivos SDR están incluidos en la distribución, a excepción de SDRPlay que hay que compilarlo según sus instrucciones. Previamente hay que instalar el paquete <strong>libsoapysdr-dev</strong>.<br>Si no se quiere, no es necesario instalar los módulos Soapy para el resto de dispositivos si no se van a usar.</p>
-<p>Primeramente, hay que descargar y ejecutar el driver/API (la más actual en este momento es la API 3.07) desde la web de sdrplay.com (Linux x86, distribución Other).<br>Se descarga un archivo <strong>.run</strong> al que hay que darle permisos con el comando <strong>chmod</strong> y se ejecuta. No es necesario hacerlo con <em>sudo</em> en un primer momento ya que tras la lectura y aprobación de la licencia, preguntará la contraseña si se da el caso.</p>
-<p>Tras la instalación, indica que para iniciar o parar el servicio de SDRPlay se hace con los respectivos comandos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start sdrplay</span><br><span class="line">sudo systemctl stop sdrplay</span><br></pre></td></tr></table></figure>
-
-<p>Es aconsejable aquí reiniciar el sistema para que dicho servicio arranque bien.</p>
-<p>Después, hay que compilar el soporte de SoapySDR para SDRPlay (SoapySDRPlay). Para ello es necesario, como se ha comentado al principio, instalar el paquete <strong>libsoapysdr-dev</strong>. Además necesitaremos el paquete <strong>cmake</strong>.<br>A continuación, nos descargamos el zip con el código fuente desde <a href="https://github.com/pothosware/SoapySDRPlay3/archive/refs/heads/master.zip">su repositorio en GitHub</a> (en mi caso he tenido problemas con “git clone” y similares ya que siempre pedía usuario y contraseña de GitHub y para esto no es necesario). Descomprimimos el paquete ZIP en un directorio y hacemos la siguiente secuencia de pasos:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
-
-<p>Comprobar si la compilación e instalación nos ha fallado o no, ya que pudiera ser necesaria la instalación de algún paquete adicional.</p>
-<p>Para comprobar que todo está bien, ejecutaremos los siguientes comandos:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SoapySDRUtil -info <span class="comment"># En los Available Factories nos debe aparecer, entre otros, SDRPlay.</span></span><br><span class="line">SoapySDRUtil --probe=<span class="string">&quot;driver=sdrplay&quot;</span> <span class="comment"># Para ver información más detallada del SDRPlay.</span></span><br></pre></td></tr></table></figure>
-
-<p>Por último, queda arrancar la aplicación SDR que pueda utilizar SoapySDR. Yo utilizo principalmente 2: CubicSDR y GQRX.<br>Para CubicSDR, observo últimamente que da problemas con el módulo para RFSpace al arrancar (yo no lo tengo, así que he desinstalado el paquete soapysdr0.7-module-rfspace). Si CubicSDR arranca bien, se deberá poder ver el dispositivo SDRPlay.</p>
-<p>Para GQRX, igual. Al arrancarlo debería encontrar el SDRPlay sin mayores problemas.</p>
-<p>Las aplicaciones de SDR que he probado son las que trae Debian Testing en sus repositorios que, a día de hoy son CubicSDR 0.2.5 y GQRX 2.14.4. También he probado el receptor DAB/DAB+ welle.io que viene en el repositorio.</p>
-]]></content>
-      <tags>
-        <tag>Linux</tag>
-        <tag>SDRPlay</tag>
       </tags>
   </entry>
   <entry>
@@ -739,50 +739,6 @@
         <tag>macOS</tag>
         <tag>CubicSDR</tag>
         <tag>Instalación</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de dispositivos RTL-SDR en Raspberry Pi</title>
-    <url>/2020/04/10/instalacion-rtlsdr-raspberrypi/</url>
-    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.</p>
-<span id="more"></span>
-
-<img src="/2020/04/10/instalacion-rtlsdr-raspberrypi/raspberry-pi-3.png" class="" title="Raspberry Pi 3">
-
-<p>Vamos a instalar los drivers y librerias necesarias para usar el dispositivo SDR. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install rtl-sdr librtlsdr-dev</span><br></pre></td></tr></table></figure>
-
-<p>Una vez instalado el dispositivo le daremos permisos a los usuarios no <em>root</em> para poder usar el dispositivo. Para ello seguiremos los siguientes pasos para crear una regla <em>udev</em>.</p>
-<ol>
-<li>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para obtener la lista de dispositivos USB conectados:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lsusb</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Buscamos en la lista el dispositivo SDR y nos fijamos en los identificadores de fabricante y de dispositivo. En este caso son <strong>0bda</strong> y <strong>2838</strong> respectivamente.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Bus 001 Device 004: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Ahora creamos un archivo de reglas nuevo:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;udev&#x2F;rules.d&#x2F;rtl-sdr.rules</span><br></pre></td></tr></table></figure>
-
-<p>Y añadimos la siguiente regla modificando los identificadores si fuese necesario para que correspondan con los obtenidos en el paso anterior:</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">SUBSYSTEMS==<span class="string">&quot;usb&quot;</span>, ATTRS&#123;idVendor&#125;==<span class="string">&quot;0bda&quot;</span>, ATTRS&#123;idProduct&#125;==<span class="string">&quot;2838&quot;</span>, MODE:=<span class="string">&quot;0666&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>Por último desconectamos el dispostivo SDR y lo volvemos a conectar para que se aplique la regla y ejecutamos el siguiente comando para comprobar que el dispositivo funciona correctamente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
-
-<p>Si todo está correctamente instalado veremos una salida como la siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 82020715</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Detached kernel driver</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br><span class="line">Allocating 15 zero-copy buffers</span><br><span class="line">lost at least 140 bytes</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>RTL-SDR</tag>
-        <tag>Raspberry Pi</tag>
-        <tag>Linux</tag>
-        <tag>Instalación</tag>
-        <tag>SDRSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -888,285 +844,47 @@
       </tags>
   </entry>
   <entry>
-    <title>Instalación de estación terrestre con SatNOGS</title>
-    <url>/2020/04/24/instalacion-satnogs/</url>
-    <content><![CDATA[<p><a href="https://satnogs.org/">SatNOGS</a> (Satellite Networked Open Ground Station) es una plataforma de software y hardware de código abierto con el propósito de crear una red global de estaciones terrestres de seguimiento de satélites.</p>
-<p>En este artículo veremos como instalar una estación terrestre para el seguimiento de satélites de forma desatendida. Para ello vamos a utilizar un dispositivo SDR y una Raspberry Pi con el software SatNOGS.</p>
+    <title>Instalación de dispositivos RTL-SDR en Raspberry Pi</title>
+    <url>/2020/04/10/instalacion-rtlsdr-raspberrypi/</url>
+    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.</p>
 <span id="more"></span>
 
-<h2 id="Registrar-nuestra-estacion-en-la-red"><a href="#Registrar-nuestra-estacion-en-la-red" class="headerlink" title="Registrar nuestra estación en la red"></a>Registrar nuestra estación en la red</h2><p>El primer paso será registrarnos en la red de SatNOGS para obtener nuestro identificador de estación y la <em>API key</em>.<br>Para ello vamos a la web de SatNOGS mediante el siguiente enlace:</p>
-<p><a href="https://network.satnogs.org/"><center>https://network.satnogs.org/</center></a></p>
-<p>Aquí podemos ver las estaciones conectadas a la red, a las que podemos acceder para programar y revisar pases.</p>
-<p>Para registrarnos, hacemos click en <em>Sign Up / Log In</em>.</p>
-<img src="/2020/04/24/instalacion-satnogs/satnogs_inicio.png" class="" width="900" title="SatNOGS">
+<img src="/2020/04/10/instalacion-rtlsdr-raspberrypi/raspberry-pi-3.png" class="" title="Raspberry Pi 3">
 
-<p>A continuación introducimos nuestro correo electrónico, nombre de usuario y una contraseña. Hacemos click en <em>SIGN UP</em>.</p>
-<img src="/2020/04/24/instalacion-satnogs/satnogs_registro.png" class="" title="SatNOGS Sign Up">
+<p>Vamos a instalar los drivers y librerias necesarias para usar el dispositivo SDR. Para ello ejecutamos el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install rtl-sdr librtlsdr-dev</span><br></pre></td></tr></table></figure>
 
-<p>Una vez registrados, vamos a crear una nueva estación. Para ello hacemos click en <em>Add Ground Station</em>.</p>
-<img src="/2020/04/24/instalacion-satnogs/satnogs_registrado.png" class="" width="900" title="Nueva estación SatNOGS">
-
-<p>Ahora introducimos los datos requeridos de nuestra estación.</p>
-<img src="/2020/04/24/instalacion-satnogs/satnogs_crear_groundstation.png" class="" width="900" title="Datos estación SatNOGS">
-
-<p>Cuando los tengamos correctamente introducidos, hacemos click en <strong><em>Submit</em></strong> para enviar los datos y registrar nuestra nueva estación.<br>Una vez registrada se nos mostrará una nueva página con los datos de la misma. Podemos ver que delante del nombre se nos ha asignado un identificador de estación (en este ejemplo el 1516) que debemos anotar para sucesivos pasos.</p>
-<p>Ahora vamos al panel de control (<em>dashboard</em>) haciendo click en el icono de la esquina superior derecha.</p>
-<img src="/2020/04/24/instalacion-satnogs/satnogs_groundstation_creada.png" class="" width="900" title="SatNOGS">
-
-<p>Hacemos click en <em>API Key</em> y copiamos nuestro token.</p>
-<img src="/2020/04/24/instalacion-satnogs/satnogs_api_key.png" class="" width="900" title="SatNOGS API Key">
-
-
-<h2 id="Descargar-imagen-de-SatNOGS-para-Raspberry-Pi"><a href="#Descargar-imagen-de-SatNOGS-para-Raspberry-Pi" class="headerlink" title="Descargar imagen de SatNOGS para Raspberry Pi"></a>Descargar imagen de SatNOGS para Raspberry Pi</h2><p>Vamos ahora a preparar la Raspberry Pi. Para ello vamos a instalar la imagen que hay creada del cliente de SatNOGS y que podemos descargar desde la siguiente página:</p>
-<p><a href="https://gitlab.com/librespacefoundation/satnogs/satnogs-pi-gen/-/tags"><center>https://gitlab.com/librespacefoundation/satnogs/satnogs-pi-gen/-/tags</center></a></p>
-<p>Aquí descargamos la última versión disponible.</p>
-<img src="/2020/04/24/instalacion-satnogs/descarga_imagen.png" class="" width="900" title="Descarga imagen SatNOGS">
-
-<p>Una vez descargado el archivo, extraemos la imagen y la grabamos en la tarjeta SD con el programa que tengamos para ello. En este ejemplo se ha usado <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a>.</p>
-<img src="/2020/04/24/instalacion-satnogs/grabar_imagen.png" class="" title="Win32 Disk Imager">
-
-
-<h2 id="Configuracion-de-Raspberry-Pi"><a href="#Configuracion-de-Raspberry-Pi" class="headerlink" title="Configuración de Raspberry Pi"></a>Configuración de Raspberry Pi</h2><p>Ahora vamos a configurar algunos aspectos esenciales en nuestra Raspberry Pi.</p>
-<p>Una vez que tengamos la Raspberry Pi iniciada, accedemos a ella mediante SSH (usuario <strong>“pi”</strong> y clave <strong>“raspberry”</strong>) y ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
-
-<p>Se nos muestra en pantalla el menú de la herramienta de configuración de la Raspberry Pi.</p>
-<img src="/2020/04/24/instalacion-satnogs/raspi-config.png" class="" title="Configuración de Raspberry Pi">
-
-<p>Los ajustes básicos que debemos llevar a cabo son:</p>
-<ul>
-<li>Cambiar la clave por defecto.</li>
-<li>Configurar la zona horaria a UTC. En <em>Localisation Options</em>, <em>Change Timezone</em>, <em>None of the above</em>, <em>UTC</em>.</li>
-<li>Expandir el sistema de archivos. En <em>Advanced Options</em>, primera opción:</li>
-</ul>
-<img src="/2020/04/24/instalacion-satnogs/raspi-config_advanced.png" class="" title="Configuración de Raspberry Pi">
-
-<p>Por último, reiniciamos la Raspberry Pi para que se apliquen los cambios.</p>
-<h2 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h2><p>Turno ahora de configurar el cliente SatNOGS. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo satnogs-setup</span><br></pre></td></tr></table></figure>
-
-<p>Se mostrará el menú principal de opciones:</p>
-<img src="/2020/04/24/instalacion-satnogs/satnogs-setup.png" class="" title="SatNOGS Setup">
-
-<p>Lo primero es actualizar la propia herramienta de configuración desde <em>Update configuration tool</em>.<br>Esta operación tardará unos minutos y nos pedirá confirmación para descargar algunos paquetes. Al finalizar nos mostrará la siguiente ventana para indicar que servicios queremos reiniciar. Debemos darle a <em>Ok</em>.</p>
-<img src="/2020/04/24/instalacion-satnogs/satnogs-setup_restart.png" class="" title="SatNOGS Setup">
-
-<p>Volvemos ahora al menú principal y vamos a <strong><em>Basic configuration options</em></strong>. Aquí vamos a introducir los datos de nuestra estación:</p>
-<table>
-<thead>
-<tr>
-<th>Ajuste</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>SATNOGS_API_TOKEN</td>
-<td>API key obtenida anteriormente.</td>
-</tr>
-<tr>
-<td>SATNOGS_SOAPY_RX_DEVICE</td>
-<td>Dispositivo SDR que vamos a usar.<br>Para el RTL-SDR introducimos <code>driver=rtlsdr</code>.<br>Para otros dispositivos consultar en <a href="https://github.com/pothosware/SoapyRTLSDR/wiki">https://github.com/pothosware/SoapyRTLSDR/wiki</a> (apartado <em>Modules</em>).</td>
-</tr>
-<tr>
-<td>SATNOGS_ANTENNA</td>
-<td>Para el RTL-SDR introducimos <code>RX</code>.<br>Para otros dispositivos debemos consultar el valor usando el comando <code>SoapySDRUtil --probe 2&gt;&amp;1 | grep Antennas</code>.</td>
-</tr>
-<tr>
-<td>SATNOGS_RX_SAMP_RATE</td>
-<td><em>Sample rate</em> del dispositivo.<br>Para el RTL-SDR introducimos <code>2.048e6</code>.</td>
-</tr>
-<tr>
-<td>SATNOGS_STATION_ELEV</td>
-<td>Altitud de nuestra estación.</td>
-</tr>
-<tr>
-<td>SATNOGS_STATION_ID</td>
-<td>Identificador de nuestra estación obtenido anteriormente.</td>
-</tr>
-<tr>
-<td>SATNOGS_STATION_LAT</td>
-<td>Latitud de nuestra estación.</td>
-</tr>
-<tr>
-<td>SATNOGS_STATION_LON</td>
-<td>Longitud de nuestra estación.</td>
-</tr>
-</tbody></table>
-<img src="/2020/04/24/instalacion-satnogs/satnogs-setup_basic.png" class="" title="SatNOGS Setup">
-
-<p>Volvemos al menú principal y vamos ahora a <strong><em>Advanced</em></strong> y <strong><em>Radio Settings</em></strong>. Aquí vamos a introducir los siguientes ajustes:</p>
-<table>
-<thead>
-<tr>
-<th>Ajuste</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>SATNOGS_PPM_ERROR</td>
-<td>Valor de correción de frecuencia del dispositivo.</td>
-</tr>
-<tr>
-<td>SATNOGS_RF_GAIN</td>
-<td>Ganancia del dispositivo. Para el RTL-SDR introducimos cualquier valor de ganancia soportado: <code>0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</code></td>
-</tr>
-</tbody></table>
-<img src="/2020/04/24/instalacion-satnogs/satnogs-setup_advanced_radio.png" class="" title="SatNOGS Setup">
-
-<p>Volvemos al menú principal y le damos a <strong><em>Apply</em></strong> para que se apliquen los ajustes. Cuando se termine de configurar podemos comprobar si se ha iniciado correctamente con:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl status satnogs-client</span><br></pre></td></tr></table></figure>
-
-<p>Si todo ha ido bien tendremos la siguiente salida:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● satnogs-client.service - SatNOGS client</span><br><span class="line">   Loaded: loaded (&#x2F;etc&#x2F;systemd&#x2F;system&#x2F;satnogs-client.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Fri 2020-04-23 19:33:57 UTC; 26min ago</span><br><span class="line"> Main PID: 27871 (satnogs-client)</span><br><span class="line">    Tasks: 22 (limit: 2200)</span><br><span class="line">   Memory: 55.7M</span><br><span class="line">   CGroup: &#x2F;system.slice&#x2F;satnogs-client.service</span><br><span class="line">           └─27871 &#x2F;var&#x2F;lib&#x2F;satnogs&#x2F;bin&#x2F;python3 &#x2F;var&#x2F;lib&#x2F;satnogs&#x2F;bin&#x2F;satnogs-client</span><br></pre></td></tr></table></figure>
-
-<h2 id="Programar-seguimientos-en-SatNOGS"><a href="#Programar-seguimientos-en-SatNOGS" class="headerlink" title="Programar seguimientos en SatNOGS"></a>Programar seguimientos en SatNOGS</h2><p>Con nuestra Raspberry Pi finalmente configurada, es el momento de comprobar que todo funciona correctamente y podemos realizar el seguimiento de satélites.</p>
-<p>Para programar un pase debemos hacerlo desde el panel de control de SatNOGS. Nuestra Raspberry Pi se comunicará con la red de SatNOGS, realizará los seguimientos que le indiquemos y subirá los datos a la misma.</p>
-<p>Tenemos dos formas de programar un seguimiento. La primera de ellas es calculando todos los pases de todos los satélites que pasarán por nuestra estación en las siguientes horas. Para ello vamos a nuestro panel de control, hacemos click en nuestra estación y le damos a <strong><em>Calculate Future Passes</em></strong>.</p>
-<img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase.png" class="" title="SatNOGS Nuevo pase">
-
-<p>Aparecen ahora los siguientes pases. Seleccionamos el deseado haciendo click en <strong><em>schedule</em></strong>.</p>
-<img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_2.png" class="" title="SatNOGS Nuevo pase">
-
-<p>Comprobamos los datos de la observación y hacemos click en <strong><em>Schedule</em></strong>.</p>
-<img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_3.png" class="" title="SatNOGS Nuevo pase">
-
-<p>La segunda forma de programar un pase es desde el panel del control. Aquí hacemos click en <strong><em>New Observation</em></strong>.</p>
-<img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_sat.png" class="" title="SatNOGS Nuevo pase">
-
-<p>Seleccionamos el satélite que queremos seguir e indicamos un intervalos de tiempo. Después hacemos click en <strong><em>Calculate</em></strong> para calcular los pases. Por último seleccionamos el pase que nos interese y hacemos click en <strong><em>Schedule</em></strong>.</p>
-<img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_sat_2.png" class="" title="SatNOGS Nuevo pase">
-
-<p>Cuando se completen los pases que hemos programado, podemos ver el <em>“waterfall”</em> del pase, el audio y los datos o imágenes obtenidas.</p>
-<h2 id="Utilizacion-de-LNA"><a href="#Utilizacion-de-LNA" class="headerlink" title="Utilización de LNA"></a>Utilización de LNA</h2><p>Incorporar un LNA a nuestra estación nos ayudará a mejorar la recepción de los satélites. Si disponemos de un LNA con alimentación mediante Bias-T y utilizamos un dispositivo SDR como el RTL-SDR V3, tendremos que activar la alimentación del mismo.</p>
-<p>A continuación veremos como hacer que SatNOGS active de forma automática el Bias-T de nuestro RTL-SDR cuando vaya a recibir un pase y lo desactive al finalizar.</p>
-<p>Necesitamos instalar la utilidad <code>rtl_biast</code> que será la encargada de activar y desactivar el Bias-T del dispositivo SDR. Para ello accedemos por SSH a la Raspberry Pi y realizamos los siguientes pasos:</p>
+<p>Una vez instalado el dispositivo le daremos permisos a los usuarios no <em>root</em> para poder usar el dispositivo. Para ello seguiremos los siguientes pasos para crear una regla <em>udev</em>.</p>
 <ol>
-<li>Descargar el código fuente.</li>
+<li>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para obtener la lista de dispositivos USB conectados:</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;rtlsdrblog&#x2F;rtl_biast.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lsusb</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>Instalar las dependencias necesarias para compilar.</li>
+<li>Buscamos en la lista el dispositivo SDR y nos fijamos en los identificadores de fabricante y de dispositivo. En este caso son <strong>0bda</strong> y <strong>2838</strong> respectivamente.</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install cmake libusb-1.0-0-dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Bus 001 Device 004: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>Accedemos a la carpeta descargada.</li>
+<li>Ahora creamos un archivo de reglas nuevo:</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd rtl_biast</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;udev&#x2F;rules.d&#x2F;rtl-sdr.rules</span><br></pre></td></tr></table></figure>
 
-<ol start="4">
-<li>Generamos el <em>makefile</em>.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cmake .</span><br></pre></td></tr></table></figure>
+<p>Y añadimos la siguiente regla modificando los identificadores si fuese necesario para que correspondan con los obtenidos en el paso anterior:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">SUBSYSTEMS==<span class="string">&quot;usb&quot;</span>, ATTRS&#123;idVendor&#125;==<span class="string">&quot;0bda&quot;</span>, ATTRS&#123;idProduct&#125;==<span class="string">&quot;2838&quot;</span>, MODE:=<span class="string">&quot;0666&quot;</span></span><br></pre></td></tr></table></figure>
 
-<ol start="5">
-<li>Compilamos.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>Por último desconectamos el dispostivo SDR y lo volvemos a conectar para que se aplique la regla y ejecutamos el siguiente comando para comprobar que el dispositivo funciona correctamente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
 
-<ol start="6">
-<li>Copiamos el binario compilado a <code>/usr/bin</code>.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo cp src&#x2F;rtl_biast &#x2F;usr&#x2F;bin</span><br></pre></td></tr></table></figure>
-
-<p>Por último, nos aseguramos de que funciona correctamente ejecutando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_biast</span><br></pre></td></tr></table></figure>
-
-<p>Debemos obtener una salida como la siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Found Rafael Micro R820T tuner</span><br></pre></td></tr></table></figure>
-
-<p>Ahora vamos a configurar el cliente SatNOGS para que active y desactive el Bias-T de forma automática.</p>
-<p>Accedemos al menú de configuración mediante:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo satnogs-setup</span><br></pre></td></tr></table></figure>
-
-<p>Vamos a <strong><em>Advanced</em></strong> y <strong><em>Pre/post observation scripts</em></strong> y establecemos los siguientes ajustes:</p>
-<table>
-<thead>
-<tr>
-<th>Ajuste</th>
-<th>Valor</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>SATNOGS_PRE_OBSERVATION_SCRIPT</td>
-<td><code>/usr/bin/rtl_biast -b 1</code></td>
-</tr>
-<tr>
-<td>SATNOGS_POST_OBSERVATION_SCRIPT</td>
-<td><code>/usr/bin/rtl_biast -b 0</code></td>
-</tr>
-</tbody></table>
-<p>Para finalizar volvemos al menú principal y le damos a <strong><em>Apply</em></strong> para que se apliquen los ajustes.</p>
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Raspberry Pi</tag>
-        <tag>Instalación</tag>
-        <tag>SatNOGS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de SPY Server en Raspberry Pi</title>
-    <url>/2020/04/11/instalacion-spyserver-raspberrypi/</url>
-    <content><![CDATA[<p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos como instalar SPY Server en una Raspberry Pi.</p>
-<span id="more"></span>
-
-<p>Para usar SPY Server en nuestra Raspberry Pi <strong>necesitamos en primer lugar tener instalado el dispositivo SDR</strong>. Si nuestro dispositivo es un RTL-SDR debemos seguir los pasos descritos en el artículo <a href="https://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
-<h2 id="Instalar-SPY-Server"><a href="#Instalar-SPY-Server" class="headerlink" title="Instalar SPY Server"></a>Instalar SPY Server</h2><p>SPY Server está disponible ya compilado para procesadores ARM de 32 bits, por lo que bastaría con descargarlo a nuestra Raspberry Pi para que funcione.</p>
-<p>Lo primero que haremos será crear un directorio nuevo para los archivos de SPY Server:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir SPY_Server &amp;&amp; cd $_</span><br></pre></td></tr></table></figure>
-
-<p>Descargamos SPY Server usando el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;airspy.com&#x2F;downloads&#x2F;spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
-
-<p>Extraemos el contenido:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar -xzf spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
-
-<p>SPY Server funciona correctamente con los valores por defecto. También detecta el dispositivo SDR de forma automática y selecciona el primero disponible. Si necesitamos realizar algún ajuste debemos editar el archivo <strong>spyserver.config</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano spyserver.config</span><br></pre></td></tr></table></figure>
-
-<p>Por último ejecutamos SPY Server:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;spyserver spyserver.config</span><br></pre></td></tr></table></figure>
-
-<p>Si todo ha ido bien, nos mostrará una salida como la siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SPY Server v2.0.1700</span><br><span class="line">Copyright (C) 2016-2018 Youssef Touil - https:&#x2F;&#x2F;airspy.com</span><br><span class="line">Reading the configuration file: spyserver.config</span><br><span class="line">Listening for connections on 0.0.0.0:5555</span><br></pre></td></tr></table></figure>
-
-
-<p>Necesitamos que SPY Server funcione de forma autónoma en la Raspberry Pi y que se inicie de forma automática cuando esta se reinicie. Para ello vamos a lanzar SPY Server como un servicio.</p>
-<p>Lo primero será crear un archivo <em>unit</em> con la información del servicio:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service</span><br></pre></td></tr></table></figure>
-
-<p>El contenido del archivo será el siguiente (modificar las rutas si es necesario):</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;SPY Server</span><br><span class="line">After&#x3D;network.target</span><br><span class="line">StartLimitIntervalSec&#x3D;0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">Restart&#x3D;always</span><br><span class="line">RestartSec&#x3D;1</span><br><span class="line">User&#x3D;pi</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server</span><br><span class="line">ExecStart&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver spyserver.config</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
-
-<p>Ahora vamos a cargar el servicio en el arranque mediante el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable spyserver</span><br></pre></td></tr></table></figure>
-
-<p>Por último iniciamos el servicio:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start spyserver</span><br></pre></td></tr></table></figure>
-
-<p>Para consultar el estado del servicio ejecutamos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl status spyserver</span><br></pre></td></tr></table></figure>
-
-<p>Si todo está correcto tendremos la siguiente salida:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● spyserver.service - SPY Server</span><br><span class="line">   Loaded: loaded (&#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Fri 2020-04-10 21:45:26 CEST; 13s ago</span><br><span class="line"> Main PID: 20788 (spyserver)</span><br><span class="line">    Tasks: 2 (limit: 2200)</span><br><span class="line">   Memory: 252.0K</span><br><span class="line">   CGroup: &#x2F;system.slice&#x2F;spyserver.service</span><br><span class="line">           └─20788 &#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver</span><br><span class="line"></span><br><span class="line">Apr 10 21:45:26 raspberrypi systemd[1]: Started SPY Server.</span><br></pre></td></tr></table></figure>
-
-<h2 id="Conectar-SDR-a-SPY-Server"><a href="#Conectar-SDR-a-SPY-Server" class="headerlink" title="Conectar SDR# a SPY Server"></a>Conectar SDR# a SPY Server</h2><p>El último paso será conectarnos a nuestro servidor desde SDR#. Para ello seleccionamos <strong>SPY Server Network</strong> en el desplegable de seleción de fuentes e introducimos la dirección IP del servidor de la siguiente forma:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdr:&#x2F;&#x2F;IP_RASPBERRY:5555</span><br></pre></td></tr></table></figure>
-<br>
-<img src="/2020/04/11/instalacion-spyserver-raspberrypi/conectar.png" class="" title="Conexión">
-
-<p>Por último hacemos click en la <strong>C</strong> para conectarnos.</p>
-<img src="/2020/04/11/instalacion-spyserver-raspberrypi/sdr_sharp.png" class="" width="900" title="SDR#">
+<p>Si todo está correctamente instalado veremos una salida como la siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 82020715</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Detached kernel driver</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br><span class="line">Allocating 15 zero-copy buffers</span><br><span class="line">lost at least 140 bytes</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>RTL-SDR</tag>
-        <tag>Raspberry Pi</tag>
         <tag>Linux</tag>
+        <tag>Raspberry Pi</tag>
         <tag>Instalación</tag>
         <tag>SDRSharp</tag>
-        <tag>SPY Server</tag>
       </tags>
   </entry>
   <entry>
@@ -1265,10 +983,73 @@
 ]]></content>
       <tags>
         <tag>Satélites</tag>
-        <tag>Raspberry Pi</tag>
         <tag>Linux</tag>
+        <tag>Raspberry Pi</tag>
         <tag>Instalación</tag>
         <tag>SatNOGS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalación de SPY Server en Raspberry Pi</title>
+    <url>/2020/04/11/instalacion-spyserver-raspberrypi/</url>
+    <content><![CDATA[<p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos como instalar SPY Server en una Raspberry Pi.</p>
+<span id="more"></span>
+
+<p>Para usar SPY Server en nuestra Raspberry Pi <strong>necesitamos en primer lugar tener instalado el dispositivo SDR</strong>. Si nuestro dispositivo es un RTL-SDR debemos seguir los pasos descritos en el artículo <a href="https://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
+<h2 id="Instalar-SPY-Server"><a href="#Instalar-SPY-Server" class="headerlink" title="Instalar SPY Server"></a>Instalar SPY Server</h2><p>SPY Server está disponible ya compilado para procesadores ARM de 32 bits, por lo que bastaría con descargarlo a nuestra Raspberry Pi para que funcione.</p>
+<p>Lo primero que haremos será crear un directorio nuevo para los archivos de SPY Server:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir SPY_Server &amp;&amp; cd $_</span><br></pre></td></tr></table></figure>
+
+<p>Descargamos SPY Server usando el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;airspy.com&#x2F;downloads&#x2F;spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
+
+<p>Extraemos el contenido:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar -xzf spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
+
+<p>SPY Server funciona correctamente con los valores por defecto. También detecta el dispositivo SDR de forma automática y selecciona el primero disponible. Si necesitamos realizar algún ajuste debemos editar el archivo <strong>spyserver.config</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano spyserver.config</span><br></pre></td></tr></table></figure>
+
+<p>Por último ejecutamos SPY Server:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;spyserver spyserver.config</span><br></pre></td></tr></table></figure>
+
+<p>Si todo ha ido bien, nos mostrará una salida como la siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SPY Server v2.0.1700</span><br><span class="line">Copyright (C) 2016-2018 Youssef Touil - https:&#x2F;&#x2F;airspy.com</span><br><span class="line">Reading the configuration file: spyserver.config</span><br><span class="line">Listening for connections on 0.0.0.0:5555</span><br></pre></td></tr></table></figure>
+
+
+<p>Necesitamos que SPY Server funcione de forma autónoma en la Raspberry Pi y que se inicie de forma automática cuando esta se reinicie. Para ello vamos a lanzar SPY Server como un servicio.</p>
+<p>Lo primero será crear un archivo <em>unit</em> con la información del servicio:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service</span><br></pre></td></tr></table></figure>
+
+<p>El contenido del archivo será el siguiente (modificar las rutas si es necesario):</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;SPY Server</span><br><span class="line">After&#x3D;network.target</span><br><span class="line">StartLimitIntervalSec&#x3D;0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">Restart&#x3D;always</span><br><span class="line">RestartSec&#x3D;1</span><br><span class="line">User&#x3D;pi</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server</span><br><span class="line">ExecStart&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver spyserver.config</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>Ahora vamos a cargar el servicio en el arranque mediante el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable spyserver</span><br></pre></td></tr></table></figure>
+
+<p>Por último iniciamos el servicio:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start spyserver</span><br></pre></td></tr></table></figure>
+
+<p>Para consultar el estado del servicio ejecutamos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl status spyserver</span><br></pre></td></tr></table></figure>
+
+<p>Si todo está correcto tendremos la siguiente salida:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● spyserver.service - SPY Server</span><br><span class="line">   Loaded: loaded (&#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Fri 2020-04-10 21:45:26 CEST; 13s ago</span><br><span class="line"> Main PID: 20788 (spyserver)</span><br><span class="line">    Tasks: 2 (limit: 2200)</span><br><span class="line">   Memory: 252.0K</span><br><span class="line">   CGroup: &#x2F;system.slice&#x2F;spyserver.service</span><br><span class="line">           └─20788 &#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver</span><br><span class="line"></span><br><span class="line">Apr 10 21:45:26 raspberrypi systemd[1]: Started SPY Server.</span><br></pre></td></tr></table></figure>
+
+<h2 id="Conectar-SDR-a-SPY-Server"><a href="#Conectar-SDR-a-SPY-Server" class="headerlink" title="Conectar SDR# a SPY Server"></a>Conectar SDR# a SPY Server</h2><p>El último paso será conectarnos a nuestro servidor desde SDR#. Para ello seleccionamos <strong>SPY Server Network</strong> en el desplegable de seleción de fuentes e introducimos la dirección IP del servidor de la siguiente forma:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdr:&#x2F;&#x2F;IP_RASPBERRY:5555</span><br></pre></td></tr></table></figure>
+<br>
+<img src="/2020/04/11/instalacion-spyserver-raspberrypi/conectar.png" class="" title="Conexión">
+
+<p>Por último hacemos click en la <strong>C</strong> para conectarnos.</p>
+<img src="/2020/04/11/instalacion-spyserver-raspberrypi/sdr_sharp.png" class="" width="900" title="SDR#">
+]]></content>
+      <tags>
+        <tag>RTL-SDR</tag>
+        <tag>Linux</tag>
+        <tag>Raspberry Pi</tag>
+        <tag>Instalación</tag>
+        <tag>SDRSharp</tag>
+        <tag>SPY Server</tag>
       </tags>
   </entry>
   <entry>
@@ -1497,6 +1278,291 @@
       </tags>
   </entry>
   <entry>
+    <title>Recepción de datos del instrumental HIRS de los satélites NOAA</title>
+    <url>/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</url>
+    <content><![CDATA[<p>Como vimos en el artículo <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
+<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
+<span id="more"></span>
+
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>Frecuencia</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NOAA 15</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 18</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 19</td>
+<td>137.770 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
+<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
+<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
+<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
+<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
+
+
+<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
+<p>Una vez descargado, extraemos el contenido del archivo.</p>
+<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
+
+<p>Para demodular el archivo basta con hacer click encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
+<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre _<strong>minorFrames_xxxx.txt</strong>_.</p>
+<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
+<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
+<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
+<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
+<p>Ahora le pasamos el archivo _<strong>minorFrames_xxxx.txt</strong>_ como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar).</p>
+<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio <em>output/minorFrames_xxxx</em>.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
+
+<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalación de estación terrestre con SatNOGS</title>
+    <url>/2020/04/24/instalacion-satnogs/</url>
+    <content><![CDATA[<p><a href="https://satnogs.org/">SatNOGS</a> (Satellite Networked Open Ground Station) es una plataforma de software y hardware de código abierto con el propósito de crear una red global de estaciones terrestres de seguimiento de satélites.</p>
+<p>En este artículo veremos como instalar una estación terrestre para el seguimiento de satélites de forma desatendida. Para ello vamos a utilizar un dispositivo SDR y una Raspberry Pi con el software SatNOGS.</p>
+<span id="more"></span>
+
+<h2 id="Registrar-nuestra-estacion-en-la-red"><a href="#Registrar-nuestra-estacion-en-la-red" class="headerlink" title="Registrar nuestra estación en la red"></a>Registrar nuestra estación en la red</h2><p>El primer paso será registrarnos en la red de SatNOGS para obtener nuestro identificador de estación y la <em>API key</em>.<br>Para ello vamos a la web de SatNOGS mediante el siguiente enlace:</p>
+<p><a href="https://network.satnogs.org/"><center>https://network.satnogs.org/</center></a></p>
+<p>Aquí podemos ver las estaciones conectadas a la red, a las que podemos acceder para programar y revisar pases.</p>
+<p>Para registrarnos, hacemos click en <em>Sign Up / Log In</em>.</p>
+<img src="/2020/04/24/instalacion-satnogs/satnogs_inicio.png" class="" width="900" title="SatNOGS">
+
+<p>A continuación introducimos nuestro correo electrónico, nombre de usuario y una contraseña. Hacemos click en <em>SIGN UP</em>.</p>
+<img src="/2020/04/24/instalacion-satnogs/satnogs_registro.png" class="" title="SatNOGS Sign Up">
+
+<p>Una vez registrados, vamos a crear una nueva estación. Para ello hacemos click en <em>Add Ground Station</em>.</p>
+<img src="/2020/04/24/instalacion-satnogs/satnogs_registrado.png" class="" width="900" title="Nueva estación SatNOGS">
+
+<p>Ahora introducimos los datos requeridos de nuestra estación.</p>
+<img src="/2020/04/24/instalacion-satnogs/satnogs_crear_groundstation.png" class="" width="900" title="Datos estación SatNOGS">
+
+<p>Cuando los tengamos correctamente introducidos, hacemos click en <strong><em>Submit</em></strong> para enviar los datos y registrar nuestra nueva estación.<br>Una vez registrada se nos mostrará una nueva página con los datos de la misma. Podemos ver que delante del nombre se nos ha asignado un identificador de estación (en este ejemplo el 1516) que debemos anotar para sucesivos pasos.</p>
+<p>Ahora vamos al panel de control (<em>dashboard</em>) haciendo click en el icono de la esquina superior derecha.</p>
+<img src="/2020/04/24/instalacion-satnogs/satnogs_groundstation_creada.png" class="" width="900" title="SatNOGS">
+
+<p>Hacemos click en <em>API Key</em> y copiamos nuestro token.</p>
+<img src="/2020/04/24/instalacion-satnogs/satnogs_api_key.png" class="" width="900" title="SatNOGS API Key">
+
+
+<h2 id="Descargar-imagen-de-SatNOGS-para-Raspberry-Pi"><a href="#Descargar-imagen-de-SatNOGS-para-Raspberry-Pi" class="headerlink" title="Descargar imagen de SatNOGS para Raspberry Pi"></a>Descargar imagen de SatNOGS para Raspberry Pi</h2><p>Vamos ahora a preparar la Raspberry Pi. Para ello vamos a instalar la imagen que hay creada del cliente de SatNOGS y que podemos descargar desde la siguiente página:</p>
+<p><a href="https://gitlab.com/librespacefoundation/satnogs/satnogs-pi-gen/-/tags"><center>https://gitlab.com/librespacefoundation/satnogs/satnogs-pi-gen/-/tags</center></a></p>
+<p>Aquí descargamos la última versión disponible.</p>
+<img src="/2020/04/24/instalacion-satnogs/descarga_imagen.png" class="" width="900" title="Descarga imagen SatNOGS">
+
+<p>Una vez descargado el archivo, extraemos la imagen y la grabamos en la tarjeta SD con el programa que tengamos para ello. En este ejemplo se ha usado <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a>.</p>
+<img src="/2020/04/24/instalacion-satnogs/grabar_imagen.png" class="" title="Win32 Disk Imager">
+
+
+<h2 id="Configuracion-de-Raspberry-Pi"><a href="#Configuracion-de-Raspberry-Pi" class="headerlink" title="Configuración de Raspberry Pi"></a>Configuración de Raspberry Pi</h2><p>Ahora vamos a configurar algunos aspectos esenciales en nuestra Raspberry Pi.</p>
+<p>Una vez que tengamos la Raspberry Pi iniciada, accedemos a ella mediante SSH (usuario <strong>“pi”</strong> y clave <strong>“raspberry”</strong>) y ejecutamos el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
+
+<p>Se nos muestra en pantalla el menú de la herramienta de configuración de la Raspberry Pi.</p>
+<img src="/2020/04/24/instalacion-satnogs/raspi-config.png" class="" title="Configuración de Raspberry Pi">
+
+<p>Los ajustes básicos que debemos llevar a cabo son:</p>
+<ul>
+<li>Cambiar la clave por defecto.</li>
+<li>Configurar la zona horaria a UTC. En <em>Localisation Options</em>, <em>Change Timezone</em>, <em>None of the above</em>, <em>UTC</em>.</li>
+<li>Expandir el sistema de archivos. En <em>Advanced Options</em>, primera opción:</li>
+</ul>
+<img src="/2020/04/24/instalacion-satnogs/raspi-config_advanced.png" class="" title="Configuración de Raspberry Pi">
+
+<p>Por último, reiniciamos la Raspberry Pi para que se apliquen los cambios.</p>
+<h2 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h2><p>Turno ahora de configurar el cliente SatNOGS. Para ello ejecutamos el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo satnogs-setup</span><br></pre></td></tr></table></figure>
+
+<p>Se mostrará el menú principal de opciones:</p>
+<img src="/2020/04/24/instalacion-satnogs/satnogs-setup.png" class="" title="SatNOGS Setup">
+
+<p>Lo primero es actualizar la propia herramienta de configuración desde <em>Update configuration tool</em>.<br>Esta operación tardará unos minutos y nos pedirá confirmación para descargar algunos paquetes. Al finalizar nos mostrará la siguiente ventana para indicar que servicios queremos reiniciar. Debemos darle a <em>Ok</em>.</p>
+<img src="/2020/04/24/instalacion-satnogs/satnogs-setup_restart.png" class="" title="SatNOGS Setup">
+
+<p>Volvemos ahora al menú principal y vamos a <strong><em>Basic configuration options</em></strong>. Aquí vamos a introducir los datos de nuestra estación:</p>
+<table>
+<thead>
+<tr>
+<th>Ajuste</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SATNOGS_API_TOKEN</td>
+<td>API key obtenida anteriormente.</td>
+</tr>
+<tr>
+<td>SATNOGS_SOAPY_RX_DEVICE</td>
+<td>Dispositivo SDR que vamos a usar.<br>Para el RTL-SDR introducimos <code>driver=rtlsdr</code>.<br>Para otros dispositivos consultar en <a href="https://github.com/pothosware/SoapyRTLSDR/wiki">https://github.com/pothosware/SoapyRTLSDR/wiki</a> (apartado <em>Modules</em>).</td>
+</tr>
+<tr>
+<td>SATNOGS_ANTENNA</td>
+<td>Para el RTL-SDR introducimos <code>RX</code>.<br>Para otros dispositivos debemos consultar el valor usando el comando <code>SoapySDRUtil --probe 2&gt;&amp;1 | grep Antennas</code>.</td>
+</tr>
+<tr>
+<td>SATNOGS_RX_SAMP_RATE</td>
+<td><em>Sample rate</em> del dispositivo.<br>Para el RTL-SDR introducimos <code>2.048e6</code>.</td>
+</tr>
+<tr>
+<td>SATNOGS_STATION_ELEV</td>
+<td>Altitud de nuestra estación.</td>
+</tr>
+<tr>
+<td>SATNOGS_STATION_ID</td>
+<td>Identificador de nuestra estación obtenido anteriormente.</td>
+</tr>
+<tr>
+<td>SATNOGS_STATION_LAT</td>
+<td>Latitud de nuestra estación.</td>
+</tr>
+<tr>
+<td>SATNOGS_STATION_LON</td>
+<td>Longitud de nuestra estación.</td>
+</tr>
+</tbody></table>
+<img src="/2020/04/24/instalacion-satnogs/satnogs-setup_basic.png" class="" title="SatNOGS Setup">
+
+<p>Volvemos al menú principal y vamos ahora a <strong><em>Advanced</em></strong> y <strong><em>Radio Settings</em></strong>. Aquí vamos a introducir los siguientes ajustes:</p>
+<table>
+<thead>
+<tr>
+<th>Ajuste</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SATNOGS_PPM_ERROR</td>
+<td>Valor de correción de frecuencia del dispositivo.</td>
+</tr>
+<tr>
+<td>SATNOGS_RF_GAIN</td>
+<td>Ganancia del dispositivo. Para el RTL-SDR introducimos cualquier valor de ganancia soportado: <code>0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</code></td>
+</tr>
+</tbody></table>
+<img src="/2020/04/24/instalacion-satnogs/satnogs-setup_advanced_radio.png" class="" title="SatNOGS Setup">
+
+<p>Volvemos al menú principal y le damos a <strong><em>Apply</em></strong> para que se apliquen los ajustes. Cuando se termine de configurar podemos comprobar si se ha iniciado correctamente con:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl status satnogs-client</span><br></pre></td></tr></table></figure>
+
+<p>Si todo ha ido bien tendremos la siguiente salida:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● satnogs-client.service - SatNOGS client</span><br><span class="line">   Loaded: loaded (&#x2F;etc&#x2F;systemd&#x2F;system&#x2F;satnogs-client.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Fri 2020-04-23 19:33:57 UTC; 26min ago</span><br><span class="line"> Main PID: 27871 (satnogs-client)</span><br><span class="line">    Tasks: 22 (limit: 2200)</span><br><span class="line">   Memory: 55.7M</span><br><span class="line">   CGroup: &#x2F;system.slice&#x2F;satnogs-client.service</span><br><span class="line">           └─27871 &#x2F;var&#x2F;lib&#x2F;satnogs&#x2F;bin&#x2F;python3 &#x2F;var&#x2F;lib&#x2F;satnogs&#x2F;bin&#x2F;satnogs-client</span><br></pre></td></tr></table></figure>
+
+<h2 id="Programar-seguimientos-en-SatNOGS"><a href="#Programar-seguimientos-en-SatNOGS" class="headerlink" title="Programar seguimientos en SatNOGS"></a>Programar seguimientos en SatNOGS</h2><p>Con nuestra Raspberry Pi finalmente configurada, es el momento de comprobar que todo funciona correctamente y podemos realizar el seguimiento de satélites.</p>
+<p>Para programar un pase debemos hacerlo desde el panel de control de SatNOGS. Nuestra Raspberry Pi se comunicará con la red de SatNOGS, realizará los seguimientos que le indiquemos y subirá los datos a la misma.</p>
+<p>Tenemos dos formas de programar un seguimiento. La primera de ellas es calculando todos los pases de todos los satélites que pasarán por nuestra estación en las siguientes horas. Para ello vamos a nuestro panel de control, hacemos click en nuestra estación y le damos a <strong><em>Calculate Future Passes</em></strong>.</p>
+<img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase.png" class="" title="SatNOGS Nuevo pase">
+
+<p>Aparecen ahora los siguientes pases. Seleccionamos el deseado haciendo click en <strong><em>schedule</em></strong>.</p>
+<img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_2.png" class="" title="SatNOGS Nuevo pase">
+
+<p>Comprobamos los datos de la observación y hacemos click en <strong><em>Schedule</em></strong>.</p>
+<img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_3.png" class="" title="SatNOGS Nuevo pase">
+
+<p>La segunda forma de programar un pase es desde el panel del control. Aquí hacemos click en <strong><em>New Observation</em></strong>.</p>
+<img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_sat.png" class="" title="SatNOGS Nuevo pase">
+
+<p>Seleccionamos el satélite que queremos seguir e indicamos un intervalos de tiempo. Después hacemos click en <strong><em>Calculate</em></strong> para calcular los pases. Por último seleccionamos el pase que nos interese y hacemos click en <strong><em>Schedule</em></strong>.</p>
+<img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_sat_2.png" class="" title="SatNOGS Nuevo pase">
+
+<p>Cuando se completen los pases que hemos programado, podemos ver el <em>“waterfall”</em> del pase, el audio y los datos o imágenes obtenidas.</p>
+<h2 id="Utilizacion-de-LNA"><a href="#Utilizacion-de-LNA" class="headerlink" title="Utilización de LNA"></a>Utilización de LNA</h2><p>Incorporar un LNA a nuestra estación nos ayudará a mejorar la recepción de los satélites. Si disponemos de un LNA con alimentación mediante Bias-T y utilizamos un dispositivo SDR como el RTL-SDR V3, tendremos que activar la alimentación del mismo.</p>
+<p>A continuación veremos como hacer que SatNOGS active de forma automática el Bias-T de nuestro RTL-SDR cuando vaya a recibir un pase y lo desactive al finalizar.</p>
+<p>Necesitamos instalar la utilidad <code>rtl_biast</code> que será la encargada de activar y desactivar el Bias-T del dispositivo SDR. Para ello accedemos por SSH a la Raspberry Pi y realizamos los siguientes pasos:</p>
+<ol>
+<li>Descargar el código fuente.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;rtlsdrblog&#x2F;rtl_biast.git</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Instalar las dependencias necesarias para compilar.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install cmake libusb-1.0-0-dev</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Accedemos a la carpeta descargada.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd rtl_biast</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Generamos el <em>makefile</em>.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cmake .</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>Compilamos.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>Copiamos el binario compilado a <code>/usr/bin</code>.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo cp src&#x2F;rtl_biast &#x2F;usr&#x2F;bin</span><br></pre></td></tr></table></figure>
+
+<p>Por último, nos aseguramos de que funciona correctamente ejecutando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_biast</span><br></pre></td></tr></table></figure>
+
+<p>Debemos obtener una salida como la siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Found Rafael Micro R820T tuner</span><br></pre></td></tr></table></figure>
+
+<p>Ahora vamos a configurar el cliente SatNOGS para que active y desactive el Bias-T de forma automática.</p>
+<p>Accedemos al menú de configuración mediante:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo satnogs-setup</span><br></pre></td></tr></table></figure>
+
+<p>Vamos a <strong><em>Advanced</em></strong> y <strong><em>Pre/post observation scripts</em></strong> y establecemos los siguientes ajustes:</p>
+<table>
+<thead>
+<tr>
+<th>Ajuste</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SATNOGS_PRE_OBSERVATION_SCRIPT</td>
+<td><code>/usr/bin/rtl_biast -b 1</code></td>
+</tr>
+<tr>
+<td>SATNOGS_POST_OBSERVATION_SCRIPT</td>
+<td><code>/usr/bin/rtl_biast -b 0</code></td>
+</tr>
+</tbody></table>
+<p>Para finalizar volvemos al menú principal y le damos a <strong><em>Apply</em></strong> para que se apliquen los ajustes.</p>
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Raspberry Pi</tag>
+        <tag>Instalación</tag>
+        <tag>SatNOGS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recepción del satélite FUNcube-1</title>
     <url>/2020/02/22/recepcion-funcube1/</url>
     <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
@@ -1563,69 +1629,78 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción de datos del instrumental HIRS de los satélites NOAA</title>
-    <url>/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</url>
-    <content><![CDATA[<p>Como vimos en el artículo <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
-<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
+    <title>Recepción del satélite JY1-SAT</title>
+    <url>/2020/02/25/recepcion-jy1sat/</url>
+    <content><![CDATA[<p>El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan’s Crown Prince Foundation.<br>JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-6. Además de las funciones habituales de FUNcube, el satélite envía imágenes en formato SSDV.<br>En este artículo veremos como recibir la telemetría y las imágenes.</p>
 <span id="more"></span>
 
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
-<table>
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
 <thead>
 <tr>
 <th>Satélite</th>
-<th>Frecuencia</th>
-<th>Estado</th>
+<th>JY1-SAT (JO-97)</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>NOAA 15</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
+<td><strong>Operador</strong></td>
+<td>Crown Prince Foundation</td>
 </tr>
 <tr>
-<td>NOAA 18</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
+<td><strong>NORAD ID</strong></td>
+<td>43803</td>
 </tr>
 <tr>
-<td>NOAA 19</td>
-<td>137.770 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
+<td><strong>COSPAR ID</strong></td>
+<td>2018-099AX</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (1.11 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>3 de Diciembre de 2018</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>145.840 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://www.cpf.jo/en/our-initiatives/masar">https://www.cpf.jo/en/our-initiatives/masar</a></td>
 </tr>
 </tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
-<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
-<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
-<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
-<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>JY1-SAT envía los datos de telemetría y las imágenes en la frecuencia <strong>145.840 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145840000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/2020/02/25/recepcion-jy1sat/sdrsharp.png" class="" title="SDRSharp JY1-SAT">
 
 
-<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
-<p>Una vez descargado, extraemos el contenido del archivo.</p>
-<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="https://sdr-es.com/2020/02/22/recepcion-funcube1/">FUNcube-1</a>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://download.funcube.org.uk/JY1Sat_Dashboard_v1189.msi"><center>JY1Sat Dashboard v1189</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos click en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/2020/02/25/recepcion-jy1sat/config.png" class="" title="JY1-SAT Dashboard Configuración">
 
-<p>Para demodular el archivo basta con hacer click encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
-<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre _<strong>minorFrames_xxxx.txt</strong>_.</p>
-<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
-<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
-<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
-<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
-<p>Ahora le pasamos el archivo _<strong>minorFrames_xxxx.txt</strong>_ como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar).</p>
-<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio <em>output/minorFrames_xxxx</em>.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
+<p>Hacemos click en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos click en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/2020/02/25/recepcion-jy1sat/telem.png" class="" title="JY1-SAT Dashboard Telemetría">
 
-<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
+<p><em>Imágenes:</em></p>
+<img src="/2020/02/25/recepcion-jy1sat/images.png" class="" title="JY1-SAT Dashboard Mensajes">
+
+
+<p>Las imágenes necesitan algunos pases para recibirlas completamente.</p>
+<img src="/2020/02/25/recepcion-jy1sat/JY1SatAudioId7.jpg" class="" title="JY1SatAudioId7">
+</br>
+<img src="/2020/02/25/recepcion-jy1sat/JY1SatAudioId8.jpg" class="" title="JY1SatAudioId8">
+</br>
+<img src="/2020/02/25/recepcion-jy1sat/JY1SatAudioId9.jpg" class="" title="JY1SatAudioId9">
+</br>
 ]]></content>
       <tags>
         <tag>Satélites</tag>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
+        <tag>Cubesat</tag>
       </tags>
   </entry>
   <entry>
@@ -1731,81 +1806,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción del satélite JY1-SAT</title>
-    <url>/2020/02/25/recepcion-jy1sat/</url>
-    <content><![CDATA[<p>El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan’s Crown Prince Foundation.<br>JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-6. Además de las funciones habituales de FUNcube, el satélite envía imágenes en formato SSDV.<br>En este artículo veremos como recibir la telemetría y las imágenes.</p>
-<span id="more"></span>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>JY1-SAT (JO-97)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>Crown Prince Foundation</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>43803</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2018-099AX</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (1.11 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>3 de Diciembre de 2018</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145.840 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://www.cpf.jo/en/our-initiatives/masar">https://www.cpf.jo/en/our-initiatives/masar</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>JY1-SAT envía los datos de telemetría y las imágenes en la frecuencia <strong>145.840 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145840000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/2020/02/25/recepcion-jy1sat/sdrsharp.png" class="" title="SDRSharp JY1-SAT">
-
-
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="https://sdr-es.com/2020/02/22/recepcion-funcube1/">FUNcube-1</a>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://download.funcube.org.uk/JY1Sat_Dashboard_v1189.msi"><center>JY1Sat Dashboard v1189</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos click en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/2020/02/25/recepcion-jy1sat/config.png" class="" title="JY1-SAT Dashboard Configuración">
-
-<p>Hacemos click en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos click en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/2020/02/25/recepcion-jy1sat/telem.png" class="" title="JY1-SAT Dashboard Telemetría">
-
-<p><em>Imágenes:</em></p>
-<img src="/2020/02/25/recepcion-jy1sat/images.png" class="" title="JY1-SAT Dashboard Mensajes">
-
-
-<p>Las imágenes necesitan algunos pases para recibirlas completamente.</p>
-<img src="/2020/02/25/recepcion-jy1sat/JY1SatAudioId7.jpg" class="" title="JY1SatAudioId7">
-</br>
-<img src="/2020/02/25/recepcion-jy1sat/JY1SatAudioId8.jpg" class="" title="JY1SatAudioId8">
-</br>
-<img src="/2020/02/25/recepcion-jy1sat/JY1SatAudioId9.jpg" class="" title="JY1SatAudioId9">
-</br>
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Cubesat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción del satélite NAYIF-1</title>
     <url>/2020/02/26/recepcion-nayif1/</url>
     <content><![CDATA[<p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.</p>
@@ -1869,104 +1869,6 @@
       <tags>
         <tag>Satélites</tag>
         <tag>Cubesat</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de satélites meteorológicos NOAA</title>
-    <url>/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</url>
-    <content><![CDATA[<p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
-<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato <a href="https://en.wikipedia.org/wiki/Automatic_picture_transmission">APT</a>.</p>
-<span id="more"></span>
-
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/apt.jpg" class="" width="500" title="Imagen APT de satélite NOAA">
-
-
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Actualmente podemos recibir imágenes APT desde los siguientes satélites meteorológicos NOAA.</p>
-<table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>NOAA 15</th>
-<th>NOAA 18</th>
-<th>NOAA 19</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>NORAD ID</strong></td>
-<td>25338</td>
-<td>28654</td>
-<td>33591</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>1998-030A</td>
-<td>2005-018A</td>
-<td>2009-005A</td>
-</tr>
-<tr>
-<td><strong>Masa de lanzamiento</strong></td>
-<td>1.457 Kg</td>
-<td>1.457 Kg</td>
-<td>1.440 Kg</td>
-</tr>
-<tr>
-<td><strong>Fecha de lanzamiento</strong></td>
-<td>13 de Mayo de 1998</td>
-<td>20 de Mayo de 2005</td>
-<td>6 de Febrero de 2009</td>
-</tr>
-<tr>
-<td><strong>Señal APT</strong></td>
-<td>137,620 MHz</td>
-<td>137,9125 MHz</td>
-<td>137,100 MHz</td>
-</tr>
-</tbody></table>
-<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la version beta 2.11.2):</p>
-<p><a href="https://wxtoimgrestored.xyz/downloads/"><center>Descargar WXtoImg</center></a></p>
-<p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
-<ol>
-<li>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <em><strong>&quot;Options&quot;</strong>_ y _<strong>&quot;Ground Station Location…&quot;</strong></em>. En esta ventana introducimos nuestras coordenadas y altitud.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
-
-<ol start="2">
-<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ellos vamos a <em><strong>&quot;Options&quot;</strong>_ y _<strong>&quot;Recording Options&quot;</strong></em>. Aquí seleccionamos nuestro cable de audio virtual.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
-
-<ol start="3">
-<li>Marcamos la opción de resincronizado en <em><strong>&quot;Options&quot;</strong>_, _<strong>&quot;Resync&quot;</strong></em>.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
-
-<ol start="4">
-<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <em><strong>&quot;Options&quot;</strong>_, _<strong>&quot;Auto Processing Options…&quot;</strong>_ y marcamos _<strong>&quot;Create image(s)&quot;</strong>_. Después hacemos click en _<strong>&quot;Image Settings…&quot;</strong></em> y elegimos las imágenes que queramos.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
-
-<ol start="5">
-<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <em><strong>&quot;File&quot;</strong>_ y hacemos click en _<strong>&quot;Update Keplers&quot;</strong></em>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
-
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
-<p>Para recibir el pase tenemos que sacar el audio de SDR# mediante el cable de audio virtual y tener WXtoImg abierto. Una vez el satélite comience a verse sobre el horizonte, SDR# iniciará el seguimiento y WXtoImg comenzará a recibir y procesar la señal.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/sdr_sharp.jpg" class="" title="SDR#">
-
-<p>Es importante asegurarse que el volumen de la salida de SDR# sea el adecuado. Podemos ver el nivel que llega a WXtoImg en la esquina inferior derecha. Para que la imagen se genere correctamente, el indicador de nivel de volumen debe mantenerse en color verde durante todo el pase.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recibiendo.jpg" class="" title="WXtoImg">
-
-<p>Al finalizar el pase WXtoImg dejara de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" title="WXtoImg">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
       </tags>
   </entry>
   <entry>
@@ -2093,36 +1995,101 @@
       </tags>
   </entry>
   <entry>
-    <title>Recibir APRS en macOS con Gqrx</title>
-    <url>/2021/04/02/recibir-aprs-macos-con-gqrx/</url>
-    <content><![CDATA[<p>En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando <a href="https://gqrx.dk/">Gqrx</a>.<br>El APRS, es un protocolo de comunicaciones basado en AX.25, usado en el envío de telemetría, paquetes de datos meteorológicos,  posicionamiento GPS, etc. En este caso nos ocuparemos del envío de mensajería entre estaciones de radioaficionados, en la que la Estación Espacial (ISS) es una estación repetidora.</p>
+    <title>Recepción de satélites meteorológicos NOAA</title>
+    <url>/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</url>
+    <content><![CDATA[<p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
+<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato <a href="https://en.wikipedia.org/wiki/Automatic_picture_transmission">APT</a>.</p>
 <span id="more"></span>
 
-<p>Vamos a interceptar esa mensajería de dominio público entre las distintas estaciones de radioaficionado que se mantiene en esos pocos minutos que dura el pase de la ISS por nuestro cielo.</p>
-<p>Dentro del ecosistema Apple no hay mucha diversidad de programas SDR, pero que en este caso, la suerte nos ha sonreído con GQRX.<br>Es un programa que tiene muchos seguidores, ya que brinda sencillez y no consume muchos recursos. Pero que en este caso nos ofrece todo aquello que necesitamos para la recepción de esa mensajería APRS.</p>
-<h2 id="Instalacion-de-Gqrx"><a href="#Instalacion-de-Gqrx" class="headerlink" title="Instalación de Gqrx"></a>Instalación de Gqrx</h2><p>La instalación es sencilla, y más aún para todos aquellos que ya tienen instalado el sistema de administración de paquetes Homebrew previamente.</p>
-<p>Si no tienes un administrador de programas, proponemos su instalación siguiendo <a href="https://franyerverjel.com/blog/instalacion-de-homebrew-en-mac">esta guía</a>.</p>
-<p>Para la instalación, usando el administrador de paquetes, abrimos una ventana de terminal y escribimos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install --cask gqrx</span><br></pre></td></tr></table></figure>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/apt.jpg" class="" width="500" title="Imagen APT de satélite NOAA">
 
-<p>Una vez finalizada la instalación, iniciamos desde el icono de la aplicación:</p>
-<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/icono.png" class="" width="90" title="Gqrx">
 
-<p>En el momento de empezar esta guía la versión del programa es la 2.14.4.</p>
-<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Ya finalizada la instalación y familiarizados con el programa, sintonizamos la frecuencia en la que trabaja la ISS, que en este caso es 145.825.000 Hz.<br>Elegimos el modo WFM (mono) y abrimos el único <em>plugin</em> que trae de serie el programa, y que lo podemos encontrar dentro de la pestaña <strong>Tools</strong> con el título de <strong>AFSK1200 Decoder</strong>.</p>
-<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/gqrx-menu.png" class="" width="900" title="Gqrx">
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Actualmente podemos recibir imágenes APT desde los siguientes satélites meteorológicos NOAA.</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>NOAA 15</th>
+<th>NOAA 18</th>
+<th>NOAA 19</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>NORAD ID</strong></td>
+<td>25338</td>
+<td>28654</td>
+<td>33591</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>1998-030A</td>
+<td>2005-018A</td>
+<td>2009-005A</td>
+</tr>
+<tr>
+<td><strong>Masa de lanzamiento</strong></td>
+<td>1.457 Kg</td>
+<td>1.457 Kg</td>
+<td>1.440 Kg</td>
+</tr>
+<tr>
+<td><strong>Fecha de lanzamiento</strong></td>
+<td>13 de Mayo de 1998</td>
+<td>20 de Mayo de 2005</td>
+<td>6 de Febrero de 2009</td>
+</tr>
+<tr>
+<td><strong>Señal APT</strong></td>
+<td>137,620 MHz</td>
+<td>137,9125 MHz</td>
+<td>137,100 MHz</td>
+</tr>
+</tbody></table>
+<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la version beta 2.11.2):</p>
+<p><a href="https://wxtoimgrestored.xyz/downloads/"><center>Descargar WXtoImg</center></a></p>
+<p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
+<ol>
+<li>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <em><strong>&quot;Options&quot;</strong>_ y _<strong>&quot;Ground Station Location…&quot;</strong></em>. En esta ventana introducimos nuestras coordenadas y altitud.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
 
-<p>Se abrirá una ventana muy simple en la que irán apareciendo los mensajes interceptados y decodificados.</p>
-<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/mensajes.png" class="" width="800" title="Gqrx - Mensajes">
+<ol start="2">
+<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ellos vamos a <em><strong>&quot;Options&quot;</strong>_ y _<strong>&quot;Recording Options&quot;</strong></em>. Aquí seleccionamos nuestro cable de audio virtual.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
 
-<p>Y hasta  aquí la guía. Espero que os animéis a intentarlo.</p>
-<p>73 para todos.</p>
+<ol start="3">
+<li>Marcamos la opción de resincronizado en <em><strong>&quot;Options&quot;</strong>_, _<strong>&quot;Resync&quot;</strong></em>.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
+
+<ol start="4">
+<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <em><strong>&quot;Options&quot;</strong>_, _<strong>&quot;Auto Processing Options…&quot;</strong>_ y marcamos _<strong>&quot;Create image(s)&quot;</strong>_. Después hacemos click en _<strong>&quot;Image Settings…&quot;</strong></em> y elegimos las imágenes que queramos.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
+
+<ol start="5">
+<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <em><strong>&quot;File&quot;</strong>_ y hacemos click en _<strong>&quot;Update Keplers&quot;</strong></em>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
+
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p>Para recibir el pase tenemos que sacar el audio de SDR# mediante el cable de audio virtual y tener WXtoImg abierto. Una vez el satélite comience a verse sobre el horizonte, SDR# iniciará el seguimiento y WXtoImg comenzará a recibir y procesar la señal.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/sdr_sharp.jpg" class="" title="SDR#">
+
+<p>Es importante asegurarse que el volumen de la salida de SDR# sea el adecuado. Podemos ver el nivel que llega a WXtoImg en la esquina inferior derecha. Para que la imagen se genere correctamente, el indicador de nivel de volumen debe mantenerse en color verde durante todo el pase.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recibiendo.jpg" class="" title="WXtoImg">
+
+<p>Al finalizar el pase WXtoImg dejara de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" title="WXtoImg">
 ]]></content>
       <tags>
-        <tag>macOS</tag>
-        <tag>APRS</tag>
-        <tag>ISS</tag>
-        <tag>Gqrx</tag>
+        <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
       </tags>
   </entry>
   <entry>
@@ -2161,6 +2128,72 @@
         <tag>Satélites</tag>
         <tag>Inmarsat</tag>
         <tag>L-Band</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir APRS en macOS con Gqrx</title>
+    <url>/2021/04/02/recibir-aprs-macos-con-gqrx/</url>
+    <content><![CDATA[<p>En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando <a href="https://gqrx.dk/">Gqrx</a>.<br>El APRS, es un protocolo de comunicaciones basado en AX.25, usado en el envío de telemetría, paquetes de datos meteorológicos,  posicionamiento GPS, etc. En este caso nos ocuparemos del envío de mensajería entre estaciones de radioaficionados, en la que la Estación Espacial (ISS) es una estación repetidora.</p>
+<span id="more"></span>
+
+<p>Vamos a interceptar esa mensajería de dominio público entre las distintas estaciones de radioaficionado que se mantiene en esos pocos minutos que dura el pase de la ISS por nuestro cielo.</p>
+<p>Dentro del ecosistema Apple no hay mucha diversidad de programas SDR, pero que en este caso, la suerte nos ha sonreído con GQRX.<br>Es un programa que tiene muchos seguidores, ya que brinda sencillez y no consume muchos recursos. Pero que en este caso nos ofrece todo aquello que necesitamos para la recepción de esa mensajería APRS.</p>
+<h2 id="Instalacion-de-Gqrx"><a href="#Instalacion-de-Gqrx" class="headerlink" title="Instalación de Gqrx"></a>Instalación de Gqrx</h2><p>La instalación es sencilla, y más aún para todos aquellos que ya tienen instalado el sistema de administración de paquetes Homebrew previamente.</p>
+<p>Si no tienes un administrador de programas, proponemos su instalación siguiendo <a href="https://franyerverjel.com/blog/instalacion-de-homebrew-en-mac">esta guía</a>.</p>
+<p>Para la instalación, usando el administrador de paquetes, abrimos una ventana de terminal y escribimos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install --cask gqrx</span><br></pre></td></tr></table></figure>
+
+<p>Una vez finalizada la instalación, iniciamos desde el icono de la aplicación:</p>
+<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/icono.png" class="" width="90" title="Gqrx">
+
+<p>En el momento de empezar esta guía la versión del programa es la 2.14.4.</p>
+<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Ya finalizada la instalación y familiarizados con el programa, sintonizamos la frecuencia en la que trabaja la ISS, que en este caso es 145.825.000 Hz.<br>Elegimos el modo WFM (mono) y abrimos el único <em>plugin</em> que trae de serie el programa, y que lo podemos encontrar dentro de la pestaña <strong>Tools</strong> con el título de <strong>AFSK1200 Decoder</strong>.</p>
+<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/gqrx-menu.png" class="" width="900" title="Gqrx">
+
+<p>Se abrirá una ventana muy simple en la que irán apareciendo los mensajes interceptados y decodificados.</p>
+<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/mensajes.png" class="" width="800" title="Gqrx - Mensajes">
+
+<p>Y hasta  aquí la guía. Espero que os animéis a intentarlo.</p>
+<p>73 para todos.</p>
+]]></content>
+      <tags>
+        <tag>macOS</tag>
+        <tag>APRS</tag>
+        <tag>ISS</tag>
+        <tag>Gqrx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir radio digital mundial (DRM)</title>
+    <url>/2020/10/25/recibir-drm/</url>
+    <content><![CDATA[<p><a href="https://www.drm.org/">Digital Radio Mondiale (DRM)</a>, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.<br>DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.<br>En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.</p>
+<span id="more"></span>
+
+<img src="/2020/10/25/recibir-drm/logo.png" class="" width="300" title="DRM logo">
+
+<p>Encontraremos las emisiones DRM30 por debajo de los 30 MHz. Habitualmente suelen ser emisiones no continuadas, por lo que no necesariamente vamos a encontrar dichas emisiones siempre. Podemos consultar los horarios actualizados de las mismas en el siguiente enlace:</p>
+<p><a href="https://www.drm.org/what-can-i-hear/broadcast-schedule-2/"><center>DRM Broadcast Schedule</center></a></p>
+<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el <a href="/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software <a href="https://sourceforge.net/projects/drm/">Dream AM/DRM Receiver</a> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/"><center>Dream AM/DRM Receiver</center></a></p>
+<p>Este programa está disponible para varios sistemas operativos, incluso podemos descargar el código fuente y compilarlo si queremos.<br>Para nuestro ejemplo, descargamos la versión 2.1.1 para Windows (<a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/dream-2.1.1-win32-svn808-df.zip/download">dream-2.1.1-win32-svn808-df.zip</a>). La versión 2.2 es muy similar pero presenta algunos errores de funcionamiento. Si aun así queremos probar esta versión, podemos descargarla desde <a href="https://www.reddit.com/r/RTLSDR/comments/grp6m2/dream_v221_for_windows_with_xheaac_support/">aquí</a>.</p>
+<p>Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.<br>Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos y los guardamos en el directorio de Dream:</p>
+<ul>
+<li><a href="faad2_drm.dll">faad2_drm.dll</a></li>
+<li><a href="libfaac.dll">libfaac.dll</a></li>
+</ul>
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em>, <em>Sound Card</em>, <em>Signal Input</em> y en <em>Device</em> seleccionamos el <strong>cable de audio virtual</strong>.</p>
+<img src="/2020/10/25/recibir-drm/input.png" class="" width="800" title="Entrada audio">
+
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Una vez tenemos el programa escuchando por el cable de audio virtual, procedemos a sintonizar una emisión de DRM con SDR#. Usaremos el <strong>modo USB</strong> y un <strong>ancho de banda de 10 KHz</strong>.<br>Cuando Dream detecte la señal, veremos datos de la emisión en la ventana y comenzará a escucharse si tenemos señal suficiente. Los tres indicadores señalados en la siguiente imagen deben estar activos para poder escuchar el audio.</p>
+<img src="/2020/10/25/recibir-drm/dream.png" class="" width="700" title="Dream">
+
+
+<img src="/2020/10/25/recibir-drm/sdrSharp.png" class="" width="900" title="SDR# + Dream">
+]]></content>
+      <tags>
+        <tag>HF</tag>
+        <tag>DRM</tag>
       </tags>
   </entry>
   <entry>
@@ -2218,39 +2251,6 @@
       <tags>
         <tag>APRS</tag>
         <tag>ISS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recibir radio digital mundial (DRM)</title>
-    <url>/2020/10/25/recibir-drm/</url>
-    <content><![CDATA[<p><a href="https://www.drm.org/">Digital Radio Mondiale (DRM)</a>, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.<br>DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.<br>En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.</p>
-<span id="more"></span>
-
-<img src="/2020/10/25/recibir-drm/logo.png" class="" width="300" title="DRM logo">
-
-<p>Encontraremos las emisiones DRM30 por debajo de los 30 MHz. Habitualmente suelen ser emisiones no continuadas, por lo que no necesariamente vamos a encontrar dichas emisiones siempre. Podemos consultar los horarios actualizados de las mismas en el siguiente enlace:</p>
-<p><a href="https://www.drm.org/what-can-i-hear/broadcast-schedule-2/"><center>DRM Broadcast Schedule</center></a></p>
-<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el <a href="/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software <a href="https://sourceforge.net/projects/drm/">Dream AM/DRM Receiver</a> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/"><center>Dream AM/DRM Receiver</center></a></p>
-<p>Este programa está disponible para varios sistemas operativos, incluso podemos descargar el código fuente y compilarlo si queremos.<br>Para nuestro ejemplo, descargamos la versión 2.1.1 para Windows (<a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/dream-2.1.1-win32-svn808-df.zip/download">dream-2.1.1-win32-svn808-df.zip</a>). La versión 2.2 es muy similar pero presenta algunos errores de funcionamiento. Si aun así queremos probar esta versión, podemos descargarla desde <a href="https://www.reddit.com/r/RTLSDR/comments/grp6m2/dream_v221_for_windows_with_xheaac_support/">aquí</a>.</p>
-<p>Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.<br>Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos y los guardamos en el directorio de Dream:</p>
-<ul>
-<li><a href="faad2_drm.dll">faad2_drm.dll</a></li>
-<li><a href="libfaac.dll">libfaac.dll</a></li>
-</ul>
-<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em>, <em>Sound Card</em>, <em>Signal Input</em> y en <em>Device</em> seleccionamos el <strong>cable de audio virtual</strong>.</p>
-<img src="/2020/10/25/recibir-drm/input.png" class="" width="800" title="Entrada audio">
-
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Una vez tenemos el programa escuchando por el cable de audio virtual, procedemos a sintonizar una emisión de DRM con SDR#. Usaremos el <strong>modo USB</strong> y un <strong>ancho de banda de 10 KHz</strong>.<br>Cuando Dream detecte la señal, veremos datos de la emisión en la ventana y comenzará a escucharse si tenemos señal suficiente. Los tres indicadores señalados en la siguiente imagen deben estar activos para poder escuchar el audio.</p>
-<img src="/2020/10/25/recibir-drm/dream.png" class="" width="700" title="Dream">
-
-
-<img src="/2020/10/25/recibir-drm/sdrSharp.png" class="" width="900" title="SDR# + Dream">
-]]></content>
-      <tags>
-        <tag>HF</tag>
-        <tag>DRM</tag>
       </tags>
   </entry>
   <entry>
