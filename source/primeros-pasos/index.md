@@ -10,6 +10,8 @@ Si todavía no tenemos un dispositivo SDR y no tenemos claro cual adquirir, en e
 
 [<center>Elección del dispositivo SDR</center>](/2020/03/16/eleccion-sdr/)
 
+[<center>Net de la tecnología #286: ¿Qué dispositivo elegir?<center>](https://youtu.be/bIQQoDG1neY?t=4210)
+
 # Instalación del dispositivo
 
 Si ya tenemos el dispositivo, el siguiente paso es instalarlo.
