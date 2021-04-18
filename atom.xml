@@ -24,7 +24,7 @@
     <updated>2021-04-18T11:01:07.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Si realizamos habitualmente el seguimiento de satélites, uno de los pasos más importantes es tener actualizados nuestros archivos de &lt;a href=&quot;https://en.wikipedia.org/wiki/Two-line_element_set&quot;&gt;TLE&lt;/a&gt;. En este artículo veremos como generar un archivo TLE que contenga solo los satélites que queramos y que podemos actualizar simplemente haciendo clic.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;Si realizamos habitualmente el seguimiento de satélites, uno de los pasos más importantes es tener actualizados nuestros archivos de &lt;a href=&quot;https://en.wikipedia.org/wiki/Two-line_element_set&quot;&gt;TLE&lt;/a&gt;. En este artículo veremos como generar un archivo TLE que contenga solo los satélites que queramos y que podemos actualizar con un clic.&lt;/p&gt;</summary>
     
     
     
@@ -277,7 +277,7 @@
     <updated>2020-05-10T12:40:22.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;En este artículo vamos a ver como instalar y configurar &lt;a href=&quot;https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm&quot;&gt;CSVUserlistBrowser&lt;/a&gt; para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;En este artículo vamos a ver como instalar y configurar &lt;a href=&quot;https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm&quot;&gt;CSVUserlistBrowser&lt;/a&gt; para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo clic.&lt;/p&gt;</summary>
     
     
     

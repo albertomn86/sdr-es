@@ -304,7 +304,7 @@
 
 <h2 id="Correccion-automatica-de-la-frecuencia-con-Orbitron"><a href="#Correccion-automatica-de-la-frecuencia-con-Orbitron" class="headerlink" title="Corrección automática de la frecuencia con Orbitron"></a>Corrección automática de la frecuencia con Orbitron</h2><p>En el post anterior <a href="https://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/">“Seguimiento de satélites con Orbitron”</a> vimos como instalar y configurar este programa para realizar el seguimiento de satélites. Este programa también nos va a permitir corregir en tiempo real la frecuencia del satélite que estemos siguiendo, y además podremos enviar esta frecuencia a SDR# para que la ajuste de manera automática. De esta forma no tendremos que preocuparnos por ajustarla manualmente y tendremos siempre la señal perfectamente sintonizada.</p>
 <p>El primer paso es indicarle a Orbitron la frecuencia del satélite para que pueda llevar a cabo el ajuste. Para ello seleccionamos el satélite para marcarlo como activo y vamos a la pestaña <em>Sat/Orbit info</em>.</p>
-<p>Hacemos doble click en el cuadro de texto de la derecha para que nos cargue la plantilla por defecto.</p>
+<p>Hacemos doble clic en el cuadro de texto de la derecha para que nos cargue la plantilla por defecto.</p>
 <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-plantilla.jpg" class="" title="Orbitron">
 
 <p>Ahora introducimos la frecuencia en MHz en la etiqueta <strong>DNLINK</strong>.</p>
@@ -331,22 +331,22 @@
 <p> Por último, reiniciamos Orbitron para aplicar los cambios.</p>
 </li>
 </ol>
-<p>Ahora que tenemos el plugin instalado, iniciamos SDR# y deberíamos ver el nuevo plugin en la lista. Lo iniciaremos haciendo click en <em>Scheduler</em>.</p>
+<p>Ahora que tenemos el plugin instalado, iniciamos SDR# y deberíamos ver el nuevo plugin en la lista. Lo iniciaremos haciendo clic en <em>Scheduler</em>.</p>
 <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-plugin.jpg" class="" title="DDETracker">
 
 
-<h2 id="Conexion-con-DDETracker"><a href="#Conexion-con-DDETracker" class="headerlink" title="Conexión con DDETracker"></a>Conexión con DDETracker</h2><p>Ahora ya podemos decirle a Orbitron que mande los datos a SDR#. Para ello vamos a Orbitron y seleccionamos en Driver <em>“SDRSharp”</em> y hacemos click en el botón de conexión:</p>
+<h2 id="Conexion-con-DDETracker"><a href="#Conexion-con-DDETracker" class="headerlink" title="Conexión con DDETracker"></a>Conexión con DDETracker</h2><p>Ahora ya podemos decirle a Orbitron que mande los datos a SDR#. Para ello vamos a Orbitron y seleccionamos en Driver <em>“SDRSharp”</em> y hacemos clic en el botón de conexión:</p>
 <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-driver.jpg" class="" title="Orbitron">
 
 <p>Ahora ya podemos ver que DDETracker recibe los datos del satélite que tenemos activo en Orbitron.</p>
 <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-active.jpg" class="" title="DDETracker activo">
 
 
-<h2 id="Configurar-satelites-en-DDETracker"><a href="#Configurar-satelites-en-DDETracker" class="headerlink" title="Configurar satélites en DDETracker"></a>Configurar satélites en DDETracker</h2><p>Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.<br>Para introducir los datos, hacemos click en sobre el botón Config que aparece en el plugin y se abrirá una ventana para introducir los datos.</p>
+<h2 id="Configurar-satelites-en-DDETracker"><a href="#Configurar-satelites-en-DDETracker" class="headerlink" title="Configurar satélites en DDETracker"></a>Configurar satélites en DDETracker</h2><p>Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.<br>Para introducir los datos, hacemos clic en sobre el botón Config que aparece en el plugin y se abrirá una ventana para introducir los datos.</p>
 <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-config.jpg" class="" title="DDETracker config">
 
 
-<p>Hacemos click en <em>“Add new satellite”</em> para crear un nuevo satélite.<br>Lo primero es introducir el nombre. Este nombre debe coincidir exactamente con el nombre del satélite que aparece en el plugin.<br>Si el nombre es muy largo o contiene caracteres especiales, podremos usar el asterisco (*) para omitir ciertas partes.</p>
+<p>Hacemos clic en <em>“Add new satellite”</em> para crear un nuevo satélite.<br>Lo primero es introducir el nombre. Este nombre debe coincidir exactamente con el nombre del satélite que aparece en el plugin.<br>Si el nombre es muy largo o contiene caracteres especiales, podremos usar el asterisco (*) para omitir ciertas partes.</p>
 <p>Como podemos ver en la ventana tenemos dos bloques para introducir las acciones que SDR# debe realizar. En el bloque <strong>AOS</strong> (Acquisition of Signal) le diremos qué debe hacer cuando el satélite comience a verse sobre el horizonte en nuestra posición y en el bloque inferior <strong>LOS</strong> (Loss Of Signal) le indicamos que hará cuando termine el pase.</p>
 <p>Estas acciones podemos escribirlas manualmente o seleccionarlas de la columna de la derecha e ir insertando con el botón “<strong>&lt;&lt;</strong>“ dónde corresponda.</p>
 <p>En el caso de nuestro ejemplo haremos las siguientes acciones:</p>

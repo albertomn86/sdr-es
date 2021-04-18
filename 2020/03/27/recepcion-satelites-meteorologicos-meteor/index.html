@@ -368,11 +368,11 @@
 <p> En <em>Output</em> marcamos la opción que vayamos a utilizar para sacar los datos (podemos marcar ambas). Las opciones que tenemos son:</p>
 <ul>
 <li><strong>TCP Socket</strong>: levanta un socket TCP al que el programa <strong>LRPT Decoder</strong> se conectará y recibirá los datos para decodificar la imagen en tiempo real.</li>
-<li><strong>File</strong>: genera un archivo con los datos para procesarlos posteriormente con <strong>LRPT Decoder</strong>. La ubicación de este archivo se la indicamos haciendo click en <em><strong>Configure</strong>_ y _<strong>Select folder</strong></em>.</li>
+<li><strong>File</strong>: genera un archivo con los datos para procesarlos posteriormente con <strong>LRPT Decoder</strong>. La ubicación de este archivo se la indicamos haciendo clic en <em><strong>Configure</strong>_ y _<strong>Select folder</strong></em>.</li>
 </ul>
  <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_plugin_config.png" class="" title="Meteor Demodulator"></li>
 </ol>
-<h2 id="Instalacion-de-LRPT-Decoder"><a href="#Instalacion-de-LRPT-Decoder" class="headerlink" title="Instalación de LRPT Decoder"></a>Instalación de LRPT Decoder</h2><p>El programa LRPT Decoder nos va a permitir decodificar los datos obtenidos con el demodulador de Meteor y generar la imagen.<br>Para descargarlo hacemos click en el siguiente enlace y simplemente extraemos su contenido.</p>
+<h2 id="Instalacion-de-LRPT-Decoder"><a href="#Instalacion-de-LRPT-Decoder" class="headerlink" title="Instalación de LRPT Decoder"></a>Instalación de LRPT Decoder</h2><p>El programa LRPT Decoder nos va a permitir decodificar los datos obtenidos con el demodulador de Meteor y generar la imagen.<br>Para descargarlo hacemos clic en el siguiente enlace y simplemente extraemos su contenido.</p>
 <p><a target="_blank" rel="noopener" href="http://happysat.nl/LRPT_Decoder_v56.zip"><center>M2 LRPT Decoder V56</center></a></p>
 <p>Como vimos en el apartado anterior, LRPT Decoder es capaz de procesar los datos desde dos fuentes distintas, ya sea desde el socket TCP o desde un archivo. Dependiendo de la opción que elijamos debemos modificar el archivo de configuración _<strong>M2_LRPT_Decoder.ini</strong>_ de una forma u otra. A continuación veremos los ajustes para cada una de las opciones.</p>
 <ul>
@@ -403,7 +403,7 @@
 <p>Una vez termine el pase vamos a LRPT Decoder para generar la imagen final. El satélite tiene seis canales de los cuales utiliza tres de forma simultanea. Los tres primeros corresponden a espectro visible y los tres últimos al espectro infrarrojo. A veces podemos encontrar los tres canales del espectro visible o bien dos del visible uno del infrarrojo. La imagen final a color se puede componer uniendo los tres canales RGB del espectro visible, o bien con dos de ellos.</p>
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_finalizado.jpg" class="" width="900" title="LRPT Decoder">
 
-<p>Para generarla seleccionamos los canales y hacemos click en <strong>Generate RGB</strong>. Nos aparecerá una ventana con la vista previa. Ahora hacemos click en <strong>Save</strong> y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo _<strong>M2_LRPT_Decoder.ini</strong>_.</p>
+<p>Para generarla seleccionamos los canales y hacemos clic en <strong>Generate RGB</strong>. Nos aparecerá una ventana con la vista previa. Ahora hacemos clic en <strong>Save</strong> y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo _<strong>M2_LRPT_Decoder.ini</strong>_.</p>
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_guardar.jpg" class="" width="800" title="LRPT Decoder">
 
 <h2 id="Correccion-de-la-distorsion-de-la-imagen"><a href="#Correccion-de-la-distorsion-de-la-imagen" class="headerlink" title="Corrección de la distorsión de la imagen"></a>Corrección de la distorsión de la imagen</h2><p>Si abrimos la imagen que hemos recibido veremos que presenta una distorsión en los laterales de la misma. Esta distorsión es posible corregirla de forma sencilla usando el software <strong>Smooth Meteor</strong> que podemos descargar desde el siguiente enlace:</p>

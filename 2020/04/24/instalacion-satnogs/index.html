@@ -313,23 +313,23 @@
 <h2 id="Registrar-nuestra-estacion-en-la-red"><a href="#Registrar-nuestra-estacion-en-la-red" class="headerlink" title="Registrar nuestra estación en la red"></a>Registrar nuestra estación en la red</h2><p>El primer paso será registrarnos en la red de SatNOGS para obtener nuestro identificador de estación y la <em>API key</em>.<br>Para ello vamos a la web de SatNOGS mediante el siguiente enlace:</p>
 <p><a target="_blank" rel="noopener" href="https://network.satnogs.org/"><center>https://network.satnogs.org/</center></a></p>
 <p>Aquí podemos ver las estaciones conectadas a la red, a las que podemos acceder para programar y revisar pases.</p>
-<p>Para registrarnos, hacemos click en <em>Sign Up / Log In</em>.</p>
+<p>Para registrarnos, hacemos clic en <em>Sign Up / Log In</em>.</p>
 <img src="/2020/04/24/instalacion-satnogs/satnogs_inicio.png" class="" width="900" title="SatNOGS">
 
-<p>A continuación introducimos nuestro correo electrónico, nombre de usuario y una contraseña. Hacemos click en <em>SIGN UP</em>.</p>
+<p>A continuación introducimos nuestro correo electrónico, nombre de usuario y una contraseña. Hacemos clic en <em>SIGN UP</em>.</p>
 <img src="/2020/04/24/instalacion-satnogs/satnogs_registro.png" class="" title="SatNOGS Sign Up">
 
-<p>Una vez registrados, vamos a crear una nueva estación. Para ello hacemos click en <em>Add Ground Station</em>.</p>
+<p>Una vez registrados, vamos a crear una nueva estación. Para ello hacemos clic en <em>Add Ground Station</em>.</p>
 <img src="/2020/04/24/instalacion-satnogs/satnogs_registrado.png" class="" width="900" title="Nueva estación SatNOGS">
 
 <p>Ahora introducimos los datos requeridos de nuestra estación.</p>
 <img src="/2020/04/24/instalacion-satnogs/satnogs_crear_groundstation.png" class="" width="900" title="Datos estación SatNOGS">
 
-<p>Cuando los tengamos correctamente introducidos, hacemos click en <strong><em>Submit</em></strong> para enviar los datos y registrar nuestra nueva estación.<br>Una vez registrada se nos mostrará una nueva página con los datos de la misma. Podemos ver que delante del nombre se nos ha asignado un identificador de estación (en este ejemplo el 1516) que debemos anotar para sucesivos pasos.</p>
-<p>Ahora vamos al panel de control (<em>dashboard</em>) haciendo click en el icono de la esquina superior derecha.</p>
+<p>Cuando los tengamos correctamente introducidos, hacemos clic en <strong><em>Submit</em></strong> para enviar los datos y registrar nuestra nueva estación.<br>Una vez registrada se nos mostrará una nueva página con los datos de la misma. Podemos ver que delante del nombre se nos ha asignado un identificador de estación (en este ejemplo el 1516) que debemos anotar para sucesivos pasos.</p>
+<p>Ahora vamos al panel de control (<em>dashboard</em>) haciendo clic en el icono de la esquina superior derecha.</p>
 <img src="/2020/04/24/instalacion-satnogs/satnogs_groundstation_creada.png" class="" width="900" title="SatNOGS">
 
-<p>Hacemos click en <em>API Key</em> y copiamos nuestro token.</p>
+<p>Hacemos clic en <em>API Key</em> y copiamos nuestro token.</p>
 <img src="/2020/04/24/instalacion-satnogs/satnogs_api_key.png" class="" width="900" title="SatNOGS API Key">
 
 
@@ -437,19 +437,19 @@
 
 <h2 id="Programar-seguimientos-en-SatNOGS"><a href="#Programar-seguimientos-en-SatNOGS" class="headerlink" title="Programar seguimientos en SatNOGS"></a>Programar seguimientos en SatNOGS</h2><p>Con nuestra Raspberry Pi finalmente configurada, es el momento de comprobar que todo funciona correctamente y podemos realizar el seguimiento de satélites.</p>
 <p>Para programar un pase debemos hacerlo desde el panel de control de SatNOGS. Nuestra Raspberry Pi se comunicará con la red de SatNOGS, realizará los seguimientos que le indiquemos y subirá los datos a la misma.</p>
-<p>Tenemos dos formas de programar un seguimiento. La primera de ellas es calculando todos los pases de todos los satélites que pasarán por nuestra estación en las siguientes horas. Para ello vamos a nuestro panel de control, hacemos click en nuestra estación y le damos a <strong><em>Calculate Future Passes</em></strong>.</p>
+<p>Tenemos dos formas de programar un seguimiento. La primera de ellas es calculando todos los pases de todos los satélites que pasarán por nuestra estación en las siguientes horas. Para ello vamos a nuestro panel de control, hacemos clic en nuestra estación y le damos a <strong><em>Calculate Future Passes</em></strong>.</p>
 <img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase.png" class="" title="SatNOGS Nuevo pase">
 
-<p>Aparecen ahora los siguientes pases. Seleccionamos el deseado haciendo click en <strong><em>schedule</em></strong>.</p>
+<p>Aparecen ahora los siguientes pases. Seleccionamos el deseado haciendo clic en <strong><em>schedule</em></strong>.</p>
 <img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_2.png" class="" title="SatNOGS Nuevo pase">
 
-<p>Comprobamos los datos de la observación y hacemos click en <strong><em>Schedule</em></strong>.</p>
+<p>Comprobamos los datos de la observación y hacemos clic en <strong><em>Schedule</em></strong>.</p>
 <img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_3.png" class="" title="SatNOGS Nuevo pase">
 
-<p>La segunda forma de programar un pase es desde el panel del control. Aquí hacemos click en <strong><em>New Observation</em></strong>.</p>
+<p>La segunda forma de programar un pase es desde el panel del control. Aquí hacemos clic en <strong><em>New Observation</em></strong>.</p>
 <img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_sat.png" class="" title="SatNOGS Nuevo pase">
 
-<p>Seleccionamos el satélite que queremos seguir e indicamos un intervalos de tiempo. Después hacemos click en <strong><em>Calculate</em></strong> para calcular los pases. Por último seleccionamos el pase que nos interese y hacemos click en <strong><em>Schedule</em></strong>.</p>
+<p>Seleccionamos el satélite que queremos seguir e indicamos un intervalos de tiempo. Después hacemos clic en <strong><em>Calculate</em></strong> para calcular los pases. Por último seleccionamos el pase que nos interese y hacemos clic en <strong><em>Schedule</em></strong>.</p>
 <img src="/2020/04/24/instalacion-satnogs/satnogs_nuevo_pase_sat_2.png" class="" title="SatNOGS Nuevo pase">
 
 <p>Cuando se completen los pases que hemos programado, podemos ver el <em>“waterfall”</em> del pase, el audio y los datos o imágenes obtenidas.</p>
