@@ -78,6 +78,6 @@ Es importante asegurarse que el volumen de la salida de SDR# sea el adecuado. Po
 
 {% asset_img wx_recibiendo.jpg "WXtoImg" %}
 
-Al finalizar el pase WXtoImg dejara de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.
+Al finalizar el pase, WXtoImg dejará de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.
 
-{% asset_img wx_terminado.jpg "WXtoImg" %}
+{% asset_img wx_terminado.jpg 500 "WXtoImg" %}

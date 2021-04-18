@@ -167,14 +167,22 @@ Una vez termine el pase vamos a LRPT Decoder para generar la imagen final. El sa
 
 Para generarla seleccionamos los canales y hacemos click en **Generate RGB**. Nos aparecerá una ventana con la vista previa. Ahora hacemos click en **Save** y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo _**M2_LRPT_Decoder.ini**_.
 
-{% asset_img meteor_analizer_guardar.jpg "LRPT Decoder" %}
+{% asset_img meteor_analizer_guardar.jpg 800 "LRPT Decoder" %}
 
 ## Corrección de la distorsión de la imagen
 
 Si abrimos la imagen que hemos recibido veremos que presenta una distorsión en los laterales de la misma. Esta distorsión es posible corregirla de forma sencilla usando el software **Smooth Meteor** que podemos descargar desde el siguiente enlace:
 
-[<center>Smooth Meteor v1.68</center>](https://leshamilton.co.uk/soft/smoothmeteor-setup.exe)
+[<center>Descargar Smooth Meteor</center>](https://leshamilton.co.uk/soft/smoothmeteor-setup.exe)
 
 Una vez lo tengamos instalado, abrimos la imagen y le aplicamos las rectificaciones necesarias.
 
+- **Flip N/S:** invierte la imagen verticalmente.
+- **Equalise:** aplica un procesado de mejora de la imagen.
+- **Rectify:** elimina la distorsión de la imagen.
+
 {% asset_img smooth_meteor.jpg "Smooth Meteor" %}
+
+Por último, guardamos la imagen en el fomato que queramos haciendo clic en **Save as...**.
+
+{% asset_img meteor_rectified.jpg "Imagen rectificada" %}
