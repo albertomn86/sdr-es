@@ -50,7 +50,7 @@ Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado
 
 {% asset_img demodulador.jpg "Project Desert Tortoise" %}
 
-Para demodular el archivo basta con hacer click encima del archivo de audio y arrastrarlo encima del binario **demodPOES.exe** y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.
+Para demodular el archivo basta con hacer clic encima del archivo de audio y arrastrarlo encima del binario **demodPOES.exe** y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.
 
 Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre _**minorFrames_xxxx.txt**_.
 

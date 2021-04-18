@@ -62,14 +62,14 @@ Vamos a instalar un *plugin* para SDR# que nos permitirá demodular la señal de
     En *Output* marcamos la opción que vayamos a utilizar para sacar los datos (podemos marcar ambas). Las opciones que tenemos son:
 
     - **TCP Socket**: levanta un socket TCP al que el programa **LRPT Decoder** se conectará y recibirá los datos para decodificar la imagen en tiempo real.
-    - **File**: genera un archivo con los datos para procesarlos posteriormente con **LRPT Decoder**. La ubicación de este archivo se la indicamos haciendo click en _**Configure**_ y _**Select folder**_.
+    - **File**: genera un archivo con los datos para procesarlos posteriormente con **LRPT Decoder**. La ubicación de este archivo se la indicamos haciendo clic en _**Configure**_ y _**Select folder**_.
 
     {% asset_img meteor_plugin_config.png "Meteor Demodulator" %}
 
 ## Instalación de LRPT Decoder
 
 El programa LRPT Decoder nos va a permitir decodificar los datos obtenidos con el demodulador de Meteor y generar la imagen.
-Para descargarlo hacemos click en el siguiente enlace y simplemente extraemos su contenido.
+Para descargarlo hacemos clic en el siguiente enlace y simplemente extraemos su contenido.
 
 [<center>M2 LRPT Decoder V56</center>](http://happysat.nl/LRPT_Decoder_v56.zip)
 
@@ -165,7 +165,7 @@ Una vez termine el pase vamos a LRPT Decoder para generar la imagen final. El sa
 
 {% asset_img meteor_analizer_finalizado.jpg 900 "LRPT Decoder" %}
 
-Para generarla seleccionamos los canales y hacemos click en **Generate RGB**. Nos aparecerá una ventana con la vista previa. Ahora hacemos click en **Save** y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo _**M2_LRPT_Decoder.ini**_.
+Para generarla seleccionamos los canales y hacemos clic en **Generate RGB**. Nos aparecerá una ventana con la vista previa. Ahora hacemos clic en **Save** y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo _**M2_LRPT_Decoder.ini**_.
 
 {% asset_img meteor_analizer_guardar.jpg 800 "LRPT Decoder" %}
 

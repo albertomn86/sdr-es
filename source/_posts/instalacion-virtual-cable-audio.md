@@ -19,19 +19,19 @@ Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:
 
 {% asset_img virtual-cable-descarga-windows.jpg 900 "Descarga de VB-Cable" %}
 
-Hacemos click en **_Download_** y una vez descargado extraemos el contenido del archivo ZIP.
+Hacemos clic en **_Download_** y una vez descargado extraemos el contenido del archivo ZIP.
 
 Buscamos ahora el ejecutable **VBCABLE_Setup_x64.exe** o **VBCABLE_Setup.exe**, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.
 
 {% asset_img virtual-cable-instalacion.jpg "Instalando VB-Cable" %}
 
-Hacemos click en **Install Driver** y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.
+Hacemos clic en **Install Driver** y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.
 Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.
 
 
 ### Configuración de SDR#
 
-Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en **Output** y seleccionar **\[MME\] CABLE Input ...**.
+Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer clic en **Output** y seleccionar **\[MME\] CABLE Input ...**.
 
 {% asset_img sdrsharp-audio.jpg 800 "SDRSharp output" %}
 
@@ -46,7 +46,7 @@ Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:
 
 {% asset_img virtual-cable-descarga-macos.jpg 900 "Descarga de VB-Cable" %}
 
-Hacemos click en **_Download_** y una vez descargado ejecutamos el instalador.
+Hacemos clic en **_Download_** y una vez descargado ejecutamos el instalador.
 
 {% asset_img virtual-cable-instalacion-macos1.jpg "Instalación de VB-Cable" %}
 
@@ -56,7 +56,7 @@ Seguimos los pasos del asistente para instalar VB-Audio.
 
 ### Configuración de CubicSDR
 
-Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos click en **Audio Out** y seleccionamos _**VB Audio: VB-Cable**_
+Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos clic en **Audio Out** y seleccionamos _**VB Audio: VB-Cable**_
 
 {% asset_img cubicsdr-audio.jpg 900 "CubicSDR audio output" %}
 

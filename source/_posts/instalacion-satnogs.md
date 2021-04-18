@@ -20,15 +20,15 @@ Para ello vamos a la web de SatNOGS mediante el siguiente enlace:
 
 Aquí podemos ver las estaciones conectadas a la red, a las que podemos acceder para programar y revisar pases.
 
-Para registrarnos, hacemos click en _Sign Up / Log In_.
+Para registrarnos, hacemos clic en _Sign Up / Log In_.
 
 {% asset_img satnogs_inicio.png 900 "SatNOGS" %}
 
-A continuación introducimos nuestro correo electrónico, nombre de usuario y una contraseña. Hacemos click en _SIGN UP_.
+A continuación introducimos nuestro correo electrónico, nombre de usuario y una contraseña. Hacemos clic en _SIGN UP_.
 
 {% asset_img satnogs_registro.png "SatNOGS Sign Up" %}
 
-Una vez registrados, vamos a crear una nueva estación. Para ello hacemos click en _Add Ground Station_.
+Una vez registrados, vamos a crear una nueva estación. Para ello hacemos clic en _Add Ground Station_.
 
 {% asset_img satnogs_registrado.png 900 "Nueva estación SatNOGS" %}
 
@@ -36,14 +36,14 @@ Ahora introducimos los datos requeridos de nuestra estación.
 
 {% asset_img satnogs_crear_groundstation.png 900 "Datos estación SatNOGS" %}
 
-Cuando los tengamos correctamente introducidos, hacemos click en **_Submit_** para enviar los datos y registrar nuestra nueva estación.
+Cuando los tengamos correctamente introducidos, hacemos clic en **_Submit_** para enviar los datos y registrar nuestra nueva estación.
 Una vez registrada se nos mostrará una nueva página con los datos de la misma. Podemos ver que delante del nombre se nos ha asignado un identificador de estación (en este ejemplo el 1516) que debemos anotar para sucesivos pasos.
 
-Ahora vamos al panel de control (_dashboard_) haciendo click en el icono de la esquina superior derecha.
+Ahora vamos al panel de control (_dashboard_) haciendo clic en el icono de la esquina superior derecha.
 
 {% asset_img satnogs_groundstation_creada.png 900 "SatNOGS" %}
 
-Hacemos click en _API Key_ y copiamos nuestro token.
+Hacemos clic en _API Key_ y copiamos nuestro token.
 
 {% asset_img satnogs_api_key.png 900 "SatNOGS API Key" %}
 
@@ -154,23 +154,23 @@ Con nuestra Raspberry Pi finalmente configurada, es el momento de comprobar que 
 
 Para programar un pase debemos hacerlo desde el panel de control de SatNOGS. Nuestra Raspberry Pi se comunicará con la red de SatNOGS, realizará los seguimientos que le indiquemos y subirá los datos a la misma.
 
-Tenemos dos formas de programar un seguimiento. La primera de ellas es calculando todos los pases de todos los satélites que pasarán por nuestra estación en las siguientes horas. Para ello vamos a nuestro panel de control, hacemos click en nuestra estación y le damos a **_Calculate Future Passes_**.
+Tenemos dos formas de programar un seguimiento. La primera de ellas es calculando todos los pases de todos los satélites que pasarán por nuestra estación en las siguientes horas. Para ello vamos a nuestro panel de control, hacemos clic en nuestra estación y le damos a **_Calculate Future Passes_**.
 
 {% asset_img satnogs_nuevo_pase.png "SatNOGS Nuevo pase" %}
 
-Aparecen ahora los siguientes pases. Seleccionamos el deseado haciendo click en **_schedule_**.
+Aparecen ahora los siguientes pases. Seleccionamos el deseado haciendo clic en **_schedule_**.
 
 {% asset_img satnogs_nuevo_pase_2.png "SatNOGS Nuevo pase" %}
 
-Comprobamos los datos de la observación y hacemos click en **_Schedule_**.
+Comprobamos los datos de la observación y hacemos clic en **_Schedule_**.
 
 {% asset_img satnogs_nuevo_pase_3.png "SatNOGS Nuevo pase" %}
 
-La segunda forma de programar un pase es desde el panel del control. Aquí hacemos click en **_New Observation_**.
+La segunda forma de programar un pase es desde el panel del control. Aquí hacemos clic en **_New Observation_**.
 
 {% asset_img satnogs_nuevo_pase_sat.png "SatNOGS Nuevo pase" %}
 
-Seleccionamos el satélite que queremos seguir e indicamos un intervalos de tiempo. Después hacemos click en **_Calculate_** para calcular los pases. Por último seleccionamos el pase que nos interese y hacemos click en **_Schedule_**.
+Seleccionamos el satélite que queremos seguir e indicamos un intervalos de tiempo. Después hacemos clic en **_Calculate_** para calcular los pases. Por último seleccionamos el pase que nos interese y hacemos clic en **_Schedule_**.
 
 {% asset_img satnogs_nuevo_pase_sat_2.png "SatNOGS Nuevo pase" %}
 

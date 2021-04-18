@@ -22,7 +22,7 @@ En el post anterior ["Seguimiento de satélites con Orbitron"](https://sdr-es.co
 
 El primer paso es indicarle a Orbitron la frecuencia del satélite para que pueda llevar a cabo el ajuste. Para ello seleccionamos el satélite para marcarlo como activo y vamos a la pestaña _Sat/Orbit info_.
 
-Hacemos doble click en el cuadro de texto de la derecha para que nos cargue la plantilla por defecto.
+Hacemos doble clic en el cuadro de texto de la derecha para que nos cargue la plantilla por defecto.
 
 {% asset_img orbitron-plantilla.jpg "Orbitron" %}
 
@@ -68,14 +68,14 @@ Una vez descargado el archivo y descomprimido, tenemos que incorporarlo a SDR#. 
     Por último, reiniciamos Orbitron para aplicar los cambios.
 
 
-Ahora que tenemos el plugin instalado, iniciamos SDR# y deberíamos ver el nuevo plugin en la lista. Lo iniciaremos haciendo click en _Scheduler_.
+Ahora que tenemos el plugin instalado, iniciamos SDR# y deberíamos ver el nuevo plugin en la lista. Lo iniciaremos haciendo clic en _Scheduler_.
 
 {% asset_img dde-plugin.jpg "DDETracker" %}
 
 
 ## Conexión con DDETracker
 
-Ahora ya podemos decirle a Orbitron que mande los datos a SDR#. Para ello vamos a Orbitron y seleccionamos en Driver _"SDRSharp"_ y hacemos click en el botón de conexión:
+Ahora ya podemos decirle a Orbitron que mande los datos a SDR#. Para ello vamos a Orbitron y seleccionamos en Driver _"SDRSharp"_ y hacemos clic en el botón de conexión:
 
 {% asset_img orbitron-driver.jpg "Orbitron" %}
 
@@ -87,12 +87,12 @@ Ahora ya podemos ver que DDETracker recibe los datos del satélite que tenemos a
 ## Configurar satélites en DDETracker
 
 Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.
-Para introducir los datos, hacemos click en sobre el botón Config que aparece en el plugin y se abrirá una ventana para introducir los datos.
+Para introducir los datos, hacemos clic en sobre el botón Config que aparece en el plugin y se abrirá una ventana para introducir los datos.
 
 {% asset_img dde-config.jpg "DDETracker config" %}
 
 
-Hacemos click en _"Add new satellite"_ para crear un nuevo satélite.
+Hacemos clic en _"Add new satellite"_ para crear un nuevo satélite.
 Lo primero es introducir el nombre. Este nombre debe coincidir exactamente con el nombre del satélite que aparece en el plugin.
 Si el nombre es muy largo o contiene caracteres especiales, podremos usar el asterisco (*) para omitir ciertas partes.
 

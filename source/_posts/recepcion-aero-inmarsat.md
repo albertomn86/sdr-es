@@ -16,7 +16,7 @@ Para decodificar este protocolo utilizaremos el software Open Source **JAERO**. 
 
 [<center>JAERO x64 v1.0.4.11</center>](https://github.com/jontio/JAERO/releases/download/v1.0.4.11/JAERO-x64-setup.exe)
 
-Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos click en *Tools* y en *Settings*. Esto abre la ventana de ajustes de JAERO.
+Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos clic en *Tools* y en *Settings*. Esto abre la ventana de ajustes de JAERO.
 
 {% asset_img jaero_config.jpg "Configuración JAERO" %}
 

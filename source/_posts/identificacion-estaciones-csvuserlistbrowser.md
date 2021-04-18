@@ -5,7 +5,7 @@ tags: [HF]
 author: EA7KOO
 ---
 
-En este artículo vamos a ver como instalar y configurar [CSVUserlistBrowser](https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm) para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.
+En este artículo vamos a ver como instalar y configurar [CSVUserlistBrowser](https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm) para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo clic.
 
 <!-- more -->
 
@@ -17,7 +17,7 @@ Los pasos para instalar y configurar CSVUserlistBrowser son los siguientes:
 
 [<center>https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip</center>](https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip)
 
-2. Extraemos el contenido del archivo ZIP y ejecutamos **_CSVUserlistBrowser.exe_**. En la ventana que aparece marcamos el programa con el que queremos comunicarnos (en nuestro caso SDR#) y hacemos click en **OK**.
+2. Extraemos el contenido del archivo ZIP y ejecutamos **_CSVUserlistBrowser.exe_**. En la ventana que aparece marcamos el programa con el que queremos comunicarnos (en nuestro caso SDR#) y hacemos clic en **OK**.
 
 {% asset_img CSVUserlistBrowser-select.png "CSVUserlistBrowser" %}
 
@@ -25,21 +25,21 @@ Los pasos para instalar y configurar CSVUserlistBrowser son los siguientes:
 
 {% asset_img CSVUserlistBrowser-SDRSHARP.png 900 "CSVUserlistBrowser" %}
 
-4. Vamos ahora a introducir nuestras coordenadas para poder descargar las bases de datos de nuestra zona. Para ello hacemos click en el menú **Tools** y en **QTH manager**. En esta ventana introducimos nuestras coordenadas. Para finalizar guardamos haciendo click en **Save details** y cerramos en **Close/Cancel**.
+4. Vamos ahora a introducir nuestras coordenadas para poder descargar las bases de datos de nuestra zona. Para ello hacemos clic en el menú **Tools** y en **QTH manager**. En esta ventana introducimos nuestras coordenadas. Para finalizar guardamos haciendo clic en **Save details** y cerramos en **Close/Cancel**.
 
 {% asset_img CSVUserlistBrowser-QTH-Manager.png 700 "CSVUserlistBrowser" %}
 
-5. El siguiente paso es descargar las bases de datos de frecuencias. Para ello hacemos click en el menú **Web** y en **Downloader/Converter**. En esta ventana tendremos que hacer click en los botones de **Download** para descargar cada una de las bases de datos.
+5. El siguiente paso es descargar las bases de datos de frecuencias. Para ello hacemos clic en el menú **Web** y en **Downloader/Converter**. En esta ventana tendremos que hacer clic en los botones de **Download** para descargar cada una de las bases de datos.
 {% asset_img CSVUserlistBrowser-Downloader.png "CSVUserlistBrowser" %}
-Una vez descargadas, hacemos click en **Close**.
+Una vez descargadas, hacemos clic en **Close**.
 Estas bases de datos se actualizan regularmente, por lo que tendremos que repetir la descarga para tener siempre los datos actualizados.
 Las URLs de descarga también se actualizan. Podemos consultar las actuales en [df8ry.de](https://www.df8ry.de/htmlen/csvub/%F0%9F%91%B6firststeps.htm).
 
-6. El último paso es cargar las bases de datos en el programa para poder usarlas. Para cargarlas hacemos click en el menú **File**, **Open CSV userlist** y seleccionamos el archivo que queramos cargar.
+6. El último paso es cargar las bases de datos en el programa para poder usarlas. Para cargarlas hacemos clic en el menú **File**, **Open CSV userlist** y seleccionamos el archivo que queramos cargar.
 
 {% asset_img CSVUserlistBrowser-cargada.png 900 "CSVUserlistBrowser" %}
 
-7. Para cargar otra lista, hacemos click en el menú **View list** y seleccionamos una posición libre. Después repetimos el paso anterior para cargar la lista. Si queremos que al iniciar el programa se nos muestra una base de datos u otra, podemos indicarlo en el menú **Autoload**.
+7. Para cargar otra lista, hacemos clic en el menú **View list** y seleccionamos una posición libre. Después repetimos el paso anterior para cargar la lista. Si queremos que al iniciar el programa se nos muestra una base de datos u otra, podemos indicarlo en el menú **Autoload**.
 
 
 
@@ -62,6 +62,6 @@ Una vez tengamos clara la versión a instalar, procedemos a instalar el _plugin_
 
 ## Funcionamiento
 
-Para poder controlar las frecuencias desde CSVUserlistBrowser, tenemos que marcar **Enable RX1** en el plugin de SDR#. Ahora cuando seleccionemos una frecuencia haciendo doble click en CSVUserlistBrowser, se cambiará de forma automática en SDR#.
+Para poder controlar las frecuencias desde CSVUserlistBrowser, tenemos que marcar **Enable RX1** en el plugin de SDR#. Ahora cuando seleccionemos una frecuencia haciendo doble clic en CSVUserlistBrowser, se cambiará de forma automática en SDR#.
 
 {% asset_img sdr_sharp_2.png 900 "SDR# y CSVUserlistBrowser" %}

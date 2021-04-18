@@ -13,13 +13,13 @@ Existen varias alternativas para Windows, pero en este tutorial vamos a instalar
 
 ## Instalación de SDR#
 
-El primer paso es descargar el software que necesitamos para poder usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo click en el siguiente enlace:
+El primer paso es descargar el software que necesitamos para poder usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo clic en el siguiente enlace:
 
 [<center>https://airspy.com/download/</center>](https://airspy.com/download/)
 
 {% asset_img descarga.jpg "Descarga de SDR#" %}
 
-Hacemos click en _Download_ y esperamos a que se descargue.
+Hacemos clic en _Download_ y esperamos a que se descargue.
 Una vez descargado el archivo ZIP, extraemos su contenido en el directorio deseado. En este ejemplo vamos a usar el directorio _C:/SDR_.
 
 ## Instalación de los drivers
@@ -44,7 +44,7 @@ Tenemos que asegurarnos de que el dispositivo que seleccionemos se corresponde c
 
 {% asset_img zadig4.jpg "Zadig replace" %}
 
-Una vez lo tengamos seleccionado correctamente, hacemos click en **Replace Driver** y esperamos a que se instalen los nuevos drivers.
+Una vez lo tengamos seleccionado correctamente, hacemos clic en **Replace Driver** y esperamos a que se instalen los nuevos drivers.
 
 {% asset_img zadig5.jpg "Zadig instalado" %}
 
@@ -53,11 +53,11 @@ Una vez lo tengamos seleccionado correctamente, hacemos click en **Replace Drive
 Ya tenemos nuestro dispositivo conectado e instalado. Es el turno ahora de decirle a SDR# que utilice nuestro dispositivo.
 Para ello vamos al directorio en el que hemos instalado SDR# y ejecutamos **SDRSharp.exe** para iniciar el programa.
 
-Una vez abierto, hacemos click en **Source** y seleccionamos **RTL-SDR (USB)**.
+Una vez abierto, hacemos clic en **Source** y seleccionamos **RTL-SDR (USB)**.
 
 {% asset_img sdrsharp_source.jpg "Seleccionando dispositivo" %}
 
-Después de haber seleccionado nuestro dispositivo, tenemos que editar sus ajustes. Para ello hacemos click en el icono de ajustes para mostrar la ventana de configuración.
+Después de haber seleccionado nuestro dispositivo, tenemos que editar sus ajustes. Para ello hacemos clic en el icono de ajustes para mostrar la ventana de configuración.
 
 {% asset_img sdrsharp.jpg "Ajustes" %}
 

@@ -49,13 +49,13 @@ Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos
 
 Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.
 
-El siguiente paso es configurarlo. Para ello hacemos click en **"File"** y después **"Settings..."**. Esto nos abre la pestaña de configuración del programa.
+El siguiente paso es configurarlo. Para ello hacemos clic en **"File"** y después **"Settings..."**. Esto nos abre la pestaña de configuración del programa.
 Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro [cable de audio virtual](https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/) en la opción **"Input Device"**.
 
 {% asset_img config.png "NAYIF-1 Dashboard Configuración" %}
 
-Hacemos click en **"Save"** y ya tendremos el programa listo para recibir la señal desde SDR#.
-Para iniciar el procesamiento de señal hacemos click en **"Capture"** y **"Capture From Soundcard"**. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.
+Hacemos clic en **"Save"** y ya tendremos el programa listo para recibir la señal desde SDR#.
+Para iniciar el procesamiento de señal hacemos clic en **"Capture"** y **"Capture From Soundcard"**. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.
 
 _Telemetría:_
 {% asset_img telem.png "NAYIF-1 Dashboard Telemetría" %}

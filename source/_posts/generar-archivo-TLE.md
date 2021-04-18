@@ -5,7 +5,7 @@ tags: [Orbitron, Satélites]
 author: EA7KOO
 ---
 
-Si realizamos habitualmente el seguimiento de satélites, uno de los pasos más importantes es tener actualizados nuestros archivos de [TLE](https://en.wikipedia.org/wiki/Two-line_element_set). En este artículo veremos como generar un archivo TLE que contenga solo los satélites que queramos y que podemos actualizar simplemente haciendo clic.
+Si realizamos habitualmente el seguimiento de satélites, uno de los pasos más importantes es tener actualizados nuestros archivos de [TLE](https://en.wikipedia.org/wiki/Two-line_element_set). En este artículo veremos como generar un archivo TLE que contenga solo los satélites que queramos y que podemos actualizar con un clic.
 
 <!-- more -->
 

@@ -57,7 +57,7 @@ Una vez descargado, lo ejecutamos y en la ventana que aparece arrastramos el bin
 
 {% asset_img install_cubicsdr.png 700 "Instalación de CubicSDR" %}
 
-Ahora ejecutamos CubicSDR desde las aplicaciones instaladas para iniciarlo. Nos mostrará una ventana como la siguiente en la que debemos seleccionar nuestro dispositivo SDR y hacemos click en _Start_.
+Ahora ejecutamos CubicSDR desde las aplicaciones instaladas para iniciarlo. Nos mostrará una ventana como la siguiente en la que debemos seleccionar nuestro dispositivo SDR y hacemos clic en _Start_.
 
 {% asset_img cubicsdr_devices.png 700 "Configuración de CubicSDR" %}
 

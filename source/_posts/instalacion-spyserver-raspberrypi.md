@@ -129,6 +129,6 @@ sdr://IP_RASPBERRY:5555
 <br>
 {% asset_img conectar.png "Conexión" %}
 
-Por último hacemos click en la **C** para conectarnos.
+Por último hacemos clic en la **C** para conectarnos.
 
 {% asset_img sdr_sharp.png 900 "SDR#" %}

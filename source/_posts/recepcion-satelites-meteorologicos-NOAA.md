@@ -47,11 +47,11 @@ Una vez descargado e instalado, realizaremos los siguientes pasos para configura
 
 {% asset_img wx_resync.jpg "WXtoImg" %}
 
-4. Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a _**\"Options\"**_, _**\"Auto Processing Options...\"**_ y marcamos _**\"Create image(s)\"**_. Después hacemos click en _**\"Image Settings...\"**_ y elegimos las imágenes que queramos.
+4. Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a _**\"Options\"**_, _**\"Auto Processing Options...\"**_ y marcamos _**\"Create image(s)\"**_. Después hacemos clic en _**\"Image Settings...\"**_ y elegimos las imágenes que queramos.
 
 {% asset_img wx_record.jpg "WXtoImg" %}
 
-5. Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a _**\"File\"**_ y hacemos click en _**\"Update Keplers\"**_. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.
+5. Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a _**\"File\"**_ y hacemos clic en _**\"Update Keplers\"**_. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.
 
 {% asset_img wx_siguiente.jpg "WXtoImg" %}
 
