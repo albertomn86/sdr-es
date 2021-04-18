@@ -528,6 +528,34 @@
       </tags>
   </entry>
   <entry>
+    <title>Generar archivo TLE personalizado</title>
+    <url>/2021/04/18/generar-archivo-TLE/</url>
+    <content><![CDATA[<p>Si realizamos habitualmente el seguimiento de satélites, uno de los pasos más importantes es tener actualizados nuestros archivos de <a href="https://en.wikipedia.org/wiki/Two-line_element_set">TLE</a>. En este artículo veremos como generar un archivo TLE que contenga solo los satélites que queramos y que podemos actualizar simplemente haciendo clic.</p>
+<span id="more"></span>
+
+<p>Para ello vamos a usar el programa <a href="https://github.com/albertomn86/TLE_Generator"><strong>TLE Generator</strong></a>. Este programa es un <em>script</em> que a partir de un listado de satélites descarga los datos TLE de los mismos de forma automática. Este <em>script</em> se puede ejecutar en cualquier sistema operativo si tenemos el intérprete de Python previamente instalado.<br>En este ejemplo vamos a usar un binario para Windows que no necesita tener el intérprete instalado y que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://github.com/albertomn86/TLE_Generator/releases/download/v2.3/TLE_Generator.Windows.zip"><center>Descargar TLE Generator para Windows</center></a></p>
+<p>Una vez descargado el archivo, extraemos su contenido:</p>
+<img src="/2021/04/18/generar-archivo-TLE/archivos.png" class="" width="200" title="Archivos">
+
+<p>Ahora abrimos el archivo <strong><em>satellites.txt</em></strong> y editamos el listado de satélites con los que vayamos a añadir al archivo TLE.<br>Para añadir un nuevo satélite, simplemente necesitamos insertar en el archivo su identificador dado por el <a href="https://es.wikipedia.org/wiki/NORAD">NORAD</a>. Para obtener el identificador de cualquier satélite, podemos usar el buscador de la web de CelesTrack:</p>
+<p><a href="https://www.celestrak.com/satcat/search.php"><center>CelesTrack Satellite Catalog</center></a></p>
+<p>Si queremos quitar satélites bastaría con eliminar la linea o simplemente comentarla con el caracter ‘#’ al principio.</p>
+<p>Una vez tenemos el listado de satélites, vamos a crear un archivo <em>batch</em> con la llamada al ejecutable con los parámetros ya establecidos, para que simplemente tengamos que hacer doble clic para generar nuestro archivo dónde queramos.</p>
+<p>En este caso voy a generar un archivo con los TLE dentro de la carpeta de Orbitron. Para ello creamos un nuevo archivo de texto con la extensión <em>.bat</em> y el contenido siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tle_gen.exe -o C:\SDR\Portable\Orbitron\Tle\custom.txt</span><br></pre></td></tr></table></figure>
+
+<img src="/2021/04/18/generar-archivo-TLE/bat.png" class="" width="200" title="Archivo BAT">
+
+<p>Ahora cada vez que queramos tener el archivo de TLE actualizado, simplemente ejecutamos este archivo antes de iniciar Orbitron.</p>
+<img src="/2021/04/18/generar-archivo-TLE/consola.png" class="" width="600" title="Terminal de Windows">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Orbitron</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
     <url>/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</url>
     <content><![CDATA[<p>En este artículo vamos a ver como instalar y configurar <a href="https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm">CSVUserlistBrowser</a> para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo click.</p>
@@ -1272,6 +1300,48 @@
       </tags>
   </entry>
   <entry>
+    <title>Instalación de cable de audio virtual</title>
+    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
+    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.</p>
+<span id="more"></span>
+
+<h2 id="Instalacion-de-VB-Cable-en-Windows"><a href="#Instalacion-de-VB-Cable-en-Windows" class="headerlink" title="Instalación de VB-Cable en Windows"></a>Instalación de VB-Cable en Windows</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
+<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg" class="" width="900" title="Descarga de VB-Cable">
+
+<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
+<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
+
+<p>Hacemos click en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
+<h3 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h3><p>Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" width="800" title="SDRSharp output">
+
+<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+<h2 id="Instalacion-de-VB-Cable-en-macOS"><a href="#Instalacion-de-VB-Cable-en-macOS" class="headerlink" title="Instalación de VB-Cable en macOS"></a>Instalación de VB-Cable en macOS</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg" class="" width="900" title="Descarga de VB-Cable">
+
+<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado ejecutamos el instalador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg" class="" title="Instalación de VB-Cable">
+
+<p>Seguimos los pasos del asistente para instalar VB-Audio.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg" class="" title="Instalación de VB-Cable">
+
+<h3 id="Configuracion-de-CubicSDR"><a href="#Configuracion-de-CubicSDR" class="headerlink" title="Configuración de CubicSDR"></a>Configuración de CubicSDR</h3><p>Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos click en <strong>Audio Out</strong> y seleccionamos <em><strong>VB Audio: VB-Cable</strong></em></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/cubicsdr-audio.jpg" class="" width="900" title="CubicSDR audio output">
+
+<p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+]]></content>
+      <tags>
+        <tag>macOS</tag>
+        <tag>Instalación</tag>
+        <tag>Windows</tag>
+        <tag>Virtual Audio Cable</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recepción de mensajes Inmarsat Aero</title>
     <url>/2020/03/10/recepcion-aero-inmarsat/</url>
     <content><![CDATA[<p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
@@ -1333,48 +1403,6 @@
         <tag>Satélites</tag>
         <tag>Inmarsat</tag>
         <tag>L-Band</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de cable de audio virtual</title>
-    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
-    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion-de-VB-Cable-en-Windows"><a href="#Instalacion-de-VB-Cable-en-Windows" class="headerlink" title="Instalación de VB-Cable en Windows"></a>Instalación de VB-Cable en Windows</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
-<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg" class="" width="900" title="Descarga de VB-Cable">
-
-<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
-<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
-
-<p>Hacemos click en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
-<h3 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h3><p>Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer click en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" width="800" title="SDRSharp output">
-
-<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
-<h2 id="Instalacion-de-VB-Cable-en-macOS"><a href="#Instalacion-de-VB-Cable-en-macOS" class="headerlink" title="Instalación de VB-Cable en macOS"></a>Instalación de VB-Cable en macOS</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg" class="" width="900" title="Descarga de VB-Cable">
-
-<p>Hacemos click en <strong><em>Download</em></strong> y una vez descargado ejecutamos el instalador.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg" class="" title="Instalación de VB-Cable">
-
-<p>Seguimos los pasos del asistente para instalar VB-Audio.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg" class="" title="Instalación de VB-Cable">
-
-<h3 id="Configuracion-de-CubicSDR"><a href="#Configuracion-de-CubicSDR" class="headerlink" title="Configuración de CubicSDR"></a>Configuración de CubicSDR</h3><p>Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos click en <strong>Audio Out</strong> y seleccionamos <em><strong>VB Audio: VB-Cable</strong></em></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/cubicsdr-audio.jpg" class="" width="900" title="CubicSDR audio output">
-
-<p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
-]]></content>
-      <tags>
-        <tag>macOS</tag>
-        <tag>Instalación</tag>
-        <tag>Windows</tag>
-        <tag>Virtual Audio Cable</tag>
       </tags>
   </entry>
   <entry>
@@ -1497,72 +1525,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción de datos del instrumental HIRS de los satélites NOAA</title>
-    <url>/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</url>
-    <content><![CDATA[<p>Como vimos en el artículo <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
-<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
-<span id="more"></span>
-
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
-<table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>Frecuencia</th>
-<th>Estado</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>NOAA 15</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
-</tr>
-<tr>
-<td>NOAA 18</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
-</tr>
-<tr>
-<td>NOAA 19</td>
-<td>137.770 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
-<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
-<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
-<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
-<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
-
-
-<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
-<p>Una vez descargado, extraemos el contenido del archivo.</p>
-<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
-
-<p>Para demodular el archivo basta con hacer click encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
-<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre _<strong>minorFrames_xxxx.txt</strong>_.</p>
-<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
-<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
-<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
-<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
-<p>Ahora le pasamos el archivo _<strong>minorFrames_xxxx.txt</strong>_ como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar).</p>
-<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio <em>output/minorFrames_xxxx</em>.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
-
-<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción del satélite FUNcube-1</title>
     <url>/2020/02/22/recepcion-funcube1/</url>
     <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
@@ -1626,6 +1588,72 @@
       <tags>
         <tag>Satélites</tag>
         <tag>Cubesat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de datos del instrumental HIRS de los satélites NOAA</title>
+    <url>/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</url>
+    <content><![CDATA[<p>Como vimos en el artículo <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
+<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
+<span id="more"></span>
+
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>Frecuencia</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NOAA 15</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 18</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 19</td>
+<td>137.770 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
+<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
+<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
+<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
+<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
+
+
+<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
+<p>Una vez descargado, extraemos el contenido del archivo.</p>
+<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
+
+<p>Para demodular el archivo basta con hacer click encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
+<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre _<strong>minorFrames_xxxx.txt</strong>_.</p>
+<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
+<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
+<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
+<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
+<p>Ahora le pasamos el archivo _<strong>minorFrames_xxxx.txt</strong>_ como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar).</p>
+<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio <em>output/minorFrames_xxxx</em>.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
+
+<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
       </tags>
   </entry>
   <entry>
@@ -1806,6 +1834,170 @@
       </tags>
   </entry>
   <entry>
+    <title>Recepción del satélite NAYIF-1</title>
+    <url>/2020/02/26/recepcion-nayif1/</url>
+    <content><![CDATA[<p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.</p>
+<span id="more"></span>
+
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>NAYIF-1 (EO-88)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>EIAST y AUS</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>42017</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2017-008BX</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (1.32 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>15 de Febrero de 2017</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>145.940 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://www.mbrsc.ae/satellite-programme/nayif-1">https://www.mbrsc.ae/satellite-programme/nayif-1</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/2020/02/26/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
+
+
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="https://sdr-es.com/2020/02/22/recepcion-funcube1/">FUNcube-1</a> y <a href="https://sdr-es.com/2020/02/25/recepcion-jy1sat/">JY1-SAT</a>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi"><center>Nayif-1 Dashboard v1040</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos click en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/2020/02/26/recepcion-nayif1/config.png" class="" title="NAYIF-1 Dashboard Configuración">
+
+<p>Hacemos click en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos click en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/2020/02/26/recepcion-nayif1/telem.png" class="" title="NAYIF-1 Dashboard Telemetría">
+
+<p><em>Mensajes:</em></p>
+<img src="/2020/02/26/recepcion-nayif1/messages.png" class="" title="NAYIF-1 Dashboard Mensajes">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Cubesat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de satélites meteorológicos NOAA</title>
+    <url>/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</url>
+    <content><![CDATA[<p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
+<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato <a href="https://en.wikipedia.org/wiki/Automatic_picture_transmission">APT</a>.</p>
+<span id="more"></span>
+
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/apt.jpg" class="" width="500" title="Imagen APT de satélite NOAA">
+
+
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Actualmente podemos recibir imágenes APT desde los siguientes satélites meteorológicos NOAA.</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>NOAA 15</th>
+<th>NOAA 18</th>
+<th>NOAA 19</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>NORAD ID</strong></td>
+<td>25338</td>
+<td>28654</td>
+<td>33591</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>1998-030A</td>
+<td>2005-018A</td>
+<td>2009-005A</td>
+</tr>
+<tr>
+<td><strong>Masa de lanzamiento</strong></td>
+<td>1.457 Kg</td>
+<td>1.457 Kg</td>
+<td>1.440 Kg</td>
+</tr>
+<tr>
+<td><strong>Fecha de lanzamiento</strong></td>
+<td>13 de Mayo de 1998</td>
+<td>20 de Mayo de 2005</td>
+<td>6 de Febrero de 2009</td>
+</tr>
+<tr>
+<td><strong>Señal APT</strong></td>
+<td>137,620 MHz</td>
+<td>137,9125 MHz</td>
+<td>137,100 MHz</td>
+</tr>
+</tbody></table>
+<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la version beta 2.11.2):</p>
+<p><a href="https://wxtoimgrestored.xyz/downloads/"><center>Descargar WXtoImg</center></a></p>
+<p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
+<ol>
+<li>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <em><strong>&quot;Options&quot;</strong>_ y _<strong>&quot;Ground Station Location…&quot;</strong></em>. En esta ventana introducimos nuestras coordenadas y altitud.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
+
+<ol start="2">
+<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ellos vamos a <em><strong>&quot;Options&quot;</strong>_ y _<strong>&quot;Recording Options&quot;</strong></em>. Aquí seleccionamos nuestro cable de audio virtual.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
+
+<ol start="3">
+<li>Marcamos la opción de resincronizado en <em><strong>&quot;Options&quot;</strong>_, _<strong>&quot;Resync&quot;</strong></em>.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
+
+<ol start="4">
+<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <em><strong>&quot;Options&quot;</strong>_, _<strong>&quot;Auto Processing Options…&quot;</strong>_ y marcamos _<strong>&quot;Create image(s)&quot;</strong>_. Después hacemos click en _<strong>&quot;Image Settings…&quot;</strong></em> y elegimos las imágenes que queramos.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
+
+<ol start="5">
+<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <em><strong>&quot;File&quot;</strong>_ y hacemos click en _<strong>&quot;Update Keplers&quot;</strong></em>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
+
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p>Para recibir el pase tenemos que sacar el audio de SDR# mediante el cable de audio virtual y tener WXtoImg abierto. Una vez el satélite comience a verse sobre el horizonte, SDR# iniciará el seguimiento y WXtoImg comenzará a recibir y procesar la señal.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/sdr_sharp.jpg" class="" title="SDR#">
+
+<p>Es importante asegurarse que el volumen de la salida de SDR# sea el adecuado. Podemos ver el nivel que llega a WXtoImg en la esquina inferior derecha. Para que la imagen se genere correctamente, el indicador de nivel de volumen debe mantenerse en color verde durante todo el pase.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recibiendo.jpg" class="" title="WXtoImg">
+
+<p>Al finalizar el pase, WXtoImg dejará de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" width="500" title="WXtoImg">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recepción de satélites meteorológicos Meteor-M</title>
     <url>/2020/03/27/recepcion-satelites-meteorologicos-meteor/</url>
     <content><![CDATA[<p>Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.</p>
@@ -1916,114 +2108,24 @@
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_finalizado.jpg" class="" width="900" title="LRPT Decoder">
 
 <p>Para generarla seleccionamos los canales y hacemos click en <strong>Generate RGB</strong>. Nos aparecerá una ventana con la vista previa. Ahora hacemos click en <strong>Save</strong> y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo _<strong>M2_LRPT_Decoder.ini</strong>_.</p>
-<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_guardar.jpg" class="" title="LRPT Decoder">
+<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_guardar.jpg" class="" width="800" title="LRPT Decoder">
 
 <h2 id="Correccion-de-la-distorsion-de-la-imagen"><a href="#Correccion-de-la-distorsion-de-la-imagen" class="headerlink" title="Corrección de la distorsión de la imagen"></a>Corrección de la distorsión de la imagen</h2><p>Si abrimos la imagen que hemos recibido veremos que presenta una distorsión en los laterales de la misma. Esta distorsión es posible corregirla de forma sencilla usando el software <strong>Smooth Meteor</strong> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://leshamilton.co.uk/soft/smoothmeteor-setup.exe"><center>Smooth Meteor v1.68</center></a></p>
+<p><a href="https://leshamilton.co.uk/soft/smoothmeteor-setup.exe"><center>Descargar Smooth Meteor</center></a></p>
 <p>Una vez lo tengamos instalado, abrimos la imagen y le aplicamos las rectificaciones necesarias.</p>
+<ul>
+<li><strong>Flip N/S:</strong> invierte la imagen verticalmente.</li>
+<li><strong>Equalise:</strong> aplica un procesado de mejora de la imagen.</li>
+<li><strong>Rectify:</strong> elimina la distorsión de la imagen.</li>
+</ul>
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/smooth_meteor.jpg" class="" title="Smooth Meteor">
+
+<p>Por último, guardamos la imagen en el fomato que queramos haciendo clic en <strong>Save as…</strong>.</p>
+<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_rectified.jpg" class="" title="Imagen rectificada">
 ]]></content>
       <tags>
         <tag>Satélites</tag>
         <tag>Satélites meteorológicos</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de satélites meteorológicos NOAA</title>
-    <url>/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</url>
-    <content><![CDATA[<p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
-<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato <a href="https://en.wikipedia.org/wiki/Automatic_picture_transmission">APT</a>.</p>
-<span id="more"></span>
-
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/apt.jpg" class="" width="500" title="Imagen APT de satélite NOAA">
-
-
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Actualmente podemos recibir imágenes APT desde los siguientes satélites meteorológicos NOAA.</p>
-<table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>NOAA 15</th>
-<th>NOAA 18</th>
-<th>NOAA 19</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>NORAD ID</strong></td>
-<td>25338</td>
-<td>28654</td>
-<td>33591</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>1998-030A</td>
-<td>2005-018A</td>
-<td>2009-005A</td>
-</tr>
-<tr>
-<td><strong>Masa de lanzamiento</strong></td>
-<td>1.457 Kg</td>
-<td>1.457 Kg</td>
-<td>1.440 Kg</td>
-</tr>
-<tr>
-<td><strong>Fecha de lanzamiento</strong></td>
-<td>13 de Mayo de 1998</td>
-<td>20 de Mayo de 2005</td>
-<td>6 de Febrero de 2009</td>
-</tr>
-<tr>
-<td><strong>Señal APT</strong></td>
-<td>137,620 MHz</td>
-<td>137,9125 MHz</td>
-<td>137,100 MHz</td>
-</tr>
-</tbody></table>
-<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la version beta 2.11.2):</p>
-<p><a href="https://wxtoimgrestored.xyz/downloads/"><center>Descargar WXtoImg</center></a></p>
-<p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
-<ol>
-<li>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <em><strong>&quot;Options&quot;</strong>_ y _<strong>&quot;Ground Station Location…&quot;</strong></em>. En esta ventana introducimos nuestras coordenadas y altitud.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
-
-<ol start="2">
-<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ellos vamos a <em><strong>&quot;Options&quot;</strong>_ y _<strong>&quot;Recording Options&quot;</strong></em>. Aquí seleccionamos nuestro cable de audio virtual.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
-
-<ol start="3">
-<li>Marcamos la opción de resincronizado en <em><strong>&quot;Options&quot;</strong>_, _<strong>&quot;Resync&quot;</strong></em>.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
-
-<ol start="4">
-<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <em><strong>&quot;Options&quot;</strong>_, _<strong>&quot;Auto Processing Options…&quot;</strong>_ y marcamos _<strong>&quot;Create image(s)&quot;</strong>_. Después hacemos click en _<strong>&quot;Image Settings…&quot;</strong></em> y elegimos las imágenes que queramos.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
-
-<ol start="5">
-<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <em><strong>&quot;File&quot;</strong>_ y hacemos click en _<strong>&quot;Update Keplers&quot;</strong></em>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
-
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
-<p>Para recibir el pase tenemos que sacar el audio de SDR# mediante el cable de audio virtual y tener WXtoImg abierto. Una vez el satélite comience a verse sobre el horizonte, SDR# iniciará el seguimiento y WXtoImg comenzará a recibir y procesar la señal.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/sdr_sharp.jpg" class="" title="SDR#">
-
-<p>Es importante asegurarse que el volumen de la salida de SDR# sea el adecuado. Podemos ver el nivel que llega a WXtoImg en la esquina inferior derecha. Para que la imagen se genere correctamente, el indicador de nivel de volumen debe mantenerse en color verde durante todo el pase.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recibiendo.jpg" class="" title="WXtoImg">
-
-<p>Al finalizar el pase WXtoImg dejara de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" title="WXtoImg">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
       </tags>
   </entry>
   <entry>
@@ -2062,72 +2164,6 @@
         <tag>Satélites</tag>
         <tag>Inmarsat</tag>
         <tag>L-Band</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción del satélite NAYIF-1</title>
-    <url>/2020/02/26/recepcion-nayif1/</url>
-    <content><![CDATA[<p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.</p>
-<span id="more"></span>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>NAYIF-1 (EO-88)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>EIAST y AUS</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>42017</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2017-008BX</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (1.32 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>15 de Febrero de 2017</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145.940 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://www.mbrsc.ae/satellite-programme/nayif-1">https://www.mbrsc.ae/satellite-programme/nayif-1</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/2020/02/26/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
-
-
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="https://sdr-es.com/2020/02/22/recepcion-funcube1/">FUNcube-1</a> y <a href="https://sdr-es.com/2020/02/25/recepcion-jy1sat/">JY1-SAT</a>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi"><center>Nayif-1 Dashboard v1040</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos click en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/2020/02/26/recepcion-nayif1/config.png" class="" title="NAYIF-1 Dashboard Configuración">
-
-<p>Hacemos click en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos click en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/2020/02/26/recepcion-nayif1/telem.png" class="" title="NAYIF-1 Dashboard Telemetría">
-
-<p><em>Mensajes:</em></p>
-<img src="/2020/02/26/recepcion-nayif1/messages.png" class="" title="NAYIF-1 Dashboard Mensajes">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Cubesat</tag>
       </tags>
   </entry>
   <entry>

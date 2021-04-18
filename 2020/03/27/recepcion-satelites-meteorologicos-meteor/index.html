@@ -36,6 +36,7 @@
 <meta property="og:image" content="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_finalizado.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_guardar.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/smooth_meteor.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_rectified.jpg">
 <meta property="article:published_time" content="2020-03-27T11:10:49.000Z">
 <meta property="article:modified_time" content="2020-03-27T11:10:49.000Z">
 <meta property="article:author" content="SDR en español">
@@ -191,7 +192,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">entradas</span>
         </a>
       </div>
@@ -403,12 +404,20 @@
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_finalizado.jpg" class="" width="900" title="LRPT Decoder">
 
 <p>Para generarla seleccionamos los canales y hacemos click en <strong>Generate RGB</strong>. Nos aparecerá una ventana con la vista previa. Ahora hacemos click en <strong>Save</strong> y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo _<strong>M2_LRPT_Decoder.ini</strong>_.</p>
-<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_guardar.jpg" class="" title="LRPT Decoder">
+<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_guardar.jpg" class="" width="800" title="LRPT Decoder">
 
 <h2 id="Correccion-de-la-distorsion-de-la-imagen"><a href="#Correccion-de-la-distorsion-de-la-imagen" class="headerlink" title="Corrección de la distorsión de la imagen"></a>Corrección de la distorsión de la imagen</h2><p>Si abrimos la imagen que hemos recibido veremos que presenta una distorsión en los laterales de la misma. Esta distorsión es posible corregirla de forma sencilla usando el software <strong>Smooth Meteor</strong> que podemos descargar desde el siguiente enlace:</p>
-<p><a target="_blank" rel="noopener" href="https://leshamilton.co.uk/soft/smoothmeteor-setup.exe"><center>Smooth Meteor v1.68</center></a></p>
+<p><a target="_blank" rel="noopener" href="https://leshamilton.co.uk/soft/smoothmeteor-setup.exe"><center>Descargar Smooth Meteor</center></a></p>
 <p>Una vez lo tengamos instalado, abrimos la imagen y le aplicamos las rectificaciones necesarias.</p>
+<ul>
+<li><strong>Flip N/S:</strong> invierte la imagen verticalmente.</li>
+<li><strong>Equalise:</strong> aplica un procesado de mejora de la imagen.</li>
+<li><strong>Rectify:</strong> elimina la distorsión de la imagen.</li>
+</ul>
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/smooth_meteor.jpg" class="" title="Smooth Meteor">
+
+<p>Por último, guardamos la imagen en el fomato que queramos haciendo clic en <strong>Save as…</strong>.</p>
+<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_rectified.jpg" class="" title="Imagen rectificada">
 
     </div>
 
@@ -428,10 +437,10 @@
       <div class="popular-posts-title"><a href="/2020/02/18/ajuste-frecuencia-doppler-orbitron/" rel="bookmark">Ajuste de frecuencia en recepción de satélites</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2020/04/27/instalacion-satnogs-ansible/" rel="bookmark">Instalación de estación terrestre con SatNOGS (II)</a></div>
+      <div class="popular-posts-title"><a href="/2021/04/18/generar-archivo-TLE/" rel="bookmark">Generar archivo TLE personalizado</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2020/04/24/instalacion-satnogs/" rel="bookmark">Instalación de estación terrestre con SatNOGS</a></div>
+      <div class="popular-posts-title"><a href="/2020/04/27/instalacion-satnogs-ansible/" rel="bookmark">Instalación de estación terrestre con SatNOGS (II)</a></div>
     </li>
   </ul>
 
