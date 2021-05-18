@@ -5,13 +5,17 @@ tags: [Antenas, QFH, Satélites meteorológicos, NOAA]
 author: EA7KOO
 ---
 
-En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello realizaremos nuestra antena para que resuene en 137,500 MHz.
+En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello construiremos nuestra antena para que resuene en 137,5 MHz.
 
 <!-- more -->
 
+Para la construcción de esta antena me he basado tanto en la [antena fabricada por EA3IBC](https://twitter.com/ea3ibc/status/1061292310783295488), como en [la antena de EA5WA](https://www.ea5wa.com/antenas/antena-qfh) que incorpora la varilla roscada y que facilita enormemente tanto el montaje como el ajuste de la misma.
+Las medidas orientativas se han obtenido de la web de [John Coppens ON6JC/LW3HAZ](http://jcoppens.com/) para la construcción de una antena con una relación diámetro/altura de 0,4.
+
 ## Materiales necesarios
 
-El listado de materiales que se muestra a continuación es el que yo he empleado para la construcción de esta antena. En mi caso he empleado pletina de aluminio junto con varilla de acero. Esta combinación presenta el problema de la [corrosión galvánica](https://es.wikipedia.org/wiki/Corrosi%C3%B3n_galv%C3%A1nica) que puede ser un problema en zonas húmedas. Si vamos a instalar la antena a la intemperie en una zona húmeda, lo ideal es evitar la combinación de estos materiales y usar otros, si queremos que nuestra antena nos dure bastante tiempo.
+El listado de materiales que se muestra a continuación es el que he empleado para la construcción de esta antena. En mi caso he empleado  aluminio y acero. Esta combinación presenta el problema de la [corrosión galvánica](https://es.wikipedia.org/wiki/Corrosi%C3%B3n_galv%C3%A1nica) que puede ser notable en zonas húmedas. Si vamos a instalar la antena a la intemperie en una zona húmeda, lo ideal es evitar la combinación de estos materiales si queremos que nuestra antena nos dure bastante tiempo. Podemos optar en ese caso por construirla entera de aluminio como la antena de EA3IBC, o bien usar cinta perforada de acero en lugar de la pletina de aluminio y hacerla entera de acero.
+Indicar también que si usamos otros componentes metálicos muy distintos tanto en diámetro como en el tipo de material, el ajuste de la antena podría no corresponder con el obtenido siguiendo esta guía.
 
 | Cantidad (uds.) | |
 |-:|-|
@@ -78,7 +82,7 @@ Ahora insertamos los terminales en las varillas conforme el siguiente esquema:
 
 {% asset_img conexiones_qfh.png 400 "Vista superior de la antena" %}
 
-Siendo A y B los lados que conforma el _loop_ largo y el _loop_ corto C y D, conectaremos los terminales con el vivo del coaxial a las varillas A y C y los terminales con la malla a las varillas B y D.
+Siendo A y C los lados que conforman el _loop_ corto, y los lados B y D los que forman el _loop_ largo, conectaremos los terminales con el vivo del coaxial a las varillas A y B y los terminales con la malla a las varillas C y D.
 
 {% asset_img conexiones_interior.jpg 500 "Conexiones" %}
 
@@ -100,3 +104,11 @@ Para la parte superior habrá que sumar a esta distancia la separación entre lo
 Una vez ajustada, nos dará unos resultados similares a los siguientes:
 
 {% asset_img nanovna.jpg 600 "NanoVNA" %}
+
+## Instalación
+
+Para un mejor funcionamiento colocaremos nuestra antena conforme el siguiente esquema:
+
+{% asset_img orientacion.png 300 "Orientación de la antena" %}
+
+Orientaremos los lados conectados a la malla (D y C) hacia el norte y los lados conectados al vivo (A y B) hacia el sur.
