@@ -15,10 +15,10 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;sdr-es.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:true,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:true,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Buscando...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;sdr-es.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:true,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:true,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Buscando...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
 <meta name="description" content="En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las f">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Construcción de antena QFH para satélites meteorológicos">
@@ -38,6 +38,7 @@
 <meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/conexiones_interior.jpg">
 <meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/choque.jpg">
 <meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/nanovna.jpg">
+<meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/orientacion.png">
 <meta property="article:published_time" content="2021-04-10T12:25:54.000Z">
 <meta property="article:modified_time" content="2021-04-10T12:25:54.000Z">
 <meta property="article:author" content="SDR en español">
@@ -179,14 +180,14 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Materiales-necesarios"><span class="nav-number">1.</span> <span class="nav-text">Materiales necesarios</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Construccion"><span class="nav-number">2.</span> <span class="nav-text">Construcción</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Montaje"><span class="nav-number">2.1.</span> <span class="nav-text">Montaje</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajuste-de-la-antena"><span class="nav-number">3.</span> <span class="nav-text">Ajuste de la antena</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Materiales-necesarios"><span class="nav-number">1.</span> <span class="nav-text">Materiales necesarios</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Construccion"><span class="nav-number">2.</span> <span class="nav-text">Construcción</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Montaje"><span class="nav-number">2.1.</span> <span class="nav-text">Montaje</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajuste-de-la-antena"><span class="nav-number">3.</span> <span class="nav-text">Ajuste de la antena</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion"><span class="nav-number">4.</span> <span class="nav-text">Instalación</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="SDR en español"
-      src="/images/avatar.gif">
+      src="/images/avatar-sdr.gif">
   <p class="site-author-name" itemprop="name">SDR en español</p>
   <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
 </div>
@@ -257,7 +258,7 @@
     <link itemprop="mainEntityOfPage" href="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar-sdr.gif">
       <meta itemprop="name" content="SDR en español">
       <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
     </span>
@@ -299,10 +300,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello realizaremos nuestra antena para que resuene en 137,500 MHz.</p>
+        <p>En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello construiremos nuestra antena para que resuene en 137,5 MHz.</p>
 <span id="more"></span>
 
-<h2 id="Materiales-necesarios"><a href="#Materiales-necesarios" class="headerlink" title="Materiales necesarios"></a>Materiales necesarios</h2><p>El listado de materiales que se muestra a continuación es el que yo he empleado para la construcción de esta antena. En mi caso he empleado pletina de aluminio junto con varilla de acero. Esta combinación presenta el problema de la <a target="_blank" rel="noopener" href="https://es.wikipedia.org/wiki/Corrosi%C3%B3n_galv%C3%A1nica">corrosión galvánica</a> que puede ser un problema en zonas húmedas. Si vamos a instalar la antena a la intemperie en una zona húmeda, lo ideal es evitar la combinación de estos materiales y usar otros, si queremos que nuestra antena nos dure bastante tiempo.</p>
+<p>Para la construcción de esta antena me he basado tanto en la <a target="_blank" rel="noopener" href="https://twitter.com/ea3ibc/status/1061292310783295488">antena fabricada por EA3IBC</a>, como en <a target="_blank" rel="noopener" href="https://www.ea5wa.com/antenas/antena-qfh">la antena de EA5WA</a> que incorpora la varilla roscada y que facilita enormemente tanto el montaje como el ajuste de la misma.<br>Las medidas orientativas se han obtenido de la web de <a target="_blank" rel="noopener" href="http://jcoppens.com/">John Coppens ON6JC/LW3HAZ</a> para la construcción de una antena con una relación diámetro/altura de 0,4.</p>
+<h2 id="Materiales-necesarios"><a href="#Materiales-necesarios" class="headerlink" title="Materiales necesarios"></a>Materiales necesarios</h2><p>El listado de materiales que se muestra a continuación es el que he empleado para la construcción de esta antena. En mi caso he empleado  aluminio y acero. Esta combinación presenta el problema de la <a target="_blank" rel="noopener" href="https://es.wikipedia.org/wiki/Corrosi%C3%B3n_galv%C3%A1nica">corrosión galvánica</a> que puede ser notable en zonas húmedas. Si vamos a instalar la antena a la intemperie en una zona húmeda, lo ideal es evitar la combinación de estos materiales si queremos que nuestra antena nos dure bastante tiempo. Podemos optar en ese caso por construirla entera de aluminio como la antena de EA3IBC, o bien usar cinta perforada de acero en lugar de la pletina de aluminio y hacerla entera de acero.<br>Indicar también que si usamos otros componentes metálicos muy distintos tanto en diámetro como en el tipo de material, el ajuste de la antena podría no corresponder con el obtenido siguiendo esta guía.</p>
 <table>
 <thead>
 <tr>
@@ -400,7 +402,7 @@
 <p>Ahora insertamos los terminales en las varillas conforme el siguiente esquema:</p>
 <img src="/2021/04/10/construccion-antena-qfh-137/conexiones_qfh.png" class="" width="400" title="Vista superior de la antena">
 
-<p>Siendo A y B los lados que conforma el <em>loop</em> largo y el <em>loop</em> corto C y D, conectaremos los terminales con el vivo del coaxial a las varillas A y C y los terminales con la malla a las varillas B y D.</p>
+<p>Siendo A y C los lados que conforman el <em>loop</em> corto, y los lados B y D los que forman el <em>loop</em> largo, conectaremos los terminales con el vivo del coaxial a las varillas A y B y los terminales con la malla a las varillas C y D.</p>
 <img src="/2021/04/10/construccion-antena-qfh-137/conexiones_interior.jpg" class="" width="500" title="Conexiones">
 
 <p>Una vez conectados, ajustamos el cable que queda dentro del tubo con cuidado y le damos 4 vueltas para hacer una <a target="_blank" rel="noopener" href="https://es.wikipedia.org/wiki/Bobina_de_choque">bobina choque</a>. Aquí podemos hacer otro agujero y pasar el resto del cable por dentro de la antena, o bien podemos dejarlo por fuera.</p>
@@ -415,6 +417,11 @@
 <p>Para la parte superior habrá que sumar a esta distancia la separación entre los conectores.</p>
 <p>Una vez ajustada, nos dará unos resultados similares a los siguientes:</p>
 <img src="/2021/04/10/construccion-antena-qfh-137/nanovna.jpg" class="" width="600" title="NanoVNA">
+
+<h2 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalación"></a>Instalación</h2><p>Para un mejor funcionamiento colocaremos nuestra antena conforme el siguiente esquema:</p>
+<img src="/2021/04/10/construccion-antena-qfh-137/orientacion.png" class="" width="300" title="Orientación de la antena">
+
+<p>Orientaremos los lados conectados a la malla (D y C) hacia el norte y los lados conectados al vivo (A y B) hacia el sur.</p>
 
     </div>
 
@@ -559,8 +566,8 @@
   </footer>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
