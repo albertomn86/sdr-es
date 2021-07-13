@@ -33,14 +33,17 @@
 <meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/piezas.jpg">
 <meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/antena_varillas.jpg">
 <meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/antena_pletinas.jpg">
+<meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/conectores.jpg">
 <meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/conexiones.jpg">
 <meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/conexiones_qfh.png">
 <meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/conexiones_interior.jpg">
 <meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/choque.jpg">
+<meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/choque2.jpg">
 <meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/nanovna.jpg">
 <meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/orientacion.png">
+<meta property="og:image" content="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/colocada.jpg">
 <meta property="article:published_time" content="2021-04-10T12:25:54.000Z">
-<meta property="article:modified_time" content="2021-04-10T12:25:54.000Z">
+<meta property="article:modified_time" content="2021-07-13T16:25:54.000Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="Antenas">
 <meta property="article:tag" content="QFH">
@@ -281,6 +284,13 @@
 
       <time title="Creado por: 10/04/2021 14:25:54" itemprop="dateCreated datePublished" datetime="2021-04-10T14:25:54+02:00">10/04/2021</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Editado el</span>
+        <time title="Modificado por: 13/07/2021 18:25:54" itemprop="dateModified" datetime="2021-07-13T18:25:54+02:00">13/07/2021</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-user"></i>
@@ -396,7 +406,8 @@
 <img src="/2021/04/10/construccion-antena-qfh-137/antena_pletinas.jpg" class="" width="400" title="Antena con pletinas colocadas">
 
 <p>A continuación vamos a colocar el cable coaxial. La longitud del cable será la que estimemos necesaria y el tipo de cable podemos usar cualquiera. Es recomendable usar un cable no muy grueso y de bajas pérdidas. En mi caso he usado un cable <em>Aircell-5</em>.</p>
-<p>Hacemos un agujero del mismo diámetro del cable en la parte superior del tubo por debajo de las varillas y pasamos el cable coaxial. Es recomendable que pasemos bastante cable para poder trabajar con comodidad.<br>Ahora necesitamos sacar dos conexiones desde el vivo del coaxial y otras dos desde la malla. Para ello yo he utilizado trozos de cable de cobre a los que he soldado una arandela, aunque lo recomendable es usar los terminales faston.</p>
+<p>Hacemos un agujero del mismo diámetro del cable en la parte superior del tubo por debajo de las varillas y pasamos el cable coaxial. Es recomendable que pasemos bastante cable para poder trabajar con comodidad.<br>Ahora necesitamos sacar dos conexiones desde el vivo del coaxial y otras dos desde la malla. Para ello usamos los terminales faston.</p>
+<img src="/2021/04/10/construccion-antena-qfh-137/conectores.jpg" class="" width="600" title="Conectores">
 <img src="/2021/04/10/construccion-antena-qfh-137/conexiones.jpg" class="" width="600" title="Conexiones">
 
 <p>Ahora insertamos los terminales en las varillas conforme el siguiente esquema:</p>
@@ -406,7 +417,8 @@
 <img src="/2021/04/10/construccion-antena-qfh-137/conexiones_interior.jpg" class="" width="500" title="Conexiones">
 
 <p>Una vez conectados, ajustamos el cable que queda dentro del tubo con cuidado y le damos 4 vueltas para hacer una <a target="_blank" rel="noopener" href="https://es.wikipedia.org/wiki/Bobina_de_choque">bobina choque</a>. Aquí podemos hacer otro agujero y pasar el resto del cable por dentro de la antena, o bien podemos dejarlo por fuera.</p>
-<img src="/2021/04/10/construccion-antena-qfh-137/choque.jpg" class="" width="500" title="Choque">
+<img src="/2021/04/10/construccion-antena-qfh-137/choque.jpg" class="" width="400" title="Choque cable exterior">
+<img src="/2021/04/10/construccion-antena-qfh-137/choque2.jpg" class="" width="400" title="Choque cable interior">
 
 <p>Por último, colocamos el tapón al tubo y ponemos el conector que queramos al cable y ya tenemos lista nuestra antena a falta de ajustarla a la frecuencia exacta.</p>
 <h2 id="Ajuste-de-la-antena"><a href="#Ajuste-de-la-antena" class="headerlink" title="Ajuste de la antena"></a>Ajuste de la antena</h2><p>Para finalizar la construcción de nuestra antena, vamos a medirla usando un analizador de antenas <strong>NanoVNA</strong>. Si hemos seguido los pasos de esta guía y hemos usado las medidas indicadas, la antena debe resonar sobre los 135 MHz ya que las medidas de las varillas son un poco más largas para poder colocar las tuercas con facilidad. Para ajustar la antena a la frecuencia exacta debemos ajustar la distancia entre las pletinas de aluminio de la siguiente manera:</p>
@@ -414,7 +426,6 @@
 <li>Para el <em>loop</em> largo <strong>282 mm</strong>.</li>
 <li>Para el <em>loop</em> corto <strong>268 mm</strong>.</li>
 </ul>
-<p>Para la parte superior habrá que sumar a esta distancia la separación entre los conectores.</p>
 <p>Una vez ajustada, nos dará unos resultados similares a los siguientes:</p>
 <img src="/2021/04/10/construccion-antena-qfh-137/nanovna.jpg" class="" width="600" title="NanoVNA">
 
@@ -422,6 +433,7 @@
 <img src="/2021/04/10/construccion-antena-qfh-137/orientacion.png" class="" width="300" title="Orientación de la antena">
 
 <p>Orientaremos los lados conectados a la malla (D y C) hacia el norte y los lados conectados al vivo (A y B) hacia el sur.</p>
+<img src="/2021/04/10/construccion-antena-qfh-137/colocada.jpg" class="" width="500" title="Antena instalada">
 
     </div>
 

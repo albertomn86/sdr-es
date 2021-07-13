@@ -40,7 +40,7 @@
     <link href="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/"/>
     <id>http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/</id>
     <published>2021-04-10T12:25:54.000Z</published>
-    <updated>2021-04-10T12:25:54.000Z</updated>
+    <updated>2021-07-13T16:25:54.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello construiremos nuestra antena para que resuene en 137,5 MHz.&lt;/p&gt;</summary>
@@ -261,11 +261,11 @@
     
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
+    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
+    
     <category term="macOS" scheme="http://sdr-es.com/tags/macOS/"/>
     
     <category term="CubicSDR" scheme="http://sdr-es.com/tags/CubicSDR/"/>
-    
-    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
   </entry>
   
@@ -376,9 +376,9 @@
     
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
-    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
-    
     <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
     <category term="SPY Server" scheme="http://sdr-es.com/tags/SPY-Server/"/>
     
@@ -403,9 +403,9 @@
     
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
-    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
-    
     <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
   </entry>
   
