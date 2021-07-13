@@ -1,6 +1,7 @@
 ---
 title: Construcción de antena QFH para satélites meteorológicos
 date: 2021-04-10 14:25:54
+updated: 2021-07-13 18:25:54
 tags: [Antenas, QFH, Satélites meteorológicos, NOAA]
 author: EA7KOO
 ---
@@ -55,9 +56,9 @@ Por último, cortamos las varillas roscadas para obtener las siguientes piezas:
 | Medidas (en mm) | Descripción |
 |:-:|-|
 | 300 | Varilla inferior para _loop_ largo. |
-| 280 | Varilla inferior para _loop_ corto. |
+| 290 | Varilla inferior para _loop_ corto. |
 | 155 | (2 unidades) Varilla superior para _loop_ largo. |
-| 145 | (2 unidades) Varilla superior para _loop_ corto. |
+| 150 | (2 unidades) Varilla superior para _loop_ corto. |
 
 {% asset_img piezas.jpg 900 "Piezas cortadas" %}
 
@@ -74,8 +75,9 @@ El siguiente paso es colocar las pletinas, pero primero tendremos que darles la 
 A continuación vamos a colocar el cable coaxial. La longitud del cable será la que estimemos necesaria y el tipo de cable podemos usar cualquiera. Es recomendable usar un cable no muy grueso y de bajas pérdidas. En mi caso he usado un cable _Aircell-5_.
 
 Hacemos un agujero del mismo diámetro del cable en la parte superior del tubo por debajo de las varillas y pasamos el cable coaxial. Es recomendable que pasemos bastante cable para poder trabajar con comodidad.
-Ahora necesitamos sacar dos conexiones desde el vivo del coaxial y otras dos desde la malla. Para ello yo he utilizado trozos de cable de cobre a los que he soldado una arandela, aunque lo recomendable es usar los terminales faston.
+Ahora necesitamos sacar dos conexiones desde el vivo del coaxial y otras dos desde la malla. Para ello usamos los terminales faston.
 
+{% asset_img conectores.jpg 600 "Conectores" %}
 {% asset_img conexiones.jpg 600 "Conexiones" %}
 
 Ahora insertamos los terminales en las varillas conforme el siguiente esquema:
@@ -88,7 +90,8 @@ Siendo A y C los lados que conforman el _loop_ corto, y los lados B y D los que 
 
 Una vez conectados, ajustamos el cable que queda dentro del tubo con cuidado y le damos 4 vueltas para hacer una [bobina choque](https://es.wikipedia.org/wiki/Bobina_de_choque). Aquí podemos hacer otro agujero y pasar el resto del cable por dentro de la antena, o bien podemos dejarlo por fuera.
 
-{% asset_img choque.jpg 500 "Choque" %}
+{% asset_img choque.jpg 400 "Choque cable exterior" %}
+{% asset_img choque2.jpg 400 "Choque cable interior" %}
 
 Por último, colocamos el tapón al tubo y ponemos el conector que queramos al cable y ya tenemos lista nuestra antena a falta de ajustarla a la frecuencia exacta.
 
@@ -98,8 +101,6 @@ Para finalizar la construcción de nuestra antena, vamos a medirla usando un ana
 
 - Para el _loop_ largo **282 mm**.
 - Para el _loop_ corto **268 mm**.
-
-Para la parte superior habrá que sumar a esta distancia la separación entre los conectores.
 
 Una vez ajustada, nos dará unos resultados similares a los siguientes:
 
@@ -112,3 +113,5 @@ Para un mejor funcionamiento colocaremos nuestra antena conforme el siguiente es
 {% asset_img orientacion.png 300 "Orientación de la antena" %}
 
 Orientaremos los lados conectados a la malla (D y C) hacia el norte y los lados conectados al vivo (A y B) hacia el sur.
+
+{% asset_img colocada.jpg 500 "Antena instalada" %}
