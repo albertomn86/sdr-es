@@ -1,6 +1,7 @@
 ---
 title: Instalación de dispositivos RTL-SDR en Windows
 date: 2020-01-19 19:26:40
+updated: 2021-10-21 09:26:40
 tags: [RTL-SDR, SDRSharp, Windows, Instalación]
 author: EA7KOO
 ---
@@ -17,21 +18,24 @@ El primer paso es descargar el software que necesitamos para poder usar nuestro 
 
 [<center>https://airspy.com/download/</center>](https://airspy.com/download/)
 
+Primero necesitamos instalar el entorno de ejecución de .NET 5 para poder ejecutar SDR#. Para ello descargamos el instalador desde el enlace que encontramos en la página (**_.NET 5 Desktop x86 Runtime_**) y los instalamos.
+
+Por último descargamos SDR# haciendo clic en el botón _Download_.
+
 {% asset_img descarga.jpg "Descarga de SDR#" %}
 
-Hacemos clic en _Download_ y esperamos a que se descargue.
-Una vez descargado el archivo ZIP, extraemos su contenido en el directorio deseado. En este ejemplo vamos a usar el directorio _C:/SDR_.
+Una vez descargado el archivo ZIP, extraemos su contenido en el directorio deseado. En este ejemplo vamos a usar el directorio _C:/SDR/SDRSharp_.
 
-## Instalación de los drivers
+## Instalación de los controladores
 
-El siguiente paso es descargar los drivers para nuestro dispositivo RTL-SDR. Para ello, el propio SDR# trae un script que nos descarga estos drivers directamente. Solo tenemos que ejecutar el archivo **install-rtlsdr.bat** que encontraremos en el directorio en el que acabamos de extraer SDR#.
+El siguiente paso es descargar los controladores (_drivers_) para nuestro dispositivo RTL-SDR. Para ello, el propio SDR# trae un _script_ que nos los descarga automáticamente. Solo tenemos que ejecutar el archivo **install-rtlsdr.bat** que encontraremos en el directorio en el que acabamos de extraer SDR#.
 
 {% asset_img bat.jpg "install-rtlsdr.bat" %}
 
-Una vez el script termine nos pedirá que pulsemos una tecla para finalizar.
+Una vez el _script_ termine nos pedirá que pulsemos una tecla para finalizar.
 
-Por defecto, Windows nos instala sus propios drivers para nuestro dispositivo RTL-SDR. Estos drivers no nos sirven para poder utilizarlo con SDR# por lo que tendremos que sustituirlos por otros.
-Para ello utilizaremos el instalador **Zadig**. Este ejecutable se descarga automáticamente al ejecutar el script del paso anterior, por lo que solo tendremos que ir al directorio antes mencionado y ejecutar (como Administrador) el archivo **zadig.exe**.
+Por defecto, Windows nos instala sus propios controladores para nuestro dispositivo RTL-SDR. El problema es que estos no nos sirven para poder utilizarlo con SDR#, por lo que tendremos que sustituirlos por otros.
+Para ello utilizaremos el instalador **Zadig**. Este ejecutable se descarga automáticamente al ejecutar el script del paso anterior, por lo que solo tendremos que ir al directorio antes mencionado y ejecutar (**como Administrador**) el archivo **zadig.exe**.
 
 {% asset_img zadig1.jpg "zadig.exe" %}
 
@@ -44,7 +48,7 @@ Tenemos que asegurarnos de que el dispositivo que seleccionemos se corresponde c
 
 {% asset_img zadig4.jpg "Zadig replace" %}
 
-Una vez lo tengamos seleccionado correctamente, hacemos clic en **Replace Driver** y esperamos a que se instalen los nuevos drivers.
+Una vez lo tengamos seleccionado correctamente, hacemos clic en **Replace Driver** y esperamos a que se instalen los nuevos controladores.
 
 {% asset_img zadig5.jpg "Zadig instalado" %}
 
@@ -53,7 +57,7 @@ Una vez lo tengamos seleccionado correctamente, hacemos clic en **Replace Driver
 Ya tenemos nuestro dispositivo conectado e instalado. Es el turno ahora de decirle a SDR# que utilice nuestro dispositivo.
 Para ello vamos al directorio en el que hemos instalado SDR# y ejecutamos **SDRSharp.exe** para iniciar el programa.
 
-Una vez abierto, hacemos clic en **Source** y seleccionamos **RTL-SDR (USB)**.
+Una vez abierto, hacemos clic en **Source** y seleccionamos **RTL-SDR USB**.
 
 {% asset_img sdrsharp_source.jpg "Seleccionando dispositivo" %}
 
@@ -67,7 +71,7 @@ En esta ventana encontramos las siguientes opciones:
 
 | Ajuste | Recomendado | Descripción |
 |---|---|---|
-| **Device** |  | Nos permite indicarle el dispositivo RTL-SDR que utilizaremos. Si no hemos instalado los drivers del paso anterior correctamente, no nos aparecerá ninguno disponible. |
+| **Device** |  | Nos permite indicarle el dispositivo RTL-SDR que utilizaremos. Si no hemos instalado los controladores del paso anterior correctamente, no nos aparecerá ninguno disponible. |
 | **Sample Rate** | 2.4 MSPS | Permite elegir el ancho de banda que nos mostrará por pantalla. Lógicamente, a mayor valor, mayor consumo de recursos de nuestro PC. Por lo que si tenemos un PC poco potente, debemos seleccionar un valor más bajo. |
 | **Sampling Mode** | Quadrature Sampling | Permite elegir el modo de muestreo.|
 | **Offset tunning** | R820T: Desactivado   E4000: Activado | Solo es necesario para los dispositivos basados en el chip E4000. |
@@ -78,13 +82,13 @@ En esta ventana encontramos las siguientes opciones:
 
 Con todo ya configurado, solo queda pulsar el botón de **Start/Stop** para empezar a recibir.
 
-{% asset_img sdrsharp_running.jpg "SDR# recibiendo" %}
-
 ## Ajuste de la ganancia
 
 En este último paso vamos a ajustar la ganancia de nuestro dispositivo manualmente. Como hemos visto anteriormente, el ajuste de la ganancia se puede dejar para que el dispositivo lo haga automáticamente. El problema es que este ajuste muy pocas veces se hace correctamente, por lo que es muy recomendable hacerlo manualmente. Para ello sintonizamos cualquier señal en la frecuencia para la que vamos a ajustar la ganancia y abrimos los ajustes del dispositivo.
-Ahora el objetivo es ajustar el valor de **RF Gain** hasta que consigamos el mejor valor de SNR (Signal to Noise Ratio).
+Ahora el objetivo es ajustar el valor de **RF Gain** hasta que consigamos el máximo valor de SNR (Signal to Noise Ratio).
 
+{% asset_img ganancia0.jpg "Ajuste de la ganancia manualmente" %}
+{% asset_img ganancia_max.jpg "Ajuste de la ganancia manualmente" %}
 {% asset_img ganancia.jpg "Ajuste de la ganancia manualmente" %}
 
 Una vez tengamos la ganancia ajustada, ya tendremos listo nuestro dispositivo SDR.
