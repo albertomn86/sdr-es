@@ -238,11 +238,11 @@
     
     
     
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
     <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
     
     <category term="NOAA" scheme="http://sdr-es.com/tags/NOAA/"/>
-    
-    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
   </entry>
   
@@ -423,9 +423,9 @@
     
     
     
-    <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
-    
     <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
+    <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
     
   </entry>
   
@@ -443,11 +443,11 @@
     
     
     
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
     <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
     
     <category term="NOAA" scheme="http://sdr-es.com/tags/NOAA/"/>
-    
-    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
   </entry>
   

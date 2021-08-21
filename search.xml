@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Ajuste de frecuencia en recepción de satélites</title>
+    <url>/2020/02/18/ajuste-frecuencia-doppler-orbitron/</url>
+    <content><![CDATA[<p>Cuando realizamos seguimiento de satélites nos encontramos con que la frecuencia en la que deberíamos recibir una señal no se ajusta con la que estamos recibiendo y además cambia durante el pase. Esto se debe al conocido como <strong>efecto Doppler</strong>.</p>
+<p>El efecto Doppler, llamado así por el físico austriaco Christian Andreas Doppler, es el cambio de frecuencia asociado a la alta velocidad que presenta el satélite con respecto a una estación terrestre.</p>
+<p>Usando Orbitron y el plugin DDETracker podemos hacer que SDR# realice la correción y el ajuste de la frecuencia de recepción de forma automática y en tiempo real. De esta forma evitaremos el tener que ajustarla manualmente y tendremos siempre la señal correctamente centrada.</p>
+<span id="more"></span>
+
+
+<h2 id="Correccion-automatica-de-la-frecuencia-con-Orbitron"><a href="#Correccion-automatica-de-la-frecuencia-con-Orbitron" class="headerlink" title="Corrección automática de la frecuencia con Orbitron"></a>Corrección automática de la frecuencia con Orbitron</h2><p>En el post anterior <a href="https://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/">“Seguimiento de satélites con Orbitron”</a> vimos como instalar y configurar este programa para realizar el seguimiento de satélites. Este programa también nos va a permitir corregir en tiempo real la frecuencia del satélite que estemos siguiendo, y además podremos enviar esta frecuencia a SDR# para que la ajuste de manera automática. De esta forma no tendremos que preocuparnos por ajustarla manualmente y tendremos siempre la señal perfectamente sintonizada.</p>
+<p>El primer paso es indicarle a Orbitron la frecuencia del satélite para que pueda llevar a cabo el ajuste. Para ello seleccionamos el satélite para marcarlo como activo y vamos a la pestaña <em>Sat/Orbit info</em>.</p>
+<p>Hacemos doble clic en el cuadro de texto de la derecha para que nos cargue la plantilla por defecto.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-plantilla.jpg" class="" title="Orbitron">
+
+<p>Ahora introducimos la frecuencia en MHz en la etiqueta <strong>DNLINK</strong>.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-dnlink.jpg" class="" title="Introducir frecuencia en Orbitron">
+
+<p>Los demás datos son opcionales, pero podemos completarlos para tener más información sobre el satélite.</p>
+<h2 id="Instalacion-de-DDETracker"><a href="#Instalacion-de-DDETracker" class="headerlink" title="Instalación de DDETracker"></a>Instalación de DDETracker</h2><p>El siguiente paso es instalar un plugin en SDR# que nos permita cambiar la frecuencia de forma automática.<br>En este ejemplo vamos a usar el plugin <strong>DDETracker</strong> que podemos descargar desde el siguiente link:</p>
+<p><a href="http://rtl-sdr.ru/uploads/download/ddetracker.zip"><center>http://rtl-sdr.ru/uploads/download/ddetracker.zip</center></a></p>
+<p>Una vez descargado el archivo y descomprimido, tenemos que incorporarlo a SDR#. Para ello seguimos los siguientes pasos:</p>
+<ol>
+<li><p>Copiamos los archivos que se indican en la siguiente captura dentro de la carpeta de instalacion de SDR#.</p>
+ <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-archivos.jpg" class="" title="Archivos de DDETracker"></li>
+<li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro de la carpeta de SDR#.</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;add key&#x3D;&quot;DDE Tracking Client&quot; value&#x3D;&quot;SDRSharp.DDETracker.DdeTrackingPlugin,SDRSharp.DDETracker&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+ </br>
+ <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-magicline.jpg" class="" title="Magicline de DDETracker"></li>
+</ol>
+<ol start="3">
+<li><p>Añadimos las siguientes líneas al archivo de configuración de Orbitron <em><strong>Setup.cfg</strong></em>, que encontramos dentro de la carpeta <em>Config</em> en el directorio de instalación de Orbitron.<br> Debemos indicar la ruta completa en la que hemos colocado el archivo <em>SDRSharpDriverDDE.exe</em> en el paso 1.</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Drivers]</span><br><span class="line">SDRSharp&#x3D;C:\SDR\SDRSharp\SDRSharpDriverDDE.exe</span><br></pre></td></tr></table></figure>
+ </br>
+ <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-config.jpg" class="" title="Orbitron">
+
+<p> Por último, reiniciamos Orbitron para aplicar los cambios.</p>
+</li>
+</ol>
+<p>Ahora que tenemos el plugin instalado, iniciamos SDR# y deberíamos ver el nuevo plugin en la lista. Lo iniciaremos haciendo clic en <em>Scheduler</em>.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-plugin.jpg" class="" title="DDETracker">
+
+
+<h2 id="Conexion-con-DDETracker"><a href="#Conexion-con-DDETracker" class="headerlink" title="Conexión con DDETracker"></a>Conexión con DDETracker</h2><p>Ahora ya podemos decirle a Orbitron que mande los datos a SDR#. Para ello vamos a Orbitron y seleccionamos en Driver <em>“SDRSharp”</em> y hacemos clic en el botón de conexión:</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-driver.jpg" class="" title="Orbitron">
+
+<p>Ahora ya podemos ver que DDETracker recibe los datos del satélite que tenemos activo en Orbitron.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-active.jpg" class="" title="DDETracker activo">
+
+
+<h2 id="Configurar-satelites-en-DDETracker"><a href="#Configurar-satelites-en-DDETracker" class="headerlink" title="Configurar satélites en DDETracker"></a>Configurar satélites en DDETracker</h2><p>Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.<br>Para introducir los datos, hacemos clic en sobre el botón Config que aparece en el plugin y se abrirá una ventana para introducir los datos.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-config.jpg" class="" title="DDETracker config">
+
+
+<p>Hacemos clic en <em>“Add new satellite”</em> para crear un nuevo satélite.<br>Lo primero es introducir el nombre. Este nombre debe coincidir exactamente con el nombre del satélite que aparece en el plugin.<br>Si el nombre es muy largo o contiene caracteres especiales, podremos usar el asterisco (*) para omitir ciertas partes.</p>
+<p>Como podemos ver en la ventana tenemos dos bloques para introducir las acciones que SDR# debe realizar. En el bloque <strong>AOS</strong> (Acquisition of Signal) le diremos qué debe hacer cuando el satélite comience a verse sobre el horizonte en nuestra posición y en el bloque inferior <strong>LOS</strong> (Loss Of Signal) le indicamos que hará cuando termine el pase.</p>
+<p>Estas acciones podemos escribirlas manualmente o seleccionarlas de la columna de la derecha e ir insertando con el botón “<strong>&lt;&lt;</strong>“ dónde corresponda.</p>
+<p>En el caso de nuestro ejemplo haremos las siguientes acciones:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p><strong>LOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_tracking_frequency_Off</span><br><span class="line">radio_Stop</span><br></pre></td></tr></table></figure></p>
+</br>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-configured.jpg" class="" title="DDETracker FUNCUBE">
+
+<p>Con esto ya tendríamos los datos del satélite introducidos. Ahora cuando el satélite se acerque a nuestra posición, SDR# se iniciará para recibir la señal de forma automática y se detendrá cuando el satélite desaparezca por el horizonte.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/sdr-sharp.jpg" class="" title="DDETracker activo">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Orbitron</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Construcción de antena QFH para satélites meteorológicos</title>
     <url>/2021/04/10/construccion-antena-qfh-137/</url>
     <content><![CDATA[<p>En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello construiremos nuestra antena para que resuene en 137,5 MHz.</p>
@@ -133,76 +203,6 @@
         <tag>QFH</tag>
         <tag>Satélites meteorológicos</tag>
         <tag>NOAA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ajuste de frecuencia en recepción de satélites</title>
-    <url>/2020/02/18/ajuste-frecuencia-doppler-orbitron/</url>
-    <content><![CDATA[<p>Cuando realizamos seguimiento de satélites nos encontramos con que la frecuencia en la que deberíamos recibir una señal no se ajusta con la que estamos recibiendo y además cambia durante el pase. Esto se debe al conocido como <strong>efecto Doppler</strong>.</p>
-<p>El efecto Doppler, llamado así por el físico austriaco Christian Andreas Doppler, es el cambio de frecuencia asociado a la alta velocidad que presenta el satélite con respecto a una estación terrestre.</p>
-<p>Usando Orbitron y el plugin DDETracker podemos hacer que SDR# realice la correción y el ajuste de la frecuencia de recepción de forma automática y en tiempo real. De esta forma evitaremos el tener que ajustarla manualmente y tendremos siempre la señal correctamente centrada.</p>
-<span id="more"></span>
-
-
-<h2 id="Correccion-automatica-de-la-frecuencia-con-Orbitron"><a href="#Correccion-automatica-de-la-frecuencia-con-Orbitron" class="headerlink" title="Corrección automática de la frecuencia con Orbitron"></a>Corrección automática de la frecuencia con Orbitron</h2><p>En el post anterior <a href="https://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/">“Seguimiento de satélites con Orbitron”</a> vimos como instalar y configurar este programa para realizar el seguimiento de satélites. Este programa también nos va a permitir corregir en tiempo real la frecuencia del satélite que estemos siguiendo, y además podremos enviar esta frecuencia a SDR# para que la ajuste de manera automática. De esta forma no tendremos que preocuparnos por ajustarla manualmente y tendremos siempre la señal perfectamente sintonizada.</p>
-<p>El primer paso es indicarle a Orbitron la frecuencia del satélite para que pueda llevar a cabo el ajuste. Para ello seleccionamos el satélite para marcarlo como activo y vamos a la pestaña <em>Sat/Orbit info</em>.</p>
-<p>Hacemos doble clic en el cuadro de texto de la derecha para que nos cargue la plantilla por defecto.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-plantilla.jpg" class="" title="Orbitron">
-
-<p>Ahora introducimos la frecuencia en MHz en la etiqueta <strong>DNLINK</strong>.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-dnlink.jpg" class="" title="Introducir frecuencia en Orbitron">
-
-<p>Los demás datos son opcionales, pero podemos completarlos para tener más información sobre el satélite.</p>
-<h2 id="Instalacion-de-DDETracker"><a href="#Instalacion-de-DDETracker" class="headerlink" title="Instalación de DDETracker"></a>Instalación de DDETracker</h2><p>El siguiente paso es instalar un plugin en SDR# que nos permita cambiar la frecuencia de forma automática.<br>En este ejemplo vamos a usar el plugin <strong>DDETracker</strong> que podemos descargar desde el siguiente link:</p>
-<p><a href="http://rtl-sdr.ru/uploads/download/ddetracker.zip"><center>http://rtl-sdr.ru/uploads/download/ddetracker.zip</center></a></p>
-<p>Una vez descargado el archivo y descomprimido, tenemos que incorporarlo a SDR#. Para ello seguimos los siguientes pasos:</p>
-<ol>
-<li><p>Copiamos los archivos que se indican en la siguiente captura dentro de la carpeta de instalacion de SDR#.</p>
- <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-archivos.jpg" class="" title="Archivos de DDETracker"></li>
-<li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro de la carpeta de SDR#.</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;add key&#x3D;&quot;DDE Tracking Client&quot; value&#x3D;&quot;SDRSharp.DDETracker.DdeTrackingPlugin,SDRSharp.DDETracker&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
- </br>
- <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-magicline.jpg" class="" title="Magicline de DDETracker"></li>
-</ol>
-<ol start="3">
-<li><p>Añadimos las siguientes líneas al archivo de configuración de Orbitron <em><strong>Setup.cfg</strong></em>, que encontramos dentro de la carpeta <em>Config</em> en el directorio de instalación de Orbitron.<br> Debemos indicar la ruta completa en la que hemos colocado el archivo <em>SDRSharpDriverDDE.exe</em> en el paso 1.</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Drivers]</span><br><span class="line">SDRSharp&#x3D;C:\SDR\SDRSharp\SDRSharpDriverDDE.exe</span><br></pre></td></tr></table></figure>
- </br>
- <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-config.jpg" class="" title="Orbitron">
-
-<p> Por último, reiniciamos Orbitron para aplicar los cambios.</p>
-</li>
-</ol>
-<p>Ahora que tenemos el plugin instalado, iniciamos SDR# y deberíamos ver el nuevo plugin en la lista. Lo iniciaremos haciendo clic en <em>Scheduler</em>.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-plugin.jpg" class="" title="DDETracker">
-
-
-<h2 id="Conexion-con-DDETracker"><a href="#Conexion-con-DDETracker" class="headerlink" title="Conexión con DDETracker"></a>Conexión con DDETracker</h2><p>Ahora ya podemos decirle a Orbitron que mande los datos a SDR#. Para ello vamos a Orbitron y seleccionamos en Driver <em>“SDRSharp”</em> y hacemos clic en el botón de conexión:</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-driver.jpg" class="" title="Orbitron">
-
-<p>Ahora ya podemos ver que DDETracker recibe los datos del satélite que tenemos activo en Orbitron.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-active.jpg" class="" title="DDETracker activo">
-
-
-<h2 id="Configurar-satelites-en-DDETracker"><a href="#Configurar-satelites-en-DDETracker" class="headerlink" title="Configurar satélites en DDETracker"></a>Configurar satélites en DDETracker</h2><p>Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.<br>Para introducir los datos, hacemos clic en sobre el botón Config que aparece en el plugin y se abrirá una ventana para introducir los datos.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-config.jpg" class="" title="DDETracker config">
-
-
-<p>Hacemos clic en <em>“Add new satellite”</em> para crear un nuevo satélite.<br>Lo primero es introducir el nombre. Este nombre debe coincidir exactamente con el nombre del satélite que aparece en el plugin.<br>Si el nombre es muy largo o contiene caracteres especiales, podremos usar el asterisco (*) para omitir ciertas partes.</p>
-<p>Como podemos ver en la ventana tenemos dos bloques para introducir las acciones que SDR# debe realizar. En el bloque <strong>AOS</strong> (Acquisition of Signal) le diremos qué debe hacer cuando el satélite comience a verse sobre el horizonte en nuestra posición y en el bloque inferior <strong>LOS</strong> (Loss Of Signal) le indicamos que hará cuando termine el pase.</p>
-<p>Estas acciones podemos escribirlas manualmente o seleccionarlas de la columna de la derecha e ir insertando con el botón “<strong>&lt;&lt;</strong>“ dónde corresponda.</p>
-<p>En el caso de nuestro ejemplo haremos las siguientes acciones:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
-<p><strong>LOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_tracking_frequency_Off</span><br><span class="line">radio_Stop</span><br></pre></td></tr></table></figure></p>
-</br>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-configured.jpg" class="" title="DDETracker FUNCUBE">
-
-<p>Con esto ya tendríamos los datos del satélite introducidos. Ahora cuando el satélite se acerque a nuestra posición, SDR# se iniciará para recibir la señal de forma automática y se detendrá cuando el satélite desaparezca por el horizonte.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/sdr-sharp.jpg" class="" title="DDETracker activo">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Orbitron</tag>
       </tags>
   </entry>
   <entry>
@@ -822,105 +822,107 @@
       </tags>
   </entry>
   <entry>
-    <title>Instalación de estación terrestre con SatNOGS (II)</title>
-    <url>/2020/04/27/instalacion-satnogs-ansible/</url>
-    <content><![CDATA[<p>En el artículo anterior <a href="https://sdr-es.com/2020/04/24/instalacion-satnogs/">“Instalación de estación terrestre con SatNOGS”</a> vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.<br>En este artículo veremos como realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.</p>
+    <title>Instalación de dispositivos RTL-SDR en Windows</title>
+    <url>/2020/01/19/instalacion-rtlsdr-windows/</url>
+    <content><![CDATA[<p>En este tutorial vamos a ver como instalar nuestro nuevo dispositivo RTL-SDR en Windows 10.</p>
+<p>Existen varias alternativas para Windows, pero en este tutorial vamos a instalar y configurar SDR# (SDR Sharp), ya que es el más conocido y utilizado.</p>
 <span id="more"></span>
 
+<h2 id="Instalacion-de-SDR"><a href="#Instalacion-de-SDR" class="headerlink" title="Instalación de SDR#"></a>Instalación de SDR#</h2><p>El primer paso es descargar el software que necesitamos para poder usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo clic en el siguiente enlace:</p>
+<p><a href="https://airspy.com/download/"><center>https://airspy.com/download/</center></a></p>
+<p>Primero necesitamos instalar el entorno de ejecución de .NET 5 para poder ejecutar SDR#. Para ello descargamos el instalador desde el enlace que encontramos en la página (<strong><em>.NET 5 Desktop x86 Runtime</em></strong>) y los instalamos.</p>
+<p>Por último descargamos SDR# haciendo clic en el botón <em>Download</em>.</p>
+<img src="/2020/01/19/instalacion-rtlsdr-windows/descarga.jpg" class="" title="Descarga de SDR#">
 
-<p>Si bien este artículo se centra en la instalación en una Raspberry Pi, es posible realizar la instalación en otros dispositivos Linux mediante este mismo procedimiento. El <em>playbook</em> de Ansible que vamos a utilizar es compatible con las siguientes distribuciones y versiones:</p>
-<ul>
-<li><strong>Debian:</strong> <em>stretch</em>, <em>buster</em>.</li>
-<li><strong>Raspbian:</strong> <em>stretch</em>, <em>buster</em>.</li>
-</ul>
-<h2 id="Instalacion-de-Ansible"><a href="#Instalacion-de-Ansible" class="headerlink" title="Instalación de Ansible"></a>Instalación de Ansible</h2><p>Lo primero que haremos será instalar la última versión de Ansible. Para ello seguimos los siguientes pasos:</p>
-<ol>
-<li>Añadir el repositorio de Ansible.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo &quot;deb http:&#x2F;&#x2F;ppa.launchpad.net&#x2F;ansible&#x2F;ansible&#x2F;ubuntu trusty main&quot; | sudo tee -a &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br></pre></td></tr></table></figure>
+<p>Una vez descargado el archivo ZIP, extraemos su contenido en el directorio deseado. En este ejemplo vamos a usar el directorio <em>C:/SDR/SDRSharp</em>.</p>
+<h2 id="Instalacion-de-los-controladores"><a href="#Instalacion-de-los-controladores" class="headerlink" title="Instalación de los controladores"></a>Instalación de los controladores</h2><p>El siguiente paso es descargar los controladores (<em>drivers</em>) para nuestro dispositivo RTL-SDR. Para ello, el propio SDR# trae un <em>script</em> que nos los descarga automáticamente. Solo tenemos que ejecutar el archivo <strong>install-rtlsdr.bat</strong> que encontraremos en el directorio en el que acabamos de extraer SDR#.</p>
+<img src="/2020/01/19/instalacion-rtlsdr-windows/bat.jpg" class="" title="install-rtlsdr.bat">
 
-<ol start="2">
-<li>Añadir la clave del repositorio.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367</span><br></pre></td></tr></table></figure>
+<p>Una vez el <em>script</em> termine nos pedirá que pulsemos una tecla para finalizar.</p>
+<p>Por defecto, Windows nos instala sus propios controladores para nuestro dispositivo RTL-SDR. El problema es que estos no nos sirven para poder utilizarlo con SDR#, por lo que tendremos que sustituirlos por otros.<br>Para ello utilizaremos el instalador <strong>Zadig</strong>. Este ejecutable se descarga automáticamente al ejecutar el script del paso anterior, por lo que solo tendremos que ir al directorio antes mencionado y ejecutar (<strong>como Administrador</strong>) el archivo <strong>zadig.exe</strong>.</p>
+<img src="/2020/01/19/instalacion-rtlsdr-windows/zadig1.jpg" class="" title="zadig.exe">
 
-<ol start="3">
-<li>Actualizar lista de repositorios.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<p>En la ventana del instalador seleccionamos <strong>Options</strong> y marcamos <strong>List All Devices</strong>.</p>
+<img src="/2020/01/19/instalacion-rtlsdr-windows/zadig3.jpg" class="" title="Zadig list devices">
 
-<ol start="4">
-<li>Instalar Ansible.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y ansible</span><br></pre></td></tr></table></figure>
+<p>Ahora tendremos que seleccionar nuestro dispositivo en el listado.<br>Tenemos que asegurarnos de que el dispositivo que seleccionemos se corresponde con el RTL-SDR. De lo contrario vamos a reemplazar el driver de otro dispositivo y dejará de funcionar.</p>
+<img src="/2020/01/19/instalacion-rtlsdr-windows/zadig4.jpg" class="" title="Zadig replace">
 
-<h2 id="Instalacion-del-cliente-Ansible-de-SatNOGS"><a href="#Instalacion-del-cliente-Ansible-de-SatNOGS" class="headerlink" title="Instalación del cliente Ansible de SatNOGS"></a>Instalación del cliente Ansible de SatNOGS</h2><p>A continuación vamos a descargar e instalar el instalador del cliente SatNOGS.</p>
-<ol>
-<li>Instalamos las dependencias que vamos a necesitar:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y git needrestart</span><br></pre></td></tr></table></figure>
+<p>Una vez lo tengamos seleccionado correctamente, hacemos clic en <strong>Replace Driver</strong> y esperamos a que se instalen los nuevos controladores.</p>
+<img src="/2020/01/19/instalacion-rtlsdr-windows/zadig5.jpg" class="" title="Zadig instalado">
 
-<ol start="2">
-<li>Descargamos el repositorio:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b stable https:&#x2F;&#x2F;gitlab.com&#x2F;librespacefoundation&#x2F;satnogs&#x2F;satnogs-client-ansible.git</span><br></pre></td></tr></table></figure>
+<h2 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h2><p>Ya tenemos nuestro dispositivo conectado e instalado. Es el turno ahora de decirle a SDR# que utilice nuestro dispositivo.<br>Para ello vamos al directorio en el que hemos instalado SDR# y ejecutamos <strong>SDRSharp.exe</strong> para iniciar el programa.</p>
+<p>Una vez abierto, hacemos clic en <strong>Source</strong> y seleccionamos <strong>RTL-SDR USB</strong>.</p>
+<img src="/2020/01/19/instalacion-rtlsdr-windows/sdrsharp_source.jpg" class="" title="Seleccionando dispositivo">
 
-<ol start="3">
-<li>Accedemos a la carpeta descargada:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd satnogs-client-ansible</span><br></pre></td></tr></table></figure>
+<p>Después de haber seleccionado nuestro dispositivo, tenemos que editar sus ajustes. Para ello hacemos clic en el icono de ajustes para mostrar la ventana de configuración.</p>
+<img src="/2020/01/19/instalacion-rtlsdr-windows/sdrsharp.jpg" class="" title="Ajustes">
 
-<ol start="4">
-<li>Copiamos y renombramos el siguiente directorio:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp -r production.dist production</span><br></pre></td></tr></table></figure>
+<p>En esta ventana encontramos las siguientes opciones:</p>
+<img src="/2020/01/19/instalacion-rtlsdr-windows/sdrsharp_config.jpg" class="" title="RTL-SDR Controller">
 
-<ol start="5">
-<li>Ahora editamos el archivo <code>hosts</code> con nuestros datos de conexión SSH a la Raspberry Pi:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano production&#x2F;inventory&#x2F;hosts</span><br></pre></td></tr></table></figure>
-
-<p>Debemos editar el <em>host</em>, el usuario y la clave:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">all:</span><br><span class="line">  hosts:</span><br><span class="line">    satnogs:</span><br><span class="line">      ansible_host: &#39;localhost&#39;</span><br><span class="line">      ansible_user: &#39;pi&#39;</span><br><span class="line">      ansible_ssh_pass: &#39;raspberry&#39;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>Comprobamos la conexión SSH:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh pi@localhost true</span><br></pre></td></tr></table></figure>
-
-<ol start="7">
-<li>Por último ejecutamos el <em>playbook</em>:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ansible-playbook -i production&#x2F;inventory -K site.yml</span><br></pre></td></tr></table></figure>
-
-<p>La instalación tardará unos minutos (pueden ser bastantes dependiendo de nuestra conexión y la CPU de la Raspberry Pi) y al finalizar mostrará un mensaje como el siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- Play recap -</span><br><span class="line">  satnogs                    : ok&#x3D;121  changed&#x3D;49   unreachable&#x3D;0    failed&#x3D;0    rescued&#x3D;0    ignored&#x3D;0</span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h2><p>Los pasos para la configuración del cliente son idénticos a los descritos en el artículo anterior en este mismo apartado.</p>
-<p>La única observación es que ahora al tener más de un dispositivo SDR conectado, debemos indicar cual de ellos debe utilizar.<br>Necesitaremos el número de serie del dispositivo para diferenciarlos. Para extraerlo usamos la herramienta <code>rtl_test</code>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ rtl_test</span><br><span class="line">Found 2 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line">  1:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<p>En este caso vamos a utilizar el segundo dispositivo, y por lo tanto se lo debemos indicar a SatNOGS. Para ello en <strong><em>Basic configuration options</em></strong> realizaremos el siguiente cambio:</p>
 <table>
 <thead>
 <tr>
 <th>Ajuste</th>
+<th>Recomendado</th>
 <th>Descripción</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>SATNOGS_SOAPY_RX_DEVICE</td>
-<td>Dispositivo SDR que vamos a usar y número de serie: <code>driver=rtlsdr,serial=08201703</code>.</td>
+<td><strong>Device</strong></td>
+<td></td>
+<td>Nos permite indicarle el dispositivo RTL-SDR que utilizaremos. Si no hemos instalado los controladores del paso anterior correctamente, no nos aparecerá ninguno disponible.</td>
+</tr>
+<tr>
+<td><strong>Sample Rate</strong></td>
+<td>2.4 MSPS</td>
+<td>Permite elegir el ancho de banda que nos mostrará por pantalla. Lógicamente, a mayor valor, mayor consumo de recursos de nuestro PC. Por lo que si tenemos un PC poco potente, debemos seleccionar un valor más bajo.</td>
+</tr>
+<tr>
+<td><strong>Sampling Mode</strong></td>
+<td>Quadrature Sampling</td>
+<td>Permite elegir el modo de muestreo.</td>
+</tr>
+<tr>
+<td><strong>Offset tunning</strong></td>
+<td>R820T: Desactivado   E4000: Activado</td>
+<td>Solo es necesario para los dispositivos basados en el chip E4000.</td>
+</tr>
+<tr>
+<td><strong>RTL AGC</strong></td>
+<td>Desactivado</td>
+<td>Activa el control automático de ganancia del chip RTL2832U.</td>
+</tr>
+<tr>
+<td><strong>Tuner AGC</strong></td>
+<td>Desactivado</td>
+<td>Activa el control automático de ganancia del sintonizador del dispositivo.</td>
+</tr>
+<tr>
+<td><strong>RF Gain</strong></td>
+<td></td>
+<td>Permite ajustar la ganancia manualmente. En el siguiente punto veremos como ajustarla correctamente.</td>
+</tr>
+<tr>
+<td><strong>Frequency correction (ppm)</strong></td>
+<td></td>
+<td>Permite corregir la variación de la frecuencia que tienen la mayoría de dispositivos. Esta variación se debe al oscilador de baja calidad con el que normalmente vienen. Para establecer este valor, tendremos que sintonizar una frecuencia conocida y ajustarlo manualmente.</td>
 </tr>
 </tbody></table>
-<img src="/2020/04/27/instalacion-satnogs-ansible/satnogs-config.png" class="" title="SatNOGS Setup">
+<p>Con todo ya configurado, solo queda pulsar el botón de <strong>Start/Stop</strong> para empezar a recibir.</p>
+<h2 id="Ajuste-de-la-ganancia"><a href="#Ajuste-de-la-ganancia" class="headerlink" title="Ajuste de la ganancia"></a>Ajuste de la ganancia</h2><p>En este último paso vamos a ajustar la ganancia de nuestro dispositivo manualmente. Como hemos visto anteriormente, el ajuste de la ganancia se puede dejar para que el dispositivo lo haga automáticamente. El problema es que este ajuste muy pocas veces se hace correctamente, por lo que es muy recomendable hacerlo manualmente. Para ello sintonizamos cualquier señal en la frecuencia para la que vamos a ajustar la ganancia y abrimos los ajustes del dispositivo.<br>Ahora el objetivo es ajustar el valor de <strong>RF Gain</strong> hasta que consigamos el máximo valor de SNR (Signal to Noise Ratio).</p>
+<img src="/2020/01/19/instalacion-rtlsdr-windows/ganancia0.jpg" class="" title="Ajuste de la ganancia manualmente">
+<img src="/2020/01/19/instalacion-rtlsdr-windows/ganancia_max.jpg" class="" title="Ajuste de la ganancia manualmente">
+<img src="/2020/01/19/instalacion-rtlsdr-windows/ganancia.jpg" class="" title="Ajuste de la ganancia manualmente">
+
+<p>Una vez tengamos la ganancia ajustada, ya tendremos listo nuestro dispositivo SDR.</p>
 ]]></content>
       <tags>
-        <tag>Satélites</tag>
-        <tag>Linux</tag>
-        <tag>Raspberry Pi</tag>
+        <tag>RTL-SDR</tag>
         <tag>Instalación</tag>
-        <tag>SatNOGS</tag>
+        <tag>SDRSharp</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -1143,107 +1145,105 @@
       </tags>
   </entry>
   <entry>
-    <title>Instalación de dispositivos RTL-SDR en Windows</title>
-    <url>/2020/01/19/instalacion-rtlsdr-windows/</url>
-    <content><![CDATA[<p>En este tutorial vamos a ver como instalar nuestro nuevo dispositivo RTL-SDR en Windows 10.</p>
-<p>Existen varias alternativas para Windows, pero en este tutorial vamos a instalar y configurar SDR# (SDR Sharp), ya que es el más conocido y utilizado.</p>
+    <title>Instalación de estación terrestre con SatNOGS (II)</title>
+    <url>/2020/04/27/instalacion-satnogs-ansible/</url>
+    <content><![CDATA[<p>En el artículo anterior <a href="https://sdr-es.com/2020/04/24/instalacion-satnogs/">“Instalación de estación terrestre con SatNOGS”</a> vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.<br>En este artículo veremos como realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.</p>
 <span id="more"></span>
 
-<h2 id="Instalacion-de-SDR"><a href="#Instalacion-de-SDR" class="headerlink" title="Instalación de SDR#"></a>Instalación de SDR#</h2><p>El primer paso es descargar el software que necesitamos para poder usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo clic en el siguiente enlace:</p>
-<p><a href="https://airspy.com/download/"><center>https://airspy.com/download/</center></a></p>
-<p>Primero necesitamos instalar el entorno de ejecución de .NET 5 para poder ejecutar SDR#. Para ello descargamos el instalador desde el enlace que encontramos en la página (<strong><em>.NET 5 Desktop x86 Runtime</em></strong>) y los instalamos.</p>
-<p>Por último descargamos SDR# haciendo clic en el botón <em>Download</em>.</p>
-<img src="/2020/01/19/instalacion-rtlsdr-windows/descarga.jpg" class="" title="Descarga de SDR#">
 
-<p>Una vez descargado el archivo ZIP, extraemos su contenido en el directorio deseado. En este ejemplo vamos a usar el directorio <em>C:/SDR/SDRSharp</em>.</p>
-<h2 id="Instalacion-de-los-controladores"><a href="#Instalacion-de-los-controladores" class="headerlink" title="Instalación de los controladores"></a>Instalación de los controladores</h2><p>El siguiente paso es descargar los controladores (<em>drivers</em>) para nuestro dispositivo RTL-SDR. Para ello, el propio SDR# trae un <em>script</em> que nos los descarga automáticamente. Solo tenemos que ejecutar el archivo <strong>install-rtlsdr.bat</strong> que encontraremos en el directorio en el que acabamos de extraer SDR#.</p>
-<img src="/2020/01/19/instalacion-rtlsdr-windows/bat.jpg" class="" title="install-rtlsdr.bat">
+<p>Si bien este artículo se centra en la instalación en una Raspberry Pi, es posible realizar la instalación en otros dispositivos Linux mediante este mismo procedimiento. El <em>playbook</em> de Ansible que vamos a utilizar es compatible con las siguientes distribuciones y versiones:</p>
+<ul>
+<li><strong>Debian:</strong> <em>stretch</em>, <em>buster</em>.</li>
+<li><strong>Raspbian:</strong> <em>stretch</em>, <em>buster</em>.</li>
+</ul>
+<h2 id="Instalacion-de-Ansible"><a href="#Instalacion-de-Ansible" class="headerlink" title="Instalación de Ansible"></a>Instalación de Ansible</h2><p>Lo primero que haremos será instalar la última versión de Ansible. Para ello seguimos los siguientes pasos:</p>
+<ol>
+<li>Añadir el repositorio de Ansible.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo &quot;deb http:&#x2F;&#x2F;ppa.launchpad.net&#x2F;ansible&#x2F;ansible&#x2F;ubuntu trusty main&quot; | sudo tee -a &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br></pre></td></tr></table></figure>
 
-<p>Una vez el <em>script</em> termine nos pedirá que pulsemos una tecla para finalizar.</p>
-<p>Por defecto, Windows nos instala sus propios controladores para nuestro dispositivo RTL-SDR. El problema es que estos no nos sirven para poder utilizarlo con SDR#, por lo que tendremos que sustituirlos por otros.<br>Para ello utilizaremos el instalador <strong>Zadig</strong>. Este ejecutable se descarga automáticamente al ejecutar el script del paso anterior, por lo que solo tendremos que ir al directorio antes mencionado y ejecutar (<strong>como Administrador</strong>) el archivo <strong>zadig.exe</strong>.</p>
-<img src="/2020/01/19/instalacion-rtlsdr-windows/zadig1.jpg" class="" title="zadig.exe">
+<ol start="2">
+<li>Añadir la clave del repositorio.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367</span><br></pre></td></tr></table></figure>
 
-<p>En la ventana del instalador seleccionamos <strong>Options</strong> y marcamos <strong>List All Devices</strong>.</p>
-<img src="/2020/01/19/instalacion-rtlsdr-windows/zadig3.jpg" class="" title="Zadig list devices">
+<ol start="3">
+<li>Actualizar lista de repositorios.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 
-<p>Ahora tendremos que seleccionar nuestro dispositivo en el listado.<br>Tenemos que asegurarnos de que el dispositivo que seleccionemos se corresponde con el RTL-SDR. De lo contrario vamos a reemplazar el driver de otro dispositivo y dejará de funcionar.</p>
-<img src="/2020/01/19/instalacion-rtlsdr-windows/zadig4.jpg" class="" title="Zadig replace">
+<ol start="4">
+<li>Instalar Ansible.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y ansible</span><br></pre></td></tr></table></figure>
 
-<p>Una vez lo tengamos seleccionado correctamente, hacemos clic en <strong>Replace Driver</strong> y esperamos a que se instalen los nuevos controladores.</p>
-<img src="/2020/01/19/instalacion-rtlsdr-windows/zadig5.jpg" class="" title="Zadig instalado">
+<h2 id="Instalacion-del-cliente-Ansible-de-SatNOGS"><a href="#Instalacion-del-cliente-Ansible-de-SatNOGS" class="headerlink" title="Instalación del cliente Ansible de SatNOGS"></a>Instalación del cliente Ansible de SatNOGS</h2><p>A continuación vamos a descargar e instalar el instalador del cliente SatNOGS.</p>
+<ol>
+<li>Instalamos las dependencias que vamos a necesitar:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y git needrestart</span><br></pre></td></tr></table></figure>
 
-<h2 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h2><p>Ya tenemos nuestro dispositivo conectado e instalado. Es el turno ahora de decirle a SDR# que utilice nuestro dispositivo.<br>Para ello vamos al directorio en el que hemos instalado SDR# y ejecutamos <strong>SDRSharp.exe</strong> para iniciar el programa.</p>
-<p>Una vez abierto, hacemos clic en <strong>Source</strong> y seleccionamos <strong>RTL-SDR USB</strong>.</p>
-<img src="/2020/01/19/instalacion-rtlsdr-windows/sdrsharp_source.jpg" class="" title="Seleccionando dispositivo">
+<ol start="2">
+<li>Descargamos el repositorio:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b stable https:&#x2F;&#x2F;gitlab.com&#x2F;librespacefoundation&#x2F;satnogs&#x2F;satnogs-client-ansible.git</span><br></pre></td></tr></table></figure>
 
-<p>Después de haber seleccionado nuestro dispositivo, tenemos que editar sus ajustes. Para ello hacemos clic en el icono de ajustes para mostrar la ventana de configuración.</p>
-<img src="/2020/01/19/instalacion-rtlsdr-windows/sdrsharp.jpg" class="" title="Ajustes">
+<ol start="3">
+<li>Accedemos a la carpeta descargada:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd satnogs-client-ansible</span><br></pre></td></tr></table></figure>
 
-<p>En esta ventana encontramos las siguientes opciones:</p>
-<img src="/2020/01/19/instalacion-rtlsdr-windows/sdrsharp_config.jpg" class="" title="RTL-SDR Controller">
+<ol start="4">
+<li>Copiamos y renombramos el siguiente directorio:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp -r production.dist production</span><br></pre></td></tr></table></figure>
 
+<ol start="5">
+<li>Ahora editamos el archivo <code>hosts</code> con nuestros datos de conexión SSH a la Raspberry Pi:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano production&#x2F;inventory&#x2F;hosts</span><br></pre></td></tr></table></figure>
+
+<p>Debemos editar el <em>host</em>, el usuario y la clave:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">all:</span><br><span class="line">  hosts:</span><br><span class="line">    satnogs:</span><br><span class="line">      ansible_host: &#39;localhost&#39;</span><br><span class="line">      ansible_user: &#39;pi&#39;</span><br><span class="line">      ansible_ssh_pass: &#39;raspberry&#39;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>Comprobamos la conexión SSH:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh pi@localhost true</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>Por último ejecutamos el <em>playbook</em>:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ansible-playbook -i production&#x2F;inventory -K site.yml</span><br></pre></td></tr></table></figure>
+
+<p>La instalación tardará unos minutos (pueden ser bastantes dependiendo de nuestra conexión y la CPU de la Raspberry Pi) y al finalizar mostrará un mensaje como el siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- Play recap -</span><br><span class="line">  satnogs                    : ok&#x3D;121  changed&#x3D;49   unreachable&#x3D;0    failed&#x3D;0    rescued&#x3D;0    ignored&#x3D;0</span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h2><p>Los pasos para la configuración del cliente son idénticos a los descritos en el artículo anterior en este mismo apartado.</p>
+<p>La única observación es que ahora al tener más de un dispositivo SDR conectado, debemos indicar cual de ellos debe utilizar.<br>Necesitaremos el número de serie del dispositivo para diferenciarlos. Para extraerlo usamos la herramienta <code>rtl_test</code>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ rtl_test</span><br><span class="line">Found 2 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line">  1:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>En este caso vamos a utilizar el segundo dispositivo, y por lo tanto se lo debemos indicar a SatNOGS. Para ello en <strong><em>Basic configuration options</em></strong> realizaremos el siguiente cambio:</p>
 <table>
 <thead>
 <tr>
 <th>Ajuste</th>
-<th>Recomendado</th>
 <th>Descripción</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>Device</strong></td>
-<td></td>
-<td>Nos permite indicarle el dispositivo RTL-SDR que utilizaremos. Si no hemos instalado los controladores del paso anterior correctamente, no nos aparecerá ninguno disponible.</td>
-</tr>
-<tr>
-<td><strong>Sample Rate</strong></td>
-<td>2.4 MSPS</td>
-<td>Permite elegir el ancho de banda que nos mostrará por pantalla. Lógicamente, a mayor valor, mayor consumo de recursos de nuestro PC. Por lo que si tenemos un PC poco potente, debemos seleccionar un valor más bajo.</td>
-</tr>
-<tr>
-<td><strong>Sampling Mode</strong></td>
-<td>Quadrature Sampling</td>
-<td>Permite elegir el modo de muestreo.</td>
-</tr>
-<tr>
-<td><strong>Offset tunning</strong></td>
-<td>R820T: Desactivado   E4000: Activado</td>
-<td>Solo es necesario para los dispositivos basados en el chip E4000.</td>
-</tr>
-<tr>
-<td><strong>RTL AGC</strong></td>
-<td>Desactivado</td>
-<td>Activa el control automático de ganancia del chip RTL2832U.</td>
-</tr>
-<tr>
-<td><strong>Tuner AGC</strong></td>
-<td>Desactivado</td>
-<td>Activa el control automático de ganancia del sintonizador del dispositivo.</td>
-</tr>
-<tr>
-<td><strong>RF Gain</strong></td>
-<td></td>
-<td>Permite ajustar la ganancia manualmente. En el siguiente punto veremos como ajustarla correctamente.</td>
-</tr>
-<tr>
-<td><strong>Frequency correction (ppm)</strong></td>
-<td></td>
-<td>Permite corregir la variación de la frecuencia que tienen la mayoría de dispositivos. Esta variación se debe al oscilador de baja calidad con el que normalmente vienen. Para establecer este valor, tendremos que sintonizar una frecuencia conocida y ajustarlo manualmente.</td>
+<td>SATNOGS_SOAPY_RX_DEVICE</td>
+<td>Dispositivo SDR que vamos a usar y número de serie: <code>driver=rtlsdr,serial=08201703</code>.</td>
 </tr>
 </tbody></table>
-<p>Con todo ya configurado, solo queda pulsar el botón de <strong>Start/Stop</strong> para empezar a recibir.</p>
-<h2 id="Ajuste-de-la-ganancia"><a href="#Ajuste-de-la-ganancia" class="headerlink" title="Ajuste de la ganancia"></a>Ajuste de la ganancia</h2><p>En este último paso vamos a ajustar la ganancia de nuestro dispositivo manualmente. Como hemos visto anteriormente, el ajuste de la ganancia se puede dejar para que el dispositivo lo haga automáticamente. El problema es que este ajuste muy pocas veces se hace correctamente, por lo que es muy recomendable hacerlo manualmente. Para ello sintonizamos cualquier señal en la frecuencia para la que vamos a ajustar la ganancia y abrimos los ajustes del dispositivo.<br>Ahora el objetivo es ajustar el valor de <strong>RF Gain</strong> hasta que consigamos el máximo valor de SNR (Signal to Noise Ratio).</p>
-<img src="/2020/01/19/instalacion-rtlsdr-windows/ganancia0.jpg" class="" title="Ajuste de la ganancia manualmente">
-<img src="/2020/01/19/instalacion-rtlsdr-windows/ganancia_max.jpg" class="" title="Ajuste de la ganancia manualmente">
-<img src="/2020/01/19/instalacion-rtlsdr-windows/ganancia.jpg" class="" title="Ajuste de la ganancia manualmente">
-
-<p>Una vez tengamos la ganancia ajustada, ya tendremos listo nuestro dispositivo SDR.</p>
+<img src="/2020/04/27/instalacion-satnogs-ansible/satnogs-config.png" class="" title="SatNOGS Setup">
 ]]></content>
       <tags>
-        <tag>RTL-SDR</tag>
+        <tag>Satélites</tag>
+        <tag>Linux</tag>
+        <tag>Raspberry Pi</tag>
         <tag>Instalación</tag>
-        <tag>SDRSharp</tag>
-        <tag>Windows</tag>
+        <tag>SatNOGS</tag>
       </tags>
   </entry>
   <entry>
@@ -1352,69 +1352,67 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción de datos del instrumental HIRS de los satélites NOAA</title>
-    <url>/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</url>
-    <content><![CDATA[<p>Como vimos en el artículo <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
-<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
+    <title>Recepción de mensajes Inmarsat Aero</title>
+    <url>/2020/03/10/recepcion-aero-inmarsat/</url>
+    <content><![CDATA[<p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
+<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a href="https://es.wikipedia.org/wiki/ACARS">ACARS</a>, ADS-C, fax y voz digital.</p>
 <span id="more"></span>
 
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
-<table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>Frecuencia</th>
-<th>Estado</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>NOAA 15</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
-</tr>
-<tr>
-<td>NOAA 18</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
-</tr>
-<tr>
-<td>NOAA 19</td>
-<td>137.770 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
-<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
-<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
-<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
-<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
+<p>Para decodificar este protocolo utilizaremos el software Open Source <strong>JAERO</strong>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://github.com/jontio/JAERO/releases/download/v1.0.4.11/JAERO-x64-setup.exe"><center>JAERO x64 v1.0.4.11</center></a></p>
+<p>Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos clic en <em>Tools</em> y en <em>Settings</em>. Esto abre la ventana de ajustes de JAERO.</p>
+<img src="/2020/03/10/recepcion-aero-inmarsat/jaero_config.jpg" class="" title="Configuración JAERO">
+
+<p>El primer ajuste es indicarle en el apartado de <em>Soundcard</em> que le vamos a pasar el audio desde SDR# por el cable de audio virtual.<br>El siguiente ajuste es indicarle la ubicación de la base de datos con los datos de las aeronaves. Para ello en el apartado <em>Database</em> nos aseguramos de que la ruta es correcta y le damos a <strong>Download</strong> para que se descargue una base de datos actualizada. Si todo ha ido bien, deberíamos tener un archivo CSV con los datos en la ruta indicada.</p>
+<p>Para recibir datos bastaría con sintonizar SDR# en la frecuencia requerida y ajustar JAERO para que decodifique los mensajes.</p>
+<p>Inmarsat emite la señal en diferentes modulaciones y frecuencias. A continuación veremos ejemplos cada una.</p>
+<h2 id="Aero-600-bps"><a href="#Aero-600-bps" class="headerlink" title="Aero 600 bps"></a>Aero 600 bps</h2><ul>
+<li><strong>Modulación:</strong> Aviation-BPSK.</li>
+<li><strong>Ancho de banda:</strong> 800 Hz.</li>
+<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_sdr.jpg" class="" title="AERO 600 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_jaero.jpg" class="" title="AERO 600 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_planelog.jpg" class="" title="AERO 600 bps planelog">
 
 
-<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
-<p>Una vez descargado, extraemos el contenido del archivo.</p>
-<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
+<h2 id="Aero-1200-bps"><a href="#Aero-1200-bps" class="headerlink" title="Aero 1200 bps"></a>Aero 1200 bps</h2><ul>
+<li><strong>Modulación:</strong> Aviation-BPSK.</li>
+<li><strong>Ancho de banda:</strong> 1600 Hz.</li>
+<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_sdr.jpg" class="" title="AERO 1200 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_jaero.jpg" class="" title="AERO 1200 bps">
 
-<p>Para demodular el archivo basta con hacer clic encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
-<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre _<strong>minorFrames_xxxx.txt</strong>_.</p>
-<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
-<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
-<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
-<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
-<p>Ahora le pasamos el archivo _<strong>minorFrames_xxxx.txt</strong>_ como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar).</p>
-<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio <em>output/minorFrames_xxxx</em>.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
 
-<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
+<h2 id="Aero-H-Aero-H"><a href="#Aero-H-Aero-H" class="headerlink" title="Aero-H, Aero-H+"></a>Aero-H, Aero-H+</h2><ul>
+<li><strong>Modulación:</strong> Aviation-QPSK</li>
+<li><strong>Ancho de banda:</strong> 10,5 KHz</li>
+<li><strong>Frecuencia:</strong> 1546,0 - 1546,2 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_sdr.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_jaero.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_planelog.jpg" class="" title="AERO 10.5k planelog">
+
+
+<h2 id="Voz-Digital"><a href="#Voz-Digital" class="headerlink" title="Voz Digital"></a>Voz Digital</h2><ul>
+<li><strong>Modulación:</strong> Aviation-QPSK.</li>
+<li><strong>Ancho de banda:</strong> 6 KHz.</li>
+<li><strong>Frecuencia:</strong> 1546,13 - 1546,18 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_sdr.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_jaero.jpg" class="" title="AERO 10.5k">
 ]]></content>
       <tags>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
         <tag>Satélites</tag>
+        <tag>Inmarsat</tag>
+        <tag>L-Band</tag>
       </tags>
   </entry>
   <entry>
@@ -1537,67 +1535,69 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción de mensajes Inmarsat Aero</title>
-    <url>/2020/03/10/recepcion-aero-inmarsat/</url>
-    <content><![CDATA[<p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
-<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a href="https://es.wikipedia.org/wiki/ACARS">ACARS</a>, ADS-C, fax y voz digital.</p>
+    <title>Recepción de datos del instrumental HIRS de los satélites NOAA</title>
+    <url>/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</url>
+    <content><![CDATA[<p>Como vimos en el artículo <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
+<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
 <span id="more"></span>
 
-<p>Para decodificar este protocolo utilizaremos el software Open Source <strong>JAERO</strong>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://github.com/jontio/JAERO/releases/download/v1.0.4.11/JAERO-x64-setup.exe"><center>JAERO x64 v1.0.4.11</center></a></p>
-<p>Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos clic en <em>Tools</em> y en <em>Settings</em>. Esto abre la ventana de ajustes de JAERO.</p>
-<img src="/2020/03/10/recepcion-aero-inmarsat/jaero_config.jpg" class="" title="Configuración JAERO">
-
-<p>El primer ajuste es indicarle en el apartado de <em>Soundcard</em> que le vamos a pasar el audio desde SDR# por el cable de audio virtual.<br>El siguiente ajuste es indicarle la ubicación de la base de datos con los datos de las aeronaves. Para ello en el apartado <em>Database</em> nos aseguramos de que la ruta es correcta y le damos a <strong>Download</strong> para que se descargue una base de datos actualizada. Si todo ha ido bien, deberíamos tener un archivo CSV con los datos en la ruta indicada.</p>
-<p>Para recibir datos bastaría con sintonizar SDR# en la frecuencia requerida y ajustar JAERO para que decodifique los mensajes.</p>
-<p>Inmarsat emite la señal en diferentes modulaciones y frecuencias. A continuación veremos ejemplos cada una.</p>
-<h2 id="Aero-600-bps"><a href="#Aero-600-bps" class="headerlink" title="Aero 600 bps"></a>Aero 600 bps</h2><ul>
-<li><strong>Modulación:</strong> Aviation-BPSK.</li>
-<li><strong>Ancho de banda:</strong> 800 Hz.</li>
-<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_sdr.jpg" class="" title="AERO 600 bps">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_jaero.jpg" class="" title="AERO 600 bps">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_planelog.jpg" class="" title="AERO 600 bps planelog">
-
-
-<h2 id="Aero-1200-bps"><a href="#Aero-1200-bps" class="headerlink" title="Aero 1200 bps"></a>Aero 1200 bps</h2><ul>
-<li><strong>Modulación:</strong> Aviation-BPSK.</li>
-<li><strong>Ancho de banda:</strong> 1600 Hz.</li>
-<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_sdr.jpg" class="" title="AERO 1200 bps">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_jaero.jpg" class="" title="AERO 1200 bps">
-
-
-<h2 id="Aero-H-Aero-H"><a href="#Aero-H-Aero-H" class="headerlink" title="Aero-H, Aero-H+"></a>Aero-H, Aero-H+</h2><ul>
-<li><strong>Modulación:</strong> Aviation-QPSK</li>
-<li><strong>Ancho de banda:</strong> 10,5 KHz</li>
-<li><strong>Frecuencia:</strong> 1546,0 - 1546,2 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_sdr.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_jaero.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_planelog.jpg" class="" title="AERO 10.5k planelog">
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>Frecuencia</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NOAA 15</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 18</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 19</td>
+<td>137.770 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
+<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
+<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
+<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
+<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
 
 
-<h2 id="Voz-Digital"><a href="#Voz-Digital" class="headerlink" title="Voz Digital"></a>Voz Digital</h2><ul>
-<li><strong>Modulación:</strong> Aviation-QPSK.</li>
-<li><strong>Ancho de banda:</strong> 6 KHz.</li>
-<li><strong>Frecuencia:</strong> 1546,13 - 1546,18 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_sdr.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_jaero.jpg" class="" title="AERO 10.5k">
+<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
+<p>Una vez descargado, extraemos el contenido del archivo.</p>
+<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
+
+<p>Para demodular el archivo basta con hacer clic encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
+<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre _<strong>minorFrames_xxxx.txt</strong>_.</p>
+<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
+<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
+<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
+<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
+<p>Ahora le pasamos el archivo _<strong>minorFrames_xxxx.txt</strong>_ como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar).</p>
+<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio <em>output/minorFrames_xxxx</em>.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
+
+<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
 ]]></content>
       <tags>
         <tag>Satélites</tag>
-        <tag>Inmarsat</tag>
-        <tag>L-Band</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
       </tags>
   </entry>
   <entry>
@@ -1769,72 +1769,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción del satélite NAYIF-1</title>
-    <url>/2020/02/26/recepcion-nayif1/</url>
-    <content><![CDATA[<p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.</p>
-<span id="more"></span>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>NAYIF-1 (EO-88)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>EIAST y AUS</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>42017</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2017-008BX</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (1.32 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>15 de Febrero de 2017</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145.940 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://www.mbrsc.ae/satellite-programme/nayif-1">https://www.mbrsc.ae/satellite-programme/nayif-1</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/2020/02/26/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
-
-
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="https://sdr-es.com/2020/02/22/recepcion-funcube1/">FUNcube-1</a> y <a href="https://sdr-es.com/2020/02/25/recepcion-jy1sat/">JY1-SAT</a>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi"><center>Nayif-1 Dashboard v1040</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/2020/02/26/recepcion-nayif1/config.png" class="" title="NAYIF-1 Dashboard Configuración">
-
-<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/2020/02/26/recepcion-nayif1/telem.png" class="" title="NAYIF-1 Dashboard Telemetría">
-
-<p><em>Mensajes:</em></p>
-<img src="/2020/02/26/recepcion-nayif1/messages.png" class="" title="NAYIF-1 Dashboard Mensajes">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Cubesat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción del satélite JY1-SAT</title>
     <url>/2020/02/25/recepcion-jy1sat/</url>
     <content><![CDATA[<p>El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan’s Crown Prince Foundation.<br>JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-6. Además de las funciones habituales de FUNcube, el satélite envía imágenes en formato SSDV.<br>En este artículo veremos como recibir la telemetría y las imágenes.</p>
@@ -1903,6 +1837,72 @@
 </br>
 <img src="/2020/02/25/recepcion-jy1sat/JY1SatAudioId9.jpg" class="" title="JY1SatAudioId9">
 </br>
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Cubesat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción del satélite NAYIF-1</title>
+    <url>/2020/02/26/recepcion-nayif1/</url>
+    <content><![CDATA[<p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.</p>
+<span id="more"></span>
+
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>NAYIF-1 (EO-88)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>EIAST y AUS</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>42017</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2017-008BX</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (1.32 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>15 de Febrero de 2017</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>145.940 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://www.mbrsc.ae/satellite-programme/nayif-1">https://www.mbrsc.ae/satellite-programme/nayif-1</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/2020/02/26/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
+
+
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="https://sdr-es.com/2020/02/22/recepcion-funcube1/">FUNcube-1</a> y <a href="https://sdr-es.com/2020/02/25/recepcion-jy1sat/">JY1-SAT</a>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi"><center>Nayif-1 Dashboard v1040</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/2020/02/26/recepcion-nayif1/config.png" class="" title="NAYIF-1 Dashboard Configuración">
+
+<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/2020/02/26/recepcion-nayif1/telem.png" class="" title="NAYIF-1 Dashboard Telemetría">
+
+<p><em>Mensajes:</em></p>
+<img src="/2020/02/26/recepcion-nayif1/messages.png" class="" title="NAYIF-1 Dashboard Mensajes">
 ]]></content>
       <tags>
         <tag>Satélites</tag>
@@ -2002,9 +2002,9 @@
 <img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" width="500" title="WXtoImg">
 ]]></content>
       <tags>
+        <tag>Satélites</tag>
         <tag>Satélites meteorológicos</tag>
         <tag>NOAA</tag>
-        <tag>Satélites</tag>
       </tags>
   </entry>
   <entry>
@@ -2134,8 +2134,8 @@
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_rectified.jpg" class="" title="Imagen rectificada">
 ]]></content>
       <tags>
-        <tag>Satélites meteorológicos</tag>
         <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
       </tags>
   </entry>
   <entry>
@@ -2462,6 +2462,42 @@
       </tags>
   </entry>
   <entry>
+    <title>Seguimiento de satélites con Orbitron</title>
+    <url>/2020/01/23/seguimiento-satelites-orbitron/</url>
+    <content><![CDATA[<p>Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.<br>Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.</p>
+<span id="more"></span>
+
+<h2 id="Instalacion-de-Orbitron"><a href="#Instalacion-de-Orbitron" class="headerlink" title="Instalación de Orbitron"></a>Instalación de Orbitron</h2><p>El primer paso es descargar Orbitron desde su web: <a href="http://www.stoff.pl/downloads.php">http://www.stoff.pl/downloads.php</a></p>
+<p>Tenemos la opción de descargarnos el instalador o un archivo ZIP. En este ejemplo vamos a descargar el ZIP y lo vamos a extraer en el directorio <em>C:\SDR\Orbitron</em>.</p>
+<p>Ejecutamos ahora el programa haciendo doble clic en <strong>Orbitron.exe</strong> y se nos abrirá la interfaz del programa. Nos pedirá que actualicemos los archivo de TLE al iniciar, a lo que le decimos que no. Más adelante veremos qué son estos archivos y cómo actualizarlos.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron.jpg" class="" title="Orbitron">
+
+<h2 id="Configuracion-de-Orbitron"><a href="#Configuracion-de-Orbitron" class="headerlink" title="Configuración de Orbitron"></a>Configuración de Orbitron</h2><p>Vamos ahora a configurar Orbitron con los ajustes básicos.</p>
+<p>El primer ajuste es indicarle nuestra localización. Para ello vamos a la pestaña Location e introducimos nuestros datos. Si no los sabemos podemos buscar nuestra ciudad (o las más cercana) en el listado que tenemos a la derecha. Lo ideal es meter los valores más exactos posibles.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-location.jpg" class="" title="Orbitron Location">
+
+<p>Una vez los tengamos introducidos correctamente, hacemos clic en <strong>Choose</strong> para seleccionar esta ubicación.</p>
+<p>El siguiente paso es seleccionar el archivo con los TLE de los satélites que vamos a seguir.<br>Estos archivos TLE contienen un listado de objetos que orbitan la Tierra con sus respectivos elementos orbitales en formato TLE <em>(two-line element set)</em>. Con estos elementos, y usando la fórmula adecuada, podemos estimar la posición y velocidad del objeto en cualquier instante de tiempo pasado o futuro.</p>
+<p>Aquí tenemos varias opciones, utilizar los archivos TLE descargados por Orbitron, o bien crear un archivo con los satélites que nos interesen. Si optamos por la primera opción, necesitamos primeramente actualizar los archivos TLE. Para ello abrimos la ventana de ajustes de Orbitron presionando las teclas <strong><em>Alt+F5</em></strong>, o bien hacemos clic en el siguiente punto y seleccionamos <strong>Setup</strong>:</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-setup.jpg" class="" title="Orbitron Setup">
+
+<p>Vamos a la pestaña <strong>TLE updater</strong> y hacemos clic en el siguiente icono:</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/setup-tle.jpg" class="" title="Actualizar TLE">
+
+<p>Una vez se actualicen los archivos, cerramos esa ventana y hacemos clic en <strong>Load TLE</strong> y seleccionamos el archivo que contenga los satélites que queremos seguir. En este caso vamos a elegir un archivo que contiene los TLE de algunos satélites que nos interesan.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/load-tle.jpg" class="" title="Cargar archivo">
+
+<p>Ahora bastaría con ir seleccionando los satélites que queremos seguir y se mostrarán sobre el mapa.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-loaded.jpg" class="" title="Orbitron">
+
+<p>En siguientes tutoriales veremos cómo conectar Orbitron con SDR# para realizar seguimientos automáticos.</p>
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Orbitron</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recepción de mensajes ADS-B en Raspberry Pi</title>
     <url>/2020/05/03/seguimiento-aviones-raspberry-pi/</url>
     <content><![CDATA[<p>ADS-B (<em>Automatic Dependent Surveillance Broadcast</em>) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.</p>
@@ -2619,42 +2655,6 @@
         <tag>Raspberry Pi</tag>
         <tag>ADS-B</tag>
         <tag>dump1090</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Seguimiento de satélites con Orbitron</title>
-    <url>/2020/01/23/seguimiento-satelites-orbitron/</url>
-    <content><![CDATA[<p>Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.<br>Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion-de-Orbitron"><a href="#Instalacion-de-Orbitron" class="headerlink" title="Instalación de Orbitron"></a>Instalación de Orbitron</h2><p>El primer paso es descargar Orbitron desde su web: <a href="http://www.stoff.pl/downloads.php">http://www.stoff.pl/downloads.php</a></p>
-<p>Tenemos la opción de descargarnos el instalador o un archivo ZIP. En este ejemplo vamos a descargar el ZIP y lo vamos a extraer en el directorio <em>C:\SDR\Orbitron</em>.</p>
-<p>Ejecutamos ahora el programa haciendo doble clic en <strong>Orbitron.exe</strong> y se nos abrirá la interfaz del programa. Nos pedirá que actualicemos los archivo de TLE al iniciar, a lo que le decimos que no. Más adelante veremos qué son estos archivos y cómo actualizarlos.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron.jpg" class="" title="Orbitron">
-
-<h2 id="Configuracion-de-Orbitron"><a href="#Configuracion-de-Orbitron" class="headerlink" title="Configuración de Orbitron"></a>Configuración de Orbitron</h2><p>Vamos ahora a configurar Orbitron con los ajustes básicos.</p>
-<p>El primer ajuste es indicarle nuestra localización. Para ello vamos a la pestaña Location e introducimos nuestros datos. Si no los sabemos podemos buscar nuestra ciudad (o las más cercana) en el listado que tenemos a la derecha. Lo ideal es meter los valores más exactos posibles.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-location.jpg" class="" title="Orbitron Location">
-
-<p>Una vez los tengamos introducidos correctamente, hacemos clic en <strong>Choose</strong> para seleccionar esta ubicación.</p>
-<p>El siguiente paso es seleccionar el archivo con los TLE de los satélites que vamos a seguir.<br>Estos archivos TLE contienen un listado de objetos que orbitan la Tierra con sus respectivos elementos orbitales en formato TLE <em>(two-line element set)</em>. Con estos elementos, y usando la fórmula adecuada, podemos estimar la posición y velocidad del objeto en cualquier instante de tiempo pasado o futuro.</p>
-<p>Aquí tenemos varias opciones, utilizar los archivos TLE descargados por Orbitron, o bien crear un archivo con los satélites que nos interesen. Si optamos por la primera opción, necesitamos primeramente actualizar los archivos TLE. Para ello abrimos la ventana de ajustes de Orbitron presionando las teclas <strong><em>Alt+F5</em></strong>, o bien hacemos clic en el siguiente punto y seleccionamos <strong>Setup</strong>:</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-setup.jpg" class="" title="Orbitron Setup">
-
-<p>Vamos a la pestaña <strong>TLE updater</strong> y hacemos clic en el siguiente icono:</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/setup-tle.jpg" class="" title="Actualizar TLE">
-
-<p>Una vez se actualicen los archivos, cerramos esa ventana y hacemos clic en <strong>Load TLE</strong> y seleccionamos el archivo que contenga los satélites que queremos seguir. En este caso vamos a elegir un archivo que contiene los TLE de algunos satélites que nos interesan.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/load-tle.jpg" class="" title="Cargar archivo">
-
-<p>Ahora bastaría con ir seleccionando los satélites que queremos seguir y se mostrarán sobre el mapa.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-loaded.jpg" class="" title="Orbitron">
-
-<p>En siguientes tutoriales veremos cómo conectar Orbitron con SDR# para realizar seguimientos automáticos.</p>
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Orbitron</tag>
       </tags>
   </entry>
 </search>
