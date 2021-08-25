@@ -18,7 +18,7 @@ El primer paso es descargar el software que necesitamos para poder usar nuestro 
 
 [<center>https://airspy.com/download/</center>](https://airspy.com/download/)
 
-Primero necesitamos instalar el entorno de ejecución de .NET 5 para poder ejecutar SDR#. Para ello descargamos el instalador desde el enlace que encontramos en la página (**_.NET 5 Desktop x86 Runtime_**) y los instalamos.
+Primero necesitamos instalar el entorno de ejecución de .NET 5 para poder ejecutar SDR#. Para ello descargamos el instalador desde el enlace que encontramos en esa misma página (**_.NET 5 Desktop x86 Runtime_**) y lo instalamos.
 
 Por último descargamos SDR# haciendo clic en el botón _Download_.
 
@@ -44,7 +44,7 @@ En la ventana del instalador seleccionamos **Options** y marcamos **List All Dev
 {% asset_img zadig3.jpg "Zadig list devices" %}
 
 Ahora tendremos que seleccionar nuestro dispositivo en el listado.
-Tenemos que asegurarnos de que el dispositivo que seleccionemos se corresponde con el RTL-SDR. De lo contrario vamos a reemplazar el driver de otro dispositivo y dejará de funcionar.
+Tenemos que asegurarnos de que el dispositivo que seleccionemos se corresponde con el RTL-SDR. De lo contrario vamos a reemplazar el controlador de otro dispositivo y dejará de funcionar.
 
 {% asset_img zadig4.jpg "Zadig replace" %}
 
@@ -81,6 +81,8 @@ En esta ventana encontramos las siguientes opciones:
 | **Frequency correction (ppm)** | | Permite corregir la variación de la frecuencia que tienen la mayoría de dispositivos. Esta variación se debe al oscilador de baja calidad con el que normalmente vienen. Para establecer este valor, tendremos que sintonizar una frecuencia conocida y ajustarlo manualmente. |
 
 Con todo ya configurado, solo queda pulsar el botón de **Start/Stop** para empezar a recibir.
+
+{% asset_img sdrsharp_start.jpg "SDR# Start/Stop" %}
 
 ## Ajuste de la ganancia
 
