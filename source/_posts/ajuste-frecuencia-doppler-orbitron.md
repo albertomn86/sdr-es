@@ -3,6 +3,7 @@ title: Ajuste de frecuencia en recepción de satélites
 date: 2020-02-18 12:45:55
 tags: [Satélites, Orbitron]
 author: EA7KOO
+updated: 2021-08-25 21:20:24
 ---
 
 
@@ -38,29 +39,23 @@ Los demás datos son opcionales, pero podemos completarlos para tener más infor
 El siguiente paso es instalar un plugin en SDR# que nos permita cambiar la frecuencia de forma automática.
 En este ejemplo vamos a usar el plugin **DDETracker** que podemos descargar desde el siguiente link:
 
-[<center>http://rtl-sdr.ru/uploads/download/ddetracker.zip</center>](http://rtl-sdr.ru/uploads/download/ddetracker.zip)
+[<center>Descargar DDE Tracker</center>](http://rtl-sdr.ru/uploads/download/ddetracker.zip)
 
-Una vez descargado el archivo y descomprimido, tenemos que incorporarlo a SDR#. Para ello seguimos los siguientes pasos:
+Una vez descargado el archivo seguimos los siguientes pasos:
 
-1. Copiamos los archivos que se indican en la siguiente captura dentro de la carpeta de instalacion de SDR#.
+1. Vamos a la carpeta de instalación de SDR# y dentro de la carpeta **Plugins** creamos una nueva de nombre **DDETracker**.
+
+2. Abrimos el archivo descargado y extraemos los archivos que se muestran en la siguiente captura dentro de la carpeta que hemos creado en el paso anterior.
 
     {% asset_img dde-archivos.jpg "Archivos de DDETracker" %}
 
-2. Insertamos la siguiente línea dentro del archivo _**Plugins.xml**_ que encontraremos dentro de la carpeta de SDR#.
-
-    ```
-    <add key="DDE Tracking Client" value="SDRSharp.DDETracker.DdeTrackingPlugin,SDRSharp.DDETracker" />
-    ```
-    </br>
-    {% asset_img dde-magicline.jpg "Magicline de DDETracker" %}
-
 
 3. Añadimos las siguientes líneas al archivo de configuración de Orbitron _**Setup.cfg**_, que encontramos dentro de la carpeta _Config_ en el directorio de instalación de Orbitron.
-    Debemos indicar la ruta completa en la que hemos colocado el archivo _SDRSharpDriverDDE.exe_ en el paso 1.
+    Debemos indicar la ruta completa en la que hemos colocado el archivo _SDRSharpDriverDDE.exe_ en el paso anterior.
 
     ```
     [Drivers]
-    SDRSharp=C:\SDR\SDRSharp\SDRSharpDriverDDE.exe
+    SDRSharp=C:\SDR\SDRSharp\Plugins\DDETracker\SDRSharpDriverDDE.exe
     ```
     </br>
     {% asset_img orbitron-config.jpg "Orbitron" %}
@@ -68,7 +63,11 @@ Una vez descargado el archivo y descomprimido, tenemos que incorporarlo a SDR#. 
     Por último, reiniciamos Orbitron para aplicar los cambios.
 
 
-Ahora que tenemos el plugin instalado, iniciamos SDR# y deberíamos ver el nuevo plugin en la lista. Lo iniciaremos haciendo clic en _Scheduler_.
+Ahora que tenemos el plugin instalado, iniciamos SDR# y abrimos el plugin desde el menú.
+
+{% asset_img sdrsharp-menu.jpg "SDR# menú" %}
+
+Lo activamos haciendo clic en _Scheduler_.
 
 {% asset_img dde-plugin.jpg "DDETracker" %}
 
@@ -87,7 +86,7 @@ Ahora ya podemos ver que DDETracker recibe los datos del satélite que tenemos a
 ## Configurar satélites en DDETracker
 
 Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.
-Para introducir los datos, hacemos clic en sobre el botón Config que aparece en el plugin y se abrirá una ventana para introducir los datos.
+Para introducir los datos, hacemos clic en sobre el botón **Config** que aparece en el plugin y se abrirá una ventana para introducir los datos.
 
 {% asset_img dde-config.jpg "DDETracker config" %}
 
