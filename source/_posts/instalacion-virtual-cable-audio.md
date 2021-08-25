@@ -3,6 +3,7 @@ title: Instalación de cable de audio virtual
 date: 2020-01-21 17:06:29
 tags: ['Virtual Audio Cable', Instalación, Windows, macOS]
 author: EA7KOO
+updated: 2021-08-25 19:42:29
 ---
 
 Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.
@@ -31,9 +32,13 @@ Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado lo
 
 ### Configuración de SDR#
 
-Abrimos ahora SDR# y desplegamos la pestaña para la configuración de Audio. Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer clic en **Output** y seleccionar **\[MME\] CABLE Input ...**.
+Abrimos ahora SDR# y abrimos la configuración de audio.
 
-{% asset_img sdrsharp-audio.jpg 800 "SDRSharp output" %}
+{% asset_img sdrsharp-audio-menu.jpg "SDRSharp audio" %}
+
+Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer clic en **Output** y seleccionar **\[MME\] CABLE Input ...**.
+
+{% asset_img sdrsharp-audio.jpg "SDRSharp output" %}
 
 Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.
 
