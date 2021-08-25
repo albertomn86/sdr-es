@@ -29,8 +29,8 @@
 <meta property="og:image" content="http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-plantilla.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-dnlink.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-archivos.jpg">
-<meta property="og:image" content="http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-magicline.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-config.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/sdrsharp-menu.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-plugin.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-driver.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-active.jpg">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-configured.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/sdr-sharp.jpg">
 <meta property="article:published_time" content="2020-02-18T11:45:55.000Z">
-<meta property="article:modified_time" content="2020-02-18T11:45:55.000Z">
+<meta property="article:modified_time" content="2021-08-25T19:20:24.000Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="Satélites">
 <meta property="article:tag" content="Orbitron">
@@ -278,6 +278,13 @@
 
       <time title="Creado por: 18/02/2020 12:45:55" itemprop="dateCreated datePublished" datetime="2020-02-18T12:45:55+01:00">18/02/2020</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Editado el</span>
+        <time title="Modificado por: 25/08/2021 21:20:24" itemprop="dateModified" datetime="2021-08-25T21:20:24+02:00">25/08/2021</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-user"></i>
@@ -313,26 +320,27 @@
 
 <p>Los demás datos son opcionales, pero podemos completarlos para tener más información sobre el satélite.</p>
 <h2 id="Instalacion-de-DDETracker"><a href="#Instalacion-de-DDETracker" class="headerlink" title="Instalación de DDETracker"></a>Instalación de DDETracker</h2><p>El siguiente paso es instalar un plugin en SDR# que nos permita cambiar la frecuencia de forma automática.<br>En este ejemplo vamos a usar el plugin <strong>DDETracker</strong> que podemos descargar desde el siguiente link:</p>
-<p><a target="_blank" rel="noopener" href="http://rtl-sdr.ru/uploads/download/ddetracker.zip"><center>http://rtl-sdr.ru/uploads/download/ddetracker.zip</center></a></p>
-<p>Una vez descargado el archivo y descomprimido, tenemos que incorporarlo a SDR#. Para ello seguimos los siguientes pasos:</p>
+<p><a target="_blank" rel="noopener" href="http://rtl-sdr.ru/uploads/download/ddetracker.zip"><center>Descargar DDE Tracker</center></a></p>
+<p>Una vez descargado el archivo seguimos los siguientes pasos:</p>
 <ol>
-<li><p>Copiamos los archivos que se indican en la siguiente captura dentro de la carpeta de instalacion de SDR#.</p>
+<li><p>Vamos a la carpeta de instalación de SDR# y dentro de la carpeta <strong>Plugins</strong> creamos una nueva de nombre <strong>DDETracker</strong>.</p>
+</li>
+<li><p>Abrimos el archivo descargado y extraemos los archivos que se muestran en la siguiente captura dentro de la carpeta que hemos creado en el paso anterior.</p>
  <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-archivos.jpg" class="" title="Archivos de DDETracker"></li>
-<li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro de la carpeta de SDR#.</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;add key&#x3D;&quot;DDE Tracking Client&quot; value&#x3D;&quot;SDRSharp.DDETracker.DdeTrackingPlugin,SDRSharp.DDETracker&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
- </br>
- <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-magicline.jpg" class="" title="Magicline de DDETracker"></li>
 </ol>
 <ol start="3">
-<li><p>Añadimos las siguientes líneas al archivo de configuración de Orbitron <em><strong>Setup.cfg</strong></em>, que encontramos dentro de la carpeta <em>Config</em> en el directorio de instalación de Orbitron.<br> Debemos indicar la ruta completa en la que hemos colocado el archivo <em>SDRSharpDriverDDE.exe</em> en el paso 1.</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Drivers]</span><br><span class="line">SDRSharp&#x3D;C:\SDR\SDRSharp\SDRSharpDriverDDE.exe</span><br></pre></td></tr></table></figure>
+<li><p>Añadimos las siguientes líneas al archivo de configuración de Orbitron <em><strong>Setup.cfg</strong></em>, que encontramos dentro de la carpeta <em>Config</em> en el directorio de instalación de Orbitron.<br> Debemos indicar la ruta completa en la que hemos colocado el archivo <em>SDRSharpDriverDDE.exe</em> en el paso anterior.</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Drivers]</span><br><span class="line">SDRSharp&#x3D;C:\SDR\SDRSharp\Plugins\DDETracker\SDRSharpDriverDDE.exe</span><br></pre></td></tr></table></figure>
  </br>
  <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-config.jpg" class="" title="Orbitron">
 
 <p> Por último, reiniciamos Orbitron para aplicar los cambios.</p>
 </li>
 </ol>
-<p>Ahora que tenemos el plugin instalado, iniciamos SDR# y deberíamos ver el nuevo plugin en la lista. Lo iniciaremos haciendo clic en <em>Scheduler</em>.</p>
+<p>Ahora que tenemos el plugin instalado, iniciamos SDR# y abrimos el plugin desde el menú.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/sdrsharp-menu.jpg" class="" title="SDR# menú">
+
+<p>Lo activamos haciendo clic en <em>Scheduler</em>.</p>
 <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-plugin.jpg" class="" title="DDETracker">
 
 
@@ -343,7 +351,7 @@
 <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-active.jpg" class="" title="DDETracker activo">
 
 
-<h2 id="Configurar-satelites-en-DDETracker"><a href="#Configurar-satelites-en-DDETracker" class="headerlink" title="Configurar satélites en DDETracker"></a>Configurar satélites en DDETracker</h2><p>Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.<br>Para introducir los datos, hacemos clic en sobre el botón Config que aparece en el plugin y se abrirá una ventana para introducir los datos.</p>
+<h2 id="Configurar-satelites-en-DDETracker"><a href="#Configurar-satelites-en-DDETracker" class="headerlink" title="Configurar satélites en DDETracker"></a>Configurar satélites en DDETracker</h2><p>Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.<br>Para introducir los datos, hacemos clic en sobre el botón <strong>Config</strong> que aparece en el plugin y se abrirá una ventana para introducir los datos.</p>
 <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-config.jpg" class="" title="DDETracker config">
 
 
