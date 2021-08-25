@@ -52,7 +52,7 @@ Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado
 
 Para demodular el archivo basta con hacer clic encima del archivo de audio y arrastrarlo encima del binario **demodPOES.exe** y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.
 
-Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre _**minorFrames_xxxx.txt**_.
+Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre **_minorFrames_xxxx.txt_**.
 
 
 Más información sobre el demodulador: http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation
@@ -68,7 +68,7 @@ Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el s
 
 Una vez descargado el _NOAA HIRS Decoder_, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.
 
-Ahora le pasamos el archivo _**minorFrames_xxxx.txt**_ como parámetro al binario **NOAA_HIRS_Decoder.exe** de la misma forma que vimos en el paso anterior (arrastrar y soltar).
+Ahora le pasamos el archivo **_minorFrames_xxxx.txt_** como parámetro al binario **NOAA_HIRS_Decoder.exe** de la misma forma que vimos en el paso anterior (arrastrar y soltar). Si nos da un error, tenemos que abrir una terminal y ejecutarlo pasándole el archivo con la opción **-i**.
 
 Una vez termine el proceso de decodificación veremos los datos dentro del directorio _output/minorFrames_xxxx_.
 
