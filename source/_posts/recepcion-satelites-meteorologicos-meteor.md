@@ -3,6 +3,7 @@ title: Recepción de satélites meteorológicos Meteor-M
 date: 2020-03-27 12:10:49
 tags: [Satélites, Satélites meteorológicos]
 author: EA7KOO
+updated: 2021-08-27 19:10:12
 ---
 
 Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.
@@ -21,35 +22,32 @@ Más información sobre los satélites Meteor-M en [este enlace](http://www.russ
 
 Tenemos en órbita tres satélites Meteor-M, pero actualmente solo uno de ellos emite imágenes en LRPT. El último satélite puesto en órbita sufrió a finales de 2019 el impacto de un micro-meteorito que le produjo daños y dejó el sistema de LRPT fuera de servicio. Solo consiguieron restablecer el sistema de HRPT. [Enlace a la publicación de Roscosmos.](https://www.roscosmos.ru/27891/)
 
-| Satélite        | Meteor-M N1 | Meteor-M N2 | Meteor-M N2-2 |
-|-----------------|-------------|-------------|---------------|
-| **NORAD ID**    | 35865       | 40069       | 44387         |
-| **COSPAR ID**   | 2009-049A   | 2014-037A   | 2019-038A     |
+| Satélite        | Meteor-M N1 | Meteor-M N2  | Meteor-M N2-2 |
+|-----------------|-------------|--------------|---------------|
+| **NORAD ID**    | 35865       | 40069        | 44387         |
+| **COSPAR ID**   | 2009-049A   | 2014-037A    | 2019-038A     |
 | **Masa de lanzamiento**  | 2.900 Kg | 2.900 Kg | 2.900 Kg |
 | **Fecha de lanzamiento** | 17 de Septiembre de 2009 | 8 de Julio de 2014 | 5 de Julio de 2019 |
-| **Señal LRPT**  | Inactivo    | 137,100 MHz | Averiado      |
+| **Estado LRPT**      | Inactivo    | Operativo(*) | Averiado      |
+| **Frecuencia LRPT**  | -           | 137,100 MHz  | -             |
+
+_(*) El satélite tiene [un fallo](http://vu2iia-meteor-m2.blogspot.com/2014/10/meteor-m2-images-from-rtl-sdr.html) en el sistema de compresión de imágenes RAW HRPT a JPEG LRPT. Esto produce unos cortes en las imágenes recibidas._
 
 Podemos conocer el estado actual de los satélites en la siguiente página: [Meteor Status (por Happysat)](http://happysat.nl/Meteor/html/Meteor_Status.html).
 
 
 ## Instalación de Meteor Demodulator
 
-Vamos a instalar un *plugin* para SDR# que nos permitirá demodular la señal del satélite en tiempo real. Existen otras formas de demodular dicha señal mediante otro software utilizando la grabación de banda base, pero nos podemos ahorrar estos pasos usando el *plugin* **Meteor Demodulator**. Para instalarlo seguiremos los siguientes pasos:
+Vamos a instalar un _plugin_ para SDR# que nos permitirá demodular la señal del satélite en tiempo real. Existen otras formas de demodular dicha señal mediante otro software utilizando la grabación de banda base, pero nos podemos ahorrar estos pasos usando el *_plugin_* **Meteor Demodulator**. Para instalarlo seguiremos los siguientes pasos:
 
-1. Descargar el plugin desde el siguiente enlace:
-    [<center>Meteor Demodulator v2.3</center>](http://rtl-sdr.ru/uploads/download/meteor.zip)
+1. Descargar el _plugin_ desde el siguiente enlace:
+    [<center>Meteor Demodulator v2.3</center>](meteor.zip)
 
-2. Extraemos el contenido del archivo ZIP descargado y copiamos los archivos _**SDRSharp.PluginsCom.dll**_ y _**SDRSharp.Meteor.dll**_ dentro del directorio de instalación de SDR#.
+2. Vamos a la carpeta **Plugins** dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre "MeteorDemodulator" (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.
 
-3. Insertamos la siguiente línea dentro del archivo _**Plugins.xml**_ que encontraremos dentro de la carpeta de SDR#.
+3. Iniciamos SDR# y desplegamos el nuevo _plugin_.
 
-    ``` XML
-    <add key="Meteor" value="SDRSharp.Meteor.MeteorPlugin,SDRSharp.Meteor" />
-    ```
-
-4. Iniciamos SDR# y desplegamos el nuevo *plugin*.
-
-    {% asset_img meteor_plugin.jpg "SDR#" %}
+    {% asset_img meteor_plugin.jpg 300 "SDR#" %}
 
     Los ajustes que vamos a utilizar son:
 
@@ -62,7 +60,7 @@ Vamos a instalar un *plugin* para SDR# que nos permitirá demodular la señal de
     En *Output* marcamos la opción que vayamos a utilizar para sacar los datos (podemos marcar ambas). Las opciones que tenemos son:
 
     - **TCP Socket**: levanta un socket TCP al que el programa **LRPT Decoder** se conectará y recibirá los datos para decodificar la imagen en tiempo real.
-    - **File**: genera un archivo con los datos para procesarlos posteriormente con **LRPT Decoder**. La ubicación de este archivo se la indicamos haciendo clic en _**Configure**_ y _**Select folder**_.
+    - **File**: genera un archivo con los datos para procesarlos posteriormente con **LRPT Decoder**. La ubicación de este archivo se la indicamos haciendo clic en **Configure** y **Select folder**.
 
     {% asset_img meteor_plugin_config.png "Meteor Demodulator" %}
 
@@ -73,7 +71,7 @@ Para descargarlo hacemos clic en el siguiente enlace y simplemente extraemos su 
 
 [<center>M2 LRPT Decoder V56</center>](http://happysat.nl/LRPT_Decoder_v56.zip)
 
-Como vimos en el apartado anterior, LRPT Decoder es capaz de procesar los datos desde dos fuentes distintas, ya sea desde el socket TCP o desde un archivo. Dependiendo de la opción que elijamos debemos modificar el archivo de configuración _**M2_LRPT_Decoder.ini**_ de una forma u otra. A continuación veremos los ajustes para cada una de las opciones.
+Como vimos en el apartado anterior, LRPT Decoder es capaz de procesar los datos desde dos fuentes distintas, ya sea desde el socket TCP o desde un archivo. Dependiendo de la opción que elijamos debemos modificar el archivo de configuración **M2_LRPT_Decoder.ini** de una forma u otra. A continuación veremos los ajustes para cada una de las opciones.
 
 - Ajustes para decodificar mediante **socket**:
 
@@ -149,9 +147,7 @@ En este ejemplo se ha usado la opción de enviar los datos por socket, por lo qu
 
 Una vez configurado todo correctamente, en el instante en el que el satélite comience a verse por nuestra localización, comenzará el seguimiento automático.
 
-{% asset_img sdr_sharp_preparado.jpg 900 "SDR#" %}
-
-En el momento en que la señal sea detectada por el *plugin*, este comenzará a demodularla y a procesarla. Veremos que aparece _**Locked**_ en la interfaz.
+En el momento en que la señal sea detectada por el _plugin_, este comenzará a demodularla y a procesarla. Veremos que aparece **Locked** en la interfaz.
 
 {% asset_img sdr_sharp_inicio.jpg 900 "SDR#" %}
 </br>
@@ -165,7 +161,7 @@ Una vez termine el pase vamos a LRPT Decoder para generar la imagen final. El sa
 
 {% asset_img meteor_analizer_finalizado.jpg 900 "LRPT Decoder" %}
 
-Para generarla seleccionamos los canales y hacemos clic en **Generate RGB**. Nos aparecerá una ventana con la vista previa. Ahora hacemos clic en **Save** y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo _**M2_LRPT_Decoder.ini**_.
+Para generarla seleccionamos los canales y hacemos clic en **Generate RGB**. Nos aparecerá una ventana con la vista previa. Ahora hacemos clic en **Save** y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo **M2_LRPT_Decoder.ini**.
 
 {% asset_img meteor_analizer_guardar.jpg 800 "LRPT Decoder" %}
 
