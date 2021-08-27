@@ -29,7 +29,6 @@
 <meta property="og:image" content="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/Meteor-M_2.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_plugin.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_plugin_config.png">
-<meta property="og:image" content="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/sdr_sharp_preparado.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/sdr_sharp_inicio.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/sdr_sharp_recibiendo.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer.jpg">
@@ -38,7 +37,7 @@
 <meta property="og:image" content="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/smooth_meteor.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_rectified.jpg">
 <meta property="article:published_time" content="2020-03-27T11:10:49.000Z">
-<meta property="article:modified_time" content="2020-03-27T11:10:49.000Z">
+<meta property="article:modified_time" content="2021-08-27T17:10:12.000Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="Satélites">
 <meta property="article:tag" content="Satélites meteorológicos">
@@ -192,13 +191,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">entradas</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-count">35</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -278,6 +277,13 @@
 
       <time title="Creado por: 27/03/2020 12:10:49" itemprop="dateCreated datePublished" datetime="2020-03-27T12:10:49+01:00">27/03/2020</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Editado el</span>
+        <time title="Modificado por: 27/08/2021 19:10:12" itemprop="dateModified" datetime="2021-08-27T19:10:12+02:00">27/08/2021</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-user"></i>
@@ -339,23 +345,28 @@
 <td>5 de Julio de 2019</td>
 </tr>
 <tr>
-<td><strong>Señal LRPT</strong></td>
+<td><strong>Estado LRPT</strong></td>
 <td>Inactivo</td>
-<td>137,100 MHz</td>
+<td>Operativo(*)</td>
 <td>Averiado</td>
 </tr>
+<tr>
+<td><strong>Frecuencia LRPT</strong></td>
+<td>-</td>
+<td>137,100 MHz</td>
+<td>-</td>
+</tr>
 </tbody></table>
+<p><em>(*) El satélite tiene <a target="_blank" rel="noopener" href="http://vu2iia-meteor-m2.blogspot.com/2014/10/meteor-m2-images-from-rtl-sdr.html">un fallo</a> en el sistema de compresión de imágenes RAW HRPT a JPEG LRPT. Esto produce unos cortes en las imágenes recibidas.</em></p>
 <p>Podemos conocer el estado actual de los satélites en la siguiente página: <a target="_blank" rel="noopener" href="http://happysat.nl/Meteor/html/Meteor_Status.html">Meteor Status (por Happysat)</a>.</p>
-<h2 id="Instalacion-de-Meteor-Demodulator"><a href="#Instalacion-de-Meteor-Demodulator" class="headerlink" title="Instalación de Meteor Demodulator"></a>Instalación de Meteor Demodulator</h2><p>Vamos a instalar un <em>plugin</em> para SDR# que nos permitirá demodular la señal del satélite en tiempo real. Existen otras formas de demodular dicha señal mediante otro software utilizando la grabación de banda base, pero nos podemos ahorrar estos pasos usando el <em>plugin</em> <strong>Meteor Demodulator</strong>. Para instalarlo seguiremos los siguientes pasos:</p>
+<h2 id="Instalacion-de-Meteor-Demodulator"><a href="#Instalacion-de-Meteor-Demodulator" class="headerlink" title="Instalación de Meteor Demodulator"></a>Instalación de Meteor Demodulator</h2><p>Vamos a instalar un <em>plugin</em> para SDR# que nos permitirá demodular la señal del satélite en tiempo real. Existen otras formas de demodular dicha señal mediante otro software utilizando la grabación de banda base, pero nos podemos ahorrar estos pasos usando el <em><em>plugin</em></em> <strong>Meteor Demodulator</strong>. Para instalarlo seguiremos los siguientes pasos:</p>
 <ol>
-<li><p>Descargar el plugin desde el siguiente enlace:<br> <a target="_blank" rel="noopener" href="http://rtl-sdr.ru/uploads/download/meteor.zip"><center>Meteor Demodulator v2.3</center></a></p>
+<li><p>Descargar el <em>plugin</em> desde el siguiente enlace:<br> <a href="meteor.zip"><center>Meteor Demodulator v2.3</center></a></p>
 </li>
-<li><p>Extraemos el contenido del archivo ZIP descargado y copiamos los archivos <em><strong>SDRSharp.PluginsCom.dll</strong></em> y <em><strong>SDRSharp.Meteor.dll</strong></em> dentro del directorio de instalación de SDR#.</p>
+<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “MeteorDemodulator” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
 </li>
-<li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro de la carpeta de SDR#.</p>
- <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">&quot;Meteor&quot;</span> <span class="attr">value</span>=<span class="string">&quot;SDRSharp.Meteor.MeteorPlugin,SDRSharp.Meteor&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>Iniciamos SDR# y desplegamos el nuevo <em>plugin</em>.</p>
- <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_plugin.jpg" class="" title="SDR#">
+ <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_plugin.jpg" class="" width="300" title="SDR#">
 
 <p> Los ajustes que vamos a utilizar son:</p>
 <ul>
@@ -369,13 +380,13 @@
 <p> En <em>Output</em> marcamos la opción que vayamos a utilizar para sacar los datos (podemos marcar ambas). Las opciones que tenemos son:</p>
 <ul>
 <li><strong>TCP Socket</strong>: levanta un socket TCP al que el programa <strong>LRPT Decoder</strong> se conectará y recibirá los datos para decodificar la imagen en tiempo real.</li>
-<li><strong>File</strong>: genera un archivo con los datos para procesarlos posteriormente con <strong>LRPT Decoder</strong>. La ubicación de este archivo se la indicamos haciendo clic en <em><strong>Configure</strong></em> y <em><strong>Select folder</strong></em>.</li>
+<li><strong>File</strong>: genera un archivo con los datos para procesarlos posteriormente con <strong>LRPT Decoder</strong>. La ubicación de este archivo se la indicamos haciendo clic en <strong>Configure</strong> y <strong>Select folder</strong>.</li>
 </ul>
  <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_plugin_config.png" class="" title="Meteor Demodulator"></li>
 </ol>
 <h2 id="Instalacion-de-LRPT-Decoder"><a href="#Instalacion-de-LRPT-Decoder" class="headerlink" title="Instalación de LRPT Decoder"></a>Instalación de LRPT Decoder</h2><p>El programa LRPT Decoder nos va a permitir decodificar los datos obtenidos con el demodulador de Meteor y generar la imagen.<br>Para descargarlo hacemos clic en el siguiente enlace y simplemente extraemos su contenido.</p>
 <p><a target="_blank" rel="noopener" href="http://happysat.nl/LRPT_Decoder_v56.zip"><center>M2 LRPT Decoder V56</center></a></p>
-<p>Como vimos en el apartado anterior, LRPT Decoder es capaz de procesar los datos desde dos fuentes distintas, ya sea desde el socket TCP o desde un archivo. Dependiendo de la opción que elijamos debemos modificar el archivo de configuración <em><strong>M2_LRPT_Decoder.ini</strong></em> de una forma u otra. A continuación veremos los ajustes para cada una de las opciones.</p>
+<p>Como vimos en el apartado anterior, LRPT Decoder es capaz de procesar los datos desde dos fuentes distintas, ya sea desde el socket TCP o desde un archivo. Dependiendo de la opción que elijamos debemos modificar el archivo de configuración <strong>M2_LRPT_Decoder.ini</strong> de una forma u otra. A continuación veremos los ajustes para cada una de las opciones.</p>
 <ul>
 <li>Ajustes para decodificar mediante <strong>socket</strong>:</li>
 </ul>
@@ -391,9 +402,7 @@
 <h3 id="Meteor-M-N2"><a href="#Meteor-M-N2" class="headerlink" title="Meteor-M N2"></a>Meteor-M N2</h3><p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;120000&gt;</span><br><span class="line">QPSK_demodulator_Start</span><br><span class="line">send_tracking_frequency_On</span><br><span class="line">start_programm_Path&lt;C:\SDR\MeteorM2\Decoder\M2_LRPT_Decoder.exe&gt;</span><br></pre></td></tr></table></figure></p>
 <p>En este ejemplo se ha usado la opción de enviar los datos por socket, por lo que en los ajustes anteriores se ha añadido el comando <strong>start_programm_Path</strong> para que se inice LRPT Decoder de forma automática cuando se inicie el seguimiento. Si optamos por la decodificación desde el archivo, este comando no es necesario.</p>
 <p>Una vez configurado todo correctamente, en el instante en el que el satélite comience a verse por nuestra localización, comenzará el seguimiento automático.</p>
-<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/sdr_sharp_preparado.jpg" class="" width="900" title="SDR#">
-
-<p>En el momento en que la señal sea detectada por el <em>plugin</em>, este comenzará a demodularla y a procesarla. Veremos que aparece <em><strong>Locked</strong></em> en la interfaz.</p>
+<p>En el momento en que la señal sea detectada por el <em>plugin</em>, este comenzará a demodularla y a procesarla. Veremos que aparece <strong>Locked</strong> en la interfaz.</p>
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/sdr_sharp_inicio.jpg" class="" width="900" title="SDR#">
 </br>
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/sdr_sharp_recibiendo.jpg" class="" width="900" title="SDR#">
@@ -404,7 +413,7 @@
 <p>Una vez termine el pase vamos a LRPT Decoder para generar la imagen final. El satélite tiene seis canales de los cuales utiliza tres de forma simultanea. Los tres primeros corresponden a espectro visible y los tres últimos al espectro infrarrojo. A veces podemos encontrar los tres canales del espectro visible o bien dos del visible uno del infrarrojo. La imagen final a color se puede componer uniendo los tres canales RGB del espectro visible, o bien con dos de ellos.</p>
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_finalizado.jpg" class="" width="900" title="LRPT Decoder">
 
-<p>Para generarla seleccionamos los canales y hacemos clic en <strong>Generate RGB</strong>. Nos aparecerá una ventana con la vista previa. Ahora hacemos clic en <strong>Save</strong> y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo <em><strong>M2_LRPT_Decoder.ini</strong></em>.</p>
+<p>Para generarla seleccionamos los canales y hacemos clic en <strong>Generate RGB</strong>. Nos aparecerá una ventana con la vista previa. Ahora hacemos clic en <strong>Save</strong> y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo <strong>M2_LRPT_Decoder.ini</strong>.</p>
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_guardar.jpg" class="" width="800" title="LRPT Decoder">
 
 <h2 id="Correccion-de-la-distorsion-de-la-imagen"><a href="#Correccion-de-la-distorsion-de-la-imagen" class="headerlink" title="Corrección de la distorsión de la imagen"></a>Corrección de la distorsión de la imagen</h2><p>Si abrimos la imagen que hemos recibido veremos que presenta una distorsión en los laterales de la misma. Esta distorsión es posible corregirla de forma sencilla usando el software <strong>Smooth Meteor</strong> que podemos descargar desde el siguiente enlace:</p>

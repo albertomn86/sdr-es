@@ -6,7 +6,7 @@
   <link href="http://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2021-04-18T11:01:07.000Z</updated>
+  <updated>2021-08-27T08:30:04.000Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recibir radio movil digital (DMR)</title>
+    <link href="http://sdr-es.com/2021/08/27/recibir-radio-movil-digital-DMR/"/>
+    <id>http://sdr-es.com/2021/08/27/recibir-radio-movil-digital-DMR/</id>
+    <published>2021-08-27T08:30:04.000Z</published>
+    <updated>2021-08-27T08:30:04.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;DMR son las siglas de Radio Móvil Digital, y es un estándar internacional especialmente definido para radios de dos vías. El objetivo del estándar DMR es permitir que dispositivos de diferentes fabricantes puedan comunicarse entre sí en una misma red.&lt;br&gt;Esta tecnología es muy utilizada por radioaficionados y es posible recibir estas señales con nuestros dispositivos SDR. En este artículo veremos como instalar algunos &lt;em&gt;plugins&lt;/em&gt; en SDR# para poder escuchar DMR.&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+    <category term="DMR" scheme="http://sdr-es.com/tags/DMR/"/>
+    
+    <category term="DSDPlus" scheme="http://sdr-es.com/tags/DSDPlus/"/>
+    
+  </entry>
   
   <entry>
     <title>Generar archivo TLE personalizado</title>
@@ -414,7 +435,7 @@
     <link href="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/"/>
     <id>http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/</id>
     <published>2020-03-27T11:10:49.000Z</published>
-    <updated>2020-03-27T11:10:49.000Z</updated>
+    <updated>2021-08-27T17:10:12.000Z</updated>
     
     
     <summary type="html">&lt;p&gt;Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.&lt;/p&gt;
@@ -426,28 +447,6 @@
     <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
     <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Recepción de satélites meteorológicos NOAA</title>
-    <link href="http://sdr-es.com/2020/03/20/recepcion-satelites-meteorologicos-NOAA/"/>
-    <id>http://sdr-es.com/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</id>
-    <published>2020-03-20T12:16:52.000Z</published>
-    <updated>2020-03-20T12:16:52.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (&lt;em&gt;National Oceanic and Atmospheric Administration&lt;/em&gt;). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.&lt;/p&gt;
-&lt;p&gt;Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato &lt;a href=&quot;https://en.wikipedia.org/wiki/Automatic_picture_transmission&quot;&gt;APT&lt;/a&gt;.&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
-    <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
-    
-    <category term="NOAA" scheme="http://sdr-es.com/tags/NOAA/"/>
     
   </entry>
   

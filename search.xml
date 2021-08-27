@@ -207,6 +207,91 @@
       </tags>
   </entry>
   <entry>
+    <title>Generar archivo TLE personalizado</title>
+    <url>/2021/04/18/generar-archivo-TLE/</url>
+    <content><![CDATA[<p>Si realizamos habitualmente el seguimiento de satélites, uno de los pasos más importantes es tener actualizados nuestros archivos de <a href="https://en.wikipedia.org/wiki/Two-line_element_set">TLE</a>. En este artículo veremos como generar un archivo TLE que contenga solo los satélites que queramos y que podemos actualizar con un clic.</p>
+<span id="more"></span>
+
+<p>Para ello vamos a usar el programa <a href="https://github.com/albertomn86/TLE_Generator"><strong>TLE Generator</strong></a>. Este programa es un <em>script</em> que a partir de un listado de satélites descarga los datos TLE de los mismos de forma automática. Este <em>script</em> se puede ejecutar en cualquier sistema operativo si tenemos el intérprete de Python previamente instalado.<br>En este ejemplo vamos a usar un binario para Windows que no necesita tener el intérprete instalado y que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://github.com/albertomn86/TLE_Generator/releases/download/v2.3/TLE_Generator.Windows.zip"><center>Descargar TLE Generator para Windows</center></a></p>
+<p>Una vez descargado el archivo, extraemos su contenido:</p>
+<img src="/2021/04/18/generar-archivo-TLE/archivos.png" class="" width="200" title="Archivos">
+
+<p>Ahora abrimos el archivo <strong><em>satellites.txt</em></strong> y editamos el listado de satélites con los que vayamos a añadir al archivo TLE.<br>Para añadir un nuevo satélite, simplemente necesitamos insertar en el archivo su identificador dado por el <a href="https://es.wikipedia.org/wiki/NORAD">NORAD</a>. Para obtener el identificador de cualquier satélite, podemos usar el buscador de la web de CelesTrack:</p>
+<p><a href="https://www.celestrak.com/satcat/search.php"><center>CelesTrack Satellite Catalog</center></a></p>
+<p>Si queremos quitar satélites bastaría con eliminar la linea o simplemente comentarla con el caracter ‘#’ al principio.</p>
+<p>Una vez tenemos el listado de satélites, vamos a crear un archivo <em>batch</em> con la llamada al ejecutable con los parámetros ya establecidos, para que simplemente tengamos que hacer doble clic para generar nuestro archivo dónde queramos.</p>
+<p>En este caso voy a generar un archivo con los TLE dentro de la carpeta de Orbitron. Para ello creamos un nuevo archivo de texto con la extensión <em>.bat</em> y el contenido siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tle_gen.exe -o C:\SDR\Portable\Orbitron\Tle\custom.txt</span><br></pre></td></tr></table></figure>
+
+<img src="/2021/04/18/generar-archivo-TLE/bat.png" class="" width="200" title="Archivo BAT">
+
+<p>Ahora cada vez que queramos tener el archivo de TLE actualizado, simplemente ejecutamos este archivo antes de iniciar Orbitron.</p>
+<img src="/2021/04/18/generar-archivo-TLE/consola.png" class="" width="600" title="Terminal de Windows">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Orbitron</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
+    <url>/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</url>
+    <content><![CDATA[<p>En este artículo vamos a ver como instalar y configurar <a href="https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm">CSVUserlistBrowser</a> para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo clic.</p>
+<span id="more"></span>
+
+<h2 id="Instalacion-y-configuracion"><a href="#Instalacion-y-configuracion" class="headerlink" title="Instalación y configuración"></a>Instalación y configuración</h2><p>Los pasos para instalar y configurar CSVUserlistBrowser son los siguientes:</p>
+<ol>
+<li>Descargamos CSVUserlistBrowser desde el siguiente enlace:</li>
+</ol>
+<p><a href="https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip"><center>https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip</center></a></p>
+<ol start="2">
+<li>Extraemos el contenido del archivo ZIP y ejecutamos <strong><em>CSVUserlistBrowser.exe</em></strong>. En la ventana que aparece marcamos el programa con el que queremos comunicarnos (en nuestro caso SDR#) y hacemos clic en <strong>OK</strong>.</li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-select.png" class="" title="CSVUserlistBrowser">
+
+<ol start="3">
+<li>El programa del paso anterior nos genera un nuevo ejecutable para cada programa que hemos seleccionado. En este caso nos habrá generado el nuevo ejecutable <strong><em>SDRSHARP-CSVUserlistBrowser.exe</em></strong>.</li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-SDRSHARP.png" class="" width="900" title="CSVUserlistBrowser">
+
+<ol start="4">
+<li>Vamos ahora a introducir nuestras coordenadas para poder descargar las bases de datos de nuestra zona. Para ello hacemos clic en el menú <strong>Tools</strong> y en <strong>QTH manager</strong>. En esta ventana introducimos nuestras coordenadas. Para finalizar guardamos haciendo clic en <strong>Save details</strong> y cerramos en <strong>Close/Cancel</strong>.</li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-QTH-Manager.png" class="" width="700" title="CSVUserlistBrowser">
+
+<ol start="5">
+<li><p>El siguiente paso es descargar las bases de datos de frecuencias. Para ello hacemos clic en el menú <strong>Web</strong> y en <strong>Downloader/Converter</strong>. En esta ventana tendremos que hacer clic en los botones de <strong>Download</strong> para descargar cada una de las bases de datos.</p>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-Downloader.png" class="" title="CSVUserlistBrowser">
+<p>Una vez descargadas, hacemos clic en <strong>Close</strong>.<br>Estas bases de datos se actualizan regularmente, por lo que tendremos que repetir la descarga para tener siempre los datos actualizados.<br>Las URLs de descarga también se actualizan. Podemos consultar las actuales en <a href="https://www.df8ry.de/htmlen/csvub/%F0%9F%91%B6firststeps.htm">df8ry.de</a>.</p>
+</li>
+<li><p>El último paso es cargar las bases de datos en el programa para poder usarlas. Para cargarlas hacemos clic en el menú <strong>File</strong>, <strong>Open CSV userlist</strong> y seleccionamos el archivo que queramos cargar.</p>
+</li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-cargada.png" class="" width="900" title="CSVUserlistBrowser">
+
+<ol start="7">
+<li>Para cargar otra lista, hacemos clic en el menú <strong>View list</strong> y seleccionamos una posición libre. Después repetimos el paso anterior para cargar la lista. Si queremos que al iniciar el programa se nos muestra una base de datos u otra, podemos indicarlo en el menú <strong>Autoload</strong>.</li>
+</ol>
+<h2 id="Conexion-con-SDR"><a href="#Conexion-con-SDR" class="headerlink" title="Conexión con SDR#"></a>Conexión con SDR#</h2><p>SDR# se comunica con CSVUserlistBrowser mediante un <em>plugin</em>. Este plugin viene en archivo ZIP que nos descargamos en el primer paso del apartado anterior.<br>Dentro del directorio extraído encontramos el directorio <strong><em>Plugins</em></strong>, y dentro de este tendremos un directorio que contiene el archivo DLL correspondiente a la versión de SDR# que estemos usando. Es importante elegir la versión correcta para que funcione.</p>
+<p>Una vez tengamos clara la versión a instalar, procedemos a instalar el <em>plugin</em> en SDR# de la forma habitual:</p>
+<ol>
+<li><p>Copiar el archivo <strong><em>SDRSharp.DF8RYDatabridge.dll</em></strong> dentro del directorio de instalación de SDR#.</p>
+</li>
+<li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro del directorio de instalación de SDR#.</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">&quot;DF8RYDatabridge&quot;</span> <span class="attr">value</span>=<span class="string">&quot;SDRSharp.DF8RYDatabridge.DF8RYDatabridgePlugin,SDRSharp.DF8RYDatabridge&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp.png" class="" width="900" title="Plugin CSVUserlistBrowser">
+
+
+<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Para poder controlar las frecuencias desde CSVUserlistBrowser, tenemos que marcar <strong>Enable RX1</strong> en el plugin de SDR#. Ahora cuando seleccionemos una frecuencia haciendo doble clic en CSVUserlistBrowser, se cambiará de forma automática en SDR#.</p>
+<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp_2.png" class="" width="900" title="SDR# y CSVUserlistBrowser">
+]]></content>
+      <tags>
+        <tag>HF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Elección del dispositivo SDR</title>
     <url>/2020/03/16/eleccion-sdr/</url>
     <content><![CDATA[<p>Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.<br>La finalidad este artículo es orientarnos para escoger el dispositivo que más se ajuste a nuestras necesidades y casos de uso. Para ello se han seleccionado algunos de los dispositivos más conocidos y que habitualmente se recomiendan, y se ha elaborado una breve descripción de cada uno de ellos con algunas de sus características más reseñables.</p>
@@ -534,91 +619,6 @@
 ]]></content>
       <tags>
         <tag>RTL-SDR</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Generar archivo TLE personalizado</title>
-    <url>/2021/04/18/generar-archivo-TLE/</url>
-    <content><![CDATA[<p>Si realizamos habitualmente el seguimiento de satélites, uno de los pasos más importantes es tener actualizados nuestros archivos de <a href="https://en.wikipedia.org/wiki/Two-line_element_set">TLE</a>. En este artículo veremos como generar un archivo TLE que contenga solo los satélites que queramos y que podemos actualizar con un clic.</p>
-<span id="more"></span>
-
-<p>Para ello vamos a usar el programa <a href="https://github.com/albertomn86/TLE_Generator"><strong>TLE Generator</strong></a>. Este programa es un <em>script</em> que a partir de un listado de satélites descarga los datos TLE de los mismos de forma automática. Este <em>script</em> se puede ejecutar en cualquier sistema operativo si tenemos el intérprete de Python previamente instalado.<br>En este ejemplo vamos a usar un binario para Windows que no necesita tener el intérprete instalado y que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://github.com/albertomn86/TLE_Generator/releases/download/v2.3/TLE_Generator.Windows.zip"><center>Descargar TLE Generator para Windows</center></a></p>
-<p>Una vez descargado el archivo, extraemos su contenido:</p>
-<img src="/2021/04/18/generar-archivo-TLE/archivos.png" class="" width="200" title="Archivos">
-
-<p>Ahora abrimos el archivo <strong><em>satellites.txt</em></strong> y editamos el listado de satélites con los que vayamos a añadir al archivo TLE.<br>Para añadir un nuevo satélite, simplemente necesitamos insertar en el archivo su identificador dado por el <a href="https://es.wikipedia.org/wiki/NORAD">NORAD</a>. Para obtener el identificador de cualquier satélite, podemos usar el buscador de la web de CelesTrack:</p>
-<p><a href="https://www.celestrak.com/satcat/search.php"><center>CelesTrack Satellite Catalog</center></a></p>
-<p>Si queremos quitar satélites bastaría con eliminar la linea o simplemente comentarla con el caracter ‘#’ al principio.</p>
-<p>Una vez tenemos el listado de satélites, vamos a crear un archivo <em>batch</em> con la llamada al ejecutable con los parámetros ya establecidos, para que simplemente tengamos que hacer doble clic para generar nuestro archivo dónde queramos.</p>
-<p>En este caso voy a generar un archivo con los TLE dentro de la carpeta de Orbitron. Para ello creamos un nuevo archivo de texto con la extensión <em>.bat</em> y el contenido siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tle_gen.exe -o C:\SDR\Portable\Orbitron\Tle\custom.txt</span><br></pre></td></tr></table></figure>
-
-<img src="/2021/04/18/generar-archivo-TLE/bat.png" class="" width="200" title="Archivo BAT">
-
-<p>Ahora cada vez que queramos tener el archivo de TLE actualizado, simplemente ejecutamos este archivo antes de iniciar Orbitron.</p>
-<img src="/2021/04/18/generar-archivo-TLE/consola.png" class="" width="600" title="Terminal de Windows">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Orbitron</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
-    <url>/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</url>
-    <content><![CDATA[<p>En este artículo vamos a ver como instalar y configurar <a href="https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm">CSVUserlistBrowser</a> para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo clic.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion-y-configuracion"><a href="#Instalacion-y-configuracion" class="headerlink" title="Instalación y configuración"></a>Instalación y configuración</h2><p>Los pasos para instalar y configurar CSVUserlistBrowser son los siguientes:</p>
-<ol>
-<li>Descargamos CSVUserlistBrowser desde el siguiente enlace:</li>
-</ol>
-<p><a href="https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip"><center>https://www.df8ry.de/htmlen/csvub/CSVUserlistBrowser.zip</center></a></p>
-<ol start="2">
-<li>Extraemos el contenido del archivo ZIP y ejecutamos <strong><em>CSVUserlistBrowser.exe</em></strong>. En la ventana que aparece marcamos el programa con el que queremos comunicarnos (en nuestro caso SDR#) y hacemos clic en <strong>OK</strong>.</li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-select.png" class="" title="CSVUserlistBrowser">
-
-<ol start="3">
-<li>El programa del paso anterior nos genera un nuevo ejecutable para cada programa que hemos seleccionado. En este caso nos habrá generado el nuevo ejecutable <strong><em>SDRSHARP-CSVUserlistBrowser.exe</em></strong>.</li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-SDRSHARP.png" class="" width="900" title="CSVUserlistBrowser">
-
-<ol start="4">
-<li>Vamos ahora a introducir nuestras coordenadas para poder descargar las bases de datos de nuestra zona. Para ello hacemos clic en el menú <strong>Tools</strong> y en <strong>QTH manager</strong>. En esta ventana introducimos nuestras coordenadas. Para finalizar guardamos haciendo clic en <strong>Save details</strong> y cerramos en <strong>Close/Cancel</strong>.</li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-QTH-Manager.png" class="" width="700" title="CSVUserlistBrowser">
-
-<ol start="5">
-<li><p>El siguiente paso es descargar las bases de datos de frecuencias. Para ello hacemos clic en el menú <strong>Web</strong> y en <strong>Downloader/Converter</strong>. En esta ventana tendremos que hacer clic en los botones de <strong>Download</strong> para descargar cada una de las bases de datos.</p>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-Downloader.png" class="" title="CSVUserlistBrowser">
-<p>Una vez descargadas, hacemos clic en <strong>Close</strong>.<br>Estas bases de datos se actualizan regularmente, por lo que tendremos que repetir la descarga para tener siempre los datos actualizados.<br>Las URLs de descarga también se actualizan. Podemos consultar las actuales en <a href="https://www.df8ry.de/htmlen/csvub/%F0%9F%91%B6firststeps.htm">df8ry.de</a>.</p>
-</li>
-<li><p>El último paso es cargar las bases de datos en el programa para poder usarlas. Para cargarlas hacemos clic en el menú <strong>File</strong>, <strong>Open CSV userlist</strong> y seleccionamos el archivo que queramos cargar.</p>
-</li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/CSVUserlistBrowser-cargada.png" class="" width="900" title="CSVUserlistBrowser">
-
-<ol start="7">
-<li>Para cargar otra lista, hacemos clic en el menú <strong>View list</strong> y seleccionamos una posición libre. Después repetimos el paso anterior para cargar la lista. Si queremos que al iniciar el programa se nos muestra una base de datos u otra, podemos indicarlo en el menú <strong>Autoload</strong>.</li>
-</ol>
-<h2 id="Conexion-con-SDR"><a href="#Conexion-con-SDR" class="headerlink" title="Conexión con SDR#"></a>Conexión con SDR#</h2><p>SDR# se comunica con CSVUserlistBrowser mediante un <em>plugin</em>. Este plugin viene en archivo ZIP que nos descargamos en el primer paso del apartado anterior.<br>Dentro del directorio extraído encontramos el directorio <strong><em>Plugins</em></strong>, y dentro de este tendremos un directorio que contiene el archivo DLL correspondiente a la versión de SDR# que estemos usando. Es importante elegir la versión correcta para que funcione.</p>
-<p>Una vez tengamos clara la versión a instalar, procedemos a instalar el <em>plugin</em> en SDR# de la forma habitual:</p>
-<ol>
-<li><p>Copiar el archivo <strong><em>SDRSharp.DF8RYDatabridge.dll</em></strong> dentro del directorio de instalación de SDR#.</p>
-</li>
-<li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro del directorio de instalación de SDR#.</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">&quot;DF8RYDatabridge&quot;</span> <span class="attr">value</span>=<span class="string">&quot;SDRSharp.DF8RYDatabridge.DF8RYDatabridgePlugin,SDRSharp.DF8RYDatabridge&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp.png" class="" width="900" title="Plugin CSVUserlistBrowser">
-
-
-<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Para poder controlar las frecuencias desde CSVUserlistBrowser, tenemos que marcar <strong>Enable RX1</strong> en el plugin de SDR#. Ahora cuando seleccionemos una frecuencia haciendo doble clic en CSVUserlistBrowser, se cambiará de forma automática en SDR#.</p>
-<img src="/2020/05/10/identificacion-estaciones-csvuserlistbrowser/sdr_sharp_2.png" class="" width="900" title="SDR# y CSVUserlistBrowser">
-]]></content>
-      <tags>
-        <tag>HF</tag>
       </tags>
   </entry>
   <entry>
@@ -2058,23 +2058,28 @@
 <td>5 de Julio de 2019</td>
 </tr>
 <tr>
-<td><strong>Señal LRPT</strong></td>
+<td><strong>Estado LRPT</strong></td>
 <td>Inactivo</td>
-<td>137,100 MHz</td>
+<td>Operativo(*)</td>
 <td>Averiado</td>
 </tr>
+<tr>
+<td><strong>Frecuencia LRPT</strong></td>
+<td>-</td>
+<td>137,100 MHz</td>
+<td>-</td>
+</tr>
 </tbody></table>
+<p><em>(*) El satélite tiene <a href="http://vu2iia-meteor-m2.blogspot.com/2014/10/meteor-m2-images-from-rtl-sdr.html">un fallo</a> en el sistema de compresión de imágenes RAW HRPT a JPEG LRPT. Esto produce unos cortes en las imágenes recibidas.</em></p>
 <p>Podemos conocer el estado actual de los satélites en la siguiente página: <a href="http://happysat.nl/Meteor/html/Meteor_Status.html">Meteor Status (por Happysat)</a>.</p>
-<h2 id="Instalacion-de-Meteor-Demodulator"><a href="#Instalacion-de-Meteor-Demodulator" class="headerlink" title="Instalación de Meteor Demodulator"></a>Instalación de Meteor Demodulator</h2><p>Vamos a instalar un <em>plugin</em> para SDR# que nos permitirá demodular la señal del satélite en tiempo real. Existen otras formas de demodular dicha señal mediante otro software utilizando la grabación de banda base, pero nos podemos ahorrar estos pasos usando el <em>plugin</em> <strong>Meteor Demodulator</strong>. Para instalarlo seguiremos los siguientes pasos:</p>
+<h2 id="Instalacion-de-Meteor-Demodulator"><a href="#Instalacion-de-Meteor-Demodulator" class="headerlink" title="Instalación de Meteor Demodulator"></a>Instalación de Meteor Demodulator</h2><p>Vamos a instalar un <em>plugin</em> para SDR# que nos permitirá demodular la señal del satélite en tiempo real. Existen otras formas de demodular dicha señal mediante otro software utilizando la grabación de banda base, pero nos podemos ahorrar estos pasos usando el <em><em>plugin</em></em> <strong>Meteor Demodulator</strong>. Para instalarlo seguiremos los siguientes pasos:</p>
 <ol>
-<li><p>Descargar el plugin desde el siguiente enlace:<br> <a href="http://rtl-sdr.ru/uploads/download/meteor.zip"><center>Meteor Demodulator v2.3</center></a></p>
+<li><p>Descargar el <em>plugin</em> desde el siguiente enlace:<br> <a href="meteor.zip"><center>Meteor Demodulator v2.3</center></a></p>
 </li>
-<li><p>Extraemos el contenido del archivo ZIP descargado y copiamos los archivos <em><strong>SDRSharp.PluginsCom.dll</strong></em> y <em><strong>SDRSharp.Meteor.dll</strong></em> dentro del directorio de instalación de SDR#.</p>
+<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “MeteorDemodulator” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
 </li>
-<li><p>Insertamos la siguiente línea dentro del archivo <em><strong>Plugins.xml</strong></em> que encontraremos dentro de la carpeta de SDR#.</p>
- <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">&quot;Meteor&quot;</span> <span class="attr">value</span>=<span class="string">&quot;SDRSharp.Meteor.MeteorPlugin,SDRSharp.Meteor&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>Iniciamos SDR# y desplegamos el nuevo <em>plugin</em>.</p>
- <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_plugin.jpg" class="" title="SDR#">
+ <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_plugin.jpg" class="" width="300" title="SDR#">
 
 <p> Los ajustes que vamos a utilizar son:</p>
 <ul>
@@ -2088,13 +2093,13 @@
 <p> En <em>Output</em> marcamos la opción que vayamos a utilizar para sacar los datos (podemos marcar ambas). Las opciones que tenemos son:</p>
 <ul>
 <li><strong>TCP Socket</strong>: levanta un socket TCP al que el programa <strong>LRPT Decoder</strong> se conectará y recibirá los datos para decodificar la imagen en tiempo real.</li>
-<li><strong>File</strong>: genera un archivo con los datos para procesarlos posteriormente con <strong>LRPT Decoder</strong>. La ubicación de este archivo se la indicamos haciendo clic en <em><strong>Configure</strong></em> y <em><strong>Select folder</strong></em>.</li>
+<li><strong>File</strong>: genera un archivo con los datos para procesarlos posteriormente con <strong>LRPT Decoder</strong>. La ubicación de este archivo se la indicamos haciendo clic en <strong>Configure</strong> y <strong>Select folder</strong>.</li>
 </ul>
  <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_plugin_config.png" class="" title="Meteor Demodulator"></li>
 </ol>
 <h2 id="Instalacion-de-LRPT-Decoder"><a href="#Instalacion-de-LRPT-Decoder" class="headerlink" title="Instalación de LRPT Decoder"></a>Instalación de LRPT Decoder</h2><p>El programa LRPT Decoder nos va a permitir decodificar los datos obtenidos con el demodulador de Meteor y generar la imagen.<br>Para descargarlo hacemos clic en el siguiente enlace y simplemente extraemos su contenido.</p>
 <p><a href="http://happysat.nl/LRPT_Decoder_v56.zip"><center>M2 LRPT Decoder V56</center></a></p>
-<p>Como vimos en el apartado anterior, LRPT Decoder es capaz de procesar los datos desde dos fuentes distintas, ya sea desde el socket TCP o desde un archivo. Dependiendo de la opción que elijamos debemos modificar el archivo de configuración <em><strong>M2_LRPT_Decoder.ini</strong></em> de una forma u otra. A continuación veremos los ajustes para cada una de las opciones.</p>
+<p>Como vimos en el apartado anterior, LRPT Decoder es capaz de procesar los datos desde dos fuentes distintas, ya sea desde el socket TCP o desde un archivo. Dependiendo de la opción que elijamos debemos modificar el archivo de configuración <strong>M2_LRPT_Decoder.ini</strong> de una forma u otra. A continuación veremos los ajustes para cada una de las opciones.</p>
 <ul>
 <li>Ajustes para decodificar mediante <strong>socket</strong>:</li>
 </ul>
@@ -2110,9 +2115,7 @@
 <h3 id="Meteor-M-N2"><a href="#Meteor-M-N2" class="headerlink" title="Meteor-M N2"></a>Meteor-M N2</h3><p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;120000&gt;</span><br><span class="line">QPSK_demodulator_Start</span><br><span class="line">send_tracking_frequency_On</span><br><span class="line">start_programm_Path&lt;C:\SDR\MeteorM2\Decoder\M2_LRPT_Decoder.exe&gt;</span><br></pre></td></tr></table></figure></p>
 <p>En este ejemplo se ha usado la opción de enviar los datos por socket, por lo que en los ajustes anteriores se ha añadido el comando <strong>start_programm_Path</strong> para que se inice LRPT Decoder de forma automática cuando se inicie el seguimiento. Si optamos por la decodificación desde el archivo, este comando no es necesario.</p>
 <p>Una vez configurado todo correctamente, en el instante en el que el satélite comience a verse por nuestra localización, comenzará el seguimiento automático.</p>
-<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/sdr_sharp_preparado.jpg" class="" width="900" title="SDR#">
-
-<p>En el momento en que la señal sea detectada por el <em>plugin</em>, este comenzará a demodularla y a procesarla. Veremos que aparece <em><strong>Locked</strong></em> en la interfaz.</p>
+<p>En el momento en que la señal sea detectada por el <em>plugin</em>, este comenzará a demodularla y a procesarla. Veremos que aparece <strong>Locked</strong> en la interfaz.</p>
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/sdr_sharp_inicio.jpg" class="" width="900" title="SDR#">
 </br>
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/sdr_sharp_recibiendo.jpg" class="" width="900" title="SDR#">
@@ -2123,7 +2126,7 @@
 <p>Una vez termine el pase vamos a LRPT Decoder para generar la imagen final. El satélite tiene seis canales de los cuales utiliza tres de forma simultanea. Los tres primeros corresponden a espectro visible y los tres últimos al espectro infrarrojo. A veces podemos encontrar los tres canales del espectro visible o bien dos del visible uno del infrarrojo. La imagen final a color se puede componer uniendo los tres canales RGB del espectro visible, o bien con dos de ellos.</p>
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_finalizado.jpg" class="" width="900" title="LRPT Decoder">
 
-<p>Para generarla seleccionamos los canales y hacemos clic en <strong>Generate RGB</strong>. Nos aparecerá una ventana con la vista previa. Ahora hacemos clic en <strong>Save</strong> y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo <em><strong>M2_LRPT_Decoder.ini</strong></em>.</p>
+<p>Para generarla seleccionamos los canales y hacemos clic en <strong>Generate RGB</strong>. Nos aparecerá una ventana con la vista previa. Ahora hacemos clic en <strong>Save</strong> y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo <strong>M2_LRPT_Decoder.ini</strong>.</p>
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_guardar.jpg" class="" width="800" title="LRPT Decoder">
 
 <h2 id="Correccion-de-la-distorsion-de-la-imagen"><a href="#Correccion-de-la-distorsion-de-la-imagen" class="headerlink" title="Corrección de la distorsión de la imagen"></a>Corrección de la distorsión de la imagen</h2><p>Si abrimos la imagen que hemos recibido veremos que presenta una distorsión en los laterales de la misma. Esta distorsión es posible corregirla de forma sencilla usando el software <strong>Smooth Meteor</strong> que podemos descargar desde el siguiente enlace:</p>
@@ -2303,6 +2306,81 @@
       <tags>
         <tag>HF</tag>
         <tag>DRM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir radio movil digital (DMR)</title>
+    <url>/2021/08/27/recibir-radio-movil-digital-DMR/</url>
+    <content><![CDATA[<p>DMR son las siglas de Radio Móvil Digital, y es un estándar internacional especialmente definido para radios de dos vías. El objetivo del estándar DMR es permitir que dispositivos de diferentes fabricantes puedan comunicarse entre sí en una misma red.<br>Esta tecnología es muy utilizada por radioaficionados y es posible recibir estas señales con nuestros dispositivos SDR. En este artículo veremos como instalar algunos <em>plugins</em> en SDR# para poder escuchar DMR.</p>
+<span id="more"></span>
+
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dmr-logo.jpeg" class="" width="300" title="Logo DMR">
+
+
+<h2 id="Simple-DMR"><a href="#Simple-DMR" class="headerlink" title="Simple DMR"></a>Simple DMR</h2><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dmr">Simple DMR</a> está diseñado para escuchar DMR sin cifrar y no requiere dependencias ni configuraciones.</p>
+<p>La instalación es muy sencilla y podemos resumirla en los pasos descritos a continuación.</p>
+<ol>
+<li><p>Descargamos los archivos del <em>plugin</em> desde el siguiente enlace:</p>
+<p><a href="http://rtl-sdr.ru/uploads/download/dmr.zip"><center>Descargar Simple DMR</center></a></p>
+</li>
+<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “SimpleDMR” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/simple-dmr-archivos.jpg" class="" width="700" title="Archivos de Simple DMR"></li>
+<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-menu-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
+<li><p>Por último, sintonizamos una señal de DMR y activamos el plugin haciendo clic en <strong>“Enabled”</strong>.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
+</ol>
+<p>Si todo ha ido bien, debemos comenzar a escuchar nada más activar el <em>plugin</em>. Si no se escucha nada, debemos asegurarnos tener la salida de audio por los altavoces y no por el cable de audio virtual.</p>
+<p>También es posible escuchar otros modos digitales usando para ello otros <em>plugins</em> muy similares a este y cuya instalación es idéntica. Estos <em>plugins</em> son:</p>
+<ul>
+<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dpmr">Simple dPMR</a></li>
+<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-apco">Simple APCO P25</a></li>
+</ul>
+<h2 id="DSD-Interface"><a href="#DSD-Interface" class="headerlink" title="DSD Interface"></a>DSD Interface</h2><h3 id="Instalacion-de-DSDPlus"><a href="#Instalacion-de-DSDPlus" class="headerlink" title="Instalación de DSDPlus"></a>Instalación de DSDPlus</h3><p>DSDPlus es un decodificador de modos digitales más completo y configurable que el que hemos visto en el apartado anterior. Inluye además otros modos digitales, como son P25, D-STAR, NXDN, etc.</p>
+<p>Para instalar DSDPlus, primeramente accedemos a su página web para descargar los archivos necesarios haciendo clic en el siguiente enlace:</p>
+<p><a href="https://www.dsdplus.com/download-2/"><center>Descargar DSDPlus</center></a></p>
+<p>Ahora descargamos los dos archivos indicados en la siguiente imagen:</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-descarga.jpg" class="" width="600" title="Descarga de DSDPlus">
+
+<p>El contenido del primer archivo lo extraemos en el directorio que queramos. En este ejemplo lo he extraído dentro de la carpeta de instalación de SDR# y dentro de su propia carpeta, a la que he llamado “DSDPlus”.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-archivos.jpg" class="" width="700" title="Archivos de DSDPlus">
+
+<p>Del segundo archivo solamente vamos a extraer el archivo <strong>lame_enc.dll</strong>, el cual vamos a introducir dentro de la carpeta de instalación de SDR#.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/lame-dll.jpg" class="" width="700" title="Archivo DLL">
+
+<h3 id="Instalacion-del-plugin"><a href="#Instalacion-del-plugin" class="headerlink" title="Instalación del plugin"></a>Instalación del plugin</h3><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/plagin-dsd-interface">DSD Interface</a> nos permite iniciar DSDPlus y pasarle el audio desde SDR# de una forma muy sencilla. Para instalarlo seguiremos los pasos descritos a continuación.</p>
+<ol>
+<li><p>Descargamos el <em>plugin</em> desde el siguiente enlace:</p>
+<p><a href="http://rtl-sdr.ru/uploads/download/dsd.zip"><center>Descargar DSD Interface</center></a></p>
+</li>
+<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “DSD” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-archivos.jpg" class="" width="700" title="Archivos del plugin DSD"></li>
+<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin.jpg" class="" width="300" title="DSD Plugin"></li>
+<li><p>Hacemos clic en el botón <strong>Configure</strong> y en la ventana de configuración hacemos clic en <strong>“DSD Path”</strong> y le indicamos la ruta del archivo <em>DSDPlus.exe</em> que hemos extraído en el apartado anterior.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar.jpg" class="" width="350" title="Configurar DSD">
+
+<p>Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
+</li>
+<li><p>Ahora hacemos clic en el botón <strong>“Start DSD”</strong> del <em>plugin</em> y se nos abrirán una serie de ventanas. Debemos fijarnos en los siguientes datos que veremos en una de las ventanas.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar-audio.jpg" class="" width="700" title="Configurar audio DSD">
+
+<p> Necesitamos anotar el número de dispositivo de audio que vamos a utilizar. En este ejemplo vamos a pasar el audio por el cable de audio virtual, por lo que en este caso anotamos el <em>“audio input device #1”</em>. Para la salida queremos que se escuche por los altavoces, así que anotamos <em>“audio output device #1”</em>.</p>
+</li>
+<li><p>Paramos DSDPlus haciendo clic en el botón <strong>“Stop DSD”</strong> del <em>plugin</em> y le damos a <strong>Configure</strong>. Ahora seleccionamos los dispositivos conforme los hemos anotado en el punto anterior. Una vez seleccionados, hacemos clic en <strong>“Create command line”</strong> para regenerar la linea de comandos con estos nuevos valores.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurado.jpg" class="" width="350" title="Configurar DSD">
+
+<p> Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
+</li>
+<li><p>Por último, buscamos una señal DMR y nos aseguramos que tengamos la salida de audio de SDR# por el cable de audio virtual. Ahora hacemos clic en el botón <strong>“Start DSD”</strong> y comenzaremos a ver datos en pantalla y se escuchará el audio decodificado.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-dsd.jpg" class="" width="900" title="DSD Plugin"></li>
+</ol>
+<p>Si en la ventana aparecen numerosos errores, es posible que debamos ajustar el volumen de audio general de SDR#.</p>
+]]></content>
+      <tags>
+        <tag>SDRSharp</tag>
+        <tag>DMR</tag>
+        <tag>DSDPlus</tag>
       </tags>
   </entry>
   <entry>
