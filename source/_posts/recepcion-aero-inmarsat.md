@@ -1,7 +1,7 @@
 ---
 title: Recepción de mensajes Inmarsat Aero
 date: 2020-03-10 12:26:30
-tags: [Satélites, Inmarsat, L-Band]
+tags: [ATC, Satélites, Inmarsat, L-Band]
 author: EA7KOO
 ---
 
