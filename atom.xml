@@ -6,7 +6,7 @@
   <link href="http://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2021-08-27T08:30:04.000Z</updated>
+  <updated>2021-08-28T10:10:53.000Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recepción de mensajes VDL2</title>
+    <link href="http://sdr-es.com/2021/08/28/recepcion-mensajes-VDL2/"/>
+    <id>http://sdr-es.com/2021/08/28/recepcion-mensajes-VDL2/</id>
+    <published>2021-08-28T10:10:53.000Z</published>
+    <updated>2021-08-28T10:10:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/VHF_Data_Link#ICAO_VDL_Mode_2&quot;&gt;VDL2&lt;/a&gt; (&lt;em&gt;VHF Data Link mode 2&lt;/em&gt;) es un modo de transmisión de información entre aeronaves y estaciones terrestres. Este modo permite la comunicación de los controladores aéreos con los pilotos a través de un enlace de datos &lt;a href=&quot;https://en.wikipedia.org/wiki/Controller%E2%80%93pilot_data_link_communications&quot;&gt;(CPDLC)&lt;/a&gt;.&lt;br&gt;En este artículo veremos como recibir y decodificar estos mensajes a modo de estudio.&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
+    
+    <category term="ATC" scheme="http://sdr-es.com/tags/ATC/"/>
+    
+    <category term="VDL2" scheme="http://sdr-es.com/tags/VDL2/"/>
+    
+    <category term="MultiPSK" scheme="http://sdr-es.com/tags/MultiPSK/"/>
+    
+  </entry>
   
   <entry>
     <title>Recibir radio movil digital (DMR)</title>
@@ -237,11 +260,11 @@
     
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
     <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
     
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
   </entry>
   
@@ -323,6 +346,8 @@
     
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
+    <category term="ATC" scheme="http://sdr-es.com/tags/ATC/"/>
+    
     <category term="ADS-B" scheme="http://sdr-es.com/tags/ADS-B/"/>
     
     <category term="dump1090" scheme="http://sdr-es.com/tags/dump1090/"/>
@@ -344,11 +369,11 @@
     
     <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
+    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
     <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
     <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
-    
-    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
     <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
     
@@ -370,9 +395,9 @@
     
     <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
-    
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
     <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
     
@@ -393,11 +418,11 @@
     
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
+    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
     <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
     <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
-    
-    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
     <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
@@ -420,33 +445,13 @@
     
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
+    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
+    
     <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
     <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
-    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
     <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Recepción de satélites meteorológicos Meteor-M</title>
-    <link href="http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/"/>
-    <id>http://sdr-es.com/2020/03/27/recepcion-satelites-meteorologicos-meteor/</id>
-    <published>2020-03-27T11:10:49.000Z</published>
-    <updated>2021-08-27T17:10:12.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.&lt;/p&gt;
-&lt;p&gt;La serie Meteor-M fue planificada para la primera década del siglo XXI e incluiría tres nuevos satélites con dos diseños diferentes. El objetivo principal de los dos primeros satélites (Meteor-M N1 y Meteor-M N2) sería proveer de información meteorológica, así como la monitorización de la capa de ozono, los niveles de radiación en el espacio y la observación de los mares y la capa de hielo. El tercero (Meteor-M N3) incorporaría una antena radar de nueva generación para la observación oceánica.&lt;br&gt;Estos satélites transmiten imágenes en formato &lt;a href=&quot;https://en.wikipedia.org/wiki/Low-rate_picture_transmission&quot;&gt;LRPT&lt;/a&gt; en 137 MHz y en formato &lt;a href=&quot;https://en.wikipedia.org/wiki/High-resolution_picture_transmission&quot;&gt;HRPT&lt;/a&gt; en 1,7 GHz. En este articulo veremos como recibir la señal con nuestro dispositivo SDR y obtener las imágenes LRPT.&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
-    <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
     
   </entry>
   
