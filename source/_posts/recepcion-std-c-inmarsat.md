@@ -3,6 +3,7 @@ title: Recepción de mensajes Inmarsat STD-C
 date: 2020-03-09 12:46:44
 tags: [Satélites, Inmarsat, L-Band]
 author: EA7KOO
+updated: 2021-09-27 19:10:12
 ---
 
 En el artículo ["Recepción de satélites Inmarsat"](https://sdr-es.com/2020/03/06/recepcion-inmarsat/) vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.
@@ -10,26 +11,19 @@ Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU R
 
 <!-- more -->
 
-Lo primero será descargar los binarios desde el repositorio de Scytale-C desde el siguiente link:
+Lo primero será descargar los los archivos necesarios desde el repositorio de Scytale-C desde el siguiente link:
 
 [<center>https://bitbucket.org/scytalec/scytalec/downloads/</center>](https://bitbucket.org/scytalec/scytalec/downloads/)
 
-Necesitamos descargar el plugin para SDR# (**x64-SDRSharp.ScytaleC-10213.zip**) y la interfaz de usuario (**x64-ScytaleC.QuickUI-17010.zip**).
+Necesitamos descargar el plugin para SDR# (**SDRSharp.ScytaleC.5001.NET5.PlusUI.zip**) y la interfaz de usuario (**x64-ScytaleC.QuickUI-17010.zip**).
 
 ## Instalación del plugin en SDR#
 
-El siguiente paso es instalar el plugin en SDR#. Para ello basta con extraer el contenido del archivo **x64-SDRSharp.ScytaleC-10213.zip** dentro del directorio de instalación de SDR#. Los dos archivos de texto no son necesarios.
+Vamos a la carpeta **Plugins** dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre "ScytaleC" (o el que queramos). Ahora extraemos el contenido del archivo **SDRSharp.ScytaleC.5001.NET5.PlusUI.zip** dentro de esta nueva carpeta.
 
-Una vez extraído el contenido, insertamos la siguiente línea de texto dentro del archivo _**Plugins.xml**_, que encontraremos dentro de la carpeta de instalación de SDR#.
+{% asset_img scytale_files.jpg 600 "Archivos de Scytale-C" %}
 
-```
-<add key="ScytaleC" value="SDRSharp.ScytaleC.ScytaleCPlugin,SDRSharp.ScytaleC" />
-```
-</br>
-
-{% asset_img scytale_magicline.jpg "Magicline de Scytale-C" %}
-
-Ahora reiniciamos SDR# y tendremos el plugin instalado.
+Ahora iniciamos SDR# y tendremos el plugin instalado.
 
 
 ## Instalación de la interfaz de usuario de Scytale-C
