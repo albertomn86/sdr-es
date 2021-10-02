@@ -6,7 +6,7 @@
   <link href="http://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2021-08-28T10:10:53.000Z</updated>
+  <updated>2021-09-01T15:11:53.000Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recepción de cartas meteorológicas (weather fax)</title>
+    <link href="http://sdr-es.com/2021/09/01/recepcion-weather-fax/"/>
+    <id>http://sdr-es.com/2021/09/01/recepcion-weather-fax/</id>
+    <published>2021-09-01T15:11:53.000Z</published>
+    <updated>2021-09-01T15:11:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;El radiofacsimil o radiofax es un modo analógico en HF que permite transmitir imágenes monocromáticas mediante ondas de radio. Este modo es el predecesor de SSTV y fue el principal modo de transmisión de imágenes desde sitios remotos (especialmente islas) desde 1930 hasta 1970.&lt;/p&gt;
+&lt;p&gt;Actualmente se sigue usando para la transmisión de cartas meteorológicas a las embarcaciones en alta mar. En este artículo veremos como recibir estas cartas usando nuestro dispositivo SDR.&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="HF" scheme="http://sdr-es.com/tags/HF/"/>
+    
+    <category term="Weatherfax" scheme="http://sdr-es.com/tags/Weatherfax/"/>
+    
+    <category term="fldigi" scheme="http://sdr-es.com/tags/fldigi/"/>
+    
+  </entry>
   
   <entry>
     <title>Recepción de mensajes VDL2</title>
@@ -260,11 +282,11 @@
     
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
     <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
     
     <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
-    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
   </entry>
   
@@ -369,9 +391,9 @@
     
     <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
     <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
+    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
     <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
@@ -418,40 +440,15 @@
     
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
     
-    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
     <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
+    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
     
     <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
     <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
     <category term="SPY Server" scheme="http://sdr-es.com/tags/SPY-Server/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Instalación de dispositivos RTL-SDR en Raspberry Pi</title>
-    <link href="http://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/"/>
-    <id>http://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/</id>
-    <published>2020-04-10T07:40:15.000Z</published>
-    <updated>2020-04-10T07:40:15.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
-    
-    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
-    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
-    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
-    
-    <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
     
   </entry>
   
