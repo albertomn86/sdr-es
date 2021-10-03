@@ -1,7 +1,7 @@
 ---
 title: Recepción de cartas meteorológicas (weather fax)
 date: 2021-09-01 17:11:53
-tags: [Weatherfax, fldigi, HF]
+tags: [Weatherfax, Meteorología, HF]
 author: EA7KOO
 ---
 
@@ -53,6 +53,6 @@ Una vez comience la emisión veremos que se va decodificando y mostrando la cart
 
 {% asset_img fldigi_receiving.jpg 900 "Recibiendo fax" %}
 
-Podemos acceder en fldigi a las imágenes recibidas vamos a **"File"**, **"Folders"** y **"WEFAX images..."**.
+Podemos acceder en fldigi a las cartas recibidas vamos a **"File"**, **"Folders"** y **"WEFAX images..."**.
 
 {% asset_img wefax.jpg "Fax recibido" %}

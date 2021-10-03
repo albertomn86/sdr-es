@@ -1,7 +1,7 @@
 ---
 title: Recepción de satélites meteorológicos NOAA
 date: 2020-03-20 13:16:52
-tags: [Satélites, Satélites meteorológicos, NOAA]
+tags: [Satélites, Satélites meteorológicos, NOAA, Meteorología]
 author: EA7KOO
 ---
 

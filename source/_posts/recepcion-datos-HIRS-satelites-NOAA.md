@@ -1,7 +1,7 @@
 ---
 title: Recepción de datos del instrumental HIRS de los satélites NOAA
 date: 2020-07-27 20:19:04
-tags: [Satélites, Satélites meteorológicos, NOAA]
+tags: [Satélites, Satélites meteorológicos, NOAA, Meteorología]
 author: EA7KOO
 ---
 

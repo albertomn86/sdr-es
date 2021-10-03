@@ -1,7 +1,7 @@
 ---
 title: Recepción de satélites meteorológicos Meteor-M
 date: 2020-03-27 12:10:49
-tags: [Satélites, Satélites meteorológicos]
+tags: [Satélites, Satélites meteorológicos, Meteorología]
 author: EA7KOO
 updated: 2021-08-27 19:10:12
 ---
