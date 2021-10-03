@@ -6,7 +6,7 @@
   <link href="http://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2021-09-01T15:11:53.000Z</updated>
+  <updated>2021-10-03T08:48:43.000Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recibir telemetría de radiosondas meteorológicas</title>
+    <link href="http://sdr-es.com/2021/10/03/recibir-telemetria-radiosondas/"/>
+    <id>http://sdr-es.com/2021/10/03/recibir-telemetria-radiosondas/</id>
+    <published>2021-10-03T08:48:43.000Z</published>
+    <updated>2021-10-03T08:48:43.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;A diario son lanzadas en todo el mundo cientos de radiosondas meteorológicas para obtener mediciones que permitan conocer el estado actual en las capas altas de la atmósfera. Estas mediciones ayudan a los servicios meteorológicos en sus predicciones.&lt;br&gt;En España se lanzan diariamente sondas de desde distintos puntos de nuestra geografía. Estas sondas alcanzan varios kilómetros de altura y se pueden recibir desde bastante distancia. En este artículo veremos como podemos recibir la telemetría de estas radiosondas usando nuestro dispositivo SDR.&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Meteorología" scheme="http://sdr-es.com/tags/Meteorologia/"/>
+    
+    <category term="Radiosonda" scheme="http://sdr-es.com/tags/Radiosonda/"/>
+    
+  </entry>
   
   <entry>
     <title>Recepción de cartas meteorológicas (weather fax)</title>
@@ -32,9 +51,9 @@
     
     <category term="HF" scheme="http://sdr-es.com/tags/HF/"/>
     
-    <category term="Weatherfax" scheme="http://sdr-es.com/tags/Weatherfax/"/>
+    <category term="Meteorología" scheme="http://sdr-es.com/tags/Meteorologia/"/>
     
-    <category term="fldigi" scheme="http://sdr-es.com/tags/fldigi/"/>
+    <category term="Weatherfax" scheme="http://sdr-es.com/tags/Weatherfax/"/>
     
   </entry>
   
@@ -310,6 +329,8 @@
     
     <category term="NOAA" scheme="http://sdr-es.com/tags/NOAA/"/>
     
+    <category term="Meteorología" scheme="http://sdr-es.com/tags/Meteorologia/"/>
+    
   </entry>
   
   <entry>
@@ -422,33 +443,6 @@
     <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
     
     <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Instalación de SPY Server en Raspberry Pi</title>
-    <link href="http://sdr-es.com/2020/04/11/instalacion-spyserver-raspberrypi/"/>
-    <id>http://sdr-es.com/2020/04/11/instalacion-spyserver-raspberrypi/</id>
-    <published>2020-04-11T09:10:42.000Z</published>
-    <updated>2020-04-11T09:10:42.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.&lt;br&gt;En este artículo veremos como instalar SPY Server en una Raspberry Pi.&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
-    
-    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
-    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
-    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
-    
-    <category term="SDRSharp" scheme="http://sdr-es.com/tags/SDRSharp/"/>
-    
-    <category term="SPY Server" scheme="http://sdr-es.com/tags/SPY-Server/"/>
     
   </entry>
   
