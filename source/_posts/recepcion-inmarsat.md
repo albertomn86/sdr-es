@@ -27,7 +27,7 @@ Nooelec comercializa una antena específica para Inmarsat y que podemos adquirir
 
 | Frecuencia | Ganancia | Especificaciones |
 | --- | --- | --- |
-| 1546 - 1554 MHz | ~3.5 dBi | [Datasheet](https://www.nooelec.com/store/downloads/dl/file/id/91/product/314/inmarsat_antenna_datasheet_revision_1.pdf) |
+| 1546 - 1554 MHz | ~3,5 dBi | [Datasheet](https://www.nooelec.com/store/downloads/dl/file/id/91/product/314/inmarsat_antenna_datasheet_revision_1.pdf) |
 
 {% asset_img antenna_nooelec.jpg "Antena Nooelec" %}
 

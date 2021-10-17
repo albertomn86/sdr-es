@@ -20,7 +20,7 @@ En este artículo veremos como recibir la telemetría y las imágenes.
 | **COSPAR ID**   | 2018-099AX |
 | **Tamaño**      | 1U CubeSat (1.11 Kg) |
 | **Lanzamiento** | 3 de Diciembre de 2018 |
-| **Señal**       | 145.840 MHz (1200 bps BPSK) |
+| **Señal**       | 145,840 MHz (1200 bps BPSK) |
 | **Web**         | https://www.cpf.jo/en/our-initiatives/masar |
 
 ## Recepción

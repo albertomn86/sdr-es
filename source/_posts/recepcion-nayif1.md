@@ -20,7 +20,7 @@ Este satélite envía datos de telemetría y mensajes que pueden ser recibidos c
 | **COSPAR ID**   | 2017-008BX |
 | **Tamaño**      | 1U CubeSat (1.32 Kg) |
 | **Lanzamiento** | 15 de Febrero de 2017 |
-| **Señal**       | 145.940 MHz (1200 bps BPSK) |
+| **Señal**       | 145,940 MHz (1200 bps BPSK) |
 | **Web**         | https://www.mbrsc.ae/satellite-programme/nayif-1 |
 
 ## Recepción
