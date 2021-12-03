@@ -308,12 +308,12 @@
     <link href="http://sdr-es.com/2020/08/13/instalacion-openwebrx/"/>
     <id>http://sdr-es.com/2020/08/13/instalacion-openwebrx/</id>
     <published>2020-08-13T15:36:20.000Z</published>
-    <updated>2020-08-13T15:36:20.000Z</updated>
+    <updated>2021-12-03T19:42:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.openwebrx.de/&quot;&gt;OpenWebRX&lt;/a&gt; es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, simplemente accediendo desde un navegador web.&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.openwebrx.de/&quot;&gt;OpenWebRX&lt;/a&gt; es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier lugar, simplemente accediendo desde un navegador web.&lt;/p&gt;
 &lt;p&gt;Este proyecto &lt;em&gt;Open Source&lt;/em&gt; nació en 2015 de mano de András Retzler (HA7ILM). Pero a finales de 2019, el autor abandonó el proyecto y es cuando &lt;a href=&quot;https://github.com/jketterl&quot;&gt;Jakob Ketterl&lt;/a&gt; retomó el desarrollo del proyecto añadiendo nuevas funcionalidades y mejorando el software. El proyecto comenzó a ganar popularidad y cuenta actualmente con un gran número de colaboradores.&lt;/p&gt;
-&lt;p&gt;En este artículo veremos cómo instalar OpenWebRX en una Raspberry Pi usando su código fuente. Existen otras opciones disponibles para instalar este software, como imágenes para tarjetas SD, paquetes, imágenes para Docker, pero presentan algunas carencias o bien son más complejas. El proceso de instalación manual que vamos a seguir es similar para cualquier distribución Linux, lo que nos aporta más posibilidades.&lt;/p&gt;</summary>
+&lt;p&gt;En este artículo veremos cómo instalar OpenWebRX en una Raspberry Pi. Existen otras opciones disponibles para instalar este software, como imágenes para tarjetas SD, imágenes para Docker, etc. Podemos consultar todas estas opciones en su &lt;a href=&quot;https://www.openwebrx.de/&quot;&gt;página web&lt;/a&gt;.&lt;/p&gt;</summary>
     
     
     
@@ -342,11 +342,11 @@
     
     
     
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
     <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
     
     <category term="NOAA" scheme="http://sdr-es.com/tags/NOAA/"/>
-    
-    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
     <category term="Meteorología" scheme="http://sdr-es.com/tags/Meteorologia/"/>
     

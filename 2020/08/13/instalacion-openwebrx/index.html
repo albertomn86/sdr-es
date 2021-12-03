@@ -19,23 +19,31 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="OpenWebRX es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, s">
+<meta name="description" content="OpenWebRX es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier lugar, s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Instalar receptor SDR online con OpenWebRX">
 <meta property="og:url" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/index.html">
 <meta property="og:site_name" content="SDR en español">
-<meta property="og:description" content="OpenWebRX es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, s">
+<meta property="og:description" content="OpenWebRX es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier lugar, s">
 <meta property="og:locale" content="es_ES">
-<meta property="og:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx_aprs.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx_password.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx_loaded.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx_config_login.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx_config.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx_config_general.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx_config_devices.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx_config_rtl.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx_config_bands.jpg">
 <meta property="article:published_time" content="2020-08-13T15:36:20.000Z">
-<meta property="article:modified_time" content="2020-08-13T15:36:20.000Z">
+<meta property="article:modified_time" content="2021-12-03T19:42:00.000Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="RTL-SDR">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="OpenWebRX">
 <meta property="article:tag" content="Raspberry Pi">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx.jpg">
+<meta name="twitter:image" content="http://sdr-es.com/2020/08/13/instalacion-openwebrx/openwebrx_aprs.jpg">
 
 
 <link rel="canonical" href="http://sdr-es.com/2020/08/13/instalacion-openwebrx/">
@@ -168,7 +176,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-dependencias-de-instalacion"><span class="nav-number">1.</span> <span class="nav-text">Instalar dependencias de instalación</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-librerias"><span class="nav-number">2.</span> <span class="nav-text">Instalar librerías</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-CSDR"><span class="nav-number">2.1.</span> <span class="nav-text">Instalar CSDR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-OWRX-Connector"><span class="nav-number">2.2.</span> <span class="nav-text">Instalar OWRX Connector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-js8py"><span class="nav-number">2.3.</span> <span class="nav-text">Instalar js8py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-SoapySDR-Opcional"><span class="nav-number">2.4.</span> <span class="nav-text">Instalar SoapySDR (Opcional)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clonar-repositorio-de-OpenWebRX"><span class="nav-number">3.</span> <span class="nav-text">Clonar repositorio de OpenWebRX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuracion"><span class="nav-number">4.</span> <span class="nav-text">Configuración</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-como-servicio"><span class="nav-number">5.</span> <span class="nav-text">Instalar como servicio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-paquetes-adicionales"><span class="nav-number">6.</span> <span class="nav-text">Instalar paquetes adicionales</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Anadir-repositorios-de-instalacion"><span class="nav-number">1.</span> <span class="nav-text">Añadir repositorios de instalación</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalar-OpenWebRx"><span class="nav-number">2.</span> <span class="nav-text">Instalar OpenWebRx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuracion"><span class="nav-number">3.</span> <span class="nav-text">Configuración</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -270,6 +278,13 @@
 
       <time title="Creado por: 13/08/2020 17:36:20" itemprop="dateCreated datePublished" datetime="2020-08-13T17:36:20+02:00">13/08/2020</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Editado el</span>
+        <time title="Modificado por: 03/12/2021 20:42:00" itemprop="dateModified" datetime="2021-12-03T20:42:00+01:00">03/12/2021</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-user"></i>
@@ -289,84 +304,50 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><a target="_blank" rel="noopener" href="https://www.openwebrx.de/">OpenWebRX</a> es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, simplemente accediendo desde un navegador web.</p>
+        <p><a target="_blank" rel="noopener" href="https://www.openwebrx.de/">OpenWebRX</a> es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier lugar, simplemente accediendo desde un navegador web.</p>
 <p>Este proyecto <em>Open Source</em> nació en 2015 de mano de András Retzler (HA7ILM). Pero a finales de 2019, el autor abandonó el proyecto y es cuando <a target="_blank" rel="noopener" href="https://github.com/jketterl">Jakob Ketterl</a> retomó el desarrollo del proyecto añadiendo nuevas funcionalidades y mejorando el software. El proyecto comenzó a ganar popularidad y cuenta actualmente con un gran número de colaboradores.</p>
-<p>En este artículo veremos cómo instalar OpenWebRX en una Raspberry Pi usando su código fuente. Existen otras opciones disponibles para instalar este software, como imágenes para tarjetas SD, paquetes, imágenes para Docker, pero presentan algunas carencias o bien son más complejas. El proceso de instalación manual que vamos a seguir es similar para cualquier distribución Linux, lo que nos aporta más posibilidades.</p>
+<p>En este artículo veremos cómo instalar OpenWebRX en una Raspberry Pi. Existen otras opciones disponibles para instalar este software, como imágenes para tarjetas SD, imágenes para Docker, etc. Podemos consultar todas estas opciones en su <a target="_blank" rel="noopener" href="https://www.openwebrx.de/">página web</a>.</p>
 <span id="more"></span>
 
-<img src="/2020/08/13/instalacion-openwebrx/openwebrx.jpg" class="" width="900" title="OpenWebRX">
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_aprs.jpg" class="" width="900" title="OpenWebRX">
 
-<h2 id="Instalar-dependencias-de-instalacion"><a href="#Instalar-dependencias-de-instalacion" class="headerlink" title="Instalar dependencias de instalación"></a>Instalar dependencias de instalación</h2><p>Para poder compilar e instalar las librerías necesarias necesitamos una serie de dependencias. Para instalarlas ejecutamos los siguientes comandos:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git build-essential cmake libfftw3-dev python3 python3-setuptools rtl-sdr netcat libitpp-dev libsndfile-dev librtlsdr-dev automake autoconf libtool pkg-config</span><br></pre></td></tr></table></figure>
+<h2 id="Anadir-repositorios-de-instalacion"><a href="#Anadir-repositorios-de-instalacion" class="headerlink" title="Añadir repositorios de instalación"></a>Añadir repositorios de instalación</h2><p>Para poder instalar OpenWebRX en nuestra Raspberry Pi necesitamos previamente añadir los repositorios para Debian. Para ello ejecutamos los siguientes comandos:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c <span class="string">&#x27;wget -O - https://repo.openwebrx.de/debian/key.gpg.txt | apt-key add&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c <span class="string">&#x27;echo &quot;deb https://repo.openwebrx.de/debian/ buster main&quot; &gt; /etc/apt/sources.list.d/openwebrx.list&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 
-<h2 id="Instalar-librerias"><a href="#Instalar-librerias" class="headerlink" title="Instalar librerías"></a>Instalar librerías</h2><h3 id="Instalar-CSDR"><a href="#Instalar-CSDR" class="headerlink" title="Instalar CSDR"></a>Instalar CSDR</h3><p><em>CSDR</em> es la librería encargada de gestionar el dispositivo SDR. Siguiendo los pasos expuestos a continuación podremos compilarla e instalarla.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;csdr.git</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd csdr</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autoreconf -i</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
+<h2 id="Instalar-OpenWebRx"><a href="#Instalar-OpenWebRx" class="headerlink" title="Instalar OpenWebRx"></a>Instalar OpenWebRx</h2><p>Ahora ejecutamos el siguiente comando para instalar OpenWebRX:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install openwebrx</span><br></pre></td></tr></table></figure>
 
-<h3 id="Instalar-OWRX-Connector"><a href="#Instalar-OWRX-Connector" class="headerlink" title="Instalar OWRX Connector"></a>Instalar OWRX Connector</h3><p><em>OWRX Connector</em> es la librería encargada de conectar la interfaz del SDR con OpenWebRX. Instalamos siguiendo los pasos descritos a continuación.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;owrx_connector.git</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd owrx_connector</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir build</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd build</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake ..</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..&#x2F;..</span><br></pre></td></tr></table></figure>
+<p>Durante la instalación nos pedirá una contraseña para acceder a la configuración de OpenWebRx mediante web.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_password.jpg" class="" width="600" title="Instalación OpenWebRX">
 
-<h3 id="Instalar-js8py"><a href="#Instalar-js8py" class="headerlink" title="Instalar js8py"></a>Instalar js8py</h3><p>Librería para decodificar la salida de JS8Call.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;js8py.git</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd js8py</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo python3 setup.py install</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>Una vez termine la instalación, accedemos desde un navegador web a la dirección IP de la Raspberry Pi y el puerto 8073.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;[IP_RASPBERRY]:8073&#x2F;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Instalar-SoapySDR-Opcional"><a href="#Instalar-SoapySDR-Opcional" class="headerlink" title="Instalar SoapySDR (Opcional)"></a>Instalar SoapySDR (Opcional)</h3><p>Si vamos a utilizar un dispositivo distinto del RTL-SDR tendremos que instalar SoapySDR para poder usarlo.<br>Los pasos para su instalación son los siguientes:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libsoapysdr0.6 libsoapysdr-dev soapysdr-tools soapysdr-module-all</span><br></pre></td></tr></table></figure>
+<p>Se nos mostrará la ventana principal de OpenWebRX. Si solo tenemos un SDR conectado es posible que ya podamos comenzar a usarlo, pero si tenemos varios dispositivos conectados nos mostrará un error como el siguiente y que solventaremos en los siguientes pasos.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_loaded.jpg" class="" width="900" title="OpenWebRX">
 
-<p>Si no encuentra la librería “libsoapysdr0.6”, reemplazar por “libsoapysdr0.7”.</p>
-<h2 id="Clonar-repositorio-de-OpenWebRX"><a href="#Clonar-repositorio-de-OpenWebRX" class="headerlink" title="Clonar repositorio de OpenWebRX"></a>Clonar repositorio de OpenWebRX</h2><p>Descargamos la última versión estable disponible. Consultar el listado de versiones <a target="_blank" rel="noopener" href="https://github.com/jketterl/openwebrx/tags">aquí</a>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b 0.19.1 https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;openwebrx.git</span><br></pre></td></tr></table></figure>
+<p>Ahora hacemos clic en el botón <em>“Settings”</em> en la esquina superior derecha para acceder a la pantalla de configuración. Nos pedirá un usuario y una contraseña para poder entrar, para los que introduciremos <em><strong>“admin”</strong></em> y la contraseña que pusimos en el paso de instalación.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_config_login.jpg" class="" width="900" title="OpenWebRX - Configuración login">
 
-<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El archivo de configuración se encuentra dentro del repositorio que acabamos de clonar. Para editarlo lo abrimos con el editor:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano config_webrx.py</span><br></pre></td></tr></table></figure>
+<p>Una vez accedemos, veremos un menú como el siguiente desde el que accederemos a los distintos ajustes.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_config.jpg" class="" width="900" title="OpenWebRX - Configuración">
 
-<p>Este archivo contiene muchos ajustes que podemos modificar. El ajuste principal que vamos a ver es el de configurar los dispositivos SDR. Para ello abrimos el archivo y buscamos el siguiente fragmento:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">sdrs &#x3D; &#123;</span><br><span class="line">    &quot;rtlsdr&quot;: &#123;</span><br><span class="line">        &quot;name&quot;: &quot;RTL-SDR USB Stick&quot;,</span><br><span class="line">        &quot;type&quot;: &quot;rtl_sdr&quot;,</span><br><span class="line">        &quot;ppm&quot;: 0,</span><br><span class="line">        # you can change this if you use an upconverter. formula is:</span><br><span class="line">        # center_freq + lfo_offset &#x3D; actual frequency on the sdr</span><br><span class="line">        # &quot;lfo_offset&quot;: 0,</span><br><span class="line">        &quot;profiles&quot;: &#123;</span><br><span class="line">            &quot;70cm&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;70cm Relais&quot;,</span><br><span class="line">                &quot;center_freq&quot;: 438800000,</span><br><span class="line">                &quot;rf_gain&quot;: 30,</span><br><span class="line">                &quot;samp_rate&quot;: 2400000,</span><br><span class="line">                &quot;start_freq&quot;: 439275000,</span><br><span class="line">                &quot;start_mod&quot;: &quot;nfm&quot;,</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;2m&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;2m komplett&quot;,</span><br><span class="line">                &quot;center_freq&quot;: 145000000,</span><br><span class="line">                &quot;rf_gain&quot;: 30,</span><br><span class="line">                &quot;samp_rate&quot;: 2400000,</span><br><span class="line">                &quot;start_freq&quot;: 145725000,</span><br><span class="line">                &quot;start_mod&quot;: &quot;nfm&quot;,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>El primer ajuste será introducir los datos generales desde <em>“General settings”</em>. Aquí podemos indicar la ubicación de nuestra estación, nuestro indicativo, etc. Una vez introducimos los ajustes, hacemos clic en <em>“Apply and save”</em> para guardarlos.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_config_general.jpg" class="" width="900" title="OpenWebRX - Configuración general">
 
-<p>Ahora lo editamos con los datos de nuestro/os dispositivos conectados. A continuación se muestra un breve descripción de esta configuración:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">sdrs &#x3D; &#123;</span><br><span class="line">    &quot;[NOMBRE_DEL_AJUSTE]&quot;: &#123;</span><br><span class="line">        &quot;name&quot;: &quot;[NOMBRE_DEL_DISPOSITIVO: Nombre descriptivo que se mostrará en el selector.]&quot;,</span><br><span class="line">        &quot;type&quot;: &quot;[TIPO_DISPOSITIVO: rtl_sdr, rtl_sdr_soapy, sdrplay, hackrf, airspy, airspyhf, fifi_sdr, perseussdr, lime_sdr, pluto_sdr,soapy_remote.]&quot;,</span><br><span class="line">        &quot;device&quot;: &quot;[NUMERO_SERIE: Añadir en caso de que tengamos varios dispositivos RTL-SDR.]&quot;,</span><br><span class="line">        &quot;ppm&quot;: [VALOR_PPM],</span><br><span class="line">        &quot;lfo_offset&quot;: [VALOR_DESPLAZAMIENTO: Añadir si usamos Up&#x2F;Down converter.],</span><br><span class="line">        &quot;profiles&quot;: &#123;</span><br><span class="line">            &quot;[NOMBRE_DEL_PERFIL]&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;[DESCRIPCION: Nombre que se mostrará en el selector.]&quot;,</span><br><span class="line">                &quot;center_freq&quot;: [FRECUENCIA_CENTRAL],</span><br><span class="line">                &quot;rf_gain&quot;: [GANANCIA_DEL_SDR: Ganancia para esta frecuencia.],</span><br><span class="line">                &quot;samp_rate&quot;: [SAMPLE_RATE],</span><br><span class="line">                &quot;start_freq&quot;: [FRECUENCIA_DE_INICIO],</span><br><span class="line">                &quot;start_mod&quot;: &quot;[MODO_DE_INICIO]&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>El siguiente paso es configurar nuestro dispositivo SDR. Para ello accedemos a los ajustes desde el menú principal en <em>“SDR devices and profiles”</em>. Aquí hacemos clic sobre el dispositivo que vayamos a configurar. Si el dispositivo no es ninguno de los mostrados, podemos añadirlo haciendo clic sobre <em>“Add new device”</em>, siempre y cuando esté soportado. Podemos ver los dispositivos soportados en <a target="_blank" rel="noopener" href="https://github.com/jketterl/openwebrx/wiki/Supported-Hardware">este enlace</a>.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_config_devices.jpg" class="" width="900" title="OpenWebRX - Configuración dispositivos SDR">
 
-<p>Modificamos el ajuste añadiendo o quitando tantos dispositivos y perfiles como queramos.</p>
-<h2 id="Instalar-como-servicio"><a href="#Instalar-como-servicio" class="headerlink" title="Instalar como servicio"></a>Instalar como servicio</h2><p>El último paso es instalar OpenWebRX como servicio para que se inicie de forma automática al iniciar el sistema. Para ello vamos a añadir un nuevo servicio:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;openwebrx.service</span><br></pre></td></tr></table></figure>
+<p>Una vez hemos accedido a la configuración del dispositivo elegido, podemos ir añadiendo los ajustes necesarios seleccionándolos y haciendo clic sobre <em>“Add”</em>, y posteriormente introduciendo los valores para cada uno.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_config_rtl.jpg" class="" width="900" title="OpenWebRX - Configuración RTL-SDR">
 
-<p>Añadimos lo siguiente, modificando si fuese necesario:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;OpenWebRX</span><br><span class="line">After&#x3D;network.target</span><br><span class="line">StartLimitIntervalSec&#x3D;0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">Restart&#x3D;always</span><br><span class="line">RestartSec&#x3D;1</span><br><span class="line">User&#x3D;pi</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;home&#x2F;pi&#x2F;openwebrx</span><br><span class="line">ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;python3 &#x2F;home&#x2F;pi&#x2F;openwebrx&#x2F;openwebrx.py</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+<p>Una vez introducidos los ajustes, nos quedaría configurar las bandas. OpenWebRX no permite moverse libremente por todas las frecuencias de la misma forma que hacen otros programas como SDR#. Para poder movernos en las distintas frecuencias tenemos que crear una serie de perfiles para cada frecuencia introduciendo los datos requeridos para cada una.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_config_bands.jpg" class="" width="900" title="OpenWebRX - Configuración bandas">
 
-<p>Activamos para que se inicie de forma automática:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable openwebrx</span><br></pre></td></tr></table></figure>
-
-<p>Iniciamos el servicio:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start openwebrx</span><br></pre></td></tr></table></figure>
-
-<p>Ahora ya podemos acceder desde cualquier navegador introduciendo la dirección IP de la Raspberry Pi y el puerto 8073 (podemos cambiarlo en los ajustes):</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;[DIRECCION_IP:8073]</span><br></pre></td></tr></table></figure>
-
-<h2 id="Instalar-paquetes-adicionales"><a href="#Instalar-paquetes-adicionales" class="headerlink" title="Instalar paquetes adicionales"></a>Instalar paquetes adicionales</h2><p>Tenemos la posibilidad de añadir nuevos paquetes a OpenWebRX para decodificar ciertos modos digitales:</p>
-<ul>
-<li>JS8Call.</li>
-<li>APRS.</li>
-<li>WSJT-X (FT8, FT4, WSPR, JT65, JT9).</li>
-<li>Voz digital (DMR, YSF).</li>
-</ul>
-<p>La guía de instalación de todos estos paquetes se encuentra en el manual oficial de instalación de OpenWebRX del que se ha obtenido la información para este artículo:</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/jketterl/openwebrx/wiki/Manual-Package-installation-(including-digital-voice)"><center>https://github.com/jketterl/openwebrx/wiki/Manual-Package-installation-(including-digital-voice)</center></a></p>
+<p>Por último, para que OpenWebRW recargue todos los ajustes, reiniciamos el servicio desde la terminal con el siguiente comando:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart openwebrx.service</span><br></pre></td></tr></table></figure>
 
     </div>
 

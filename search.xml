@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Ajuste de frecuencia en recepción de satélites</title>
+    <url>/2020/02/18/ajuste-frecuencia-doppler-orbitron/</url>
+    <content><![CDATA[<p>Cuando realizamos seguimiento de satélites nos encontramos con que la frecuencia en la que deberíamos recibir una señal no se ajusta con la que estamos recibiendo y además cambia durante el pase. Esto se debe al conocido como <strong>efecto Doppler</strong>.</p>
+<p>El efecto Doppler, llamado así por el físico austriaco Christian Andreas Doppler, es el cambio de frecuencia asociado a la alta velocidad que presenta el satélite con respecto a una estación terrestre.</p>
+<p>Usando Orbitron y el plugin DDETracker podemos hacer que SDR# realice la correción y el ajuste de la frecuencia de recepción de forma automática y en tiempo real. De esta forma evitaremos el tener que ajustarla manualmente y tendremos siempre la señal correctamente centrada.</p>
+<span id="more"></span>
+
+
+<h2 id="Correccion-automatica-de-la-frecuencia-con-Orbitron"><a href="#Correccion-automatica-de-la-frecuencia-con-Orbitron" class="headerlink" title="Corrección automática de la frecuencia con Orbitron"></a>Corrección automática de la frecuencia con Orbitron</h2><p>En el post anterior <a href="https://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/">“Seguimiento de satélites con Orbitron”</a> vimos como instalar y configurar este programa para realizar el seguimiento de satélites. Este programa también nos va a permitir corregir en tiempo real la frecuencia del satélite que estemos siguiendo, y además podremos enviar esta frecuencia a SDR# para que la ajuste de manera automática. De esta forma no tendremos que preocuparnos por ajustarla manualmente y tendremos siempre la señal perfectamente sintonizada.</p>
+<p>El primer paso es indicarle a Orbitron la frecuencia del satélite para que pueda llevar a cabo el ajuste. Para ello seleccionamos el satélite para marcarlo como activo y vamos a la pestaña <em>Sat/Orbit info</em>.</p>
+<p>Hacemos doble clic en el cuadro de texto de la derecha para que nos cargue la plantilla por defecto.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-plantilla.jpg" class="" title="Orbitron">
+
+<p>Ahora introducimos la frecuencia en MHz en la etiqueta <strong>DNLINK</strong>.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-dnlink.jpg" class="" title="Introducir frecuencia en Orbitron">
+
+<p>Los demás datos son opcionales, pero podemos completarlos para tener más información sobre el satélite.</p>
+<h2 id="Instalacion-de-DDETracker"><a href="#Instalacion-de-DDETracker" class="headerlink" title="Instalación de DDETracker"></a>Instalación de DDETracker</h2><p>El siguiente paso es instalar un plugin en SDR# que nos permita cambiar la frecuencia de forma automática.<br>En este ejemplo vamos a usar el plugin <strong>DDETracker</strong> que podemos descargar desde el siguiente link:</p>
+<p><a href="http://rtl-sdr.ru/uploads/download/ddetracker.zip"><center>Descargar DDE Tracker</center></a></p>
+<p>Una vez descargado el archivo seguimos los siguientes pasos:</p>
+<ol>
+<li><p>Vamos a la carpeta de instalación de SDR# y dentro de la carpeta <strong>Plugins</strong> creamos una nueva de nombre <strong>DDETracker</strong>.</p>
+</li>
+<li><p>Abrimos el archivo descargado y extraemos los archivos que se muestran en la siguiente captura dentro de la carpeta que hemos creado en el paso anterior.</p>
+ <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-archivos.jpg" class="" title="Archivos de DDETracker"></li>
+</ol>
+<ol start="3">
+<li><p>Añadimos las siguientes líneas al archivo de configuración de Orbitron <em><strong>Setup.cfg</strong></em>, que encontramos dentro de la carpeta <em>Config</em> en el directorio de instalación de Orbitron.<br> Debemos indicar la ruta completa en la que hemos colocado el archivo <em>SDRSharpDriverDDE.exe</em> en el paso anterior.</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Drivers]</span><br><span class="line">SDRSharp&#x3D;C:\SDR\SDRSharp\Plugins\DDETracker\SDRSharpDriverDDE.exe</span><br></pre></td></tr></table></figure>
+ </br>
+ <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-config.jpg" class="" title="Orbitron">
+
+<p> Por último, reiniciamos Orbitron para aplicar los cambios.</p>
+</li>
+</ol>
+<p>Ahora que tenemos el plugin instalado, iniciamos SDR# y abrimos el plugin desde el menú.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/sdrsharp-menu.jpg" class="" title="SDR# menú">
+
+<p>Lo activamos haciendo clic en <em>Scheduler</em>.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-plugin.jpg" class="" title="DDETracker">
+
+
+<h2 id="Conexion-con-DDETracker"><a href="#Conexion-con-DDETracker" class="headerlink" title="Conexión con DDETracker"></a>Conexión con DDETracker</h2><p>Ahora ya podemos decirle a Orbitron que mande los datos a SDR#. Para ello vamos a Orbitron y seleccionamos en Driver <em>“SDRSharp”</em> y hacemos clic en el botón de conexión:</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-driver.jpg" class="" title="Orbitron">
+
+<p>Ahora ya podemos ver que DDETracker recibe los datos del satélite que tenemos activo en Orbitron.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-active.jpg" class="" title="DDETracker activo">
+
+
+<h2 id="Configurar-satelites-en-DDETracker"><a href="#Configurar-satelites-en-DDETracker" class="headerlink" title="Configurar satélites en DDETracker"></a>Configurar satélites en DDETracker</h2><p>Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.<br>Para introducir los datos, hacemos clic en sobre el botón <strong>Config</strong> que aparece en el plugin y se abrirá una ventana para introducir los datos.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-config.jpg" class="" title="DDETracker config">
+
+
+<p>Hacemos clic en <em>“Add new satellite”</em> para crear un nuevo satélite.<br>Lo primero es introducir el nombre. Este nombre debe coincidir exactamente con el nombre del satélite que aparece en el plugin.<br>Si el nombre es muy largo o contiene caracteres especiales, podremos usar el asterisco (*) para omitir ciertas partes.</p>
+<p>Como podemos ver en la ventana tenemos dos bloques para introducir las acciones que SDR# debe realizar. En el bloque <strong>AOS</strong> (Acquisition of Signal) le diremos qué debe hacer cuando el satélite comience a verse sobre el horizonte en nuestra posición y en el bloque inferior <strong>LOS</strong> (Loss Of Signal) le indicamos que hará cuando termine el pase.</p>
+<p>Estas acciones podemos escribirlas manualmente o seleccionarlas de la columna de la derecha e ir insertando con el botón “<strong>&lt;&lt;</strong>“ dónde corresponda.</p>
+<p>En el caso de nuestro ejemplo haremos las siguientes acciones:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p><strong>LOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_tracking_frequency_Off</span><br><span class="line">radio_Stop</span><br></pre></td></tr></table></figure></p>
+</br>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-configured.jpg" class="" title="DDETracker FUNCUBE">
+
+<p>Con esto ya tendríamos los datos del satélite introducidos. Ahora cuando el satélite se acerque a nuestra posición, SDR# se iniciará para recibir la señal de forma automática y se detendrá cuando el satélite desaparezca por el horizonte.</p>
+<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/sdr-sharp.jpg" class="" title="DDETracker activo">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Orbitron</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Construcción de antena QFH para satélites meteorológicos</title>
     <url>/2021/04/10/construccion-antena-qfh-137/</url>
     <content><![CDATA[<p>En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello construiremos nuestra antena para que resuene en 137,5 MHz.</p>
@@ -133,77 +204,6 @@
         <tag>QFH</tag>
         <tag>Satélites meteorológicos</tag>
         <tag>NOAA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ajuste de frecuencia en recepción de satélites</title>
-    <url>/2020/02/18/ajuste-frecuencia-doppler-orbitron/</url>
-    <content><![CDATA[<p>Cuando realizamos seguimiento de satélites nos encontramos con que la frecuencia en la que deberíamos recibir una señal no se ajusta con la que estamos recibiendo y además cambia durante el pase. Esto se debe al conocido como <strong>efecto Doppler</strong>.</p>
-<p>El efecto Doppler, llamado así por el físico austriaco Christian Andreas Doppler, es el cambio de frecuencia asociado a la alta velocidad que presenta el satélite con respecto a una estación terrestre.</p>
-<p>Usando Orbitron y el plugin DDETracker podemos hacer que SDR# realice la correción y el ajuste de la frecuencia de recepción de forma automática y en tiempo real. De esta forma evitaremos el tener que ajustarla manualmente y tendremos siempre la señal correctamente centrada.</p>
-<span id="more"></span>
-
-
-<h2 id="Correccion-automatica-de-la-frecuencia-con-Orbitron"><a href="#Correccion-automatica-de-la-frecuencia-con-Orbitron" class="headerlink" title="Corrección automática de la frecuencia con Orbitron"></a>Corrección automática de la frecuencia con Orbitron</h2><p>En el post anterior <a href="https://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/">“Seguimiento de satélites con Orbitron”</a> vimos como instalar y configurar este programa para realizar el seguimiento de satélites. Este programa también nos va a permitir corregir en tiempo real la frecuencia del satélite que estemos siguiendo, y además podremos enviar esta frecuencia a SDR# para que la ajuste de manera automática. De esta forma no tendremos que preocuparnos por ajustarla manualmente y tendremos siempre la señal perfectamente sintonizada.</p>
-<p>El primer paso es indicarle a Orbitron la frecuencia del satélite para que pueda llevar a cabo el ajuste. Para ello seleccionamos el satélite para marcarlo como activo y vamos a la pestaña <em>Sat/Orbit info</em>.</p>
-<p>Hacemos doble clic en el cuadro de texto de la derecha para que nos cargue la plantilla por defecto.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-plantilla.jpg" class="" title="Orbitron">
-
-<p>Ahora introducimos la frecuencia en MHz en la etiqueta <strong>DNLINK</strong>.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-dnlink.jpg" class="" title="Introducir frecuencia en Orbitron">
-
-<p>Los demás datos son opcionales, pero podemos completarlos para tener más información sobre el satélite.</p>
-<h2 id="Instalacion-de-DDETracker"><a href="#Instalacion-de-DDETracker" class="headerlink" title="Instalación de DDETracker"></a>Instalación de DDETracker</h2><p>El siguiente paso es instalar un plugin en SDR# que nos permita cambiar la frecuencia de forma automática.<br>En este ejemplo vamos a usar el plugin <strong>DDETracker</strong> que podemos descargar desde el siguiente link:</p>
-<p><a href="http://rtl-sdr.ru/uploads/download/ddetracker.zip"><center>Descargar DDE Tracker</center></a></p>
-<p>Una vez descargado el archivo seguimos los siguientes pasos:</p>
-<ol>
-<li><p>Vamos a la carpeta de instalación de SDR# y dentro de la carpeta <strong>Plugins</strong> creamos una nueva de nombre <strong>DDETracker</strong>.</p>
-</li>
-<li><p>Abrimos el archivo descargado y extraemos los archivos que se muestran en la siguiente captura dentro de la carpeta que hemos creado en el paso anterior.</p>
- <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-archivos.jpg" class="" title="Archivos de DDETracker"></li>
-</ol>
-<ol start="3">
-<li><p>Añadimos las siguientes líneas al archivo de configuración de Orbitron <em><strong>Setup.cfg</strong></em>, que encontramos dentro de la carpeta <em>Config</em> en el directorio de instalación de Orbitron.<br> Debemos indicar la ruta completa en la que hemos colocado el archivo <em>SDRSharpDriverDDE.exe</em> en el paso anterior.</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Drivers]</span><br><span class="line">SDRSharp&#x3D;C:\SDR\SDRSharp\Plugins\DDETracker\SDRSharpDriverDDE.exe</span><br></pre></td></tr></table></figure>
- </br>
- <img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-config.jpg" class="" title="Orbitron">
-
-<p> Por último, reiniciamos Orbitron para aplicar los cambios.</p>
-</li>
-</ol>
-<p>Ahora que tenemos el plugin instalado, iniciamos SDR# y abrimos el plugin desde el menú.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/sdrsharp-menu.jpg" class="" title="SDR# menú">
-
-<p>Lo activamos haciendo clic en <em>Scheduler</em>.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-plugin.jpg" class="" title="DDETracker">
-
-
-<h2 id="Conexion-con-DDETracker"><a href="#Conexion-con-DDETracker" class="headerlink" title="Conexión con DDETracker"></a>Conexión con DDETracker</h2><p>Ahora ya podemos decirle a Orbitron que mande los datos a SDR#. Para ello vamos a Orbitron y seleccionamos en Driver <em>“SDRSharp”</em> y hacemos clic en el botón de conexión:</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/orbitron-driver.jpg" class="" title="Orbitron">
-
-<p>Ahora ya podemos ver que DDETracker recibe los datos del satélite que tenemos activo en Orbitron.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-active.jpg" class="" title="DDETracker activo">
-
-
-<h2 id="Configurar-satelites-en-DDETracker"><a href="#Configurar-satelites-en-DDETracker" class="headerlink" title="Configurar satélites en DDETracker"></a>Configurar satélites en DDETracker</h2><p>Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.<br>Para introducir los datos, hacemos clic en sobre el botón <strong>Config</strong> que aparece en el plugin y se abrirá una ventana para introducir los datos.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-config.jpg" class="" title="DDETracker config">
-
-
-<p>Hacemos clic en <em>“Add new satellite”</em> para crear un nuevo satélite.<br>Lo primero es introducir el nombre. Este nombre debe coincidir exactamente con el nombre del satélite que aparece en el plugin.<br>Si el nombre es muy largo o contiene caracteres especiales, podremos usar el asterisco (*) para omitir ciertas partes.</p>
-<p>Como podemos ver en la ventana tenemos dos bloques para introducir las acciones que SDR# debe realizar. En el bloque <strong>AOS</strong> (Acquisition of Signal) le diremos qué debe hacer cuando el satélite comience a verse sobre el horizonte en nuestra posición y en el bloque inferior <strong>LOS</strong> (Loss Of Signal) le indicamos que hará cuando termine el pase.</p>
-<p>Estas acciones podemos escribirlas manualmente o seleccionarlas de la columna de la derecha e ir insertando con el botón “<strong>&lt;&lt;</strong>“ dónde corresponda.</p>
-<p>En el caso de nuestro ejemplo haremos las siguientes acciones:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
-<p><strong>LOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_tracking_frequency_Off</span><br><span class="line">radio_Stop</span><br></pre></td></tr></table></figure></p>
-</br>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/dde-configured.jpg" class="" title="DDETracker FUNCUBE">
-
-<p>Con esto ya tendríamos los datos del satélite introducidos. Ahora cuando el satélite se acerque a nuestra posición, SDR# se iniciará para recibir la señal de forma automática y se detendrá cuando el satélite desaparezca por el horizonte.</p>
-<img src="/2020/02/18/ajuste-frecuencia-doppler-orbitron/sdr-sharp.jpg" class="" title="DDETracker activo">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Orbitron</tag>
       </tags>
   </entry>
   <entry>
@@ -565,6 +565,34 @@
       </tags>
   </entry>
   <entry>
+    <title>Instalación de SDRPlay RSP2 en Debian Testing</title>
+    <url>/2021/04/05/instalacion-SDRPlay-RSP2-debian-testing/</url>
+    <content><![CDATA[<p>Esto son solo notas tomadas al vuelo mientras he instalado y probado la versión citada del driver/API de SDRPlay RSP2 en Debian Testing x64. Han sido realizadas en una máquina con el SO recién instalado y los paquetes <em>Soapy</em> mínimamente necesarios, aunque según el caso y la instalación pudieran ser necesarios otros más para cumplir dependencias.</p>
+<span id="more"></span>
+
+<p>Todos los paquetes Soapy para la mayoría de dispositivos SDR están incluidos en la distribución, a excepción de SDRPlay que hay que compilarlo según sus instrucciones. Previamente hay que instalar el paquete <strong>libsoapysdr-dev</strong>.<br>Si no se quiere, no es necesario instalar los módulos Soapy para el resto de dispositivos si no se van a usar.</p>
+<p>Primeramente, hay que descargar y ejecutar el driver/API (la más actual en este momento es la API 3.07) desde la web de sdrplay.com (Linux x86, distribución Other).<br>Se descarga un archivo <strong>.run</strong> al que hay que darle permisos con el comando <strong>chmod</strong> y se ejecuta. No es necesario hacerlo con <em>sudo</em> en un primer momento ya que tras la lectura y aprobación de la licencia, preguntará la contraseña si se da el caso.</p>
+<p>Tras la instalación, indica que para iniciar o parar el servicio de SDRPlay se hace con los respectivos comandos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start sdrplay</span><br><span class="line">sudo systemctl stop sdrplay</span><br></pre></td></tr></table></figure>
+
+<p>Es aconsejable aquí reiniciar el sistema para que dicho servicio arranque bien.</p>
+<p>Después, hay que compilar el soporte de SoapySDR para SDRPlay (SoapySDRPlay). Para ello es necesario, como se ha comentado al principio, instalar el paquete <strong>libsoapysdr-dev</strong>. Además necesitaremos el paquete <strong>cmake</strong>.<br>A continuación, nos descargamos el zip con el código fuente desde <a href="https://github.com/pothosware/SoapySDRPlay3/archive/refs/heads/master.zip">su repositorio en GitHub</a> (en mi caso he tenido problemas con “git clone” y similares ya que siempre pedía usuario y contraseña de GitHub y para esto no es necesario). Descomprimimos el paquete ZIP en un directorio y hacemos la siguiente secuencia de pasos:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
+
+<p>Comprobar si la compilación e instalación nos ha fallado o no, ya que pudiera ser necesaria la instalación de algún paquete adicional.</p>
+<p>Para comprobar que todo está bien, ejecutaremos los siguientes comandos:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SoapySDRUtil -info <span class="comment"># En los Available Factories nos debe aparecer, entre otros, SDRPlay.</span></span><br><span class="line">SoapySDRUtil --probe=<span class="string">&quot;driver=sdrplay&quot;</span> <span class="comment"># Para ver información más detallada del SDRPlay.</span></span><br></pre></td></tr></table></figure>
+
+<p>Por último, queda arrancar la aplicación SDR que pueda utilizar SoapySDR. Yo utilizo principalmente 2: CubicSDR y GQRX.<br>Para CubicSDR, observo últimamente que da problemas con el módulo para RFSpace al arrancar (yo no lo tengo, así que he desinstalado el paquete soapysdr0.7-module-rfspace). Si CubicSDR arranca bien, se deberá poder ver el dispositivo SDRPlay.</p>
+<p>Para GQRX, igual. Al arrancarlo debería encontrar el SDRPlay sin mayores problemas.</p>
+<p>Las aplicaciones de SDR que he probado son las que trae Debian Testing en sus repositorios que, a día de hoy son CubicSDR 0.2.5 y GQRX 2.14.4. También he probado el receptor DAB/DAB+ welle.io que viene en el repositorio.</p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>SDRPlay</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
     <url>/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</url>
     <content><![CDATA[<p>En este artículo vamos a ver como instalar y configurar <a href="https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm">CSVUserlistBrowser</a> para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo clic.</p>
@@ -622,114 +650,52 @@
       </tags>
   </entry>
   <entry>
-    <title>Instalación de SDRPlay RSP2 en Debian Testing</title>
-    <url>/2021/04/05/instalacion-SDRPlay-RSP2-debian-testing/</url>
-    <content><![CDATA[<p>Esto son solo notas tomadas al vuelo mientras he instalado y probado la versión citada del driver/API de SDRPlay RSP2 en Debian Testing x64. Han sido realizadas en una máquina con el SO recién instalado y los paquetes <em>Soapy</em> mínimamente necesarios, aunque según el caso y la instalación pudieran ser necesarios otros más para cumplir dependencias.</p>
-<span id="more"></span>
-
-<p>Todos los paquetes Soapy para la mayoría de dispositivos SDR están incluidos en la distribución, a excepción de SDRPlay que hay que compilarlo según sus instrucciones. Previamente hay que instalar el paquete <strong>libsoapysdr-dev</strong>.<br>Si no se quiere, no es necesario instalar los módulos Soapy para el resto de dispositivos si no se van a usar.</p>
-<p>Primeramente, hay que descargar y ejecutar el driver/API (la más actual en este momento es la API 3.07) desde la web de sdrplay.com (Linux x86, distribución Other).<br>Se descarga un archivo <strong>.run</strong> al que hay que darle permisos con el comando <strong>chmod</strong> y se ejecuta. No es necesario hacerlo con <em>sudo</em> en un primer momento ya que tras la lectura y aprobación de la licencia, preguntará la contraseña si se da el caso.</p>
-<p>Tras la instalación, indica que para iniciar o parar el servicio de SDRPlay se hace con los respectivos comandos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start sdrplay</span><br><span class="line">sudo systemctl stop sdrplay</span><br></pre></td></tr></table></figure>
-
-<p>Es aconsejable aquí reiniciar el sistema para que dicho servicio arranque bien.</p>
-<p>Después, hay que compilar el soporte de SoapySDR para SDRPlay (SoapySDRPlay). Para ello es necesario, como se ha comentado al principio, instalar el paquete <strong>libsoapysdr-dev</strong>. Además necesitaremos el paquete <strong>cmake</strong>.<br>A continuación, nos descargamos el zip con el código fuente desde <a href="https://github.com/pothosware/SoapySDRPlay3/archive/refs/heads/master.zip">su repositorio en GitHub</a> (en mi caso he tenido problemas con “git clone” y similares ya que siempre pedía usuario y contraseña de GitHub y para esto no es necesario). Descomprimimos el paquete ZIP en un directorio y hacemos la siguiente secuencia de pasos:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
-
-<p>Comprobar si la compilación e instalación nos ha fallado o no, ya que pudiera ser necesaria la instalación de algún paquete adicional.</p>
-<p>Para comprobar que todo está bien, ejecutaremos los siguientes comandos:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SoapySDRUtil -info <span class="comment"># En los Available Factories nos debe aparecer, entre otros, SDRPlay.</span></span><br><span class="line">SoapySDRUtil --probe=<span class="string">&quot;driver=sdrplay&quot;</span> <span class="comment"># Para ver información más detallada del SDRPlay.</span></span><br></pre></td></tr></table></figure>
-
-<p>Por último, queda arrancar la aplicación SDR que pueda utilizar SoapySDR. Yo utilizo principalmente 2: CubicSDR y GQRX.<br>Para CubicSDR, observo últimamente que da problemas con el módulo para RFSpace al arrancar (yo no lo tengo, así que he desinstalado el paquete soapysdr0.7-module-rfspace). Si CubicSDR arranca bien, se deberá poder ver el dispositivo SDRPlay.</p>
-<p>Para GQRX, igual. Al arrancarlo debería encontrar el SDRPlay sin mayores problemas.</p>
-<p>Las aplicaciones de SDR que he probado son las que trae Debian Testing en sus repositorios que, a día de hoy son CubicSDR 0.2.5 y GQRX 2.14.4. También he probado el receptor DAB/DAB+ welle.io que viene en el repositorio.</p>
-]]></content>
-      <tags>
-        <tag>Linux</tag>
-        <tag>SDRPlay</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Instalar receptor SDR online con OpenWebRX</title>
     <url>/2020/08/13/instalacion-openwebrx/</url>
-    <content><![CDATA[<p><a href="https://www.openwebrx.de/">OpenWebRX</a> es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier sitio, simplemente accediendo desde un navegador web.</p>
+    <content><![CDATA[<p><a href="https://www.openwebrx.de/">OpenWebRX</a> es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier lugar, simplemente accediendo desde un navegador web.</p>
 <p>Este proyecto <em>Open Source</em> nació en 2015 de mano de András Retzler (HA7ILM). Pero a finales de 2019, el autor abandonó el proyecto y es cuando <a href="https://github.com/jketterl">Jakob Ketterl</a> retomó el desarrollo del proyecto añadiendo nuevas funcionalidades y mejorando el software. El proyecto comenzó a ganar popularidad y cuenta actualmente con un gran número de colaboradores.</p>
-<p>En este artículo veremos cómo instalar OpenWebRX en una Raspberry Pi usando su código fuente. Existen otras opciones disponibles para instalar este software, como imágenes para tarjetas SD, paquetes, imágenes para Docker, pero presentan algunas carencias o bien son más complejas. El proceso de instalación manual que vamos a seguir es similar para cualquier distribución Linux, lo que nos aporta más posibilidades.</p>
+<p>En este artículo veremos cómo instalar OpenWebRX en una Raspberry Pi. Existen otras opciones disponibles para instalar este software, como imágenes para tarjetas SD, imágenes para Docker, etc. Podemos consultar todas estas opciones en su <a href="https://www.openwebrx.de/">página web</a>.</p>
 <span id="more"></span>
 
-<img src="/2020/08/13/instalacion-openwebrx/openwebrx.jpg" class="" width="900" title="OpenWebRX">
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_aprs.jpg" class="" width="900" title="OpenWebRX">
 
-<h2 id="Instalar-dependencias-de-instalacion"><a href="#Instalar-dependencias-de-instalacion" class="headerlink" title="Instalar dependencias de instalación"></a>Instalar dependencias de instalación</h2><p>Para poder compilar e instalar las librerías necesarias necesitamos una serie de dependencias. Para instalarlas ejecutamos los siguientes comandos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install git build-essential cmake libfftw3-dev python3 python3-setuptools rtl-sdr netcat libitpp-dev libsndfile-dev librtlsdr-dev automake autoconf libtool pkg-config</span><br></pre></td></tr></table></figure>
+<h2 id="Anadir-repositorios-de-instalacion"><a href="#Anadir-repositorios-de-instalacion" class="headerlink" title="Añadir repositorios de instalación"></a>Añadir repositorios de instalación</h2><p>Para poder instalar OpenWebRX en nuestra Raspberry Pi necesitamos previamente añadir los repositorios para Debian. Para ello ejecutamos los siguientes comandos:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo bash -c <span class="string">&#x27;wget -O - https://repo.openwebrx.de/debian/key.gpg.txt | apt-key add&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo bash -c <span class="string">&#x27;echo &quot;deb https://repo.openwebrx.de/debian/ buster main&quot; &gt; /etc/apt/sources.list.d/openwebrx.list&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 
-<h2 id="Instalar-librerias"><a href="#Instalar-librerias" class="headerlink" title="Instalar librerías"></a>Instalar librerías</h2><h3 id="Instalar-CSDR"><a href="#Instalar-CSDR" class="headerlink" title="Instalar CSDR"></a>Instalar CSDR</h3><p><em>CSDR</em> es la librería encargada de gestionar el dispositivo SDR. Siguiendo los pasos expuestos a continuación podremos compilarla e instalarla.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;csdr.git</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd csdr</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">autoreconf -i</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;configure</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
+<h2 id="Instalar-OpenWebRx"><a href="#Instalar-OpenWebRx" class="headerlink" title="Instalar OpenWebRx"></a>Instalar OpenWebRx</h2><p>Ahora ejecutamos el siguiente comando para instalar OpenWebRX:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install openwebrx</span><br></pre></td></tr></table></figure>
 
-<h3 id="Instalar-OWRX-Connector"><a href="#Instalar-OWRX-Connector" class="headerlink" title="Instalar OWRX Connector"></a>Instalar OWRX Connector</h3><p><em>OWRX Connector</em> es la librería encargada de conectar la interfaz del SDR con OpenWebRX. Instalamos siguiendo los pasos descritos a continuación.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;owrx_connector.git</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd owrx_connector</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir build</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd build</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cmake ..</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd ..&#x2F;..</span><br></pre></td></tr></table></figure>
+<p>Durante la instalación nos pedirá una contraseña para acceder a la configuración de OpenWebRx mediante web.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_password.jpg" class="" width="600" title="Instalación OpenWebRX">
 
-<h3 id="Instalar-js8py"><a href="#Instalar-js8py" class="headerlink" title="Instalar js8py"></a>Instalar js8py</h3><p>Librería para decodificar la salida de JS8Call.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;js8py.git</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd js8py</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo python3 setup.py install</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>Una vez termine la instalación, accedemos desde un navegador web a la dirección IP de la Raspberry Pi y el puerto 8073.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;[IP_RASPBERRY]:8073&#x2F;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Instalar-SoapySDR-Opcional"><a href="#Instalar-SoapySDR-Opcional" class="headerlink" title="Instalar SoapySDR (Opcional)"></a>Instalar SoapySDR (Opcional)</h3><p>Si vamos a utilizar un dispositivo distinto del RTL-SDR tendremos que instalar SoapySDR para poder usarlo.<br>Los pasos para su instalación son los siguientes:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install libsoapysdr0.6 libsoapysdr-dev soapysdr-tools soapysdr-module-all</span><br></pre></td></tr></table></figure>
+<p>Se nos mostrará la ventana principal de OpenWebRX. Si solo tenemos un SDR conectado es posible que ya podamos comenzar a usarlo, pero si tenemos varios dispositivos conectados nos mostrará un error como el siguiente y que solventaremos en los siguientes pasos.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_loaded.jpg" class="" width="900" title="OpenWebRX">
 
-<p>Si no encuentra la librería “libsoapysdr0.6”, reemplazar por “libsoapysdr0.7”.</p>
-<h2 id="Clonar-repositorio-de-OpenWebRX"><a href="#Clonar-repositorio-de-OpenWebRX" class="headerlink" title="Clonar repositorio de OpenWebRX"></a>Clonar repositorio de OpenWebRX</h2><p>Descargamos la última versión estable disponible. Consultar el listado de versiones <a href="https://github.com/jketterl/openwebrx/tags">aquí</a>.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b 0.19.1 https:&#x2F;&#x2F;github.com&#x2F;jketterl&#x2F;openwebrx.git</span><br></pre></td></tr></table></figure>
+<p>Ahora hacemos clic en el botón <em>“Settings”</em> en la esquina superior derecha para acceder a la pantalla de configuración. Nos pedirá un usuario y una contraseña para poder entrar, para los que introduciremos <em><strong>“admin”</strong></em> y la contraseña que pusimos en el paso de instalación.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_config_login.jpg" class="" width="900" title="OpenWebRX - Configuración login">
 
-<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El archivo de configuración se encuentra dentro del repositorio que acabamos de clonar. Para editarlo lo abrimos con el editor:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano config_webrx.py</span><br></pre></td></tr></table></figure>
+<p>Una vez accedemos, veremos un menú como el siguiente desde el que accederemos a los distintos ajustes.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_config.jpg" class="" width="900" title="OpenWebRX - Configuración">
 
-<p>Este archivo contiene muchos ajustes que podemos modificar. El ajuste principal que vamos a ver es el de configurar los dispositivos SDR. Para ello abrimos el archivo y buscamos el siguiente fragmento:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">sdrs &#x3D; &#123;</span><br><span class="line">    &quot;rtlsdr&quot;: &#123;</span><br><span class="line">        &quot;name&quot;: &quot;RTL-SDR USB Stick&quot;,</span><br><span class="line">        &quot;type&quot;: &quot;rtl_sdr&quot;,</span><br><span class="line">        &quot;ppm&quot;: 0,</span><br><span class="line">        # you can change this if you use an upconverter. formula is:</span><br><span class="line">        # center_freq + lfo_offset &#x3D; actual frequency on the sdr</span><br><span class="line">        # &quot;lfo_offset&quot;: 0,</span><br><span class="line">        &quot;profiles&quot;: &#123;</span><br><span class="line">            &quot;70cm&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;70cm Relais&quot;,</span><br><span class="line">                &quot;center_freq&quot;: 438800000,</span><br><span class="line">                &quot;rf_gain&quot;: 30,</span><br><span class="line">                &quot;samp_rate&quot;: 2400000,</span><br><span class="line">                &quot;start_freq&quot;: 439275000,</span><br><span class="line">                &quot;start_mod&quot;: &quot;nfm&quot;,</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;2m&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;2m komplett&quot;,</span><br><span class="line">                &quot;center_freq&quot;: 145000000,</span><br><span class="line">                &quot;rf_gain&quot;: 30,</span><br><span class="line">                &quot;samp_rate&quot;: 2400000,</span><br><span class="line">                &quot;start_freq&quot;: 145725000,</span><br><span class="line">                &quot;start_mod&quot;: &quot;nfm&quot;,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>El primer ajuste será introducir los datos generales desde <em>“General settings”</em>. Aquí podemos indicar la ubicación de nuestra estación, nuestro indicativo, etc. Una vez introducimos los ajustes, hacemos clic en <em>“Apply and save”</em> para guardarlos.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_config_general.jpg" class="" width="900" title="OpenWebRX - Configuración general">
 
-<p>Ahora lo editamos con los datos de nuestro/os dispositivos conectados. A continuación se muestra un breve descripción de esta configuración:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdrs &#x3D; &#123;</span><br><span class="line">    &quot;[NOMBRE_DEL_AJUSTE]&quot;: &#123;</span><br><span class="line">        &quot;name&quot;: &quot;[NOMBRE_DEL_DISPOSITIVO: Nombre descriptivo que se mostrará en el selector.]&quot;,</span><br><span class="line">        &quot;type&quot;: &quot;[TIPO_DISPOSITIVO: rtl_sdr, rtl_sdr_soapy, sdrplay, hackrf, airspy, airspyhf, fifi_sdr, perseussdr, lime_sdr, pluto_sdr,soapy_remote.]&quot;,</span><br><span class="line">        &quot;device&quot;: &quot;[NUMERO_SERIE: Añadir en caso de que tengamos varios dispositivos RTL-SDR.]&quot;,</span><br><span class="line">        &quot;ppm&quot;: [VALOR_PPM],</span><br><span class="line">        &quot;lfo_offset&quot;: [VALOR_DESPLAZAMIENTO: Añadir si usamos Up&#x2F;Down converter.],</span><br><span class="line">        &quot;profiles&quot;: &#123;</span><br><span class="line">            &quot;[NOMBRE_DEL_PERFIL]&quot;: &#123;</span><br><span class="line">                &quot;name&quot;: &quot;[DESCRIPCION: Nombre que se mostrará en el selector.]&quot;,</span><br><span class="line">                &quot;center_freq&quot;: [FRECUENCIA_CENTRAL],</span><br><span class="line">                &quot;rf_gain&quot;: [GANANCIA_DEL_SDR: Ganancia para esta frecuencia.],</span><br><span class="line">                &quot;samp_rate&quot;: [SAMPLE_RATE],</span><br><span class="line">                &quot;start_freq&quot;: [FRECUENCIA_DE_INICIO],</span><br><span class="line">                &quot;start_mod&quot;: &quot;[MODO_DE_INICIO]&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>El siguiente paso es configurar nuestro dispositivo SDR. Para ello accedemos a los ajustes desde el menú principal en <em>“SDR devices and profiles”</em>. Aquí hacemos clic sobre el dispositivo que vayamos a configurar. Si el dispositivo no es ninguno de los mostrados, podemos añadirlo haciendo clic sobre <em>“Add new device”</em>, siempre y cuando esté soportado. Podemos ver los dispositivos soportados en <a href="https://github.com/jketterl/openwebrx/wiki/Supported-Hardware">este enlace</a>.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_config_devices.jpg" class="" width="900" title="OpenWebRX - Configuración dispositivos SDR">
 
-<p>Modificamos el ajuste añadiendo o quitando tantos dispositivos y perfiles como queramos.</p>
-<h2 id="Instalar-como-servicio"><a href="#Instalar-como-servicio" class="headerlink" title="Instalar como servicio"></a>Instalar como servicio</h2><p>El último paso es instalar OpenWebRX como servicio para que se inicie de forma automática al iniciar el sistema. Para ello vamos a añadir un nuevo servicio:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;openwebrx.service</span><br></pre></td></tr></table></figure>
+<p>Una vez hemos accedido a la configuración del dispositivo elegido, podemos ir añadiendo los ajustes necesarios seleccionándolos y haciendo clic sobre <em>“Add”</em>, y posteriormente introduciendo los valores para cada uno.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_config_rtl.jpg" class="" width="900" title="OpenWebRX - Configuración RTL-SDR">
 
-<p>Añadimos lo siguiente, modificando si fuese necesario:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;OpenWebRX</span><br><span class="line">After&#x3D;network.target</span><br><span class="line">StartLimitIntervalSec&#x3D;0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">Restart&#x3D;always</span><br><span class="line">RestartSec&#x3D;1</span><br><span class="line">User&#x3D;pi</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;home&#x2F;pi&#x2F;openwebrx</span><br><span class="line">ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;python3 &#x2F;home&#x2F;pi&#x2F;openwebrx&#x2F;openwebrx.py</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+<p>Una vez introducidos los ajustes, nos quedaría configurar las bandas. OpenWebRX no permite moverse libremente por todas las frecuencias de la misma forma que hacen otros programas como SDR#. Para poder movernos en las distintas frecuencias tenemos que crear una serie de perfiles para cada frecuencia introduciendo los datos requeridos para cada una.</p>
+<img src="/2020/08/13/instalacion-openwebrx/openwebrx_config_bands.jpg" class="" width="900" title="OpenWebRX - Configuración bandas">
 
-<p>Activamos para que se inicie de forma automática:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable openwebrx</span><br></pre></td></tr></table></figure>
-
-<p>Iniciamos el servicio:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start openwebrx</span><br></pre></td></tr></table></figure>
-
-<p>Ahora ya podemos acceder desde cualquier navegador introduciendo la dirección IP de la Raspberry Pi y el puerto 8073 (podemos cambiarlo en los ajustes):</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;[DIRECCION_IP:8073]</span><br></pre></td></tr></table></figure>
-
-<h2 id="Instalar-paquetes-adicionales"><a href="#Instalar-paquetes-adicionales" class="headerlink" title="Instalar paquetes adicionales"></a>Instalar paquetes adicionales</h2><p>Tenemos la posibilidad de añadir nuevos paquetes a OpenWebRX para decodificar ciertos modos digitales:</p>
-<ul>
-<li>JS8Call.</li>
-<li>APRS.</li>
-<li>WSJT-X (FT8, FT4, WSPR, JT65, JT9).</li>
-<li>Voz digital (DMR, YSF).</li>
-</ul>
-<p>La guía de instalación de todos estos paquetes se encuentra en el manual oficial de instalación de OpenWebRX del que se ha obtenido la información para este artículo:</p>
-<p><a href="https://github.com/jketterl/openwebrx/wiki/Manual-Package-installation-(including-digital-voice)"><center>https://github.com/jketterl/openwebrx/wiki/Manual-Package-installation-(including-digital-voice)</center></a></p>
+<p>Por último, para que OpenWebRW recargue todos los ajustes, reiniciamos el servicio desde la terminal con el siguiente comando:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart openwebrx.service</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>RTL-SDR</tag>
@@ -1250,116 +1216,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción de mensajes Inmarsat Aero</title>
-    <url>/2020/03/10/recepcion-aero-inmarsat/</url>
-    <content><![CDATA[<p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
-<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a href="https://es.wikipedia.org/wiki/ACARS">ACARS</a>, ADS-C, fax y voz digital.</p>
-<span id="more"></span>
-
-<p>Para decodificar este protocolo utilizaremos el software Open Source <strong>JAERO</strong>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://github.com/jontio/JAERO/releases/download/v1.0.4.11/JAERO-x64-setup.exe"><center>JAERO x64 v1.0.4.11</center></a></p>
-<p>Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos clic en <em>Tools</em> y en <em>Settings</em>. Esto abre la ventana de ajustes de JAERO.</p>
-<img src="/2020/03/10/recepcion-aero-inmarsat/jaero_config.jpg" class="" title="Configuración JAERO">
-
-<p>El primer ajuste es indicarle en el apartado de <em>Soundcard</em> que le vamos a pasar el audio desde SDR# por el cable de audio virtual.<br>El siguiente ajuste es indicarle la ubicación de la base de datos con los datos de las aeronaves. Para ello en el apartado <em>Database</em> nos aseguramos de que la ruta es correcta y le damos a <strong>Download</strong> para que se descargue una base de datos actualizada. Si todo ha ido bien, deberíamos tener un archivo CSV con los datos en la ruta indicada.</p>
-<p>Para recibir datos bastaría con sintonizar SDR# en la frecuencia requerida y ajustar JAERO para que decodifique los mensajes.</p>
-<p>Inmarsat emite la señal en diferentes modulaciones y frecuencias. A continuación veremos ejemplos cada una.</p>
-<h2 id="Aero-600-bps"><a href="#Aero-600-bps" class="headerlink" title="Aero 600 bps"></a>Aero 600 bps</h2><ul>
-<li><strong>Modulación:</strong> Aviation-BPSK.</li>
-<li><strong>Ancho de banda:</strong> 800 Hz.</li>
-<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_sdr.jpg" class="" title="AERO 600 bps">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_jaero.jpg" class="" title="AERO 600 bps">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_planelog.jpg" class="" title="AERO 600 bps planelog">
-
-
-<h2 id="Aero-1200-bps"><a href="#Aero-1200-bps" class="headerlink" title="Aero 1200 bps"></a>Aero 1200 bps</h2><ul>
-<li><strong>Modulación:</strong> Aviation-BPSK.</li>
-<li><strong>Ancho de banda:</strong> 1600 Hz.</li>
-<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_sdr.jpg" class="" title="AERO 1200 bps">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_jaero.jpg" class="" title="AERO 1200 bps">
-
-
-<h2 id="Aero-H-Aero-H"><a href="#Aero-H-Aero-H" class="headerlink" title="Aero-H, Aero-H+"></a>Aero-H, Aero-H+</h2><ul>
-<li><strong>Modulación:</strong> Aviation-QPSK</li>
-<li><strong>Ancho de banda:</strong> 10,5 KHz</li>
-<li><strong>Frecuencia:</strong> 1546,0 - 1546,2 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_sdr.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_jaero.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_planelog.jpg" class="" title="AERO 10.5k planelog">
-
-
-<h2 id="Voz-Digital"><a href="#Voz-Digital" class="headerlink" title="Voz Digital"></a>Voz Digital</h2><ul>
-<li><strong>Modulación:</strong> Aviation-QPSK.</li>
-<li><strong>Ancho de banda:</strong> 6 KHz.</li>
-<li><strong>Frecuencia:</strong> 1546,13 - 1546,18 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_sdr.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_jaero.jpg" class="" title="AERO 10.5k">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>ATC</tag>
-        <tag>Inmarsat</tag>
-        <tag>L-Band</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de cable de audio virtual</title>
-    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
-    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion-de-VB-Cable-en-Windows"><a href="#Instalacion-de-VB-Cable-en-Windows" class="headerlink" title="Instalación de VB-Cable en Windows"></a>Instalación de VB-Cable en Windows</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
-<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg" class="" width="900" title="Descarga de VB-Cable">
-
-<p>Hacemos clic en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
-<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
-
-<p>Hacemos clic en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
-<h3 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h3><p>Abrimos ahora SDR# y abrimos la configuración de audio.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio-menu.jpg" class="" title="SDRSharp audio">
-
-<p>Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer clic en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" title="SDRSharp output">
-
-<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
-<h2 id="Instalacion-de-VB-Cable-en-macOS"><a href="#Instalacion-de-VB-Cable-en-macOS" class="headerlink" title="Instalación de VB-Cable en macOS"></a>Instalación de VB-Cable en macOS</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg" class="" width="900" title="Descarga de VB-Cable">
-
-<p>Hacemos clic en <strong><em>Download</em></strong> y una vez descargado ejecutamos el instalador.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg" class="" title="Instalación de VB-Cable">
-
-<p>Seguimos los pasos del asistente para instalar VB-Audio.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg" class="" title="Instalación de VB-Cable">
-
-<h3 id="Configuracion-de-CubicSDR"><a href="#Configuracion-de-CubicSDR" class="headerlink" title="Configuración de CubicSDR"></a>Configuración de CubicSDR</h3><p>Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos clic en <strong>Audio Out</strong> y seleccionamos <em><strong>VB Audio: VB-Cable</strong></em></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/cubicsdr-audio.jpg" class="" width="900" title="CubicSDR audio output">
-
-<p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
-]]></content>
-      <tags>
-        <tag>macOS</tag>
-        <tag>Instalación</tag>
-        <tag>Windows</tag>
-        <tag>Virtual Audio Cable</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Instalación de SPY Server en Raspberry Pi</title>
     <url>/2020/04/11/instalacion-spyserver-raspberrypi/</url>
     <content><![CDATA[<p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos como instalar SPY Server en una Raspberry Pi.</p>
@@ -1423,70 +1279,113 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción de datos del instrumental HIRS de los satélites NOAA</title>
-    <url>/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</url>
-    <content><![CDATA[<p>Como vimos en el artículo <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
-<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
+    <title>Instalación de cable de audio virtual</title>
+    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
+    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.</p>
 <span id="more"></span>
 
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
-<table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>Frecuencia</th>
-<th>Estado</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>NOAA 15</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
-</tr>
-<tr>
-<td>NOAA 18</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
-</tr>
-<tr>
-<td>NOAA 19</td>
-<td>137.770 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
-<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
-<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
-<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
-<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
+<h2 id="Instalacion-de-VB-Cable-en-Windows"><a href="#Instalacion-de-VB-Cable-en-Windows" class="headerlink" title="Instalación de VB-Cable en Windows"></a>Instalación de VB-Cable en Windows</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
+<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg" class="" width="900" title="Descarga de VB-Cable">
 
+<p>Hacemos clic en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
+<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
 
-<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
-<p>Una vez descargado, extraemos el contenido del archivo.</p>
-<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
+<p>Hacemos clic en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
+<h3 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h3><p>Abrimos ahora SDR# y abrimos la configuración de audio.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio-menu.jpg" class="" title="SDRSharp audio">
 
-<p>Para demodular el archivo basta con hacer clic encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
-<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre <strong><em>minorFrames_xxxx.txt</em></strong>.</p>
-<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
-<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
-<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
-<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
-<p>Ahora le pasamos el archivo <strong><em>minorFrames_xxxx.txt</em></strong> como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar). Si nos da un error, tenemos que abrir una terminal y ejecutarlo pasándole el archivo con la opción <strong>-i</strong>.</p>
-<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio <em>output/minorFrames_xxxx</em>.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
+<p>Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer clic en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" title="SDRSharp output">
 
-<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
-<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
+<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+<h2 id="Instalacion-de-VB-Cable-en-macOS"><a href="#Instalacion-de-VB-Cable-en-macOS" class="headerlink" title="Instalación de VB-Cable en macOS"></a>Instalación de VB-Cable en macOS</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg" class="" width="900" title="Descarga de VB-Cable">
+
+<p>Hacemos clic en <strong><em>Download</em></strong> y una vez descargado ejecutamos el instalador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg" class="" title="Instalación de VB-Cable">
+
+<p>Seguimos los pasos del asistente para instalar VB-Audio.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg" class="" title="Instalación de VB-Cable">
+
+<h3 id="Configuracion-de-CubicSDR"><a href="#Configuracion-de-CubicSDR" class="headerlink" title="Configuración de CubicSDR"></a>Configuración de CubicSDR</h3><p>Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos clic en <strong>Audio Out</strong> y seleccionamos <em><strong>VB Audio: VB-Cable</strong></em></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/cubicsdr-audio.jpg" class="" width="900" title="CubicSDR audio output">
+
+<p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
 ]]></content>
       <tags>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
+        <tag>macOS</tag>
+        <tag>Instalación</tag>
+        <tag>Windows</tag>
+        <tag>Virtual Audio Cable</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de mensajes Inmarsat Aero</title>
+    <url>/2020/03/10/recepcion-aero-inmarsat/</url>
+    <content><![CDATA[<p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
+<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a href="https://es.wikipedia.org/wiki/ACARS">ACARS</a>, ADS-C, fax y voz digital.</p>
+<span id="more"></span>
+
+<p>Para decodificar este protocolo utilizaremos el software Open Source <strong>JAERO</strong>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://github.com/jontio/JAERO/releases/download/v1.0.4.11/JAERO-x64-setup.exe"><center>JAERO x64 v1.0.4.11</center></a></p>
+<p>Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos clic en <em>Tools</em> y en <em>Settings</em>. Esto abre la ventana de ajustes de JAERO.</p>
+<img src="/2020/03/10/recepcion-aero-inmarsat/jaero_config.jpg" class="" title="Configuración JAERO">
+
+<p>El primer ajuste es indicarle en el apartado de <em>Soundcard</em> que le vamos a pasar el audio desde SDR# por el cable de audio virtual.<br>El siguiente ajuste es indicarle la ubicación de la base de datos con los datos de las aeronaves. Para ello en el apartado <em>Database</em> nos aseguramos de que la ruta es correcta y le damos a <strong>Download</strong> para que se descargue una base de datos actualizada. Si todo ha ido bien, deberíamos tener un archivo CSV con los datos en la ruta indicada.</p>
+<p>Para recibir datos bastaría con sintonizar SDR# en la frecuencia requerida y ajustar JAERO para que decodifique los mensajes.</p>
+<p>Inmarsat emite la señal en diferentes modulaciones y frecuencias. A continuación veremos ejemplos cada una.</p>
+<h2 id="Aero-600-bps"><a href="#Aero-600-bps" class="headerlink" title="Aero 600 bps"></a>Aero 600 bps</h2><ul>
+<li><strong>Modulación:</strong> Aviation-BPSK.</li>
+<li><strong>Ancho de banda:</strong> 800 Hz.</li>
+<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_sdr.jpg" class="" title="AERO 600 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_jaero.jpg" class="" title="AERO 600 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_planelog.jpg" class="" title="AERO 600 bps planelog">
+
+
+<h2 id="Aero-1200-bps"><a href="#Aero-1200-bps" class="headerlink" title="Aero 1200 bps"></a>Aero 1200 bps</h2><ul>
+<li><strong>Modulación:</strong> Aviation-BPSK.</li>
+<li><strong>Ancho de banda:</strong> 1600 Hz.</li>
+<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_sdr.jpg" class="" title="AERO 1200 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_jaero.jpg" class="" title="AERO 1200 bps">
+
+
+<h2 id="Aero-H-Aero-H"><a href="#Aero-H-Aero-H" class="headerlink" title="Aero-H, Aero-H+"></a>Aero-H, Aero-H+</h2><ul>
+<li><strong>Modulación:</strong> Aviation-QPSK</li>
+<li><strong>Ancho de banda:</strong> 10,5 KHz</li>
+<li><strong>Frecuencia:</strong> 1546,0 - 1546,2 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_sdr.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_jaero.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_planelog.jpg" class="" title="AERO 10.5k planelog">
+
+
+<h2 id="Voz-Digital"><a href="#Voz-Digital" class="headerlink" title="Voz Digital"></a>Voz Digital</h2><ul>
+<li><strong>Modulación:</strong> Aviation-QPSK.</li>
+<li><strong>Ancho de banda:</strong> 6 KHz.</li>
+<li><strong>Frecuencia:</strong> 1546,13 - 1546,18 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_sdr.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_jaero.jpg" class="" title="AERO 10.5k">
+]]></content>
+      <tags>
         <tag>Satélites</tag>
-        <tag>Meteorología</tag>
+        <tag>ATC</tag>
+        <tag>Inmarsat</tag>
+        <tag>L-Band</tag>
       </tags>
   </entry>
   <entry>
@@ -1684,6 +1583,73 @@
       <tags>
         <tag>Satélites</tag>
         <tag>PACSAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de datos del instrumental HIRS de los satélites NOAA</title>
+    <url>/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</url>
+    <content><![CDATA[<p>Como vimos en el artículo <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
+<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
+<span id="more"></span>
+
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>Frecuencia</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NOAA 15</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 18</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 19</td>
+<td>137.770 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
+<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
+<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
+<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
+<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
+
+
+<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
+<p>Una vez descargado, extraemos el contenido del archivo.</p>
+<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
+
+<p>Para demodular el archivo basta con hacer clic encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
+<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre <strong><em>minorFrames_xxxx.txt</em></strong>.</p>
+<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
+<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
+<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
+<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
+<p>Ahora le pasamos el archivo <strong><em>minorFrames_xxxx.txt</em></strong> como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar). Si nos da un error, tenemos que abrir una terminal y ejecutarlo pasándole el archivo con la opción <strong>-i</strong>.</p>
+<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio <em>output/minorFrames_xxxx</em>.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
+
+<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
+<img src="/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
+        <tag>Meteorología</tag>
       </tags>
   </entry>
   <entry>
@@ -2127,9 +2093,9 @@
 <img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" width="500" title="WXtoImg">
 ]]></content>
       <tags>
+        <tag>Satélites</tag>
         <tag>Satélites meteorológicos</tag>
         <tag>NOAA</tag>
-        <tag>Satélites</tag>
         <tag>Meteorología</tag>
       </tags>
   </entry>
@@ -2263,8 +2229,8 @@
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_rectified.jpg" class="" title="Imagen rectificada">
 ]]></content>
       <tags>
-        <tag>Satélites meteorológicos</tag>
         <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
         <tag>Meteorología</tag>
       </tags>
   </entry>
@@ -2349,46 +2315,13 @@
 <p>Una vez comience la emisión veremos que se va decodificando y mostrando la carta en la pantalla.</p>
 <img src="/2021/09/01/recepcion-weather-fax/fldigi_receiving.jpg" class="" width="900" title="Recibiendo fax">
 
-<p>Podemos acceder en fldigi a las cartas recibidas vamos a <strong>“File”</strong>, <strong>“Folders”</strong> y <strong>“WEFAX images…”</strong>.</p>
+<p>Podemos ver todas las cartas recibidas si vamos a <strong>“File”</strong>, <strong>“Folders”</strong> y <strong>“WEFAX images…”</strong>.</p>
 <img src="/2021/09/01/recepcion-weather-fax/wefax.jpg" class="" title="Fax recibido">
 ]]></content>
       <tags>
         <tag>HF</tag>
         <tag>Meteorología</tag>
         <tag>Weatherfax</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recibir APRS en macOS con Gqrx</title>
-    <url>/2021/04/02/recibir-aprs-macos-con-gqrx/</url>
-    <content><![CDATA[<p>En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando <a href="https://gqrx.dk/">Gqrx</a>.<br>El APRS, es un protocolo de comunicaciones basado en AX.25, usado en el envío de telemetría, paquetes de datos meteorológicos,  posicionamiento GPS, etc. En este caso nos ocuparemos del envío de mensajería entre estaciones de radioaficionados, en la que la Estación Espacial (ISS) es una estación repetidora.</p>
-<span id="more"></span>
-
-<p>Vamos a interceptar esa mensajería de dominio público entre las distintas estaciones de radioaficionado que se mantiene en esos pocos minutos que dura el pase de la ISS por nuestro cielo.</p>
-<p>Dentro del ecosistema Apple no hay mucha diversidad de programas SDR, pero que en este caso, la suerte nos ha sonreído con GQRX.<br>Es un programa que tiene muchos seguidores, ya que brinda sencillez y no consume muchos recursos. Pero que en este caso nos ofrece todo aquello que necesitamos para la recepción de esa mensajería APRS.</p>
-<h2 id="Instalacion-de-Gqrx"><a href="#Instalacion-de-Gqrx" class="headerlink" title="Instalación de Gqrx"></a>Instalación de Gqrx</h2><p>La instalación es sencilla, y más aún para todos aquellos que ya tienen instalado el sistema de administración de paquetes Homebrew previamente.</p>
-<p>Si no tienes un administrador de programas, proponemos su instalación siguiendo <a href="https://franyerverjel.com/blog/instalacion-de-homebrew-en-mac">esta guía</a>.</p>
-<p>Para la instalación, usando el administrador de paquetes, abrimos una ventana de terminal y escribimos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install --cask gqrx</span><br></pre></td></tr></table></figure>
-
-<p>Una vez finalizada la instalación, iniciamos desde el icono de la aplicación:</p>
-<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/icono.png" class="" width="90" title="Gqrx">
-
-<p>En el momento de empezar esta guía la versión del programa es la 2.14.4.</p>
-<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Ya finalizada la instalación y familiarizados con el programa, sintonizamos la frecuencia en la que trabaja la ISS, que en este caso es 145.825.000 Hz.<br>Elegimos el modo WFM (mono) y abrimos el único <em>plugin</em> que trae de serie el programa, y que lo podemos encontrar dentro de la pestaña <strong>Tools</strong> con el título de <strong>AFSK1200 Decoder</strong>.</p>
-<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/gqrx-menu.png" class="" width="900" title="Gqrx">
-
-<p>Se abrirá una ventana muy simple en la que irán apareciendo los mensajes interceptados y decodificados.</p>
-<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/mensajes.png" class="" width="800" title="Gqrx - Mensajes">
-
-<p>Y hasta  aquí la guía. Espero que os animéis a intentarlo.</p>
-<p>73 para todos.</p>
-]]></content>
-      <tags>
-        <tag>macOS</tag>
-        <tag>APRS</tag>
-        <tag>ISS</tag>
-        <tag>Gqrx</tag>
       </tags>
   </entry>
   <entry>
@@ -2446,6 +2379,39 @@
       <tags>
         <tag>APRS</tag>
         <tag>ISS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir APRS en macOS con Gqrx</title>
+    <url>/2021/04/02/recibir-aprs-macos-con-gqrx/</url>
+    <content><![CDATA[<p>En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando <a href="https://gqrx.dk/">Gqrx</a>.<br>El APRS, es un protocolo de comunicaciones basado en AX.25, usado en el envío de telemetría, paquetes de datos meteorológicos,  posicionamiento GPS, etc. En este caso nos ocuparemos del envío de mensajería entre estaciones de radioaficionados, en la que la Estación Espacial (ISS) es una estación repetidora.</p>
+<span id="more"></span>
+
+<p>Vamos a interceptar esa mensajería de dominio público entre las distintas estaciones de radioaficionado que se mantiene en esos pocos minutos que dura el pase de la ISS por nuestro cielo.</p>
+<p>Dentro del ecosistema Apple no hay mucha diversidad de programas SDR, pero que en este caso, la suerte nos ha sonreído con GQRX.<br>Es un programa que tiene muchos seguidores, ya que brinda sencillez y no consume muchos recursos. Pero que en este caso nos ofrece todo aquello que necesitamos para la recepción de esa mensajería APRS.</p>
+<h2 id="Instalacion-de-Gqrx"><a href="#Instalacion-de-Gqrx" class="headerlink" title="Instalación de Gqrx"></a>Instalación de Gqrx</h2><p>La instalación es sencilla, y más aún para todos aquellos que ya tienen instalado el sistema de administración de paquetes Homebrew previamente.</p>
+<p>Si no tienes un administrador de programas, proponemos su instalación siguiendo <a href="https://franyerverjel.com/blog/instalacion-de-homebrew-en-mac">esta guía</a>.</p>
+<p>Para la instalación, usando el administrador de paquetes, abrimos una ventana de terminal y escribimos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install --cask gqrx</span><br></pre></td></tr></table></figure>
+
+<p>Una vez finalizada la instalación, iniciamos desde el icono de la aplicación:</p>
+<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/icono.png" class="" width="90" title="Gqrx">
+
+<p>En el momento de empezar esta guía la versión del programa es la 2.14.4.</p>
+<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Ya finalizada la instalación y familiarizados con el programa, sintonizamos la frecuencia en la que trabaja la ISS, que en este caso es 145.825.000 Hz.<br>Elegimos el modo WFM (mono) y abrimos el único <em>plugin</em> que trae de serie el programa, y que lo podemos encontrar dentro de la pestaña <strong>Tools</strong> con el título de <strong>AFSK1200 Decoder</strong>.</p>
+<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/gqrx-menu.png" class="" width="900" title="Gqrx">
+
+<p>Se abrirá una ventana muy simple en la que irán apareciendo los mensajes interceptados y decodificados.</p>
+<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/mensajes.png" class="" width="800" title="Gqrx - Mensajes">
+
+<p>Y hasta  aquí la guía. Espero que os animéis a intentarlo.</p>
+<p>73 para todos.</p>
+]]></content>
+      <tags>
+        <tag>macOS</tag>
+        <tag>APRS</tag>
+        <tag>ISS</tag>
+        <tag>Gqrx</tag>
       </tags>
   </entry>
   <entry>
