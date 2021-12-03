@@ -53,6 +53,6 @@ Una vez comience la emisión veremos que se va decodificando y mostrando la cart
 
 {% asset_img fldigi_receiving.jpg 900 "Recibiendo fax" %}
 
-Podemos acceder en fldigi a las cartas recibidas vamos a **"File"**, **"Folders"** y **"WEFAX images..."**.
+Podemos ver todas las cartas recibidas si vamos a **"File"**, **"Folders"** y **"WEFAX images..."**.
 
 {% asset_img wefax.jpg "Fax recibido" %}
