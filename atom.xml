@@ -6,7 +6,7 @@
   <link href="http://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2021-10-17T08:31:38.000Z</updated>
+  <updated>2021-12-21T17:55:53.000Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Instalar SDR++</title>
+    <link href="http://sdr-es.com/2021/12/21/instalacion-sdrpp/"/>
+    <id>http://sdr-es.com/2021/12/21/instalacion-sdrpp/</id>
+    <published>2021-12-21T17:55:53.000Z</published>
+    <updated>2021-12-21T17:55:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.sdrpp.org/&quot;&gt;SDR++&lt;/a&gt; es un software multiplataforma y de código abierto para la recepción de señales mediante SDR. Este nuevo programa, desarrollado por &lt;a href=&quot;https://twitter.com/ryzerth&quot;&gt;Alexandre Rouma&lt;/a&gt;, busca como objetivo ser sencillo de utilizar y eficiente.&lt;br&gt;En este post veremos como instalar SDR++ en Windows, Linux y macOS.&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="macOS" scheme="http://sdr-es.com/tags/macOS/"/>
+    
+    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
+    
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
+    <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
+    
+    <category term="SDR++" scheme="http://sdr-es.com/tags/SDR/"/>
+    
+  </entry>
   
   <entry>
     <title>Recepción del satélite FalconSAT-3</title>
@@ -413,31 +438,6 @@
     <category term="ADS-B" scheme="http://sdr-es.com/tags/ADS-B/"/>
     
     <category term="dump1090" scheme="http://sdr-es.com/tags/dump1090/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Instalación de estación terrestre con SatNOGS (II)</title>
-    <link href="http://sdr-es.com/2020/04/27/instalacion-satnogs-ansible/"/>
-    <id>http://sdr-es.com/2020/04/27/instalacion-satnogs-ansible/</id>
-    <published>2020-04-27T14:34:55.000Z</published>
-    <updated>2020-04-27T14:34:55.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;En el artículo anterior &lt;a href=&quot;https://sdr-es.com/2020/04/24/instalacion-satnogs/&quot;&gt;“Instalación de estación terrestre con SatNOGS”&lt;/a&gt; vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.&lt;br&gt;En este artículo veremos como realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
-    
-    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
-    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
-    <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
-    
-    <category term="SatNOGS" scheme="http://sdr-es.com/tags/SatNOGS/"/>
     
   </entry>
   
