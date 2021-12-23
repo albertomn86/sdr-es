@@ -6,7 +6,7 @@
   <link href="http://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="http://sdr-es.com/"/>
-  <updated>2021-12-21T17:55:53.000Z</updated>
+  <updated>2021-12-23T12:50:15.000Z</updated>
   <id>http://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Seguimiento de satélites con Gpredict</title>
+    <link href="http://sdr-es.com/2021/12/23/seguimiento-satelites-gpredict/"/>
+    <id>http://sdr-es.com/2021/12/23/seguimiento-satelites-gpredict/</id>
+    <published>2021-12-23T12:50:15.000Z</published>
+    <updated>2021-12-23T12:50:15.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;http://gpredict.oz9aec.net/&quot;&gt;Gpredict&lt;/a&gt; es un programa para el seguimiento en tiempo real y predicción de órbitas para satélites. Este programa es muy similar a Orbitron, el cual ya vimos cómo instalar y configurar en el artículo &lt;a href=&quot;/2020/01/23/seguimiento-satelites-orbitron&quot;&gt;“Seguimiento de satélites con Orbitron”&lt;/a&gt;. Pero al contrario de este, Gpredict es multiplataforma, por lo que podremos usarlo en diferentes sistemas operativos.&lt;br&gt;En este artículo veremos como instalar y configurar Gpredict en Windows, Linux y macOS.&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
+    <category term="Gpredict" scheme="http://sdr-es.com/tags/Gpredict/"/>
+    
+    <category term="Tracking" scheme="http://sdr-es.com/tags/Tracking/"/>
+    
+  </entry>
   
   <entry>
     <title>Instalar SDR++</title>
@@ -29,11 +50,11 @@
     
     
     
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
+    
     <category term="macOS" scheme="http://sdr-es.com/tags/macOS/"/>
     
     <category term="Instalación" scheme="http://sdr-es.com/tags/Instalacion/"/>
-    
-    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
     <category term="Windows" scheme="http://sdr-es.com/tags/Windows/"/>
     
@@ -414,30 +435,6 @@
     
     
     <category term="HF" scheme="http://sdr-es.com/tags/HF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Recepción de mensajes ADS-B en Raspberry Pi</title>
-    <link href="http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/"/>
-    <id>http://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/</id>
-    <published>2020-05-03T08:56:04.000Z</published>
-    <updated>2020-05-03T08:56:04.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;ADS-B (&lt;em&gt;Automatic Dependent Surveillance Broadcast&lt;/em&gt;) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.&lt;/p&gt;
-&lt;p&gt;En este artículo veremos como convertir una Raspberry Pi en un receptor de mensajes ADS-B y poder determinar y visualizar la posición de las aeronaves que sobrevuelan nuestra ubicación.&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="Raspberry Pi" scheme="http://sdr-es.com/tags/Raspberry-Pi/"/>
-    
-    <category term="ATC" scheme="http://sdr-es.com/tags/ATC/"/>
-    
-    <category term="ADS-B" scheme="http://sdr-es.com/tags/ADS-B/"/>
-    
-    <category term="dump1090" scheme="http://sdr-es.com/tags/dump1090/"/>
     
   </entry>
   
