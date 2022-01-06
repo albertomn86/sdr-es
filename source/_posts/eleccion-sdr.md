@@ -3,6 +3,7 @@ title: Elección del dispositivo SDR
 date: 2020-03-16 12:07:36
 tags: RTL-SDR
 author: EA7KOO
+updated: 2022-01-06 15:10:12
 ---
 
 Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.
@@ -12,21 +13,22 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 
 | Dispositivo | Sintonizador | Ancho de Banda | Rango frecuencias | Bias Tee | Precio |
 | --- | :-: | --: | --- | :-: | --: |
-| Modelos genéricos         | R820T2 | 2.4 MHz | 25 MHz – 1700 MHz | No | ~10€ |
-| RTL-SDR Blog V3           | R820T2 | 2.4 MHz | 500 kHz – 1766 MHz | Sí | ~28€ |
-| Nooelec NESDR SMArt v4    | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | No | ~32€ |
-| Nooelec NESDR SMArTee v2  | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | Sí | ~36€ |
-| Nooelec NESDR SMArt XTR   | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | No | ~44€ |
-| Nooelec NESDR SMArTee XTR | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | Sí | ~46€ |
-| Nooelec NESDR Nano 3      | R820T2 | 2.4 MHz | 25 MHz - 1700 MHz | No | ~32€ |
-| Airspy Mini               | R820T2 |  6 MHz | 24 MHz - 1700 MHz | Sí | ~140€ |
-| Airspy R2                 | R820T2 |  10 MHz | 24 MHz - 1700 MHz | Sí | ~235€ |
-| Airspy HF+ Discovery      |  -  | 610 kHz | 0.5 kHz - 31 MHz, 60 - 260 MHz | No | ~210€ |
-| Airspy HF+ Dual Port      |  -  | 610 kHz | 9 kHz - 31 MHz, 60 - 260 MHz | No | ~240€ |
-| SDRplay RSP1A             |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~115€ |
-| SDRplay RSPdx             |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~228€ |
-| SDRplay RSPduo            |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~290€ |
-| KiwiSDR                   |  -  | 32 MHz | 10 KHz - 30 MHz  | No | ~330€ |
+| [Modelos genéricos](/2020/03/16/eleccion-sdr/#Modelos-genericos) | FC0012 | 2.4 MHz | 22 MHz – 948,6 MHz | No | ~12€ |
+| [Modelos genéricos](/2020/03/16/eleccion-sdr/#Modelos-genericos) | R820T/2 | 2.4 MHz | 24 MHz – 1700 MHz | No | ~15€ |
+| [RTL-SDR Blog V3](/2020/03/16/eleccion-sdr/#RTL-SDR-Blog-V3) | R820T2 | 2.4 MHz | 500 kHz – 1766 MHz | Sí | ~35€ |
+| [Nooelec NESDR SMArt v4](/2020/03/16/eleccion-sdr/#Nooelec-NESDR-SMArt-v4) | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | No | ~37€ |
+| [Nooelec NESDR SMArTee v2](/2020/03/16/eleccion-sdr/#Nooelec-NESDR-SMArTee-v2) | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | Sí | ~37€ |
+| [Nooelec NESDR SMArt XTR](/2020/03/16/eleccion-sdr/#Nooelec-NESDR-SMArt-XTR) | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | No | ~45€ |
+| [Nooelec NESDR SMArTee XTR](/2020/03/16/eleccion-sdr/#Nooelec-NESDR-SMArTee-XTR) | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | Sí | ~47€ |
+| [Nooelec NESDR Nano 3](/2020/03/16/eleccion-sdr/#Nooelec-NESDR-Nano-3) | R820T2 | 2.4 MHz | 25 MHz - 1700 MHz | No | ~30€ |
+| [Airspy Mini](/2020/03/16/eleccion-sdr/#Airspy-Mini) | R820T2 |  6 MHz | 24 MHz - 1700 MHz | Sí | ~140€ |
+| [Airspy R2](/2020/03/16/eleccion-sdr/#Airspy-R2) | R820T2 |  10 MHz | 24 MHz - 1700 MHz | Sí | ~235€ |
+| [Airspy HF+ Discovery](/2020/03/16/eleccion-sdr/#Airspy-HF-Discovery) |  -  | 610 kHz | 0.5 kHz - 31 MHz, 60 - 260 MHz | No | ~210€ |
+| [Airspy HF+ Dual Port](/2020/03/16/eleccion-sdr/#Airspy-HF-Dual-Port) |  -  | 610 kHz | 9 kHz - 31 MHz, 60 - 260 MHz | No | ~240€ |
+| [SDRplay RSP1A](/2020/03/16/eleccion-sdr/#SDRplay-RSP1A) |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~122€ |
+| [SDRplay RSPdx](/2020/03/16/eleccion-sdr/#SDRplay-RSPdx) |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~228€ |
+| [SDRplay RSPduo](/2020/03/16/eleccion-sdr/#SDRplay-RSPduo) |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~286€ |
+| [KiwiSDR](/2020/03/16/eleccion-sdr/#KiwiSDR) |  -  | 32 MHz | 10 KHz - 30 MHz  | No | ~330€ |
 
 ## Modelos genéricos
 
@@ -34,8 +36,10 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 
 - **Ancho de banda:** Hasta 2,4 MHz.
 - **ADC:** RTL2832U 8-bits.
-- **Sintonizador:** R820T2.
-- **Rango de frecuencias:** 25 MHz - 1.700 MHz (rendimiento pobre por encima de 1.000 MHz).
+- **Sintonizador:** FC0012 / R820T2
+- **Rango de frecuencias:**
+  FC0012: 22 MHz – 948,6 MHz.
+  R820T2: 25 MHz - 1.700 MHz (rendimiento pobre por encima de 1.000 MHz).
 - **Bias-Tee:** No.
 - **TCXO:** No.
 - **Conector:** MCX hembra.
@@ -52,7 +56,7 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 - **Bias-Tee:** Sí, activación por software (4,5V 180mA).
 - **TCXO:** 1 PPM.
 - **Conector:** SMA hembra.
-- Disponible en RTL-SDR.com y Astroradio.
+- Disponible en eBay [(tienda oficial)](https://www.ebay.com/str/rtlsdrblog), AliExpress [(tienda oficial)](https://es.aliexpress.com/store/4523039), RTL-SDR.com y Astroradio.
 - Más información: [Datasheet (PDF)](https://www.rtl-sdr.com/wp-content/uploads/2018/02/RTL-SDR-Blog-V3-Datasheet.pdf).
 
 
