@@ -224,63 +224,71 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Modelos genéricos</td>
-<td align="center">R820T2</td>
+<td><a href="/2020/03/16/eleccion-sdr/#Modelos-genericos">Modelos genéricos</a></td>
+<td align="center">FC0012</td>
 <td align="right">2.4 MHz</td>
-<td>25 MHz – 1700 MHz</td>
+<td>22 MHz – 948,6 MHz</td>
 <td align="center">No</td>
-<td align="right">~10€</td>
+<td align="right">~12€</td>
 </tr>
 <tr>
-<td>RTL-SDR Blog V3</td>
+<td><a href="/2020/03/16/eleccion-sdr/#Modelos-genericos">Modelos genéricos</a></td>
+<td align="center">R820T/2</td>
+<td align="right">2.4 MHz</td>
+<td>24 MHz – 1700 MHz</td>
+<td align="center">No</td>
+<td align="right">~15€</td>
+</tr>
+<tr>
+<td><a href="/2020/03/16/eleccion-sdr/#RTL-SDR-Blog-V3">RTL-SDR Blog V3</a></td>
 <td align="center">R820T2</td>
 <td align="right">2.4 MHz</td>
 <td>500 kHz – 1766 MHz</td>
 <td align="center">Sí</td>
-<td align="right">~28€</td>
+<td align="right">~35€</td>
 </tr>
 <tr>
-<td>Nooelec NESDR SMArt v4</td>
+<td><a href="/2020/03/16/eleccion-sdr/#Nooelec-NESDR-SMArt-v4">Nooelec NESDR SMArt v4</a></td>
 <td align="center">R820T2</td>
 <td align="right">2.4 MHz</td>
 <td>25 MHz - 1750 MHz</td>
 <td align="center">No</td>
-<td align="right">~32€</td>
+<td align="right">~37€</td>
 </tr>
 <tr>
-<td>Nooelec NESDR SMArTee v2</td>
+<td><a href="/2020/03/16/eleccion-sdr/#Nooelec-NESDR-SMArTee-v2">Nooelec NESDR SMArTee v2</a></td>
 <td align="center">R820T2</td>
 <td align="right">2.4 MHz</td>
 <td>25 MHz - 1750 MHz</td>
 <td align="center">Sí</td>
-<td align="right">~36€</td>
+<td align="right">~37€</td>
 </tr>
 <tr>
-<td>Nooelec NESDR SMArt XTR</td>
+<td><a href="/2020/03/16/eleccion-sdr/#Nooelec-NESDR-SMArt-XTR">Nooelec NESDR SMArt XTR</a></td>
 <td align="center">E4000</td>
 <td align="right">2.4 MHz</td>
 <td>65 MHz - 2300 MHz</td>
 <td align="center">No</td>
-<td align="right">~44€</td>
+<td align="right">~45€</td>
 </tr>
 <tr>
-<td>Nooelec NESDR SMArTee XTR</td>
+<td><a href="/2020/03/16/eleccion-sdr/#Nooelec-NESDR-SMArTee-XTR">Nooelec NESDR SMArTee XTR</a></td>
 <td align="center">E4000</td>
 <td align="right">2.4 MHz</td>
 <td>65 MHz - 2300 MHz</td>
 <td align="center">Sí</td>
-<td align="right">~46€</td>
+<td align="right">~47€</td>
 </tr>
 <tr>
-<td>Nooelec NESDR Nano 3</td>
+<td><a href="/2020/03/16/eleccion-sdr/#Nooelec-NESDR-Nano-3">Nooelec NESDR Nano 3</a></td>
 <td align="center">R820T2</td>
 <td align="right">2.4 MHz</td>
 <td>25 MHz - 1700 MHz</td>
 <td align="center">No</td>
-<td align="right">~32€</td>
+<td align="right">~30€</td>
 </tr>
 <tr>
-<td>Airspy Mini</td>
+<td><a href="/2020/03/16/eleccion-sdr/#Airspy-Mini">Airspy Mini</a></td>
 <td align="center">R820T2</td>
 <td align="right">6 MHz</td>
 <td>24 MHz - 1700 MHz</td>
@@ -288,7 +296,7 @@
 <td align="right">~140€</td>
 </tr>
 <tr>
-<td>Airspy R2</td>
+<td><a href="/2020/03/16/eleccion-sdr/#Airspy-R2">Airspy R2</a></td>
 <td align="center">R820T2</td>
 <td align="right">10 MHz</td>
 <td>24 MHz - 1700 MHz</td>
@@ -296,7 +304,7 @@
 <td align="right">~235€</td>
 </tr>
 <tr>
-<td>Airspy HF+ Discovery</td>
+<td><a href="/2020/03/16/eleccion-sdr/#Airspy-HF-Discovery">Airspy HF+ Discovery</a></td>
 <td align="center">-</td>
 <td align="right">610 kHz</td>
 <td>0.5 kHz - 31 MHz, 60 - 260 MHz</td>
@@ -304,7 +312,7 @@
 <td align="right">~210€</td>
 </tr>
 <tr>
-<td>Airspy HF+ Dual Port</td>
+<td><a href="/2020/03/16/eleccion-sdr/#Airspy-HF-Dual-Port">Airspy HF+ Dual Port</a></td>
 <td align="center">-</td>
 <td align="right">610 kHz</td>
 <td>9 kHz - 31 MHz, 60 - 260 MHz</td>
@@ -312,15 +320,15 @@
 <td align="right">~240€</td>
 </tr>
 <tr>
-<td>SDRplay RSP1A</td>
+<td><a href="/2020/03/16/eleccion-sdr/#SDRplay-RSP1A">SDRplay RSP1A</a></td>
 <td align="center">-</td>
 <td align="right">10 MHz</td>
 <td>1 kHz - 2000 MHz</td>
 <td align="center">Sí</td>
-<td align="right">~115€</td>
+<td align="right">~122€</td>
 </tr>
 <tr>
-<td>SDRplay RSPdx</td>
+<td><a href="/2020/03/16/eleccion-sdr/#SDRplay-RSPdx">SDRplay RSPdx</a></td>
 <td align="center">-</td>
 <td align="right">10 MHz</td>
 <td>1 kHz - 2000 MHz</td>
@@ -328,15 +336,15 @@
 <td align="right">~228€</td>
 </tr>
 <tr>
-<td>SDRplay RSPduo</td>
+<td><a href="/2020/03/16/eleccion-sdr/#SDRplay-RSPduo">SDRplay RSPduo</a></td>
 <td align="center">-</td>
 <td align="right">10 MHz</td>
 <td>1 kHz - 2000 MHz</td>
 <td align="center">Sí</td>
-<td align="right">~290€</td>
+<td align="right">~286€</td>
 </tr>
 <tr>
-<td>KiwiSDR</td>
+<td><a href="/2020/03/16/eleccion-sdr/#KiwiSDR">KiwiSDR</a></td>
 <td align="center">-</td>
 <td align="right">32 MHz</td>
 <td>10 KHz - 30 MHz</td>
@@ -349,8 +357,8 @@
 <ul>
 <li><strong>Ancho de banda:</strong> Hasta 2,4 MHz.</li>
 <li><strong>ADC:</strong> RTL2832U 8-bits.</li>
-<li><strong>Sintonizador:</strong> R820T2.</li>
-<li><strong>Rango de frecuencias:</strong> 25 MHz - 1.700 MHz (rendimiento pobre por encima de 1.000 MHz).</li>
+<li><strong>Sintonizador:</strong> FC0012 / R820T2</li>
+<li><strong>Rango de frecuencias:</strong><br>FC0012: 22 MHz – 948,6 MHz.<br>R820T2: 25 MHz - 1.700 MHz (rendimiento pobre por encima de 1.000 MHz).</li>
 <li><strong>Bias-Tee:</strong> No.</li>
 <li><strong>TCXO:</strong> No.</li>
 <li><strong>Conector:</strong> MCX hembra.</li>
@@ -366,7 +374,7 @@
 <li><strong>Bias-Tee:</strong> Sí, activación por software (4,5V 180mA).</li>
 <li><strong>TCXO:</strong> 1 PPM.</li>
 <li><strong>Conector:</strong> SMA hembra.</li>
-<li>Disponible en RTL-SDR.com y Astroradio.</li>
+<li>Disponible en eBay <a href="https://www.ebay.com/str/rtlsdrblog">(tienda oficial)</a>, AliExpress <a href="https://es.aliexpress.com/store/4523039">(tienda oficial)</a>, RTL-SDR.com y Astroradio.</li>
 <li>Más información: <a href="https://www.rtl-sdr.com/wp-content/uploads/2018/02/RTL-SDR-Blog-V3-Datasheet.pdf">Datasheet (PDF)</a>.</li>
 </ul>
 <h2 id="Nooelec-NESDR-SMArt-v4"><a href="#Nooelec-NESDR-SMArt-v4" class="headerlink" title="Nooelec NESDR SMArt v4"></a>Nooelec NESDR SMArt v4</h2><img src="/2020/03/16/eleccion-sdr/smartv4.jpg" class="" width="500" title="Nooelec NESDR SMArt v4">
@@ -1311,6 +1319,116 @@
       </tags>
   </entry>
   <entry>
+    <title>Recepción de mensajes Inmarsat Aero</title>
+    <url>/2020/03/10/recepcion-aero-inmarsat/</url>
+    <content><![CDATA[<p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
+<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a href="https://es.wikipedia.org/wiki/ACARS">ACARS</a>, ADS-C, fax y voz digital.</p>
+<span id="more"></span>
+
+<p>Para decodificar este protocolo utilizaremos el software Open Source <strong>JAERO</strong>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://github.com/jontio/JAERO/releases/download/v1.0.4.11/JAERO-x64-setup.exe"><center>JAERO x64 v1.0.4.11</center></a></p>
+<p>Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos clic en <em>Tools</em> y en <em>Settings</em>. Esto abre la ventana de ajustes de JAERO.</p>
+<img src="/2020/03/10/recepcion-aero-inmarsat/jaero_config.jpg" class="" title="Configuración JAERO">
+
+<p>El primer ajuste es indicarle en el apartado de <em>Soundcard</em> que le vamos a pasar el audio desde SDR# por el cable de audio virtual.<br>El siguiente ajuste es indicarle la ubicación de la base de datos con los datos de las aeronaves. Para ello en el apartado <em>Database</em> nos aseguramos de que la ruta es correcta y le damos a <strong>Download</strong> para que se descargue una base de datos actualizada. Si todo ha ido bien, deberíamos tener un archivo CSV con los datos en la ruta indicada.</p>
+<p>Para recibir datos bastaría con sintonizar SDR# en la frecuencia requerida y ajustar JAERO para que decodifique los mensajes.</p>
+<p>Inmarsat emite la señal en diferentes modulaciones y frecuencias. A continuación veremos ejemplos cada una.</p>
+<h2 id="Aero-600-bps"><a href="#Aero-600-bps" class="headerlink" title="Aero 600 bps"></a>Aero 600 bps</h2><ul>
+<li><strong>Modulación:</strong> Aviation-BPSK.</li>
+<li><strong>Ancho de banda:</strong> 800 Hz.</li>
+<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_sdr.jpg" class="" title="AERO 600 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_jaero.jpg" class="" title="AERO 600 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_planelog.jpg" class="" title="AERO 600 bps planelog">
+
+
+<h2 id="Aero-1200-bps"><a href="#Aero-1200-bps" class="headerlink" title="Aero 1200 bps"></a>Aero 1200 bps</h2><ul>
+<li><strong>Modulación:</strong> Aviation-BPSK.</li>
+<li><strong>Ancho de banda:</strong> 1600 Hz.</li>
+<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_sdr.jpg" class="" title="AERO 1200 bps">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_jaero.jpg" class="" title="AERO 1200 bps">
+
+
+<h2 id="Aero-H-Aero-H"><a href="#Aero-H-Aero-H" class="headerlink" title="Aero-H, Aero-H+"></a>Aero-H, Aero-H+</h2><ul>
+<li><strong>Modulación:</strong> Aviation-QPSK</li>
+<li><strong>Ancho de banda:</strong> 10,5 KHz</li>
+<li><strong>Frecuencia:</strong> 1546,0 - 1546,2 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_sdr.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_jaero.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_planelog.jpg" class="" title="AERO 10.5k planelog">
+
+
+<h2 id="Voz-Digital"><a href="#Voz-Digital" class="headerlink" title="Voz Digital"></a>Voz Digital</h2><ul>
+<li><strong>Modulación:</strong> Aviation-QPSK.</li>
+<li><strong>Ancho de banda:</strong> 6 KHz.</li>
+<li><strong>Frecuencia:</strong> 1546,13 - 1546,18 MHz (IOR).</li>
+</ul>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_sdr.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_jaero.jpg" class="" title="AERO 10.5k">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>ATC</tag>
+        <tag>Inmarsat</tag>
+        <tag>L-Band</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalación de cable de audio virtual</title>
+    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
+    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.</p>
+<span id="more"></span>
+
+<h2 id="Instalacion-de-VB-Cable-en-Windows"><a href="#Instalacion-de-VB-Cable-en-Windows" class="headerlink" title="Instalación de VB-Cable en Windows"></a>Instalación de VB-Cable en Windows</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
+<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg" class="" width="900" title="Descarga de VB-Cable">
+
+<p>Hacemos clic en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
+<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
+
+<p>Hacemos clic en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
+<h3 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h3><p>Abrimos ahora SDR# y abrimos la configuración de audio.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio-menu.jpg" class="" title="SDRSharp audio">
+
+<p>Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer clic en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" title="SDRSharp output">
+
+<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+<h2 id="Instalacion-de-VB-Cable-en-macOS"><a href="#Instalacion-de-VB-Cable-en-macOS" class="headerlink" title="Instalación de VB-Cable en macOS"></a>Instalación de VB-Cable en macOS</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg" class="" width="900" title="Descarga de VB-Cable">
+
+<p>Hacemos clic en <strong><em>Download</em></strong> y una vez descargado ejecutamos el instalador.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg" class="" title="Instalación de VB-Cable">
+
+<p>Seguimos los pasos del asistente para instalar VB-Audio.</p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg" class="" title="Instalación de VB-Cable">
+
+<h3 id="Configuracion-de-CubicSDR"><a href="#Configuracion-de-CubicSDR" class="headerlink" title="Configuración de CubicSDR"></a>Configuración de CubicSDR</h3><p>Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos clic en <strong>Audio Out</strong> y seleccionamos <em><strong>VB Audio: VB-Cable</strong></em></p>
+<img src="/2020/01/21/instalacion-virtual-cable-audio/cubicsdr-audio.jpg" class="" width="900" title="CubicSDR audio output">
+
+<p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+]]></content>
+      <tags>
+        <tag>macOS</tag>
+        <tag>Instalación</tag>
+        <tag>Windows</tag>
+        <tag>Virtual Audio Cable</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recepción de los satélites CAS-4</title>
     <url>/2020/10/10/recepcion-cas4/</url>
     <content><![CDATA[<p>Los satélites CAS-4A y CAS-4B son unos micro-satélites construidos por Zhuhai Orbita Control Engineering Ltd. para el sistema orbital de observación terrestre de China. Su principal componente es una cámara de 1,98m de resolución. Estos satélites envían datos de telemetría en VHF, y son estos datos los que vamos a recibir, decodificar y visualizar en este artículo.</p>
@@ -1430,116 +1548,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Instalación de cable de audio virtual</title>
-    <url>/2020/01/21/instalacion-virtual-cable-audio/</url>
-    <content><![CDATA[<p>Vamos a ver como instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion-de-VB-Cable-en-Windows"><a href="#Instalacion-de-VB-Cable-en-Windows" class="headerlink" title="Instalación de VB-Cable en Windows"></a>Instalación de VB-Cable en Windows</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
-<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg" class="" width="900" title="Descarga de VB-Cable">
-
-<p>Hacemos clic en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
-<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
-
-<p>Hacemos clic en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
-<h3 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h3><p>Abrimos ahora SDR# y abrimos la configuración de audio.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio-menu.jpg" class="" title="SDRSharp audio">
-
-<p>Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer clic en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" title="SDRSharp output">
-
-<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
-<h2 id="Instalacion-de-VB-Cable-en-macOS"><a href="#Instalacion-de-VB-Cable-en-macOS" class="headerlink" title="Instalación de VB-Cable en macOS"></a>Instalación de VB-Cable en macOS</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg" class="" width="900" title="Descarga de VB-Cable">
-
-<p>Hacemos clic en <strong><em>Download</em></strong> y una vez descargado ejecutamos el instalador.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg" class="" title="Instalación de VB-Cable">
-
-<p>Seguimos los pasos del asistente para instalar VB-Audio.</p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg" class="" title="Instalación de VB-Cable">
-
-<h3 id="Configuracion-de-CubicSDR"><a href="#Configuracion-de-CubicSDR" class="headerlink" title="Configuración de CubicSDR"></a>Configuración de CubicSDR</h3><p>Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos clic en <strong>Audio Out</strong> y seleccionamos <em><strong>VB Audio: VB-Cable</strong></em></p>
-<img src="/2020/01/21/instalacion-virtual-cable-audio/cubicsdr-audio.jpg" class="" width="900" title="CubicSDR audio output">
-
-<p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
-]]></content>
-      <tags>
-        <tag>macOS</tag>
-        <tag>Instalación</tag>
-        <tag>Windows</tag>
-        <tag>Virtual Audio Cable</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de mensajes Inmarsat Aero</title>
-    <url>/2020/03/10/recepcion-aero-inmarsat/</url>
-    <content><![CDATA[<p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
-<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a href="https://es.wikipedia.org/wiki/ACARS">ACARS</a>, ADS-C, fax y voz digital.</p>
-<span id="more"></span>
-
-<p>Para decodificar este protocolo utilizaremos el software Open Source <strong>JAERO</strong>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://github.com/jontio/JAERO/releases/download/v1.0.4.11/JAERO-x64-setup.exe"><center>JAERO x64 v1.0.4.11</center></a></p>
-<p>Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos clic en <em>Tools</em> y en <em>Settings</em>. Esto abre la ventana de ajustes de JAERO.</p>
-<img src="/2020/03/10/recepcion-aero-inmarsat/jaero_config.jpg" class="" title="Configuración JAERO">
-
-<p>El primer ajuste es indicarle en el apartado de <em>Soundcard</em> que le vamos a pasar el audio desde SDR# por el cable de audio virtual.<br>El siguiente ajuste es indicarle la ubicación de la base de datos con los datos de las aeronaves. Para ello en el apartado <em>Database</em> nos aseguramos de que la ruta es correcta y le damos a <strong>Download</strong> para que se descargue una base de datos actualizada. Si todo ha ido bien, deberíamos tener un archivo CSV con los datos en la ruta indicada.</p>
-<p>Para recibir datos bastaría con sintonizar SDR# en la frecuencia requerida y ajustar JAERO para que decodifique los mensajes.</p>
-<p>Inmarsat emite la señal en diferentes modulaciones y frecuencias. A continuación veremos ejemplos cada una.</p>
-<h2 id="Aero-600-bps"><a href="#Aero-600-bps" class="headerlink" title="Aero 600 bps"></a>Aero 600 bps</h2><ul>
-<li><strong>Modulación:</strong> Aviation-BPSK.</li>
-<li><strong>Ancho de banda:</strong> 800 Hz.</li>
-<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_sdr.jpg" class="" title="AERO 600 bps">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_jaero.jpg" class="" title="AERO 600 bps">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_600_planelog.jpg" class="" title="AERO 600 bps planelog">
-
-
-<h2 id="Aero-1200-bps"><a href="#Aero-1200-bps" class="headerlink" title="Aero 1200 bps"></a>Aero 1200 bps</h2><ul>
-<li><strong>Modulación:</strong> Aviation-BPSK.</li>
-<li><strong>Ancho de banda:</strong> 1600 Hz.</li>
-<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_sdr.jpg" class="" title="AERO 1200 bps">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/acars_1200_jaero.jpg" class="" title="AERO 1200 bps">
-
-
-<h2 id="Aero-H-Aero-H"><a href="#Aero-H-Aero-H" class="headerlink" title="Aero-H, Aero-H+"></a>Aero-H, Aero-H+</h2><ul>
-<li><strong>Modulación:</strong> Aviation-QPSK</li>
-<li><strong>Ancho de banda:</strong> 10,5 KHz</li>
-<li><strong>Frecuencia:</strong> 1546,0 - 1546,2 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_sdr.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_jaero.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_planelog.jpg" class="" title="AERO 10.5k planelog">
-
-
-<h2 id="Voz-Digital"><a href="#Voz-Digital" class="headerlink" title="Voz Digital"></a>Voz Digital</h2><ul>
-<li><strong>Modulación:</strong> Aviation-QPSK.</li>
-<li><strong>Ancho de banda:</strong> 6 KHz.</li>
-<li><strong>Frecuencia:</strong> 1546,13 - 1546,18 MHz (IOR).</li>
-</ul>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_sdr.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/2020/03/10/recepcion-aero-inmarsat/aero_call_jaero.jpg" class="" title="AERO 10.5k">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>ATC</tag>
-        <tag>Inmarsat</tag>
-        <tag>L-Band</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción de datos del instrumental HIRS de los satélites NOAA</title>
     <url>/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</url>
     <content><![CDATA[<p>Como vimos en el artículo <a href="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
@@ -1604,6 +1612,72 @@
         <tag>Satélites meteorológicos</tag>
         <tag>NOAA</tag>
         <tag>Meteorología</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción del satélite FUNcube-1</title>
+    <url>/2020/02/22/recepcion-funcube1/</url>
+    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
+<span id="more"></span>
+
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>FUNcube-1 (AO-73)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>AMSAT-UK</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>39444</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2013-066AE</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (0,98 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>21 de Noviembre de 2013</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>145,935 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/2020/02/22/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
+
+
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
+
+<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
+
+<p><em>Mensajes:</em></p>
+<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Cubesat</tag>
       </tags>
   </entry>
   <entry>
@@ -1682,72 +1756,6 @@
       <tags>
         <tag>Satélites</tag>
         <tag>PACSAT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción del satélite FUNcube-1</title>
-    <url>/2020/02/22/recepcion-funcube1/</url>
-    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
-<span id="more"></span>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>FUNcube-1 (AO-73)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>AMSAT-UK</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>39444</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2013-066AE</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (0,98 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>21 de Noviembre de 2013</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145,935 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/2020/02/22/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
-
-
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
-
-<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
-
-<p><em>Mensajes:</em></p>
-<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Cubesat</tag>
       </tags>
   </entry>
   <entry>
@@ -2190,7 +2198,8 @@
 </tbody></table>
 <p><em>(*) El satélite tiene <a href="http://vu2iia-meteor-m2.blogspot.com/2014/10/meteor-m2-images-from-rtl-sdr.html">un fallo</a> en el sistema de compresión de imágenes RAW HRPT a JPEG LRPT. Esto produce unos cortes en las imágenes recibidas.</em></p>
 <p>Podemos conocer el estado actual de los satélites en la siguiente página: <a href="http://happysat.nl/Meteor/html/Meteor_Status.html">Meteor Status (por Happysat)</a>.</p>
-<h2 id="Instalacion-de-Meteor-Demodulator"><a href="#Instalacion-de-Meteor-Demodulator" class="headerlink" title="Instalación de Meteor Demodulator"></a>Instalación de Meteor Demodulator</h2><p>Vamos a instalar un <em>plugin</em> para SDR# que nos permitirá demodular la señal del satélite en tiempo real. Existen otras formas de demodular dicha señal mediante otro software utilizando la grabación de banda base, pero nos podemos ahorrar estos pasos usando el <em><em>plugin</em></em> <strong>Meteor Demodulator</strong>. Para instalarlo seguiremos los siguientes pasos:</p>
+<h2 id="Metodo-1-SDR-Meteor-Demodulator"><a href="#Metodo-1-SDR-Meteor-Demodulator" class="headerlink" title="Método 1: SDR# + Meteor Demodulator"></a>Método 1: SDR# + Meteor Demodulator</h2><p>Este método es únicamente válido en Windows y tiene la ventaja de que podemos visualizar la imagen recibida en tiempo real.</p>
+<h3 id="Instalacion-de-Meteor-Demodulator"><a href="#Instalacion-de-Meteor-Demodulator" class="headerlink" title="Instalación de Meteor Demodulator"></a>Instalación de Meteor Demodulator</h3><p>Vamos a instalar un <em>plugin</em> para SDR# que nos permitirá demodular la señal del satélite en tiempo real. Existen otras formas de demodular dicha señal mediante otro software utilizando la grabación de banda base, pero nos podemos ahorrar estos pasos usando el <em><em>plugin</em></em> <strong>Meteor Demodulator</strong>. Para instalarlo seguiremos los siguientes pasos:</p>
 <ol>
 <li><p>Descargar el <em>plugin</em> desde el siguiente enlace:<br> <a href="meteor.zip"><center>Meteor Demodulator v2.3</center></a></p>
 </li>
@@ -2215,22 +2224,22 @@
 </ul>
  <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_plugin_config.png" class="" title="Meteor Demodulator"></li>
 </ol>
-<h2 id="Instalacion-de-LRPT-Decoder"><a href="#Instalacion-de-LRPT-Decoder" class="headerlink" title="Instalación de LRPT Decoder"></a>Instalación de LRPT Decoder</h2><p>El programa LRPT Decoder nos va a permitir decodificar los datos obtenidos con el demodulador de Meteor y generar la imagen.<br>Para descargarlo hacemos clic en el siguiente enlace y simplemente extraemos su contenido.</p>
+<h3 id="Instalacion-de-LRPT-Decoder"><a href="#Instalacion-de-LRPT-Decoder" class="headerlink" title="Instalación de LRPT Decoder"></a>Instalación de LRPT Decoder</h3><p>El programa LRPT Decoder nos va a permitir decodificar los datos obtenidos con el demodulador de Meteor y generar la imagen.<br>Para descargarlo hacemos clic en el siguiente enlace y simplemente extraemos su contenido.</p>
 <p><a href="http://happysat.nl/LRPT_Decoder_v56.zip"><center>M2 LRPT Decoder V56</center></a></p>
 <p>Como vimos en el apartado anterior, LRPT Decoder es capaz de procesar los datos desde dos fuentes distintas, ya sea desde el socket TCP o desde un archivo. Dependiendo de la opción que elijamos debemos modificar el archivo de configuración <strong>M2_LRPT_Decoder.ini</strong> de una forma u otra. A continuación veremos los ajustes para cada una de las opciones.</p>
 <ul>
 <li>Ajustes para decodificar mediante <strong>socket</strong>:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[IN]</span><br><span class="line">source&#x3D;TCP</span><br><span class="line">mode&#x3D;auto</span><br><span class="line">sat&#x3D;auto</span><br><span class="line">host&#x3D;localhost</span><br><span class="line">port&#x3D;2011</span><br><span class="line"></span><br><span class="line">[OUT]</span><br><span class="line">rgb&#x3D;123.jpg</span><br><span class="line">rgb_q&#x3D;100</span><br><span class="line">mono&#x3D;yes</span><br><span class="line">logs&#x3D;no</span><br><span class="line">APID70&#x3D;no</span><br><span class="line">VCDU&#x3D;no</span><br><span class="line">path&#x3D;C:\SDR\MeteorM2\imágenes</span><br><span class="line"></span><br><span class="line">[FAST]</span><br><span class="line">FORMAT&#x3D;jpg</span><br><span class="line">R&#x3D;1</span><br><span class="line">G&#x3D;2</span><br><span class="line">B&#x3D;3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[IN]</span><br><span class="line">source&#x3D;TCP</span><br><span class="line">mode&#x3D;auto</span><br><span class="line">sat&#x3D;auto</span><br><span class="line">host&#x3D;localhost</span><br><span class="line">port&#x3D;2011</span><br><span class="line"></span><br><span class="line">[OUT]</span><br><span class="line">rgb&#x3D;123.jpg &lt;-- Cambiar por 122.jpg según los canales activos. También se puede cambiar &#39;jpg&#39; por &#39;bmp&#39;.</span><br><span class="line">rgb_q&#x3D;100</span><br><span class="line">mono&#x3D;yes</span><br><span class="line">logs&#x3D;no</span><br><span class="line">APID70&#x3D;no</span><br><span class="line">VCDU&#x3D;no</span><br><span class="line">path&#x3D;C:\SDR\MeteorM2\imágenes</span><br><span class="line"></span><br><span class="line">[FAST]</span><br><span class="line">FORMAT&#x3D;jpg &lt;-- Cambiar por &#39;bmp&#39; para obtener imagen sin comprimir.</span><br><span class="line">R&#x3D;1</span><br><span class="line">G&#x3D;2</span><br><span class="line">B&#x3D;3 &lt;-- Cambiar por 2 según los canales activos.</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>Ajustes para decodificar mediante <strong>archivo</strong>:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[IN]</span><br><span class="line">source&#x3D;man</span><br><span class="line">sat&#x3D;M2</span><br><span class="line">mode&#x3D;72k</span><br><span class="line"></span><br><span class="line">[OUT]</span><br><span class="line">rgb&#x3D;123.jpg</span><br><span class="line">rgb_q&#x3D;100</span><br><span class="line">mono&#x3D;yes</span><br><span class="line">logs&#x3D;no</span><br><span class="line">APID70&#x3D;yes</span><br><span class="line">VCDU&#x3D;no</span><br><span class="line">path&#x3D;C:\SDR\MeteorM2\imágenes</span><br><span class="line"></span><br><span class="line">[FAST]</span><br><span class="line">FORMAT&#x3D;jpg</span><br><span class="line">R&#x3D;1</span><br><span class="line">G&#x3D;2</span><br><span class="line">B&#x3D;3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[IN]</span><br><span class="line">source&#x3D;man</span><br><span class="line">sat&#x3D;M2</span><br><span class="line">mode&#x3D;72k</span><br><span class="line"></span><br><span class="line">[OUT]</span><br><span class="line">rgb&#x3D;123.jpg &lt;-- Cambiar por 122.jpg según los canales activos. También se puede cambiar &#39;jpg&#39; por &#39;bmp&#39;.</span><br><span class="line">rgb_q&#x3D;100</span><br><span class="line">mono&#x3D;yes</span><br><span class="line">logs&#x3D;no</span><br><span class="line">APID70&#x3D;yes</span><br><span class="line">VCDU&#x3D;no</span><br><span class="line">path&#x3D;C:\SDR\MeteorM2\imágenes</span><br><span class="line"></span><br><span class="line">[FAST]</span><br><span class="line">FORMAT&#x3D;jpg &lt;-- Cambiar por &#39;bmp&#39; para obtener imagen sin comprimir.</span><br><span class="line">R&#x3D;1</span><br><span class="line">G&#x3D;2</span><br><span class="line">B&#x3D;3 &lt;-- Cambiar por 2 según los canales activos.</span><br></pre></td></tr></table></figure>
 
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<h3 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h3><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
-<h3 id="Meteor-M-N2"><a href="#Meteor-M-N2" class="headerlink" title="Meteor-M N2"></a>Meteor-M N2</h3><p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;120000&gt;</span><br><span class="line">QPSK_demodulator_Start</span><br><span class="line">send_tracking_frequency_On</span><br><span class="line">start_programm_Path&lt;C:\SDR\MeteorM2\Decoder\M2_LRPT_Decoder.exe&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;120000&gt;</span><br><span class="line">QPSK_demodulator_Start</span><br><span class="line">send_tracking_frequency_On</span><br><span class="line">start_programm_Path&lt;C:\SDR\MeteorM2\Decoder\M2_LRPT_Decoder.exe&gt;</span><br></pre></td></tr></table></figure></p>
 <p>En este ejemplo se ha usado la opción de enviar los datos por socket, por lo que en los ajustes anteriores se ha añadido el comando <strong>start_programm_Path</strong> para que se inice LRPT Decoder de forma automática cuando se inicie el seguimiento. Si optamos por la decodificación desde el archivo, este comando no es necesario.</p>
 <p>Una vez configurado todo correctamente, en el instante en el que el satélite comience a verse por nuestra localización, comenzará el seguimiento automático.</p>
 <p>En el momento en que la señal sea detectada por el <em>plugin</em>, este comenzará a demodularla y a procesarla. Veremos que aparece <strong>Locked</strong> en la interfaz.</p>
@@ -2247,7 +2256,7 @@
 <p>Para generarla seleccionamos los canales y hacemos clic en <strong>Generate RGB</strong>. Nos aparecerá una ventana con la vista previa. Ahora hacemos clic en <strong>Save</strong> y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo <strong>M2_LRPT_Decoder.ini</strong>.</p>
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_analizer_guardar.jpg" class="" width="800" title="LRPT Decoder">
 
-<h2 id="Correccion-de-la-distorsion-de-la-imagen"><a href="#Correccion-de-la-distorsion-de-la-imagen" class="headerlink" title="Corrección de la distorsión de la imagen"></a>Corrección de la distorsión de la imagen</h2><p>Si abrimos la imagen que hemos recibido veremos que presenta una distorsión en los laterales de la misma. Esta distorsión es posible corregirla de forma sencilla usando el software <strong>Smooth Meteor</strong> que podemos descargar desde el siguiente enlace:</p>
+<h3 id="Correccion-de-la-distorsion-de-la-imagen"><a href="#Correccion-de-la-distorsion-de-la-imagen" class="headerlink" title="Corrección de la distorsión de la imagen"></a>Corrección de la distorsión de la imagen</h3><p>Si abrimos la imagen que hemos recibido veremos que presenta una distorsión en los laterales de la misma. Esta distorsión es posible corregirla de forma sencilla usando el software <strong>Smooth Meteor</strong> que podemos descargar desde el siguiente enlace:</p>
 <p><a href="https://leshamilton.co.uk/soft/smoothmeteor-setup.exe"><center>Descargar Smooth Meteor</center></a></p>
 <p>Una vez lo tengamos instalado, abrimos la imagen y le aplicamos las rectificaciones necesarias.</p>
 <ul>
@@ -2258,46 +2267,37 @@
 <img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/smooth_meteor.jpg" class="" title="Smooth Meteor">
 
 <p>Por último, guardamos la imagen en el fomato que queramos haciendo clic en <strong>Save as…</strong>.</p>
-<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_rectified.jpg" class="" title="Imagen rectificada">
+<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/meteor_rectified.jpg" class="" width="300" title="Imagen rectificada">
+
+
+<h2 id="Metodo-2-Baseband-SatDump"><a href="#Metodo-2-Baseband-SatDump" class="headerlink" title="Método 2: Baseband + SatDump"></a>Método 2: Baseband + SatDump</h2><p>Este método es válido para cualquier sistema operativo, ya que usamos el software multiplataforma <a href="https://github.com/altillimity/SatDump">SatDump</a> para generar la imagen y para grabar el <em>baseband</em> podemos usar cualquier programa SDR.</p>
+<h3 id="Instalar-SatDump"><a href="#Instalar-SatDump" class="headerlink" title="Instalar SatDump"></a>Instalar SatDump</h3><p>Si nuestro sistema operativo es Windows, la instalación es tan sencilla como bajarse el programa ya compilado desde el siguiente enlace:</p>
+<p><a href="https://github.com/altillimity/SatDump/releases/latest"><center>SatDump releases</center></a></p>
+<p>Para Linux o macOS debemos bajarnos el código fuente y compilarlo. Los pasos para hacerlo están explicados en este enlace:</p>
+<p><a href="https://github.com/altillimity/SatDump#linux-or-macos"><center>Instalación en Linux/macOS</center></a></p>
+<h3 id="Grabar-el-pase"><a href="#Grabar-el-pase" class="headerlink" title="Grabar el pase"></a>Grabar el pase</h3><p>Lo primero que debemos hacer es grabar el pase del satélite. Necesitamos grabar la señal en banda base (<em>baseband</em>) para pasarla a SatDump.<br>Los formatos de <em>baseband</em> que acepta son los siguientes: i8, i16, f32, w8, ZIQ.</p>
+<p>En este ejemplo vamos a utilizar SDR# para grabar el pase, pero como ya se ha mencionado anteriormente, se puede hacer con cualquier otro programa.</p>
+<p>Grabaremos el pase usando el <em>plugin</em> de grabación de SDR# usando los siguientes ajustes; en formato seleccionamos <strong>16 Bit PCM</strong> (i16) y marcamos solamente la opción de <strong>Baseband</strong>.</p>
+<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/sdr_sharp_recording.jpg" class="" width="300" title="SDR# - Ajustes grabación">
+
+<p>Para evitar generar un archivo enorme, podemos usar las opciones de <em>decimation</em> o reducir el <em>sample rate</em> a 0.9 MSPS. Necesitamos grabar solo un ancho de banda de unos 120 MHz.</p>
+<p>Ahora nos movemos a la frecuencia del satélite (no es necesario corregir la desviación de la señal en este método) y cuando veamos que aparece la señal pulsamos sobre <em>“Record”</em> para comenzar a grabarlo. Cuando dejemos de ver la señal paramos la grabación.</p>
+<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/sdr_sharp_recording_baseband.jpg" class="" width="900" title="SDR# - Grabación del pase">
+
+<h3 id="Decodificar-la-imagen"><a href="#Decodificar-la-imagen" class="headerlink" title="Decodificar la imagen"></a>Decodificar la imagen</h3><p>Una vez tenemos nuestro archivo generado se lo pasaremos a SatDump para generar la imagen. En este ejemplo lo haremos usando la interfaz de usuario, pero también es posible hacer lo mismo desde línea de comandos.</p>
+<p>Las opciones que debemos seleccionar podemos verlas en la siguiente captura:</p>
+<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/satdump_config.jpg" class="" width="700" title="SatDump - Ajustes">
+
+<p>Una vez introducidas las opciones, hacemos clic en <em>“Start”</em> para que comience el procesado.</p>
+<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/satdump_processing.jpg" class="" width="700" title="SatDump - Procesando archivo">
+
+<p>Una vez termine el procesado, accedemos al directorio de salida que hemos especificado y podremos ver las imágenes generadas.</p>
+<img src="/2020/03/27/recepcion-satelites-meteorologicos-meteor/satdump_files.jpg" class="" width="700" title="SatDump - Imágenes">
 ]]></content>
       <tags>
         <tag>Satélites</tag>
         <tag>Satélites meteorológicos</tag>
         <tag>Meteorología</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de mensajes Inmarsat STD-C</title>
-    <url>/2020/03/09/recepcion-std-c-inmarsat/</url>
-    <content><![CDATA[<p>En el artículo <a href="https://sdr-es.com/2020/03/06/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
-<span id="more"></span>
-
-<p>Lo primero será descargar los los archivos necesarios desde el repositorio de Scytale-C desde el siguiente link:</p>
-<p><a href="https://bitbucket.org/scytalec/scytalec/downloads/"><center>https://bitbucket.org/scytalec/scytalec/downloads/</center></a></p>
-<p>Necesitamos descargar el plugin para SDR# (<strong>SDRSharp.ScytaleC.5001.NET5.PlusUI.zip</strong>) y la interfaz de usuario (<strong>x64-ScytaleC.QuickUI-17010.zip</strong>).</p>
-<h2 id="Instalacion-del-plugin-en-SDR"><a href="#Instalacion-del-plugin-en-SDR" class="headerlink" title="Instalación del plugin en SDR#"></a>Instalación del plugin en SDR#</h2><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “ScytaleC” (o el que queramos). Ahora extraemos el contenido del archivo <strong>SDRSharp.ScytaleC.5001.NET5.PlusUI.zip</strong> dentro de esta nueva carpeta.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_files.jpg" class="" width="600" title="Archivos de Scytale-C">
-
-<p>Ahora iniciamos SDR# y tendremos el plugin instalado.</p>
-<h2 id="Instalacion-de-la-interfaz-de-usuario-de-Scytale-C"><a href="#Instalacion-de-la-interfaz-de-usuario-de-Scytale-C" class="headerlink" title="Instalación de la interfaz de usuario de Scytale-C"></a>Instalación de la interfaz de usuario de Scytale-C</h2><p>Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente extraemos el contenido del archivo <strong>x64-ScytaleC.QuickUI-17010.zip</strong> que hemos descargado anteriormente en el directorio deseado. Por ejemplo en <em>C:/SDR/ScytaleC</em>.</p>
-<p>Para iniciar el programa basta con hacer doble clic en <strong>ScytaleC.QuickUI.exe</strong>. Al iniciar el programa se muestra un mensaje sobre la confidencialidad que debemos leer detenidamente.</p>
-<p><strong>Algunos mensajes que se reciben con Scytale-C van a un destinatario en concreto y pueden contener información sensible. Si no somos los destinatarios de dichos mensajes, debemos proceder a la eliminación de los mismos y no reenviarlos ni publicarlos bajo ningún concepto.</strong></p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_ui.jpg" class="" title="UI Scytale-C">
-
-<h2 id="Recepcion-y-visualizacion-de-mensajes"><a href="#Recepcion-y-visualizacion-de-mensajes" class="headerlink" title="Recepción y visualización de mensajes"></a>Recepción y visualización de mensajes</h2><p>Vamos ahora a recibir mensajes desde Inmarsat. Si ya tenemos nuestra antena orientada y conectada, iniciamos SDR# y buscamos las frecuencias de SDT-C. En Inmarsat-4A F4 las encontramos en 1.537,100 MHz para NCS y sobre 1.539,500 MHz para los canales LES TDM.</p>
-<p>Una vez las tengamos localizadas, sintonizamos una de las señales en modo <strong>USB</strong> y ancho de banda de <strong>4 KHz</strong>.</p>
-<p>Iniciamos a continuación el plugin marcando la casilla <em><strong>“Enabled”</strong></em>. También marcamos <em><strong>“Auto Tracking”</strong></em> para que ajuste la señal de forma automática.</p>
-<p>Si la señal es buena, veremos que aparece <em><strong>“Locked”</strong></em> en el plugin.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/sdrsharp.jpg" class="" title="Plugin Scytale-C">
-
-<p>Con SDR# ya recibiendo la señal correctamente pasamos a la interfaz de usuario de Scytale-C. El plugin y esta interfaz se comunican por UDP de forma local y vienen configurados con el puerto 15003 por defecto.</p>
-<p>Para que nos lleguen los mensajes bastaría con hacer clic en el botón de Play/Stop. Si todo ha ido bien, comenzaremos a recibirlos.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_messages.jpg" class="" title="Scytale-C Mensajes">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Inmarsat</tag>
-        <tag>L-Band</tag>
       </tags>
   </entry>
   <entry>
@@ -2357,36 +2357,37 @@
       </tags>
   </entry>
   <entry>
-    <title>Recibir APRS en macOS con Gqrx</title>
-    <url>/2021/04/02/recibir-aprs-macos-con-gqrx/</url>
-    <content><![CDATA[<p>En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando <a href="https://gqrx.dk/">Gqrx</a>.<br>El APRS, es un protocolo de comunicaciones basado en AX.25, usado en el envío de telemetría, paquetes de datos meteorológicos,  posicionamiento GPS, etc. En este caso nos ocuparemos del envío de mensajería entre estaciones de radioaficionados, en la que la Estación Espacial (ISS) es una estación repetidora.</p>
+    <title>Recepción de mensajes Inmarsat STD-C</title>
+    <url>/2020/03/09/recepcion-std-c-inmarsat/</url>
+    <content><![CDATA[<p>En el artículo <a href="https://sdr-es.com/2020/03/06/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
 <span id="more"></span>
 
-<p>Vamos a interceptar esa mensajería de dominio público entre las distintas estaciones de radioaficionado que se mantiene en esos pocos minutos que dura el pase de la ISS por nuestro cielo.</p>
-<p>Dentro del ecosistema Apple no hay mucha diversidad de programas SDR, pero que en este caso, la suerte nos ha sonreído con GQRX.<br>Es un programa que tiene muchos seguidores, ya que brinda sencillez y no consume muchos recursos. Pero que en este caso nos ofrece todo aquello que necesitamos para la recepción de esa mensajería APRS.</p>
-<h2 id="Instalacion-de-Gqrx"><a href="#Instalacion-de-Gqrx" class="headerlink" title="Instalación de Gqrx"></a>Instalación de Gqrx</h2><p>La instalación es sencilla, y más aún para todos aquellos que ya tienen instalado el sistema de administración de paquetes Homebrew previamente.</p>
-<p>Si no tienes un administrador de programas, proponemos su instalación siguiendo <a href="https://franyerverjel.com/blog/instalacion-de-homebrew-en-mac">esta guía</a>.</p>
-<p>Para la instalación, usando el administrador de paquetes, abrimos una ventana de terminal y escribimos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install --cask gqrx</span><br></pre></td></tr></table></figure>
+<p>Lo primero será descargar los los archivos necesarios desde el repositorio de Scytale-C desde el siguiente link:</p>
+<p><a href="https://bitbucket.org/scytalec/scytalec/downloads/"><center>https://bitbucket.org/scytalec/scytalec/downloads/</center></a></p>
+<p>Necesitamos descargar el plugin para SDR# (<strong>SDRSharp.ScytaleC.5001.NET5.PlusUI.zip</strong>) y la interfaz de usuario (<strong>x64-ScytaleC.QuickUI-17010.zip</strong>).</p>
+<h2 id="Instalacion-del-plugin-en-SDR"><a href="#Instalacion-del-plugin-en-SDR" class="headerlink" title="Instalación del plugin en SDR#"></a>Instalación del plugin en SDR#</h2><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “ScytaleC” (o el que queramos). Ahora extraemos el contenido del archivo <strong>SDRSharp.ScytaleC.5001.NET5.PlusUI.zip</strong> dentro de esta nueva carpeta.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_files.jpg" class="" width="600" title="Archivos de Scytale-C">
 
-<p>Una vez finalizada la instalación, iniciamos desde el icono de la aplicación:</p>
-<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/icono.png" class="" width="90" title="Gqrx">
+<p>Ahora iniciamos SDR# y tendremos el plugin instalado.</p>
+<h2 id="Instalacion-de-la-interfaz-de-usuario-de-Scytale-C"><a href="#Instalacion-de-la-interfaz-de-usuario-de-Scytale-C" class="headerlink" title="Instalación de la interfaz de usuario de Scytale-C"></a>Instalación de la interfaz de usuario de Scytale-C</h2><p>Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente extraemos el contenido del archivo <strong>x64-ScytaleC.QuickUI-17010.zip</strong> que hemos descargado anteriormente en el directorio deseado. Por ejemplo en <em>C:/SDR/ScytaleC</em>.</p>
+<p>Para iniciar el programa basta con hacer doble clic en <strong>ScytaleC.QuickUI.exe</strong>. Al iniciar el programa se muestra un mensaje sobre la confidencialidad que debemos leer detenidamente.</p>
+<p><strong>Algunos mensajes que se reciben con Scytale-C van a un destinatario en concreto y pueden contener información sensible. Si no somos los destinatarios de dichos mensajes, debemos proceder a la eliminación de los mismos y no reenviarlos ni publicarlos bajo ningún concepto.</strong></p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_ui.jpg" class="" title="UI Scytale-C">
 
-<p>En el momento de empezar esta guía la versión del programa es la 2.14.4.</p>
-<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Ya finalizada la instalación y familiarizados con el programa, sintonizamos la frecuencia en la que trabaja la ISS, que en este caso es 145.825.000 Hz.<br>Elegimos el modo WFM (mono) y abrimos el único <em>plugin</em> que trae de serie el programa, y que lo podemos encontrar dentro de la pestaña <strong>Tools</strong> con el título de <strong>AFSK1200 Decoder</strong>.</p>
-<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/gqrx-menu.png" class="" width="900" title="Gqrx">
+<h2 id="Recepcion-y-visualizacion-de-mensajes"><a href="#Recepcion-y-visualizacion-de-mensajes" class="headerlink" title="Recepción y visualización de mensajes"></a>Recepción y visualización de mensajes</h2><p>Vamos ahora a recibir mensajes desde Inmarsat. Si ya tenemos nuestra antena orientada y conectada, iniciamos SDR# y buscamos las frecuencias de SDT-C. En Inmarsat-4A F4 las encontramos en 1.537,100 MHz para NCS y sobre 1.539,500 MHz para los canales LES TDM.</p>
+<p>Una vez las tengamos localizadas, sintonizamos una de las señales en modo <strong>USB</strong> y ancho de banda de <strong>4 KHz</strong>.</p>
+<p>Iniciamos a continuación el plugin marcando la casilla <em><strong>“Enabled”</strong></em>. También marcamos <em><strong>“Auto Tracking”</strong></em> para que ajuste la señal de forma automática.</p>
+<p>Si la señal es buena, veremos que aparece <em><strong>“Locked”</strong></em> en el plugin.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/sdrsharp.jpg" class="" title="Plugin Scytale-C">
 
-<p>Se abrirá una ventana muy simple en la que irán apareciendo los mensajes interceptados y decodificados.</p>
-<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/mensajes.png" class="" width="800" title="Gqrx - Mensajes">
-
-<p>Y hasta  aquí la guía. Espero que os animéis a intentarlo.</p>
-<p>73 para todos.</p>
+<p>Con SDR# ya recibiendo la señal correctamente pasamos a la interfaz de usuario de Scytale-C. El plugin y esta interfaz se comunican por UDP de forma local y vienen configurados con el puerto 15003 por defecto.</p>
+<p>Para que nos lleguen los mensajes bastaría con hacer clic en el botón de Play/Stop. Si todo ha ido bien, comenzaremos a recibirlos.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_messages.jpg" class="" title="Scytale-C Mensajes">
 ]]></content>
       <tags>
-        <tag>macOS</tag>
-        <tag>APRS</tag>
-        <tag>ISS</tag>
-        <tag>Gqrx</tag>
+        <tag>Satélites</tag>
+        <tag>Inmarsat</tag>
+        <tag>L-Band</tag>
       </tags>
   </entry>
   <entry>
@@ -2447,6 +2448,39 @@
       </tags>
   </entry>
   <entry>
+    <title>Recibir APRS en macOS con Gqrx</title>
+    <url>/2021/04/02/recibir-aprs-macos-con-gqrx/</url>
+    <content><![CDATA[<p>En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando <a href="https://gqrx.dk/">Gqrx</a>.<br>El APRS, es un protocolo de comunicaciones basado en AX.25, usado en el envío de telemetría, paquetes de datos meteorológicos,  posicionamiento GPS, etc. En este caso nos ocuparemos del envío de mensajería entre estaciones de radioaficionados, en la que la Estación Espacial (ISS) es una estación repetidora.</p>
+<span id="more"></span>
+
+<p>Vamos a interceptar esa mensajería de dominio público entre las distintas estaciones de radioaficionado que se mantiene en esos pocos minutos que dura el pase de la ISS por nuestro cielo.</p>
+<p>Dentro del ecosistema Apple no hay mucha diversidad de programas SDR, pero que en este caso, la suerte nos ha sonreído con GQRX.<br>Es un programa que tiene muchos seguidores, ya que brinda sencillez y no consume muchos recursos. Pero que en este caso nos ofrece todo aquello que necesitamos para la recepción de esa mensajería APRS.</p>
+<h2 id="Instalacion-de-Gqrx"><a href="#Instalacion-de-Gqrx" class="headerlink" title="Instalación de Gqrx"></a>Instalación de Gqrx</h2><p>La instalación es sencilla, y más aún para todos aquellos que ya tienen instalado el sistema de administración de paquetes Homebrew previamente.</p>
+<p>Si no tienes un administrador de programas, proponemos su instalación siguiendo <a href="https://franyerverjel.com/blog/instalacion-de-homebrew-en-mac">esta guía</a>.</p>
+<p>Para la instalación, usando el administrador de paquetes, abrimos una ventana de terminal y escribimos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install --cask gqrx</span><br></pre></td></tr></table></figure>
+
+<p>Una vez finalizada la instalación, iniciamos desde el icono de la aplicación:</p>
+<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/icono.png" class="" width="90" title="Gqrx">
+
+<p>En el momento de empezar esta guía la versión del programa es la 2.14.4.</p>
+<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Ya finalizada la instalación y familiarizados con el programa, sintonizamos la frecuencia en la que trabaja la ISS, que en este caso es 145.825.000 Hz.<br>Elegimos el modo WFM (mono) y abrimos el único <em>plugin</em> que trae de serie el programa, y que lo podemos encontrar dentro de la pestaña <strong>Tools</strong> con el título de <strong>AFSK1200 Decoder</strong>.</p>
+<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/gqrx-menu.png" class="" width="900" title="Gqrx">
+
+<p>Se abrirá una ventana muy simple en la que irán apareciendo los mensajes interceptados y decodificados.</p>
+<img src="/2021/04/02/recibir-aprs-macos-con-gqrx/mensajes.png" class="" width="800" title="Gqrx - Mensajes">
+
+<p>Y hasta  aquí la guía. Espero que os animéis a intentarlo.</p>
+<p>73 para todos.</p>
+]]></content>
+      <tags>
+        <tag>macOS</tag>
+        <tag>APRS</tag>
+        <tag>ISS</tag>
+        <tag>Gqrx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recibir radio digital mundial (DRM)</title>
     <url>/2020/10/25/recibir-drm/</url>
     <content><![CDATA[<p><a href="https://www.drm.org/">Digital Radio Mondiale (DRM)</a>, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.<br>DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.<br>En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.</p>
@@ -2459,11 +2493,14 @@
 <h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el <a href="/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software <a href="https://sourceforge.net/projects/drm/">Dream AM/DRM Receiver</a> que podemos descargar desde el siguiente enlace:</p>
 <p><a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/"><center>Dream AM/DRM Receiver</center></a></p>
 <p>Este programa está disponible para varios sistemas operativos, incluso podemos descargar el código fuente y compilarlo si queremos.<br>Para nuestro ejemplo, descargamos la versión 2.1.1 para Windows (<a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/dream-2.1.1-win32-svn808-df.zip/download">dream-2.1.1-win32-svn808-df.zip</a>). La versión 2.2 es muy similar pero presenta algunos errores de funcionamiento. Si aun así queremos probar esta versión, podemos descargarla desde <a href="https://www.reddit.com/r/RTLSDR/comments/grp6m2/dream_v221_for_windows_with_xheaac_support/">aquí</a>.</p>
-<p>Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.<br>Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos y los guardamos en el directorio de Dream:</p>
+<p>Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.<br>Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos DLL y los guardamos en el directorio de Dream:</p>
 <ul>
 <li><a href="faad2_drm.dll">faad2_drm.dll</a></li>
 <li><a href="libfaac.dll">libfaac.dll</a></li>
 </ul>
+<p>Por último, registramos los archivos DLL en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.DLL</span><br></pre></td></tr></table></figure>
+
 <h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em>, <em>Sound Card</em>, <em>Signal Input</em> y en <em>Device</em> seleccionamos el <strong>cable de audio virtual</strong>.</p>
 <img src="/2020/10/25/recibir-drm/input.png" class="" width="800" title="Entrada audio">
 
@@ -2477,81 +2514,6 @@
       <tags>
         <tag>HF</tag>
         <tag>DRM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recibir radio movil digital (DMR)</title>
-    <url>/2021/08/27/recibir-radio-movil-digital-DMR/</url>
-    <content><![CDATA[<p>DMR son las siglas de Radio Móvil Digital, y es un estándar internacional especialmente definido para radios de dos vías. El objetivo del estándar DMR es permitir que dispositivos de diferentes fabricantes puedan comunicarse entre sí en una misma red.<br>Esta tecnología es muy utilizada por radioaficionados y es posible recibir estas señales con nuestros dispositivos SDR. En este artículo veremos como instalar algunos <em>plugins</em> en SDR# para poder escuchar DMR.</p>
-<span id="more"></span>
-
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dmr-logo.jpeg" class="" width="300" title="Logo DMR">
-
-
-<h2 id="Simple-DMR"><a href="#Simple-DMR" class="headerlink" title="Simple DMR"></a>Simple DMR</h2><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dmr">Simple DMR</a> está diseñado para escuchar DMR sin cifrar y no requiere dependencias ni configuraciones.</p>
-<p>La instalación es muy sencilla y podemos resumirla en los pasos descritos a continuación.</p>
-<ol>
-<li><p>Descargamos los archivos del <em>plugin</em> desde el siguiente enlace:</p>
-<p><a href="http://rtl-sdr.ru/uploads/download/dmr.zip"><center>Descargar Simple DMR</center></a></p>
-</li>
-<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “SimpleDMR” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/simple-dmr-archivos.jpg" class="" width="700" title="Archivos de Simple DMR"></li>
-<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-menu-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
-<li><p>Por último, sintonizamos una señal de DMR y activamos el plugin haciendo clic en <strong>“Enabled”</strong>.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
-</ol>
-<p>Si todo ha ido bien, debemos comenzar a escuchar nada más activar el <em>plugin</em>. Si no se escucha nada, debemos asegurarnos tener la salida de audio por los altavoces y no por el cable de audio virtual.</p>
-<p>También es posible escuchar otros modos digitales usando para ello otros <em>plugins</em> muy similares a este y cuya instalación es idéntica. Estos <em>plugins</em> son:</p>
-<ul>
-<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dpmr">Simple dPMR</a></li>
-<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-apco">Simple APCO P25</a></li>
-</ul>
-<h2 id="DSD-Interface"><a href="#DSD-Interface" class="headerlink" title="DSD Interface"></a>DSD Interface</h2><h3 id="Instalacion-de-DSDPlus"><a href="#Instalacion-de-DSDPlus" class="headerlink" title="Instalación de DSDPlus"></a>Instalación de DSDPlus</h3><p>DSDPlus es un decodificador de modos digitales más completo y configurable que el que hemos visto en el apartado anterior. Inluye además otros modos digitales, como son P25, D-STAR, NXDN, etc.</p>
-<p>Para instalar DSDPlus, primeramente accedemos a su página web para descargar los archivos necesarios haciendo clic en el siguiente enlace:</p>
-<p><a href="https://www.dsdplus.com/download-2/"><center>Descargar DSDPlus</center></a></p>
-<p>Ahora descargamos los dos archivos indicados en la siguiente imagen:</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-descarga.jpg" class="" width="600" title="Descarga de DSDPlus">
-
-<p>El contenido del primer archivo lo extraemos en el directorio que queramos. En este ejemplo lo he extraído dentro de la carpeta de instalación de SDR# y dentro de su propia carpeta, a la que he llamado “DSDPlus”.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-archivos.jpg" class="" width="700" title="Archivos de DSDPlus">
-
-<p>Del segundo archivo solamente vamos a extraer el archivo <strong>lame_enc.dll</strong>, el cual vamos a introducir dentro de la carpeta de instalación de SDR#.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/lame-dll.jpg" class="" width="700" title="Archivo DLL">
-
-<h3 id="Instalacion-del-plugin"><a href="#Instalacion-del-plugin" class="headerlink" title="Instalación del plugin"></a>Instalación del plugin</h3><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/plagin-dsd-interface">DSD Interface</a> nos permite iniciar DSDPlus y pasarle el audio desde SDR# de una forma muy sencilla. Para instalarlo seguiremos los pasos descritos a continuación.</p>
-<ol>
-<li><p>Descargamos el <em>plugin</em> desde el siguiente enlace:</p>
-<p><a href="http://rtl-sdr.ru/uploads/download/dsd.zip"><center>Descargar DSD Interface</center></a></p>
-</li>
-<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “DSD” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-archivos.jpg" class="" width="700" title="Archivos del plugin DSD"></li>
-<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin.jpg" class="" width="300" title="DSD Plugin"></li>
-<li><p>Hacemos clic en el botón <strong>Configure</strong> y en la ventana de configuración hacemos clic en <strong>“DSD Path”</strong> y le indicamos la ruta del archivo <em>DSDPlus.exe</em> que hemos extraído en el apartado anterior.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar.jpg" class="" width="350" title="Configurar DSD">
-
-<p>Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
-</li>
-<li><p>Ahora hacemos clic en el botón <strong>“Start DSD”</strong> del <em>plugin</em> y se nos abrirán una serie de ventanas. Debemos fijarnos en los siguientes datos que veremos en una de las ventanas.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar-audio.jpg" class="" width="700" title="Configurar audio DSD">
-
-<p> Necesitamos anotar el número de dispositivo de audio que vamos a utilizar. En este ejemplo vamos a pasar el audio por el cable de audio virtual, por lo que en este caso anotamos el <em>“audio input device #1”</em>. Para la salida queremos que se escuche por los altavoces, así que anotamos <em>“audio output device #1”</em>.</p>
-</li>
-<li><p>Paramos DSDPlus haciendo clic en el botón <strong>“Stop DSD”</strong> del <em>plugin</em> y le damos a <strong>Configure</strong>. Ahora seleccionamos los dispositivos conforme los hemos anotado en el punto anterior. Una vez seleccionados, hacemos clic en <strong>“Create command line”</strong> para regenerar la linea de comandos con estos nuevos valores.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurado.jpg" class="" width="350" title="Configurar DSD">
-
-<p> Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
-</li>
-<li><p>Por último, buscamos una señal DMR y nos aseguramos que tengamos la salida de audio de SDR# por el cable de audio virtual. Ahora hacemos clic en el botón <strong>“Start DSD”</strong> y comenzaremos a ver datos en pantalla y se escuchará el audio decodificado.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-dsd.jpg" class="" width="900" title="DSD Plugin"></li>
-</ol>
-<p>Si en la ventana aparecen numerosos errores, es posible que debamos ajustar el volumen de audio general de SDR#.</p>
-]]></content>
-      <tags>
-        <tag>SDRSharp</tag>
-        <tag>DMR</tag>
-        <tag>DSDPlus</tag>
       </tags>
   </entry>
   <entry>
@@ -2714,6 +2676,81 @@
       <tags>
         <tag>ISS</tag>
         <tag>SSTV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir radio movil digital (DMR)</title>
+    <url>/2021/08/27/recibir-radio-movil-digital-DMR/</url>
+    <content><![CDATA[<p>DMR son las siglas de Radio Móvil Digital, y es un estándar internacional especialmente definido para radios de dos vías. El objetivo del estándar DMR es permitir que dispositivos de diferentes fabricantes puedan comunicarse entre sí en una misma red.<br>Esta tecnología es muy utilizada por radioaficionados y es posible recibir estas señales con nuestros dispositivos SDR. En este artículo veremos como instalar algunos <em>plugins</em> en SDR# para poder escuchar DMR.</p>
+<span id="more"></span>
+
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dmr-logo.jpeg" class="" width="300" title="Logo DMR">
+
+
+<h2 id="Simple-DMR"><a href="#Simple-DMR" class="headerlink" title="Simple DMR"></a>Simple DMR</h2><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dmr">Simple DMR</a> está diseñado para escuchar DMR sin cifrar y no requiere dependencias ni configuraciones.</p>
+<p>La instalación es muy sencilla y podemos resumirla en los pasos descritos a continuación.</p>
+<ol>
+<li><p>Descargamos los archivos del <em>plugin</em> desde el siguiente enlace:</p>
+<p><a href="http://rtl-sdr.ru/uploads/download/dmr.zip"><center>Descargar Simple DMR</center></a></p>
+</li>
+<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “SimpleDMR” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/simple-dmr-archivos.jpg" class="" width="700" title="Archivos de Simple DMR"></li>
+<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-menu-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
+<li><p>Por último, sintonizamos una señal de DMR y activamos el plugin haciendo clic en <strong>“Enabled”</strong>.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
+</ol>
+<p>Si todo ha ido bien, debemos comenzar a escuchar nada más activar el <em>plugin</em>. Si no se escucha nada, debemos asegurarnos tener la salida de audio por los altavoces y no por el cable de audio virtual.</p>
+<p>También es posible escuchar otros modos digitales usando para ello otros <em>plugins</em> muy similares a este y cuya instalación es idéntica. Estos <em>plugins</em> son:</p>
+<ul>
+<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dpmr">Simple dPMR</a></li>
+<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-apco">Simple APCO P25</a></li>
+</ul>
+<h2 id="DSD-Interface"><a href="#DSD-Interface" class="headerlink" title="DSD Interface"></a>DSD Interface</h2><h3 id="Instalacion-de-DSDPlus"><a href="#Instalacion-de-DSDPlus" class="headerlink" title="Instalación de DSDPlus"></a>Instalación de DSDPlus</h3><p>DSDPlus es un decodificador de modos digitales más completo y configurable que el que hemos visto en el apartado anterior. Inluye además otros modos digitales, como son P25, D-STAR, NXDN, etc.</p>
+<p>Para instalar DSDPlus, primeramente accedemos a su página web para descargar los archivos necesarios haciendo clic en el siguiente enlace:</p>
+<p><a href="https://www.dsdplus.com/download-2/"><center>Descargar DSDPlus</center></a></p>
+<p>Ahora descargamos los dos archivos indicados en la siguiente imagen:</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-descarga.jpg" class="" width="600" title="Descarga de DSDPlus">
+
+<p>El contenido del primer archivo lo extraemos en el directorio que queramos. En este ejemplo lo he extraído dentro de la carpeta de instalación de SDR# y dentro de su propia carpeta, a la que he llamado “DSDPlus”.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-archivos.jpg" class="" width="700" title="Archivos de DSDPlus">
+
+<p>Del segundo archivo solamente vamos a extraer el archivo <strong>lame_enc.dll</strong>, el cual vamos a introducir dentro de la carpeta de instalación de SDR#.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/lame-dll.jpg" class="" width="700" title="Archivo DLL">
+
+<h3 id="Instalacion-del-plugin"><a href="#Instalacion-del-plugin" class="headerlink" title="Instalación del plugin"></a>Instalación del plugin</h3><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/plagin-dsd-interface">DSD Interface</a> nos permite iniciar DSDPlus y pasarle el audio desde SDR# de una forma muy sencilla. Para instalarlo seguiremos los pasos descritos a continuación.</p>
+<ol>
+<li><p>Descargamos el <em>plugin</em> desde el siguiente enlace:</p>
+<p><a href="http://rtl-sdr.ru/uploads/download/dsd.zip"><center>Descargar DSD Interface</center></a></p>
+</li>
+<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “DSD” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-archivos.jpg" class="" width="700" title="Archivos del plugin DSD"></li>
+<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin.jpg" class="" width="300" title="DSD Plugin"></li>
+<li><p>Hacemos clic en el botón <strong>Configure</strong> y en la ventana de configuración hacemos clic en <strong>“DSD Path”</strong> y le indicamos la ruta del archivo <em>DSDPlus.exe</em> que hemos extraído en el apartado anterior.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar.jpg" class="" width="350" title="Configurar DSD">
+
+<p>Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
+</li>
+<li><p>Ahora hacemos clic en el botón <strong>“Start DSD”</strong> del <em>plugin</em> y se nos abrirán una serie de ventanas. Debemos fijarnos en los siguientes datos que veremos en una de las ventanas.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar-audio.jpg" class="" width="700" title="Configurar audio DSD">
+
+<p> Necesitamos anotar el número de dispositivo de audio que vamos a utilizar. En este ejemplo vamos a pasar el audio por el cable de audio virtual, por lo que en este caso anotamos el <em>“audio input device #1”</em>. Para la salida queremos que se escuche por los altavoces, así que anotamos <em>“audio output device #1”</em>.</p>
+</li>
+<li><p>Paramos DSDPlus haciendo clic en el botón <strong>“Stop DSD”</strong> del <em>plugin</em> y le damos a <strong>Configure</strong>. Ahora seleccionamos los dispositivos conforme los hemos anotado en el punto anterior. Una vez seleccionados, hacemos clic en <strong>“Create command line”</strong> para regenerar la linea de comandos con estos nuevos valores.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurado.jpg" class="" width="350" title="Configurar DSD">
+
+<p> Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
+</li>
+<li><p>Por último, buscamos una señal DMR y nos aseguramos que tengamos la salida de audio de SDR# por el cable de audio virtual. Ahora hacemos clic en el botón <strong>“Start DSD”</strong> y comenzaremos a ver datos en pantalla y se escuchará el audio decodificado.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-dsd.jpg" class="" width="900" title="DSD Plugin"></li>
+</ol>
+<p>Si en la ventana aparecen numerosos errores, es posible que debamos ajustar el volumen de audio general de SDR#.</p>
+]]></content>
+      <tags>
+        <tag>SDRSharp</tag>
+        <tag>DMR</tag>
+        <tag>DSDPlus</tag>
       </tags>
   </entry>
   <entry>
