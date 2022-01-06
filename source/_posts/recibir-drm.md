@@ -3,6 +3,7 @@ title: Recibir radio digital mundial (DRM)
 date: 2020-10-25 11:52:23
 tags: [DRM, HF]
 author: EA7KOO
+updated: 2022-01-06 14:10:00
 ---
 
 [Digital Radio Mondiale (DRM)](https://www.drm.org/), en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.
@@ -28,11 +29,16 @@ Este programa está disponible para varios sistemas operativos, incluso podemos 
 Para nuestro ejemplo, descargamos la versión 2.1.1 para Windows ([dream-2.1.1-win32-svn808-df.zip](https://sourceforge.net/projects/drm/files/dream/2.1.1/dream-2.1.1-win32-svn808-df.zip/download)). La versión 2.2 es muy similar pero presenta algunos errores de funcionamiento. Si aun así queremos probar esta versión, podemos descargarla desde [aquí](https://www.reddit.com/r/RTLSDR/comments/grp6m2/dream_v221_for_windows_with_xheaac_support/).
 
 Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.
-Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos y los guardamos en el directorio de Dream:
+Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos DLL y los guardamos en el directorio de Dream:
 
 - [faad2_drm.dll](faad2_drm.dll)
 - [libfaac.dll](libfaac.dll)
 
+Por último, registramos los archivos DLL en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):
+
+```
+regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.DLL
+```
 
 ## Configuración
 
