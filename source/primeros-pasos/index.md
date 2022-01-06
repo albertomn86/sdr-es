@@ -1,6 +1,7 @@
 ---
 title: Primeros pasos
 date: 2021-04-17 10:49:27
+updated: 2022-01-06 14:55:56
 ---
 
 
@@ -35,3 +36,5 @@ Si tenemos todo ya instalado y configurado, es el momento de empezar a recibir s
 [- Identificando señales de nuestro SDR](https://www.youtube.com/watch?v=fOuuXYXcJLk)
 
 Guía de identificación de señales: [SIGIDWIKI.COM](https://www.sigidwiki.com/wiki/Signal_Identification_Guide)
+
+Base de datos de satélites: [SatNOGS DB](https://db.satnogs.org/)
