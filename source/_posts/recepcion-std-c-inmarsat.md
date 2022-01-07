@@ -3,34 +3,38 @@ title: Recepción de mensajes Inmarsat STD-C
 date: 2020-03-09 12:46:44
 tags: [Satélites, Inmarsat, L-Band]
 author: EA7KOO
-updated: 2021-09-27 19:10:12
+updated: 2022-01-07 07:10:12
 ---
 
-En el artículo ["Recepción de satélites Inmarsat"](https://sdr-es.com/2020/03/06/recepcion-inmarsat/) vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.
+En el artículo ["Recepción de satélites Inmarsat"](https://sdr-es.com/2020/03/06/recepcion-inmarsat/) vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes a modo de estudio utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.
 Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.
 
 <!-- more -->
+
+## Instalación del plugin en SDR#
 
 Lo primero será descargar los los archivos necesarios desde el repositorio de Scytale-C desde el siguiente link:
 
 [<center>https://bitbucket.org/scytalec/scytalec/downloads/</center>](https://bitbucket.org/scytalec/scytalec/downloads/)
 
-Necesitamos descargar el plugin para SDR# (**SDRSharp.ScytaleC.5001.NET5.PlusUI.zip**) y la interfaz de usuario (**x64-ScytaleC.QuickUI-17010.zip**).
+Necesitamos descargar el plugin para SDR# (**SDRSharp.ScytaleC.5004.NET5.PlusUI.zip**).
 
-## Instalación del plugin en SDR#
+Vamos a la carpeta **Plugins** dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre "ScytaleC" (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.
 
-Vamos a la carpeta **Plugins** dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre "ScytaleC" (o el que queramos). Ahora extraemos el contenido del archivo **SDRSharp.ScytaleC.5001.NET5.PlusUI.zip** dentro de esta nueva carpeta.
+{% asset_img scytale_files.jpg 700 "Archivos de Scytale-C" %}
 
-{% asset_img scytale_files.jpg 600 "Archivos de Scytale-C" %}
-
-Ahora iniciamos SDR# y tendremos el plugin instalado.
+Por último, iniciamos SDR# y ya tendremos el plugin instalado.
 
 
 ## Instalación de la interfaz de usuario de Scytale-C
 
-Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente extraemos el contenido del archivo **x64-ScytaleC.QuickUI-17010.zip** que hemos descargado anteriormente en el directorio deseado. Por ejemplo en *C:/SDR/ScytaleC*.
+Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente abrimos el _plugin_ en SDR# y hacemos clic en el botón **"Quick UI"**.
 
-Para iniciar el programa basta con hacer doble clic en **ScytaleC.QuickUI.exe**. Al iniciar el programa se muestra un mensaje sobre la confidencialidad que debemos leer detenidamente.
+{% asset_img scytale_open_ui.jpg 200 "Scytale-C" %}
+
+El propio _plugin_ detectará que no tenemos la interfaz de usuario instalada y nos mostrará una ventana como la siguente en la que haremos clic en _"Yes"_ para proceder con la descarga e instalación de la misma de forma automática.
+
+{% asset_img scytale_download_ui.jpg "Scytale-C" %}
 
 **Algunos mensajes que se reciben con Scytale-C van a un destinatario en concreto y pueden contener información sensible. Si no somos los destinatarios de dichos mensajes, debemos proceder a la eliminación de los mismos y no reenviarlos ni publicarlos bajo ningún concepto.**
 
@@ -51,5 +55,3 @@ Si la señal es buena, veremos que aparece _**"Locked"**_ en el plugin.
 Con SDR# ya recibiendo la señal correctamente pasamos a la interfaz de usuario de Scytale-C. El plugin y esta interfaz se comunican por UDP de forma local y vienen configurados con el puerto 15003 por defecto.
 
 Para que nos lleguen los mensajes bastaría con hacer clic en el botón de Play/Stop. Si todo ha ido bien, comenzaremos a recibirlos.
-
-{% asset_img scytale_messages.jpg "Scytale-C Mensajes" %}
