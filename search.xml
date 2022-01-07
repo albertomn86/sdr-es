@@ -1694,6 +1694,72 @@
       </tags>
   </entry>
   <entry>
+    <title>Recepción del satélite FUNcube-1</title>
+    <url>/2020/02/22/recepcion-funcube1/</url>
+    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
+<span id="more"></span>
+
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>FUNcube-1 (AO-73)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>AMSAT-UK</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>39444</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2013-066AE</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (0,98 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>21 de Noviembre de 2013</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>145,935 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/2020/02/22/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
+
+
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
+
+<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
+
+<p><em>Mensajes:</em></p>
+<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Cubesat</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recepción de satélites Inmarsat</title>
     <url>/2020/03/06/recepcion-inmarsat/</url>
     <content><![CDATA[<p>Inmarsat es un proveedor de comunicaciones vía satélite con sede en Reino Unido. La constelación de satélites Inmarsat se compone actualmente de 12 satélites geoestacionarios que proporcionan cobertura en el 90% del planeta.<br>Inmarsat utiliza sus satélites de tercera y cuarta generación para ofrecer servicios de comunicaciones utilizando la <strong>banda L</strong> (1 a 2 GHz). Estos servicios son:</p>
@@ -1793,72 +1859,6 @@
         <tag>Satélites</tag>
         <tag>Inmarsat</tag>
         <tag>L-Band</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción del satélite FUNcube-1</title>
-    <url>/2020/02/22/recepcion-funcube1/</url>
-    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
-<span id="more"></span>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>FUNcube-1 (AO-73)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>AMSAT-UK</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>39444</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2013-066AE</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (0,98 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>21 de Noviembre de 2013</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145,935 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/2020/02/22/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
-
-
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
-
-<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
-
-<p><em>Mensajes:</em></p>
-<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Cubesat</tag>
       </tags>
   </entry>
   <entry>
@@ -1976,72 +1976,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción del satélite NAYIF-1</title>
-    <url>/2020/02/26/recepcion-nayif1/</url>
-    <content><![CDATA[<p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.</p>
-<span id="more"></span>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>NAYIF-1 (EO-88)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>EIAST y AUS</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>42017</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2017-008BX</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (1.32 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>15 de Febrero de 2017</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145,940 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://www.mbrsc.ae/satellite-programme/nayif-1">https://www.mbrsc.ae/satellite-programme/nayif-1</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/2020/02/26/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
-
-
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="https://sdr-es.com/2020/02/22/recepcion-funcube1/">FUNcube-1</a> y <a href="https://sdr-es.com/2020/02/25/recepcion-jy1sat/">JY1-SAT</a>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi"><center>Nayif-1 Dashboard v1040</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/2020/02/26/recepcion-nayif1/config.png" class="" title="NAYIF-1 Dashboard Configuración">
-
-<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/2020/02/26/recepcion-nayif1/telem.png" class="" title="NAYIF-1 Dashboard Telemetría">
-
-<p><em>Mensajes:</em></p>
-<img src="/2020/02/26/recepcion-nayif1/messages.png" class="" title="NAYIF-1 Dashboard Mensajes">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Cubesat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción de satélites meteorológicos NOAA</title>
     <url>/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</url>
     <content><![CDATA[<p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
@@ -2138,6 +2072,109 @@
         <tag>Satélites meteorológicos</tag>
         <tag>NOAA</tag>
         <tag>Meteorología</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción del satélite NAYIF-1</title>
+    <url>/2020/02/26/recepcion-nayif1/</url>
+    <content><![CDATA[<p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.</p>
+<span id="more"></span>
+
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>NAYIF-1 (EO-88)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>EIAST y AUS</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>42017</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2017-008BX</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (1.32 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>15 de Febrero de 2017</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>145,940 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://www.mbrsc.ae/satellite-programme/nayif-1">https://www.mbrsc.ae/satellite-programme/nayif-1</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/2020/02/26/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
+
+
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="https://sdr-es.com/2020/02/22/recepcion-funcube1/">FUNcube-1</a> y <a href="https://sdr-es.com/2020/02/25/recepcion-jy1sat/">JY1-SAT</a>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi"><center>Nayif-1 Dashboard v1040</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/2020/02/26/recepcion-nayif1/config.png" class="" title="NAYIF-1 Dashboard Configuración">
+
+<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/2020/02/26/recepcion-nayif1/telem.png" class="" title="NAYIF-1 Dashboard Telemetría">
+
+<p><em>Mensajes:</em></p>
+<img src="/2020/02/26/recepcion-nayif1/messages.png" class="" title="NAYIF-1 Dashboard Mensajes">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Cubesat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de mensajes Inmarsat STD-C</title>
+    <url>/2020/03/09/recepcion-std-c-inmarsat/</url>
+    <content><![CDATA[<p>En el artículo <a href="/2020/03/06/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes a modo de estudio utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
+<span id="more"></span>
+
+<h2 id="Instalacion-del-plugin-en-SDR"><a href="#Instalacion-del-plugin-en-SDR" class="headerlink" title="Instalación del plugin en SDR#"></a>Instalación del plugin en SDR#</h2><p>Lo primero será descargar los los archivos necesarios desde el repositorio de Scytale-C desde el siguiente link:</p>
+<p><a href="https://bitbucket.org/scytalec/scytalec/downloads/"><center>https://bitbucket.org/scytalec/scytalec/downloads/</center></a></p>
+<p>Necesitamos descargar el plugin para SDR# (<strong>SDRSharp.ScytaleC.5004.NET5.PlusUI.zip</strong>).</p>
+<p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “ScytaleC” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_files.jpg" class="" width="700" title="Archivos de Scytale-C">
+
+<p>Por último, iniciamos SDR# y ya tendremos el plugin instalado.</p>
+<h2 id="Instalacion-de-la-interfaz-de-usuario-de-Scytale-C"><a href="#Instalacion-de-la-interfaz-de-usuario-de-Scytale-C" class="headerlink" title="Instalación de la interfaz de usuario de Scytale-C"></a>Instalación de la interfaz de usuario de Scytale-C</h2><p>Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente abrimos el <em>plugin</em> en SDR# y hacemos clic en el botón <strong>“Quick UI”</strong>.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_open_ui.jpg" class="" width="200" title="Scytale-C">
+
+<p>El propio <em>plugin</em> detectará que no tenemos la interfaz de usuario instalada y nos mostrará una ventana como la siguente en la que haremos clic en <em>“Yes”</em> para proceder con la descarga e instalación de la misma de forma automática.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_download_ui.jpg" class="" title="Scytale-C">
+
+<p><strong>Algunos mensajes que se reciben con Scytale-C van a un destinatario en concreto y pueden contener información sensible. Si no somos los destinatarios de dichos mensajes, debemos proceder a la eliminación de los mismos y no reenviarlos ni publicarlos bajo ningún concepto.</strong></p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_ui.jpg" class="" title="UI Scytale-C">
+
+<h2 id="Recepcion-y-visualizacion-de-mensajes"><a href="#Recepcion-y-visualizacion-de-mensajes" class="headerlink" title="Recepción y visualización de mensajes"></a>Recepción y visualización de mensajes</h2><p>Vamos ahora a recibir mensajes desde Inmarsat. Si ya tenemos nuestra antena orientada y conectada, iniciamos SDR# y buscamos las frecuencias de SDT-C. En Inmarsat-4A F4 las encontramos en 1.537,100 MHz para NCS y sobre 1.539,500 MHz para los canales LES TDM.</p>
+<p>Una vez las tengamos localizadas, sintonizamos una de las señales en modo <strong>USB</strong> y ancho de banda de <strong>4 KHz</strong>.</p>
+<p>Iniciamos a continuación el plugin marcando la casilla <em><strong>“Enabled”</strong></em>. También marcamos <em><strong>“Auto Tracking”</strong></em> para que ajuste la señal de forma automática.</p>
+<p>Si la señal es buena, veremos que aparece <em><strong>“Locked”</strong></em> en el plugin.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/sdrsharp.jpg" class="" title="Plugin Scytale-C">
+
+<p>Con SDR# ya recibiendo la señal correctamente pasamos a la interfaz de usuario de Scytale-C. El plugin y esta interfaz se comunican por UDP de forma local y vienen configurados con el puerto 15003 por defecto.</p>
+<p>Para que nos lleguen los mensajes bastaría con hacer clic en el botón de Play/Stop. Si todo ha ido bien, comenzaremos a recibirlos.</p>
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Inmarsat</tag>
+        <tag>L-Band</tag>
       </tags>
   </entry>
   <entry>
@@ -2302,43 +2339,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción de mensajes Inmarsat STD-C</title>
-    <url>/2020/03/09/recepcion-std-c-inmarsat/</url>
-    <content><![CDATA[<p>En el artículo <a href="/2020/03/06/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes a modo de estudio utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion-del-plugin-en-SDR"><a href="#Instalacion-del-plugin-en-SDR" class="headerlink" title="Instalación del plugin en SDR#"></a>Instalación del plugin en SDR#</h2><p>Lo primero será descargar los los archivos necesarios desde el repositorio de Scytale-C desde el siguiente link:</p>
-<p><a href="https://bitbucket.org/scytalec/scytalec/downloads/"><center>https://bitbucket.org/scytalec/scytalec/downloads/</center></a></p>
-<p>Necesitamos descargar el plugin para SDR# (<strong>SDRSharp.ScytaleC.5004.NET5.PlusUI.zip</strong>).</p>
-<p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “ScytaleC” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_files.jpg" class="" width="700" title="Archivos de Scytale-C">
-
-<p>Por último, iniciamos SDR# y ya tendremos el plugin instalado.</p>
-<h2 id="Instalacion-de-la-interfaz-de-usuario-de-Scytale-C"><a href="#Instalacion-de-la-interfaz-de-usuario-de-Scytale-C" class="headerlink" title="Instalación de la interfaz de usuario de Scytale-C"></a>Instalación de la interfaz de usuario de Scytale-C</h2><p>Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente abrimos el <em>plugin</em> en SDR# y hacemos clic en el botón <strong>“Quick UI”</strong>.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_open_ui.jpg" class="" width="200" title="Scytale-C">
-
-<p>El propio <em>plugin</em> detectará que no tenemos la interfaz de usuario instalada y nos mostrará una ventana como la siguente en la que haremos clic en <em>“Yes”</em> para proceder con la descarga e instalación de la misma de forma automática.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_download_ui.jpg" class="" title="Scytale-C">
-
-<p><strong>Algunos mensajes que se reciben con Scytale-C van a un destinatario en concreto y pueden contener información sensible. Si no somos los destinatarios de dichos mensajes, debemos proceder a la eliminación de los mismos y no reenviarlos ni publicarlos bajo ningún concepto.</strong></p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_ui.jpg" class="" title="UI Scytale-C">
-
-<h2 id="Recepcion-y-visualizacion-de-mensajes"><a href="#Recepcion-y-visualizacion-de-mensajes" class="headerlink" title="Recepción y visualización de mensajes"></a>Recepción y visualización de mensajes</h2><p>Vamos ahora a recibir mensajes desde Inmarsat. Si ya tenemos nuestra antena orientada y conectada, iniciamos SDR# y buscamos las frecuencias de SDT-C. En Inmarsat-4A F4 las encontramos en 1.537,100 MHz para NCS y sobre 1.539,500 MHz para los canales LES TDM.</p>
-<p>Una vez las tengamos localizadas, sintonizamos una de las señales en modo <strong>USB</strong> y ancho de banda de <strong>4 KHz</strong>.</p>
-<p>Iniciamos a continuación el plugin marcando la casilla <em><strong>“Enabled”</strong></em>. También marcamos <em><strong>“Auto Tracking”</strong></em> para que ajuste la señal de forma automática.</p>
-<p>Si la señal es buena, veremos que aparece <em><strong>“Locked”</strong></em> en el plugin.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/sdrsharp.jpg" class="" title="Plugin Scytale-C">
-
-<p>Con SDR# ya recibiendo la señal correctamente pasamos a la interfaz de usuario de Scytale-C. El plugin y esta interfaz se comunican por UDP de forma local y vienen configurados con el puerto 15003 por defecto.</p>
-<p>Para que nos lleguen los mensajes bastaría con hacer clic en el botón de Play/Stop. Si todo ha ido bien, comenzaremos a recibirlos.</p>
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Inmarsat</tag>
-        <tag>L-Band</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción de cartas meteorológicas (weather fax)</title>
     <url>/2021/09/01/recepcion-weather-fax/</url>
     <content><![CDATA[<p>El radiofacsimil o radiofax es un modo analógico en HF que permite transmitir imágenes monocromáticas mediante ondas de radio. Este modo es el predecesor de SSTV y fue el principal modo de transmisión de imágenes desde sitios remotos (especialmente islas) desde 1930 hasta 1970.</p>
@@ -2485,6 +2485,117 @@
       </tags>
   </entry>
   <entry>
+    <title>Recibir radio digital mundial (DRM)</title>
+    <url>/2020/10/25/recibir-drm/</url>
+    <content><![CDATA[<p><a href="https://www.drm.org/">Digital Radio Mondiale (DRM)</a>, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.<br>DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.<br>En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.</p>
+<span id="more"></span>
+
+<img src="/2020/10/25/recibir-drm/logo.png" class="" width="300" title="DRM logo">
+
+<p>Encontraremos las emisiones DRM30 por debajo de los 30 MHz. Habitualmente suelen ser emisiones no continuadas, por lo que no necesariamente vamos a encontrar dichas emisiones siempre. Podemos consultar los horarios actualizados de las mismas en el siguiente enlace:</p>
+<p><a href="https://www.drm.org/what-can-i-hear/broadcast-schedule-2/"><center>DRM Broadcast Schedule</center></a></p>
+<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el <a href="/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software <a href="https://sourceforge.net/projects/drm/">Dream AM/DRM Receiver</a> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/"><center>Dream AM/DRM Receiver</center></a></p>
+<p>Este programa está disponible para varios sistemas operativos, incluso podemos descargar el código fuente y compilarlo si queremos.<br>Para nuestro ejemplo, descargamos la versión 2.1.1 para Windows (<a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/dream-2.1.1-win32-svn808-df.zip/download">dream-2.1.1-win32-svn808-df.zip</a>). La versión 2.2 es muy similar pero presenta algunos errores de funcionamiento. Si aun así queremos probar esta versión, podemos descargarla desde <a href="https://www.reddit.com/r/RTLSDR/comments/grp6m2/dream_v221_for_windows_with_xheaac_support/">aquí</a>.</p>
+<p>Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.<br>Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos DLL y los guardamos en el directorio de Dream:</p>
+<ul>
+<li><a href="faad2_drm.dll">faad2_drm.dll</a></li>
+<li><a href="libfaac.dll">libfaac.dll</a></li>
+</ul>
+<p>Por último, registramos los archivos DLL en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.DLL</span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em>, <em>Sound Card</em>, <em>Signal Input</em> y en <em>Device</em> seleccionamos el <strong>cable de audio virtual</strong>.</p>
+<img src="/2020/10/25/recibir-drm/input.png" class="" width="800" title="Entrada audio">
+
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Una vez tenemos el programa escuchando por el cable de audio virtual, procedemos a sintonizar una emisión de DRM con SDR#. Usaremos el <strong>modo USB</strong> y un <strong>ancho de banda de 10 KHz</strong>.<br>Cuando Dream detecte la señal, veremos datos de la emisión en la ventana y comenzará a escucharse si tenemos señal suficiente. Los tres indicadores señalados en la siguiente imagen deben estar activos para poder escuchar el audio.</p>
+<img src="/2020/10/25/recibir-drm/dream.png" class="" width="700" title="Dream">
+
+
+<img src="/2020/10/25/recibir-drm/sdrSharp.png" class="" width="900" title="SDR# + Dream">
+]]></content>
+      <tags>
+        <tag>HF</tag>
+        <tag>DRM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir radio movil digital (DMR)</title>
+    <url>/2021/08/27/recibir-radio-movil-digital-DMR/</url>
+    <content><![CDATA[<p>DMR son las siglas de Radio Móvil Digital, y es un estándar internacional especialmente definido para radios de dos vías. El objetivo del estándar DMR es permitir que dispositivos de diferentes fabricantes puedan comunicarse entre sí en una misma red.<br>Esta tecnología es muy utilizada por radioaficionados y es posible recibir estas señales con nuestros dispositivos SDR. En este artículo veremos como instalar algunos <em>plugins</em> en SDR# para poder escuchar DMR.</p>
+<span id="more"></span>
+
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dmr-logo.jpeg" class="" width="300" title="Logo DMR">
+
+
+<h2 id="Simple-DMR"><a href="#Simple-DMR" class="headerlink" title="Simple DMR"></a>Simple DMR</h2><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dmr">Simple DMR</a> está diseñado para escuchar DMR sin cifrar y no requiere dependencias ni configuraciones.</p>
+<p>La instalación es muy sencilla y podemos resumirla en los pasos descritos a continuación.</p>
+<ol>
+<li><p>Descargamos los archivos del <em>plugin</em> desde el siguiente enlace:</p>
+<p><a href="http://rtl-sdr.ru/uploads/download/dmr.zip"><center>Descargar Simple DMR</center></a></p>
+</li>
+<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “SimpleDMR” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/simple-dmr-archivos.jpg" class="" width="700" title="Archivos de Simple DMR"></li>
+<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-menu-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
+<li><p>Por último, sintonizamos una señal de DMR y activamos el plugin haciendo clic en <strong>“Enabled”</strong>.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
+</ol>
+<p>Si todo ha ido bien, debemos comenzar a escuchar nada más activar el <em>plugin</em>. Si no se escucha nada, debemos asegurarnos tener la salida de audio por los altavoces y no por el cable de audio virtual.</p>
+<p>También es posible escuchar otros modos digitales usando para ello otros <em>plugins</em> muy similares a este y cuya instalación es idéntica. Estos <em>plugins</em> son:</p>
+<ul>
+<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dpmr">Simple dPMR</a></li>
+<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-apco">Simple APCO P25</a></li>
+</ul>
+<h2 id="DSD-Interface"><a href="#DSD-Interface" class="headerlink" title="DSD Interface"></a>DSD Interface</h2><h3 id="Instalacion-de-DSDPlus"><a href="#Instalacion-de-DSDPlus" class="headerlink" title="Instalación de DSDPlus"></a>Instalación de DSDPlus</h3><p>DSDPlus es un decodificador de modos digitales más completo y configurable que el que hemos visto en el apartado anterior. Inluye además otros modos digitales, como son P25, D-STAR, NXDN, etc.</p>
+<p>Para instalar DSDPlus, primeramente accedemos a su página web para descargar los archivos necesarios haciendo clic en el siguiente enlace:</p>
+<p><a href="https://www.dsdplus.com/download-2/"><center>Descargar DSDPlus</center></a></p>
+<p>Ahora descargamos los dos archivos indicados en la siguiente imagen:</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-descarga.jpg" class="" width="600" title="Descarga de DSDPlus">
+
+<p>El contenido del primer archivo lo extraemos en el directorio que queramos. En este ejemplo lo he extraído dentro de la carpeta de instalación de SDR# y dentro de su propia carpeta, a la que he llamado “DSDPlus”.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-archivos.jpg" class="" width="700" title="Archivos de DSDPlus">
+
+<p>Del segundo archivo solamente vamos a extraer el archivo <strong>lame_enc.dll</strong>, el cual vamos a introducir dentro de la carpeta de instalación de SDR#.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/lame-dll.jpg" class="" width="700" title="Archivo DLL">
+
+<h3 id="Instalacion-del-plugin"><a href="#Instalacion-del-plugin" class="headerlink" title="Instalación del plugin"></a>Instalación del plugin</h3><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/plagin-dsd-interface">DSD Interface</a> nos permite iniciar DSDPlus y pasarle el audio desde SDR# de una forma muy sencilla. Para instalarlo seguiremos los pasos descritos a continuación.</p>
+<ol>
+<li><p>Descargamos el <em>plugin</em> desde el siguiente enlace:</p>
+<p><a href="http://rtl-sdr.ru/uploads/download/dsd.zip"><center>Descargar DSD Interface</center></a></p>
+</li>
+<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “DSD” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-archivos.jpg" class="" width="700" title="Archivos del plugin DSD"></li>
+<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin.jpg" class="" width="300" title="DSD Plugin"></li>
+<li><p>Hacemos clic en el botón <strong>Configure</strong> y en la ventana de configuración hacemos clic en <strong>“DSD Path”</strong> y le indicamos la ruta del archivo <em>DSDPlus.exe</em> que hemos extraído en el apartado anterior.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar.jpg" class="" width="350" title="Configurar DSD">
+
+<p>Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
+</li>
+<li><p>Ahora hacemos clic en el botón <strong>“Start DSD”</strong> del <em>plugin</em> y se nos abrirán una serie de ventanas. Debemos fijarnos en los siguientes datos que veremos en una de las ventanas.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar-audio.jpg" class="" width="700" title="Configurar audio DSD">
+
+<p> Necesitamos anotar el número de dispositivo de audio que vamos a utilizar. En este ejemplo vamos a pasar el audio por el cable de audio virtual, por lo que en este caso anotamos el <em>“audio input device #1”</em>. Para la salida queremos que se escuche por los altavoces, así que anotamos <em>“audio output device #1”</em>.</p>
+</li>
+<li><p>Paramos DSDPlus haciendo clic en el botón <strong>“Stop DSD”</strong> del <em>plugin</em> y le damos a <strong>Configure</strong>. Ahora seleccionamos los dispositivos conforme los hemos anotado en el punto anterior. Una vez seleccionados, hacemos clic en <strong>“Create command line”</strong> para regenerar la linea de comandos con estos nuevos valores.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurado.jpg" class="" width="350" title="Configurar DSD">
+
+<p> Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
+</li>
+<li><p>Por último, buscamos una señal DMR y nos aseguramos que tengamos la salida de audio de SDR# por el cable de audio virtual. Ahora hacemos clic en el botón <strong>“Start DSD”</strong> y comenzaremos a ver datos en pantalla y se escuchará el audio decodificado.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-dsd.jpg" class="" width="900" title="DSD Plugin"></li>
+</ol>
+<p>Si en la ventana aparecen numerosos errores, es posible que debamos ajustar el volumen de audio general de SDR#.</p>
+]]></content>
+      <tags>
+        <tag>SDRSharp</tag>
+        <tag>DMR</tag>
+        <tag>DSDPlus</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recibir satélites LoRa</title>
     <url>/2021/03/30/recibir-satelites-LoRa-con-tinyGS/</url>
     <content><![CDATA[<p><a href="https://tinygs.com/">TinyGS</a> es una red de estaciones terrestres distribuida alrededor del mundo para la recepción y operación de satélites <a href="https://www.thethingsnetwork.org/community/santa-rosa/post/que-es-la-tecnologia-lora-y-por-que-es-importante-para-iot">LoRa</a>, sondas meteorológicas y otros objetos, usando módulos programables de muy bajo coste.<br>En este artículo veremos como instalar y configurar nuestra estación terrestre desde cero.</p>
@@ -2617,117 +2728,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recibir radio digital mundial (DRM)</title>
-    <url>/2020/10/25/recibir-drm/</url>
-    <content><![CDATA[<p><a href="https://www.drm.org/">Digital Radio Mondiale (DRM)</a>, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.<br>DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.<br>En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.</p>
-<span id="more"></span>
-
-<img src="/2020/10/25/recibir-drm/logo.png" class="" width="300" title="DRM logo">
-
-<p>Encontraremos las emisiones DRM30 por debajo de los 30 MHz. Habitualmente suelen ser emisiones no continuadas, por lo que no necesariamente vamos a encontrar dichas emisiones siempre. Podemos consultar los horarios actualizados de las mismas en el siguiente enlace:</p>
-<p><a href="https://www.drm.org/what-can-i-hear/broadcast-schedule-2/"><center>DRM Broadcast Schedule</center></a></p>
-<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el <a href="/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software <a href="https://sourceforge.net/projects/drm/">Dream AM/DRM Receiver</a> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/"><center>Dream AM/DRM Receiver</center></a></p>
-<p>Este programa está disponible para varios sistemas operativos, incluso podemos descargar el código fuente y compilarlo si queremos.<br>Para nuestro ejemplo, descargamos la versión 2.1.1 para Windows (<a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/dream-2.1.1-win32-svn808-df.zip/download">dream-2.1.1-win32-svn808-df.zip</a>). La versión 2.2 es muy similar pero presenta algunos errores de funcionamiento. Si aun así queremos probar esta versión, podemos descargarla desde <a href="https://www.reddit.com/r/RTLSDR/comments/grp6m2/dream_v221_for_windows_with_xheaac_support/">aquí</a>.</p>
-<p>Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.<br>Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos DLL y los guardamos en el directorio de Dream:</p>
-<ul>
-<li><a href="faad2_drm.dll">faad2_drm.dll</a></li>
-<li><a href="libfaac.dll">libfaac.dll</a></li>
-</ul>
-<p>Por último, registramos los archivos DLL en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.DLL</span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em>, <em>Sound Card</em>, <em>Signal Input</em> y en <em>Device</em> seleccionamos el <strong>cable de audio virtual</strong>.</p>
-<img src="/2020/10/25/recibir-drm/input.png" class="" width="800" title="Entrada audio">
-
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Una vez tenemos el programa escuchando por el cable de audio virtual, procedemos a sintonizar una emisión de DRM con SDR#. Usaremos el <strong>modo USB</strong> y un <strong>ancho de banda de 10 KHz</strong>.<br>Cuando Dream detecte la señal, veremos datos de la emisión en la ventana y comenzará a escucharse si tenemos señal suficiente. Los tres indicadores señalados en la siguiente imagen deben estar activos para poder escuchar el audio.</p>
-<img src="/2020/10/25/recibir-drm/dream.png" class="" width="700" title="Dream">
-
-
-<img src="/2020/10/25/recibir-drm/sdrSharp.png" class="" width="900" title="SDR# + Dream">
-]]></content>
-      <tags>
-        <tag>HF</tag>
-        <tag>DRM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recibir radio movil digital (DMR)</title>
-    <url>/2021/08/27/recibir-radio-movil-digital-DMR/</url>
-    <content><![CDATA[<p>DMR son las siglas de Radio Móvil Digital, y es un estándar internacional especialmente definido para radios de dos vías. El objetivo del estándar DMR es permitir que dispositivos de diferentes fabricantes puedan comunicarse entre sí en una misma red.<br>Esta tecnología es muy utilizada por radioaficionados y es posible recibir estas señales con nuestros dispositivos SDR. En este artículo veremos como instalar algunos <em>plugins</em> en SDR# para poder escuchar DMR.</p>
-<span id="more"></span>
-
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dmr-logo.jpeg" class="" width="300" title="Logo DMR">
-
-
-<h2 id="Simple-DMR"><a href="#Simple-DMR" class="headerlink" title="Simple DMR"></a>Simple DMR</h2><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dmr">Simple DMR</a> está diseñado para escuchar DMR sin cifrar y no requiere dependencias ni configuraciones.</p>
-<p>La instalación es muy sencilla y podemos resumirla en los pasos descritos a continuación.</p>
-<ol>
-<li><p>Descargamos los archivos del <em>plugin</em> desde el siguiente enlace:</p>
-<p><a href="http://rtl-sdr.ru/uploads/download/dmr.zip"><center>Descargar Simple DMR</center></a></p>
-</li>
-<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “SimpleDMR” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/simple-dmr-archivos.jpg" class="" width="700" title="Archivos de Simple DMR"></li>
-<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-menu-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
-<li><p>Por último, sintonizamos una señal de DMR y activamos el plugin haciendo clic en <strong>“Enabled”</strong>.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
-</ol>
-<p>Si todo ha ido bien, debemos comenzar a escuchar nada más activar el <em>plugin</em>. Si no se escucha nada, debemos asegurarnos tener la salida de audio por los altavoces y no por el cable de audio virtual.</p>
-<p>También es posible escuchar otros modos digitales usando para ello otros <em>plugins</em> muy similares a este y cuya instalación es idéntica. Estos <em>plugins</em> son:</p>
-<ul>
-<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dpmr">Simple dPMR</a></li>
-<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-apco">Simple APCO P25</a></li>
-</ul>
-<h2 id="DSD-Interface"><a href="#DSD-Interface" class="headerlink" title="DSD Interface"></a>DSD Interface</h2><h3 id="Instalacion-de-DSDPlus"><a href="#Instalacion-de-DSDPlus" class="headerlink" title="Instalación de DSDPlus"></a>Instalación de DSDPlus</h3><p>DSDPlus es un decodificador de modos digitales más completo y configurable que el que hemos visto en el apartado anterior. Inluye además otros modos digitales, como son P25, D-STAR, NXDN, etc.</p>
-<p>Para instalar DSDPlus, primeramente accedemos a su página web para descargar los archivos necesarios haciendo clic en el siguiente enlace:</p>
-<p><a href="https://www.dsdplus.com/download-2/"><center>Descargar DSDPlus</center></a></p>
-<p>Ahora descargamos los dos archivos indicados en la siguiente imagen:</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-descarga.jpg" class="" width="600" title="Descarga de DSDPlus">
-
-<p>El contenido del primer archivo lo extraemos en el directorio que queramos. En este ejemplo lo he extraído dentro de la carpeta de instalación de SDR# y dentro de su propia carpeta, a la que he llamado “DSDPlus”.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-archivos.jpg" class="" width="700" title="Archivos de DSDPlus">
-
-<p>Del segundo archivo solamente vamos a extraer el archivo <strong>lame_enc.dll</strong>, el cual vamos a introducir dentro de la carpeta de instalación de SDR#.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/lame-dll.jpg" class="" width="700" title="Archivo DLL">
-
-<h3 id="Instalacion-del-plugin"><a href="#Instalacion-del-plugin" class="headerlink" title="Instalación del plugin"></a>Instalación del plugin</h3><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/plagin-dsd-interface">DSD Interface</a> nos permite iniciar DSDPlus y pasarle el audio desde SDR# de una forma muy sencilla. Para instalarlo seguiremos los pasos descritos a continuación.</p>
-<ol>
-<li><p>Descargamos el <em>plugin</em> desde el siguiente enlace:</p>
-<p><a href="http://rtl-sdr.ru/uploads/download/dsd.zip"><center>Descargar DSD Interface</center></a></p>
-</li>
-<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “DSD” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-archivos.jpg" class="" width="700" title="Archivos del plugin DSD"></li>
-<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin.jpg" class="" width="300" title="DSD Plugin"></li>
-<li><p>Hacemos clic en el botón <strong>Configure</strong> y en la ventana de configuración hacemos clic en <strong>“DSD Path”</strong> y le indicamos la ruta del archivo <em>DSDPlus.exe</em> que hemos extraído en el apartado anterior.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar.jpg" class="" width="350" title="Configurar DSD">
-
-<p>Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
-</li>
-<li><p>Ahora hacemos clic en el botón <strong>“Start DSD”</strong> del <em>plugin</em> y se nos abrirán una serie de ventanas. Debemos fijarnos en los siguientes datos que veremos en una de las ventanas.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar-audio.jpg" class="" width="700" title="Configurar audio DSD">
-
-<p> Necesitamos anotar el número de dispositivo de audio que vamos a utilizar. En este ejemplo vamos a pasar el audio por el cable de audio virtual, por lo que en este caso anotamos el <em>“audio input device #1”</em>. Para la salida queremos que se escuche por los altavoces, así que anotamos <em>“audio output device #1”</em>.</p>
-</li>
-<li><p>Paramos DSDPlus haciendo clic en el botón <strong>“Stop DSD”</strong> del <em>plugin</em> y le damos a <strong>Configure</strong>. Ahora seleccionamos los dispositivos conforme los hemos anotado en el punto anterior. Una vez seleccionados, hacemos clic en <strong>“Create command line”</strong> para regenerar la linea de comandos con estos nuevos valores.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurado.jpg" class="" width="350" title="Configurar DSD">
-
-<p> Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
-</li>
-<li><p>Por último, buscamos una señal DMR y nos aseguramos que tengamos la salida de audio de SDR# por el cable de audio virtual. Ahora hacemos clic en el botón <strong>“Start DSD”</strong> y comenzaremos a ver datos en pantalla y se escuchará el audio decodificado.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-dsd.jpg" class="" width="900" title="DSD Plugin"></li>
-</ol>
-<p>Si en la ventana aparecen numerosos errores, es posible que debamos ajustar el volumen de audio general de SDR#.</p>
-]]></content>
-      <tags>
-        <tag>SDRSharp</tag>
-        <tag>DMR</tag>
-        <tag>DSDPlus</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recibir imágenes SSTV desde la ISS</title>
     <url>/2020/12/26/recibir-sstv-iss/</url>
     <content><![CDATA[<p><a href="https://www.ariss.org/">ARISS</a> organiza ocasionalmente eventos conmemorativos en los que se envían imágenes <a href="https://es.wikipedia.org/wiki/SSTV">SSTV</a> desde la ISS (<em>International Space Station</em>). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.</p>
@@ -2844,133 +2844,6 @@
       <tags>
         <tag>Meteorología</tag>
         <tag>Radiosonda</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Seguimiento de satélites con Gpredict</title>
-    <url>/2021/12/23/seguimiento-satelites-gpredict/</url>
-    <content><![CDATA[<p><a href="http://gpredict.oz9aec.net/">Gpredict</a> es un programa para el seguimiento en tiempo real y predicción de órbitas para satélites. Este programa es muy similar a Orbitron, el cual ya vimos cómo instalar y configurar en el artículo <a href="/2020/01/23/seguimiento-satelites-orbitron">“Seguimiento de satélites con Orbitron”</a>. Pero al contrario de este, Gpredict es multiplataforma, por lo que podremos usarlo en diferentes sistemas operativos.<br>En este artículo veremos como instalar y configurar Gpredict en Windows, Linux y macOS.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalación"></a>Instalación</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>Para instalar Gpredict en Windows bastará con descargar el archivo comprimido con los binarios desde cualquiera de los repositorios siguientes:</p>
-<ul>
-<li><a href="https://github.com/csete/gpredict/releases/latest">GitHub</a></li>
-<li><a href="https://sourceforge.net/projects/gpredict/">Sourceforge</a></li>
-</ul>
-<p>Una vez descargado el archivo extraemos su contenido en la ubicación deseada y lo iniciamos desde el archivo ejecutable.</p>
-<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>En Linux podemos instalarlo desde consola usando el gestor de paquetes de nuestra distribución. Para Debian/Ubuntu usaremos el siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install gpredict</span><br></pre></td></tr></table></figure>
-
-<p>Para iniciarlo podemos buscarlos en el listado de programas instalados o hacerlo desde una terminal.</p>
-<h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><p>Para instalar Gpredict en macOS necesitamos un gestor de paquetes como por ejemplo <a href="https://brew.sh/index_es">Homebrew</a>. Si ya lo tenemos, bastaría con ejecutar el siguiente comando:</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">brew install gpredict</span><br></pre></td></tr></table></figure>
-
-<p>Para iniciar Gpredict debemos usar una terminal:</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">gpredict</span><br></pre></td></tr></table></figure>
-
-
-<img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict.jpg" class="" width="800" title="Gpredict">
-
-
-<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>Una vez tenemos Gpredict instalado e iniciado, seguimos los pasos enumerados a continuación para actualizarlo y configurarlo.</p>
-<ol>
-<li><p>El primer paso es descargarnos los archivos TLE actualizados para poder realizar el cálculo de las órbitas correctamente. Es recomendable realizar esta actualización regularmente para tener siempre las correcciones lo más exactas posibles.<br>Para ello vamos a <em>“Edit”</em> y seleccionamos <em>“Update TLE data from network”</em>. Esto inicia el proceso de descarga de los archivos TLE más recientes.</p>
- <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-update-tle.jpg" class="" width="300" title="Gpredict - Update TLE"></li>
-</ol>
-<ol start="2">
-<li><p>A continuación descargamos los datos de los transpondedores activos de cada satélite. Esto incorpora las frecuencias en las que emite cada satélite para que solo tengamos que seleccionarlas. Para descargarlos vamos a <em>“Edit”</em> y hacemos clic en <em>“Update transponder data”</em>.</p>
- <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-update-tp.jpg" class="" width="300" title="Gpredict - Update transponder"></li>
-</ol>
-<ol start="3">
-<li><p>El siguiente paso es configurar nuestra posición. Para ello vamos a <em>“Edit”</em> y hacemos clic en <em>“Preferences”</em>. Ahora se nos abre una nueva ventana en la que seleccionamos <em>“Ground Stations”</em>. Para añadir los datos de nuestra <em>ground station</em> hacemos clic en <em>“Add new”</em>.</p>
- <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-config-qth.jpg" class="" width="800" title="Gpredict - Ground station">
-
-<p> En la nueva ventana que aparece introducimos los datos de nuestra ubicación y guardamos haciendo clic en <em>“OK”</em>. Si no conocemos los datos, podemos buscar nuestra población haciendo clic en <em>“Select”</em>. Esto nos auto-completará todos los datos aunque no sean los más exactos.</p>
- <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-config-qth-new.jpg" class="" width="800" title="Gpredict - Ground station">
-
-<p> Por último, eliminamos la <em>ground station</em> que viene por defecto para dejar la nuestra marcada por defecto.</p>
- <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-config-qth-delete.jpg" class="" width="800" title="Gpredict - Ground station"></li>
-</ol>
-<ol start="4">
-<li><p>Ahora vamos a configurar la conexión con programas externos para que podamos realizar el tracking de forma automática en nuestro programa de SDR. Para ello vamos a <em>“Interfaces”</em>, <em>“Radios”</em> y  hacemos clic en <em>“Add new”</em>.</p>
- <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-radios.jpg" class="" width="800" title="Gpredict - Radios">
-
-<p> Introducimos el nombre que queramos y guardamos haciendo clic en <em>“Ok”</em>.</p>
- <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-radios-new.jpg" class="" width="800" title="Gpredict - Radios"></li>
-</ol>
-<ol start="5">
-<li><p>Para finalizar, vamos a seleccionar ahora que satélites vamos a seguir. Para ello hacemos clic en el botón indicado en la siguiente captura y después en <em>“Configure”</em>. En Linux el botón puede aparecer con un icono distinto.</p>
- <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-configure.jpg" class="" width="300" title="Gpredict - configurar">
-
-<p> A continuación iremos buscando y añadiendo los satélites deseados a la lista.</p>
- <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-sats.jpg" class="" width="800" title="Gpredict - configurar satélites"></li>
-</ol>
-<h2 id="Conectar-con-programas-de-SDR"><a href="#Conectar-con-programas-de-SDR" class="headerlink" title="Conectar con programas de SDR"></a>Conectar con programas de SDR</h2><p>Para realizar la correción en nuestros programas de SDR tenemos que conectar Gpredict a estos. Para ello necesitamos que nuestro programa tenga el servicio a la escucha para que Gpredict pueda enviarle la frecuencia que debe sintonizar en cada momento. En el siguiente punto veremos como habilitar este servicio en SDR# y SDR++. Si ya tenemos el programa preparado, abrimos el control de radio de Gpredict desde el icono indicado en la siguiente captura y hacemos clic en <em>“Radio Control”</em>.</p>
-<img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-radio-control.jpg" class="" width="300" title="Gpredict - Radio control">
-
-<p>Ahora seleccionamos el satélite y la frecuencia y hacemos clic en <em>“Track”</em> para iniciar la corrección, y posteriormente seleccionamos la radio y hacemos clic en <em>“Engage”</em> para conectar con el programa SDR.</p>
-<img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-radio-control-2.jpg" class="" width="800" title="Gpredict - Radio control">
-
-<p>Si todo ha ido bien, veremos que la frecuencia se va moviendo en programa para corregir el efecto <em>Doppler</em> de la señal del satélite.</p>
-<h3 id="SDR"><a href="#SDR" class="headerlink" title="SDR#"></a>SDR#</h3><p>Para conectar Gpredict con SDR# vamos a usar el plugin <strong>GpredictConnector</strong> que podemos descargar desde el siguiente repositorio:</p>
-<p><a href="https://github.com/alexwahl/SDRSharp.GpredictConnector/releases/latest"><center>Releases GpredictConnector</center></a></p>
-<p>El proceso para instalarlo es el mismo que para cualquier otro plugin de SDR#. Creamos una carpeta dentro de <em>Plugins</em> e introducimos el contenido del archivo descargado en su interior.<br>Una vez instalado iniciamos SDR# y abrimos el plugin.</p>
-<img src="/2021/12/23/seguimiento-satelites-gpredict/GpredictConnector-disabled.png" class="" width="300" title="SDR# - GpredictConnector">
-
-<p>Ahora marcamos <em>enable</em> para ponerlo a la escucha.</p>
-<img src="/2021/12/23/seguimiento-satelites-gpredict/GpredictConnector-listening.png" class="" width="300" title="SDR# - GpredictConnector listening">
-
-<p>Cuando conectemos desde Gpredict veremos que aparece <em>connected</em> y la frecuencia a la que debe sintonizar.</p>
-<img src="/2021/12/23/seguimiento-satelites-gpredict/GpredictConnector-connected.png" class="" width="300" title="SDR# - GpredictConnector connected">
-
-
-<h3 id="SDR-1"><a href="#SDR-1" class="headerlink" title="SDR++"></a>SDR++</h3><p>En el caso de SDR++ ya viene incluido un módulo para poder conectar Gpredict. Lo único que debemos hacer es hacer clic en <em>“Start”</em> en el módulo <strong>Rigctl Server</strong> para ponerlo a la escucha.</p>
-<img src="/2021/12/23/seguimiento-satelites-gpredict/sdrpp-listening.png" class="" width="300" title="SDR++ - Rigctl listening">
-
-<p>Una vez conectado veremos que aparece <em>Connected</em>.</p>
-<img src="/2021/12/23/seguimiento-satelites-gpredict/sdrpp-connected.png" class="" width="300" title="SDR++ - Rigctl connected">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Gpredict</tag>
-        <tag>Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Seguimiento de satélites con Orbitron</title>
-    <url>/2020/01/23/seguimiento-satelites-orbitron/</url>
-    <content><![CDATA[<p>Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.<br>Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion-de-Orbitron"><a href="#Instalacion-de-Orbitron" class="headerlink" title="Instalación de Orbitron"></a>Instalación de Orbitron</h2><p>El primer paso es descargar Orbitron desde su web: <a href="http://www.stoff.pl/downloads.php">http://www.stoff.pl/downloads.php</a></p>
-<p>Tenemos la opción de descargarnos el instalador o un archivo ZIP. En este ejemplo vamos a descargar el ZIP y lo vamos a extraer en el directorio <em>C:\SDR\Orbitron</em>.</p>
-<p>Ejecutamos ahora el programa haciendo doble clic en <strong>Orbitron.exe</strong> y se nos abrirá la interfaz del programa. Nos pedirá que actualicemos los archivo de TLE al iniciar, a lo que le decimos que no. Más adelante veremos qué son estos archivos y cómo actualizarlos.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron.jpg" class="" title="Orbitron">
-
-<h2 id="Configuracion-de-Orbitron"><a href="#Configuracion-de-Orbitron" class="headerlink" title="Configuración de Orbitron"></a>Configuración de Orbitron</h2><p>Vamos ahora a configurar Orbitron con los ajustes básicos.</p>
-<p>El primer ajuste es indicarle nuestra localización. Para ello vamos a la pestaña Location e introducimos nuestros datos. Si no los sabemos podemos buscar nuestra ciudad (o las más cercana) en el listado que tenemos a la derecha. Lo ideal es meter los valores más exactos posibles.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-location.jpg" class="" title="Orbitron Location">
-
-<p>Una vez los tengamos introducidos correctamente, hacemos clic en <strong>Choose</strong> para seleccionar esta ubicación.</p>
-<p>El siguiente paso es seleccionar el archivo con los TLE de los satélites que vamos a seguir.<br>Estos archivos TLE contienen un listado de objetos que orbitan la Tierra con sus respectivos elementos orbitales en formato TLE <em>(two-line element set)</em>. Con estos elementos, y usando la fórmula adecuada, podemos estimar la posición y velocidad del objeto en cualquier instante de tiempo pasado o futuro.</p>
-<p>Aquí tenemos varias opciones, utilizar los archivos TLE descargados por Orbitron, o bien crear un archivo con los satélites que nos interesen. Si optamos por la primera opción, necesitamos primeramente actualizar los archivos TLE. Para ello abrimos la ventana de ajustes de Orbitron presionando las teclas <strong><em>Alt+F5</em></strong>, o bien hacemos clic en el siguiente punto y seleccionamos <strong>Setup</strong>:</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-setup.jpg" class="" title="Orbitron Setup">
-
-<p>Vamos a la pestaña <strong>TLE updater</strong> y hacemos clic en el siguiente icono:</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/setup-tle.jpg" class="" title="Actualizar TLE">
-
-<p>Una vez se actualicen los archivos, cerramos esa ventana y hacemos clic en <strong>Load TLE</strong> y seleccionamos el archivo que contenga los satélites que queremos seguir. En este caso vamos a elegir un archivo que contiene los TLE de algunos satélites que nos interesan.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/load-tle.jpg" class="" title="Cargar archivo">
-
-<p>Ahora bastaría con ir seleccionando los satélites que queremos seguir y se mostrarán sobre el mapa.</p>
-<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-loaded.jpg" class="" title="Orbitron">
-
-<p>En siguientes tutoriales veremos cómo conectar Orbitron con SDR# para realizar seguimientos automáticos.</p>
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Orbitron</tag>
-        <tag>Tracking</tag>
       </tags>
   </entry>
   <entry>
@@ -3132,6 +3005,133 @@
         <tag>ATC</tag>
         <tag>ADS-B</tag>
         <tag>dump1090</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Seguimiento de satélites con Gpredict</title>
+    <url>/2021/12/23/seguimiento-satelites-gpredict/</url>
+    <content><![CDATA[<p><a href="http://gpredict.oz9aec.net/">Gpredict</a> es un programa para el seguimiento en tiempo real y predicción de órbitas para satélites. Este programa es muy similar a Orbitron, el cual ya vimos cómo instalar y configurar en el artículo <a href="/2020/01/23/seguimiento-satelites-orbitron">“Seguimiento de satélites con Orbitron”</a>. Pero al contrario de este, Gpredict es multiplataforma, por lo que podremos usarlo en diferentes sistemas operativos.<br>En este artículo veremos como instalar y configurar Gpredict en Windows, Linux y macOS.</p>
+<span id="more"></span>
+
+<h2 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalación"></a>Instalación</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>Para instalar Gpredict en Windows bastará con descargar el archivo comprimido con los binarios desde cualquiera de los repositorios siguientes:</p>
+<ul>
+<li><a href="https://github.com/csete/gpredict/releases/latest">GitHub</a></li>
+<li><a href="https://sourceforge.net/projects/gpredict/">Sourceforge</a></li>
+</ul>
+<p>Una vez descargado el archivo extraemos su contenido en la ubicación deseada y lo iniciamos desde el archivo ejecutable.</p>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>En Linux podemos instalarlo desde consola usando el gestor de paquetes de nuestra distribución. Para Debian/Ubuntu usaremos el siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install gpredict</span><br></pre></td></tr></table></figure>
+
+<p>Para iniciarlo podemos buscarlos en el listado de programas instalados o hacerlo desde una terminal.</p>
+<h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><p>Para instalar Gpredict en macOS necesitamos un gestor de paquetes como por ejemplo <a href="https://brew.sh/index_es">Homebrew</a>. Si ya lo tenemos, bastaría con ejecutar el siguiente comando:</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">brew install gpredict</span><br></pre></td></tr></table></figure>
+
+<p>Para iniciar Gpredict debemos usar una terminal:</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">gpredict</span><br></pre></td></tr></table></figure>
+
+
+<img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict.jpg" class="" width="800" title="Gpredict">
+
+
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>Una vez tenemos Gpredict instalado e iniciado, seguimos los pasos enumerados a continuación para actualizarlo y configurarlo.</p>
+<ol>
+<li><p>El primer paso es descargarnos los archivos TLE actualizados para poder realizar el cálculo de las órbitas correctamente. Es recomendable realizar esta actualización regularmente para tener siempre las correcciones lo más exactas posibles.<br>Para ello vamos a <em>“Edit”</em> y seleccionamos <em>“Update TLE data from network”</em>. Esto inicia el proceso de descarga de los archivos TLE más recientes.</p>
+ <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-update-tle.jpg" class="" width="300" title="Gpredict - Update TLE"></li>
+</ol>
+<ol start="2">
+<li><p>A continuación descargamos los datos de los transpondedores activos de cada satélite. Esto incorpora las frecuencias en las que emite cada satélite para que solo tengamos que seleccionarlas. Para descargarlos vamos a <em>“Edit”</em> y hacemos clic en <em>“Update transponder data”</em>.</p>
+ <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-update-tp.jpg" class="" width="300" title="Gpredict - Update transponder"></li>
+</ol>
+<ol start="3">
+<li><p>El siguiente paso es configurar nuestra posición. Para ello vamos a <em>“Edit”</em> y hacemos clic en <em>“Preferences”</em>. Ahora se nos abre una nueva ventana en la que seleccionamos <em>“Ground Stations”</em>. Para añadir los datos de nuestra <em>ground station</em> hacemos clic en <em>“Add new”</em>.</p>
+ <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-config-qth.jpg" class="" width="800" title="Gpredict - Ground station">
+
+<p> En la nueva ventana que aparece introducimos los datos de nuestra ubicación y guardamos haciendo clic en <em>“OK”</em>. Si no conocemos los datos, podemos buscar nuestra población haciendo clic en <em>“Select”</em>. Esto nos auto-completará todos los datos aunque no sean los más exactos.</p>
+ <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-config-qth-new.jpg" class="" width="800" title="Gpredict - Ground station">
+
+<p> Por último, eliminamos la <em>ground station</em> que viene por defecto para dejar la nuestra marcada por defecto.</p>
+ <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-config-qth-delete.jpg" class="" width="800" title="Gpredict - Ground station"></li>
+</ol>
+<ol start="4">
+<li><p>Ahora vamos a configurar la conexión con programas externos para que podamos realizar el tracking de forma automática en nuestro programa de SDR. Para ello vamos a <em>“Interfaces”</em>, <em>“Radios”</em> y  hacemos clic en <em>“Add new”</em>.</p>
+ <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-radios.jpg" class="" width="800" title="Gpredict - Radios">
+
+<p> Introducimos el nombre que queramos y guardamos haciendo clic en <em>“Ok”</em>.</p>
+ <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-radios-new.jpg" class="" width="800" title="Gpredict - Radios"></li>
+</ol>
+<ol start="5">
+<li><p>Para finalizar, vamos a seleccionar ahora que satélites vamos a seguir. Para ello hacemos clic en el botón indicado en la siguiente captura y después en <em>“Configure”</em>. En Linux el botón puede aparecer con un icono distinto.</p>
+ <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-configure.jpg" class="" width="300" title="Gpredict - configurar">
+
+<p> A continuación iremos buscando y añadiendo los satélites deseados a la lista.</p>
+ <img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-sats.jpg" class="" width="800" title="Gpredict - configurar satélites"></li>
+</ol>
+<h2 id="Conectar-con-programas-de-SDR"><a href="#Conectar-con-programas-de-SDR" class="headerlink" title="Conectar con programas de SDR"></a>Conectar con programas de SDR</h2><p>Para realizar la correción en nuestros programas de SDR tenemos que conectar Gpredict a estos. Para ello necesitamos que nuestro programa tenga el servicio a la escucha para que Gpredict pueda enviarle la frecuencia que debe sintonizar en cada momento. En el siguiente punto veremos como habilitar este servicio en SDR# y SDR++. Si ya tenemos el programa preparado, abrimos el control de radio de Gpredict desde el icono indicado en la siguiente captura y hacemos clic en <em>“Radio Control”</em>.</p>
+<img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-radio-control.jpg" class="" width="300" title="Gpredict - Radio control">
+
+<p>Ahora seleccionamos el satélite y la frecuencia y hacemos clic en <em>“Track”</em> para iniciar la corrección, y posteriormente seleccionamos la radio y hacemos clic en <em>“Engage”</em> para conectar con el programa SDR.</p>
+<img src="/2021/12/23/seguimiento-satelites-gpredict/Gpredict-radio-control-2.jpg" class="" width="800" title="Gpredict - Radio control">
+
+<p>Si todo ha ido bien, veremos que la frecuencia se va moviendo en programa para corregir el efecto <em>Doppler</em> de la señal del satélite.</p>
+<h3 id="SDR"><a href="#SDR" class="headerlink" title="SDR#"></a>SDR#</h3><p>Para conectar Gpredict con SDR# vamos a usar el plugin <strong>GpredictConnector</strong> que podemos descargar desde el siguiente repositorio:</p>
+<p><a href="https://github.com/alexwahl/SDRSharp.GpredictConnector/releases/latest"><center>Releases GpredictConnector</center></a></p>
+<p>El proceso para instalarlo es el mismo que para cualquier otro plugin de SDR#. Creamos una carpeta dentro de <em>Plugins</em> e introducimos el contenido del archivo descargado en su interior.<br>Una vez instalado iniciamos SDR# y abrimos el plugin.</p>
+<img src="/2021/12/23/seguimiento-satelites-gpredict/GpredictConnector-disabled.png" class="" width="300" title="SDR# - GpredictConnector">
+
+<p>Ahora marcamos <em>enable</em> para ponerlo a la escucha.</p>
+<img src="/2021/12/23/seguimiento-satelites-gpredict/GpredictConnector-listening.png" class="" width="300" title="SDR# - GpredictConnector listening">
+
+<p>Cuando conectemos desde Gpredict veremos que aparece <em>connected</em> y la frecuencia a la que debe sintonizar.</p>
+<img src="/2021/12/23/seguimiento-satelites-gpredict/GpredictConnector-connected.png" class="" width="300" title="SDR# - GpredictConnector connected">
+
+
+<h3 id="SDR-1"><a href="#SDR-1" class="headerlink" title="SDR++"></a>SDR++</h3><p>En el caso de SDR++ ya viene incluido un módulo para poder conectar Gpredict. Lo único que debemos hacer es hacer clic en <em>“Start”</em> en el módulo <strong>Rigctl Server</strong> para ponerlo a la escucha.</p>
+<img src="/2021/12/23/seguimiento-satelites-gpredict/sdrpp-listening.png" class="" width="300" title="SDR++ - Rigctl listening">
+
+<p>Una vez conectado veremos que aparece <em>Connected</em>.</p>
+<img src="/2021/12/23/seguimiento-satelites-gpredict/sdrpp-connected.png" class="" width="300" title="SDR++ - Rigctl connected">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Gpredict</tag>
+        <tag>Tracking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Seguimiento de satélites con Orbitron</title>
+    <url>/2020/01/23/seguimiento-satelites-orbitron/</url>
+    <content><![CDATA[<p>Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.<br>Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.</p>
+<span id="more"></span>
+
+<h2 id="Instalacion-de-Orbitron"><a href="#Instalacion-de-Orbitron" class="headerlink" title="Instalación de Orbitron"></a>Instalación de Orbitron</h2><p>El primer paso es descargar Orbitron desde su web: <a href="http://www.stoff.pl/downloads.php">http://www.stoff.pl/downloads.php</a></p>
+<p>Tenemos la opción de descargarnos el instalador o un archivo ZIP. En este ejemplo vamos a descargar el ZIP y lo vamos a extraer en el directorio <em>C:\SDR\Orbitron</em>.</p>
+<p>Ejecutamos ahora el programa haciendo doble clic en <strong>Orbitron.exe</strong> y se nos abrirá la interfaz del programa. Nos pedirá que actualicemos los archivo de TLE al iniciar, a lo que le decimos que no. Más adelante veremos qué son estos archivos y cómo actualizarlos.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron.jpg" class="" title="Orbitron">
+
+<h2 id="Configuracion-de-Orbitron"><a href="#Configuracion-de-Orbitron" class="headerlink" title="Configuración de Orbitron"></a>Configuración de Orbitron</h2><p>Vamos ahora a configurar Orbitron con los ajustes básicos.</p>
+<p>El primer ajuste es indicarle nuestra localización. Para ello vamos a la pestaña Location e introducimos nuestros datos. Si no los sabemos podemos buscar nuestra ciudad (o las más cercana) en el listado que tenemos a la derecha. Lo ideal es meter los valores más exactos posibles.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-location.jpg" class="" title="Orbitron Location">
+
+<p>Una vez los tengamos introducidos correctamente, hacemos clic en <strong>Choose</strong> para seleccionar esta ubicación.</p>
+<p>El siguiente paso es seleccionar el archivo con los TLE de los satélites que vamos a seguir.<br>Estos archivos TLE contienen un listado de objetos que orbitan la Tierra con sus respectivos elementos orbitales en formato TLE <em>(two-line element set)</em>. Con estos elementos, y usando la fórmula adecuada, podemos estimar la posición y velocidad del objeto en cualquier instante de tiempo pasado o futuro.</p>
+<p>Aquí tenemos varias opciones, utilizar los archivos TLE descargados por Orbitron, o bien crear un archivo con los satélites que nos interesen. Si optamos por la primera opción, necesitamos primeramente actualizar los archivos TLE. Para ello abrimos la ventana de ajustes de Orbitron presionando las teclas <strong><em>Alt+F5</em></strong>, o bien hacemos clic en el siguiente punto y seleccionamos <strong>Setup</strong>:</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-setup.jpg" class="" title="Orbitron Setup">
+
+<p>Vamos a la pestaña <strong>TLE updater</strong> y hacemos clic en el siguiente icono:</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/setup-tle.jpg" class="" title="Actualizar TLE">
+
+<p>Una vez se actualicen los archivos, cerramos esa ventana y hacemos clic en <strong>Load TLE</strong> y seleccionamos el archivo que contenga los satélites que queremos seguir. En este caso vamos a elegir un archivo que contiene los TLE de algunos satélites que nos interesan.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/load-tle.jpg" class="" title="Cargar archivo">
+
+<p>Ahora bastaría con ir seleccionando los satélites que queremos seguir y se mostrarán sobre el mapa.</p>
+<img src="/2020/01/23/seguimiento-satelites-orbitron/orbitron-loaded.jpg" class="" title="Orbitron">
+
+<p>En siguientes tutoriales veremos cómo conectar Orbitron con SDR# para realizar seguimientos automáticos.</p>
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Orbitron</tag>
+        <tag>Tracking</tag>
       </tags>
   </entry>
 </search>
