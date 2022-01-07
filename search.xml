@@ -713,6 +713,90 @@
       </tags>
   </entry>
   <entry>
+    <title>Instalación de dispositivos RTL-SDR en macOS</title>
+    <url>/instalacion-rtlsdr-macos/</url>
+    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en macOS. También veremos como instalar CubicSDR para poder usarlo.</p>
+<span id="more"></span>
+
+<h2 id="Instalacion-de-los-drivers"><a href="#Instalacion-de-los-drivers" class="headerlink" title="Instalación de los drivers"></a>Instalación de los drivers</h2><p>Para poder instalar los drivers necesitamos tener instalado previamente un gestor de paquetes. El más conocido y recomendado es <strong>Homebrew</strong>. Si no lo tenemos aún instalado podemos seguir los pasos descritos en su página web:</p>
+<p><a href="https://brew.sh/index_es"><center>https://brew.sh/index_es</center></a></p>
+<p>Si ya lo tenemos instalado, procedemos a instalar los drivers ejecutando el siguiente comando desde la consola.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install rtl-sdr</span><br></pre></td></tr></table></figure>
+
+<p>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para comprobar que se ha instalado correctamente.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
+
+<p>Si todo ha ido bien, tendremos una salida como la siguiente.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br></pre></td></tr></table></figure>
+
+<h2 id="Instalacion-de-CubicSDR"><a href="#Instalacion-de-CubicSDR" class="headerlink" title="Instalación de CubicSDR"></a>Instalación de CubicSDR</h2><p><a href="https://cubicsdr.com/">CubicSDR</a> es una aplicación multiplataforma para SDR que nos permite navegar por el espectro radioeléctrico de forma visual y demodular señales de forma sencilla.</p>
+<p>Para descargar CubicSDR debemos ir a su repositorio en GitHub y descargar la última versión disponible para macOS. Para ello accedemos su repositorio a través del siguiente enlace y descargamos el instalador para macOS.</p>
+<p><a href="https://github.com/cjcliffe/CubicSDR/releases"><center>https://github.com/cjcliffe/CubicSDR/releases</center></a></p>
+<img src="/instalacion-rtlsdr-macos/download_cubicsdr.png" class="" width="700" title="Descarga de CubicSDR">
+
+<p>Una vez descargado, lo ejecutamos y en la ventana que aparece arrastramos el binario a nuestro directorio de aplicaciones.</p>
+<img src="/instalacion-rtlsdr-macos/install_cubicsdr.png" class="" width="700" title="Instalación de CubicSDR">
+
+<p>Ahora ejecutamos CubicSDR desde las aplicaciones instaladas para iniciarlo. Nos mostrará una ventana como la siguiente en la que debemos seleccionar nuestro dispositivo SDR y hacemos clic en <em>Start</em>.</p>
+<img src="/instalacion-rtlsdr-macos/cubicsdr_devices.png" class="" width="700" title="Configuración de CubicSDR">
+
+<p>Finalmente, CubicSDR se iniciará y ya podremos utilizarlo.</p>
+<img src="/instalacion-rtlsdr-macos/cubicsdr.png" class="" width="900" title="CubicSDR">
+
+<p>CubicSDR también nos permite sacar el audio demodulado para poder usarlo con otros programas. Podemos seguir los pasos descritos en el tutorial <a href="/instalacion-virtual-cable-audio/">“Instalación de cable de audio virtual”</a> para configurarlo.</p>
+]]></content>
+      <tags>
+        <tag>RTL-SDR</tag>
+        <tag>macOS</tag>
+        <tag>CubicSDR</tag>
+        <tag>Instalación</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalación de dispositivos RTL-SDR en Raspberry Pi</title>
+    <url>/instalacion-rtlsdr-raspberrypi/</url>
+    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.</p>
+<span id="more"></span>
+
+<img src="/instalacion-rtlsdr-raspberrypi/raspberry-pi-3.png" class="" title="Raspberry Pi 3">
+
+<p>Vamos a instalar los drivers y librerias necesarias para usar el dispositivo SDR. Para ello ejecutamos el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install rtl-sdr librtlsdr-dev</span><br></pre></td></tr></table></figure>
+
+<p>Una vez instalado el dispositivo le daremos permisos a los usuarios no <em>root</em> para poder usar el dispositivo. Para ello seguiremos los siguientes pasos para crear una regla <em>udev</em>.</p>
+<ol>
+<li>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para obtener la lista de dispositivos USB conectados:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lsusb</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Buscamos en la lista el dispositivo SDR y nos fijamos en los identificadores de fabricante y de dispositivo. En este caso son <strong>0bda</strong> y <strong>2838</strong> respectivamente.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Bus 001 Device 004: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Ahora creamos un archivo de reglas nuevo:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;udev&#x2F;rules.d&#x2F;rtl-sdr.rules</span><br></pre></td></tr></table></figure>
+
+<p>Y añadimos la siguiente regla modificando los identificadores si fuese necesario para que correspondan con los obtenidos en el paso anterior:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">SUBSYSTEMS==<span class="string">&quot;usb&quot;</span>, ATTRS&#123;idVendor&#125;==<span class="string">&quot;0bda&quot;</span>, ATTRS&#123;idProduct&#125;==<span class="string">&quot;2838&quot;</span>, MODE:=<span class="string">&quot;0666&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Por último desconectamos el dispostivo SDR y lo volvemos a conectar para que se aplique la regla y ejecutamos el siguiente comando para comprobar que el dispositivo funciona correctamente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
+
+<p>Si todo está correctamente instalado veremos una salida como la siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 82020715</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Detached kernel driver</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br><span class="line">Allocating 15 zero-copy buffers</span><br><span class="line">lost at least 140 bytes</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>RTL-SDR</tag>
+        <tag>Linux</tag>
+        <tag>Raspberry Pi</tag>
+        <tag>Instalación</tag>
+        <tag>SDRSharp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Instalación de dispositivos RTL-SDR en Windows</title>
     <url>/instalacion-rtlsdr-windows/</url>
     <content><![CDATA[<p>En este tutorial vamos a ver como instalar nuestro nuevo dispositivo RTL-SDR en Windows 10.</p>
@@ -814,93 +898,9 @@
 ]]></content>
       <tags>
         <tag>RTL-SDR</tag>
+        <tag>Instalación</tag>
         <tag>SDRSharp</tag>
         <tag>Windows</tag>
-        <tag>Instalación</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de dispositivos RTL-SDR en macOS</title>
-    <url>/instalacion-rtlsdr-macos/</url>
-    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en macOS. También veremos como instalar CubicSDR para poder usarlo.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion-de-los-drivers"><a href="#Instalacion-de-los-drivers" class="headerlink" title="Instalación de los drivers"></a>Instalación de los drivers</h2><p>Para poder instalar los drivers necesitamos tener instalado previamente un gestor de paquetes. El más conocido y recomendado es <strong>Homebrew</strong>. Si no lo tenemos aún instalado podemos seguir los pasos descritos en su página web:</p>
-<p><a href="https://brew.sh/index_es"><center>https://brew.sh/index_es</center></a></p>
-<p>Si ya lo tenemos instalado, procedemos a instalar los drivers ejecutando el siguiente comando desde la consola.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install rtl-sdr</span><br></pre></td></tr></table></figure>
-
-<p>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para comprobar que se ha instalado correctamente.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
-
-<p>Si todo ha ido bien, tendremos una salida como la siguiente.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br></pre></td></tr></table></figure>
-
-<h2 id="Instalacion-de-CubicSDR"><a href="#Instalacion-de-CubicSDR" class="headerlink" title="Instalación de CubicSDR"></a>Instalación de CubicSDR</h2><p><a href="https://cubicsdr.com/">CubicSDR</a> es una aplicación multiplataforma para SDR que nos permite navegar por el espectro radioeléctrico de forma visual y demodular señales de forma sencilla.</p>
-<p>Para descargar CubicSDR debemos ir a su repositorio en GitHub y descargar la última versión disponible para macOS. Para ello accedemos su repositorio a través del siguiente enlace y descargamos el instalador para macOS.</p>
-<p><a href="https://github.com/cjcliffe/CubicSDR/releases"><center>https://github.com/cjcliffe/CubicSDR/releases</center></a></p>
-<img src="/instalacion-rtlsdr-macos/download_cubicsdr.png" class="" width="700" title="Descarga de CubicSDR">
-
-<p>Una vez descargado, lo ejecutamos y en la ventana que aparece arrastramos el binario a nuestro directorio de aplicaciones.</p>
-<img src="/instalacion-rtlsdr-macos/install_cubicsdr.png" class="" width="700" title="Instalación de CubicSDR">
-
-<p>Ahora ejecutamos CubicSDR desde las aplicaciones instaladas para iniciarlo. Nos mostrará una ventana como la siguiente en la que debemos seleccionar nuestro dispositivo SDR y hacemos clic en <em>Start</em>.</p>
-<img src="/instalacion-rtlsdr-macos/cubicsdr_devices.png" class="" width="700" title="Configuración de CubicSDR">
-
-<p>Finalmente, CubicSDR se iniciará y ya podremos utilizarlo.</p>
-<img src="/instalacion-rtlsdr-macos/cubicsdr.png" class="" width="900" title="CubicSDR">
-
-<p>CubicSDR también nos permite sacar el audio demodulado para poder usarlo con otros programas. Podemos seguir los pasos descritos en el tutorial <a href="/instalacion-virtual-cable-audio/">“Instalación de cable de audio virtual”</a> para configurarlo.</p>
-]]></content>
-      <tags>
-        <tag>RTL-SDR</tag>
-        <tag>Instalación</tag>
-        <tag>macOS</tag>
-        <tag>CubicSDR</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de dispositivos RTL-SDR en Raspberry Pi</title>
-    <url>/instalacion-rtlsdr-raspberrypi/</url>
-    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.</p>
-<span id="more"></span>
-
-<img src="/instalacion-rtlsdr-raspberrypi/raspberry-pi-3.png" class="" title="Raspberry Pi 3">
-
-<p>Vamos a instalar los drivers y librerias necesarias para usar el dispositivo SDR. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install rtl-sdr librtlsdr-dev</span><br></pre></td></tr></table></figure>
-
-<p>Una vez instalado el dispositivo le daremos permisos a los usuarios no <em>root</em> para poder usar el dispositivo. Para ello seguiremos los siguientes pasos para crear una regla <em>udev</em>.</p>
-<ol>
-<li>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para obtener la lista de dispositivos USB conectados:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lsusb</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Buscamos en la lista el dispositivo SDR y nos fijamos en los identificadores de fabricante y de dispositivo. En este caso son <strong>0bda</strong> y <strong>2838</strong> respectivamente.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Bus 001 Device 004: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Ahora creamos un archivo de reglas nuevo:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;udev&#x2F;rules.d&#x2F;rtl-sdr.rules</span><br></pre></td></tr></table></figure>
-
-<p>Y añadimos la siguiente regla modificando los identificadores si fuese necesario para que correspondan con los obtenidos en el paso anterior:</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">SUBSYSTEMS==<span class="string">&quot;usb&quot;</span>, ATTRS&#123;idVendor&#125;==<span class="string">&quot;0bda&quot;</span>, ATTRS&#123;idProduct&#125;==<span class="string">&quot;2838&quot;</span>, MODE:=<span class="string">&quot;0666&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>Por último desconectamos el dispostivo SDR y lo volvemos a conectar para que se aplique la regla y ejecutamos el siguiente comando para comprobar que el dispositivo funciona correctamente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
-
-<p>Si todo está correctamente instalado veremos una salida como la siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 82020715</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Detached kernel driver</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br><span class="line">Allocating 15 zero-copy buffers</span><br><span class="line">lost at least 140 bytes</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>RTL-SDR</tag>
-        <tag>Linux</tag>
-        <tag>Raspberry Pi</tag>
-        <tag>SDRSharp</tag>
-        <tag>Instalación</tag>
       </tags>
   </entry>
   <entry>
@@ -1250,9 +1250,9 @@
 ]]></content>
       <tags>
         <tag>Linux</tag>
-        <tag>Windows</tag>
-        <tag>Instalación</tag>
         <tag>macOS</tag>
+        <tag>Instalación</tag>
+        <tag>Windows</tag>
         <tag>SDR++</tag>
       </tags>
   </entry>
@@ -1314,74 +1314,9 @@
         <tag>RTL-SDR</tag>
         <tag>Linux</tag>
         <tag>Raspberry Pi</tag>
-        <tag>SDRSharp</tag>
         <tag>Instalación</tag>
+        <tag>SDRSharp</tag>
         <tag>SPY Server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de mensajes Inmarsat Aero</title>
-    <url>/recepcion-aero-inmarsat/</url>
-    <content><![CDATA[<p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
-<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a href="https://es.wikipedia.org/wiki/ACARS">ACARS</a>, ADS-C, fax y voz digital.</p>
-<span id="more"></span>
-
-<p>Para decodificar este protocolo utilizaremos el software Open Source <strong>JAERO</strong>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://github.com/jontio/JAERO/releases/download/v1.0.4.11/JAERO-x64-setup.exe"><center>JAERO x64 v1.0.4.11</center></a></p>
-<p>Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos clic en <em>Tools</em> y en <em>Settings</em>. Esto abre la ventana de ajustes de JAERO.</p>
-<img src="/recepcion-aero-inmarsat/jaero_config.jpg" class="" title="Configuración JAERO">
-
-<p>El primer ajuste es indicarle en el apartado de <em>Soundcard</em> que le vamos a pasar el audio desde SDR# por el cable de audio virtual.<br>El siguiente ajuste es indicarle la ubicación de la base de datos con los datos de las aeronaves. Para ello en el apartado <em>Database</em> nos aseguramos de que la ruta es correcta y le damos a <strong>Download</strong> para que se descargue una base de datos actualizada. Si todo ha ido bien, deberíamos tener un archivo CSV con los datos en la ruta indicada.</p>
-<p>Para recibir datos bastaría con sintonizar SDR# en la frecuencia requerida y ajustar JAERO para que decodifique los mensajes.</p>
-<p>Inmarsat emite la señal en diferentes modulaciones y frecuencias. A continuación veremos ejemplos cada una.</p>
-<h2 id="Aero-600-bps"><a href="#Aero-600-bps" class="headerlink" title="Aero 600 bps"></a>Aero 600 bps</h2><ul>
-<li><strong>Modulación:</strong> Aviation-BPSK.</li>
-<li><strong>Ancho de banda:</strong> 800 Hz.</li>
-<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
-</ul>
-<img src="/recepcion-aero-inmarsat/acars_600_sdr.jpg" class="" title="AERO 600 bps">
-</br>
-<img src="/recepcion-aero-inmarsat/acars_600_jaero.jpg" class="" title="AERO 600 bps">
-</br>
-<img src="/recepcion-aero-inmarsat/acars_600_planelog.jpg" class="" title="AERO 600 bps planelog">
-
-
-<h2 id="Aero-1200-bps"><a href="#Aero-1200-bps" class="headerlink" title="Aero 1200 bps"></a>Aero 1200 bps</h2><ul>
-<li><strong>Modulación:</strong> Aviation-BPSK.</li>
-<li><strong>Ancho de banda:</strong> 1600 Hz.</li>
-<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
-</ul>
-<img src="/recepcion-aero-inmarsat/acars_1200_sdr.jpg" class="" title="AERO 1200 bps">
-</br>
-<img src="/recepcion-aero-inmarsat/acars_1200_jaero.jpg" class="" title="AERO 1200 bps">
-
-
-<h2 id="Aero-H-Aero-H"><a href="#Aero-H-Aero-H" class="headerlink" title="Aero-H, Aero-H+"></a>Aero-H, Aero-H+</h2><ul>
-<li><strong>Modulación:</strong> Aviation-QPSK</li>
-<li><strong>Ancho de banda:</strong> 10,5 KHz</li>
-<li><strong>Frecuencia:</strong> 1546,0 - 1546,2 MHz (IOR).</li>
-</ul>
-<img src="/recepcion-aero-inmarsat/aero_sdr.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/recepcion-aero-inmarsat/aero_jaero.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/recepcion-aero-inmarsat/aero_planelog.jpg" class="" title="AERO 10.5k planelog">
-
-
-<h2 id="Voz-Digital"><a href="#Voz-Digital" class="headerlink" title="Voz Digital"></a>Voz Digital</h2><ul>
-<li><strong>Modulación:</strong> Aviation-QPSK.</li>
-<li><strong>Ancho de banda:</strong> 6 KHz.</li>
-<li><strong>Frecuencia:</strong> 1546,13 - 1546,18 MHz (IOR).</li>
-</ul>
-<img src="/recepcion-aero-inmarsat/aero_call_sdr.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/recepcion-aero-inmarsat/aero_call_jaero.jpg" class="" title="AERO 10.5k">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>ATC</tag>
-        <tag>Inmarsat</tag>
-        <tag>L-Band</tag>
       </tags>
   </entry>
   <entry>
@@ -1423,9 +1358,9 @@
 <p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
 ]]></content>
       <tags>
-        <tag>Windows</tag>
-        <tag>Instalación</tag>
         <tag>macOS</tag>
+        <tag>Instalación</tag>
+        <tag>Windows</tag>
         <tag>Virtual Audio Cable</tag>
       </tags>
   </entry>
@@ -1546,6 +1481,71 @@
       <tags>
         <tag>Satélites</tag>
         <tag>KISS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de mensajes Inmarsat Aero</title>
+    <url>/recepcion-aero-inmarsat/</url>
+    <content><![CDATA[<p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
+<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a href="https://es.wikipedia.org/wiki/ACARS">ACARS</a>, ADS-C, fax y voz digital.</p>
+<span id="more"></span>
+
+<p>Para decodificar este protocolo utilizaremos el software Open Source <strong>JAERO</strong>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://github.com/jontio/JAERO/releases/download/v1.0.4.11/JAERO-x64-setup.exe"><center>JAERO x64 v1.0.4.11</center></a></p>
+<p>Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos clic en <em>Tools</em> y en <em>Settings</em>. Esto abre la ventana de ajustes de JAERO.</p>
+<img src="/recepcion-aero-inmarsat/jaero_config.jpg" class="" title="Configuración JAERO">
+
+<p>El primer ajuste es indicarle en el apartado de <em>Soundcard</em> que le vamos a pasar el audio desde SDR# por el cable de audio virtual.<br>El siguiente ajuste es indicarle la ubicación de la base de datos con los datos de las aeronaves. Para ello en el apartado <em>Database</em> nos aseguramos de que la ruta es correcta y le damos a <strong>Download</strong> para que se descargue una base de datos actualizada. Si todo ha ido bien, deberíamos tener un archivo CSV con los datos en la ruta indicada.</p>
+<p>Para recibir datos bastaría con sintonizar SDR# en la frecuencia requerida y ajustar JAERO para que decodifique los mensajes.</p>
+<p>Inmarsat emite la señal en diferentes modulaciones y frecuencias. A continuación veremos ejemplos cada una.</p>
+<h2 id="Aero-600-bps"><a href="#Aero-600-bps" class="headerlink" title="Aero 600 bps"></a>Aero 600 bps</h2><ul>
+<li><strong>Modulación:</strong> Aviation-BPSK.</li>
+<li><strong>Ancho de banda:</strong> 800 Hz.</li>
+<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
+</ul>
+<img src="/recepcion-aero-inmarsat/acars_600_sdr.jpg" class="" title="AERO 600 bps">
+</br>
+<img src="/recepcion-aero-inmarsat/acars_600_jaero.jpg" class="" title="AERO 600 bps">
+</br>
+<img src="/recepcion-aero-inmarsat/acars_600_planelog.jpg" class="" title="AERO 600 bps planelog">
+
+
+<h2 id="Aero-1200-bps"><a href="#Aero-1200-bps" class="headerlink" title="Aero 1200 bps"></a>Aero 1200 bps</h2><ul>
+<li><strong>Modulación:</strong> Aviation-BPSK.</li>
+<li><strong>Ancho de banda:</strong> 1600 Hz.</li>
+<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
+</ul>
+<img src="/recepcion-aero-inmarsat/acars_1200_sdr.jpg" class="" title="AERO 1200 bps">
+</br>
+<img src="/recepcion-aero-inmarsat/acars_1200_jaero.jpg" class="" title="AERO 1200 bps">
+
+
+<h2 id="Aero-H-Aero-H"><a href="#Aero-H-Aero-H" class="headerlink" title="Aero-H, Aero-H+"></a>Aero-H, Aero-H+</h2><ul>
+<li><strong>Modulación:</strong> Aviation-QPSK</li>
+<li><strong>Ancho de banda:</strong> 10,5 KHz</li>
+<li><strong>Frecuencia:</strong> 1546,0 - 1546,2 MHz (IOR).</li>
+</ul>
+<img src="/recepcion-aero-inmarsat/aero_sdr.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/recepcion-aero-inmarsat/aero_jaero.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/recepcion-aero-inmarsat/aero_planelog.jpg" class="" title="AERO 10.5k planelog">
+
+
+<h2 id="Voz-Digital"><a href="#Voz-Digital" class="headerlink" title="Voz Digital"></a>Voz Digital</h2><ul>
+<li><strong>Modulación:</strong> Aviation-QPSK.</li>
+<li><strong>Ancho de banda:</strong> 6 KHz.</li>
+<li><strong>Frecuencia:</strong> 1546,13 - 1546,18 MHz (IOR).</li>
+</ul>
+<img src="/recepcion-aero-inmarsat/aero_call_sdr.jpg" class="" title="AERO 10.5k">
+</br>
+<img src="/recepcion-aero-inmarsat/aero_call_jaero.jpg" class="" title="AERO 10.5k">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>ATC</tag>
+        <tag>Inmarsat</tag>
+        <tag>L-Band</tag>
       </tags>
   </entry>
   <entry>
@@ -1691,72 +1691,6 @@
       <tags>
         <tag>Satélites</tag>
         <tag>PACSAT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción del satélite FUNcube-1</title>
-    <url>/recepcion-funcube1/</url>
-    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
-<span id="more"></span>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>FUNcube-1 (AO-73)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>AMSAT-UK</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>39444</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2013-066AE</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (0,98 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>21 de Noviembre de 2013</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145,935 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
-
-
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
-
-<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
-
-<p><em>Mensajes:</em></p>
-<img src="/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Cubesat</tag>
       </tags>
   </entry>
   <entry>
@@ -1930,6 +1864,72 @@
 </br>
 <img src="/recepcion-jy1sat/JY1SatAudioId9.jpg" class="" title="JY1SatAudioId9">
 </br>
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Cubesat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción del satélite FUNcube-1</title>
+    <url>/recepcion-funcube1/</url>
+    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
+<span id="more"></span>
+
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>FUNcube-1 (AO-73)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>AMSAT-UK</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>39444</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2013-066AE</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (0,98 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>21 de Noviembre de 2013</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>145,935 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
+
+
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
+
+<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
+
+<p><em>Mensajes:</em></p>
+<img src="/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
 ]]></content>
       <tags>
         <tag>Satélites</tag>
@@ -2428,60 +2428,39 @@
       </tags>
   </entry>
   <entry>
-    <title>Recibir APRS</title>
-    <url>/recibir-aprs/</url>
-    <content><![CDATA[<p>APRS <em>(Automatic Packet Reporting System)</em> es un sistema de radioaficionado para comunicaciones digitales que utiliza tramas <a href="https://es.wikipedia.org/wiki/Protocolo_AX.25">AX.25</a>. Estos paquetes pueden contener cualquier tipo de mensaje, así como también telemetría y datos de estaciones meteorológicas.<br>En este artículo veremos como recibir y decodificar estos paquetes usando nuestro dispositivo SDR, tanto los provenientes desde cualquier estación terrestre como los que se pueden recibir desde la Estación Espacial Internacional.</p>
+    <title>Recibir radio digital mundial (DRM)</title>
+    <url>/recibir-drm/</url>
+    <content><![CDATA[<p><a href="https://www.drm.org/">Digital Radio Mondiale (DRM)</a>, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.<br>DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.<br>En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.</p>
 <span id="more"></span>
 
-<img src="/recibir-aprs/SDRSharp.png" class="" width="900" title="Paquete APRS en SDR#">
+<img src="/recibir-drm/logo.png" class="" width="300" title="DRM logo">
 
-<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este artículo usaremos SDR# para recibir la señal y sacar el audio mediante el <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa.</p>
-<p>Para decodificar y visualizar los paquetes de datos usaremos los programas que vamos a ver a continuación.</p>
-<h3 id="SoundModem"><a href="#SoundModem" class="headerlink" title="SoundModem"></a>SoundModem</h3><p>Para decodificar estos paquetes de datos usaremos el software <a href="http://uz7.ho.ua/packetradio.htm">Packet-Radio TNC</a> que utiliza la tarjeta de sonido de nuestro ordenador como un modem para AX.25.<br>Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="http://uz7.ho.ua/modem_beta/soundmodem113.zip"><center>Descargar SoundModem by UZ7HO</center></a></p>
-<p>Una vez descargado el archivo, extraemos su contenido en el directorio que queramos.</p>
-<p>Posteriormente ejecutamos el archivo <strong><em>soundmodem.exe</em></strong> y se nos abrirá la interfaz del programa.</p>
-<p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em> y en <strong>Input device</strong> seleccionamos el <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a>.</p>
-<p>Por último, seleccionamos el modo <strong>AFSK AX.25 1200bd</strong> en la ventana principal del programa.</p>
-<img src="/recibir-aprs/soundModemMode.png" class="" width="370" title="SoundModem">
-
-<h3 id="UISS"><a href="#UISS" class="headerlink" title="UISS"></a>UISS</h3><p>UISS es un programa que nos permite visualizar los datos contenidos en los paquetes que vamos recibiendo. Si bien el programa anterior ya nos facilita los mensajes decodificados, usaremos UISS para verlos de una forma más clara y poder aprovechar toda la información contenida en ellos.</p>
-<p>Lo primero será descargar el programa desde el siguiente enlace:</p>
-<p><a href="http://users.belgacom.net/mysoftware/UISS_Setup.exe"><center>Descargar UISS by ON6MU</center></a></p>
-<p>Una vez descargado lo ejecutamos y seguimos el asistente para instalar el programa. Durante la instalación en el paso de “Select components” nos volverá a instalar una versión antigua de SoundModem. Lo más sencillo es dejar que la instale (aunque no la vamos a utilizar) y así no tendremos que configurar nada más.</p>
-<h4 id="UISS-MapView"><a href="#UISS-MapView" class="headerlink" title="UISS-MapView"></a>UISS-MapView</h4><p>También vamos a instalar el módulo <a href="http://users.belgacom.net/hamradio/uissmodules.htm#UISSMapView">UISS-MapView</a> para UISS que nos va a permitir visualizar la posición de las estaciones que recibamos en un mapa.<br>Para instalarlo basta con descargar el módulo desde el siguiente enlace y extraerlo el directorio en el que hemos instalado UISS previamente.</p>
-<p><a href="http://www.qsl.net/on6mu/download/UIMapView_UISS_Addon.zip"><center>Descargar UISS-MapView</center></a></p>
-<p>Por último iniciamos SoundModem y después UISS. La primera vez que iniciemos UISS nos pedirá que introduzcamos nuestro indicativo, si lo tenemos, o cualquier otro texto en caso contrario ya que no vamos a emitir nada.<br>Si todo está correctamente instalado, veremos una ventana como la siguiente en la que podemos leer que UISS se ha conectado correctamente a SoundModem.</p>
-<img src="/recibir-aprs/UISS.png" class="" width="500" title="UISS">
-
-
-<h2 id="Recibir-APRS"><a href="#Recibir-APRS" class="headerlink" title="Recibir APRS"></a>Recibir APRS</h2><p>Con todo ya configurado, es el momento de comenzar a recibir paquetes de datos. Para ello iniciamos SDR# o el programa que vayamos a utilizar y sintonizamos cualquiera de las frecuencias asignadas para APRS. Para la región 1, en la que se encuentra España, tenemos las siguientes frecuencias:</p>
+<p>Encontraremos las emisiones DRM30 por debajo de los 30 MHz. Habitualmente suelen ser emisiones no continuadas, por lo que no necesariamente vamos a encontrar dichas emisiones siempre. Podemos consultar los horarios actualizados de las mismas en el siguiente enlace:</p>
+<p><a href="https://www.drm.org/what-can-i-hear/broadcast-schedule-2/"><center>DRM Broadcast Schedule</center></a></p>
+<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software <a href="https://sourceforge.net/projects/drm/">Dream AM/DRM Receiver</a> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/"><center>Dream AM/DRM Receiver</center></a></p>
+<p>Este programa está disponible para varios sistemas operativos, incluso podemos descargar el código fuente y compilarlo si queremos.<br>Para nuestro ejemplo, descargamos la versión 2.1.1 para Windows (<a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/dream-2.1.1-win32-svn808-df.zip/download">dream-2.1.1-win32-svn808-df.zip</a>). La versión 2.2 es muy similar pero presenta algunos errores de funcionamiento. Si aun así queremos probar esta versión, podemos descargarla desde <a href="https://www.reddit.com/r/RTLSDR/comments/grp6m2/dream_v221_for_windows_with_xheaac_support/">aquí</a>.</p>
+<p>Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.<br>Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos DLL y los guardamos en el directorio de Dream:</p>
 <ul>
-<li><strong>144,800 MHz</strong> (Frecuencia principal).</li>
-<li>432,500 MHz (Frecuencia alternativa).</li>
+<li><a href="faad2_drm.dll">faad2_drm.dll</a></li>
+<li><a href="libfaac.dll">libfaac.dll</a></li>
 </ul>
-<p>Para latinoamérica (región 2) la frecuencia es 144,390 MHz.</p>
-<p>Usaremos el modo <strong>WFM</strong> y un ancho de banda de <strong>10 KHz</strong>.</p>
-<p>Conforme vayan llegando paquetes veremos que se van mostrando por pantalla los mensajes.</p>
-<img src="/recibir-aprs/SoundModemDatos.png" class="" width="500" title="SoundModem">
+<p>Por último, registramos los archivos DLL en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.DLL</span><br></pre></td></tr></table></figure>
 
-<img src="/recibir-aprs/UISSDatos.png" class="" width="500" title="UISS">
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em>, <em>Sound Card</em>, <em>Signal Input</em> y en <em>Device</em> seleccionamos el <strong>cable de audio virtual</strong>.</p>
+<img src="/recibir-drm/input.png" class="" width="800" title="Entrada audio">
 
-<img src="/recibir-aprs/UISSMap.png" class="" width="500" title="UISS Mapa">
 
-<h2 id="Recibir-APRS-desde-la-ISS"><a href="#Recibir-APRS-desde-la-ISS" class="headerlink" title="Recibir APRS desde la ISS"></a>Recibir APRS desde la ISS</h2><p>La Estación Espacial Internacional (ISS por sus siglas en inglés) lleva a bordo un transpondedor que funciona como repetidor APRS, el cual podemos recibir de una forma muy similar al ejemplo anterior. En este caso la principal diferencia es que tendremos que realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;WFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;10000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145825000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
-<p>Una vez comenzamos a recibir el pase de la ISS, veremos que aparecen los mensajes recibidos por pantalla.</p>
-<img src="/recibir-aprs/SoundModemDataISS.png" class="" width="500" title="SoundModem">
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Una vez tenemos el programa escuchando por el cable de audio virtual, procedemos a sintonizar una emisión de DRM con SDR#. Usaremos el <strong>modo USB</strong> y un <strong>ancho de banda de 10 KHz</strong>.<br>Cuando Dream detecte la señal, veremos datos de la emisión en la ventana y comenzará a escucharse si tenemos señal suficiente. Los tres indicadores señalados en la siguiente imagen deben estar activos para poder escuchar el audio.</p>
+<img src="/recibir-drm/dream.png" class="" width="700" title="Dream">
 
-<img src="/recibir-aprs/UISSDataISS.png" class="" width="500" title="UISS">
 
-<img src="/recibir-aprs/UISSMapISS.png" class="" width="500" title="UISS Mapa">
+<img src="/recibir-drm/sdrSharp.png" class="" width="900" title="SDR# + Dream">
 ]]></content>
       <tags>
-        <tag>APRS</tag>
-        <tag>ISS</tag>
+        <tag>HF</tag>
+        <tag>DRM</tag>
       </tags>
   </entry>
   <entry>
@@ -2557,36 +2536,6 @@
         <tag>SDRSharp</tag>
         <tag>DMR</tag>
         <tag>DSDPlus</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recibir imágenes SSTV desde la ISS</title>
-    <url>/recibir-sstv-iss/</url>
-    <content><![CDATA[<p><a href="https://www.ariss.org/">ARISS</a> organiza ocasionalmente eventos conmemorativos en los que se envían imágenes <a href="https://es.wikipedia.org/wiki/SSTV">SSTV</a> desde la ISS (<em>International Space Station</em>). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.</p>
-<span id="more"></span>
-
-<img src="/recibir-sstv-iss/sstv.jpg" class="" width="500" title="Imagen SSTV">
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Las imágenes son enviadas en la frecuencia <strong>145,800 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;NFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;20000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145800000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar las imágenes usaremos el programa RX-SSTV que podemos descargar desde el siguiente enlace:</p>
-<p><a href="http://users.belgacom.net/mysoftware/Setup_RXSSTV.exe"><center>Descargar RX-SSTV v2.1.5</center></a></p>
-<p>Una vez descargado el instalador, lo ejecutamos e instalamos el programa.</p>
-<p>Las imágenes se envían actualmente en modo <strong>PD120</strong> con un tiempo de espera de dos minutos entre cada imagen. Podemos indicarle a RX-SSTV que utilice este modo por defecto y evitarnos el tener que cambiarlo cada vez y que se nos olvide. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Setup RX-SSTV</em></strong>. En esta ventana de ajustes le indicamos que utilice PD120 por defecto.</p>
-<img src="/recibir-sstv-iss/Config.png" class="" width="300" title="Ajustes">
-
-<p>El siguiente paso es configurar el programa para que reciba el audio desde cable de audio virtual. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Sound Control and Devices</em></strong>. Se abrirá la ventana de ajustes de audio en la que tenemos que marcar el cable de audio virtual como el dispositivo predeterminado de grabación. Es posible que este cambio afecte a otros programas que tengamos, así que si detectamos problemas de audio debemos revertir este cambio y volver a realizarlo cuando usemos RX-SSTV.</p>
-<p>Una vez tengamos todo correctamente configurado, cuando el programa detecte la señal de una nueva imagen, iniciará la recepción de la misma de forma automática.</p>
-<img src="/recibir-sstv-iss/SDRSharp.png" class="" width="900" title="Recibiendo imagen">
-
-<p>Si nos aparece el mensaje <em>“Overflow”</em> en el programa, significa que tenemos el audio demasiado alto. Para solucionarlo simplemente bajamos el volumen del audio en SDR# hasta que desaparezca el mensaje.</p>
-<p>Al terminar la recepción de una imagen, el programa la guarda automáticamente y queda a la espera de detectar la siguiente imagen.</p>
-<img src="/recibir-sstv-iss/RX-SSTV.png" class="" width="500" title="RX-SSTV">
-]]></content>
-      <tags>
-        <tag>ISS</tag>
-        <tag>SSTV</tag>
       </tags>
   </entry>
   <entry>
@@ -2722,39 +2671,90 @@
       </tags>
   </entry>
   <entry>
-    <title>Recibir radio digital mundial (DRM)</title>
-    <url>/recibir-drm/</url>
-    <content><![CDATA[<p><a href="https://www.drm.org/">Digital Radio Mondiale (DRM)</a>, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.<br>DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.<br>En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.</p>
+    <title>Recibir APRS</title>
+    <url>/recibir-aprs/</url>
+    <content><![CDATA[<p>APRS <em>(Automatic Packet Reporting System)</em> es un sistema de radioaficionado para comunicaciones digitales que utiliza tramas <a href="https://es.wikipedia.org/wiki/Protocolo_AX.25">AX.25</a>. Estos paquetes pueden contener cualquier tipo de mensaje, así como también telemetría y datos de estaciones meteorológicas.<br>En este artículo veremos como recibir y decodificar estos paquetes usando nuestro dispositivo SDR, tanto los provenientes desde cualquier estación terrestre como los que se pueden recibir desde la Estación Espacial Internacional.</p>
 <span id="more"></span>
 
-<img src="/recibir-drm/logo.png" class="" width="300" title="DRM logo">
+<img src="/recibir-aprs/SDRSharp.png" class="" width="900" title="Paquete APRS en SDR#">
 
-<p>Encontraremos las emisiones DRM30 por debajo de los 30 MHz. Habitualmente suelen ser emisiones no continuadas, por lo que no necesariamente vamos a encontrar dichas emisiones siempre. Podemos consultar los horarios actualizados de las mismas en el siguiente enlace:</p>
-<p><a href="https://www.drm.org/what-can-i-hear/broadcast-schedule-2/"><center>DRM Broadcast Schedule</center></a></p>
-<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software <a href="https://sourceforge.net/projects/drm/">Dream AM/DRM Receiver</a> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/"><center>Dream AM/DRM Receiver</center></a></p>
-<p>Este programa está disponible para varios sistemas operativos, incluso podemos descargar el código fuente y compilarlo si queremos.<br>Para nuestro ejemplo, descargamos la versión 2.1.1 para Windows (<a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/dream-2.1.1-win32-svn808-df.zip/download">dream-2.1.1-win32-svn808-df.zip</a>). La versión 2.2 es muy similar pero presenta algunos errores de funcionamiento. Si aun así queremos probar esta versión, podemos descargarla desde <a href="https://www.reddit.com/r/RTLSDR/comments/grp6m2/dream_v221_for_windows_with_xheaac_support/">aquí</a>.</p>
-<p>Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.<br>Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos DLL y los guardamos en el directorio de Dream:</p>
+<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este artículo usaremos SDR# para recibir la señal y sacar el audio mediante el <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa.</p>
+<p>Para decodificar y visualizar los paquetes de datos usaremos los programas que vamos a ver a continuación.</p>
+<h3 id="SoundModem"><a href="#SoundModem" class="headerlink" title="SoundModem"></a>SoundModem</h3><p>Para decodificar estos paquetes de datos usaremos el software <a href="http://uz7.ho.ua/packetradio.htm">Packet-Radio TNC</a> que utiliza la tarjeta de sonido de nuestro ordenador como un modem para AX.25.<br>Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="http://uz7.ho.ua/modem_beta/soundmodem113.zip"><center>Descargar SoundModem by UZ7HO</center></a></p>
+<p>Una vez descargado el archivo, extraemos su contenido en el directorio que queramos.</p>
+<p>Posteriormente ejecutamos el archivo <strong><em>soundmodem.exe</em></strong> y se nos abrirá la interfaz del programa.</p>
+<p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em> y en <strong>Input device</strong> seleccionamos el <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a>.</p>
+<p>Por último, seleccionamos el modo <strong>AFSK AX.25 1200bd</strong> en la ventana principal del programa.</p>
+<img src="/recibir-aprs/soundModemMode.png" class="" width="370" title="SoundModem">
+
+<h3 id="UISS"><a href="#UISS" class="headerlink" title="UISS"></a>UISS</h3><p>UISS es un programa que nos permite visualizar los datos contenidos en los paquetes que vamos recibiendo. Si bien el programa anterior ya nos facilita los mensajes decodificados, usaremos UISS para verlos de una forma más clara y poder aprovechar toda la información contenida en ellos.</p>
+<p>Lo primero será descargar el programa desde el siguiente enlace:</p>
+<p><a href="http://users.belgacom.net/mysoftware/UISS_Setup.exe"><center>Descargar UISS by ON6MU</center></a></p>
+<p>Una vez descargado lo ejecutamos y seguimos el asistente para instalar el programa. Durante la instalación en el paso de “Select components” nos volverá a instalar una versión antigua de SoundModem. Lo más sencillo es dejar que la instale (aunque no la vamos a utilizar) y así no tendremos que configurar nada más.</p>
+<h4 id="UISS-MapView"><a href="#UISS-MapView" class="headerlink" title="UISS-MapView"></a>UISS-MapView</h4><p>También vamos a instalar el módulo <a href="http://users.belgacom.net/hamradio/uissmodules.htm#UISSMapView">UISS-MapView</a> para UISS que nos va a permitir visualizar la posición de las estaciones que recibamos en un mapa.<br>Para instalarlo basta con descargar el módulo desde el siguiente enlace y extraerlo el directorio en el que hemos instalado UISS previamente.</p>
+<p><a href="http://www.qsl.net/on6mu/download/UIMapView_UISS_Addon.zip"><center>Descargar UISS-MapView</center></a></p>
+<p>Por último iniciamos SoundModem y después UISS. La primera vez que iniciemos UISS nos pedirá que introduzcamos nuestro indicativo, si lo tenemos, o cualquier otro texto en caso contrario ya que no vamos a emitir nada.<br>Si todo está correctamente instalado, veremos una ventana como la siguiente en la que podemos leer que UISS se ha conectado correctamente a SoundModem.</p>
+<img src="/recibir-aprs/UISS.png" class="" width="500" title="UISS">
+
+
+<h2 id="Recibir-APRS"><a href="#Recibir-APRS" class="headerlink" title="Recibir APRS"></a>Recibir APRS</h2><p>Con todo ya configurado, es el momento de comenzar a recibir paquetes de datos. Para ello iniciamos SDR# o el programa que vayamos a utilizar y sintonizamos cualquiera de las frecuencias asignadas para APRS. Para la región 1, en la que se encuentra España, tenemos las siguientes frecuencias:</p>
 <ul>
-<li><a href="faad2_drm.dll">faad2_drm.dll</a></li>
-<li><a href="libfaac.dll">libfaac.dll</a></li>
+<li><strong>144,800 MHz</strong> (Frecuencia principal).</li>
+<li>432,500 MHz (Frecuencia alternativa).</li>
 </ul>
-<p>Por último, registramos los archivos DLL en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.DLL</span><br></pre></td></tr></table></figure>
+<p>Para latinoamérica (región 2) la frecuencia es 144,390 MHz.</p>
+<p>Usaremos el modo <strong>WFM</strong> y un ancho de banda de <strong>10 KHz</strong>.</p>
+<p>Conforme vayan llegando paquetes veremos que se van mostrando por pantalla los mensajes.</p>
+<img src="/recibir-aprs/SoundModemDatos.png" class="" width="500" title="SoundModem">
 
-<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em>, <em>Sound Card</em>, <em>Signal Input</em> y en <em>Device</em> seleccionamos el <strong>cable de audio virtual</strong>.</p>
-<img src="/recibir-drm/input.png" class="" width="800" title="Entrada audio">
+<img src="/recibir-aprs/UISSDatos.png" class="" width="500" title="UISS">
 
+<img src="/recibir-aprs/UISSMap.png" class="" width="500" title="UISS Mapa">
 
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Una vez tenemos el programa escuchando por el cable de audio virtual, procedemos a sintonizar una emisión de DRM con SDR#. Usaremos el <strong>modo USB</strong> y un <strong>ancho de banda de 10 KHz</strong>.<br>Cuando Dream detecte la señal, veremos datos de la emisión en la ventana y comenzará a escucharse si tenemos señal suficiente. Los tres indicadores señalados en la siguiente imagen deben estar activos para poder escuchar el audio.</p>
-<img src="/recibir-drm/dream.png" class="" width="700" title="Dream">
+<h2 id="Recibir-APRS-desde-la-ISS"><a href="#Recibir-APRS-desde-la-ISS" class="headerlink" title="Recibir APRS desde la ISS"></a>Recibir APRS desde la ISS</h2><p>La Estación Espacial Internacional (ISS por sus siglas en inglés) lleva a bordo un transpondedor que funciona como repetidor APRS, el cual podemos recibir de una forma muy similar al ejemplo anterior. En este caso la principal diferencia es que tendremos que realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;WFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;10000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145825000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p>Una vez comenzamos a recibir el pase de la ISS, veremos que aparecen los mensajes recibidos por pantalla.</p>
+<img src="/recibir-aprs/SoundModemDataISS.png" class="" width="500" title="SoundModem">
 
+<img src="/recibir-aprs/UISSDataISS.png" class="" width="500" title="UISS">
 
-<img src="/recibir-drm/sdrSharp.png" class="" width="900" title="SDR# + Dream">
+<img src="/recibir-aprs/UISSMapISS.png" class="" width="500" title="UISS Mapa">
 ]]></content>
       <tags>
-        <tag>HF</tag>
-        <tag>DRM</tag>
+        <tag>APRS</tag>
+        <tag>ISS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir imágenes SSTV desde la ISS</title>
+    <url>/recibir-sstv-iss/</url>
+    <content><![CDATA[<p><a href="https://www.ariss.org/">ARISS</a> organiza ocasionalmente eventos conmemorativos en los que se envían imágenes <a href="https://es.wikipedia.org/wiki/SSTV">SSTV</a> desde la ISS (<em>International Space Station</em>). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.</p>
+<span id="more"></span>
+
+<img src="/recibir-sstv-iss/sstv.jpg" class="" width="500" title="Imagen SSTV">
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Las imágenes son enviadas en la frecuencia <strong>145,800 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;NFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;20000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145800000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar las imágenes usaremos el programa RX-SSTV que podemos descargar desde el siguiente enlace:</p>
+<p><a href="http://users.belgacom.net/mysoftware/Setup_RXSSTV.exe"><center>Descargar RX-SSTV v2.1.5</center></a></p>
+<p>Una vez descargado el instalador, lo ejecutamos e instalamos el programa.</p>
+<p>Las imágenes se envían actualmente en modo <strong>PD120</strong> con un tiempo de espera de dos minutos entre cada imagen. Podemos indicarle a RX-SSTV que utilice este modo por defecto y evitarnos el tener que cambiarlo cada vez y que se nos olvide. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Setup RX-SSTV</em></strong>. En esta ventana de ajustes le indicamos que utilice PD120 por defecto.</p>
+<img src="/recibir-sstv-iss/Config.png" class="" width="300" title="Ajustes">
+
+<p>El siguiente paso es configurar el programa para que reciba el audio desde cable de audio virtual. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Sound Control and Devices</em></strong>. Se abrirá la ventana de ajustes de audio en la que tenemos que marcar el cable de audio virtual como el dispositivo predeterminado de grabación. Es posible que este cambio afecte a otros programas que tengamos, así que si detectamos problemas de audio debemos revertir este cambio y volver a realizarlo cuando usemos RX-SSTV.</p>
+<p>Una vez tengamos todo correctamente configurado, cuando el programa detecte la señal de una nueva imagen, iniciará la recepción de la misma de forma automática.</p>
+<img src="/recibir-sstv-iss/SDRSharp.png" class="" width="900" title="Recibiendo imagen">
+
+<p>Si nos aparece el mensaje <em>“Overflow”</em> en el programa, significa que tenemos el audio demasiado alto. Para solucionarlo simplemente bajamos el volumen del audio en SDR# hasta que desaparezca el mensaje.</p>
+<p>Al terminar la recepción de una imagen, el programa la guarda automáticamente y queda a la espera de detectar la siguiente imagen.</p>
+<img src="/recibir-sstv-iss/RX-SSTV.png" class="" width="500" title="RX-SSTV">
+]]></content>
+      <tags>
+        <tag>ISS</tag>
+        <tag>SSTV</tag>
       </tags>
   </entry>
   <entry>
