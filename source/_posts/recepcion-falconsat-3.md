@@ -32,7 +32,7 @@ Para la recepción de la señal del satélite podemos usar cualquier programa. E
 
 ### HS SoundModem
 
-Para demodular la señal de audio que recibimos a través del cable de audio virtual, usaremos un software que haga de TNC. Para ello usaremos [High-Speed SoundModem de UZ7HO](http://uz7.ho.ua/packetradio.htm), el cual instalaremos siguiendo los pasos que ya vimos anteriormente para la [recepción de los satélites CAS-4](/2020/10/10/recepcion-cas4/#Decodificar-la-senal).
+Para demodular la señal de audio que recibimos a través del cable de audio virtual, usaremos un software que haga de TNC. Para ello usaremos [High-Speed SoundModem de UZ7HO](http://uz7.ho.ua/packetradio.htm), el cual instalaremos siguiendo los pasos que ya vimos anteriormente para la [recepción de los satélites CAS-4](/recepcion-cas4/#Decodificar-la-senal).
 
 ### PacSat decoder
 

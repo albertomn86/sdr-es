@@ -18,7 +18,7 @@ Usando Orbitron y el plugin DDETracker podemos hacer que SDR# realice la correci
 
 ## Corrección automática de la frecuencia con Orbitron
 
-En el post anterior ["Seguimiento de satélites con Orbitron"](https://sdr-es.com/2020/01/23/seguimiento-satelites-orbitron/) vimos como instalar y configurar este programa para realizar el seguimiento de satélites. Este programa también nos va a permitir corregir en tiempo real la frecuencia del satélite que estemos siguiendo, y además podremos enviar esta frecuencia a SDR# para que la ajuste de manera automática. De esta forma no tendremos que preocuparnos por ajustarla manualmente y tendremos siempre la señal perfectamente sintonizada.
+En el post anterior ["Seguimiento de satélites con Orbitron"](/seguimiento-satelites-orbitron/) vimos como instalar y configurar este programa para realizar el seguimiento de satélites. Este programa también nos va a permitir corregir en tiempo real la frecuencia del satélite que estemos siguiendo, y además podremos enviar esta frecuencia a SDR# para que la ajuste de manera automática. De esta forma no tendremos que preocuparnos por ajustarla manualmente y tendremos siempre la señal perfectamente sintonizada.
 
 
 El primer paso es indicarle a Orbitron la frecuencia del satélite para que pueda llevar a cabo el ajuste. Para ello seleccionamos el satélite para marcarlo como activo y vamos a la pestaña _Sat/Orbit info_.

@@ -35,7 +35,7 @@ Los satélites CAS-4A y CAS-4B son unos micro-satélites construidos por Zhuhai 
 
 ## Recepción
 
-Los satélites envían los datos de telemetría en las frecuencias **145.835 MHz** (CAS-4A) y **145.890 MHz** (CAS-4B). Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo ["Ajuste de frecuencia en recepción de satélites"](/2020/02/18/ajuste-frecuencia-doppler-orbitron/).
+Los satélites envían los datos de telemetría en las frecuencias **145.835 MHz** (CAS-4A) y **145.890 MHz** (CAS-4B). Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo ["Ajuste de frecuencia en recepción de satélites"](/ajuste-frecuencia-doppler-orbitron/).
 
 Los datos para DDETracker son los siguientes:
 
@@ -56,7 +56,7 @@ Podemos descargar el programa desde el siguiente enlace:
 
 Una vez descargado el archivo, extraemos el contenido en el directorio que queramos. Posteriormente ejecutamos el archivo **_hs\_soundmodem.exe_** y se nos abrirá la interfaz del programa.
 
-El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en _Settings_ y en **Input device** seleccionamos el [cable de audio virtual](/2020/01/21/instalacion-virtual-cable-audio/). También debemos activar el **KISS Server Port**.
+El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en _Settings_ y en **Input device** seleccionamos el [cable de audio virtual](/instalacion-virtual-cable-audio/). También debemos activar el **KISS Server Port**.
 
 {% asset_img HS_SoundModem_settings.png 400 "Ajustes de HS SoundModem" %}
 

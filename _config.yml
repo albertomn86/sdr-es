@@ -6,7 +6,7 @@
 title: SDR en español
 subtitle:
 description: 'Web de referencia para los amantes de los dispositivos SDR'
-keywords: [sdr, ham, radio, amateur, rtl, rtl-sdr, satellite]
+keywords: [SDR, ADS-B, APRS, ATC, Antenas, Cubesat, CubicSDR, DMR, DRM, DSDPlus, Gpredict, Gqrx, HF, ISS, Inmarsat, KISS, L-Band, LoRa, MultiPSK, NOAA, OpenWebRX, Orbitron, PACSAT, QFH, QO-100, RTL-SDR, Radiosonda, Raspberry Pi, SDR++, SDRPlay, SDRSharp, SPY Server, SSTV, SatNOGS, Satélites, VDL2, Weatherfax, dump1090, tinyGS]
 author: SDR en español
 language: es
 timezone: 'Europe/Madrid'
@@ -15,7 +15,7 @@ timezone: 'Europe/Madrid'
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://sdr-es.com
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks

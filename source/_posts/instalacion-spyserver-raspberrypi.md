@@ -11,7 +11,7 @@ En este artículo veremos como instalar SPY Server en una Raspberry Pi.
 
 <!-- more -->
 
-Para usar SPY Server en nuestra Raspberry Pi **necesitamos en primer lugar tener instalado el dispositivo SDR**. Si nuestro dispositivo es un RTL-SDR debemos seguir los pasos descritos en el artículo ["Instalación de dispositivos RTL-SDR en Raspberry Pi"](https://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/).
+Para usar SPY Server en nuestra Raspberry Pi **necesitamos en primer lugar tener instalado el dispositivo SDR**. Si nuestro dispositivo es un RTL-SDR debemos seguir los pasos descritos en el artículo ["Instalación de dispositivos RTL-SDR en Raspberry Pi"](/instalacion-rtlsdr-raspberrypi/).
 
 
 ## Instalar SPY Server

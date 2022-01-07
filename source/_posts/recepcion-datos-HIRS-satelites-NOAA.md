@@ -5,7 +5,7 @@ tags: [Satélites, Satélites meteorológicos, NOAA, Meteorología]
 author: EA7KOO
 ---
 
-Como vimos en el artículo ["Recepción de satélites meteorológicos NOAA"](/2020/03/20/recepcion-satelites-meteorologicos-NOAA/), es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.
+Como vimos en el artículo ["Recepción de satélites meteorológicos NOAA"](/recepcion-satelites-meteorologicos-NOAA/), es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.
 
 El HIRS _(High Resolution Infrared Radiation Sounder)_ es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.
 Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.

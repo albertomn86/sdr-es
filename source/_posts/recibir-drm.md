@@ -21,7 +21,7 @@ Encontraremos las emisiones DRM30 por debajo de los 30 MHz. Habitualmente suelen
 
 ## Instalación del software
 
-En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el [cable de audio virtual](/2020/01/21/instalacion-virtual-cable-audio/), aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software [Dream AM/DRM Receiver](https://sourceforge.net/projects/drm/) que podemos descargar desde el siguiente enlace:
+En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el [cable de audio virtual](/instalacion-virtual-cable-audio/), aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software [Dream AM/DRM Receiver](https://sourceforge.net/projects/drm/) que podemos descargar desde el siguiente enlace:
 
 [<center>Dream AM/DRM Receiver</center>](https://sourceforge.net/projects/drm/files/dream/2.1.1/)
 

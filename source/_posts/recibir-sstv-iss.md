@@ -13,7 +13,7 @@ author: EA7KOO
 
 ## Recepción
 
-Las imágenes son enviadas en la frecuencia **145,800 MHz**. Para recibir la señal debemos realizar los pasos habituales para el [seguimiento de satélites](/2020/02/18/ajuste-frecuencia-doppler-orbitron/).
+Las imágenes son enviadas en la frecuencia **145,800 MHz**. Para recibir la señal debemos realizar los pasos habituales para el [seguimiento de satélites](/ajuste-frecuencia-doppler-orbitron/).
 
 Los datos para DDETracker son los siguientes:
 

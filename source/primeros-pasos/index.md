@@ -14,7 +14,7 @@ Visita la sección de conceptos básicos para conocer el significado de algunos 
 
 Si todavía no tenemos un dispositivo SDR y no tenemos claro cual adquirir, en el siguiente artículo tenemos un listado en el que se describen algunos de los dispositivos más recomendados:
 
-[<center>Elección del dispositivo SDR</center>](/2020/03/16/eleccion-sdr/)
+[<center>Elección del dispositivo SDR</center>](/eleccion-sdr/)
 
 Programa **Net de la tecnología** sobre dispositivos SDR:
 [<center>Net de la tecnología #286: ¿Qué dispositivo elegir?</center>](https://youtu.be/bIQQoDG1neY?t=4210)
@@ -23,11 +23,11 @@ Programa **Net de la tecnología** sobre dispositivos SDR:
 
 Si ya tenemos el dispositivo, el siguiente paso es instalarlo.
 
-[- Instalación de dispositivos RTL-SDR en Windows](/2020/01/19/instalacion-rtlsdr-windows/)
+[- Instalación de dispositivos RTL-SDR en Windows](/instalacion-rtlsdr-windows/)
 
-[- Instalación de dispositivos RTL-SDR en Raspberry Pi](/2020/04/10/instalacion-rtlsdr-raspberrypi/)
+[- Instalación de dispositivos RTL-SDR en Raspberry Pi](/instalacion-rtlsdr-raspberrypi/)
 
-[- Instalación de dispositivos RTL-SDR en macOS](/2020/06/14/instalacion-rtlsdr-macos/)
+[- Instalación de dispositivos RTL-SDR en macOS](/instalacion-rtlsdr-macos/)
 
 # Identificando señales
 

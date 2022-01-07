@@ -13,22 +13,22 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 
 | Dispositivo | Sintonizador | Ancho de Banda | Rango frecuencias | Bias Tee | Precio |
 | --- | :-: | --: | --- | :-: | --: |
-| [Modelos genéricos](/2020/03/16/eleccion-sdr/#Modelos-genericos) | FC0012 | 2.4 MHz | 22 MHz – 948,6 MHz | No | ~12€ |
-| [Modelos genéricos](/2020/03/16/eleccion-sdr/#Modelos-genericos) | R820T/2 | 2.4 MHz | 24 MHz – 1700 MHz | No | ~15€ |
-| [RTL-SDR Blog V3](/2020/03/16/eleccion-sdr/#RTL-SDR-Blog-V3) | R820T2 | 2.4 MHz | 500 kHz – 1766 MHz | Sí | ~35€ |
-| [Nooelec NESDR SMArt v4](/2020/03/16/eleccion-sdr/#Nooelec-NESDR-SMArt-v4) | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | No | ~37€ |
-| [Nooelec NESDR SMArTee v2](/2020/03/16/eleccion-sdr/#Nooelec-NESDR-SMArTee-v2) | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | Sí | ~37€ |
-| [Nooelec NESDR SMArt XTR](/2020/03/16/eleccion-sdr/#Nooelec-NESDR-SMArt-XTR) | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | No | ~45€ |
-| [Nooelec NESDR SMArTee XTR](/2020/03/16/eleccion-sdr/#Nooelec-NESDR-SMArTee-XTR) | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | Sí | ~47€ |
-| [Nooelec NESDR Nano 3](/2020/03/16/eleccion-sdr/#Nooelec-NESDR-Nano-3) | R820T2 | 2.4 MHz | 25 MHz - 1700 MHz | No | ~30€ |
-| [Airspy Mini](/2020/03/16/eleccion-sdr/#Airspy-Mini) | R820T2 |  6 MHz | 24 MHz - 1700 MHz | Sí | ~140€ |
-| [Airspy R2](/2020/03/16/eleccion-sdr/#Airspy-R2) | R820T2 |  10 MHz | 24 MHz - 1700 MHz | Sí | ~235€ |
-| [Airspy HF+ Discovery](/2020/03/16/eleccion-sdr/#Airspy-HF-Discovery) |  -  | 610 kHz | 0.5 kHz - 31 MHz, 60 - 260 MHz | No | ~210€ |
-| [Airspy HF+ Dual Port](/2020/03/16/eleccion-sdr/#Airspy-HF-Dual-Port) |  -  | 610 kHz | 9 kHz - 31 MHz, 60 - 260 MHz | No | ~240€ |
-| [SDRplay RSP1A](/2020/03/16/eleccion-sdr/#SDRplay-RSP1A) |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~122€ |
-| [SDRplay RSPdx](/2020/03/16/eleccion-sdr/#SDRplay-RSPdx) |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~228€ |
-| [SDRplay RSPduo](/2020/03/16/eleccion-sdr/#SDRplay-RSPduo) |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~286€ |
-| [KiwiSDR](/2020/03/16/eleccion-sdr/#KiwiSDR) |  -  | 32 MHz | 10 KHz - 30 MHz  | No | ~330€ |
+| [Modelos genéricos](/eleccion-sdr/#Modelos-genericos) | FC0012 | 2.4 MHz | 22 MHz – 948,6 MHz | No | ~12€ |
+| [Modelos genéricos](/eleccion-sdr/#Modelos-genericos) | R820T/2 | 2.4 MHz | 24 MHz – 1700 MHz | No | ~15€ |
+| [RTL-SDR Blog V3](/eleccion-sdr/#RTL-SDR-Blog-V3) | R820T2 | 2.4 MHz | 500 kHz – 1766 MHz | Sí | ~35€ |
+| [Nooelec NESDR SMArt v4](/eleccion-sdr/#Nooelec-NESDR-SMArt-v4) | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | No | ~37€ |
+| [Nooelec NESDR SMArTee v2](/eleccion-sdr/#Nooelec-NESDR-SMArTee-v2) | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | Sí | ~37€ |
+| [Nooelec NESDR SMArt XTR](/eleccion-sdr/#Nooelec-NESDR-SMArt-XTR) | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | No | ~45€ |
+| [Nooelec NESDR SMArTee XTR](/eleccion-sdr/#Nooelec-NESDR-SMArTee-XTR) | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | Sí | ~47€ |
+| [Nooelec NESDR Nano 3](/eleccion-sdr/#Nooelec-NESDR-Nano-3) | R820T2 | 2.4 MHz | 25 MHz - 1700 MHz | No | ~30€ |
+| [Airspy Mini](/eleccion-sdr/#Airspy-Mini) | R820T2 |  6 MHz | 24 MHz - 1700 MHz | Sí | ~140€ |
+| [Airspy R2](/eleccion-sdr/#Airspy-R2) | R820T2 |  10 MHz | 24 MHz - 1700 MHz | Sí | ~235€ |
+| [Airspy HF+ Discovery](/eleccion-sdr/#Airspy-HF-Discovery) |  -  | 610 kHz | 0.5 kHz - 31 MHz, 60 - 260 MHz | No | ~210€ |
+| [Airspy HF+ Dual Port](/eleccion-sdr/#Airspy-HF-Dual-Port) |  -  | 610 kHz | 9 kHz - 31 MHz, 60 - 260 MHz | No | ~240€ |
+| [SDRplay RSP1A](/eleccion-sdr/#SDRplay-RSP1A) |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~122€ |
+| [SDRplay RSPdx](/eleccion-sdr/#SDRplay-RSPdx) |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~228€ |
+| [SDRplay RSPduo](/eleccion-sdr/#SDRplay-RSPduo) |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~286€ |
+| [KiwiSDR](/eleccion-sdr/#KiwiSDR) |  -  | 32 MHz | 10 KHz - 30 MHz  | No | ~330€ |
 
 ## Modelos genéricos
 

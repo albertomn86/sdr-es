@@ -11,7 +11,7 @@ En este artículo veremos como convertir una Raspberry Pi en un receptor de mens
 
 <!-- more -->
 
-Lo primero que haremos será instalar nuestro dispositivo SDR, si todavía no lo hemos hecho, siguiendo los pasos descritos en ["Instalación de dispositivos RTL-SDR en Raspberry Pi"](https://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/).
+Lo primero que haremos será instalar nuestro dispositivo SDR, si todavía no lo hemos hecho, siguiendo los pasos descritos en ["Instalación de dispositivos RTL-SDR en Raspberry Pi"](/instalacion-rtlsdr-raspberrypi/).
 
 ### Instalación de dump1090
 
@@ -151,7 +151,7 @@ Cuando pregunte si queremos instalar `dump978-rb` le decimos que no.
 
 2. Instalamos el cliente de MLAT. La siguiente versión es para Raspbian. Si necesitamos paquete para otra versión, podemos generarlo siguiendo los pasos descritos [aquí](https://github.com/mutability/mlat-client).
 ```
-wget https://sdr-es.com/2020/05/03/seguimiento-aviones-raspberry-pi/mlat-client_0.2.11_armhf.deb
+wget /seguimiento-aviones-raspberry-pi/mlat-client_0.2.11_armhf.deb
 ```
 ```
 sudo dpkg -i mlat-client_0.2.11_armhf.deb

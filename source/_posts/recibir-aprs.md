@@ -14,7 +14,7 @@ En este artículo veremos como recibir y decodificar estos paquetes usando nuest
 
 ## Instalación del software
 
-En este artículo usaremos SDR# para recibir la señal y sacar el audio mediante el [cable de audio virtual](/2020/01/21/instalacion-virtual-cable-audio/), aunque también podemos usar cualquier otro programa.
+En este artículo usaremos SDR# para recibir la señal y sacar el audio mediante el [cable de audio virtual](/instalacion-virtual-cable-audio/), aunque también podemos usar cualquier otro programa.
 
 Para decodificar y visualizar los paquetes de datos usaremos los programas que vamos a ver a continuación.
 
@@ -29,7 +29,7 @@ Una vez descargado el archivo, extraemos su contenido en el directorio que quera
 
 Posteriormente ejecutamos el archivo **_soundmodem.exe_** y se nos abrirá la interfaz del programa.
 
-El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en _Settings_ y en **Input device** seleccionamos el [cable de audio virtual](/2020/01/21/instalacion-virtual-cable-audio/).
+El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en _Settings_ y en **Input device** seleccionamos el [cable de audio virtual](/instalacion-virtual-cable-audio/).
 
 Por último, seleccionamos el modo **AFSK AX.25 1200bd** en la ventana principal del programa.
 
@@ -79,7 +79,7 @@ Conforme vayan llegando paquetes veremos que se van mostrando por pantalla los m
 
 ## Recibir APRS desde la ISS
 
-La Estación Espacial Internacional (ISS por sus siglas en inglés) lleva a bordo un transpondedor que funciona como repetidor APRS, el cual podemos recibir de una forma muy similar al ejemplo anterior. En este caso la principal diferencia es que tendremos que realizar los pasos habituales para el [seguimiento de satélites](/2020/02/18/ajuste-frecuencia-doppler-orbitron/).
+La Estación Espacial Internacional (ISS por sus siglas en inglés) lleva a bordo un transpondedor que funciona como repetidor APRS, el cual podemos recibir de una forma muy similar al ejemplo anterior. En este caso la principal diferencia es que tendremos que realizar los pasos habituales para el [seguimiento de satélites](/ajuste-frecuencia-doppler-orbitron/).
 
 Los datos para DDETracker son los siguientes:
 

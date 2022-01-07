@@ -24,7 +24,7 @@ Como parte de su misión, FUNcube-1 está equipado con distintos sensores que mo
 
 ## Recepción
 
-FUNcube-1 envía los datos de telemetría en la frecuencia **145.935 MHz**. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo ["Ajuste de frecuencia en recepción de satélites"](https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/).
+FUNcube-1 envía los datos de telemetría en la frecuencia **145.935 MHz**. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo ["Ajuste de frecuencia en recepción de satélites"](/ajuste-frecuencia-doppler-orbitron/).
 
 Los datos para DDETracker son los siguientes:
 
@@ -49,7 +49,7 @@ Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT
 Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.
 
 El siguiente paso es configurarlo. Para ello hacemos clic en **"File"** y después **"Settings..."**. Esto nos abre la pestaña de configuración del programa.
-Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro [cable de audio virtual](https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/) en la opción **"Input Device"**.
+Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro [cable de audio virtual](/instalacion-virtual-cable-audio/) en la opción **"Input Device"**.
 
 {% asset_img FUNcube1_Dashboard_config.png "FUNcube1 Dashboard Configuración" %}
 

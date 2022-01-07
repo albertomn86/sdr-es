@@ -43,14 +43,14 @@ Los datos para DDETracker son los siguientes:
 
 ## Decodificación
 
-Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el [FUNcube-1](https://sdr-es.com/2020/02/22/recepcion-funcube1/) y [JY1-SAT](https://sdr-es.com/2020/02/25/recepcion-jy1sat/). Podemos descargarlo desde el siguiente enlace:
+Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el [FUNcube-1](/recepcion-funcube1/) y [JY1-SAT](/recepcion-jy1sat/). Podemos descargarlo desde el siguiente enlace:
 
 [<center>Nayif-1 Dashboard v1040</center>](https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi)
 
 Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.
 
 El siguiente paso es configurarlo. Para ello hacemos clic en **"File"** y después **"Settings..."**. Esto nos abre la pestaña de configuración del programa.
-Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro [cable de audio virtual](https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/) en la opción **"Input Device"**.
+Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro [cable de audio virtual](/instalacion-virtual-cable-audio/) en la opción **"Input Device"**.
 
 {% asset_img config.png "NAYIF-1 Dashboard Configuración" %}
 

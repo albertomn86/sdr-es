@@ -58,7 +58,7 @@ Una vez descargado e instalado, realizaremos los siguientes pasos para configura
 
 ## Recepción
 
-Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo ["Ajuste de frecuencia en recepción de satélites"](https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/).
+Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo ["Ajuste de frecuencia en recepción de satélites"](/ajuste-frecuencia-doppler-orbitron/).
 
 Los datos para DDETracker son los siguientes:
 

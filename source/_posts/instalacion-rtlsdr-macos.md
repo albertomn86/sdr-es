@@ -65,4 +65,4 @@ Finalmente, CubicSDR se iniciará y ya podremos utilizarlo.
 
 {% asset_img cubicsdr.png 900 "CubicSDR" %}
 
-CubicSDR también nos permite sacar el audio demodulado para poder usarlo con otros programas. Podemos seguir los pasos descritos en el tutorial ["Instalación de cable de audio virtual"](/2020/01/21/instalacion-virtual-cable-audio/) para configurarlo.
+CubicSDR también nos permite sacar el audio demodulado para poder usarlo con otros programas. Podemos seguir los pasos descritos en el tutorial ["Instalación de cable de audio virtual"](/instalacion-virtual-cable-audio/) para configurarlo.
