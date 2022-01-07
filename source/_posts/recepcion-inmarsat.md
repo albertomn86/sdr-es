@@ -3,6 +3,7 @@ title: "Recepción de satélites Inmarsat"
 date: 2020-03-06 11:22:33
 tags: [Satélites, Inmarsat, L-Band]
 author: EA7KOO
+updated: 2022-01-07 18:06:10
 ---
 
 Inmarsat es un proveedor de comunicaciones vía satélite con sede en Reino Unido. La constelación de satélites Inmarsat se compone actualmente de 12 satélites geoestacionarios que proporcionan cobertura en el 90% del planeta.
@@ -27,7 +28,7 @@ Nooelec comercializa una antena específica para Inmarsat y que podemos adquirir
 
 | Frecuencia | Ganancia | Especificaciones |
 | --- | --- | --- |
-| 1546 - 1554 MHz | ~3,5 dBi | [Datasheet](https://www.nooelec.com/store/downloads/dl/file/id/91/product/314/inmarsat_antenna_datasheet_revision_1.pdf) |
+| 1.546 - 1.554 MHz | ~3,5 dBi | [Datasheet](https://www.nooelec.com/store/downloads/dl/file/id/91/product/314/inmarsat_antenna_datasheet_revision_1.pdf) |
 
 {% asset_img antenna_nooelec.jpg "Antena Nooelec" %}
 
@@ -38,7 +39,7 @@ Esta antena se comercializaba para Outernet (ahora [Othernet](https://othernet.i
 
 | Frecuencia | Ganancia | Especificaciones |
 | --- | --- | --- |
-| 1525 - 1559 MHz | 8 dBi | [Othernet](https://othernet.is/products/l-band-patch-antenna) |
+| 1.525 - 1.559 MHz | 8 dBi | [Othernet](https://othernet.is/products/l-band-patch-antenna) |
 
 {% asset_img antena_patch.jpg "Antena Patch" %}
 
@@ -50,12 +51,12 @@ Podemos encontrar más información sobre esta antena en [este enlace](https://w
 
 ### Antena patch activa
 
-El blog __RTL-SDR.com__ puso a la venta en 2019 una antena para banda L que podemos usar para Inmarsat. Podemos adquirirla desde su propia tienda online.
+El blog __RTL-SDR.com__ puso a la venta en 2019 (actualizada en 2021) una antena para banda L que podemos usar para Inmarsat. Podemos adquirirla desde su propia tienda online.
 Se trata de una antena activa que amplifica y filtra la señal, por lo que no necesitaremos un LNA.
 
 | Frecuencia | Ganancia | Especificaciones |
 | --- | --- | --- |
-| 1525 – 1637 MHz | - | [RTL-SDR](https://www.rtl-sdr.com/preorder-sale-active-l-band-1525-1637-inmarsat-to-iridium-patch-antenna-set-for-34-95/) |
+| 1.525 – 1.660 MHz | - | [RTL-SDR](https://www.rtl-sdr.com/preorder-sale-active-l-band-1525-1660-inmarsat-and-iridium-patch-back-in-stock-for-44-95/) |
 
 {% asset_img antena_activa.jpg "Antena de RTL-SDR.com" %}
 
