@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recepción de satélites meteorológicos Meteor-M">
+<meta property="og:url" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/index.html">
+<meta property="og:site_name" content="SDR en español">
+<meta property="og:description" content="Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos s">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/Meteor-M_2.jpg">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/meteor_plugin.jpg">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/meteor_plugin_config.png">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/sdr_sharp_inicio.jpg">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/sdr_sharp_recibiendo.jpg">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/meteor_analizer.jpg">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/meteor_analizer_finalizado.jpg">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/meteor_analizer_guardar.jpg">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/smooth_meteor.jpg">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/meteor_rectified.jpg">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/sdr_sharp_recording.jpg">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/sdr_sharp_recording_baseband.jpg">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/satdump_config.jpg">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/satdump_processing.jpg">
+<meta property="og:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/satdump_files.jpg">
+<meta property="article:published_time" content="2020-03-27T11:10:49.000Z">
+<meta property="article:modified_time" content="2022-01-06T08:10:12.000Z">
+<meta property="article:author" content="SDR en español">
+<meta property="article:tag" content="Satélites">
+<meta property="article:tag" content="Satélites meteorológicos">
+<meta property="article:tag" content="Meteorología">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/Meteor-M_2.jpg">
+
+
+<link rel="canonical" href="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"es","comments":true,"permalink":"http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/","path":"recepcion-satelites-meteorologicos-meteor/","title":"Recepción de satélites meteorológicos Meteor-M"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Recepción de satélites meteorológicos Meteor-M | SDR en español</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156538909-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-156538909-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Cambiar a barra de navegación" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">SDR en español</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li>
+        <li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li>
+        <li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li>
+        <li class="menu-item menu-item-bands-plan"><a href="/plan-bandas/" rel="section"><i class="fa fa-broadcast-tower fa-fw"></i>Plan bandas IARU</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Buscando..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Contenidos
+        </li>
+        <li class="sidebar-nav-overview">
+          Inicio
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Datos-de-los-satelites"><span class="nav-number">1.</span> <span class="nav-text">Datos de los satélites</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Metodo-1-SDR-Meteor-Demodulator"><span class="nav-number">2.</span> <span class="nav-text">Método 1: SDR# + Meteor Demodulator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalacion-de-Meteor-Demodulator"><span class="nav-number">2.1.</span> <span class="nav-text">Instalación de Meteor Demodulator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalacion-de-LRPT-Decoder"><span class="nav-number">2.2.</span> <span class="nav-text">Instalación de LRPT Decoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Recepcion"><span class="nav-number">2.3.</span> <span class="nav-text">Recepción</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Correccion-de-la-distorsion-de-la-imagen"><span class="nav-number">2.4.</span> <span class="nav-text">Corrección de la distorsión de la imagen</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Metodo-2-Baseband-SatDump"><span class="nav-number">3.</span> <span class="nav-text">Método 2: Baseband + SatDump</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-SatDump"><span class="nav-number">3.1.</span> <span class="nav-text">Instalar SatDump</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Grabar-el-pase"><span class="nav-number">3.2.</span> <span class="nav-text">Grabar el pase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decodificar-la-imagen"><span class="nav-number">3.3.</span> <span class="nav-text">Decodificar la imagen</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SDR en español"
+      src="/images/avatar-sdr.gif">
+  <p class="site-author-name" itemprop="name">SDR en español</p>
+  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">entradas</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/sdr_es" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_es" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
+    <link itemprop="mainEntityOfPage" href="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-sdr.gif">
+      <meta itemprop="name" content="SDR en español">
+      <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SDR en español">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Recepción de satélites meteorológicos Meteor-M
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
+
+      <time title="Creado por: 27/03/2020 12:10:49" itemprop="dateCreated datePublished" datetime="2020-03-27T12:10:49+01:00">27/03/2020</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Editado el</span>
+      <time title="Modificado por: 06/01/2022 09:10:12" itemprop="dateModified" datetime="2022-01-06T09:10:12+01:00">06/01/2022</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>EA7KOO</span>
+    </span>
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.</p>
+<p>La serie Meteor-M fue planificada para la primera década del siglo XXI e incluiría tres nuevos satélites con dos diseños diferentes. El objetivo principal de los dos primeros satélites (Meteor-M N1 y Meteor-M N2) sería proveer de información meteorológica, así como la monitorización de la capa de ozono, los niveles de radiación en el espacio y la observación de los mares y la capa de hielo. El tercero (Meteor-M N3) incorporaría una antena radar de nueva generación para la observación oceánica.<br>Estos satélites transmiten imágenes en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Low-rate_picture_transmission">LRPT</a> en 137 MHz y en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/High-resolution_picture_transmission">HRPT</a> en 1,7 GHz. En este articulo veremos como recibir la señal con nuestro dispositivo SDR y obtener las imágenes LRPT.</p>
+<span id="more"></span>
+
+<img src="/recepcion-satelites-meteorologicos-meteor/Meteor-M_2.jpg" class="" width="600" title="Meteor-M N2-1">
+
+<p>Más información sobre los satélites Meteor-M en <a target="_blank" rel="noopener" href="http://www.russianspaceweb.com/meteor-m.html">este enlace</a> (en inglés).</p>
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Tenemos en órbita tres satélites Meteor-M, pero actualmente solo uno de ellos emite imágenes en LRPT. El último satélite puesto en órbita sufrió a finales de 2019 el impacto de un micro-meteorito que le produjo daños y dejó el sistema de LRPT fuera de servicio. Solo consiguieron restablecer el sistema de HRPT. <a target="_blank" rel="noopener" href="https://www.roscosmos.ru/27891/">Enlace a la publicación de Roscosmos.</a></p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>Meteor-M N1</th>
+<th>Meteor-M N2</th>
+<th>Meteor-M N2-2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>NORAD ID</strong></td>
+<td>35865</td>
+<td>40069</td>
+<td>44387</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2009-049A</td>
+<td>2014-037A</td>
+<td>2019-038A</td>
+</tr>
+<tr>
+<td><strong>Masa de lanzamiento</strong></td>
+<td>2.900 Kg</td>
+<td>2.900 Kg</td>
+<td>2.900 Kg</td>
+</tr>
+<tr>
+<td><strong>Fecha de lanzamiento</strong></td>
+<td>17 de Septiembre de 2009</td>
+<td>8 de Julio de 2014</td>
+<td>5 de Julio de 2019</td>
+</tr>
+<tr>
+<td><strong>Estado LRPT</strong></td>
+<td>Inactivo</td>
+<td>Operativo(*)</td>
+<td>Averiado</td>
+</tr>
+<tr>
+<td><strong>Frecuencia LRPT</strong></td>
+<td>-</td>
+<td>137,100 MHz</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p><em>(*) El satélite tiene <a target="_blank" rel="noopener" href="http://vu2iia-meteor-m2.blogspot.com/2014/10/meteor-m2-images-from-rtl-sdr.html">un fallo</a> en el sistema de compresión de imágenes RAW HRPT a JPEG LRPT. Esto produce unos cortes en las imágenes recibidas.</em></p>
+<p>Podemos conocer el estado actual de los satélites en la siguiente página: <a target="_blank" rel="noopener" href="http://happysat.nl/Meteor/html/Meteor_Status.html">Meteor Status (por Happysat)</a>.</p>
+<h2 id="Metodo-1-SDR-Meteor-Demodulator"><a href="#Metodo-1-SDR-Meteor-Demodulator" class="headerlink" title="Método 1: SDR# + Meteor Demodulator"></a>Método 1: SDR# + Meteor Demodulator</h2><p>Este método es únicamente válido en Windows y tiene la ventaja de que podemos visualizar la imagen recibida en tiempo real.</p>
+<h3 id="Instalacion-de-Meteor-Demodulator"><a href="#Instalacion-de-Meteor-Demodulator" class="headerlink" title="Instalación de Meteor Demodulator"></a>Instalación de Meteor Demodulator</h3><p>Vamos a instalar un <em>plugin</em> para SDR# que nos permitirá demodular la señal del satélite en tiempo real. Existen otras formas de demodular dicha señal mediante otro software utilizando la grabación de banda base, pero nos podemos ahorrar estos pasos usando el <em><em>plugin</em></em> <strong>Meteor Demodulator</strong>. Para instalarlo seguiremos los siguientes pasos:</p>
+<ol>
+<li><p>Descargar el <em>plugin</em> desde el siguiente enlace:<br> <a href="meteor.zip"><center>Meteor Demodulator v2.3</center></a></p>
+</li>
+<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “MeteorDemodulator” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
+</li>
+<li><p>Iniciamos SDR# y desplegamos el nuevo <em>plugin</em>.</p>
+ <img src="/recepcion-satelites-meteorologicos-meteor/meteor_plugin.jpg" class="" width="300" title="SDR#">
+
+<p> Los ajustes que vamos a utilizar son:</p>
+<ul>
+<li><p><strong>Modulation type</strong>: aquí le indicamos el tipo de modulación de pendiendo del satélite. Este ajuste lo haremos de forma automática desde DDE Tracker.</p>
+</li>
+<li><p><strong>SymbolRate</strong>: el satélite usa los modos 72K y 80K de forma aleatoria. Lo dejaremos en <strong>Auto</strong> para que lo detecte automático.</p>
+</li>
+<li><p><strong>Tracking</strong>: lo marcamos para corregir el efecto <em>Doppler</em> en la señal.</p>
+</li>
+</ul>
+<p> En <em>Output</em> marcamos la opción que vayamos a utilizar para sacar los datos (podemos marcar ambas). Las opciones que tenemos son:</p>
+<ul>
+<li><strong>TCP Socket</strong>: levanta un socket TCP al que el programa <strong>LRPT Decoder</strong> se conectará y recibirá los datos para decodificar la imagen en tiempo real.</li>
+<li><strong>File</strong>: genera un archivo con los datos para procesarlos posteriormente con <strong>LRPT Decoder</strong>. La ubicación de este archivo se la indicamos haciendo clic en <strong>Configure</strong> y <strong>Select folder</strong>.</li>
+</ul>
+ <img src="/recepcion-satelites-meteorologicos-meteor/meteor_plugin_config.png" class="" title="Meteor Demodulator"></li>
+</ol>
+<h3 id="Instalacion-de-LRPT-Decoder"><a href="#Instalacion-de-LRPT-Decoder" class="headerlink" title="Instalación de LRPT Decoder"></a>Instalación de LRPT Decoder</h3><p>El programa LRPT Decoder nos va a permitir decodificar los datos obtenidos con el demodulador de Meteor y generar la imagen.<br>Para descargarlo hacemos clic en el siguiente enlace y simplemente extraemos su contenido.</p>
+<p><a target="_blank" rel="noopener" href="http://happysat.nl/LRPT_Decoder_v56.zip"><center>M2 LRPT Decoder V56</center></a></p>
+<p>Como vimos en el apartado anterior, LRPT Decoder es capaz de procesar los datos desde dos fuentes distintas, ya sea desde el socket TCP o desde un archivo. Dependiendo de la opción que elijamos debemos modificar el archivo de configuración <strong>M2_LRPT_Decoder.ini</strong> de una forma u otra. A continuación veremos los ajustes para cada una de las opciones.</p>
+<ul>
+<li>Ajustes para decodificar mediante <strong>socket</strong>:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[IN]</span><br><span class="line">source&#x3D;TCP</span><br><span class="line">mode&#x3D;auto</span><br><span class="line">sat&#x3D;auto</span><br><span class="line">host&#x3D;localhost</span><br><span class="line">port&#x3D;2011</span><br><span class="line"></span><br><span class="line">[OUT]</span><br><span class="line">rgb&#x3D;123.jpg &lt;-- Cambiar por 122.jpg según los canales activos. También se puede cambiar &#39;jpg&#39; por &#39;bmp&#39;.</span><br><span class="line">rgb_q&#x3D;100</span><br><span class="line">mono&#x3D;yes</span><br><span class="line">logs&#x3D;no</span><br><span class="line">APID70&#x3D;no</span><br><span class="line">VCDU&#x3D;no</span><br><span class="line">path&#x3D;C:\SDR\MeteorM2\imágenes</span><br><span class="line"></span><br><span class="line">[FAST]</span><br><span class="line">FORMAT&#x3D;jpg &lt;-- Cambiar por &#39;bmp&#39; para obtener imagen sin comprimir.</span><br><span class="line">R&#x3D;1</span><br><span class="line">G&#x3D;2</span><br><span class="line">B&#x3D;3 &lt;-- Cambiar por 2 según los canales activos.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Ajustes para decodificar mediante <strong>archivo</strong>:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[IN]</span><br><span class="line">source&#x3D;man</span><br><span class="line">sat&#x3D;M2</span><br><span class="line">mode&#x3D;72k</span><br><span class="line"></span><br><span class="line">[OUT]</span><br><span class="line">rgb&#x3D;123.jpg &lt;-- Cambiar por 122.jpg según los canales activos. También se puede cambiar &#39;jpg&#39; por &#39;bmp&#39;.</span><br><span class="line">rgb_q&#x3D;100</span><br><span class="line">mono&#x3D;yes</span><br><span class="line">logs&#x3D;no</span><br><span class="line">APID70&#x3D;yes</span><br><span class="line">VCDU&#x3D;no</span><br><span class="line">path&#x3D;C:\SDR\MeteorM2\imágenes</span><br><span class="line"></span><br><span class="line">[FAST]</span><br><span class="line">FORMAT&#x3D;jpg &lt;-- Cambiar por &#39;bmp&#39; para obtener imagen sin comprimir.</span><br><span class="line">R&#x3D;1</span><br><span class="line">G&#x3D;2</span><br><span class="line">B&#x3D;3 &lt;-- Cambiar por 2 según los canales activos.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h3><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;120000&gt;</span><br><span class="line">QPSK_demodulator_Start</span><br><span class="line">send_tracking_frequency_On</span><br><span class="line">start_programm_Path&lt;C:\SDR\MeteorM2\Decoder\M2_LRPT_Decoder.exe&gt;</span><br></pre></td></tr></table></figure></p>
+<p>En este ejemplo se ha usado la opción de enviar los datos por socket, por lo que en los ajustes anteriores se ha añadido el comando <strong>start_programm_Path</strong> para que se inice LRPT Decoder de forma automática cuando se inicie el seguimiento. Si optamos por la decodificación desde el archivo, este comando no es necesario.</p>
+<p>Una vez configurado todo correctamente, en el instante en el que el satélite comience a verse por nuestra localización, comenzará el seguimiento automático.</p>
+<p>En el momento en que la señal sea detectada por el <em>plugin</em>, este comenzará a demodularla y a procesarla. Veremos que aparece <strong>Locked</strong> en la interfaz.</p>
+<img src="/recepcion-satelites-meteorologicos-meteor/sdr_sharp_inicio.jpg" class="" width="900" title="SDR#">
+</br>
+<img src="/recepcion-satelites-meteorologicos-meteor/sdr_sharp_recibiendo.jpg" class="" width="900" title="SDR#">
+
+<p>Durante el pase podemos ver como LRPT Decoder genera la imagen si hemos optado por sacar los datos por el socket.</p>
+<img src="/recepcion-satelites-meteorologicos-meteor/meteor_analizer.jpg" class="" width="900" title="LRPT Decoder">
+
+<p>Una vez termine el pase vamos a LRPT Decoder para generar la imagen final. El satélite tiene seis canales de los cuales utiliza tres de forma simultanea. Los tres primeros corresponden a espectro visible y los tres últimos al espectro infrarrojo. A veces podemos encontrar los tres canales del espectro visible o bien dos del visible uno del infrarrojo. La imagen final a color se puede componer uniendo los tres canales RGB del espectro visible, o bien con dos de ellos.</p>
+<img src="/recepcion-satelites-meteorologicos-meteor/meteor_analizer_finalizado.jpg" class="" width="900" title="LRPT Decoder">
+
+<p>Para generarla seleccionamos los canales y hacemos clic en <strong>Generate RGB</strong>. Nos aparecerá una ventana con la vista previa. Ahora hacemos clic en <strong>Save</strong> y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo <strong>M2_LRPT_Decoder.ini</strong>.</p>
+<img src="/recepcion-satelites-meteorologicos-meteor/meteor_analizer_guardar.jpg" class="" width="800" title="LRPT Decoder">
+
+<h3 id="Correccion-de-la-distorsion-de-la-imagen"><a href="#Correccion-de-la-distorsion-de-la-imagen" class="headerlink" title="Corrección de la distorsión de la imagen"></a>Corrección de la distorsión de la imagen</h3><p>Si abrimos la imagen que hemos recibido veremos que presenta una distorsión en los laterales de la misma. Esta distorsión es posible corregirla de forma sencilla usando el software <strong>Smooth Meteor</strong> que podemos descargar desde el siguiente enlace:</p>
+<p><a target="_blank" rel="noopener" href="https://leshamilton.co.uk/soft/smoothmeteor-setup.exe"><center>Descargar Smooth Meteor</center></a></p>
+<p>Una vez lo tengamos instalado, abrimos la imagen y le aplicamos las rectificaciones necesarias.</p>
+<ul>
+<li><strong>Flip N/S:</strong> invierte la imagen verticalmente.</li>
+<li><strong>Equalise:</strong> aplica un procesado de mejora de la imagen.</li>
+<li><strong>Rectify:</strong> elimina la distorsión de la imagen.</li>
+</ul>
+<img src="/recepcion-satelites-meteorologicos-meteor/smooth_meteor.jpg" class="" title="Smooth Meteor">
+
+<p>Por último, guardamos la imagen en el fomato que queramos haciendo clic en <strong>Save as…</strong>.</p>
+<img src="/recepcion-satelites-meteorologicos-meteor/meteor_rectified.jpg" class="" width="300" title="Imagen rectificada">
+
+
+<h2 id="Metodo-2-Baseband-SatDump"><a href="#Metodo-2-Baseband-SatDump" class="headerlink" title="Método 2: Baseband + SatDump"></a>Método 2: Baseband + SatDump</h2><p>Este método es válido para cualquier sistema operativo, ya que usamos el software multiplataforma <a target="_blank" rel="noopener" href="https://github.com/altillimity/SatDump">SatDump</a> para generar la imagen y para grabar el <em>baseband</em> podemos usar cualquier programa SDR.</p>
+<h3 id="Instalar-SatDump"><a href="#Instalar-SatDump" class="headerlink" title="Instalar SatDump"></a>Instalar SatDump</h3><p>Si nuestro sistema operativo es Windows, la instalación es tan sencilla como bajarse el programa ya compilado desde el siguiente enlace:</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/altillimity/SatDump/releases/latest"><center>SatDump releases</center></a></p>
+<p>Para Linux o macOS debemos bajarnos el código fuente y compilarlo. Los pasos para hacerlo están explicados en este enlace:</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/altillimity/SatDump#linux-or-macos"><center>Instalación en Linux/macOS</center></a></p>
+<h3 id="Grabar-el-pase"><a href="#Grabar-el-pase" class="headerlink" title="Grabar el pase"></a>Grabar el pase</h3><p>Lo primero que debemos hacer es grabar el pase del satélite. Necesitamos grabar la señal en banda base (<em>baseband</em>) para pasarla a SatDump.<br>Los formatos de <em>baseband</em> que acepta son los siguientes: i8, i16, f32, w8, ZIQ.</p>
+<p>En este ejemplo vamos a utilizar SDR# para grabar el pase, pero como ya se ha mencionado anteriormente, se puede hacer con cualquier otro programa.</p>
+<p>Grabaremos el pase usando el <em>plugin</em> de grabación de SDR# usando los siguientes ajustes; en formato seleccionamos <strong>16 Bit PCM</strong> (i16) y marcamos solamente la opción de <strong>Baseband</strong>.</p>
+<img src="/recepcion-satelites-meteorologicos-meteor/sdr_sharp_recording.jpg" class="" width="300" title="SDR# - Ajustes grabación">
+
+<p>Para evitar generar un archivo enorme, podemos usar las opciones de <em>decimation</em> o reducir el <em>sample rate</em> a 0.9 MSPS. Necesitamos grabar solo un ancho de banda de unos 120 MHz.</p>
+<p>Ahora nos movemos a la frecuencia del satélite (no es necesario corregir la desviación de la señal en este método) y cuando veamos que aparece la señal pulsamos sobre <em>“Record”</em> para comenzar a grabarlo. Cuando dejemos de ver la señal paramos la grabación.</p>
+<img src="/recepcion-satelites-meteorologicos-meteor/sdr_sharp_recording_baseband.jpg" class="" width="900" title="SDR# - Grabación del pase">
+
+<h3 id="Decodificar-la-imagen"><a href="#Decodificar-la-imagen" class="headerlink" title="Decodificar la imagen"></a>Decodificar la imagen</h3><p>Una vez tenemos nuestro archivo generado se lo pasaremos a SatDump para generar la imagen. En este ejemplo lo haremos usando la interfaz de usuario, pero también es posible hacer lo mismo desde línea de comandos.</p>
+<p>Las opciones que debemos seleccionar podemos verlas en la siguiente captura:</p>
+<img src="/recepcion-satelites-meteorologicos-meteor/satdump_config.jpg" class="" width="700" title="SatDump - Ajustes">
+
+<p>Una vez introducidas las opciones, hacemos clic en <em>“Start”</em> para que comience el procesado.</p>
+<img src="/recepcion-satelites-meteorologicos-meteor/satdump_processing.jpg" class="" width="700" title="SatDump - Procesando archivo">
+
+<p>Una vez termine el procesado, accedemos al directorio de salida que hemos especificado y podremos ver las imágenes generadas.</p>
+<img src="/recepcion-satelites-meteorologicos-meteor/satdump_files.jpg" class="" width="700" title="SatDump - Imágenes">
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Artículos relacionados</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/recepcion-datos-HIRS-satelites-NOAA/" rel="bookmark">Recepción de datos del instrumental HIRS de los satélites NOAA</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/recepcion-satelites-meteorologicos-NOAA/" rel="bookmark">Recepción de satélites meteorológicos NOAA</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/ajuste-frecuencia-doppler-orbitron/" rel="bookmark">Ajuste de frecuencia en recepción de satélites</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/generar-archivo-TLE/" rel="bookmark">Generar archivo TLE personalizado</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/instalacion-satnogs-ansible/" rel="bookmark">Instalación de estación terrestre con SatNOGS (II)</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+          <div class="followme">
+  <span>Síguenos en nuestros otros canales</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://twitter.com/sdr_esp">
+          <span class="icon">
+            <i class="fab fa-twitter"></i>
+          </span>
+
+          <span class="label">Twitter</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA">
+          <span class="icon">
+            <i class="fab fa-youtube"></i>
+          </span>
+
+          <span class="label">YouTube</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://t.me/sdr_es">
+          <span class="icon">
+            <i class="fab fa-telegram-plane"></i>
+          </span>
+
+          <span class="label">Telegram</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Satelites/" rel="tag"><i class="fa fa-tag"></i> Satélites</a>
+              <a href="/tags/Satelites-meteorologicos/" rel="tag"><i class="fa fa-tag"></i> Satélites meteorológicos</a>
+              <a href="/tags/Meteorologia/" rel="tag"><i class="fa fa-tag"></i> Meteorología</a>
+          </div>
+          
+
+<div class="post-copyright">
+<ul>
+  <!--
+  <li class="post-copyright-author">
+      <strong>Written by:  </strong>EA7KOO
+  </li>
+  <li class="post-copyright-link">
+      <strong>Enlace a la entrada: </strong>
+      <a href="http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/" title="Recepción de satélites meteorológicos Meteor-M">http://sdr-es.com/recepcion-satelites-meteorologicos-meteor/</a>
+  </li>
+  -->
+  <li class="post-copyright-license">
+    <strong>Copyright:  </strong>Todos los artículos de este sitio están licenciados bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> a no ser que se especifique una licencia adicional.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/recepcion-satelites-meteorologicos-NOAA/" rel="prev" title="Recepción de satélites meteorológicos NOAA">
+                  <i class="fa fa-chevron-left"></i> Recepción de satélites meteorológicos NOAA
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/instalacion-rtlsdr-raspberrypi/" rel="next" title="Instalación de dispositivos RTL-SDR en Raspberry Pi">
+                  Instalación de dispositivos RTL-SDR en Raspberry Pi <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class=""></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SDR en español</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Twitter,Facebook,Linkedin,Reddit,GoogleBookmarks";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+</body>
+</html>

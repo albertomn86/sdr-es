@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="TinyGS es una red de estaciones terrestres distribuida alrededor del mundo para la recepción y operación de satélites LoRa, sondas meteorológicas y otros objetos, usando módulos programables de muy ba">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recibir satélites LoRa">
+<meta property="og:url" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/index.html">
+<meta property="og:site_name" content="SDR en español">
+<meta property="og:description" content="TinyGS es una red de estaciones terrestres distribuida alrededor del mundo para la recepción y operación de satélites LoRa, sondas meteorológicas y otros objetos, usando módulos programables de muy ba">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/logo.png">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/assets.png">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/tinygs-upload.png">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/telegram-welcome.png">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/telegram-mqtt.png">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/tinygs-red.png">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/tinygs-configure.png">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/board.jpg">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/board-wifi.jpg">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/tinygs-dashboard.png">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/tinygs-web.png">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/board-next.jpg">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/board-confirmed.jpg">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/board-error.jpg">
+<meta property="og:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/telegram-telemetry.png">
+<meta property="article:published_time" content="2021-03-30T16:55:34.000Z">
+<meta property="article:modified_time" content="2021-03-30T16:55:34.000Z">
+<meta property="article:author" content="SDR en español">
+<meta property="article:tag" content="Satélites">
+<meta property="article:tag" content="Cubesat">
+<meta property="article:tag" content="LoRa">
+<meta property="article:tag" content="tinyGS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/logo.png">
+
+
+<link rel="canonical" href="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"es","comments":true,"permalink":"http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/","path":"recibir-satelites-LoRa-con-tinyGS/","title":"Recibir satélites LoRa"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Recibir satélites LoRa | SDR en español</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156538909-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-156538909-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Cambiar a barra de navegación" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">SDR en español</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li>
+        <li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li>
+        <li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li>
+        <li class="menu-item menu-item-bands-plan"><a href="/plan-bandas/" rel="section"><i class="fa fa-broadcast-tower fa-fw"></i>Plan bandas IARU</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Buscando..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Contenidos
+        </li>
+        <li class="sidebar-nav-overview">
+          Inicio
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Placas-compatibles"><span class="nav-number">1.</span> <span class="nav-text">Placas compatibles</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion"><span class="nav-number">2.</span> <span class="nav-text">Instalación</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuracion"><span class="nav-number">3.</span> <span class="nav-text">Configuración</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Solicitar-datos-de-acceso"><span class="nav-number">3.1.</span> <span class="nav-text">Solicitar datos de acceso</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Configurar-la-estacion"><span class="nav-number">3.2.</span> <span class="nav-text">Configurar la estación</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Acceder-a-nuestra-estacion"><span class="nav-number">4.</span> <span class="nav-text">Acceder a nuestra estación</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recepcion-de-paquetes"><span class="nav-number">5.</span> <span class="nav-text">Recepción de paquetes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Agradecimientos"><span class="nav-number">6.</span> <span class="nav-text">Agradecimientos</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SDR en español"
+      src="/images/avatar-sdr.gif">
+  <p class="site-author-name" itemprop="name">SDR en español</p>
+  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">entradas</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/sdr_es" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_es" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
+    <link itemprop="mainEntityOfPage" href="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-sdr.gif">
+      <meta itemprop="name" content="SDR en español">
+      <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SDR en español">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Recibir satélites LoRa
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
+
+      <time title="Creado por: 30/03/2021 18:55:34" itemprop="dateCreated datePublished" datetime="2021-03-30T18:55:34+02:00">30/03/2021</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>EA7KOO</span>
+    </span>
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><a target="_blank" rel="noopener" href="https://tinygs.com/">TinyGS</a> es una red de estaciones terrestres distribuida alrededor del mundo para la recepción y operación de satélites <a target="_blank" rel="noopener" href="https://www.thethingsnetwork.org/community/santa-rosa/post/que-es-la-tecnologia-lora-y-por-que-es-importante-para-iot">LoRa</a>, sondas meteorológicas y otros objetos, usando módulos programables de muy bajo coste.<br>En este artículo veremos como instalar y configurar nuestra estación terrestre desde cero.</p>
+<span id="more"></span>
+
+<img src="/recibir-satelites-LoRa-con-tinyGS/logo.png" class="" width="400" title="TinyGS">
+<h2 id="Placas-compatibles"><a href="#Placas-compatibles" class="headerlink" title="Placas compatibles"></a>Placas compatibles</h2><p>Podemos encontrar placas compatibles por unos 10€/15€. Algunos de los modelos compatibles más usados son los siguientes:</p>
+<ul>
+<li>Heltec WiFi LoRa 32 V1/V2 (versiones de 433MHz y 863-928MHz).</li>
+<li>TTGO LoRa32 V1/V2 (versiones de 433MHz y 868-915MHz).</li>
+<li>TTGO T-BEAM + OLED (versiones de 433MHz y 868-915MHz).</li>
+<li>FOSSA 1W Ground Station (versiones de 433MHz y 868-915MHz).</li>
+<li>Placas de desarrollo ESP32 con SX126X/SX127X.</li>
+</ul>
+<p>Consultar <a target="_blank" rel="noopener" href="https://github.com/G4lile0/tinyGS/wiki/Ground-Station-configuration#current-available-boards">la web del proyecto</a> para más detalles sobre placas compatibles.</p>
+<h2 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalación"></a>Instalación</h2><p>Para la instalación seguiremos el método sencillo, que consiste en descargar un programa que realiza la instalación del <em>firmware</em> de forma automática. Para ello accedemos al siguiente enlace para obtener la última versión disponible de TinyGS:</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/G4lile0/tinyGS/releases/"><center>TinyGS releases</center></a></p>
+<p>Buscamos el instalador en los archivos adjuntos de la última <em>release</em> y descargamos la versión adecuada para el sistema operativo que estemos usando.</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/assets.png" class="" title="TinyGS - Releases">
+
+<p>Una vez descargado, extraemos el programa y lo ejecutamos.</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/tinygs-upload.png" class="" title="TinyGS Uploader">
+
+<p>Ahora seleccionamos el puerto COM en el que tenemos conectada nuestra placa y hacemos clic en <strong><em>Upload tinyGS firmware!</em></strong>.<br>Si no nos aparece el puerto COM para seleccionar, debemos asegurarnos de que la placa está bien conectada y que tenemos los controladores previamente instalados.</p>
+<p>Una vez termine de grabarse nuestra placa, esta se reiniciará (puede tardar algunos minutos) y quedará lista para el siguiente paso.</p>
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><h3 id="Solicitar-datos-de-acceso"><a href="#Solicitar-datos-de-acceso" class="headerlink" title="Solicitar datos de acceso"></a>Solicitar datos de acceso</h3><p>El primer paso para la configuración de nuestra estación será la obtención de nuestros datos de acceso al servidor MQTT del proyecto. Este servidor es el encargado de recolectar los paquetes de datos de los satélites que reciben las distintas estaciones conectadas, así como de la  gestión de las mismas. Para obtener los datos de acceso del servidor debemos acceder al canal del proyecto en Telegram mediante el siguiente enlace:<br><a target="_blank" rel="noopener" href="https://t.me/joinchat/DmYSElZahiJGwHX6jCzB3Q"><center>tinyGS Community</center></a></p>
+<p>Una vez nos unimos al grupo podremos ver un mensaje de bienvenida como el siguiente:</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/telegram-welcome.png" class="" title="Telegram grupo TinyGS">
+
+<p>Para solicitar nuestros datos de acceso debemos iniciar una conversación con el <em>bot</em> del proyecto haciendo clic en el botón <strong><em>Open private chat</em></strong> que aparece en el mensaje.<br>Ahora se nos abrirá un nuevo chat con el <em>bot</em> al que enviaremos el mensaje <strong>“/mqtt”</strong>. El <em>bot</em> nos responderá con nuestros datos de acceso que debemos anotar y, por supuesto, no debemos compartir con nadie.</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/telegram-mqtt.png" class="" width="400" title="Telegram TinyGS bot mqtt">
+
+<h3 id="Configurar-la-estacion"><a href="#Configurar-la-estacion" class="headerlink" title="Configurar la estación"></a>Configurar la estación</h3><p>Una vez tenemos nuestra placa con el <em>firmware</em> instalado y hemos conseguido nuestros datos de acceso, el siguiente paso es configurar la estación.<br>Si hemos seguido los pasos de esta guía, a estas alturas nuestra estación ya debe haberse reiniciado y debe mostrar por pantalla que está lista para la configuración.</p>
+<p>Para acceder a la interfaz de configuración debemos conectarnos primeramente a la red inalámbrica que la propia estación ha creado.</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/tinygs-red.png" class="" title="TinyGS">
+
+<p>Una vez estemos conectados a esta red, debemos abrir el navegador web y acceder a la dirección <strong>192.168.4.1</strong>. Se nos mostrará un menú con opciones como el siguiente:</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/tinygs-configure.png" class="" width="500" title="Telegram TinyGS bot configure">
+
+<p>Hacemos clic en <strong><em>Configure parameters</em></strong> e introducimos los parámetros de configuración de nuestra estación.<br>Los valores básicos que debemos introducir son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GroundStation name</td>
+<td>Nombre de nuestra estación.</td>
+</tr>
+<tr>
+<td>Password for this dashboard</td>
+<td>Clave de acceso que queramos para entrar al panel de datos web.</td>
+</tr>
+<tr>
+<td>WiFi SSID</td>
+<td>Nombre de la red WiFi a la que se conectará la estación.</td>
+</tr>
+<tr>
+<td>WiFi password</td>
+<td>Clave de la red WiFi a la que se conectará la estación.</td>
+</tr>
+<tr>
+<td>Latitude</td>
+<td>Latitud. Valor con 3 dígitos decimales. Signo menos para latitud sur.</td>
+</tr>
+<tr>
+<td>Longitude</td>
+<td>Longitud. Valor con 3 dígitos decimales. Signo menos para longitud oeste.</td>
+</tr>
+<tr>
+<td>Timezone</td>
+<td>Nuestra zona horaria.</td>
+</tr>
+<tr>
+<td>MQTT Username</td>
+<td>Nombre de usuario que hemos obtenido en el paso anterior.</td>
+</tr>
+<tr>
+<td>MQTT Password</td>
+<td>Contraseña que hemos obtenido en el paso anterior.</td>
+</tr>
+<tr>
+<td>Board type</td>
+<td>Nuestro modelo de placa.</td>
+</tr>
+<tr>
+<td>OLED Bright</td>
+<td>Nivel de brillo de la pantalla. Cuanto menor brillo, más tiempo durará la pantalla.</td>
+</tr>
+</tbody></table>
+<p>Podemos ver una descripción más detallada de todos los parámetros en <a target="_blank" rel="noopener" href="https://github.com/G4lile0/tinyGS/wiki/Ground-Station-configuration">la web del proyecto</a>.</p>
+<p>Una vez introducidos los datos, hacemos clic en <strong><em>Apply</em></strong> para aplicar los ajustes y reiniciamos la estación.</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/board.jpg" class="" title="HELTEC V2">
+
+<h2 id="Acceder-a-nuestra-estacion"><a href="#Acceder-a-nuestra-estacion" class="headerlink" title="Acceder a nuestra estación"></a>Acceder a nuestra estación</h2><p>Si hemos llegado hasta este paso sin problemas, nuestra estación ya debería estar conectada al servidor MQTT y lista para recibir datos desde los satélites.<br>Si queremos comprobar el estado de nuestra estación o bien realizar ajustes en la misma tenemos varias formas de interactuar con ella.</p>
+<p>La primera forma sería lógicamente mirando la pantalla de la estación. En ella podremos ver el estado de la misma, así como el satélite que está escuchando y el último paquete recibido.</p>
+<p>Otra forma sería usando el <em>bot</em> privado de Telegram que hemos usado previamente para obtener los datos de acceso al servidor.<br>Bastaría con enviarle al <em>bot</em> el mensaje “<strong>/stations</strong>“ y nos devolverá un listado con nuestras estaciones conectadas y algunos datos de las mismas.</p>
+<p>También podemos ver el estado de nuestra estación accediendo por red local a ella. Para ello necesitamos conocer previamente la dirección IP de la misma, siendo la forma más sencilla de obtenerla la propia pantalla.</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/board-wifi.jpg" class="" title="Dirección IP">
+
+<p>Una vez la tenemos, accedemos mediante el navegador y en el menú hacemos clic en <strong><em>Station dashboard</em></strong>. Nos pedirá unos datos de acceso que son <strong>“admin”</strong> para el nombre de usuario y la contraseña es la que le hemos indicado en el paso previo de configuración.</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/tinygs-dashboard.png" class="" width="600" title="TinyGS Dashboard">
+
+<p>Por último, la forma más completa de consultar el estado y de ver todos los paquetes recibidos, sería desde la web <a target="_blank" rel="noopener" href="https://tinygs.com/">https://tinygs.com</a></p>
+<p>Si accedemos directamente a esta web solo podremos ver los datos públicos de las estaciones y no podremos interactuar con nuestra estación. Para acceder a nuestro propio panel de usuario en la web necesitamos un enlace personalizado que vamos a obtener desde el <em>bot</em> de Telegram. Para que nos genere un enlace le enviamos el mensaje “<strong>/weblogin</strong>“ y nos responderá con un enlace temporal que usaremos para acceder a la web. Sobra decir que este enlace no debe ser compartido con nadie, ya que le estaríamos dando el control de nuestra estación.</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/tinygs-web.png" class="" width="600" title="TinyGS Web">
+
+<h2 id="Recepcion-de-paquetes"><a href="#Recepcion-de-paquetes" class="headerlink" title="Recepción de paquetes"></a>Recepción de paquetes</h2><p>Si tenemos nuestra estación activa y conectada la red MQTT y a la antena, la recepción de los paquetes de datos se hará de forma automática y desatendida. La estación recibe desde el servidor los ajustes de escucha para el satélite que va a realizar el pase sobre nuestra posición y se prepara para recibir la señal. Podemos ver fácilmente el satélite activo en la pantalla:</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/board-next.jpg" class="" title="Satélite activo">
+
+<p>Una vez se reciba un paquete de datos, este se enviará al servidor y se mostrará en pantalla la palabra <strong><em>CONFIRMED</em></strong>.</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/board-confirmed.jpg" class="" title="Paquete confirmado">
+
+<p>Si hemos recibido el paquete, pero por cualquier motivo nos ha llegado incompleto o corrupto, veremos un mensaje como el siguiente:</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/board-error.jpg" class="" title="Paquete descartado">
+
+<p>Esto quiere decir que el mensaje no ha superado la verificación mediante CRC (código de redundancia cíclica) y no es válido.</p>
+<p>Si queremos ver la recepción de los mensajes en tiempo real, podemos acceder al canal de Telegram <a target="_blank" rel="noopener" href="https://t.me/tinyGS_Telemetry">TinyGS Telemetry</a> y ver si nuestros mensajes se están subiendo correctamente al servidor.</p>
+<img src="/recibir-satelites-LoRa-con-tinyGS/telegram-telemetry.png" class="" width="400" title="Telegram grupo telemetría">
+
+<h2 id="Agradecimientos"><a href="#Agradecimientos" class="headerlink" title="Agradecimientos"></a>Agradecimientos</h2><p>Finalmente quiero dar mis agradecimientos y reconocimiento a todo el equipo que conforma el proyecto TinyGS y a todos los colaboradores que lo hacen posible.</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Artículos relacionados</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/recepcion-jy1sat/" rel="bookmark">Recepción del satélite JY1-SAT</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/recepcion-funcube1/" rel="bookmark">Recepción del satélite FUNcube-1</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/recepcion-nayif1/" rel="bookmark">Recepción del satélite NAYIF-1</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/ajuste-frecuencia-doppler-orbitron/" rel="bookmark">Ajuste de frecuencia en recepción de satélites</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/generar-archivo-TLE/" rel="bookmark">Generar archivo TLE personalizado</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+          <div class="followme">
+  <span>Síguenos en nuestros otros canales</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://twitter.com/sdr_esp">
+          <span class="icon">
+            <i class="fab fa-twitter"></i>
+          </span>
+
+          <span class="label">Twitter</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA">
+          <span class="icon">
+            <i class="fab fa-youtube"></i>
+          </span>
+
+          <span class="label">YouTube</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://t.me/sdr_es">
+          <span class="icon">
+            <i class="fab fa-telegram-plane"></i>
+          </span>
+
+          <span class="label">Telegram</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Satelites/" rel="tag"><i class="fa fa-tag"></i> Satélites</a>
+              <a href="/tags/Cubesat/" rel="tag"><i class="fa fa-tag"></i> Cubesat</a>
+              <a href="/tags/LoRa/" rel="tag"><i class="fa fa-tag"></i> LoRa</a>
+              <a href="/tags/tinyGS/" rel="tag"><i class="fa fa-tag"></i> tinyGS</a>
+          </div>
+          
+
+<div class="post-copyright">
+<ul>
+  <!--
+  <li class="post-copyright-author">
+      <strong>Written by:  </strong>EA7KOO
+  </li>
+  <li class="post-copyright-link">
+      <strong>Enlace a la entrada: </strong>
+      <a href="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/" title="Recibir satélites LoRa">http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/</a>
+  </li>
+  -->
+  <li class="post-copyright-license">
+    <strong>Copyright:  </strong>Todos los artículos de este sitio están licenciados bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> a no ser que se especifique una licencia adicional.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/recibir-aprs/" rel="prev" title="Recibir APRS">
+                  <i class="fa fa-chevron-left"></i> Recibir APRS
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/recibir-aprs-macos-con-gqrx/" rel="next" title="Recibir APRS en macOS con Gqrx">
+                  Recibir APRS en macOS con Gqrx <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class=""></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SDR en español</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Twitter,Facebook,Linkedin,Reddit,GoogleBookmarks";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+</body>
+</html>

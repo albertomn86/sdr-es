@@ -18,13 +18,13 @@
   
   <entry>
     <title>Seguimiento de satélites con Gpredict</title>
-    <link href="http://sdr-es.com/2021/12/23/seguimiento-satelites-gpredict/"/>
-    <id>http://sdr-es.com/2021/12/23/seguimiento-satelites-gpredict/</id>
+    <link href="http://sdr-es.com/seguimiento-satelites-gpredict/"/>
+    <id>http://sdr-es.com/seguimiento-satelites-gpredict/</id>
     <published>2021-12-23T12:50:15.000Z</published>
     <updated>2021-12-23T12:50:15.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;http://gpredict.oz9aec.net/&quot;&gt;Gpredict&lt;/a&gt; es un programa para el seguimiento en tiempo real y predicción de órbitas para satélites. Este programa es muy similar a Orbitron, el cual ya vimos cómo instalar y configurar en el artículo &lt;a href=&quot;/2020/01/23/seguimiento-satelites-orbitron&quot;&gt;“Seguimiento de satélites con Orbitron”&lt;/a&gt;. Pero al contrario de este, Gpredict es multiplataforma, por lo que podremos usarlo en diferentes sistemas operativos.&lt;br&gt;En este artículo veremos como instalar y configurar Gpredict en Windows, Linux y macOS.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;http://gpredict.oz9aec.net/&quot;&gt;Gpredict&lt;/a&gt; es un programa para el seguimiento en tiempo real y predicción de órbitas para satélites. Este programa es muy similar a Orbitron, el cual ya vimos cómo instalar y configurar en el artículo &lt;a href=&quot;/seguimiento-satelites-orbitron&quot;&gt;“Seguimiento de satélites con Orbitron”&lt;/a&gt;. Pero al contrario de este, Gpredict es multiplataforma, por lo que podremos usarlo en diferentes sistemas operativos.&lt;br&gt;En este artículo veremos como instalar y configurar Gpredict en Windows, Linux y macOS.&lt;/p&gt;</summary>
     
     
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>Instalar SDR++</title>
-    <link href="http://sdr-es.com/2021/12/21/instalacion-sdrpp/"/>
-    <id>http://sdr-es.com/2021/12/21/instalacion-sdrpp/</id>
+    <link href="http://sdr-es.com/instalacion-sdrpp/"/>
+    <id>http://sdr-es.com/instalacion-sdrpp/</id>
     <published>2021-12-21T17:55:53.000Z</published>
     <updated>2021-12-21T17:55:53.000Z</updated>
     
@@ -64,8 +64,8 @@
   
   <entry>
     <title>Recepción del satélite FalconSAT-3</title>
-    <link href="http://sdr-es.com/2021/10/17/recepcion-falconsat-3/"/>
-    <id>http://sdr-es.com/2021/10/17/recepcion-falconsat-3/</id>
+    <link href="http://sdr-es.com/recepcion-falconsat-3/"/>
+    <id>http://sdr-es.com/recepcion-falconsat-3/</id>
     <published>2021-10-17T08:31:38.000Z</published>
     <updated>2021-10-17T08:31:38.000Z</updated>
     
@@ -83,8 +83,8 @@
   
   <entry>
     <title>Recibir telemetría de radiosondas meteorológicas</title>
-    <link href="http://sdr-es.com/2021/10/03/recibir-telemetria-radiosondas/"/>
-    <id>http://sdr-es.com/2021/10/03/recibir-telemetria-radiosondas/</id>
+    <link href="http://sdr-es.com/recibir-telemetria-radiosondas/"/>
+    <id>http://sdr-es.com/recibir-telemetria-radiosondas/</id>
     <published>2021-10-03T08:48:43.000Z</published>
     <updated>2021-10-03T08:48:43.000Z</updated>
     
@@ -102,8 +102,8 @@
   
   <entry>
     <title>Recepción de cartas meteorológicas (weather fax)</title>
-    <link href="http://sdr-es.com/2021/09/01/recepcion-weather-fax/"/>
-    <id>http://sdr-es.com/2021/09/01/recepcion-weather-fax/</id>
+    <link href="http://sdr-es.com/recepcion-weather-fax/"/>
+    <id>http://sdr-es.com/recepcion-weather-fax/</id>
     <published>2021-09-01T15:11:53.000Z</published>
     <updated>2021-09-01T15:11:53.000Z</updated>
     
@@ -124,8 +124,8 @@
   
   <entry>
     <title>Recepción de mensajes VDL2</title>
-    <link href="http://sdr-es.com/2021/08/28/recepcion-mensajes-VDL2/"/>
-    <id>http://sdr-es.com/2021/08/28/recepcion-mensajes-VDL2/</id>
+    <link href="http://sdr-es.com/recepcion-mensajes-VDL2/"/>
+    <id>http://sdr-es.com/recepcion-mensajes-VDL2/</id>
     <published>2021-08-28T10:10:53.000Z</published>
     <updated>2021-08-28T10:10:53.000Z</updated>
     
@@ -147,8 +147,8 @@
   
   <entry>
     <title>Recibir radio movil digital (DMR)</title>
-    <link href="http://sdr-es.com/2021/08/27/recibir-radio-movil-digital-DMR/"/>
-    <id>http://sdr-es.com/2021/08/27/recibir-radio-movil-digital-DMR/</id>
+    <link href="http://sdr-es.com/recibir-radio-movil-digital-DMR/"/>
+    <id>http://sdr-es.com/recibir-radio-movil-digital-DMR/</id>
     <published>2021-08-27T08:30:04.000Z</published>
     <updated>2021-08-27T08:30:04.000Z</updated>
     
@@ -168,8 +168,8 @@
   
   <entry>
     <title>Generar archivo TLE personalizado</title>
-    <link href="http://sdr-es.com/2021/04/18/generar-archivo-TLE/"/>
-    <id>http://sdr-es.com/2021/04/18/generar-archivo-TLE/</id>
+    <link href="http://sdr-es.com/generar-archivo-TLE/"/>
+    <id>http://sdr-es.com/generar-archivo-TLE/</id>
     <published>2021-04-18T11:01:07.000Z</published>
     <updated>2021-04-18T11:01:07.000Z</updated>
     
@@ -187,8 +187,8 @@
   
   <entry>
     <title>Construcción de antena QFH para satélites meteorológicos</title>
-    <link href="http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/"/>
-    <id>http://sdr-es.com/2021/04/10/construccion-antena-qfh-137/</id>
+    <link href="http://sdr-es.com/construccion-antena-qfh-137/"/>
+    <id>http://sdr-es.com/construccion-antena-qfh-137/</id>
     <published>2021-04-10T12:25:54.000Z</published>
     <updated>2021-07-13T16:25:54.000Z</updated>
     
@@ -210,8 +210,8 @@
   
   <entry>
     <title>Instalación de SDRPlay RSP2 en Debian Testing</title>
-    <link href="http://sdr-es.com/2021/04/05/instalacion-SDRPlay-RSP2-debian-testing/"/>
-    <id>http://sdr-es.com/2021/04/05/instalacion-SDRPlay-RSP2-debian-testing/</id>
+    <link href="http://sdr-es.com/instalacion-SDRPlay-RSP2-debian-testing/"/>
+    <id>http://sdr-es.com/instalacion-SDRPlay-RSP2-debian-testing/</id>
     <published>2021-04-05T17:40:25.000Z</published>
     <updated>2021-04-05T17:40:25.000Z</updated>
     
@@ -229,8 +229,8 @@
   
   <entry>
     <title>Recibir APRS en macOS con Gqrx</title>
-    <link href="http://sdr-es.com/2021/04/02/recibir-aprs-macos-con-gqrx/"/>
-    <id>http://sdr-es.com/2021/04/02/recibir-aprs-macos-con-gqrx/</id>
+    <link href="http://sdr-es.com/recibir-aprs-macos-con-gqrx/"/>
+    <id>http://sdr-es.com/recibir-aprs-macos-con-gqrx/</id>
     <published>2021-04-02T15:06:10.000Z</published>
     <updated>2021-04-02T15:06:10.000Z</updated>
     
@@ -252,8 +252,8 @@
   
   <entry>
     <title>Recibir satélites LoRa</title>
-    <link href="http://sdr-es.com/2021/03/30/recibir-satelites-LoRa-con-tinyGS/"/>
-    <id>http://sdr-es.com/2021/03/30/recibir-satelites-LoRa-con-tinyGS/</id>
+    <link href="http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/"/>
+    <id>http://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/</id>
     <published>2021-03-30T16:55:34.000Z</published>
     <updated>2021-03-30T16:55:34.000Z</updated>
     
@@ -275,8 +275,8 @@
   
   <entry>
     <title>Recibir APRS</title>
-    <link href="http://sdr-es.com/2021/03/23/recibir-aprs/"/>
-    <id>http://sdr-es.com/2021/03/23/recibir-aprs/</id>
+    <link href="http://sdr-es.com/recibir-aprs/"/>
+    <id>http://sdr-es.com/recibir-aprs/</id>
     <published>2021-03-23T20:02:24.000Z</published>
     <updated>2021-03-23T20:02:24.000Z</updated>
     
@@ -294,8 +294,8 @@
   
   <entry>
     <title>Recibir imágenes SSTV desde la ISS</title>
-    <link href="http://sdr-es.com/2020/12/26/recibir-sstv-iss/"/>
-    <id>http://sdr-es.com/2020/12/26/recibir-sstv-iss/</id>
+    <link href="http://sdr-es.com/recibir-sstv-iss/"/>
+    <id>http://sdr-es.com/recibir-sstv-iss/</id>
     <published>2020-12-26T17:15:55.000Z</published>
     <updated>2020-12-26T17:15:55.000Z</updated>
     
@@ -313,8 +313,8 @@
   
   <entry>
     <title>Recibir radio digital mundial (DRM)</title>
-    <link href="http://sdr-es.com/2020/10/25/recibir-drm/"/>
-    <id>http://sdr-es.com/2020/10/25/recibir-drm/</id>
+    <link href="http://sdr-es.com/recibir-drm/"/>
+    <id>http://sdr-es.com/recibir-drm/</id>
     <published>2020-10-25T10:52:23.000Z</published>
     <updated>2022-01-06T13:10:00.000Z</updated>
     
@@ -332,8 +332,8 @@
   
   <entry>
     <title>Recepción de los satélites CAS-4</title>
-    <link href="http://sdr-es.com/2020/10/10/recepcion-cas4/"/>
-    <id>http://sdr-es.com/2020/10/10/recepcion-cas4/</id>
+    <link href="http://sdr-es.com/recepcion-cas4/"/>
+    <id>http://sdr-es.com/recepcion-cas4/</id>
     <published>2020-10-10T17:23:32.000Z</published>
     <updated>2020-10-10T17:23:32.000Z</updated>
     
@@ -351,8 +351,8 @@
   
   <entry>
     <title>Instalar receptor SDR online con OpenWebRX</title>
-    <link href="http://sdr-es.com/2020/08/13/instalacion-openwebrx/"/>
-    <id>http://sdr-es.com/2020/08/13/instalacion-openwebrx/</id>
+    <link href="http://sdr-es.com/instalacion-openwebrx/"/>
+    <id>http://sdr-es.com/instalacion-openwebrx/</id>
     <published>2020-08-13T15:36:20.000Z</published>
     <updated>2021-12-03T19:42:00.000Z</updated>
     
@@ -376,13 +376,13 @@
   
   <entry>
     <title>Recepción de datos del instrumental HIRS de los satélites NOAA</title>
-    <link href="http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/"/>
-    <id>http://sdr-es.com/2020/07/27/recepcion-datos-HIRS-satelites-NOAA/</id>
+    <link href="http://sdr-es.com/recepcion-datos-HIRS-satelites-NOAA/"/>
+    <id>http://sdr-es.com/recepcion-datos-HIRS-satelites-NOAA/</id>
     <published>2020-07-27T18:19:04.000Z</published>
     <updated>2020-07-27T18:19:04.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Como vimos en el artículo &lt;a href=&quot;/2020/03/20/recepcion-satelites-meteorologicos-NOAA/&quot;&gt;“Recepción de satélites meteorológicos NOAA”&lt;/a&gt;, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.&lt;/p&gt;
+    <summary type="html">&lt;p&gt;Como vimos en el artículo &lt;a href=&quot;/recepcion-satelites-meteorologicos-NOAA/&quot;&gt;“Recepción de satélites meteorológicos NOAA”&lt;/a&gt;, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.&lt;/p&gt;
 &lt;p&gt;El HIRS &lt;em&gt;(High Resolution Infrared Radiation Sounder)&lt;/em&gt; es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.&lt;br&gt;Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.&lt;/p&gt;</summary>
     
     
@@ -400,8 +400,8 @@
   
   <entry>
     <title>Instalación de dispositivos RTL-SDR en macOS</title>
-    <link href="http://sdr-es.com/2020/06/14/instalacion-rtlsdr-macos/"/>
-    <id>http://sdr-es.com/2020/06/14/instalacion-rtlsdr-macos/</id>
+    <link href="http://sdr-es.com/instalacion-rtlsdr-macos/"/>
+    <id>http://sdr-es.com/instalacion-rtlsdr-macos/</id>
     <published>2020-06-14T08:32:42.000Z</published>
     <updated>2020-06-14T08:32:42.000Z</updated>
     
@@ -423,8 +423,8 @@
   
   <entry>
     <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
-    <link href="http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/"/>
-    <id>http://sdr-es.com/2020/05/10/identificacion-estaciones-csvuserlistbrowser/</id>
+    <link href="http://sdr-es.com/identificacion-estaciones-csvuserlistbrowser/"/>
+    <id>http://sdr-es.com/identificacion-estaciones-csvuserlistbrowser/</id>
     <published>2020-05-10T12:40:22.000Z</published>
     <updated>2020-05-10T12:40:22.000Z</updated>
     
