@@ -658,50 +658,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Instalación de dispositivos RTL-SDR en Raspberry Pi</title>
-    <url>/2020/04/10/instalacion-rtlsdr-raspberrypi/</url>
-    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.</p>
-<span id="more"></span>
-
-<img src="/2020/04/10/instalacion-rtlsdr-raspberrypi/raspberry-pi-3.png" class="" title="Raspberry Pi 3">
-
-<p>Vamos a instalar los drivers y librerias necesarias para usar el dispositivo SDR. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install rtl-sdr librtlsdr-dev</span><br></pre></td></tr></table></figure>
-
-<p>Una vez instalado el dispositivo le daremos permisos a los usuarios no <em>root</em> para poder usar el dispositivo. Para ello seguiremos los siguientes pasos para crear una regla <em>udev</em>.</p>
-<ol>
-<li>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para obtener la lista de dispositivos USB conectados:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lsusb</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Buscamos en la lista el dispositivo SDR y nos fijamos en los identificadores de fabricante y de dispositivo. En este caso son <strong>0bda</strong> y <strong>2838</strong> respectivamente.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Bus 001 Device 004: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Ahora creamos un archivo de reglas nuevo:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;udev&#x2F;rules.d&#x2F;rtl-sdr.rules</span><br></pre></td></tr></table></figure>
-
-<p>Y añadimos la siguiente regla modificando los identificadores si fuese necesario para que correspondan con los obtenidos en el paso anterior:</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">SUBSYSTEMS==<span class="string">&quot;usb&quot;</span>, ATTRS&#123;idVendor&#125;==<span class="string">&quot;0bda&quot;</span>, ATTRS&#123;idProduct&#125;==<span class="string">&quot;2838&quot;</span>, MODE:=<span class="string">&quot;0666&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>Por último desconectamos el dispostivo SDR y lo volvemos a conectar para que se aplique la regla y ejecutamos el siguiente comando para comprobar que el dispositivo funciona correctamente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
-
-<p>Si todo está correctamente instalado veremos una salida como la siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 82020715</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Detached kernel driver</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br><span class="line">Allocating 15 zero-copy buffers</span><br><span class="line">lost at least 140 bytes</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>RTL-SDR</tag>
-        <tag>Linux</tag>
-        <tag>SDRSharp</tag>
-        <tag>Raspberry Pi</tag>
-        <tag>Instalación</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Instalar receptor SDR online con OpenWebRX</title>
     <url>/2020/08/13/instalacion-openwebrx/</url>
     <content><![CDATA[<p><a href="https://www.openwebrx.de/">OpenWebRX</a> es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier lugar, simplemente accediendo desde un navegador web.</p>
@@ -752,8 +708,8 @@
       <tags>
         <tag>RTL-SDR</tag>
         <tag>Linux</tag>
-        <tag>Raspberry Pi</tag>
         <tag>OpenWebRX</tag>
+        <tag>Raspberry Pi</tag>
       </tags>
   </entry>
   <entry>
@@ -791,9 +747,53 @@
 ]]></content>
       <tags>
         <tag>RTL-SDR</tag>
-        <tag>Instalación</tag>
         <tag>macOS</tag>
         <tag>CubicSDR</tag>
+        <tag>Instalación</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalación de dispositivos RTL-SDR en Raspberry Pi</title>
+    <url>/2020/04/10/instalacion-rtlsdr-raspberrypi/</url>
+    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.</p>
+<span id="more"></span>
+
+<img src="/2020/04/10/instalacion-rtlsdr-raspberrypi/raspberry-pi-3.png" class="" title="Raspberry Pi 3">
+
+<p>Vamos a instalar los drivers y librerias necesarias para usar el dispositivo SDR. Para ello ejecutamos el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install rtl-sdr librtlsdr-dev</span><br></pre></td></tr></table></figure>
+
+<p>Una vez instalado el dispositivo le daremos permisos a los usuarios no <em>root</em> para poder usar el dispositivo. Para ello seguiremos los siguientes pasos para crear una regla <em>udev</em>.</p>
+<ol>
+<li>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para obtener la lista de dispositivos USB conectados:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lsusb</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Buscamos en la lista el dispositivo SDR y nos fijamos en los identificadores de fabricante y de dispositivo. En este caso son <strong>0bda</strong> y <strong>2838</strong> respectivamente.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Bus 001 Device 004: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Ahora creamos un archivo de reglas nuevo:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;udev&#x2F;rules.d&#x2F;rtl-sdr.rules</span><br></pre></td></tr></table></figure>
+
+<p>Y añadimos la siguiente regla modificando los identificadores si fuese necesario para que correspondan con los obtenidos en el paso anterior:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">SUBSYSTEMS==<span class="string">&quot;usb&quot;</span>, ATTRS&#123;idVendor&#125;==<span class="string">&quot;0bda&quot;</span>, ATTRS&#123;idProduct&#125;==<span class="string">&quot;2838&quot;</span>, MODE:=<span class="string">&quot;0666&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Por último desconectamos el dispostivo SDR y lo volvemos a conectar para que se aplique la regla y ejecutamos el siguiente comando para comprobar que el dispositivo funciona correctamente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
+
+<p>Si todo está correctamente instalado veremos una salida como la siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 82020715</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Detached kernel driver</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br><span class="line">Allocating 15 zero-copy buffers</span><br><span class="line">lost at least 140 bytes</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>RTL-SDR</tag>
+        <tag>Linux</tag>
+        <tag>Raspberry Pi</tag>
+        <tag>Instalación</tag>
+        <tag>SDRSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -898,8 +898,8 @@
 ]]></content>
       <tags>
         <tag>RTL-SDR</tag>
-        <tag>SDRSharp</tag>
         <tag>Instalación</tag>
+        <tag>SDRSharp</tag>
         <tag>Windows</tag>
       </tags>
   </entry>
@@ -1250,8 +1250,8 @@
 ]]></content>
       <tags>
         <tag>Linux</tag>
-        <tag>Instalación</tag>
         <tag>macOS</tag>
+        <tag>Instalación</tag>
         <tag>Windows</tag>
         <tag>SDR++</tag>
       </tags>
@@ -1313,9 +1313,9 @@
       <tags>
         <tag>RTL-SDR</tag>
         <tag>Linux</tag>
-        <tag>SDRSharp</tag>
         <tag>Raspberry Pi</tag>
         <tag>Instalación</tag>
+        <tag>SDRSharp</tag>
         <tag>SPY Server</tag>
       </tags>
   </entry>
@@ -1358,8 +1358,8 @@
 <p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
 ]]></content>
       <tags>
-        <tag>Instalación</tag>
         <tag>macOS</tag>
+        <tag>Instalación</tag>
         <tag>Windows</tag>
         <tag>Virtual Audio Cable</tag>
       </tags>
@@ -1616,72 +1616,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción del satélite FUNcube-1</title>
-    <url>/2020/02/22/recepcion-funcube1/</url>
-    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
-<span id="more"></span>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>FUNcube-1 (AO-73)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>AMSAT-UK</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>39444</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2013-066AE</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (0,98 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>21 de Noviembre de 2013</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145,935 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/2020/02/22/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
-
-
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
-
-<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
-
-<p><em>Mensajes:</em></p>
-<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Cubesat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción del satélite FalconSAT-3</title>
     <url>/2021/10/17/recepcion-falconsat-3/</url>
     <content><![CDATA[<p>El satélite FalconSAT-3 fue construido entre 2005 y 2006 por cadetes de la academia de la fuerza aérea de Estados Unidos. Desde que fue lanzado en 2007, el satélite ha llevado a cabo dos fases operadas por la academia de la fuerza aérea estadounidense y una tercera fase desde 2017 en la que se abrió su uso para el servicio de radioaficionados. El satélite funciona actualmente como repetidor en modo PACSAT.<br>PACSAT es un término genérico usado para describir un servicio digital para radioaficionados de almacenamiento y distribución por satélite. Este sistema, que utiliza el protocolo AX.25 para los paquetes de datos, permite reenviar mensajes de correo electrónico, telemetría, boletines informativos, etc.<br>En este artículo veremos como recibir estos mensajes con nuestro SDR.</p>
@@ -1783,7 +1717,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>1546 - 1554 MHz</td>
+<td>1.546 - 1.554 MHz</td>
 <td>~3,5 dBi</td>
 <td><a href="https://www.nooelec.com/store/downloads/dl/file/id/91/product/314/inmarsat_antenna_datasheet_revision_1.pdf">Datasheet</a></td>
 </tr>
@@ -1801,7 +1735,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>1525 - 1559 MHz</td>
+<td>1.525 - 1.559 MHz</td>
 <td>8 dBi</td>
 <td><a href="https://othernet.is/products/l-band-patch-antenna">Othernet</a></td>
 </tr>
@@ -1812,7 +1746,7 @@
 <img src="/2020/03/06/recepcion-inmarsat/antena_patch_medidas.jpg" class="" title="Antena Patch medidas">
 
 
-<h3 id="Antena-patch-activa"><a href="#Antena-patch-activa" class="headerlink" title="Antena patch activa"></a>Antena patch activa</h3><p>El blog <strong>RTL-SDR.com</strong> puso a la venta en 2019 una antena para banda L que podemos usar para Inmarsat. Podemos adquirirla desde su propia tienda online.<br>Se trata de una antena activa que amplifica y filtra la señal, por lo que no necesitaremos un LNA.</p>
+<h3 id="Antena-patch-activa"><a href="#Antena-patch-activa" class="headerlink" title="Antena patch activa"></a>Antena patch activa</h3><p>El blog <strong>RTL-SDR.com</strong> puso a la venta en 2019 (actualizada en 2021) una antena para banda L que podemos usar para Inmarsat. Podemos adquirirla desde su propia tienda online.<br>Se trata de una antena activa que amplifica y filtra la señal, por lo que no necesitaremos un LNA.</p>
 <table>
 <thead>
 <tr>
@@ -1822,9 +1756,9 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>1525 – 1637 MHz</td>
+<td>1.525 – 1.660 MHz</td>
 <td>-</td>
-<td><a href="https://www.rtl-sdr.com/preorder-sale-active-l-band-1525-1637-inmarsat-to-iridium-patch-antenna-set-for-34-95/">RTL-SDR</a></td>
+<td><a href="https://www.rtl-sdr.com/preorder-sale-active-l-band-1525-1660-inmarsat-and-iridium-patch-back-in-stock-for-44-95/">RTL-SDR</a></td>
 </tr>
 </tbody></table>
 <img src="/2020/03/06/recepcion-inmarsat/antena_activa.jpg" class="" title="Antena de RTL-SDR.com">
@@ -1859,6 +1793,72 @@
         <tag>Satélites</tag>
         <tag>Inmarsat</tag>
         <tag>L-Band</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción del satélite FUNcube-1</title>
+    <url>/2020/02/22/recepcion-funcube1/</url>
+    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
+<span id="more"></span>
+
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>FUNcube-1 (AO-73)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>AMSAT-UK</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>39444</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2013-066AE</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (0,98 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>21 de Noviembre de 2013</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>145,935 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/2020/02/22/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
+
+
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="https://sdr-es.com/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
+
+<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
+
+<p><em>Mensajes:</em></p>
+<img src="/2020/02/22/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Cubesat</tag>
       </tags>
   </entry>
   <entry>
@@ -2042,6 +2042,105 @@
       </tags>
   </entry>
   <entry>
+    <title>Recepción de satélites meteorológicos NOAA</title>
+    <url>/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</url>
+    <content><![CDATA[<p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
+<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato <a href="https://en.wikipedia.org/wiki/Automatic_picture_transmission">APT</a>.</p>
+<span id="more"></span>
+
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/apt.jpg" class="" width="500" title="Imagen APT de satélite NOAA">
+
+
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Actualmente podemos recibir imágenes APT desde los siguientes satélites meteorológicos NOAA.</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>NOAA 15</th>
+<th>NOAA 18</th>
+<th>NOAA 19</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>NORAD ID</strong></td>
+<td>25338</td>
+<td>28654</td>
+<td>33591</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>1998-030A</td>
+<td>2005-018A</td>
+<td>2009-005A</td>
+</tr>
+<tr>
+<td><strong>Masa de lanzamiento</strong></td>
+<td>1.457 Kg</td>
+<td>1.457 Kg</td>
+<td>1.440 Kg</td>
+</tr>
+<tr>
+<td><strong>Fecha de lanzamiento</strong></td>
+<td>13 de Mayo de 1998</td>
+<td>20 de Mayo de 2005</td>
+<td>6 de Febrero de 2009</td>
+</tr>
+<tr>
+<td><strong>Señal APT</strong></td>
+<td>137,620 MHz</td>
+<td>137,9125 MHz</td>
+<td>137,100 MHz</td>
+</tr>
+</tbody></table>
+<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la version beta 2.11.2):</p>
+<p><a href="https://wxtoimgrestored.xyz/downloads/"><center>Descargar WXtoImg</center></a></p>
+<p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
+<ol>
+<li>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Ground Station Location…&quot;</strong></em>. En esta ventana introducimos nuestras coordenadas y altitud.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
+
+<ol start="2">
+<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ellos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Recording Options&quot;</strong></em>. Aquí seleccionamos nuestro cable de audio virtual.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
+
+<ol start="3">
+<li>Marcamos la opción de resincronizado en <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Resync&quot;</strong></em>.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
+
+<ol start="4">
+<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Auto Processing Options…&quot;</strong></em> y marcamos <em><strong>&quot;Create image(s)&quot;</strong></em>. Después hacemos clic en <em><strong>&quot;Image Settings…&quot;</strong></em> y elegimos las imágenes que queramos.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
+
+<ol start="5">
+<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <em><strong>&quot;File&quot;</strong></em> y hacemos clic en <em><strong>&quot;Update Keplers&quot;</strong></em>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
+</ol>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
+
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p>Para recibir el pase tenemos que sacar el audio de SDR# mediante el cable de audio virtual y tener WXtoImg abierto. Una vez el satélite comience a verse sobre el horizonte, SDR# iniciará el seguimiento y WXtoImg comenzará a recibir y procesar la señal.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/sdr_sharp.jpg" class="" title="SDR#">
+
+<p>Es importante asegurarse que el volumen de la salida de SDR# sea el adecuado. Podemos ver el nivel que llega a WXtoImg en la esquina inferior derecha. Para que la imagen se genere correctamente, el indicador de nivel de volumen debe mantenerse en color verde durante todo el pase.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recibiendo.jpg" class="" title="WXtoImg">
+
+<p>Al finalizar el pase, WXtoImg dejará de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.</p>
+<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" width="500" title="WXtoImg">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
+        <tag>Meteorología</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recepción de satélites meteorológicos Meteor-M</title>
     <url>/2020/03/27/recepcion-satelites-meteorologicos-meteor/</url>
     <content><![CDATA[<p>Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.</p>
@@ -2203,119 +2302,24 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción de satélites meteorológicos NOAA</title>
-    <url>/2020/03/20/recepcion-satelites-meteorologicos-NOAA/</url>
-    <content><![CDATA[<p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
-<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato <a href="https://en.wikipedia.org/wiki/Automatic_picture_transmission">APT</a>.</p>
-<span id="more"></span>
-
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/apt.jpg" class="" width="500" title="Imagen APT de satélite NOAA">
-
-
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Actualmente podemos recibir imágenes APT desde los siguientes satélites meteorológicos NOAA.</p>
-<table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>NOAA 15</th>
-<th>NOAA 18</th>
-<th>NOAA 19</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>NORAD ID</strong></td>
-<td>25338</td>
-<td>28654</td>
-<td>33591</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>1998-030A</td>
-<td>2005-018A</td>
-<td>2009-005A</td>
-</tr>
-<tr>
-<td><strong>Masa de lanzamiento</strong></td>
-<td>1.457 Kg</td>
-<td>1.457 Kg</td>
-<td>1.440 Kg</td>
-</tr>
-<tr>
-<td><strong>Fecha de lanzamiento</strong></td>
-<td>13 de Mayo de 1998</td>
-<td>20 de Mayo de 2005</td>
-<td>6 de Febrero de 2009</td>
-</tr>
-<tr>
-<td><strong>Señal APT</strong></td>
-<td>137,620 MHz</td>
-<td>137,9125 MHz</td>
-<td>137,100 MHz</td>
-</tr>
-</tbody></table>
-<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la version beta 2.11.2):</p>
-<p><a href="https://wxtoimgrestored.xyz/downloads/"><center>Descargar WXtoImg</center></a></p>
-<p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
-<ol>
-<li>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Ground Station Location…&quot;</strong></em>. En esta ventana introducimos nuestras coordenadas y altitud.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
-
-<ol start="2">
-<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ellos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Recording Options&quot;</strong></em>. Aquí seleccionamos nuestro cable de audio virtual.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
-
-<ol start="3">
-<li>Marcamos la opción de resincronizado en <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Resync&quot;</strong></em>.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
-
-<ol start="4">
-<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Auto Processing Options…&quot;</strong></em> y marcamos <em><strong>&quot;Create image(s)&quot;</strong></em>. Después hacemos clic en <em><strong>&quot;Image Settings…&quot;</strong></em> y elegimos las imágenes que queramos.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
-
-<ol start="5">
-<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <em><strong>&quot;File&quot;</strong></em> y hacemos clic en <em><strong>&quot;Update Keplers&quot;</strong></em>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
-</ol>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
-
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="https://sdr-es.com/2020/02/18/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
-<p>Para recibir el pase tenemos que sacar el audio de SDR# mediante el cable de audio virtual y tener WXtoImg abierto. Una vez el satélite comience a verse sobre el horizonte, SDR# iniciará el seguimiento y WXtoImg comenzará a recibir y procesar la señal.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/sdr_sharp.jpg" class="" title="SDR#">
-
-<p>Es importante asegurarse que el volumen de la salida de SDR# sea el adecuado. Podemos ver el nivel que llega a WXtoImg en la esquina inferior derecha. Para que la imagen se genere correctamente, el indicador de nivel de volumen debe mantenerse en color verde durante todo el pase.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_recibiendo.jpg" class="" title="WXtoImg">
-
-<p>Al finalizar el pase, WXtoImg dejará de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.</p>
-<img src="/2020/03/20/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" width="500" title="WXtoImg">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
-        <tag>Meteorología</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción de mensajes Inmarsat STD-C</title>
     <url>/2020/03/09/recepcion-std-c-inmarsat/</url>
-    <content><![CDATA[<p>En el artículo <a href="https://sdr-es.com/2020/03/06/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
+    <content><![CDATA[<p>En el artículo <a href="/2020/03/06/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes a modo de estudio utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
 <span id="more"></span>
 
-<p>Lo primero será descargar los los archivos necesarios desde el repositorio de Scytale-C desde el siguiente link:</p>
+<h2 id="Instalacion-del-plugin-en-SDR"><a href="#Instalacion-del-plugin-en-SDR" class="headerlink" title="Instalación del plugin en SDR#"></a>Instalación del plugin en SDR#</h2><p>Lo primero será descargar los los archivos necesarios desde el repositorio de Scytale-C desde el siguiente link:</p>
 <p><a href="https://bitbucket.org/scytalec/scytalec/downloads/"><center>https://bitbucket.org/scytalec/scytalec/downloads/</center></a></p>
-<p>Necesitamos descargar el plugin para SDR# (<strong>SDRSharp.ScytaleC.5001.NET5.PlusUI.zip</strong>) y la interfaz de usuario (<strong>x64-ScytaleC.QuickUI-17010.zip</strong>).</p>
-<h2 id="Instalacion-del-plugin-en-SDR"><a href="#Instalacion-del-plugin-en-SDR" class="headerlink" title="Instalación del plugin en SDR#"></a>Instalación del plugin en SDR#</h2><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “ScytaleC” (o el que queramos). Ahora extraemos el contenido del archivo <strong>SDRSharp.ScytaleC.5001.NET5.PlusUI.zip</strong> dentro de esta nueva carpeta.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_files.jpg" class="" width="600" title="Archivos de Scytale-C">
+<p>Necesitamos descargar el plugin para SDR# (<strong>SDRSharp.ScytaleC.5004.NET5.PlusUI.zip</strong>).</p>
+<p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “ScytaleC” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_files.jpg" class="" width="700" title="Archivos de Scytale-C">
 
-<p>Ahora iniciamos SDR# y tendremos el plugin instalado.</p>
-<h2 id="Instalacion-de-la-interfaz-de-usuario-de-Scytale-C"><a href="#Instalacion-de-la-interfaz-de-usuario-de-Scytale-C" class="headerlink" title="Instalación de la interfaz de usuario de Scytale-C"></a>Instalación de la interfaz de usuario de Scytale-C</h2><p>Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente extraemos el contenido del archivo <strong>x64-ScytaleC.QuickUI-17010.zip</strong> que hemos descargado anteriormente en el directorio deseado. Por ejemplo en <em>C:/SDR/ScytaleC</em>.</p>
-<p>Para iniciar el programa basta con hacer doble clic en <strong>ScytaleC.QuickUI.exe</strong>. Al iniciar el programa se muestra un mensaje sobre la confidencialidad que debemos leer detenidamente.</p>
+<p>Por último, iniciamos SDR# y ya tendremos el plugin instalado.</p>
+<h2 id="Instalacion-de-la-interfaz-de-usuario-de-Scytale-C"><a href="#Instalacion-de-la-interfaz-de-usuario-de-Scytale-C" class="headerlink" title="Instalación de la interfaz de usuario de Scytale-C"></a>Instalación de la interfaz de usuario de Scytale-C</h2><p>Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente abrimos el <em>plugin</em> en SDR# y hacemos clic en el botón <strong>“Quick UI”</strong>.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_open_ui.jpg" class="" width="200" title="Scytale-C">
+
+<p>El propio <em>plugin</em> detectará que no tenemos la interfaz de usuario instalada y nos mostrará una ventana como la siguente en la que haremos clic en <em>“Yes”</em> para proceder con la descarga e instalación de la misma de forma automática.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_download_ui.jpg" class="" title="Scytale-C">
+
 <p><strong>Algunos mensajes que se reciben con Scytale-C van a un destinatario en concreto y pueden contener información sensible. Si no somos los destinatarios de dichos mensajes, debemos proceder a la eliminación de los mismos y no reenviarlos ni publicarlos bajo ningún concepto.</strong></p>
 <img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_ui.jpg" class="" title="UI Scytale-C">
 
@@ -2327,7 +2331,6 @@
 
 <p>Con SDR# ya recibiendo la señal correctamente pasamos a la interfaz de usuario de Scytale-C. El plugin y esta interfaz se comunican por UDP de forma local y vienen configurados con el puerto 15003 por defecto.</p>
 <p>Para que nos lleguen los mensajes bastaría con hacer clic en el botón de Play/Stop. Si todo ha ido bien, comenzaremos a recibirlos.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_messages.jpg" class="" title="Scytale-C Mensajes">
 ]]></content>
       <tags>
         <tag>Satélites</tag>
@@ -2482,117 +2485,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recibir radio digital mundial (DRM)</title>
-    <url>/2020/10/25/recibir-drm/</url>
-    <content><![CDATA[<p><a href="https://www.drm.org/">Digital Radio Mondiale (DRM)</a>, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.<br>DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.<br>En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.</p>
-<span id="more"></span>
-
-<img src="/2020/10/25/recibir-drm/logo.png" class="" width="300" title="DRM logo">
-
-<p>Encontraremos las emisiones DRM30 por debajo de los 30 MHz. Habitualmente suelen ser emisiones no continuadas, por lo que no necesariamente vamos a encontrar dichas emisiones siempre. Podemos consultar los horarios actualizados de las mismas en el siguiente enlace:</p>
-<p><a href="https://www.drm.org/what-can-i-hear/broadcast-schedule-2/"><center>DRM Broadcast Schedule</center></a></p>
-<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el <a href="/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software <a href="https://sourceforge.net/projects/drm/">Dream AM/DRM Receiver</a> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/"><center>Dream AM/DRM Receiver</center></a></p>
-<p>Este programa está disponible para varios sistemas operativos, incluso podemos descargar el código fuente y compilarlo si queremos.<br>Para nuestro ejemplo, descargamos la versión 2.1.1 para Windows (<a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/dream-2.1.1-win32-svn808-df.zip/download">dream-2.1.1-win32-svn808-df.zip</a>). La versión 2.2 es muy similar pero presenta algunos errores de funcionamiento. Si aun así queremos probar esta versión, podemos descargarla desde <a href="https://www.reddit.com/r/RTLSDR/comments/grp6m2/dream_v221_for_windows_with_xheaac_support/">aquí</a>.</p>
-<p>Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.<br>Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos DLL y los guardamos en el directorio de Dream:</p>
-<ul>
-<li><a href="faad2_drm.dll">faad2_drm.dll</a></li>
-<li><a href="libfaac.dll">libfaac.dll</a></li>
-</ul>
-<p>Por último, registramos los archivos DLL en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.DLL</span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em>, <em>Sound Card</em>, <em>Signal Input</em> y en <em>Device</em> seleccionamos el <strong>cable de audio virtual</strong>.</p>
-<img src="/2020/10/25/recibir-drm/input.png" class="" width="800" title="Entrada audio">
-
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Una vez tenemos el programa escuchando por el cable de audio virtual, procedemos a sintonizar una emisión de DRM con SDR#. Usaremos el <strong>modo USB</strong> y un <strong>ancho de banda de 10 KHz</strong>.<br>Cuando Dream detecte la señal, veremos datos de la emisión en la ventana y comenzará a escucharse si tenemos señal suficiente. Los tres indicadores señalados en la siguiente imagen deben estar activos para poder escuchar el audio.</p>
-<img src="/2020/10/25/recibir-drm/dream.png" class="" width="700" title="Dream">
-
-
-<img src="/2020/10/25/recibir-drm/sdrSharp.png" class="" width="900" title="SDR# + Dream">
-]]></content>
-      <tags>
-        <tag>HF</tag>
-        <tag>DRM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recibir radio movil digital (DMR)</title>
-    <url>/2021/08/27/recibir-radio-movil-digital-DMR/</url>
-    <content><![CDATA[<p>DMR son las siglas de Radio Móvil Digital, y es un estándar internacional especialmente definido para radios de dos vías. El objetivo del estándar DMR es permitir que dispositivos de diferentes fabricantes puedan comunicarse entre sí en una misma red.<br>Esta tecnología es muy utilizada por radioaficionados y es posible recibir estas señales con nuestros dispositivos SDR. En este artículo veremos como instalar algunos <em>plugins</em> en SDR# para poder escuchar DMR.</p>
-<span id="more"></span>
-
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dmr-logo.jpeg" class="" width="300" title="Logo DMR">
-
-
-<h2 id="Simple-DMR"><a href="#Simple-DMR" class="headerlink" title="Simple DMR"></a>Simple DMR</h2><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dmr">Simple DMR</a> está diseñado para escuchar DMR sin cifrar y no requiere dependencias ni configuraciones.</p>
-<p>La instalación es muy sencilla y podemos resumirla en los pasos descritos a continuación.</p>
-<ol>
-<li><p>Descargamos los archivos del <em>plugin</em> desde el siguiente enlace:</p>
-<p><a href="http://rtl-sdr.ru/uploads/download/dmr.zip"><center>Descargar Simple DMR</center></a></p>
-</li>
-<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “SimpleDMR” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/simple-dmr-archivos.jpg" class="" width="700" title="Archivos de Simple DMR"></li>
-<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-menu-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
-<li><p>Por último, sintonizamos una señal de DMR y activamos el plugin haciendo clic en <strong>“Enabled”</strong>.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
-</ol>
-<p>Si todo ha ido bien, debemos comenzar a escuchar nada más activar el <em>plugin</em>. Si no se escucha nada, debemos asegurarnos tener la salida de audio por los altavoces y no por el cable de audio virtual.</p>
-<p>También es posible escuchar otros modos digitales usando para ello otros <em>plugins</em> muy similares a este y cuya instalación es idéntica. Estos <em>plugins</em> son:</p>
-<ul>
-<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dpmr">Simple dPMR</a></li>
-<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-apco">Simple APCO P25</a></li>
-</ul>
-<h2 id="DSD-Interface"><a href="#DSD-Interface" class="headerlink" title="DSD Interface"></a>DSD Interface</h2><h3 id="Instalacion-de-DSDPlus"><a href="#Instalacion-de-DSDPlus" class="headerlink" title="Instalación de DSDPlus"></a>Instalación de DSDPlus</h3><p>DSDPlus es un decodificador de modos digitales más completo y configurable que el que hemos visto en el apartado anterior. Inluye además otros modos digitales, como son P25, D-STAR, NXDN, etc.</p>
-<p>Para instalar DSDPlus, primeramente accedemos a su página web para descargar los archivos necesarios haciendo clic en el siguiente enlace:</p>
-<p><a href="https://www.dsdplus.com/download-2/"><center>Descargar DSDPlus</center></a></p>
-<p>Ahora descargamos los dos archivos indicados en la siguiente imagen:</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-descarga.jpg" class="" width="600" title="Descarga de DSDPlus">
-
-<p>El contenido del primer archivo lo extraemos en el directorio que queramos. En este ejemplo lo he extraído dentro de la carpeta de instalación de SDR# y dentro de su propia carpeta, a la que he llamado “DSDPlus”.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-archivos.jpg" class="" width="700" title="Archivos de DSDPlus">
-
-<p>Del segundo archivo solamente vamos a extraer el archivo <strong>lame_enc.dll</strong>, el cual vamos a introducir dentro de la carpeta de instalación de SDR#.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/lame-dll.jpg" class="" width="700" title="Archivo DLL">
-
-<h3 id="Instalacion-del-plugin"><a href="#Instalacion-del-plugin" class="headerlink" title="Instalación del plugin"></a>Instalación del plugin</h3><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/plagin-dsd-interface">DSD Interface</a> nos permite iniciar DSDPlus y pasarle el audio desde SDR# de una forma muy sencilla. Para instalarlo seguiremos los pasos descritos a continuación.</p>
-<ol>
-<li><p>Descargamos el <em>plugin</em> desde el siguiente enlace:</p>
-<p><a href="http://rtl-sdr.ru/uploads/download/dsd.zip"><center>Descargar DSD Interface</center></a></p>
-</li>
-<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “DSD” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-archivos.jpg" class="" width="700" title="Archivos del plugin DSD"></li>
-<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin.jpg" class="" width="300" title="DSD Plugin"></li>
-<li><p>Hacemos clic en el botón <strong>Configure</strong> y en la ventana de configuración hacemos clic en <strong>“DSD Path”</strong> y le indicamos la ruta del archivo <em>DSDPlus.exe</em> que hemos extraído en el apartado anterior.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar.jpg" class="" width="350" title="Configurar DSD">
-
-<p>Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
-</li>
-<li><p>Ahora hacemos clic en el botón <strong>“Start DSD”</strong> del <em>plugin</em> y se nos abrirán una serie de ventanas. Debemos fijarnos en los siguientes datos que veremos en una de las ventanas.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar-audio.jpg" class="" width="700" title="Configurar audio DSD">
-
-<p> Necesitamos anotar el número de dispositivo de audio que vamos a utilizar. En este ejemplo vamos a pasar el audio por el cable de audio virtual, por lo que en este caso anotamos el <em>“audio input device #1”</em>. Para la salida queremos que se escuche por los altavoces, así que anotamos <em>“audio output device #1”</em>.</p>
-</li>
-<li><p>Paramos DSDPlus haciendo clic en el botón <strong>“Stop DSD”</strong> del <em>plugin</em> y le damos a <strong>Configure</strong>. Ahora seleccionamos los dispositivos conforme los hemos anotado en el punto anterior. Una vez seleccionados, hacemos clic en <strong>“Create command line”</strong> para regenerar la linea de comandos con estos nuevos valores.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurado.jpg" class="" width="350" title="Configurar DSD">
-
-<p> Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
-</li>
-<li><p>Por último, buscamos una señal DMR y nos aseguramos que tengamos la salida de audio de SDR# por el cable de audio virtual. Ahora hacemos clic en el botón <strong>“Start DSD”</strong> y comenzaremos a ver datos en pantalla y se escuchará el audio decodificado.</p>
-<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-dsd.jpg" class="" width="900" title="DSD Plugin"></li>
-</ol>
-<p>Si en la ventana aparecen numerosos errores, es posible que debamos ajustar el volumen de audio general de SDR#.</p>
-]]></content>
-      <tags>
-        <tag>SDRSharp</tag>
-        <tag>DMR</tag>
-        <tag>DSDPlus</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recibir satélites LoRa</title>
     <url>/2021/03/30/recibir-satelites-LoRa-con-tinyGS/</url>
     <content><![CDATA[<p><a href="https://tinygs.com/">TinyGS</a> es una red de estaciones terrestres distribuida alrededor del mundo para la recepción y operación de satélites <a href="https://www.thethingsnetwork.org/community/santa-rosa/post/que-es-la-tecnologia-lora-y-por-que-es-importante-para-iot">LoRa</a>, sondas meteorológicas y otros objetos, usando módulos programables de muy bajo coste.<br>En este artículo veremos como instalar y configurar nuestra estación terrestre desde cero.</p>
@@ -2725,6 +2617,117 @@
       </tags>
   </entry>
   <entry>
+    <title>Recibir radio digital mundial (DRM)</title>
+    <url>/2020/10/25/recibir-drm/</url>
+    <content><![CDATA[<p><a href="https://www.drm.org/">Digital Radio Mondiale (DRM)</a>, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.<br>DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.<br>En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.</p>
+<span id="more"></span>
+
+<img src="/2020/10/25/recibir-drm/logo.png" class="" width="300" title="DRM logo">
+
+<p>Encontraremos las emisiones DRM30 por debajo de los 30 MHz. Habitualmente suelen ser emisiones no continuadas, por lo que no necesariamente vamos a encontrar dichas emisiones siempre. Podemos consultar los horarios actualizados de las mismas en el siguiente enlace:</p>
+<p><a href="https://www.drm.org/what-can-i-hear/broadcast-schedule-2/"><center>DRM Broadcast Schedule</center></a></p>
+<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el <a href="/2020/01/21/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software <a href="https://sourceforge.net/projects/drm/">Dream AM/DRM Receiver</a> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/"><center>Dream AM/DRM Receiver</center></a></p>
+<p>Este programa está disponible para varios sistemas operativos, incluso podemos descargar el código fuente y compilarlo si queremos.<br>Para nuestro ejemplo, descargamos la versión 2.1.1 para Windows (<a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/dream-2.1.1-win32-svn808-df.zip/download">dream-2.1.1-win32-svn808-df.zip</a>). La versión 2.2 es muy similar pero presenta algunos errores de funcionamiento. Si aun así queremos probar esta versión, podemos descargarla desde <a href="https://www.reddit.com/r/RTLSDR/comments/grp6m2/dream_v221_for_windows_with_xheaac_support/">aquí</a>.</p>
+<p>Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.<br>Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos DLL y los guardamos en el directorio de Dream:</p>
+<ul>
+<li><a href="faad2_drm.dll">faad2_drm.dll</a></li>
+<li><a href="libfaac.dll">libfaac.dll</a></li>
+</ul>
+<p>Por último, registramos los archivos DLL en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.DLL</span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em>, <em>Sound Card</em>, <em>Signal Input</em> y en <em>Device</em> seleccionamos el <strong>cable de audio virtual</strong>.</p>
+<img src="/2020/10/25/recibir-drm/input.png" class="" width="800" title="Entrada audio">
+
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Una vez tenemos el programa escuchando por el cable de audio virtual, procedemos a sintonizar una emisión de DRM con SDR#. Usaremos el <strong>modo USB</strong> y un <strong>ancho de banda de 10 KHz</strong>.<br>Cuando Dream detecte la señal, veremos datos de la emisión en la ventana y comenzará a escucharse si tenemos señal suficiente. Los tres indicadores señalados en la siguiente imagen deben estar activos para poder escuchar el audio.</p>
+<img src="/2020/10/25/recibir-drm/dream.png" class="" width="700" title="Dream">
+
+
+<img src="/2020/10/25/recibir-drm/sdrSharp.png" class="" width="900" title="SDR# + Dream">
+]]></content>
+      <tags>
+        <tag>HF</tag>
+        <tag>DRM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir radio movil digital (DMR)</title>
+    <url>/2021/08/27/recibir-radio-movil-digital-DMR/</url>
+    <content><![CDATA[<p>DMR son las siglas de Radio Móvil Digital, y es un estándar internacional especialmente definido para radios de dos vías. El objetivo del estándar DMR es permitir que dispositivos de diferentes fabricantes puedan comunicarse entre sí en una misma red.<br>Esta tecnología es muy utilizada por radioaficionados y es posible recibir estas señales con nuestros dispositivos SDR. En este artículo veremos como instalar algunos <em>plugins</em> en SDR# para poder escuchar DMR.</p>
+<span id="more"></span>
+
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dmr-logo.jpeg" class="" width="300" title="Logo DMR">
+
+
+<h2 id="Simple-DMR"><a href="#Simple-DMR" class="headerlink" title="Simple DMR"></a>Simple DMR</h2><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dmr">Simple DMR</a> está diseñado para escuchar DMR sin cifrar y no requiere dependencias ni configuraciones.</p>
+<p>La instalación es muy sencilla y podemos resumirla en los pasos descritos a continuación.</p>
+<ol>
+<li><p>Descargamos los archivos del <em>plugin</em> desde el siguiente enlace:</p>
+<p><a href="http://rtl-sdr.ru/uploads/download/dmr.zip"><center>Descargar Simple DMR</center></a></p>
+</li>
+<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “SimpleDMR” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/simple-dmr-archivos.jpg" class="" width="700" title="Archivos de Simple DMR"></li>
+<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-menu-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
+<li><p>Por último, sintonizamos una señal de DMR y activamos el plugin haciendo clic en <strong>“Enabled”</strong>.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-simple-dmr.jpg" class="" width="900" title="SDR#"></li>
+</ol>
+<p>Si todo ha ido bien, debemos comenzar a escuchar nada más activar el <em>plugin</em>. Si no se escucha nada, debemos asegurarnos tener la salida de audio por los altavoces y no por el cable de audio virtual.</p>
+<p>También es posible escuchar otros modos digitales usando para ello otros <em>plugins</em> muy similares a este y cuya instalación es idéntica. Estos <em>plugins</em> son:</p>
+<ul>
+<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-dpmr">Simple dPMR</a></li>
+<li><a href="http://rtl-sdr.ru/page/novyj-plagin-simple-apco">Simple APCO P25</a></li>
+</ul>
+<h2 id="DSD-Interface"><a href="#DSD-Interface" class="headerlink" title="DSD Interface"></a>DSD Interface</h2><h3 id="Instalacion-de-DSDPlus"><a href="#Instalacion-de-DSDPlus" class="headerlink" title="Instalación de DSDPlus"></a>Instalación de DSDPlus</h3><p>DSDPlus es un decodificador de modos digitales más completo y configurable que el que hemos visto en el apartado anterior. Inluye además otros modos digitales, como son P25, D-STAR, NXDN, etc.</p>
+<p>Para instalar DSDPlus, primeramente accedemos a su página web para descargar los archivos necesarios haciendo clic en el siguiente enlace:</p>
+<p><a href="https://www.dsdplus.com/download-2/"><center>Descargar DSDPlus</center></a></p>
+<p>Ahora descargamos los dos archivos indicados en la siguiente imagen:</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-descarga.jpg" class="" width="600" title="Descarga de DSDPlus">
+
+<p>El contenido del primer archivo lo extraemos en el directorio que queramos. En este ejemplo lo he extraído dentro de la carpeta de instalación de SDR# y dentro de su propia carpeta, a la que he llamado “DSDPlus”.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-archivos.jpg" class="" width="700" title="Archivos de DSDPlus">
+
+<p>Del segundo archivo solamente vamos a extraer el archivo <strong>lame_enc.dll</strong>, el cual vamos a introducir dentro de la carpeta de instalación de SDR#.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/lame-dll.jpg" class="" width="700" title="Archivo DLL">
+
+<h3 id="Instalacion-del-plugin"><a href="#Instalacion-del-plugin" class="headerlink" title="Instalación del plugin"></a>Instalación del plugin</h3><p>El <em>plugin</em> <a href="http://rtl-sdr.ru/page/plagin-dsd-interface">DSD Interface</a> nos permite iniciar DSDPlus y pasarle el audio desde SDR# de una forma muy sencilla. Para instalarlo seguiremos los pasos descritos a continuación.</p>
+<ol>
+<li><p>Descargamos el <em>plugin</em> desde el siguiente enlace:</p>
+<p><a href="http://rtl-sdr.ru/uploads/download/dsd.zip"><center>Descargar DSD Interface</center></a></p>
+</li>
+<li><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “DSD” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-archivos.jpg" class="" width="700" title="Archivos del plugin DSD"></li>
+<li><p>Iniciamos ahora SDR# y mostramos el nuevo <em>plugin</em> haciendo clic en el menú.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin.jpg" class="" width="300" title="DSD Plugin"></li>
+<li><p>Hacemos clic en el botón <strong>Configure</strong> y en la ventana de configuración hacemos clic en <strong>“DSD Path”</strong> y le indicamos la ruta del archivo <em>DSDPlus.exe</em> que hemos extraído en el apartado anterior.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar.jpg" class="" width="350" title="Configurar DSD">
+
+<p>Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
+</li>
+<li><p>Ahora hacemos clic en el botón <strong>“Start DSD”</strong> del <em>plugin</em> y se nos abrirán una serie de ventanas. Debemos fijarnos en los siguientes datos que veremos en una de las ventanas.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurar-audio.jpg" class="" width="700" title="Configurar audio DSD">
+
+<p> Necesitamos anotar el número de dispositivo de audio que vamos a utilizar. En este ejemplo vamos a pasar el audio por el cable de audio virtual, por lo que en este caso anotamos el <em>“audio input device #1”</em>. Para la salida queremos que se escuche por los altavoces, así que anotamos <em>“audio output device #1”</em>.</p>
+</li>
+<li><p>Paramos DSDPlus haciendo clic en el botón <strong>“Stop DSD”</strong> del <em>plugin</em> y le damos a <strong>Configure</strong>. Ahora seleccionamos los dispositivos conforme los hemos anotado en el punto anterior. Una vez seleccionados, hacemos clic en <strong>“Create command line”</strong> para regenerar la linea de comandos con estos nuevos valores.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/dsd-plugin-configurado.jpg" class="" width="350" title="Configurar DSD">
+
+<p> Hacemos clic en <strong>Ok</strong> para guardar los cambios.</p>
+</li>
+<li><p>Por último, buscamos una señal DMR y nos aseguramos que tengamos la salida de audio de SDR# por el cable de audio virtual. Ahora hacemos clic en el botón <strong>“Start DSD”</strong> y comenzaremos a ver datos en pantalla y se escuchará el audio decodificado.</p>
+<img src="/2021/08/27/recibir-radio-movil-digital-DMR/sdrsharp-dsd.jpg" class="" width="900" title="DSD Plugin"></li>
+</ol>
+<p>Si en la ventana aparecen numerosos errores, es posible que debamos ajustar el volumen de audio general de SDR#.</p>
+]]></content>
+      <tags>
+        <tag>SDRSharp</tag>
+        <tag>DMR</tag>
+        <tag>DSDPlus</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recibir imágenes SSTV desde la ISS</title>
     <url>/2020/12/26/recibir-sstv-iss/</url>
     <content><![CDATA[<p><a href="https://www.ariss.org/">ARISS</a> organiza ocasionalmente eventos conmemorativos en los que se envían imágenes <a href="https://es.wikipedia.org/wiki/SSTV">SSTV</a> desde la ISS (<em>International Space Station</em>). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.</p>
@@ -2752,167 +2755,6 @@
       <tags>
         <tag>ISS</tag>
         <tag>SSTV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de mensajes ADS-B en Raspberry Pi</title>
-    <url>/2020/05/03/seguimiento-aviones-raspberry-pi/</url>
-    <content><![CDATA[<p>ADS-B (<em>Automatic Dependent Surveillance Broadcast</em>) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.</p>
-<p>En este artículo veremos como convertir una Raspberry Pi en un receptor de mensajes ADS-B y poder determinar y visualizar la posición de las aeronaves que sobrevuelan nuestra ubicación.</p>
-<span id="more"></span>
-
-<p>Lo primero que haremos será instalar nuestro dispositivo SDR, si todavía no lo hemos hecho, siguiendo los pasos descritos en <a href="https://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
-<h3 id="Instalacion-de-dump1090"><a href="#Instalacion-de-dump1090" class="headerlink" title="Instalación de dump1090"></a>Instalación de dump1090</h3><p>Vamos a instalar la versión de <em>dump1090</em> mantenida por FlightAware, ya que está actualizada y nos instala y levanta un servidor web en el que podemos ver las aeronaves sobre el mapa sin muchas complicaciones.</p>
-<p>El primer paso es instalar el repositorio de FlightAware en nuestra Raspberry Pi dependiendo de la versión de Raspbian que tengamos. También podemos generar paquetes para otras distribuciones siguiendo los pasos descritos <a href="https://github.com/flightaware/dump1090">aquí</a>.</p>
-<p>Si no conocemos la versión de Raspbian, podemos consultarla ejecutando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;os-release | grep VERSION_CODENAME</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>Repositorio para <strong>Raspbian Buster</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;flightaware.com&#x2F;adsb&#x2F;piaware&#x2F;files&#x2F;packages&#x2F;pool&#x2F;piaware&#x2F;p&#x2F;piaware-support&#x2F;piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure></li>
-<li><p>Repositorio para <strong>Raspbian Stretch</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;flightaware.com&#x2F;adsb&#x2F;piaware&#x2F;files&#x2F;packages&#x2F;pool&#x2F;piaware&#x2F;p&#x2F;piaware-support&#x2F;piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>Una vez instalado el repositorio correspondiente ejecutamos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-
-<p>Ahora instalamos <em>dump1090</em>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y dump1090-fa</span><br></pre></td></tr></table></figure>
-
-<p>Podemos ajustar las opciones de <em>dump1090</em> en su archivo de configuración:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;dump1090-fa</span><br></pre></td></tr></table></figure>
-
-<p>Editamos la siguiente línea con la ganancia y valor de PPM. Es aconsejable establecer un valor para la ganancia, ya que por defecto el nivel viene establecido en automático (-10) y no siempre proporciona buenos resultados.<br>Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en <em>device-index</em>.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">RECEIVER_OPTIONS&#x3D;&quot;--device-index 0 --gain -10 --ppm 0&quot;</span><br></pre></td></tr></table></figure>
-
-<p>Reiniciamos el servicio para que se apliquen los cambios.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service dump1090-fa restart</span><br></pre></td></tr></table></figure>
-
-<p>Por último, accedemos a nuestra Raspberry Pi desde cualquier navegador web:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;IP_RASPBERRY:8080&#x2F;</span><br></pre></td></tr></table></figure>
-
-<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/dump1090.jpg" class="" width="900" title="dump1090 FlightAware">
-
-<p>Esta interfaz web utiliza el puerto 8080 por defecto. Si queremos cambiarlo editamos el archivo de configuración de <em>Lighttpd</em>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;lighttpd&#x2F;conf-enabled&#x2F;89-dump1090-fa.conf</span><br></pre></td></tr></table></figure>
-
-<p>Editamos la siguiente línea y modificamos el puerto 8080 por el que queramos utilizar:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$SERVER[&quot;socket&quot;] &#x3D;&#x3D; &quot;:8080&quot; &#123;</span><br></pre></td></tr></table></figure>
-
-<p>Por último reiniciamos el servicio para que se apliquen los cambios:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service lighttpd restart</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Enviar-datos-a-FlightAware"><a href="#Enviar-datos-a-FlightAware" class="headerlink" title="Enviar datos a FlightAware"></a>Enviar datos a FlightAware</h3><p><a href="https://flightaware.com/">FlightAware</a> es una compañía con sede en Houston (TX, Estados Unidos) que ofrece servicios de software y datos para aviación. Esta compañía ofrece información de seguimiento de aeronaves de forma gratuita desde su página web y sus aplicaciones para móviles. Es actualmente la mayor plataforma de seguimiento de vuelos.</p>
-<p>Podemos reenviar los datos de seguimiento a FlightAware desde nuestra Raspberry Pi. Estos serán utilizados para el seguimiento a nivel global y a cambio recibiremos una suscripción <em><a href="https://flightaware.com/commercial/premium/">Enterprise</a></em>.</p>
-<p>Los pasos para enviar los datos son los siguientes:</p>
-<ol>
-<li>Lo primero será registrarnos en FlightAware:</li>
-</ol>
-<p><a href="https://es.flightaware.com/account/join"><center>https://es.flightaware.com/account/join</center></a></p>
-<ol start="2">
-<li><p>Instalamos <em>piaware</em>. Este software será el encargado de establecer la comunicación con el servidor de FlightAware para enviar los datos y recibir ajustes.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y piaware</span><br></pre></td></tr></table></figure></li>
-<li><p>Podemos ajustar <em>piaware</em> para que se actualice de forma automática y para que podamos actualizarlo desde la interfaz web de FlightAware.<br>Si queremos que se actualice automático ejecutamos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-auto-updates yes</span><br></pre></td></tr></table></figure>
-<p>Si queremos que se pueda hacer de forma manual vía web ejecutamos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-manual-updates yes</span><br></pre></td></tr></table></figure></li>
-<li><p>Reiniciamos el servicio para que se apliquen los ajustes.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service piaware restart</span><br></pre></td></tr></table></figure></li>
-<li><p>Accedemos a la siguiente dirección para vincular nuestra Raspberry Pi con la cuenta que acabamos de crear. Si accedemos desde la misma dirección IP que tiene la Raspberry Pi, la detectará de forma automática.</p>
-</li>
-</ol>
-<p><a href="https://flightaware.com/adsb/piaware/claim"><center>https://flightaware.com/adsb/piaware/claim</center></a></p>
-<ol start="6">
-<li>Vamos a nuestro panel de control y abrimos las opciones de configuración.</li>
-</ol>
-<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/flightaware-panel.png" class="" width="900" title="FlightAware">
-
-<ol start="7">
-<li>Por último, introducimos nuestros datos de latitud, longitud y altitud para poder usar el seguimiento con MLAT y reiniciamos el servicio desde la propia web pulsando el botón <em>Send</em>.</li>
-</ol>
-<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/flightaware-config.jpg" class="" title="FlightAware">
-
-
-<h3 id="Enviar-datos-a-AirNav-RadarBox"><a href="#Enviar-datos-a-AirNav-RadarBox" class="headerlink" title="Enviar datos a AirNav RadarBox"></a>Enviar datos a AirNav RadarBox</h3><p><a href="https://www.radarbox.com/">RadarBox</a> es una compañía con sede en Tampa (FL, Estados Unidos) que ofrece servicios de información de vuelos. Podemos compartir los datos que recibimos en nuestra Raspberry Pi con RadarBox y a cambio obtendremos una suscripción <em><a href="https://www.radarbox.com/subscribe">Business</a></em>.</p>
-<p>Las pasos que seguiremos son los siguientes:</p>
-<ol>
-<li><p>Instalamos <em>rbfeeder</em>. Será el programa que envíe los datos al servidor.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - http:&#x2F;&#x2F;apt.rb24.com&#x2F;inst_rbfeeder.sh)&quot;</span><br></pre></td></tr></table></figure>
-<p>Cuando pregunte si queremos instalar <code>dump978-rb</code> le decimos que no.</p>
-</li>
-<li><p>Instalamos el cliente de MLAT. La siguiente versión es para Raspbian. Si necesitamos paquete para otra versión, podemos generarlo siguiendo los pasos descritos <a href="https://github.com/mutability/mlat-client">aquí</a>.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;sdr-es.com&#x2F;2020&#x2F;05&#x2F;03&#x2F;seguimiento-aviones-raspberry-pi&#x2F;mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure></li>
-<li><p>Nos registramos en RadarBox.</p>
-</li>
-</ol>
-<p><a href="https://www.radarbox.com/register"><center>https://www.radarbox.com/register</center></a></p>
-<ol start="4">
-<li><p>Una vez registrados necesitamos vincular nuestro receptor con RadarBox. Para ello usaremos la clave que nos genera <em>rbfeeder</em> la primera vez que se conecta al servidor. Consultamos la clave con el comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo rbfeeder --showkey --no-start</span><br></pre></td></tr></table></figure></li>
-<li><p>Accedemos a esta dirección, introducimos nuestra clave en <em>Sharing Key</em> y pulsamos en <strong>CLAIM!</strong>.</p>
-</li>
-</ol>
-<p><a href="https://www.radarbox.com/raspberry-pi/claim"><center>https://www.radarbox.com/raspberry-pi/claim</center></a></p>
-<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/radarbox-claim.jpg" class="" width="900" title="RadarBox">
-
-
-<ol start="6">
-<li>Por último introducimos nuestras coordenadas cuando nos lo pida.</li>
-</ol>
-<h3 id="Enviar-datos-a-ADS-B-Exchange"><a href="#Enviar-datos-a-ADS-B-Exchange" class="headerlink" title="Enviar datos a ADS-B Exchange"></a>Enviar datos a ADS-B Exchange</h3><p><a href="https://www.adsbexchange.com/">ADS-B Exchange</a> es un servicio colaborativo de datos de seguimiento y es la mayor fuente de datos de vuelos <strong>sin filtrar</strong>. En este caso no obtendremos beneficios como suscripciones, ya que este servicio ofrece todos los datos de forma <strong>gratuita para fines no comerciales</strong>.</p>
-<p>Para enviar nuestros datos a ADS-B Exchange tendremos que ejecutar un script de instalación que realizará el proceso de forma sencilla. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;adsbxchange&#x2F;adsb-exchange&#x2F;master&#x2F;install.sh)&quot;</span><br></pre></td></tr></table></figure>
-
-<p>Se iniciará un asistente instalación en el que debemos indicar un nombre para nuestro <em>feeder</em> y nuestra posición para los cálculos de MLAT.</p>
-<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/adsb-script.png" class="" title="Asistente instalación ADS-B Exchange">
-
-<p>Una vez finalice el asistente, ya estaremos conectados y enviando datos a ADS-B Exchange. Para conocer el estado del servicio tenemos los siguientes enlaces:</p>
-<ul>
-<li>Comprobar el estado de nuestro <em>feeder</em>: <a href="https://adsbexchange.com/myip/">https://adsbexchange.com/myip/</a></li>
-<li>Comprobar el estado de los servidores de MLAT: <a href="http://adsbx.org/sync">http://adsbx.org/sync</a></li>
-</ul>
-<p>Opcionalmente, podemos instalar la herramienta proporcionada por ADS-B Exchange para ver online los datos que estamos enviando desde nuestro receptor en tiempo real. Para instalarla basta con ejecutar el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;adsbxchange&#x2F;adsbexchange-stats&#x2F;master&#x2F;stats.sh)&quot;</span><br></pre></td></tr></table></figure>
-
-<p>Una vez instalada, ejecutamos el siguiente comando para obtener nuestra URL personalizada en la que consultar los datos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">adsbexchange-showurl</span><br></pre></td></tr></table></figure>
-
-<p>Obtendremos una URL que debemos copiar e introducir en el navegador web. Una vez accedemos, tendremos dos enlaces que nos llevarán a una página con los datos de las aeronaves que estamos recibiendo en nuestra estación y a un visor con el mapa en tiempo real. Podemos consultar el funcionamiento de las distintas opciones del visor en <a href="https://www.adsbexchange.com/map-help/">este enlace</a>.</p>
-<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/adsb-exchange.jpg" class="" width="900" title="ADS-B Exchange">
-
-
-<h3 id="Enviar-datos-a-Flightradar24"><a href="#Enviar-datos-a-Flightradar24" class="headerlink" title="Enviar datos a Flightradar24"></a>Enviar datos a Flightradar24</h3><p><a href="https://www.flightradar24.com/">Flightradar24</a> es una compañía europea con sede en Estocolmo (Suecia) que ofrece servicios de información de vuelos. Compartiendo nuestros datos con Flightradar24 obtendremos una suscripción <em><a href="https://www.flightradar24.com/premium">Business</a></em>.</p>
-<p>Lo primero sera registrarse en Flightradar24.</p>
-<p><a href="https://www.flightradar24.com/premium/signup"><center>https://www.flightradar24.com/premium/signup</center></a></p>
-<p>Para enviar los datos debemos descargar e instalar <em>fr24feed</em>. Para ello ejecutamos el siguiente comando y seguimos los pasos del asistente de instalación.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https:&#x2F;&#x2F;repo-feed.flightradar24.com&#x2F;install_fr24_rpi.sh)&quot;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>Introducir el correo electrónico con el que nos hemos registrado.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 1.1 - Enter your email address (username@domain.tld)</span><br></pre></td></tr></table></figure></li>
-<li><p>Si tenemos ya una clave previa la introducimos. En caso contrario lo dejamos en blanco.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 1.2 - If you used to feed FR24 with ADS-B data before, enter your sharing key.</span><br><span class="line">If you don&#39;t remember your sharing key, you can find it in your account on the website under &quot;My data sharing&quot;.</span><br><span class="line">https:&#x2F;&#x2F;www.flightradar24.com&#x2F;account&#x2F;data-sharing</span><br><span class="line"></span><br><span class="line">Otherwise leave this field empty and continue.</span><br></pre></td></tr></table></figure></li>
-<li><p>Introducimos <code>yes</code> para activar MLAT.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 1.3 - Would you like to participate in MLAT calculations? (yes&#x2F;no)$:yes</span><br></pre></td></tr></table></figure></li>
-<li><p>Introducimos nuestras coordenadas y altitud.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">IMPORTANT: For MLAT calculations the antenna&#39;s location should be entered very precise!</span><br><span class="line"></span><br><span class="line">Step 3.A - Enter antenna&#39;s latitude (DD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.B - Enter antenna&#39;s longitude (DDD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.C - Enter antenna&#39;s altitude above the sea level (in feet)</span><br><span class="line"></span><br><span class="line">Using latitude: 37.XXXX, longitude: -3.XXXX, altitude: 720ft above sea level</span><br><span class="line"></span><br><span class="line">Validating email&#x2F;location information...OK</span><br><span class="line"></span><br><span class="line">The closest airport found is ICAO:LEGR IATA:GRX near Granada.</span><br><span class="line"></span><br><span class="line">Latitude: 37.188728</span><br><span class="line">Longitude: -3.777350</span><br><span class="line">Country: Spain</span><br><span class="line"></span><br><span class="line">Flightradar24 may, if needed, use your email address to contact you regarding your data feed.</span><br><span class="line"></span><br><span class="line">Would you like to continue using these settings?</span><br><span class="line"></span><br><span class="line">Enter your choice (yes&#x2F;no)$:yes</span><br></pre></td></tr></table></figure></li>
-<li><p>Introducimos <code>yes</code> para que usar la configuración automática y que utilice la instancia de <em>dump1090</em> que ya tenemos instalada.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">We have detected that you already have a dump1090 instance running. We can therefore automatically configure the FR24 feeder to use existing receiver configuration, or you can manually configure all the parameters.</span><br><span class="line"></span><br><span class="line">Would you like to use autoconfig (*yes*&#x2F;no)$:yes</span><br></pre></td></tr></table></figure></li>
-<li><p>Activamos el log si queremos. No es necesario.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 6 - Please select desired logfile mode:</span><br><span class="line"> 0 -  Disabled</span><br><span class="line"> 1 -  48 hour, 24h rotation</span><br><span class="line"> 2 -  72 hour, 24h rotation</span><br><span class="line">Select logfile mode (0-2)$:0</span><br></pre></td></tr></table></figure></li>
-<li><p>Por último, reiniciamos el servicio.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart fr24feed</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Raspberry Pi</tag>
-        <tag>ATC</tag>
-        <tag>ADS-B</tag>
-        <tag>dump1090</tag>
       </tags>
   </entry>
   <entry>
@@ -3129,6 +2971,167 @@
         <tag>Satélites</tag>
         <tag>Orbitron</tag>
         <tag>Tracking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de mensajes ADS-B en Raspberry Pi</title>
+    <url>/2020/05/03/seguimiento-aviones-raspberry-pi/</url>
+    <content><![CDATA[<p>ADS-B (<em>Automatic Dependent Surveillance Broadcast</em>) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.</p>
+<p>En este artículo veremos como convertir una Raspberry Pi en un receptor de mensajes ADS-B y poder determinar y visualizar la posición de las aeronaves que sobrevuelan nuestra ubicación.</p>
+<span id="more"></span>
+
+<p>Lo primero que haremos será instalar nuestro dispositivo SDR, si todavía no lo hemos hecho, siguiendo los pasos descritos en <a href="https://sdr-es.com/2020/04/10/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
+<h3 id="Instalacion-de-dump1090"><a href="#Instalacion-de-dump1090" class="headerlink" title="Instalación de dump1090"></a>Instalación de dump1090</h3><p>Vamos a instalar la versión de <em>dump1090</em> mantenida por FlightAware, ya que está actualizada y nos instala y levanta un servidor web en el que podemos ver las aeronaves sobre el mapa sin muchas complicaciones.</p>
+<p>El primer paso es instalar el repositorio de FlightAware en nuestra Raspberry Pi dependiendo de la versión de Raspbian que tengamos. También podemos generar paquetes para otras distribuciones siguiendo los pasos descritos <a href="https://github.com/flightaware/dump1090">aquí</a>.</p>
+<p>Si no conocemos la versión de Raspbian, podemos consultarla ejecutando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;os-release | grep VERSION_CODENAME</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Repositorio para <strong>Raspbian Buster</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;flightaware.com&#x2F;adsb&#x2F;piaware&#x2F;files&#x2F;packages&#x2F;pool&#x2F;piaware&#x2F;p&#x2F;piaware-support&#x2F;piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure></li>
+<li><p>Repositorio para <strong>Raspbian Stretch</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;flightaware.com&#x2F;adsb&#x2F;piaware&#x2F;files&#x2F;packages&#x2F;pool&#x2F;piaware&#x2F;p&#x2F;piaware-support&#x2F;piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>Una vez instalado el repositorio correspondiente ejecutamos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+
+<p>Ahora instalamos <em>dump1090</em>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y dump1090-fa</span><br></pre></td></tr></table></figure>
+
+<p>Podemos ajustar las opciones de <em>dump1090</em> en su archivo de configuración:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;dump1090-fa</span><br></pre></td></tr></table></figure>
+
+<p>Editamos la siguiente línea con la ganancia y valor de PPM. Es aconsejable establecer un valor para la ganancia, ya que por defecto el nivel viene establecido en automático (-10) y no siempre proporciona buenos resultados.<br>Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en <em>device-index</em>.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">RECEIVER_OPTIONS&#x3D;&quot;--device-index 0 --gain -10 --ppm 0&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Reiniciamos el servicio para que se apliquen los cambios.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service dump1090-fa restart</span><br></pre></td></tr></table></figure>
+
+<p>Por último, accedemos a nuestra Raspberry Pi desde cualquier navegador web:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;IP_RASPBERRY:8080&#x2F;</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/dump1090.jpg" class="" width="900" title="dump1090 FlightAware">
+
+<p>Esta interfaz web utiliza el puerto 8080 por defecto. Si queremos cambiarlo editamos el archivo de configuración de <em>Lighttpd</em>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;lighttpd&#x2F;conf-enabled&#x2F;89-dump1090-fa.conf</span><br></pre></td></tr></table></figure>
+
+<p>Editamos la siguiente línea y modificamos el puerto 8080 por el que queramos utilizar:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$SERVER[&quot;socket&quot;] &#x3D;&#x3D; &quot;:8080&quot; &#123;</span><br></pre></td></tr></table></figure>
+
+<p>Por último reiniciamos el servicio para que se apliquen los cambios:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service lighttpd restart</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Enviar-datos-a-FlightAware"><a href="#Enviar-datos-a-FlightAware" class="headerlink" title="Enviar datos a FlightAware"></a>Enviar datos a FlightAware</h3><p><a href="https://flightaware.com/">FlightAware</a> es una compañía con sede en Houston (TX, Estados Unidos) que ofrece servicios de software y datos para aviación. Esta compañía ofrece información de seguimiento de aeronaves de forma gratuita desde su página web y sus aplicaciones para móviles. Es actualmente la mayor plataforma de seguimiento de vuelos.</p>
+<p>Podemos reenviar los datos de seguimiento a FlightAware desde nuestra Raspberry Pi. Estos serán utilizados para el seguimiento a nivel global y a cambio recibiremos una suscripción <em><a href="https://flightaware.com/commercial/premium/">Enterprise</a></em>.</p>
+<p>Los pasos para enviar los datos son los siguientes:</p>
+<ol>
+<li>Lo primero será registrarnos en FlightAware:</li>
+</ol>
+<p><a href="https://es.flightaware.com/account/join"><center>https://es.flightaware.com/account/join</center></a></p>
+<ol start="2">
+<li><p>Instalamos <em>piaware</em>. Este software será el encargado de establecer la comunicación con el servidor de FlightAware para enviar los datos y recibir ajustes.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y piaware</span><br></pre></td></tr></table></figure></li>
+<li><p>Podemos ajustar <em>piaware</em> para que se actualice de forma automática y para que podamos actualizarlo desde la interfaz web de FlightAware.<br>Si queremos que se actualice automático ejecutamos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-auto-updates yes</span><br></pre></td></tr></table></figure>
+<p>Si queremos que se pueda hacer de forma manual vía web ejecutamos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-manual-updates yes</span><br></pre></td></tr></table></figure></li>
+<li><p>Reiniciamos el servicio para que se apliquen los ajustes.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service piaware restart</span><br></pre></td></tr></table></figure></li>
+<li><p>Accedemos a la siguiente dirección para vincular nuestra Raspberry Pi con la cuenta que acabamos de crear. Si accedemos desde la misma dirección IP que tiene la Raspberry Pi, la detectará de forma automática.</p>
+</li>
+</ol>
+<p><a href="https://flightaware.com/adsb/piaware/claim"><center>https://flightaware.com/adsb/piaware/claim</center></a></p>
+<ol start="6">
+<li>Vamos a nuestro panel de control y abrimos las opciones de configuración.</li>
+</ol>
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/flightaware-panel.png" class="" width="900" title="FlightAware">
+
+<ol start="7">
+<li>Por último, introducimos nuestros datos de latitud, longitud y altitud para poder usar el seguimiento con MLAT y reiniciamos el servicio desde la propia web pulsando el botón <em>Send</em>.</li>
+</ol>
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/flightaware-config.jpg" class="" title="FlightAware">
+
+
+<h3 id="Enviar-datos-a-AirNav-RadarBox"><a href="#Enviar-datos-a-AirNav-RadarBox" class="headerlink" title="Enviar datos a AirNav RadarBox"></a>Enviar datos a AirNav RadarBox</h3><p><a href="https://www.radarbox.com/">RadarBox</a> es una compañía con sede en Tampa (FL, Estados Unidos) que ofrece servicios de información de vuelos. Podemos compartir los datos que recibimos en nuestra Raspberry Pi con RadarBox y a cambio obtendremos una suscripción <em><a href="https://www.radarbox.com/subscribe">Business</a></em>.</p>
+<p>Las pasos que seguiremos son los siguientes:</p>
+<ol>
+<li><p>Instalamos <em>rbfeeder</em>. Será el programa que envíe los datos al servidor.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - http:&#x2F;&#x2F;apt.rb24.com&#x2F;inst_rbfeeder.sh)&quot;</span><br></pre></td></tr></table></figure>
+<p>Cuando pregunte si queremos instalar <code>dump978-rb</code> le decimos que no.</p>
+</li>
+<li><p>Instalamos el cliente de MLAT. La siguiente versión es para Raspbian. Si necesitamos paquete para otra versión, podemos generarlo siguiendo los pasos descritos <a href="https://github.com/mutability/mlat-client">aquí</a>.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;sdr-es.com&#x2F;2020&#x2F;05&#x2F;03&#x2F;seguimiento-aviones-raspberry-pi&#x2F;mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure></li>
+<li><p>Nos registramos en RadarBox.</p>
+</li>
+</ol>
+<p><a href="https://www.radarbox.com/register"><center>https://www.radarbox.com/register</center></a></p>
+<ol start="4">
+<li><p>Una vez registrados necesitamos vincular nuestro receptor con RadarBox. Para ello usaremos la clave que nos genera <em>rbfeeder</em> la primera vez que se conecta al servidor. Consultamos la clave con el comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo rbfeeder --showkey --no-start</span><br></pre></td></tr></table></figure></li>
+<li><p>Accedemos a esta dirección, introducimos nuestra clave en <em>Sharing Key</em> y pulsamos en <strong>CLAIM!</strong>.</p>
+</li>
+</ol>
+<p><a href="https://www.radarbox.com/raspberry-pi/claim"><center>https://www.radarbox.com/raspberry-pi/claim</center></a></p>
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/radarbox-claim.jpg" class="" width="900" title="RadarBox">
+
+
+<ol start="6">
+<li>Por último introducimos nuestras coordenadas cuando nos lo pida.</li>
+</ol>
+<h3 id="Enviar-datos-a-ADS-B-Exchange"><a href="#Enviar-datos-a-ADS-B-Exchange" class="headerlink" title="Enviar datos a ADS-B Exchange"></a>Enviar datos a ADS-B Exchange</h3><p><a href="https://www.adsbexchange.com/">ADS-B Exchange</a> es un servicio colaborativo de datos de seguimiento y es la mayor fuente de datos de vuelos <strong>sin filtrar</strong>. En este caso no obtendremos beneficios como suscripciones, ya que este servicio ofrece todos los datos de forma <strong>gratuita para fines no comerciales</strong>.</p>
+<p>Para enviar nuestros datos a ADS-B Exchange tendremos que ejecutar un script de instalación que realizará el proceso de forma sencilla. Para ello ejecutamos el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;adsbxchange&#x2F;adsb-exchange&#x2F;master&#x2F;install.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Se iniciará un asistente instalación en el que debemos indicar un nombre para nuestro <em>feeder</em> y nuestra posición para los cálculos de MLAT.</p>
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/adsb-script.png" class="" title="Asistente instalación ADS-B Exchange">
+
+<p>Una vez finalice el asistente, ya estaremos conectados y enviando datos a ADS-B Exchange. Para conocer el estado del servicio tenemos los siguientes enlaces:</p>
+<ul>
+<li>Comprobar el estado de nuestro <em>feeder</em>: <a href="https://adsbexchange.com/myip/">https://adsbexchange.com/myip/</a></li>
+<li>Comprobar el estado de los servidores de MLAT: <a href="http://adsbx.org/sync">http://adsbx.org/sync</a></li>
+</ul>
+<p>Opcionalmente, podemos instalar la herramienta proporcionada por ADS-B Exchange para ver online los datos que estamos enviando desde nuestro receptor en tiempo real. Para instalarla basta con ejecutar el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;adsbxchange&#x2F;adsbexchange-stats&#x2F;master&#x2F;stats.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Una vez instalada, ejecutamos el siguiente comando para obtener nuestra URL personalizada en la que consultar los datos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">adsbexchange-showurl</span><br></pre></td></tr></table></figure>
+
+<p>Obtendremos una URL que debemos copiar e introducir en el navegador web. Una vez accedemos, tendremos dos enlaces que nos llevarán a una página con los datos de las aeronaves que estamos recibiendo en nuestra estación y a un visor con el mapa en tiempo real. Podemos consultar el funcionamiento de las distintas opciones del visor en <a href="https://www.adsbexchange.com/map-help/">este enlace</a>.</p>
+<img src="/2020/05/03/seguimiento-aviones-raspberry-pi/adsb-exchange.jpg" class="" width="900" title="ADS-B Exchange">
+
+
+<h3 id="Enviar-datos-a-Flightradar24"><a href="#Enviar-datos-a-Flightradar24" class="headerlink" title="Enviar datos a Flightradar24"></a>Enviar datos a Flightradar24</h3><p><a href="https://www.flightradar24.com/">Flightradar24</a> es una compañía europea con sede en Estocolmo (Suecia) que ofrece servicios de información de vuelos. Compartiendo nuestros datos con Flightradar24 obtendremos una suscripción <em><a href="https://www.flightradar24.com/premium">Business</a></em>.</p>
+<p>Lo primero sera registrarse en Flightradar24.</p>
+<p><a href="https://www.flightradar24.com/premium/signup"><center>https://www.flightradar24.com/premium/signup</center></a></p>
+<p>Para enviar los datos debemos descargar e instalar <em>fr24feed</em>. Para ello ejecutamos el siguiente comando y seguimos los pasos del asistente de instalación.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https:&#x2F;&#x2F;repo-feed.flightradar24.com&#x2F;install_fr24_rpi.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>Introducir el correo electrónico con el que nos hemos registrado.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 1.1 - Enter your email address (username@domain.tld)</span><br></pre></td></tr></table></figure></li>
+<li><p>Si tenemos ya una clave previa la introducimos. En caso contrario lo dejamos en blanco.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 1.2 - If you used to feed FR24 with ADS-B data before, enter your sharing key.</span><br><span class="line">If you don&#39;t remember your sharing key, you can find it in your account on the website under &quot;My data sharing&quot;.</span><br><span class="line">https:&#x2F;&#x2F;www.flightradar24.com&#x2F;account&#x2F;data-sharing</span><br><span class="line"></span><br><span class="line">Otherwise leave this field empty and continue.</span><br></pre></td></tr></table></figure></li>
+<li><p>Introducimos <code>yes</code> para activar MLAT.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 1.3 - Would you like to participate in MLAT calculations? (yes&#x2F;no)$:yes</span><br></pre></td></tr></table></figure></li>
+<li><p>Introducimos nuestras coordenadas y altitud.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">IMPORTANT: For MLAT calculations the antenna&#39;s location should be entered very precise!</span><br><span class="line"></span><br><span class="line">Step 3.A - Enter antenna&#39;s latitude (DD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.B - Enter antenna&#39;s longitude (DDD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.C - Enter antenna&#39;s altitude above the sea level (in feet)</span><br><span class="line"></span><br><span class="line">Using latitude: 37.XXXX, longitude: -3.XXXX, altitude: 720ft above sea level</span><br><span class="line"></span><br><span class="line">Validating email&#x2F;location information...OK</span><br><span class="line"></span><br><span class="line">The closest airport found is ICAO:LEGR IATA:GRX near Granada.</span><br><span class="line"></span><br><span class="line">Latitude: 37.188728</span><br><span class="line">Longitude: -3.777350</span><br><span class="line">Country: Spain</span><br><span class="line"></span><br><span class="line">Flightradar24 may, if needed, use your email address to contact you regarding your data feed.</span><br><span class="line"></span><br><span class="line">Would you like to continue using these settings?</span><br><span class="line"></span><br><span class="line">Enter your choice (yes&#x2F;no)$:yes</span><br></pre></td></tr></table></figure></li>
+<li><p>Introducimos <code>yes</code> para que usar la configuración automática y que utilice la instancia de <em>dump1090</em> que ya tenemos instalada.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">We have detected that you already have a dump1090 instance running. We can therefore automatically configure the FR24 feeder to use existing receiver configuration, or you can manually configure all the parameters.</span><br><span class="line"></span><br><span class="line">Would you like to use autoconfig (*yes*&#x2F;no)$:yes</span><br></pre></td></tr></table></figure></li>
+<li><p>Activamos el log si queremos. No es necesario.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 6 - Please select desired logfile mode:</span><br><span class="line"> 0 -  Disabled</span><br><span class="line"> 1 -  48 hour, 24h rotation</span><br><span class="line"> 2 -  72 hour, 24h rotation</span><br><span class="line">Select logfile mode (0-2)$:0</span><br></pre></td></tr></table></figure></li>
+<li><p>Por último, reiniciamos el servicio.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart fr24feed</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Raspberry Pi</tag>
+        <tag>ATC</tag>
+        <tag>ADS-B</tag>
+        <tag>dump1090</tag>
       </tags>
   </entry>
 </search>

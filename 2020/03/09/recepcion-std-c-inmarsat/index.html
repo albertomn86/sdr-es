@@ -19,19 +19,20 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="En el artículo “Recepción de satélites Inmarsat” vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open">
+<meta name="description" content="En el artículo “Recepción de satélites Inmarsat” vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes a modo de estudio utilizando Scytale-C, un software">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Recepción de mensajes Inmarsat STD-C">
 <meta property="og:url" content="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/index.html">
 <meta property="og:site_name" content="SDR en español">
-<meta property="og:description" content="En el artículo “Recepción de satélites Inmarsat” vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open">
+<meta property="og:description" content="En el artículo “Recepción de satélites Inmarsat” vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes a modo de estudio utilizando Scytale-C, un software">
 <meta property="og:locale" content="es_ES">
 <meta property="og:image" content="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/scytale_files.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/scytale_open_ui.jpg">
+<meta property="og:image" content="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/scytale_download_ui.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/scytale_ui.jpg">
 <meta property="og:image" content="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/sdrsharp.jpg">
-<meta property="og:image" content="http://sdr-es.com/2020/03/09/recepcion-std-c-inmarsat/scytale_messages.jpg">
 <meta property="article:published_time" content="2020-03-09T11:46:44.000Z">
-<meta property="article:modified_time" content="2021-09-27T17:10:12.000Z">
+<meta property="article:modified_time" content="2022-01-07T06:10:12.000Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="Satélites">
 <meta property="article:tag" content="Inmarsat">
@@ -275,7 +276,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Editado el</span>
-      <time title="Modificado por: 27/09/2021 19:10:12" itemprop="dateModified" datetime="2021-09-27T19:10:12+02:00">27/09/2021</time>
+      <time title="Modificado por: 07/01/2022 07:10:12" itemprop="dateModified" datetime="2022-01-07T07:10:12+01:00">07/01/2022</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -296,18 +297,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>En el artículo <a href="https://sdr-es.com/2020/03/06/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes que recibimos utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
+        <p>En el artículo <a href="/2020/03/06/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes a modo de estudio utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
 <span id="more"></span>
 
-<p>Lo primero será descargar los los archivos necesarios desde el repositorio de Scytale-C desde el siguiente link:</p>
+<h2 id="Instalacion-del-plugin-en-SDR"><a href="#Instalacion-del-plugin-en-SDR" class="headerlink" title="Instalación del plugin en SDR#"></a>Instalación del plugin en SDR#</h2><p>Lo primero será descargar los los archivos necesarios desde el repositorio de Scytale-C desde el siguiente link:</p>
 <p><a target="_blank" rel="noopener" href="https://bitbucket.org/scytalec/scytalec/downloads/"><center>https://bitbucket.org/scytalec/scytalec/downloads/</center></a></p>
-<p>Necesitamos descargar el plugin para SDR# (<strong>SDRSharp.ScytaleC.5001.NET5.PlusUI.zip</strong>) y la interfaz de usuario (<strong>x64-ScytaleC.QuickUI-17010.zip</strong>).</p>
-<h2 id="Instalacion-del-plugin-en-SDR"><a href="#Instalacion-del-plugin-en-SDR" class="headerlink" title="Instalación del plugin en SDR#"></a>Instalación del plugin en SDR#</h2><p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “ScytaleC” (o el que queramos). Ahora extraemos el contenido del archivo <strong>SDRSharp.ScytaleC.5001.NET5.PlusUI.zip</strong> dentro de esta nueva carpeta.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_files.jpg" class="" width="600" title="Archivos de Scytale-C">
+<p>Necesitamos descargar el plugin para SDR# (<strong>SDRSharp.ScytaleC.5004.NET5.PlusUI.zip</strong>).</p>
+<p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “ScytaleC” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_files.jpg" class="" width="700" title="Archivos de Scytale-C">
 
-<p>Ahora iniciamos SDR# y tendremos el plugin instalado.</p>
-<h2 id="Instalacion-de-la-interfaz-de-usuario-de-Scytale-C"><a href="#Instalacion-de-la-interfaz-de-usuario-de-Scytale-C" class="headerlink" title="Instalación de la interfaz de usuario de Scytale-C"></a>Instalación de la interfaz de usuario de Scytale-C</h2><p>Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente extraemos el contenido del archivo <strong>x64-ScytaleC.QuickUI-17010.zip</strong> que hemos descargado anteriormente en el directorio deseado. Por ejemplo en <em>C:/SDR/ScytaleC</em>.</p>
-<p>Para iniciar el programa basta con hacer doble clic en <strong>ScytaleC.QuickUI.exe</strong>. Al iniciar el programa se muestra un mensaje sobre la confidencialidad que debemos leer detenidamente.</p>
+<p>Por último, iniciamos SDR# y ya tendremos el plugin instalado.</p>
+<h2 id="Instalacion-de-la-interfaz-de-usuario-de-Scytale-C"><a href="#Instalacion-de-la-interfaz-de-usuario-de-Scytale-C" class="headerlink" title="Instalación de la interfaz de usuario de Scytale-C"></a>Instalación de la interfaz de usuario de Scytale-C</h2><p>Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente abrimos el <em>plugin</em> en SDR# y hacemos clic en el botón <strong>“Quick UI”</strong>.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_open_ui.jpg" class="" width="200" title="Scytale-C">
+
+<p>El propio <em>plugin</em> detectará que no tenemos la interfaz de usuario instalada y nos mostrará una ventana como la siguente en la que haremos clic en <em>“Yes”</em> para proceder con la descarga e instalación de la misma de forma automática.</p>
+<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_download_ui.jpg" class="" title="Scytale-C">
+
 <p><strong>Algunos mensajes que se reciben con Scytale-C van a un destinatario en concreto y pueden contener información sensible. Si no somos los destinatarios de dichos mensajes, debemos proceder a la eliminación de los mismos y no reenviarlos ni publicarlos bajo ningún concepto.</strong></p>
 <img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_ui.jpg" class="" title="UI Scytale-C">
 
@@ -319,7 +324,6 @@
 
 <p>Con SDR# ya recibiendo la señal correctamente pasamos a la interfaz de usuario de Scytale-C. El plugin y esta interfaz se comunican por UDP de forma local y vienen configurados con el puerto 15003 por defecto.</p>
 <p>Para que nos lleguen los mensajes bastaría con hacer clic en el botón de Play/Stop. Si todo ha ido bien, comenzaremos a recibirlos.</p>
-<img src="/2020/03/09/recepcion-std-c-inmarsat/scytale_messages.jpg" class="" title="Scytale-C Mensajes">
 
     </div>
 
