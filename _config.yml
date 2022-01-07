@@ -116,3 +116,10 @@ feed:
   icon: favicon.ico
   autodiscovery: true
   template:
+
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap_template.xml
+  rel: false
+  tags: false
+  categories: true
