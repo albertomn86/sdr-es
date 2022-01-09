@@ -31,9 +31,9 @@
     
     <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
-    <category term="Gpredict" scheme="http://sdr-es.com/tags/Gpredict/"/>
-    
     <category term="Tracking" scheme="http://sdr-es.com/tags/Tracking/"/>
+    
+    <category term="Gpredict" scheme="http://sdr-es.com/tags/Gpredict/"/>
     
   </entry>
   
@@ -364,9 +364,9 @@
     
     
     
-    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
-    
     <category term="RTL-SDR" scheme="http://sdr-es.com/tags/RTL-SDR/"/>
+    
+    <category term="Linux" scheme="http://sdr-es.com/tags/Linux/"/>
     
     <category term="OpenWebRX" scheme="http://sdr-es.com/tags/OpenWebRX/"/>
     
@@ -388,11 +388,11 @@
     
     
     
+    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
+    
     <category term="Satélites meteorológicos" scheme="http://sdr-es.com/tags/Satelites-meteorologicos/"/>
     
     <category term="NOAA" scheme="http://sdr-es.com/tags/NOAA/"/>
-    
-    <category term="Satélites" scheme="http://sdr-es.com/tags/Satelites/"/>
     
     <category term="Meteorología" scheme="http://sdr-es.com/tags/Meteorologia/"/>
     
