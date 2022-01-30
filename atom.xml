@@ -31,9 +31,9 @@
     
     <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
     
-    <category term="Tracking" scheme="https://sdr-es.com/tags/Tracking/"/>
-    
     <category term="Gpredict" scheme="https://sdr-es.com/tags/Gpredict/"/>
+    
+    <category term="Tracking" scheme="https://sdr-es.com/tags/Tracking/"/>
     
   </entry>
   
@@ -52,11 +52,11 @@
     
     <category term="Linux" scheme="https://sdr-es.com/tags/Linux/"/>
     
-    <category term="Windows" scheme="https://sdr-es.com/tags/Windows/"/>
+    <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
     
     <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
     
-    <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
+    <category term="Windows" scheme="https://sdr-es.com/tags/Windows/"/>
     
     <category term="SDR++" scheme="https://sdr-es.com/tags/SDR/"/>
     
@@ -399,25 +399,25 @@
   </entry>
   
   <entry>
-    <title>Instalación de dispositivos RTL-SDR en macOS</title>
+    <title>Instalar dispositivo RTL-SDR en macOS</title>
     <link href="https://sdr-es.com/instalacion-rtlsdr-macos/"/>
     <id>https://sdr-es.com/instalacion-rtlsdr-macos/</id>
     <published>2020-06-14T08:32:42.000Z</published>
     <updated>2020-06-14T08:32:42.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en macOS. También veremos como instalar CubicSDR para poder usarlo.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;En este tutorial veremos cómo instalar nuestro dispositivo RTL-SDR en macOS. También veremos como instalar CubicSDR para poder usarlo.&lt;/p&gt;</summary>
     
     
     
     
     <category term="RTL-SDR" scheme="https://sdr-es.com/tags/RTL-SDR/"/>
     
-    <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
-    
     <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
     
     <category term="CubicSDR" scheme="https://sdr-es.com/tags/CubicSDR/"/>
+    
+    <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
     
   </entry>
   

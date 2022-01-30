@@ -72,6 +72,141 @@
       </tags>
   </entry>
   <entry>
+    <title>Construcción de antena QFH para satélites meteorológicos</title>
+    <url>/construccion-antena-qfh-137/</url>
+    <content><![CDATA[<p>En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello construiremos nuestra antena para que resuene en 137,5 MHz.</p>
+<span id="more"></span>
+
+<p>Para la construcción de esta antena me he basado tanto en la <a href="https://twitter.com/ea3ibc/status/1061292310783295488">antena fabricada por EA3IBC</a>, como en <a href="https://www.ea5wa.com/antenas/antena-qfh">la antena de EA5WA</a> que incorpora la varilla roscada y que facilita enormemente tanto el montaje como el ajuste de la misma.<br>Las medidas orientativas se han obtenido de la web de <a href="http://jcoppens.com/">John Coppens ON6JC/LW3HAZ</a> para la construcción de una antena con una relación diámetro/altura de 0,4.</p>
+<h2 id="Materiales-necesarios"><a href="#Materiales-necesarios" class="headerlink" title="Materiales necesarios"></a>Materiales necesarios</h2><p>El listado de materiales que se muestra a continuación es el que he empleado para la construcción de esta antena. En mi caso he empleado  aluminio y acero. Esta combinación presenta el problema de la <a href="https://es.wikipedia.org/wiki/Corrosi%C3%B3n_galv%C3%A1nica">corrosión galvánica</a> que puede ser notable en zonas húmedas. Si vamos a instalar la antena a la intemperie en una zona húmeda, lo ideal es evitar la combinación de estos materiales si queremos que nuestra antena nos dure bastante tiempo. Podemos optar en ese caso por construirla entera de aluminio como la antena de EA3IBC, o bien usar cinta perforada de acero en lugar de la pletina de aluminio y hacerla entera de acero.<br>Indicar también que si usamos otros componentes metálicos muy distintos tanto en diámetro como en el tipo de material, el ajuste de la antena podría no corresponder con el obtenido siguiendo esta guía.</p>
+<table>
+<thead>
+<tr>
+<th align="right">Cantidad (uds.)</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1,5 m</td>
+<td>Tubo de PVC Ø 40 mm</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td>Tapón para tubo de PVC Ø 40 mm</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Varilla roscada acero Ø 5 mm</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Pletina aluminio 2 mm x 10 mm</td>
+</tr>
+<tr>
+<td align="right">32</td>
+<td>Tuerca Ø 5 mm</td>
+</tr>
+<tr>
+<td align="right">28</td>
+<td>Arandela Ø 5 mm</td>
+</tr>
+<tr>
+<td align="right">20 cm</td>
+<td>Cable de cobre</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Terminal faston redondo Ø 5 mm</td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td>Cable coaxial 50Ω</td>
+</tr>
+</tbody></table>
+<img src="/construccion-antena-qfh-137/materiales.jpg" class="" width="800" title="Materiales">
+
+<h2 id="Construccion"><a href="#Construccion" class="headerlink" title="Construcción"></a>Construcción</h2><p>Empezamos cortando el tubo de PVC a la medida que queramos. En mi caso voy a usar el propio tubo como parte del mástil de colocación de la antena, por lo que voy a usar una longitud total de 1,5 metros. Si lo preferimos, podemos dejar el tubo más largo o más corto según nos interese.</p>
+<p>Una vez cortado, vamos a hacer los agujeros por los que pasaremos las varillas posteriormente.<br>Para los agujeros superiores podemos ayudarnos de la plantilla que se genera en <a href="http://jcoppens.com/ant/qfh/calc.en.php">la web de John Coppens</a> en el apartado de <em>“Generate a drilling template”</em>, indicando el diámetro del tubo (40 mm) y el diámetro del soporte horizontal (5 mm).<br>Le damos primeramente a <em>Calculate</em> en el apartado superior de <em>“Input data”</em> y después a <em>Generate</em>. Esto nos crea un PDF que podemos imprimir y usar para marcar los agujeros y que queden centrados. Recordar que <strong>solo vamos a utilizar esta plantilla para marcar la distribución de los agujeros superiores en el perímetro del tubo y no debemos hacer caso a las medidas que indica</strong>.</p>
+<img src="/construccion-antena-qfh-137/plantilla.jpg" class="" title="Plantilla">
+
+<p>Las medidas (<strong>en milímetros</strong>) que usaremos son las siguientes (las dimensiones no están a escala):</p>
+<img src="/construccion-antena-qfh-137/medidas_tubo.png" class="" title="Medidas tubo">
+
+
+<p>El siguiente paso será cortar y taladrar las pletinas de aluminio. Cortaremos dos pletinas por cada longitud usando el siguiente esquema:</p>
+<img src="/construccion-antena-qfh-137/medidas_pletinas.png" class="" title="Medidas pletinas">
+
+<p>Por último, cortamos las varillas roscadas para obtener las siguientes piezas:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Medidas (en mm)</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">300</td>
+<td>Varilla inferior para <em>loop</em> largo.</td>
+</tr>
+<tr>
+<td align="center">290</td>
+<td>Varilla inferior para <em>loop</em> corto.</td>
+</tr>
+<tr>
+<td align="center">155</td>
+<td>(2 unidades) Varilla superior para <em>loop</em> largo.</td>
+</tr>
+<tr>
+<td align="center">150</td>
+<td>(2 unidades) Varilla superior para <em>loop</em> corto.</td>
+</tr>
+</tbody></table>
+<img src="/construccion-antena-qfh-137/piezas.jpg" class="" width="900" title="Piezas cortadas">
+
+<h3 id="Montaje"><a href="#Montaje" class="headerlink" title="Montaje"></a>Montaje</h3><p>Una vez tenemos las piezas preparadas, comenzamos el proceso de montaje empezando por las varillas roscadas.</p>
+<img src="/construccion-antena-qfh-137/antena_varillas.jpg" class="" width="400" title="Antena con varillas colocadas">
+
+<p>El siguiente paso es colocar las pletinas, pero primero tendremos que darles la forma. La manera más sencilla de hacerlo es primero hacerles el arco y posteriormente hacerles el giro. Es conveniente dejarlas bien dobladas antes de colocarlas para que no apliquen tensión a las varillas.</p>
+<img src="/construccion-antena-qfh-137/antena_pletinas.jpg" class="" width="400" title="Antena con pletinas colocadas">
+
+<p>A continuación vamos a colocar el cable coaxial. La longitud del cable será la que estimemos necesaria y el tipo de cable podemos usar cualquiera. Es recomendable usar un cable no muy grueso y de bajas pérdidas. En mi caso he usado un cable <em>Aircell-5</em>.</p>
+<p>Hacemos un agujero del mismo diámetro del cable en la parte superior del tubo por debajo de las varillas y pasamos el cable coaxial. Es recomendable que pasemos bastante cable para poder trabajar con comodidad.<br>Ahora necesitamos sacar dos conexiones desde el vivo del coaxial y otras dos desde la malla. Para ello usamos los terminales faston.</p>
+<img src="/construccion-antena-qfh-137/conectores.jpg" class="" width="600" title="Conectores">
+<img src="/construccion-antena-qfh-137/conexiones.jpg" class="" width="600" title="Conexiones">
+
+<p>Ahora insertamos los terminales en las varillas conforme el siguiente esquema:</p>
+<img src="/construccion-antena-qfh-137/conexiones_qfh.png" class="" width="400" title="Vista superior de la antena">
+
+<p>Siendo A y C los lados que conforman el <em>loop</em> corto, y los lados B y D los que forman el <em>loop</em> largo, conectaremos los terminales con el vivo del coaxial a las varillas A y B y los terminales con la malla a las varillas C y D.</p>
+<img src="/construccion-antena-qfh-137/conexiones_interior.jpg" class="" width="500" title="Conexiones">
+
+<p>Una vez conectados, ajustamos el cable que queda dentro del tubo con cuidado y le damos 4 vueltas para hacer una <a href="https://es.wikipedia.org/wiki/Bobina_de_choque">bobina choque</a>. Aquí podemos hacer otro agujero y pasar el resto del cable por dentro de la antena, o bien podemos dejarlo por fuera.</p>
+<img src="/construccion-antena-qfh-137/choque.jpg" class="" width="400" title="Choque cable exterior">
+<img src="/construccion-antena-qfh-137/choque2.jpg" class="" width="400" title="Choque cable interior">
+
+<p>Por último, colocamos el tapón al tubo y ponemos el conector que queramos al cable y ya tenemos lista nuestra antena a falta de ajustarla a la frecuencia exacta.</p>
+<h2 id="Ajuste-de-la-antena"><a href="#Ajuste-de-la-antena" class="headerlink" title="Ajuste de la antena"></a>Ajuste de la antena</h2><p>Para finalizar la construcción de nuestra antena, vamos a medirla usando un analizador de antenas <strong>NanoVNA</strong>. Si hemos seguido los pasos de esta guía y hemos usado las medidas indicadas, la antena debe resonar sobre los 135 MHz ya que las medidas de las varillas son un poco más largas para poder colocar las tuercas con facilidad. Para ajustar la antena a la frecuencia exacta debemos ajustar la distancia entre las pletinas de aluminio de la siguiente manera:</p>
+<ul>
+<li>Para el <em>loop</em> largo <strong>282 mm</strong>.</li>
+<li>Para el <em>loop</em> corto <strong>268 mm</strong>.</li>
+</ul>
+<p>Una vez ajustada, nos dará unos resultados similares a los siguientes:</p>
+<img src="/construccion-antena-qfh-137/nanovna.jpg" class="" width="600" title="NanoVNA">
+
+<h2 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalación"></a>Instalación</h2><p>Para un mejor funcionamiento colocaremos nuestra antena conforme el siguiente esquema:</p>
+<img src="/construccion-antena-qfh-137/orientacion.png" class="" width="300" title="Orientación de la antena">
+
+<p>Orientaremos los lados conectados a la malla (D y C) hacia el norte y los lados conectados al vivo (A y B) hacia el sur.</p>
+<img src="/construccion-antena-qfh-137/colocada.jpg" class="" width="500" title="Antena instalada">
+]]></content>
+      <tags>
+        <tag>Antenas</tag>
+        <tag>QFH</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Elección del dispositivo SDR</title>
     <url>/eleccion-sdr/</url>
     <content><![CDATA[<p>Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.<br>La finalidad este artículo es orientarnos para escoger el dispositivo que más se ajuste a nuestras necesidades y casos de uso. Para ello se han seleccionado algunos de los dispositivos más conocidos y que habitualmente se recomiendan, y se ha elaborado una breve descripción de cada uno de ellos con algunas de sus características más reseñables.</p>
@@ -438,141 +573,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Construcción de antena QFH para satélites meteorológicos</title>
-    <url>/construccion-antena-qfh-137/</url>
-    <content><![CDATA[<p>En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello construiremos nuestra antena para que resuene en 137,5 MHz.</p>
-<span id="more"></span>
-
-<p>Para la construcción de esta antena me he basado tanto en la <a href="https://twitter.com/ea3ibc/status/1061292310783295488">antena fabricada por EA3IBC</a>, como en <a href="https://www.ea5wa.com/antenas/antena-qfh">la antena de EA5WA</a> que incorpora la varilla roscada y que facilita enormemente tanto el montaje como el ajuste de la misma.<br>Las medidas orientativas se han obtenido de la web de <a href="http://jcoppens.com/">John Coppens ON6JC/LW3HAZ</a> para la construcción de una antena con una relación diámetro/altura de 0,4.</p>
-<h2 id="Materiales-necesarios"><a href="#Materiales-necesarios" class="headerlink" title="Materiales necesarios"></a>Materiales necesarios</h2><p>El listado de materiales que se muestra a continuación es el que he empleado para la construcción de esta antena. En mi caso he empleado  aluminio y acero. Esta combinación presenta el problema de la <a href="https://es.wikipedia.org/wiki/Corrosi%C3%B3n_galv%C3%A1nica">corrosión galvánica</a> que puede ser notable en zonas húmedas. Si vamos a instalar la antena a la intemperie en una zona húmeda, lo ideal es evitar la combinación de estos materiales si queremos que nuestra antena nos dure bastante tiempo. Podemos optar en ese caso por construirla entera de aluminio como la antena de EA3IBC, o bien usar cinta perforada de acero en lugar de la pletina de aluminio y hacerla entera de acero.<br>Indicar también que si usamos otros componentes metálicos muy distintos tanto en diámetro como en el tipo de material, el ajuste de la antena podría no corresponder con el obtenido siguiendo esta guía.</p>
-<table>
-<thead>
-<tr>
-<th align="right">Cantidad (uds.)</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">1,5 m</td>
-<td>Tubo de PVC Ø 40 mm</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td>Tapón para tubo de PVC Ø 40 mm</td>
-</tr>
-<tr>
-<td align="right">2</td>
-<td>Varilla roscada acero Ø 5 mm</td>
-</tr>
-<tr>
-<td align="right">4</td>
-<td>Pletina aluminio 2 mm x 10 mm</td>
-</tr>
-<tr>
-<td align="right">32</td>
-<td>Tuerca Ø 5 mm</td>
-</tr>
-<tr>
-<td align="right">28</td>
-<td>Arandela Ø 5 mm</td>
-</tr>
-<tr>
-<td align="right">20 cm</td>
-<td>Cable de cobre</td>
-</tr>
-<tr>
-<td align="right">4</td>
-<td>Terminal faston redondo Ø 5 mm</td>
-</tr>
-<tr>
-<td align="right">-</td>
-<td>Cable coaxial 50Ω</td>
-</tr>
-</tbody></table>
-<img src="/construccion-antena-qfh-137/materiales.jpg" class="" width="800" title="Materiales">
-
-<h2 id="Construccion"><a href="#Construccion" class="headerlink" title="Construcción"></a>Construcción</h2><p>Empezamos cortando el tubo de PVC a la medida que queramos. En mi caso voy a usar el propio tubo como parte del mástil de colocación de la antena, por lo que voy a usar una longitud total de 1,5 metros. Si lo preferimos, podemos dejar el tubo más largo o más corto según nos interese.</p>
-<p>Una vez cortado, vamos a hacer los agujeros por los que pasaremos las varillas posteriormente.<br>Para los agujeros superiores podemos ayudarnos de la plantilla que se genera en <a href="http://jcoppens.com/ant/qfh/calc.en.php">la web de John Coppens</a> en el apartado de <em>“Generate a drilling template”</em>, indicando el diámetro del tubo (40 mm) y el diámetro del soporte horizontal (5 mm).<br>Le damos primeramente a <em>Calculate</em> en el apartado superior de <em>“Input data”</em> y después a <em>Generate</em>. Esto nos crea un PDF que podemos imprimir y usar para marcar los agujeros y que queden centrados. Recordar que <strong>solo vamos a utilizar esta plantilla para marcar la distribución de los agujeros superiores en el perímetro del tubo y no debemos hacer caso a las medidas que indica</strong>.</p>
-<img src="/construccion-antena-qfh-137/plantilla.jpg" class="" title="Plantilla">
-
-<p>Las medidas (<strong>en milímetros</strong>) que usaremos son las siguientes (las dimensiones no están a escala):</p>
-<img src="/construccion-antena-qfh-137/medidas_tubo.png" class="" title="Medidas tubo">
-
-
-<p>El siguiente paso será cortar y taladrar las pletinas de aluminio. Cortaremos dos pletinas por cada longitud usando el siguiente esquema:</p>
-<img src="/construccion-antena-qfh-137/medidas_pletinas.png" class="" title="Medidas pletinas">
-
-<p>Por último, cortamos las varillas roscadas para obtener las siguientes piezas:</p>
-<table>
-<thead>
-<tr>
-<th align="center">Medidas (en mm)</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">300</td>
-<td>Varilla inferior para <em>loop</em> largo.</td>
-</tr>
-<tr>
-<td align="center">290</td>
-<td>Varilla inferior para <em>loop</em> corto.</td>
-</tr>
-<tr>
-<td align="center">155</td>
-<td>(2 unidades) Varilla superior para <em>loop</em> largo.</td>
-</tr>
-<tr>
-<td align="center">150</td>
-<td>(2 unidades) Varilla superior para <em>loop</em> corto.</td>
-</tr>
-</tbody></table>
-<img src="/construccion-antena-qfh-137/piezas.jpg" class="" width="900" title="Piezas cortadas">
-
-<h3 id="Montaje"><a href="#Montaje" class="headerlink" title="Montaje"></a>Montaje</h3><p>Una vez tenemos las piezas preparadas, comenzamos el proceso de montaje empezando por las varillas roscadas.</p>
-<img src="/construccion-antena-qfh-137/antena_varillas.jpg" class="" width="400" title="Antena con varillas colocadas">
-
-<p>El siguiente paso es colocar las pletinas, pero primero tendremos que darles la forma. La manera más sencilla de hacerlo es primero hacerles el arco y posteriormente hacerles el giro. Es conveniente dejarlas bien dobladas antes de colocarlas para que no apliquen tensión a las varillas.</p>
-<img src="/construccion-antena-qfh-137/antena_pletinas.jpg" class="" width="400" title="Antena con pletinas colocadas">
-
-<p>A continuación vamos a colocar el cable coaxial. La longitud del cable será la que estimemos necesaria y el tipo de cable podemos usar cualquiera. Es recomendable usar un cable no muy grueso y de bajas pérdidas. En mi caso he usado un cable <em>Aircell-5</em>.</p>
-<p>Hacemos un agujero del mismo diámetro del cable en la parte superior del tubo por debajo de las varillas y pasamos el cable coaxial. Es recomendable que pasemos bastante cable para poder trabajar con comodidad.<br>Ahora necesitamos sacar dos conexiones desde el vivo del coaxial y otras dos desde la malla. Para ello usamos los terminales faston.</p>
-<img src="/construccion-antena-qfh-137/conectores.jpg" class="" width="600" title="Conectores">
-<img src="/construccion-antena-qfh-137/conexiones.jpg" class="" width="600" title="Conexiones">
-
-<p>Ahora insertamos los terminales en las varillas conforme el siguiente esquema:</p>
-<img src="/construccion-antena-qfh-137/conexiones_qfh.png" class="" width="400" title="Vista superior de la antena">
-
-<p>Siendo A y C los lados que conforman el <em>loop</em> corto, y los lados B y D los que forman el <em>loop</em> largo, conectaremos los terminales con el vivo del coaxial a las varillas A y B y los terminales con la malla a las varillas C y D.</p>
-<img src="/construccion-antena-qfh-137/conexiones_interior.jpg" class="" width="500" title="Conexiones">
-
-<p>Una vez conectados, ajustamos el cable que queda dentro del tubo con cuidado y le damos 4 vueltas para hacer una <a href="https://es.wikipedia.org/wiki/Bobina_de_choque">bobina choque</a>. Aquí podemos hacer otro agujero y pasar el resto del cable por dentro de la antena, o bien podemos dejarlo por fuera.</p>
-<img src="/construccion-antena-qfh-137/choque.jpg" class="" width="400" title="Choque cable exterior">
-<img src="/construccion-antena-qfh-137/choque2.jpg" class="" width="400" title="Choque cable interior">
-
-<p>Por último, colocamos el tapón al tubo y ponemos el conector que queramos al cable y ya tenemos lista nuestra antena a falta de ajustarla a la frecuencia exacta.</p>
-<h2 id="Ajuste-de-la-antena"><a href="#Ajuste-de-la-antena" class="headerlink" title="Ajuste de la antena"></a>Ajuste de la antena</h2><p>Para finalizar la construcción de nuestra antena, vamos a medirla usando un analizador de antenas <strong>NanoVNA</strong>. Si hemos seguido los pasos de esta guía y hemos usado las medidas indicadas, la antena debe resonar sobre los 135 MHz ya que las medidas de las varillas son un poco más largas para poder colocar las tuercas con facilidad. Para ajustar la antena a la frecuencia exacta debemos ajustar la distancia entre las pletinas de aluminio de la siguiente manera:</p>
-<ul>
-<li>Para el <em>loop</em> largo <strong>282 mm</strong>.</li>
-<li>Para el <em>loop</em> corto <strong>268 mm</strong>.</li>
-</ul>
-<p>Una vez ajustada, nos dará unos resultados similares a los siguientes:</p>
-<img src="/construccion-antena-qfh-137/nanovna.jpg" class="" width="600" title="NanoVNA">
-
-<h2 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalación"></a>Instalación</h2><p>Para un mejor funcionamiento colocaremos nuestra antena conforme el siguiente esquema:</p>
-<img src="/construccion-antena-qfh-137/orientacion.png" class="" width="300" title="Orientación de la antena">
-
-<p>Orientaremos los lados conectados a la malla (D y C) hacia el norte y los lados conectados al vivo (A y B) hacia el sur.</p>
-<img src="/construccion-antena-qfh-137/colocada.jpg" class="" width="500" title="Antena instalada">
-]]></content>
-      <tags>
-        <tag>Antenas</tag>
-        <tag>QFH</tag>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
     <url>/identificacion-estaciones-csvuserlistbrowser/</url>
     <content><![CDATA[<p>En este artículo vamos a ver como instalar y configurar <a href="https://www.df8ry.de/htmlen/home/%F0%9F%8F%A1welcome.htm">CSVUserlistBrowser</a> para usarlo con SDR#. Este programa, desarrollado por Heinrich Emmerl (DF8RY), nos permite descargar y visualizar bases de datos de frecuencias de estaciones de radiodifusión de forma sencilla, y además nos permite sintonizar dichas frecuencias en SDR# simplemente haciendo clic.</p>
@@ -713,12 +713,95 @@
       </tags>
   </entry>
   <entry>
-    <title>Instalación de dispositivos RTL-SDR en Windows</title>
-    <url>/instalacion-rtlsdr-windows/</url>
-    <content><![CDATA[<p>En este tutorial vamos a ver como instalar nuestro nuevo dispositivo RTL-SDR en Windows 10.</p>
-<p>Existen varias alternativas para Windows, pero en este tutorial vamos a instalar y configurar SDR# (SDR Sharp), ya que es el más conocido y utilizado.</p>
+    <title>Instalar dispositivo RTL-SDR en macOS</title>
+    <url>/instalacion-rtlsdr-macos/</url>
+    <content><![CDATA[<p>En este tutorial veremos cómo instalar nuestro dispositivo RTL-SDR en macOS. También veremos como instalar CubicSDR para poder usarlo.</p>
 <span id="more"></span>
 
+<h2 id="Instalacion-de-los-drivers"><a href="#Instalacion-de-los-drivers" class="headerlink" title="Instalación de los drivers"></a>Instalación de los drivers</h2><p>Para poder instalar los drivers necesitamos tener instalado previamente un gestor de paquetes. El más conocido y recomendado es <strong>Homebrew</strong>. Si no lo tenemos aún instalado podemos seguir los pasos descritos en su página web:</p>
+<p><a href="https://brew.sh/index_es"><center>https://brew.sh/index_es</center></a></p>
+<p>Si ya lo tenemos instalado, procedemos a instalar los drivers ejecutando el siguiente comando desde la consola.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install rtl-sdr</span><br></pre></td></tr></table></figure>
+
+<p>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para comprobar que se ha instalado correctamente.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
+
+<p>Si todo ha ido bien, tendremos una salida como la siguiente.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br></pre></td></tr></table></figure>
+
+<h2 id="Instalacion-de-CubicSDR"><a href="#Instalacion-de-CubicSDR" class="headerlink" title="Instalación de CubicSDR"></a>Instalación de CubicSDR</h2><p><a href="https://cubicsdr.com/">CubicSDR</a> es una aplicación multiplataforma para SDR que nos permite navegar por el espectro radioeléctrico de forma visual y demodular señales de forma sencilla.</p>
+<p>Para descargar CubicSDR debemos ir a su repositorio en GitHub y descargar la última versión disponible para macOS. Para ello accedemos su repositorio a través del siguiente enlace y descargamos el instalador para macOS.</p>
+<p><a href="https://github.com/cjcliffe/CubicSDR/releases"><center>https://github.com/cjcliffe/CubicSDR/releases</center></a></p>
+<img src="/instalacion-rtlsdr-macos/download_cubicsdr.png" class="" width="700" title="Descarga de CubicSDR">
+
+<p>Una vez descargado, lo ejecutamos y en la ventana que aparece arrastramos el binario a nuestro directorio de aplicaciones.</p>
+<img src="/instalacion-rtlsdr-macos/install_cubicsdr.png" class="" width="700" title="Instalación de CubicSDR">
+
+<p>Ahora ejecutamos CubicSDR desde las aplicaciones instaladas para iniciarlo. Nos mostrará una ventana como la siguiente en la que debemos seleccionar nuestro dispositivo SDR y hacemos clic en <em>Start</em>.</p>
+<img src="/instalacion-rtlsdr-macos/cubicsdr_devices.png" class="" width="700" title="Configuración de CubicSDR">
+
+<p>Finalmente, CubicSDR se iniciará y ya podremos utilizarlo.</p>
+<img src="/instalacion-rtlsdr-macos/cubicsdr.png" class="" width="900" title="CubicSDR">
+
+<p>CubicSDR también nos permite sacar el audio demodulado para poder usarlo con otros programas. Podemos seguir los pasos descritos en el tutorial <a href="/instalacion-virtual-cable-audio/">“Instalación de cable de audio virtual”</a> para configurarlo.</p>
+]]></content>
+      <tags>
+        <tag>RTL-SDR</tag>
+        <tag>macOS</tag>
+        <tag>CubicSDR</tag>
+        <tag>Instalación</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalar dispositivo RTL-SDR en Linux</title>
+    <url>/instalacion-rtlsdr-raspberrypi/</url>
+    <content><![CDATA[<p>En esta guia veremos cómo instalar nuestro dispositivo RTL-SDR en Linux. Realizaremos la instalación en una Raspberry Pi con Raspbian.</p>
+<span id="more"></span>
+
+<img src="/instalacion-rtlsdr-raspberrypi/raspberry-pi-3.png" class="" width="300" title="Raspberry Pi 3">
+
+<p>Vamos a instalar los drivers y librerias necesarias para usar el dispositivo SDR. Para ello ejecutamos el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install rtl-sdr librtlsdr-dev</span><br></pre></td></tr></table></figure>
+
+<p>Una vez instalado el dispositivo le daremos permisos a los usuarios no <em>root</em> para poder usar el dispositivo. Para ello seguiremos los siguientes pasos para crear una regla <em>udev</em>.</p>
+<ol>
+<li>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para obtener la lista de dispositivos USB conectados:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lsusb</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Buscamos en la lista el dispositivo SDR y nos fijamos en los identificadores de fabricante y de dispositivo. En este caso son <strong>0bda</strong> y <strong>2838</strong> respectivamente.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Bus 001 Device 004: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Ahora creamos un archivo de reglas nuevo:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;udev&#x2F;rules.d&#x2F;rtl-sdr.rules</span><br></pre></td></tr></table></figure>
+
+<p>Y añadimos la siguiente regla modificando los identificadores si fuese necesario para que correspondan con los obtenidos en el paso anterior:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">SUBSYSTEMS==<span class="string">&quot;usb&quot;</span>, ATTRS&#123;idVendor&#125;==<span class="string">&quot;0bda&quot;</span>, ATTRS&#123;idProduct&#125;==<span class="string">&quot;2838&quot;</span>, MODE:=<span class="string">&quot;0666&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Por último desconectamos el dispostivo SDR y lo volvemos a conectar para que se aplique la regla y ejecutamos el siguiente comando para comprobar que el dispositivo funciona correctamente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
+
+<p>Si todo está correctamente instalado veremos una salida como la siguiente:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 82020715</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Detached kernel driver</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br><span class="line">Allocating 15 zero-copy buffers</span><br><span class="line">lost at least 140 bytes</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>RTL-SDR</tag>
+        <tag>Linux</tag>
+        <tag>Raspberry Pi</tag>
+        <tag>Instalación</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalar dispositivo RTL-SDR en Windows</title>
+    <url>/instalacion-rtlsdr-windows/</url>
+    <content><![CDATA[<p>En este tutorial veremos cómo instalar nuestro nuevo dispositivo RTL-SDR y usarlo con SDR# (SDR Sharp) en Windows.</p>
+<span id="more"></span>
+
+<p>Existen varias alternativas para Windows, pero en este tutorial vamos a instalar y configurar SDR#, ya que es el más conocido y utilizado.</p>
 <h2 id="Instalacion-de-SDR"><a href="#Instalacion-de-SDR" class="headerlink" title="Instalación de SDR#"></a>Instalación de SDR#</h2><p>El primer paso es descargar el software que necesitamos para poder usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo clic en el siguiente enlace:</p>
 <p><a href="https://airspy.com/download/"><center>https://airspy.com/download/</center></a></p>
 <p>Descargamos SDR# haciendo clic en el botón <em>Download</em>.</p>
@@ -814,49 +897,9 @@
 ]]></content>
       <tags>
         <tag>RTL-SDR</tag>
+        <tag>Instalación</tag>
         <tag>SDRSharp</tag>
         <tag>Windows</tag>
-        <tag>Instalación</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de dispositivos RTL-SDR en macOS</title>
-    <url>/instalacion-rtlsdr-macos/</url>
-    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en macOS. También veremos como instalar CubicSDR para poder usarlo.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion-de-los-drivers"><a href="#Instalacion-de-los-drivers" class="headerlink" title="Instalación de los drivers"></a>Instalación de los drivers</h2><p>Para poder instalar los drivers necesitamos tener instalado previamente un gestor de paquetes. El más conocido y recomendado es <strong>Homebrew</strong>. Si no lo tenemos aún instalado podemos seguir los pasos descritos en su página web:</p>
-<p><a href="https://brew.sh/index_es"><center>https://brew.sh/index_es</center></a></p>
-<p>Si ya lo tenemos instalado, procedemos a instalar los drivers ejecutando el siguiente comando desde la consola.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install rtl-sdr</span><br></pre></td></tr></table></figure>
-
-<p>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para comprobar que se ha instalado correctamente.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
-
-<p>Si todo ha ido bien, tendremos una salida como la siguiente.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br></pre></td></tr></table></figure>
-
-<h2 id="Instalacion-de-CubicSDR"><a href="#Instalacion-de-CubicSDR" class="headerlink" title="Instalación de CubicSDR"></a>Instalación de CubicSDR</h2><p><a href="https://cubicsdr.com/">CubicSDR</a> es una aplicación multiplataforma para SDR que nos permite navegar por el espectro radioeléctrico de forma visual y demodular señales de forma sencilla.</p>
-<p>Para descargar CubicSDR debemos ir a su repositorio en GitHub y descargar la última versión disponible para macOS. Para ello accedemos su repositorio a través del siguiente enlace y descargamos el instalador para macOS.</p>
-<p><a href="https://github.com/cjcliffe/CubicSDR/releases"><center>https://github.com/cjcliffe/CubicSDR/releases</center></a></p>
-<img src="/instalacion-rtlsdr-macos/download_cubicsdr.png" class="" width="700" title="Descarga de CubicSDR">
-
-<p>Una vez descargado, lo ejecutamos y en la ventana que aparece arrastramos el binario a nuestro directorio de aplicaciones.</p>
-<img src="/instalacion-rtlsdr-macos/install_cubicsdr.png" class="" width="700" title="Instalación de CubicSDR">
-
-<p>Ahora ejecutamos CubicSDR desde las aplicaciones instaladas para iniciarlo. Nos mostrará una ventana como la siguiente en la que debemos seleccionar nuestro dispositivo SDR y hacemos clic en <em>Start</em>.</p>
-<img src="/instalacion-rtlsdr-macos/cubicsdr_devices.png" class="" width="700" title="Configuración de CubicSDR">
-
-<p>Finalmente, CubicSDR se iniciará y ya podremos utilizarlo.</p>
-<img src="/instalacion-rtlsdr-macos/cubicsdr.png" class="" width="900" title="CubicSDR">
-
-<p>CubicSDR también nos permite sacar el audio demodulado para poder usarlo con otros programas. Podemos seguir los pasos descritos en el tutorial <a href="/instalacion-virtual-cable-audio/">“Instalación de cable de audio virtual”</a> para configurarlo.</p>
-]]></content>
-      <tags>
-        <tag>RTL-SDR</tag>
-        <tag>Instalación</tag>
-        <tag>macOS</tag>
-        <tag>CubicSDR</tag>
       </tags>
   </entry>
   <entry>
@@ -959,50 +1002,6 @@
         <tag>Raspberry Pi</tag>
         <tag>Instalación</tag>
         <tag>SatNOGS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de dispositivos RTL-SDR en Raspberry Pi</title>
-    <url>/instalacion-rtlsdr-raspberrypi/</url>
-    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.</p>
-<span id="more"></span>
-
-<img src="/instalacion-rtlsdr-raspberrypi/raspberry-pi-3.png" class="" title="Raspberry Pi 3">
-
-<p>Vamos a instalar los drivers y librerias necesarias para usar el dispositivo SDR. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install rtl-sdr librtlsdr-dev</span><br></pre></td></tr></table></figure>
-
-<p>Una vez instalado el dispositivo le daremos permisos a los usuarios no <em>root</em> para poder usar el dispositivo. Para ello seguiremos los siguientes pasos para crear una regla <em>udev</em>.</p>
-<ol>
-<li>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para obtener la lista de dispositivos USB conectados:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lsusb</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Buscamos en la lista el dispositivo SDR y nos fijamos en los identificadores de fabricante y de dispositivo. En este caso son <strong>0bda</strong> y <strong>2838</strong> respectivamente.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Bus 001 Device 004: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Ahora creamos un archivo de reglas nuevo:</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;udev&#x2F;rules.d&#x2F;rtl-sdr.rules</span><br></pre></td></tr></table></figure>
-
-<p>Y añadimos la siguiente regla modificando los identificadores si fuese necesario para que correspondan con los obtenidos en el paso anterior:</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">SUBSYSTEMS==<span class="string">&quot;usb&quot;</span>, ATTRS&#123;idVendor&#125;==<span class="string">&quot;0bda&quot;</span>, ATTRS&#123;idProduct&#125;==<span class="string">&quot;2838&quot;</span>, MODE:=<span class="string">&quot;0666&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>Por último desconectamos el dispostivo SDR y lo volvemos a conectar para que se aplique la regla y ejecutamos el siguiente comando para comprobar que el dispositivo funciona correctamente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
-
-<p>Si todo está correctamente instalado veremos una salida como la siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 82020715</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Detached kernel driver</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br><span class="line">Allocating 15 zero-copy buffers</span><br><span class="line">lost at least 140 bytes</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>RTL-SDR</tag>
-        <tag>Linux</tag>
-        <tag>Raspberry Pi</tag>
-        <tag>SDRSharp</tag>
-        <tag>Instalación</tag>
       </tags>
   </entry>
   <entry>
@@ -1225,6 +1224,38 @@
       </tags>
   </entry>
   <entry>
+    <title>Instalar SDR++</title>
+    <url>/instalacion-sdrpp/</url>
+    <content><![CDATA[<p><a href="https://www.sdrpp.org/">SDR++</a> es un software multiplataforma y de código abierto para la recepción de señales mediante SDR. Este nuevo programa, desarrollado por <a href="https://twitter.com/ryzerth">Alexandre Rouma</a>, busca como objetivo ser sencillo de utilizar y eficiente.<br>En este post veremos como instalar SDR++ en Windows, Linux y macOS.</p>
+<span id="more"></span>
+
+<p>Para instalar SDR++ en cualquier sistema operativo, tenemos la posibilidad de descargar los instaladores para cada uno de ellos desde el siguiente enlace:</p>
+<p><a href="https://github.com/AlexandreRouma/SDRPlusPlus/releases/latest"><center>Releases SDR++</center></a></p>
+<p>En cualquier caso, necesitaremos tener instalados previamente los controladores del dispositivo que vayamos a utilizar. Si vamos a usar un dispositivo RTL-SDR por primera vez, podemos seguir los pasos de instalación descritos en <a href="/primeros-pasos/#Instalacion-del-dispositivo">este enlace</a>.</p>
+<h2 id="Instalacion-en-Windows"><a href="#Instalacion-en-Windows" class="headerlink" title="Instalación en Windows"></a>Instalación en Windows</h2><p>Una vez descargado el archivo comprimido para Windows, procedemos a extraer su contenido en la ubicación que queramos. Para iniciar el programa bastaría con abrir el ejecutable <strong><em>sdrpp.exe</em></strong>.</p>
+<img src="/instalacion-sdrpp/sdrpp-windows.jpg" class="" width="900" title="SDR++ Windows">
+
+<h2 id="Instalacion-en-Linux"><a href="#Instalacion-en-Linux" class="headerlink" title="Instalación en Linux"></a>Instalación en Linux</h2><p>Nos descargamos el archivo PKG para nuestro distribución Linux y lo instalamos con el gestor de paquetes correspondiente.<br>Para iniciar el programa, bastaría con buscarlo en los programas instalados e iniciarlo.</p>
+<img src="/instalacion-sdrpp/sdrpp-linux.jpg" class="" width="900" title="SDR++ Linux">
+
+<h2 id="Instalacion-en-macOS"><a href="#Instalacion-en-macOS" class="headerlink" title="Instalación en macOS"></a>Instalación en macOS</h2><p>Lo primero que haremos será descargar el archivo PKG para nuestra arquitectura e instalarlo. Por ahora solo está disponible el paquete para procesadores con arquitectura <em>amd64</em> y no para <em>ARM</em> (Apple M1).</p>
+<p>Una vez instalado el paquete con el programa, necesitamos instalar algunas dependencias externas:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install fftw glew glfw volk</span><br></pre></td></tr></table></figure>
+
+<p>Por último ejecutamos el programa desde la terminal para iniciarlo:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sdrpp</span><br></pre></td></tr></table></figure>
+
+<img src="/instalacion-sdrpp/sdrpp-macos.jpg" class="" width="900" title="SDR++ macOS">
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>macOS</tag>
+        <tag>Instalación</tag>
+        <tag>Windows</tag>
+        <tag>SDR++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Instalación de SPY Server en Raspberry Pi</title>
     <url>/instalacion-spyserver-raspberrypi/</url>
     <content><![CDATA[<p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos como instalar SPY Server en una Raspberry Pi.</p>
@@ -1282,41 +1313,9 @@
         <tag>RTL-SDR</tag>
         <tag>Linux</tag>
         <tag>Raspberry Pi</tag>
+        <tag>Instalación</tag>
         <tag>SDRSharp</tag>
-        <tag>Instalación</tag>
         <tag>SPY Server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalar SDR++</title>
-    <url>/instalacion-sdrpp/</url>
-    <content><![CDATA[<p><a href="https://www.sdrpp.org/">SDR++</a> es un software multiplataforma y de código abierto para la recepción de señales mediante SDR. Este nuevo programa, desarrollado por <a href="https://twitter.com/ryzerth">Alexandre Rouma</a>, busca como objetivo ser sencillo de utilizar y eficiente.<br>En este post veremos como instalar SDR++ en Windows, Linux y macOS.</p>
-<span id="more"></span>
-
-<p>Para instalar SDR++ en cualquier sistema operativo, tenemos la posibilidad de descargar los instaladores para cada uno de ellos desde el siguiente enlace:</p>
-<p><a href="https://github.com/AlexandreRouma/SDRPlusPlus/releases/latest"><center>Releases SDR++</center></a></p>
-<p>En cualquier caso, necesitaremos tener instalados previamente los controladores del dispositivo que vayamos a utilizar. Si vamos a usar un dispositivo RTL-SDR por primera vez, podemos seguir los pasos de instalación descritos en <a href="/primeros-pasos/#Instalacion-del-dispositivo">este enlace</a>.</p>
-<h2 id="Instalacion-en-Windows"><a href="#Instalacion-en-Windows" class="headerlink" title="Instalación en Windows"></a>Instalación en Windows</h2><p>Una vez descargado el archivo comprimido para Windows, procedemos a extraer su contenido en la ubicación que queramos. Para iniciar el programa bastaría con abrir el ejecutable <strong><em>sdrpp.exe</em></strong>.</p>
-<img src="/instalacion-sdrpp/sdrpp-windows.jpg" class="" width="900" title="SDR++ Windows">
-
-<h2 id="Instalacion-en-Linux"><a href="#Instalacion-en-Linux" class="headerlink" title="Instalación en Linux"></a>Instalación en Linux</h2><p>Nos descargamos el archivo PKG para nuestro distribución Linux y lo instalamos con el gestor de paquetes correspondiente.<br>Para iniciar el programa, bastaría con buscarlo en los programas instalados e iniciarlo.</p>
-<img src="/instalacion-sdrpp/sdrpp-linux.jpg" class="" width="900" title="SDR++ Linux">
-
-<h2 id="Instalacion-en-macOS"><a href="#Instalacion-en-macOS" class="headerlink" title="Instalación en macOS"></a>Instalación en macOS</h2><p>Lo primero que haremos será descargar el archivo PKG para nuestra arquitectura e instalarlo. Por ahora solo está disponible el paquete para procesadores con arquitectura <em>amd64</em> y no para <em>ARM</em> (Apple M1).</p>
-<p>Una vez instalado el paquete con el programa, necesitamos instalar algunas dependencias externas:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install fftw glew glfw volk</span><br></pre></td></tr></table></figure>
-
-<p>Por último ejecutamos el programa desde la terminal para iniciarlo:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sdrpp</span><br></pre></td></tr></table></figure>
-
-<img src="/instalacion-sdrpp/sdrpp-macos.jpg" class="" width="900" title="SDR++ macOS">
-]]></content>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Windows</tag>
-        <tag>Instalación</tag>
-        <tag>macOS</tag>
-        <tag>SDR++</tag>
       </tags>
   </entry>
   <entry>
@@ -1358,9 +1357,9 @@
 <p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
 ]]></content>
       <tags>
-        <tag>Windows</tag>
-        <tag>Instalación</tag>
         <tag>macOS</tag>
+        <tag>Instalación</tag>
+        <tag>Windows</tag>
         <tag>Virtual Audio Cable</tag>
       </tags>
   </entry>
@@ -1616,6 +1615,84 @@
       </tags>
   </entry>
   <entry>
+    <title>Recepción del satélite FalconSAT-3</title>
+    <url>/recepcion-falconsat-3/</url>
+    <content><![CDATA[<p>El satélite FalconSAT-3 fue construido entre 2005 y 2006 por cadetes de la academia de la fuerza aérea de Estados Unidos. Desde que fue lanzado en 2007, el satélite ha llevado a cabo dos fases operadas por la academia de la fuerza aérea estadounidense y una tercera fase desde 2017 en la que se abrió su uso para el servicio de radioaficionados. El satélite funciona actualmente como repetidor en modo PACSAT.<br>PACSAT es un término genérico usado para describir un servicio digital para radioaficionados de almacenamiento y distribución por satélite. Este sistema, que utiliza el protocolo AX.25 para los paquetes de datos, permite reenviar mensajes de correo electrónico, telemetría, boletines informativos, etc.<br>En este artículo veremos como recibir estos mensajes con nuestro SDR.</p>
+<span id="more"></span>
+
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>FalconSAT-3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>AMSAT-NA (3ª fase)</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>30776</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2007-006E</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>43,3 cm x 43,3 cm x 78,7 cm (54,3 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>9 de Marzo de 2007</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>Subida: 145,840 MHz, Bajada: 435,103 MHz (9600bps GMSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://www.amsat.org/falconsat-3/">https://www.amsat.org/falconsat-3/</a></td>
+</tr>
+</tbody></table>
+<img src="/recepcion-falconsat-3/falconsat-3.jpg" class="" width="400" title="FalconSAT-3">
+
+
+<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>Para la recepción de la señal del satélite podemos usar cualquier programa. En este ejemplo se utiliza SDR# para recibir la señal y sacar el audio mediante el cable de audio virtual.</p>
+<h3 id="HS-SoundModem"><a href="#HS-SoundModem" class="headerlink" title="HS SoundModem"></a>HS SoundModem</h3><p>Para demodular la señal de audio que recibimos a través del cable de audio virtual, usaremos un software que haga de TNC. Para ello usaremos <a href="http://uz7.ho.ua/packetradio.htm">High-Speed SoundModem de UZ7HO</a>, el cual instalaremos siguiendo los pasos que ya vimos anteriormente para la <a href="/recepcion-cas4/#Decodificar-la-senal">recepción de los satélites CAS-4</a>.</p>
+<h3 id="PacSat-decoder"><a href="#PacSat-decoder" class="headerlink" title="PacSat decoder"></a>PacSat decoder</h3><p>Por último, necesitamos instalar el programa que va a decodificar y mostrar los mensajes. Se trata del programa <em>“AMSAT Pacsat Ground Station”</em>, el cual podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://www.g0kla.com/pacsat/"><center>AMSAT Pacsat Ground Station Software</center></a></p>
+<p>Una vez descargado, extraemos el contenido en cualquier directorio e iniciamos el programa desde el ejecutable “PsatGround.exe”.<br>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
+<p>Ahora vamos a <em>“File”</em> y <em>“Settings”</em> e introducimos la ruta de los directorios que usaremos para guardar los logs y archivos recibidos, y también los datos de nuestra estación.</p>
+<img src="/recepcion-falconsat-3/pacsat-config.jpg" class="" width="500" title="PacSat - Configuración">
+
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Una vez tenemos todo instalado, debemos iniciar los programas en el siguiente orden para dejarlos preparados para recibir el pase.</p>
+<ol>
+<li><p>Iniciamos HS SoundModem y seleccionamos el modo <strong>FSK G3RUH 9600bd</strong>.</p>
+</li>
+<li><p>Iniciamos el decoder de PacSat. Este se conectará al socket de HS SoundModem para recibir los mensajes. Veremos que aparece el mensaje <em>“TNC IN FULL DUPLEX”</em> si se ha conectado correctamente.</p>
+<img src="/recepcion-falconsat-3/pacsat.jpg" class="" title="PacSat"></li>
+<li><p>Por último, iniciamos SDR# y ajustamos el <strong>modo a NFM y un ancho de banda de 10 kHz</strong>.</p>
+</li>
+</ol>
+<p>Una vez comience a recibirse la señal suficiente, veremos que se van decodificando y apareciendo mensajes en el PacSat decoder.</p>
+<img src="/recepcion-falconsat-3/recepcion.jpg" class="" width="900" title="Recibiendo señal con SDR#">
+
+<img src="/recepcion-falconsat-3/pacsat-mensajes-recibidos.jpg" class="" title="PacSat - Mensajes recibidos">
+
+<p>Los mensajes pueden contener varias partes y necesitamos recibirlas todas para poder mostrar el mensaje completo. Algunos mensajes pueden requerir de varios pases del satélite para poder descargar todas sus partes.<br>Una vez las tenemos todas, basta hacer doble clic en el mensaje para ver su contenido.</p>
+<img src="/recepcion-falconsat-3/pacsat-mensaje.jpg" class="" title="PacSat - Mensaje">
+
+<img src="/recepcion-falconsat-3/pacsat-mensaje2.jpg" class="" title="PacSat - Mensaje">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>PACSAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recepción del satélite FUNcube-1</title>
     <url>/recepcion-funcube1/</url>
     <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
@@ -1784,123 +1861,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción del satélite FalconSAT-3</title>
-    <url>/recepcion-falconsat-3/</url>
-    <content><![CDATA[<p>El satélite FalconSAT-3 fue construido entre 2005 y 2006 por cadetes de la academia de la fuerza aérea de Estados Unidos. Desde que fue lanzado en 2007, el satélite ha llevado a cabo dos fases operadas por la academia de la fuerza aérea estadounidense y una tercera fase desde 2017 en la que se abrió su uso para el servicio de radioaficionados. El satélite funciona actualmente como repetidor en modo PACSAT.<br>PACSAT es un término genérico usado para describir un servicio digital para radioaficionados de almacenamiento y distribución por satélite. Este sistema, que utiliza el protocolo AX.25 para los paquetes de datos, permite reenviar mensajes de correo electrónico, telemetría, boletines informativos, etc.<br>En este artículo veremos como recibir estos mensajes con nuestro SDR.</p>
-<span id="more"></span>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>FalconSAT-3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>AMSAT-NA (3ª fase)</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>30776</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2007-006E</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>43,3 cm x 43,3 cm x 78,7 cm (54,3 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>9 de Marzo de 2007</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>Subida: 145,840 MHz, Bajada: 435,103 MHz (9600bps GMSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://www.amsat.org/falconsat-3/">https://www.amsat.org/falconsat-3/</a></td>
-</tr>
-</tbody></table>
-<img src="/recepcion-falconsat-3/falconsat-3.jpg" class="" width="400" title="FalconSAT-3">
-
-
-<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>Para la recepción de la señal del satélite podemos usar cualquier programa. En este ejemplo se utiliza SDR# para recibir la señal y sacar el audio mediante el cable de audio virtual.</p>
-<h3 id="HS-SoundModem"><a href="#HS-SoundModem" class="headerlink" title="HS SoundModem"></a>HS SoundModem</h3><p>Para demodular la señal de audio que recibimos a través del cable de audio virtual, usaremos un software que haga de TNC. Para ello usaremos <a href="http://uz7.ho.ua/packetradio.htm">High-Speed SoundModem de UZ7HO</a>, el cual instalaremos siguiendo los pasos que ya vimos anteriormente para la <a href="/recepcion-cas4/#Decodificar-la-senal">recepción de los satélites CAS-4</a>.</p>
-<h3 id="PacSat-decoder"><a href="#PacSat-decoder" class="headerlink" title="PacSat decoder"></a>PacSat decoder</h3><p>Por último, necesitamos instalar el programa que va a decodificar y mostrar los mensajes. Se trata del programa <em>“AMSAT Pacsat Ground Station”</em>, el cual podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://www.g0kla.com/pacsat/"><center>AMSAT Pacsat Ground Station Software</center></a></p>
-<p>Una vez descargado, extraemos el contenido en cualquier directorio e iniciamos el programa desde el ejecutable “PsatGround.exe”.<br>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
-<p>Ahora vamos a <em>“File”</em> y <em>“Settings”</em> e introducimos la ruta de los directorios que usaremos para guardar los logs y archivos recibidos, y también los datos de nuestra estación.</p>
-<img src="/recepcion-falconsat-3/pacsat-config.jpg" class="" width="500" title="PacSat - Configuración">
-
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Una vez tenemos todo instalado, debemos iniciar los programas en el siguiente orden para dejarlos preparados para recibir el pase.</p>
-<ol>
-<li><p>Iniciamos HS SoundModem y seleccionamos el modo <strong>FSK G3RUH 9600bd</strong>.</p>
-</li>
-<li><p>Iniciamos el decoder de PacSat. Este se conectará al socket de HS SoundModem para recibir los mensajes. Veremos que aparece el mensaje <em>“TNC IN FULL DUPLEX”</em> si se ha conectado correctamente.</p>
-<img src="/recepcion-falconsat-3/pacsat.jpg" class="" title="PacSat"></li>
-<li><p>Por último, iniciamos SDR# y ajustamos el <strong>modo a NFM y un ancho de banda de 10 kHz</strong>.</p>
-</li>
-</ol>
-<p>Una vez comience a recibirse la señal suficiente, veremos que se van decodificando y apareciendo mensajes en el PacSat decoder.</p>
-<img src="/recepcion-falconsat-3/recepcion.jpg" class="" width="900" title="Recibiendo señal con SDR#">
-
-<img src="/recepcion-falconsat-3/pacsat-mensajes-recibidos.jpg" class="" title="PacSat - Mensajes recibidos">
-
-<p>Los mensajes pueden contener varias partes y necesitamos recibirlas todas para poder mostrar el mensaje completo. Algunos mensajes pueden requerir de varios pases del satélite para poder descargar todas sus partes.<br>Una vez las tenemos todas, basta hacer doble clic en el mensaje para ver su contenido.</p>
-<img src="/recepcion-falconsat-3/pacsat-mensaje.jpg" class="" title="PacSat - Mensaje">
-
-<img src="/recepcion-falconsat-3/pacsat-mensaje2.jpg" class="" title="PacSat - Mensaje">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>PACSAT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de mensajes VDL2</title>
-    <url>/recepcion-mensajes-VDL2/</url>
-    <content><![CDATA[<p><a href="https://en.wikipedia.org/wiki/VHF_Data_Link#ICAO_VDL_Mode_2">VDL2</a> (<em>VHF Data Link mode 2</em>) es un modo de transmisión de información entre aeronaves y estaciones terrestres. Este modo permite la comunicación de los controladores aéreos con los pilotos a través de un enlace de datos <a href="https://en.wikipedia.org/wiki/Controller%E2%80%93pilot_data_link_communications">(CPDLC)</a>.<br>En este artículo veremos como recibir y decodificar estos mensajes a modo de estudio.</p>
-<span id="more"></span>
-
-<p>Para decodificar estos mensajes vamos a utilizar el software MultiPSK. Este programa es una herramienta muy versátil que permite decodificar distintos modos de una manera bastante simple.<br>MultiPSK se puede usar de forma gratuita, pero para ciertos modos, VDL2 entre ellos, tiene una limitación de uso de 5 minutos, tras los que tendremos que reiniciar el programa para seguir usándolo. Si queremos usar el programa de forma ininterrumpida y sin limitaciones, tenemos la opción de adquirir una <a href="http://f6cte.free.fr/Licence_En.htm">licencia</a> por unos 30€ ó 40US$.</p>
-<h2 id="Instalacion-de-MultiPSK"><a href="#Instalacion-de-MultiPSK" class="headerlink" title="Instalación de MultiPSK"></a>Instalación de MultiPSK</h2><p>Para instalar MultiPSK basta con descargar el instalador de la última versión desde la siguiente página:</p>
-<p><a href="http://f6cte.free.fr/index_anglais.htm"><center>Ham Radio Software from F6CTE</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier programa siguiendo el asistente.</p>
-<p>Ahora iniciamos el programa y se nos mostrará una ventana de configuración. El primer ajuste que debemos hacer es indicarle que le vamos a pasar el audio desde el cable de audio virtual. Para ello hacemos clic en <strong>Sound Card (Input)</strong> y seleccionamos el cable de audio virtual.</p>
-<img src="/recepcion-mensajes-VDL2/multipsk-audio.jpg" class="" width="500" title="Ajuste del audio en MultiPSK">
-
-<p>Después le indicamos que los datos desde el SDR le van a llegar a través de la tarjeta de sonido. Para ello pulsamos el botón <strong>“Direct via the sound card”</strong>.</p>
-<img src="/recepcion-mensajes-VDL2/multipsk-config.jpg" class="" width="500" title="Ajustes MultiPSK">
-
-<p>Por último hacemos clic en <strong>“RX/TX screen”</strong> para abrir la ventana principal del programa.</p>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a utilizar SDR# para enviar el audio a MultiPSK, pero podemos usar cualquier otro software para la recepción.</p>
-<p>Lo único que tenemos que hacer es activar la salida de audio por el cable de audio virtual y establecer los ajustes de recepción en modo <strong>RAW</strong> y un ancho de banda de <strong>25 KHz</strong>. Después basta con sintonizar una de las frecuencias usadas para este modo:</p>
-<ul>
-<li>136,975 MHz</li>
-<li>136,725 MHz</li>
-<li>136,775 MHz</li>
-</ul>
-<img src="/recepcion-mensajes-VDL2/sdrsharp-vdl2.jpg" class="" width="900" title="VDL2 en SDR#">
-
-<p>Vamos ahora a MultiPSK y activamos el modo VDL2.</p>
-<img src="/recepcion-mensajes-VDL2/multipsk-modos.jpg" class="" width="600" title="MultiPSK - VDL2">
-
-<p>Una vez recibamos los mensajes, veremos que aparecen decodificados por pantalla.</p>
-<img src="/recepcion-mensajes-VDL2/multipsk-recibiendo.jpg" class="" width="900" title="MultiPSK">
-]]></content>
-      <tags>
-        <tag>SDRSharp</tag>
-        <tag>ATC</tag>
-        <tag>VDL2</tag>
-        <tag>MultiPSK</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción del satélite JY1-SAT</title>
     <url>/recepcion-jy1sat/</url>
     <content><![CDATA[<p>El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan’s Crown Prince Foundation.<br>JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-6. Además de las funciones habituales de FUNcube, el satélite envía imágenes en formato SSDV.<br>En este artículo veremos como recibir la telemetría y las imágenes.</p>
@@ -1969,6 +1929,111 @@
 </br>
 <img src="/recepcion-jy1sat/JY1SatAudioId9.jpg" class="" title="JY1SatAudioId9">
 </br>
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Cubesat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción de mensajes VDL2</title>
+    <url>/recepcion-mensajes-VDL2/</url>
+    <content><![CDATA[<p><a href="https://en.wikipedia.org/wiki/VHF_Data_Link#ICAO_VDL_Mode_2">VDL2</a> (<em>VHF Data Link mode 2</em>) es un modo de transmisión de información entre aeronaves y estaciones terrestres. Este modo permite la comunicación de los controladores aéreos con los pilotos a través de un enlace de datos <a href="https://en.wikipedia.org/wiki/Controller%E2%80%93pilot_data_link_communications">(CPDLC)</a>.<br>En este artículo veremos como recibir y decodificar estos mensajes a modo de estudio.</p>
+<span id="more"></span>
+
+<p>Para decodificar estos mensajes vamos a utilizar el software MultiPSK. Este programa es una herramienta muy versátil que permite decodificar distintos modos de una manera bastante simple.<br>MultiPSK se puede usar de forma gratuita, pero para ciertos modos, VDL2 entre ellos, tiene una limitación de uso de 5 minutos, tras los que tendremos que reiniciar el programa para seguir usándolo. Si queremos usar el programa de forma ininterrumpida y sin limitaciones, tenemos la opción de adquirir una <a href="http://f6cte.free.fr/Licence_En.htm">licencia</a> por unos 30€ ó 40US$.</p>
+<h2 id="Instalacion-de-MultiPSK"><a href="#Instalacion-de-MultiPSK" class="headerlink" title="Instalación de MultiPSK"></a>Instalación de MultiPSK</h2><p>Para instalar MultiPSK basta con descargar el instalador de la última versión desde la siguiente página:</p>
+<p><a href="http://f6cte.free.fr/index_anglais.htm"><center>Ham Radio Software from F6CTE</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier programa siguiendo el asistente.</p>
+<p>Ahora iniciamos el programa y se nos mostrará una ventana de configuración. El primer ajuste que debemos hacer es indicarle que le vamos a pasar el audio desde el cable de audio virtual. Para ello hacemos clic en <strong>Sound Card (Input)</strong> y seleccionamos el cable de audio virtual.</p>
+<img src="/recepcion-mensajes-VDL2/multipsk-audio.jpg" class="" width="500" title="Ajuste del audio en MultiPSK">
+
+<p>Después le indicamos que los datos desde el SDR le van a llegar a través de la tarjeta de sonido. Para ello pulsamos el botón <strong>“Direct via the sound card”</strong>.</p>
+<img src="/recepcion-mensajes-VDL2/multipsk-config.jpg" class="" width="500" title="Ajustes MultiPSK">
+
+<p>Por último hacemos clic en <strong>“RX/TX screen”</strong> para abrir la ventana principal del programa.</p>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a utilizar SDR# para enviar el audio a MultiPSK, pero podemos usar cualquier otro software para la recepción.</p>
+<p>Lo único que tenemos que hacer es activar la salida de audio por el cable de audio virtual y establecer los ajustes de recepción en modo <strong>RAW</strong> y un ancho de banda de <strong>25 KHz</strong>. Después basta con sintonizar una de las frecuencias usadas para este modo:</p>
+<ul>
+<li>136,975 MHz</li>
+<li>136,725 MHz</li>
+<li>136,775 MHz</li>
+</ul>
+<img src="/recepcion-mensajes-VDL2/sdrsharp-vdl2.jpg" class="" width="900" title="VDL2 en SDR#">
+
+<p>Vamos ahora a MultiPSK y activamos el modo VDL2.</p>
+<img src="/recepcion-mensajes-VDL2/multipsk-modos.jpg" class="" width="600" title="MultiPSK - VDL2">
+
+<p>Una vez recibamos los mensajes, veremos que aparecen decodificados por pantalla.</p>
+<img src="/recepcion-mensajes-VDL2/multipsk-recibiendo.jpg" class="" width="900" title="MultiPSK">
+]]></content>
+      <tags>
+        <tag>SDRSharp</tag>
+        <tag>ATC</tag>
+        <tag>VDL2</tag>
+        <tag>MultiPSK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción del satélite NAYIF-1</title>
+    <url>/recepcion-nayif1/</url>
+    <content><![CDATA[<p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.</p>
+<span id="more"></span>
+
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>NAYIF-1 (EO-88)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>EIAST y AUS</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>42017</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2017-008BX</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (1.32 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>15 de Febrero de 2017</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>145,940 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://www.mbrsc.ae/satellite-programme/nayif-1">https://www.mbrsc.ae/satellite-programme/nayif-1</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
+
+
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="/recepcion-funcube1/">FUNcube-1</a> y <a href="/recepcion-jy1sat/">JY1-SAT</a>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi"><center>Nayif-1 Dashboard v1040</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/recepcion-nayif1/config.png" class="" title="NAYIF-1 Dashboard Configuración">
+
+<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/recepcion-nayif1/telem.png" class="" title="NAYIF-1 Dashboard Telemetría">
+
+<p><em>Mensajes:</em></p>
+<img src="/recepcion-nayif1/messages.png" class="" title="NAYIF-1 Dashboard Mensajes">
 ]]></content>
       <tags>
         <tag>Satélites</tag>
@@ -2072,72 +2137,6 @@
         <tag>Satélites meteorológicos</tag>
         <tag>NOAA</tag>
         <tag>Meteorología</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción del satélite NAYIF-1</title>
-    <url>/recepcion-nayif1/</url>
-    <content><![CDATA[<p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos como recibirlos y decodificarlos.</p>
-<span id="more"></span>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>NAYIF-1 (EO-88)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>EIAST y AUS</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>42017</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2017-008BX</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (1.32 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>15 de Febrero de 2017</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145,940 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://www.mbrsc.ae/satellite-programme/nayif-1">https://www.mbrsc.ae/satellite-programme/nayif-1</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
-
-
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="/recepcion-funcube1/">FUNcube-1</a> y <a href="/recepcion-jy1sat/">JY1-SAT</a>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi"><center>Nayif-1 Dashboard v1040</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/recepcion-nayif1/config.png" class="" title="NAYIF-1 Dashboard Configuración">
-
-<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/recepcion-nayif1/telem.png" class="" title="NAYIF-1 Dashboard Telemetría">
-
-<p><em>Mensajes:</em></p>
-<img src="/recepcion-nayif1/messages.png" class="" title="NAYIF-1 Dashboard Mensajes">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Cubesat</tag>
       </tags>
   </entry>
   <entry>
@@ -2428,39 +2427,60 @@
       </tags>
   </entry>
   <entry>
-    <title>Recibir radio digital mundial (DRM)</title>
-    <url>/recibir-drm/</url>
-    <content><![CDATA[<p><a href="https://www.drm.org/">Digital Radio Mondiale (DRM)</a>, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.<br>DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.<br>En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.</p>
+    <title>Recibir APRS</title>
+    <url>/recibir-aprs/</url>
+    <content><![CDATA[<p>APRS <em>(Automatic Packet Reporting System)</em> es un sistema de radioaficionado para comunicaciones digitales que utiliza tramas <a href="https://es.wikipedia.org/wiki/Protocolo_AX.25">AX.25</a>. Estos paquetes pueden contener cualquier tipo de mensaje, así como también telemetría y datos de estaciones meteorológicas.<br>En este artículo veremos como recibir y decodificar estos paquetes usando nuestro dispositivo SDR, tanto los provenientes desde cualquier estación terrestre como los que se pueden recibir desde la Estación Espacial Internacional.</p>
 <span id="more"></span>
 
-<img src="/recibir-drm/logo.png" class="" width="300" title="DRM logo">
+<img src="/recibir-aprs/SDRSharp.png" class="" width="900" title="Paquete APRS en SDR#">
 
-<p>Encontraremos las emisiones DRM30 por debajo de los 30 MHz. Habitualmente suelen ser emisiones no continuadas, por lo que no necesariamente vamos a encontrar dichas emisiones siempre. Podemos consultar los horarios actualizados de las mismas en el siguiente enlace:</p>
-<p><a href="https://www.drm.org/what-can-i-hear/broadcast-schedule-2/"><center>DRM Broadcast Schedule</center></a></p>
-<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software <a href="https://sourceforge.net/projects/drm/">Dream AM/DRM Receiver</a> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/"><center>Dream AM/DRM Receiver</center></a></p>
-<p>Este programa está disponible para varios sistemas operativos, incluso podemos descargar el código fuente y compilarlo si queremos.<br>Para nuestro ejemplo, descargamos la versión 2.1.1 para Windows (<a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/dream-2.1.1-win32-svn808-df.zip/download">dream-2.1.1-win32-svn808-df.zip</a>). La versión 2.2 es muy similar pero presenta algunos errores de funcionamiento. Si aun así queremos probar esta versión, podemos descargarla desde <a href="https://www.reddit.com/r/RTLSDR/comments/grp6m2/dream_v221_for_windows_with_xheaac_support/">aquí</a>.</p>
-<p>Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.<br>Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos DLL y los guardamos en el directorio de Dream:</p>
+<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este artículo usaremos SDR# para recibir la señal y sacar el audio mediante el <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa.</p>
+<p>Para decodificar y visualizar los paquetes de datos usaremos los programas que vamos a ver a continuación.</p>
+<h3 id="SoundModem"><a href="#SoundModem" class="headerlink" title="SoundModem"></a>SoundModem</h3><p>Para decodificar estos paquetes de datos usaremos el software <a href="http://uz7.ho.ua/packetradio.htm">Packet-Radio TNC</a> que utiliza la tarjeta de sonido de nuestro ordenador como un modem para AX.25.<br>Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="http://uz7.ho.ua/modem_beta/soundmodem113.zip"><center>Descargar SoundModem by UZ7HO</center></a></p>
+<p>Una vez descargado el archivo, extraemos su contenido en el directorio que queramos.</p>
+<p>Posteriormente ejecutamos el archivo <strong><em>soundmodem.exe</em></strong> y se nos abrirá la interfaz del programa.</p>
+<p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em> y en <strong>Input device</strong> seleccionamos el <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a>.</p>
+<p>Por último, seleccionamos el modo <strong>AFSK AX.25 1200bd</strong> en la ventana principal del programa.</p>
+<img src="/recibir-aprs/soundModemMode.png" class="" width="370" title="SoundModem">
+
+<h3 id="UISS"><a href="#UISS" class="headerlink" title="UISS"></a>UISS</h3><p>UISS es un programa que nos permite visualizar los datos contenidos en los paquetes que vamos recibiendo. Si bien el programa anterior ya nos facilita los mensajes decodificados, usaremos UISS para verlos de una forma más clara y poder aprovechar toda la información contenida en ellos.</p>
+<p>Lo primero será descargar el programa desde el siguiente enlace:</p>
+<p><a href="http://users.belgacom.net/mysoftware/UISS_Setup.exe"><center>Descargar UISS by ON6MU</center></a></p>
+<p>Una vez descargado lo ejecutamos y seguimos el asistente para instalar el programa. Durante la instalación en el paso de “Select components” nos volverá a instalar una versión antigua de SoundModem. Lo más sencillo es dejar que la instale (aunque no la vamos a utilizar) y así no tendremos que configurar nada más.</p>
+<h4 id="UISS-MapView"><a href="#UISS-MapView" class="headerlink" title="UISS-MapView"></a>UISS-MapView</h4><p>También vamos a instalar el módulo <a href="http://users.belgacom.net/hamradio/uissmodules.htm#UISSMapView">UISS-MapView</a> para UISS que nos va a permitir visualizar la posición de las estaciones que recibamos en un mapa.<br>Para instalarlo basta con descargar el módulo desde el siguiente enlace y extraerlo el directorio en el que hemos instalado UISS previamente.</p>
+<p><a href="http://www.qsl.net/on6mu/download/UIMapView_UISS_Addon.zip"><center>Descargar UISS-MapView</center></a></p>
+<p>Por último iniciamos SoundModem y después UISS. La primera vez que iniciemos UISS nos pedirá que introduzcamos nuestro indicativo, si lo tenemos, o cualquier otro texto en caso contrario ya que no vamos a emitir nada.<br>Si todo está correctamente instalado, veremos una ventana como la siguiente en la que podemos leer que UISS se ha conectado correctamente a SoundModem.</p>
+<img src="/recibir-aprs/UISS.png" class="" width="500" title="UISS">
+
+
+<h2 id="Recibir-APRS"><a href="#Recibir-APRS" class="headerlink" title="Recibir APRS"></a>Recibir APRS</h2><p>Con todo ya configurado, es el momento de comenzar a recibir paquetes de datos. Para ello iniciamos SDR# o el programa que vayamos a utilizar y sintonizamos cualquiera de las frecuencias asignadas para APRS. Para la región 1, en la que se encuentra España, tenemos las siguientes frecuencias:</p>
 <ul>
-<li><a href="faad2_drm.dll">faad2_drm.dll</a></li>
-<li><a href="libfaac.dll">libfaac.dll</a></li>
+<li><strong>144,800 MHz</strong> (Frecuencia principal).</li>
+<li>432,500 MHz (Frecuencia alternativa).</li>
 </ul>
-<p>Por último, registramos los archivos DLL en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.DLL</span><br></pre></td></tr></table></figure>
+<p>Para latinoamérica (región 2) la frecuencia es 144,390 MHz.</p>
+<p>Usaremos el modo <strong>WFM</strong> y un ancho de banda de <strong>10 KHz</strong>.</p>
+<p>Conforme vayan llegando paquetes veremos que se van mostrando por pantalla los mensajes.</p>
+<img src="/recibir-aprs/SoundModemDatos.png" class="" width="500" title="SoundModem">
 
-<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em>, <em>Sound Card</em>, <em>Signal Input</em> y en <em>Device</em> seleccionamos el <strong>cable de audio virtual</strong>.</p>
-<img src="/recibir-drm/input.png" class="" width="800" title="Entrada audio">
+<img src="/recibir-aprs/UISSDatos.png" class="" width="500" title="UISS">
 
+<img src="/recibir-aprs/UISSMap.png" class="" width="500" title="UISS Mapa">
 
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Una vez tenemos el programa escuchando por el cable de audio virtual, procedemos a sintonizar una emisión de DRM con SDR#. Usaremos el <strong>modo USB</strong> y un <strong>ancho de banda de 10 KHz</strong>.<br>Cuando Dream detecte la señal, veremos datos de la emisión en la ventana y comenzará a escucharse si tenemos señal suficiente. Los tres indicadores señalados en la siguiente imagen deben estar activos para poder escuchar el audio.</p>
-<img src="/recibir-drm/dream.png" class="" width="700" title="Dream">
+<h2 id="Recibir-APRS-desde-la-ISS"><a href="#Recibir-APRS-desde-la-ISS" class="headerlink" title="Recibir APRS desde la ISS"></a>Recibir APRS desde la ISS</h2><p>La Estación Espacial Internacional (ISS por sus siglas en inglés) lleva a bordo un transpondedor que funciona como repetidor APRS, el cual podemos recibir de una forma muy similar al ejemplo anterior. En este caso la principal diferencia es que tendremos que realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;WFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;10000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145825000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p>Una vez comenzamos a recibir el pase de la ISS, veremos que aparecen los mensajes recibidos por pantalla.</p>
+<img src="/recibir-aprs/SoundModemDataISS.png" class="" width="500" title="SoundModem">
 
+<img src="/recibir-aprs/UISSDataISS.png" class="" width="500" title="UISS">
 
-<img src="/recibir-drm/sdrSharp.png" class="" width="900" title="SDR# + Dream">
+<img src="/recibir-aprs/UISSMapISS.png" class="" width="500" title="UISS Mapa">
 ]]></content>
       <tags>
-        <tag>HF</tag>
-        <tag>DRM</tag>
+        <tag>APRS</tag>
+        <tag>ISS</tag>
       </tags>
   </entry>
   <entry>
@@ -2536,6 +2556,42 @@
         <tag>SDRSharp</tag>
         <tag>DMR</tag>
         <tag>DSDPlus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir radio digital mundial (DRM)</title>
+    <url>/recibir-drm/</url>
+    <content><![CDATA[<p><a href="https://www.drm.org/">Digital Radio Mondiale (DRM)</a>, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.<br>DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.<br>En este artículo veremos como recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.</p>
+<span id="more"></span>
+
+<img src="/recibir-drm/logo.png" class="" width="300" title="DRM logo">
+
+<p>Encontraremos las emisiones DRM30 por debajo de los 30 MHz. Habitualmente suelen ser emisiones no continuadas, por lo que no necesariamente vamos a encontrar dichas emisiones siempre. Podemos consultar los horarios actualizados de las mismas en el siguiente enlace:</p>
+<p><a href="https://www.drm.org/what-can-i-hear/broadcast-schedule-2/"><center>DRM Broadcast Schedule</center></a></p>
+<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este ejemplo vamos a usar SDR# para recibir la señal y sacar el audio mediante el <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa. Para recibir DRM usaremos el software <a href="https://sourceforge.net/projects/drm/">Dream AM/DRM Receiver</a> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/"><center>Dream AM/DRM Receiver</center></a></p>
+<p>Este programa está disponible para varios sistemas operativos, incluso podemos descargar el código fuente y compilarlo si queremos.<br>Para nuestro ejemplo, descargamos la versión 2.1.1 para Windows (<a href="https://sourceforge.net/projects/drm/files/dream/2.1.1/dream-2.1.1-win32-svn808-df.zip/download">dream-2.1.1-win32-svn808-df.zip</a>). La versión 2.2 es muy similar pero presenta algunos errores de funcionamiento. Si aun así queremos probar esta versión, podemos descargarla desde <a href="https://www.reddit.com/r/RTLSDR/comments/grp6m2/dream_v221_for_windows_with_xheaac_support/">aquí</a>.</p>
+<p>Una vez tenemos el archivo descargado, debemos extraer su contenido en la ubicación que queramos.<br>Después necesitamos incluirle las librerías necesarias para que pueda decodificar el audio en formato AAC. Para ello descargamos los dos siguientes archivos DLL y los guardamos en el directorio de Dream:</p>
+<ul>
+<li><a href="faad2_drm.dll">faad2_drm.dll</a></li>
+<li><a href="libfaac.dll">libfaac.dll</a></li>
+</ul>
+<p>Por último, registramos los archivos DLL en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.DLL</span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em>, <em>Sound Card</em>, <em>Signal Input</em> y en <em>Device</em> seleccionamos el <strong>cable de audio virtual</strong>.</p>
+<img src="/recibir-drm/input.png" class="" width="800" title="Entrada audio">
+
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Una vez tenemos el programa escuchando por el cable de audio virtual, procedemos a sintonizar una emisión de DRM con SDR#. Usaremos el <strong>modo USB</strong> y un <strong>ancho de banda de 10 KHz</strong>.<br>Cuando Dream detecte la señal, veremos datos de la emisión en la ventana y comenzará a escucharse si tenemos señal suficiente. Los tres indicadores señalados en la siguiente imagen deben estar activos para poder escuchar el audio.</p>
+<img src="/recibir-drm/dream.png" class="" width="700" title="Dream">
+
+
+<img src="/recibir-drm/sdrSharp.png" class="" width="900" title="SDR# + Dream">
+]]></content>
+      <tags>
+        <tag>HF</tag>
+        <tag>DRM</tag>
       </tags>
   </entry>
   <entry>
@@ -2668,63 +2724,6 @@
         <tag>Cubesat</tag>
         <tag>LoRa</tag>
         <tag>tinyGS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recibir APRS</title>
-    <url>/recibir-aprs/</url>
-    <content><![CDATA[<p>APRS <em>(Automatic Packet Reporting System)</em> es un sistema de radioaficionado para comunicaciones digitales que utiliza tramas <a href="https://es.wikipedia.org/wiki/Protocolo_AX.25">AX.25</a>. Estos paquetes pueden contener cualquier tipo de mensaje, así como también telemetría y datos de estaciones meteorológicas.<br>En este artículo veremos como recibir y decodificar estos paquetes usando nuestro dispositivo SDR, tanto los provenientes desde cualquier estación terrestre como los que se pueden recibir desde la Estación Espacial Internacional.</p>
-<span id="more"></span>
-
-<img src="/recibir-aprs/SDRSharp.png" class="" width="900" title="Paquete APRS en SDR#">
-
-<h2 id="Instalacion-del-software"><a href="#Instalacion-del-software" class="headerlink" title="Instalación del software"></a>Instalación del software</h2><p>En este artículo usaremos SDR# para recibir la señal y sacar el audio mediante el <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a>, aunque también podemos usar cualquier otro programa.</p>
-<p>Para decodificar y visualizar los paquetes de datos usaremos los programas que vamos a ver a continuación.</p>
-<h3 id="SoundModem"><a href="#SoundModem" class="headerlink" title="SoundModem"></a>SoundModem</h3><p>Para decodificar estos paquetes de datos usaremos el software <a href="http://uz7.ho.ua/packetradio.htm">Packet-Radio TNC</a> que utiliza la tarjeta de sonido de nuestro ordenador como un modem para AX.25.<br>Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="http://uz7.ho.ua/modem_beta/soundmodem113.zip"><center>Descargar SoundModem by UZ7HO</center></a></p>
-<p>Una vez descargado el archivo, extraemos su contenido en el directorio que queramos.</p>
-<p>Posteriormente ejecutamos el archivo <strong><em>soundmodem.exe</em></strong> y se nos abrirá la interfaz del programa.</p>
-<p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em> y en <strong>Input device</strong> seleccionamos el <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a>.</p>
-<p>Por último, seleccionamos el modo <strong>AFSK AX.25 1200bd</strong> en la ventana principal del programa.</p>
-<img src="/recibir-aprs/soundModemMode.png" class="" width="370" title="SoundModem">
-
-<h3 id="UISS"><a href="#UISS" class="headerlink" title="UISS"></a>UISS</h3><p>UISS es un programa que nos permite visualizar los datos contenidos en los paquetes que vamos recibiendo. Si bien el programa anterior ya nos facilita los mensajes decodificados, usaremos UISS para verlos de una forma más clara y poder aprovechar toda la información contenida en ellos.</p>
-<p>Lo primero será descargar el programa desde el siguiente enlace:</p>
-<p><a href="http://users.belgacom.net/mysoftware/UISS_Setup.exe"><center>Descargar UISS by ON6MU</center></a></p>
-<p>Una vez descargado lo ejecutamos y seguimos el asistente para instalar el programa. Durante la instalación en el paso de “Select components” nos volverá a instalar una versión antigua de SoundModem. Lo más sencillo es dejar que la instale (aunque no la vamos a utilizar) y así no tendremos que configurar nada más.</p>
-<h4 id="UISS-MapView"><a href="#UISS-MapView" class="headerlink" title="UISS-MapView"></a>UISS-MapView</h4><p>También vamos a instalar el módulo <a href="http://users.belgacom.net/hamradio/uissmodules.htm#UISSMapView">UISS-MapView</a> para UISS que nos va a permitir visualizar la posición de las estaciones que recibamos en un mapa.<br>Para instalarlo basta con descargar el módulo desde el siguiente enlace y extraerlo el directorio en el que hemos instalado UISS previamente.</p>
-<p><a href="http://www.qsl.net/on6mu/download/UIMapView_UISS_Addon.zip"><center>Descargar UISS-MapView</center></a></p>
-<p>Por último iniciamos SoundModem y después UISS. La primera vez que iniciemos UISS nos pedirá que introduzcamos nuestro indicativo, si lo tenemos, o cualquier otro texto en caso contrario ya que no vamos a emitir nada.<br>Si todo está correctamente instalado, veremos una ventana como la siguiente en la que podemos leer que UISS se ha conectado correctamente a SoundModem.</p>
-<img src="/recibir-aprs/UISS.png" class="" width="500" title="UISS">
-
-
-<h2 id="Recibir-APRS"><a href="#Recibir-APRS" class="headerlink" title="Recibir APRS"></a>Recibir APRS</h2><p>Con todo ya configurado, es el momento de comenzar a recibir paquetes de datos. Para ello iniciamos SDR# o el programa que vayamos a utilizar y sintonizamos cualquiera de las frecuencias asignadas para APRS. Para la región 1, en la que se encuentra España, tenemos las siguientes frecuencias:</p>
-<ul>
-<li><strong>144,800 MHz</strong> (Frecuencia principal).</li>
-<li>432,500 MHz (Frecuencia alternativa).</li>
-</ul>
-<p>Para latinoamérica (región 2) la frecuencia es 144,390 MHz.</p>
-<p>Usaremos el modo <strong>WFM</strong> y un ancho de banda de <strong>10 KHz</strong>.</p>
-<p>Conforme vayan llegando paquetes veremos que se van mostrando por pantalla los mensajes.</p>
-<img src="/recibir-aprs/SoundModemDatos.png" class="" width="500" title="SoundModem">
-
-<img src="/recibir-aprs/UISSDatos.png" class="" width="500" title="UISS">
-
-<img src="/recibir-aprs/UISSMap.png" class="" width="500" title="UISS Mapa">
-
-<h2 id="Recibir-APRS-desde-la-ISS"><a href="#Recibir-APRS-desde-la-ISS" class="headerlink" title="Recibir APRS desde la ISS"></a>Recibir APRS desde la ISS</h2><p>La Estación Espacial Internacional (ISS por sus siglas en inglés) lleva a bordo un transpondedor que funciona como repetidor APRS, el cual podemos recibir de una forma muy similar al ejemplo anterior. En este caso la principal diferencia es que tendremos que realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;WFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;10000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145825000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
-<p>Una vez comenzamos a recibir el pase de la ISS, veremos que aparecen los mensajes recibidos por pantalla.</p>
-<img src="/recibir-aprs/SoundModemDataISS.png" class="" width="500" title="SoundModem">
-
-<img src="/recibir-aprs/UISSDataISS.png" class="" width="500" title="UISS">
-
-<img src="/recibir-aprs/UISSMapISS.png" class="" width="500" title="UISS Mapa">
-]]></content>
-      <tags>
-        <tag>APRS</tag>
-        <tag>ISS</tag>
       </tags>
   </entry>
   <entry>
@@ -3008,43 +3007,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Seguimiento de satélites con Orbitron</title>
-    <url>/seguimiento-satelites-orbitron/</url>
-    <content><![CDATA[<p>Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.<br>Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion-de-Orbitron"><a href="#Instalacion-de-Orbitron" class="headerlink" title="Instalación de Orbitron"></a>Instalación de Orbitron</h2><p>El primer paso es descargar Orbitron desde su web: <a href="http://www.stoff.pl/downloads.php">http://www.stoff.pl/downloads.php</a></p>
-<p>Tenemos la opción de descargarnos el instalador o un archivo ZIP. En este ejemplo vamos a descargar el ZIP y lo vamos a extraer en el directorio <em>C:\SDR\Orbitron</em>.</p>
-<p>Ejecutamos ahora el programa haciendo doble clic en <strong>Orbitron.exe</strong> y se nos abrirá la interfaz del programa. Nos pedirá que actualicemos los archivo de TLE al iniciar, a lo que le decimos que no. Más adelante veremos qué son estos archivos y cómo actualizarlos.</p>
-<img src="/seguimiento-satelites-orbitron/orbitron.jpg" class="" title="Orbitron">
-
-<h2 id="Configuracion-de-Orbitron"><a href="#Configuracion-de-Orbitron" class="headerlink" title="Configuración de Orbitron"></a>Configuración de Orbitron</h2><p>Vamos ahora a configurar Orbitron con los ajustes básicos.</p>
-<p>El primer ajuste es indicarle nuestra localización. Para ello vamos a la pestaña Location e introducimos nuestros datos. Si no los sabemos podemos buscar nuestra ciudad (o las más cercana) en el listado que tenemos a la derecha. Lo ideal es meter los valores más exactos posibles.</p>
-<img src="/seguimiento-satelites-orbitron/orbitron-location.jpg" class="" title="Orbitron Location">
-
-<p>Una vez los tengamos introducidos correctamente, hacemos clic en <strong>Choose</strong> para seleccionar esta ubicación.</p>
-<p>El siguiente paso es seleccionar el archivo con los TLE de los satélites que vamos a seguir.<br>Estos archivos TLE contienen un listado de objetos que orbitan la Tierra con sus respectivos elementos orbitales en formato TLE <em>(two-line element set)</em>. Con estos elementos, y usando la fórmula adecuada, podemos estimar la posición y velocidad del objeto en cualquier instante de tiempo pasado o futuro.</p>
-<p>Aquí tenemos varias opciones, utilizar los archivos TLE descargados por Orbitron, o bien crear un archivo con los satélites que nos interesen. Si optamos por la primera opción, necesitamos primeramente actualizar los archivos TLE. Para ello abrimos la ventana de ajustes de Orbitron presionando las teclas <strong><em>Alt+F5</em></strong>, o bien hacemos clic en el siguiente punto y seleccionamos <strong>Setup</strong>:</p>
-<img src="/seguimiento-satelites-orbitron/orbitron-setup.jpg" class="" title="Orbitron Setup">
-
-<p>Vamos a la pestaña <strong>TLE updater</strong> y hacemos clic en el siguiente icono:</p>
-<img src="/seguimiento-satelites-orbitron/setup-tle.jpg" class="" title="Actualizar TLE">
-
-<p>Una vez se actualicen los archivos, cerramos esa ventana y hacemos clic en <strong>Load TLE</strong> y seleccionamos el archivo que contenga los satélites que queremos seguir. En este caso vamos a elegir un archivo que contiene los TLE de algunos satélites que nos interesan.</p>
-<img src="/seguimiento-satelites-orbitron/load-tle.jpg" class="" title="Cargar archivo">
-
-<p>Ahora bastaría con ir seleccionando los satélites que queremos seguir y se mostrarán sobre el mapa.</p>
-<img src="/seguimiento-satelites-orbitron/orbitron-loaded.jpg" class="" title="Orbitron">
-
-<p>En siguientes tutoriales veremos cómo conectar Orbitron con SDR# para realizar seguimientos automáticos.</p>
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Orbitron</tag>
-        <tag>Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Seguimiento de satélites con Gpredict</title>
     <url>/seguimiento-satelites-gpredict/</url>
     <content><![CDATA[<p><a href="http://gpredict.oz9aec.net/">Gpredict</a> es un programa para el seguimiento en tiempo real y predicción de órbitas para satélites. Este programa es muy similar a Orbitron, el cual ya vimos cómo instalar y configurar en el artículo <a href="/seguimiento-satelites-orbitron">“Seguimiento de satélites con Orbitron”</a>. Pero al contrario de este, Gpredict es multiplataforma, por lo que podremos usarlo en diferentes sistemas operativos.<br>En este artículo veremos como instalar y configurar Gpredict en Windows, Linux y macOS.</p>
@@ -3130,8 +3092,45 @@
 ]]></content>
       <tags>
         <tag>Satélites</tag>
-        <tag>Tracking</tag>
         <tag>Gpredict</tag>
+        <tag>Tracking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Seguimiento de satélites con Orbitron</title>
+    <url>/seguimiento-satelites-orbitron/</url>
+    <content><![CDATA[<p>Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.<br>Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.</p>
+<span id="more"></span>
+
+<h2 id="Instalacion-de-Orbitron"><a href="#Instalacion-de-Orbitron" class="headerlink" title="Instalación de Orbitron"></a>Instalación de Orbitron</h2><p>El primer paso es descargar Orbitron desde su web: <a href="http://www.stoff.pl/downloads.php">http://www.stoff.pl/downloads.php</a></p>
+<p>Tenemos la opción de descargarnos el instalador o un archivo ZIP. En este ejemplo vamos a descargar el ZIP y lo vamos a extraer en el directorio <em>C:\SDR\Orbitron</em>.</p>
+<p>Ejecutamos ahora el programa haciendo doble clic en <strong>Orbitron.exe</strong> y se nos abrirá la interfaz del programa. Nos pedirá que actualicemos los archivo de TLE al iniciar, a lo que le decimos que no. Más adelante veremos qué son estos archivos y cómo actualizarlos.</p>
+<img src="/seguimiento-satelites-orbitron/orbitron.jpg" class="" title="Orbitron">
+
+<h2 id="Configuracion-de-Orbitron"><a href="#Configuracion-de-Orbitron" class="headerlink" title="Configuración de Orbitron"></a>Configuración de Orbitron</h2><p>Vamos ahora a configurar Orbitron con los ajustes básicos.</p>
+<p>El primer ajuste es indicarle nuestra localización. Para ello vamos a la pestaña Location e introducimos nuestros datos. Si no los sabemos podemos buscar nuestra ciudad (o las más cercana) en el listado que tenemos a la derecha. Lo ideal es meter los valores más exactos posibles.</p>
+<img src="/seguimiento-satelites-orbitron/orbitron-location.jpg" class="" title="Orbitron Location">
+
+<p>Una vez los tengamos introducidos correctamente, hacemos clic en <strong>Choose</strong> para seleccionar esta ubicación.</p>
+<p>El siguiente paso es seleccionar el archivo con los TLE de los satélites que vamos a seguir.<br>Estos archivos TLE contienen un listado de objetos que orbitan la Tierra con sus respectivos elementos orbitales en formato TLE <em>(two-line element set)</em>. Con estos elementos, y usando la fórmula adecuada, podemos estimar la posición y velocidad del objeto en cualquier instante de tiempo pasado o futuro.</p>
+<p>Aquí tenemos varias opciones, utilizar los archivos TLE descargados por Orbitron, o bien crear un archivo con los satélites que nos interesen. Si optamos por la primera opción, necesitamos primeramente actualizar los archivos TLE. Para ello abrimos la ventana de ajustes de Orbitron presionando las teclas <strong><em>Alt+F5</em></strong>, o bien hacemos clic en el siguiente punto y seleccionamos <strong>Setup</strong>:</p>
+<img src="/seguimiento-satelites-orbitron/orbitron-setup.jpg" class="" title="Orbitron Setup">
+
+<p>Vamos a la pestaña <strong>TLE updater</strong> y hacemos clic en el siguiente icono:</p>
+<img src="/seguimiento-satelites-orbitron/setup-tle.jpg" class="" title="Actualizar TLE">
+
+<p>Una vez se actualicen los archivos, cerramos esa ventana y hacemos clic en <strong>Load TLE</strong> y seleccionamos el archivo que contenga los satélites que queremos seguir. En este caso vamos a elegir un archivo que contiene los TLE de algunos satélites que nos interesan.</p>
+<img src="/seguimiento-satelites-orbitron/load-tle.jpg" class="" title="Cargar archivo">
+
+<p>Ahora bastaría con ir seleccionando los satélites que queremos seguir y se mostrarán sobre el mapa.</p>
+<img src="/seguimiento-satelites-orbitron/orbitron-loaded.jpg" class="" title="Orbitron">
+
+<p>En siguientes tutoriales veremos cómo conectar Orbitron con SDR# para realizar seguimientos automáticos.</p>
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Orbitron</tag>
+        <tag>Tracking</tag>
       </tags>
   </entry>
 </search>
