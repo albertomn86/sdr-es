@@ -4,14 +4,15 @@ date: 2020-04-11 11:10:42
 tags: [RTL-SDR, SDRSharp, Raspberry Pi, Linux, SPY Server, Instalación]
 author: EA7KOO
 coauthor: EA5EMA
+excerpt: En este artículo veremos cómo instalar SPY Server en una Raspberry Pi usando un dispositivo RTL-SDR.
 ---
 
 SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.
-En este artículo veremos como instalar SPY Server en una Raspberry Pi.
+En este artículo veremos cómo instalar SPY Server en una Raspberry Pi.
 
 <!-- more -->
 
-Para usar SPY Server en nuestra Raspberry Pi **necesitamos en primer lugar tener instalado el dispositivo SDR**. Si nuestro dispositivo es un RTL-SDR debemos seguir los pasos descritos en el artículo ["Instalación de dispositivos RTL-SDR en Raspberry Pi"](/instalacion-rtlsdr-raspberrypi/).
+Para usar SPY Server en nuestra Raspberry Pi **necesitamos en primer lugar tener instalado el dispositivo SDR**. Si nuestro dispositivo es un RTL-SDR debemos seguir los pasos descritos en el artículo ["Instalación de dispositivos RTL-SDR en Linux"](/instalacion-rtlsdr-raspberrypi/).
 
 
 ## Instalar SPY Server

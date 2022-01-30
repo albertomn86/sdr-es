@@ -3,11 +3,12 @@ title: Instalación de estación terrestre con SatNOGS
 date: 2020-04-24 16:34:55
 tags: [SatNOGS, Raspberry Pi, Satélites, Instalación]
 author: EA7KOO
+excerpt: Cómo instalar una estación terrestre para el seguimiento de satélites de forma desatendida con SatNOGS.
 ---
 
 [SatNOGS](https://satnogs.org/) (Satellite Networked Open Ground Station) es una plataforma de software y hardware de código abierto con el propósito de crear una red global de estaciones terrestres de seguimiento de satélites.
 
-En este artículo veremos como instalar una estación terrestre para el seguimiento de satélites de forma desatendida. Para ello vamos a utilizar un dispositivo SDR y una Raspberry Pi con el software SatNOGS.
+En este artículo veremos cómo instalar una estación terrestre para el seguimiento de satélites de forma desatendida. Para ello vamos a utilizar un dispositivo SDR y una Raspberry Pi con el software SatNOGS.
 
 <!-- more -->
 

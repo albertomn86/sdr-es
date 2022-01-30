@@ -1,8 +1,9 @@
 ---
-title: "Recepción de los satélites CAS-4"
+title: "Recibir telemetría de los satélites CAS-4"
 date: 2020-10-10 19:23:32
 tags: [KISS, Satélites]
 author: EA7KOO
+excerpt: Guía paso a paso para recibir, decodificar y visualizar la telemetría de los satélites CAS-4.
 ---
 
 Los satélites CAS-4A y CAS-4B son unos micro-satélites construidos por Zhuhai Orbita Control Engineering Ltd. para el sistema orbital de observación terrestre de China. Su principal componente es una cámara de 1,98m de resolución. Estos satélites envían datos de telemetría en VHF, y son estos datos los que vamos a recibir, decodificar y visualizar en este artículo.

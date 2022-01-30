@@ -3,10 +3,11 @@ title: Recepción de mensajes VDL2
 date: 2021-08-28 12:10:53
 tags: [ATC, SDRSharp, VDL2, MultiPSK]
 author: EA7KOO
+excerpt: En esta guía veremos cómo recibir y decodificar los mensajes aeronaúticos VDL2 usando MultiPSK.
 ---
 
 [VDL2](https://en.wikipedia.org/wiki/VHF_Data_Link#ICAO_VDL_Mode_2) (_VHF Data Link mode 2_) es un modo de transmisión de información entre aeronaves y estaciones terrestres. Este modo permite la comunicación de los controladores aéreos con los pilotos a través de un enlace de datos [(CPDLC)](https://en.wikipedia.org/wiki/Controller%E2%80%93pilot_data_link_communications).
-En este artículo veremos como recibir y decodificar estos mensajes a modo de estudio.
+En este artículo veremos cómo recibir y decodificar estos mensajes a modo de estudio.
 
 <!-- more -->
 

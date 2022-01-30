@@ -3,6 +3,7 @@ title: Recepción de mensajes ADS-B en Raspberry Pi
 date: 2020-05-03 10:56:04
 tags: [ATC, ADS-B, Raspberry Pi, dump1090]
 author: EA7KOO
+excerpt: Instalación de receptor de mensajes ADS-B en una Raspberry Pi para el seguimiento de aviones.
 ---
 
 ADS-B (_Automatic Dependent Surveillance Broadcast_) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.

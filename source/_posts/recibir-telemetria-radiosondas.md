@@ -3,6 +3,7 @@ title: Recibir telemetría de radiosondas meteorológicas
 date: 2021-10-03 10:48:43
 tags: [Radiosonda, Meteorología]
 author: EA7KOO
+excerpt: Recibir globos sonda y radiosondas meteorológicas usando un dispositivo SDR y los programas SondeMonitor y RS41 Tracker.
 ---
 
 A diario son lanzadas en todo el mundo cientos de radiosondas meteorológicas para obtener mediciones que permitan conocer el estado actual en las capas altas de la atmósfera. Estas mediciones ayudan a los servicios meteorológicos en sus predicciones.
@@ -57,7 +58,9 @@ Pronto veremos la telemetría en pantalla.
 
 ## Recibir radiosondas RS41
 
-La recepción de este tipo de sondas es muy similar a la descrita en el apartado anterior. Para decodificar la telemetría usaremos el programa **RS41 Tracker** que podemos descargar desde su página web.
+La recepción de este tipo de sondas es muy similar a la descrita en el apartado anterior. SondeMonitor también nos permite recibir este tipo de sondas, pero veremos también otra alternativa para decodificar la telemetría usando el programa **RS41 Tracker**.
+
+Lo primero será descargar el programa desde su página web:
 
 [<center>Radiosonde Page by IW1GIS</center>](http://escursioni.altervista.org/Radiosonde/)
 

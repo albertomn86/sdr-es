@@ -3,10 +3,11 @@ title: Recepción de mensajes Inmarsat Aero
 date: 2020-03-10 12:26:30
 tags: [ATC, Satélites, Inmarsat, L-Band]
 author: EA7KOO
+excerpt: Guía para la recepción de los mensajes Aero desde los satélites Inmarsat a modo de estudio.
 ---
 
 Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.
-En este artículo veremos como decodificar y recibir mensajes Aero.
+En este artículo veremos cómo decodificar y recibir mensajes Aero.
 
 Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes [ACARS](https://es.wikipedia.org/wiki/ACARS), ADS-C, fax y voz digital.
 

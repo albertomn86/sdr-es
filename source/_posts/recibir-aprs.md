@@ -3,10 +3,12 @@ title: Recibir APRS
 date: 2021-03-23 21:02:24
 tags: [APRS, ISS]
 author: EA7KOO
+updated: 2022-01-30 16:20:24
+excerpt: Cómo recibir y decodificar paquetes APRS (terrestres y desde la Estación Espacial Internacional) usando nuestro dispositivo SDR.
 ---
 
 APRS _(Automatic Packet Reporting System)_ es un sistema de radioaficionado para comunicaciones digitales que utiliza tramas [AX.25](https://es.wikipedia.org/wiki/Protocolo_AX.25). Estos paquetes pueden contener cualquier tipo de mensaje, así como también telemetría y datos de estaciones meteorológicas.
-En este artículo veremos como recibir y decodificar estos paquetes usando nuestro dispositivo SDR, tanto los provenientes desde cualquier estación terrestre como los que se pueden recibir desde la Estación Espacial Internacional.
+En este artículo veremos cómo recibir y decodificar estos paquetes usando nuestro dispositivo SDR, tanto los provenientes desde cualquier estación terrestre como los que se pueden recibir desde la Estación Espacial Internacional.
 
 <!-- more -->
 
@@ -41,16 +43,16 @@ UISS es un programa que nos permite visualizar los datos contenidos en los paque
 
 Lo primero será descargar el programa desde el siguiente enlace:
 
-[<center>Descargar UISS by ON6MU</center>](http://users.belgacom.net/mysoftware/UISS_Setup.exe)
+[<center>Descargar UISS by ON6MU</center>](https://www.qsl.net/on6mu/uissdownload.htm)
 
 Una vez descargado lo ejecutamos y seguimos el asistente para instalar el programa. Durante la instalación en el paso de "Select components" nos volverá a instalar una versión antigua de SoundModem. Lo más sencillo es dejar que la instale (aunque no la vamos a utilizar) y así no tendremos que configurar nada más.
 
 #### UISS-MapView
 
-También vamos a instalar el módulo [UISS-MapView](http://users.belgacom.net/hamradio/uissmodules.htm#UISSMapView) para UISS que nos va a permitir visualizar la posición de las estaciones que recibamos en un mapa.
+También vamos a instalar el módulo [UISS-MapView](https://www.qsl.net/on6mu/uissmodules.htm#UISSMapView) para UISS que nos va a permitir visualizar la posición de las estaciones que recibamos en un mapa.
 Para instalarlo basta con descargar el módulo desde el siguiente enlace y extraerlo el directorio en el que hemos instalado UISS previamente.
 
-[<center>Descargar UISS-MapView</center>](http://www.qsl.net/on6mu/download/UIMapView_UISS_Addon.zip)
+[<center>Descargar UISS-MapView</center>](https://www.qsl.net/on6mu/download/UIMapView_UISS_Addon.zip)
 
 Por último iniciamos SoundModem y después UISS. La primera vez que iniciemos UISS nos pedirá que introduzcamos nuestro indicativo, si lo tenemos, o cualquier otro texto en caso contrario ya que no vamos a emitir nada.
 Si todo está correctamente instalado, veremos una ventana como la siguiente en la que podemos leer que UISS se ha conectado correctamente a SoundModem.

@@ -3,11 +3,12 @@ title: Recepción del satélite FalconSAT-3
 date: 2021-10-17 10:31:38
 tags: [Satélites, PACSAT]
 author: EA7KOO
+excerpt: Guía para recibir mensajes de radioaficionados desde el satélite FalconSAT-3.
 ---
 
 El satélite FalconSAT-3 fue construido entre 2005 y 2006 por cadetes de la academia de la fuerza aérea de Estados Unidos. Desde que fue lanzado en 2007, el satélite ha llevado a cabo dos fases operadas por la academia de la fuerza aérea estadounidense y una tercera fase desde 2017 en la que se abrió su uso para el servicio de radioaficionados. El satélite funciona actualmente como repetidor en modo PACSAT.
 PACSAT es un término genérico usado para describir un servicio digital para radioaficionados de almacenamiento y distribución por satélite. Este sistema, que utiliza el protocolo AX.25 para los paquetes de datos, permite reenviar mensajes de correo electrónico, telemetría, boletines informativos, etc.
-En este artículo veremos como recibir estos mensajes con nuestro SDR.
+En este artículo veremos cómo recibir estos mensajes con nuestro SDR.
 
 <!-- more -->
 

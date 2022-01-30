@@ -1,15 +1,16 @@
 ---
-title: Recepción de satélites meteorológicos Meteor-M
+title: Recibir satélites meteorológicos Meteor-M
 date: 2020-03-27 12:10:49
 tags: [Satélites, Satélites meteorológicos, Meteorología]
 author: EA7KOO
 updated: 2022-01-06 09:10:12
+excerpt: Guía paso a paso sobre cómo recibir imágenes LRTP desde los satélites meteorológicos rusos Meteor-M.
 ---
 
 Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.
 
 La serie Meteor-M fue planificada para la primera década del siglo XXI e incluiría tres nuevos satélites con dos diseños diferentes. El objetivo principal de los dos primeros satélites (Meteor-M N1 y Meteor-M N2) sería proveer de información meteorológica, así como la monitorización de la capa de ozono, los niveles de radiación en el espacio y la observación de los mares y la capa de hielo. El tercero (Meteor-M N3) incorporaría una antena radar de nueva generación para la observación oceánica.
-Estos satélites transmiten imágenes en formato [LRPT](https://en.wikipedia.org/wiki/Low-rate_picture_transmission) en 137 MHz y en formato [HRPT](https://en.wikipedia.org/wiki/High-resolution_picture_transmission) en 1,7 GHz. En este articulo veremos como recibir la señal con nuestro dispositivo SDR y obtener las imágenes LRPT.
+Estos satélites transmiten imágenes en formato [LRPT](https://en.wikipedia.org/wiki/Low-rate_picture_transmission) en 137 MHz y en formato [HRPT](https://en.wikipedia.org/wiki/High-resolution_picture_transmission) en 1,7 GHz. En este artículo veremos cómo recibir la señal con nuestro dispositivo SDR y obtener las imágenes LRPT.
 
 <!-- more -->
 

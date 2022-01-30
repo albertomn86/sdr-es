@@ -3,10 +3,11 @@ title: Recibir radio movil digital (DMR)
 date: 2021-08-27 10:30:04
 tags: [DMR, DSDPlus, SDRSharp]
 author: EA7KOO
+excerpt: Cómo escuchar DMR (Radio Móvil Digital) usando un dispositivo SDR en Windows y los plugins para SDR#.
 ---
 
 DMR son las siglas de Radio Móvil Digital, y es un estándar internacional especialmente definido para radios de dos vías. El objetivo del estándar DMR es permitir que dispositivos de diferentes fabricantes puedan comunicarse entre sí en una misma red.
-Esta tecnología es muy utilizada por radioaficionados y es posible recibir estas señales con nuestros dispositivos SDR. En este artículo veremos como instalar algunos _plugins_ en SDR# para poder escuchar DMR.
+Esta tecnología es muy utilizada por radioaficionados y es posible recibir estas señales con nuestros dispositivos SDR. En este artículo veremos cómo instalar algunos _plugins_ en SDR# para poder escuchar DMR.
 
 <!-- more -->
 

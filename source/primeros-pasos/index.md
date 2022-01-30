@@ -2,6 +2,7 @@
 title: Primeros pasos
 date: 2021-04-17 10:49:27
 updated: 2022-01-06 14:55:56
+excerpt: Primeros pasos en SDR. ¿Qué dispositivo SDR elegir? ¿Cómo instalar el dispositivo RTL-SDR en Windows, Linux o macOS?
 ---
 
 
@@ -23,11 +24,11 @@ Programa **Net de la tecnología** sobre dispositivos SDR:
 
 Si ya tenemos el dispositivo, el siguiente paso es instalarlo.
 
-[- Instalación de dispositivos RTL-SDR en Windows](/instalacion-rtlsdr-windows/)
+[- Instalar dispositivos RTL-SDR en Windows](/instalacion-rtlsdr-windows/)
 
-[- Instalación de dispositivos RTL-SDR en Raspberry Pi](/instalacion-rtlsdr-raspberrypi/)
+[- Instalar dispositivos RTL-SDR en Linux](/instalacion-rtlsdr-raspberrypi/)
 
-[- Instalación de dispositivos RTL-SDR en macOS](/instalacion-rtlsdr-macos/)
+[- Instalar dispositivos RTL-SDR en macOS](/instalacion-rtlsdr-macos/)
 
 # Identificando señales
 

@@ -4,9 +4,10 @@ date: 2020-03-09 12:46:44
 tags: [Satélites, Inmarsat, L-Band]
 author: EA7KOO
 updated: 2022-01-07 07:10:12
+excerpt: Guía para la recepción de los mensajes SDT-C desde los satélites Inmarsat a modo de estudio.
 ---
 
-En el artículo ["Recepción de satélites Inmarsat"](/recepcion-inmarsat/) vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes a modo de estudio utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.
+En el artículo ["Recepción de satélites Inmarsat"](/recepcion-inmarsat/) vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos cómo decodificar algunos mensajes a modo de estudio utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.
 Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.
 
 <!-- more -->

@@ -4,6 +4,7 @@ date: 2020-08-13 17:36:20
 tags: [OpenWebRX, RTL-SDR, Raspberry Pi, Linux]
 author: EA7KOO
 updated: 2021-12-03 20:42:00
+excerpt: En este artículo veremos cómo instalar y configurar nuestro propio WebSDR en una Raspberry Pi con OpenWebRX.
 ---
 
 [OpenWebRX](https://www.openwebrx.de/) es un software de recepción de señales de radio mediante dispositivos SDR que opera desde una interfaz web. Esto permite visualizar y procesar señales en tiempo real desde cualquier lugar, simplemente accediendo desde un navegador web.

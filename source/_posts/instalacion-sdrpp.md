@@ -3,10 +3,11 @@ title: Instalar SDR++
 date: 2021-12-21 18:55:53
 tags: [Instalación, SDR++, Windows, Linux, macOS]
 author: EA7KOO
+excerpt: Breves notas para la instalación de SDR++ en Windows, Linux y macOS.
 ---
 
 [SDR++](https://www.sdrpp.org/) es un software multiplataforma y de código abierto para la recepción de señales mediante SDR. Este nuevo programa, desarrollado por [Alexandre Rouma](https://twitter.com/ryzerth), busca como objetivo ser sencillo de utilizar y eficiente.
-En este post veremos como instalar SDR++ en Windows, Linux y macOS.
+En este post veremos cómo instalar SDR++ en Windows, Linux y macOS.
 
 <!-- more -->
 

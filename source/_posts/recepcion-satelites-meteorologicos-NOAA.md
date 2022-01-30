@@ -1,13 +1,14 @@
 ---
-title: Recepción de satélites meteorológicos NOAA
+title: Recibir satélites meteorológicos NOAA
 date: 2020-03-20 13:16:52
-tags: [Satélites, Satélites meteorológicos, NOAA, Meteorología]
+tags: [Satélites, Satélites meteorológicos, NOAA, Meteorología, Windows]
 author: EA7KOO
+excerpt: Guía detallada para recibir imágenes en formato APT desde los satélites meteorológicos NOAA en Windows.
 ---
 
 Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (*National Oceanic and Atmospheric Administration*). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.
 
-Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato [APT](https://en.wikipedia.org/wiki/Automatic_picture_transmission).
+Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos cómo recibir las imágenes de baja resolución en formato [APT](https://en.wikipedia.org/wiki/Automatic_picture_transmission).
 
 <!-- more -->
 

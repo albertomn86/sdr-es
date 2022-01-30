@@ -1,13 +1,14 @@
 ---
-title: Recepción de cartas meteorológicas (weather fax)
+title: Recibir cartas meteorológicas (weather fax)
 date: 2021-09-01 17:11:53
 tags: [Weatherfax, Meteorología, HF]
 author: EA7KOO
+excerpt: Cómo recibir cartas meteorológicas (weather fax) en HF usando un dispositivo SDR.
 ---
 
 El radiofacsimil o radiofax es un modo analógico en HF que permite transmitir imágenes monocromáticas mediante ondas de radio. Este modo es el predecesor de SSTV y fue el principal modo de transmisión de imágenes desde sitios remotos (especialmente islas) desde 1930 hasta 1970.
 
-Actualmente se sigue usando para la transmisión de cartas meteorológicas a las embarcaciones en alta mar. En este artículo veremos como recibir estas cartas usando nuestro dispositivo SDR.
+Actualmente se sigue usando para la transmisión de cartas meteorológicas a las embarcaciones en alta mar. En este artículo veremos cómo recibir estas cartas usando nuestro dispositivo SDR.
 
 <!-- more -->
 

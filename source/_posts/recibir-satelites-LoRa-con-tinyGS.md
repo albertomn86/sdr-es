@@ -3,6 +3,7 @@ title: Recibir satélites LoRa
 date: 2021-03-30 18:55:34
 tags: [Satélites, Cubesat, LoRa, tinyGS]
 author: EA7KOO
+excerpt: En este artículo veremos como instalar y configurar nuestra estación terrestre (TinyGS) para recibir satélites LoRa.
 ---
 
 

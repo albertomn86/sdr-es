@@ -4,6 +4,7 @@ date: 2020-03-06 11:22:33
 tags: [Satélites, Inmarsat, L-Band]
 author: EA7KOO
 updated: 2022-01-07 18:06:10
+excerpt: En este artículo veremos cómo poder recibir las señales de los satélites Inmarsat a modo de estudio.
 ---
 
 Inmarsat es un proveedor de comunicaciones vía satélite con sede en Reino Unido. La constelación de satélites Inmarsat se compone actualmente de 12 satélites geoestacionarios que proporcionan cobertura en el 90% del planeta.
