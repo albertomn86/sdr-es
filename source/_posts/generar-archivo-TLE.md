@@ -3,7 +3,7 @@ title: Generar archivo TLE personalizado
 date: 2021-04-18 13:01:07
 tags: [Orbitron, Satélites]
 author: EA7KOO
-excerpt: Cómo generar de forma automática un archivo TLE con los satélites deseados.
+description: Cómo generar de forma automática un archivo TLE con los satélites deseados.
 ---
 
 Si realizamos habitualmente el seguimiento de satélites, uno de los pasos más importantes es tener actualizados nuestros archivos de [TLE](https://en.wikipedia.org/wiki/Two-line_element_set). En este artículo veremos cómo generar un archivo TLE que contenga solo los satélites que queramos y que podemos actualizar con un clic.

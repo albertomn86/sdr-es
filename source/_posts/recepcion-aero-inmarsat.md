@@ -3,7 +3,7 @@ title: Recepción de mensajes Inmarsat Aero
 date: 2020-03-10 12:26:30
 tags: [ATC, Satélites, Inmarsat, L-Band]
 author: EA7KOO
-excerpt: Guía para la recepción de los mensajes Aero desde los satélites Inmarsat a modo de estudio.
+description: Guía para la recepción de los mensajes Aero desde los satélites Inmarsat a modo de estudio.
 ---
 
 Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.

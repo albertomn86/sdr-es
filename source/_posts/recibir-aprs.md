@@ -4,7 +4,7 @@ date: 2021-03-23 21:02:24
 tags: [APRS, ISS]
 author: EA7KOO
 updated: 2022-01-30 16:20:24
-excerpt: Cómo recibir y decodificar paquetes APRS (terrestres y desde la Estación Espacial Internacional) usando nuestro dispositivo SDR.
+description: Cómo recibir y decodificar paquetes APRS (terrestres y desde la Estación Espacial Internacional) usando nuestro dispositivo SDR.
 ---
 
 APRS _(Automatic Packet Reporting System)_ es un sistema de radioaficionado para comunicaciones digitales que utiliza tramas [AX.25](https://es.wikipedia.org/wiki/Protocolo_AX.25). Estos paquetes pueden contener cualquier tipo de mensaje, así como también telemetría y datos de estaciones meteorológicas.

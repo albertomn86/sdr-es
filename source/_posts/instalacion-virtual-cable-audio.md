@@ -4,7 +4,7 @@ date: 2020-01-21 17:06:29
 tags: ['Virtual Audio Cable', Instalación, Windows, macOS]
 author: EA7KOO
 updated: 2021-08-25 19:42:29
-excerpt: En este artículo veremos cómo instalar un cable de audio virtual para pasar la señal de audio de un programa a otro.
+description: En este artículo veremos cómo instalar un cable de audio virtual para pasar la señal de audio de un programa a otro.
 ---
 
 Vamos a ver cómo instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.

@@ -3,7 +3,7 @@ title: "Recepción del satélite JY1-SAT"
 date: 2020-02-25 20:45:38
 tags: [Satélites, Cubesat]
 author: EA7KOO
-excerpt: En esta guía veremos como recibir la telemetría del satélite JY1-SAT.
+description: En esta guía veremos como recibir la telemetría del satélite JY1-SAT.
 ---
 
 El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan's Crown Prince Foundation.

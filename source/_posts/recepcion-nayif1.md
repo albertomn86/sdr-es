@@ -3,7 +3,7 @@ title: Recepción del satélite NAYIF-1
 date: 2020-02-26 09:32:14
 tags: [Satélites, Cubesat]
 author: EA7KOO
-excerpt: En esta guía veremos como recibir la telemetría del satélite NAYIF-1.
+description: En esta guía veremos como recibir la telemetría del satélite NAYIF-1.
 ---
 
 El satélite NAYIF-1 es un CubeSat construido por estudiante de la _Emirates Institution for Advanced Science and Technology (EIAST)_, en colaboración con la _American University of Sharjah (AUS)_.

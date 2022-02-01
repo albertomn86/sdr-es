@@ -1,12 +1,14 @@
 ---
 title: Listado de frecuencias en HF
 date: 2020-11-13 22:23:56
+description: Listado de frecuencias en HF identificadas y recogidas por los miembros del grupo.
+tags: [Frecuencias]
 ---
 
 <script src="jquery-3.5.0.min.js"></script>
 <script src="freq_download.js"></script>
 
-Listado de frecuencias encontradas y recogidas por los miembros del grupo.
+Listado de frecuencias en HF identificadas y recogidas por los miembros del grupo.
 
 <button type="button" id="download_button" style="padding: 5px 10px;">Descargar XML</button>
 

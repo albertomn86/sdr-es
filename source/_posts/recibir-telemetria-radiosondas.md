@@ -3,7 +3,7 @@ title: Recibir telemetría de radiosondas meteorológicas
 date: 2021-10-03 10:48:43
 tags: [Radiosonda, Meteorología]
 author: EA7KOO
-excerpt: Recibir globos sonda y radiosondas meteorológicas usando un dispositivo SDR y los programas SondeMonitor y RS41 Tracker.
+description: Recibir globos sonda y radiosondas meteorológicas usando un dispositivo SDR y los programas SondeMonitor y RS41 Tracker.
 ---
 
 A diario son lanzadas en todo el mundo cientos de radiosondas meteorológicas para obtener mediciones que permitan conocer el estado actual en las capas altas de la atmósfera. Estas mediciones ayudan a los servicios meteorológicos en sus predicciones.

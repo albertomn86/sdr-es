@@ -3,7 +3,7 @@ title: Seguimiento de satélites con Orbitron
 date: 2020-01-23 19:06:58
 tags: [Orbitron, Tracking, Satélites]
 author: EA7KOO
-excerpt: En esta guía veremos cómo instalar y configurar Orbitron para el seguimiento de satélites y la correción de su frecuencia.
+description: En esta guía veremos cómo instalar y configurar Orbitron para el seguimiento de satélites y la correción de su frecuencia.
 ---
 
 Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.

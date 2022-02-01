@@ -4,7 +4,7 @@ date: 2020-10-25 11:52:23
 tags: [DRM, HF]
 author: EA7KOO
 updated: 2022-01-06 14:10:00
-excerpt: Cómo recibir radio digital mundial (DRM) en HF mediante SDR y el programa Dream AM/DRM Receiver.
+description: Cómo recibir radio digital mundial (DRM) en HF mediante SDR y el programa Dream AM/DRM Receiver.
 ---
 
 [Digital Radio Mondiale (DRM)](https://www.drm.org/), en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.

@@ -1,6 +1,8 @@
 ---
 title: Conceptos básicos
 date: 2021-04-17 11:14:04
+description: Terminología y breves conceptos básicos. SDR, Bias-T, filtros, LNA, TCXO, Up/Down converters.
+tags: [SDR, Bias-T, filtros, LNA, TCXO, Up/Down converters]
 ---
 
 # SDR

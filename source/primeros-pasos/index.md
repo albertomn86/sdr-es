@@ -2,7 +2,8 @@
 title: Primeros pasos
 date: 2021-04-17 10:49:27
 updated: 2022-01-06 14:55:56
-excerpt: Primeros pasos en SDR. ¿Qué dispositivo SDR elegir? ¿Cómo instalar el dispositivo RTL-SDR en Windows, Linux o macOS?
+description: Primeros pasos en SDR. ¿Qué dispositivo SDR elegir? ¿Cómo instalar el dispositivo RTL-SDR en Windows, Linux o macOS?
+tags: [RTL-SDR, Windows, Linux, macOS]
 ---
 
 

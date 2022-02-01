@@ -4,7 +4,7 @@ date: 2020-03-27 12:10:49
 tags: [Satélites, Satélites meteorológicos, Meteorología]
 author: EA7KOO
 updated: 2022-01-06 09:10:12
-excerpt: Guía paso a paso sobre cómo recibir imágenes LRTP desde los satélites meteorológicos rusos Meteor-M.
+description: Guía paso a paso sobre cómo recibir imágenes LRTP desde los satélites meteorológicos rusos Meteor-M.
 ---
 
 Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.

@@ -3,7 +3,7 @@ title: Instalación de estación terrestre con SatNOGS (II)
 date: 2020-04-27 16:34:55
 tags: [SatNOGS, Linux, Raspberry Pi, Satélites, Instalación]
 author: EA7KOO
-excerpt: Cómo instalar una estación terrestre para el seguimiento de satélites de forma desatendida con SatNOGS. Segunda parte.
+description: Cómo instalar una estación terrestre para el seguimiento de satélites de forma desatendida con SatNOGS. Segunda parte.
 ---
 
 En el artículo anterior ["Instalación de estación terrestre con SatNOGS"](/instalacion-satnogs/) vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.

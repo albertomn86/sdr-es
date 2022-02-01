@@ -3,6 +3,7 @@ title: Recibir APRS en macOS con Gqrx
 date: 2021-04-02 17:06:10
 tags: [APRS, ISS, macOS, Gqrx]
 author: EA5EMA
+description: En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando Gqrx.
 ---
 
 En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando [Gqrx](https://gqrx.dk/).

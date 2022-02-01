@@ -3,7 +3,7 @@ title: Instalar de dispositivo RTL-SDR en macOS
 date: 2020-06-14 10:32:42
 tags: [RTL-SDR, macOS, CubicSDR, Instalación]
 author: EA7KOO
-excerpt: En este tutorial veremos cómo instalar nuestro dispositivo RTL-SDR en macOS y usarlo con CubicSDR.
+description: En este tutorial veremos cómo instalar nuestro dispositivo RTL-SDR en macOS y usarlo con CubicSDR.
 ---
 
 

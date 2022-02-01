@@ -3,7 +3,7 @@ title: Seguimiento de satélites con Gpredict
 date: 2021-12-23 13:50:15
 tags: [Gpredict, Tracking, Satélites]
 author: EA7KOO
-excerpt: En este artículo veremos cómo instalar y configurar Gpredict en Windows, Linux y macOS.
+description: En este artículo veremos cómo instalar y configurar Gpredict en Windows, Linux y macOS.
 ---
 
 [Gpredict](http://gpredict.oz9aec.net/) es un programa para el seguimiento en tiempo real y predicción de órbitas para satélites. Este programa es muy similar a Orbitron, el cual ya vimos cómo instalar y configurar en el artículo ["Seguimiento de satélites con Orbitron"](/seguimiento-satelites-orbitron). Pero al contrario de este, Gpredict es multiplataforma, por lo que podremos usarlo en diferentes sistemas operativos.

@@ -4,7 +4,7 @@ date: 2021-04-10 14:25:54
 updated: 2021-07-13 18:25:54
 tags: [Antenas, QFH, Satélites meteorológicos, NOAA]
 author: EA7KOO
-excerpt: Cómo construir paso a paso y de forma sencilla una antena QFH para recibir satélites meteorológicos (137,5 MHz).
+description: Cómo construir paso a paso y de forma sencilla una antena QFH para recibir satélites meteorológicos (137,5 MHz).
 ---
 
 En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello construiremos nuestra antena para que resuene en 137,5 MHz.

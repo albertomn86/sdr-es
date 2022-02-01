@@ -4,7 +4,7 @@ date: 2020-02-18 12:45:55
 tags: [Satélites, Orbitron]
 author: EA7KOO
 updated: 2021-08-25 21:20:24
-excerpt: Cómo corregir la desviación de frecuencia en la recepción de satélites de forma automática con Orbitron y DDETracker.
+description: Cómo corregir la desviación de frecuencia en la recepción de satélites de forma automática con Orbitron y DDETracker.
 ---
 
 Cuando realizamos seguimiento de satélites nos encontramos con que la frecuencia en la que deberíamos recibir una señal no se ajusta con la que estamos recibiendo y además cambia durante el pase. Esto se debe al conocido como **efecto Doppler**.

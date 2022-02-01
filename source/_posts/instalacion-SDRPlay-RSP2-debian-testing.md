@@ -1,8 +1,9 @@
 ---
 title: Instalación de SDRPlay RSP2 en Debian Testing
 date: 2021-04-05 19:40:25
-tags: [Linux, SDRPlay]
+tags: [Linux, SDRPlay, Instalación]
 author: EA4GRG
+description: Notas para la instalación de SDRPlay RSP2 en Debian Testing.
 ---
 
 Esto son solo notas tomadas al vuelo mientras he instalado y probado la versión citada del driver/API de SDRPlay RSP2 en Debian Testing x64. Han sido realizadas en una máquina con el SO recién instalado y los paquetes _Soapy_ mínimamente necesarios, aunque según el caso y la instalación pudieran ser necesarios otros más para cumplir dependencias.

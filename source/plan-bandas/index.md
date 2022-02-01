@@ -1,6 +1,8 @@
 ---
 title: Plan de bandas de la IARU (Región 1)
 date: 2020-11-22 20:47:35
+description: Plan de bandas de la IARU para la región 1.
+tags: [IARU, HF, VHF, UHF]
 ---
 
 Datos obtenidos de [IARU Band Plans R1](https://www.iaru-r1.org/on-the-air/band-plans/)
