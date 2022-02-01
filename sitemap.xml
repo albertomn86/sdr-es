@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sdr-es.com/recibir-aprs/</loc>
+    
+    <lastmod>2022-01-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://sdr-es.com/recepcion-inmarsat/</loc>
     
     <lastmod>2022-01-07</lastmod>
@@ -209,15 +218,6 @@
   </url>
   
   <url>
-    <loc>https://sdr-es.com/recibir-aprs/</loc>
-    
-    <lastmod>2021-03-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://sdr-es.com/recibir-sstv-iss/</loc>
     
     <lastmod>2020-12-26</lastmod>
@@ -391,7 +391,7 @@
 
   <url>
     <loc>https://sdr-es.com/</loc>
-    <lastmod>2022-01-30</lastmod>
+    <lastmod>2022-02-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

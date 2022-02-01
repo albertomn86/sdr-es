@@ -19,12 +19,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="A diario son lanzadas en todo el mundo cientos de radiosondas meteorológicas para obtener mediciones que permitan conocer el estado actual en las capas altas de la atmósfera. Estas mediciones ayudan a">
+<meta name="description" content="Recibir globos sonda y radiosondas meteorológicas usando un dispositivo SDR y los programas SondeMonitor y RS41 Tracker.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Recibir telemetría de radiosondas meteorológicas">
 <meta property="og:url" content="https://sdr-es.com/recibir-telemetria-radiosondas/index.html">
 <meta property="og:site_name" content="SDR en español">
-<meta property="og:description" content="A diario son lanzadas en todo el mundo cientos de radiosondas meteorológicas para obtener mediciones que permitan conocer el estado actual en las capas altas de la atmósfera. Estas mediciones ayudan a">
+<meta property="og:description" content="Recibir globos sonda y radiosondas meteorológicas usando un dispositivo SDR y los programas SondeMonitor y RS41 Tracker.">
 <meta property="og:locale" content="es_ES">
 <meta property="og:image" content="https://sdr-es.com/recibir-telemetria-radiosondas/LIFT-Radiosonde-Release.jpg">
 <meta property="og:image" content="https://sdr-es.com/recibir-telemetria-radiosondas/sondemonitor_config_audio.jpg">
@@ -361,7 +361,8 @@
 <img src="/recibir-telemetria-radiosondas/sondemonitor_data.jpg" class="" width="800" title="SondeMonitor - Telemetría">
 
 
-<h2 id="Recibir-radiosondas-RS41"><a href="#Recibir-radiosondas-RS41" class="headerlink" title="Recibir radiosondas RS41"></a>Recibir radiosondas RS41</h2><p>La recepción de este tipo de sondas es muy similar a la descrita en el apartado anterior. Para decodificar la telemetría usaremos el programa <strong>RS41 Tracker</strong> que podemos descargar desde su página web.</p>
+<h2 id="Recibir-radiosondas-RS41"><a href="#Recibir-radiosondas-RS41" class="headerlink" title="Recibir radiosondas RS41"></a>Recibir radiosondas RS41</h2><p>La recepción de este tipo de sondas es muy similar a la descrita en el apartado anterior. SondeMonitor también nos permite recibir este tipo de sondas, pero veremos también otra alternativa para decodificar la telemetría usando el programa <strong>RS41 Tracker</strong>.</p>
+<p>Lo primero será descargar el programa desde su página web:</p>
 <p><a target="_blank" rel="noopener" href="http://escursioni.altervista.org/Radiosonde/"><center>Radiosonde Page by IW1GIS</center></a></p>
 <p>Una vez descargado, lo instalamos y lo iniciamos para configurar la entrada de audio. Le damos al icono del engranaje para abrir las opciones de configuración y seleccionamos el cable audio virtual como entrada.</p>
 <img src="/recibir-telemetria-radiosondas/rs41tracker_config_audio.jpg" class="" width="800" title="RS41 Tracker - Configurar audio">
@@ -383,16 +384,16 @@
   <div class="popular-posts-header">Artículos relacionados</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/recepcion-datos-HIRS-satelites-NOAA/" rel="bookmark">Recepción de datos del instrumental HIRS de los satélites NOAA</a></div>
+      <div class="popular-posts-title"><a href="/recepcion-datos-HIRS-satelites-NOAA/" rel="bookmark">Recibir los datos del instrumental HIRS de los satélites NOAA</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/recepcion-satelites-meteorologicos-NOAA/" rel="bookmark">Recepción de satélites meteorológicos NOAA</a></div>
+      <div class="popular-posts-title"><a href="/recepcion-satelites-meteorologicos-NOAA/" rel="bookmark">Recibir satélites meteorológicos NOAA</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/recepcion-satelites-meteorologicos-meteor/" rel="bookmark">Recepción de satélites meteorológicos Meteor-M</a></div>
+      <div class="popular-posts-title"><a href="/recepcion-satelites-meteorologicos-meteor/" rel="bookmark">Recibir satélites meteorológicos Meteor-M</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/recepcion-weather-fax/" rel="bookmark">Recepción de cartas meteorológicas (weather fax)</a></div>
+      <div class="popular-posts-title"><a href="/recepcion-weather-fax/" rel="bookmark">Recibir cartas meteorológicas (weather fax)</a></div>
     </li>
   </ul>
 
@@ -479,8 +480,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/recepcion-weather-fax/" rel="prev" title="Recepción de cartas meteorológicas (weather fax)">
-                  <i class="fa fa-chevron-left"></i> Recepción de cartas meteorológicas (weather fax)
+                <a href="/recepcion-weather-fax/" rel="prev" title="Recibir cartas meteorológicas (weather fax)">
+                  <i class="fa fa-chevron-left"></i> Recibir cartas meteorológicas (weather fax)
                 </a>
             </div>
             <div class="post-nav-item">

@@ -19,12 +19,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos s">
+<meta name="description" content="Guía paso a paso sobre cómo recibir imágenes LRTP desde los satélites meteorológicos rusos Meteor-M.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Recepción de satélites meteorológicos Meteor-M">
+<meta property="og:title" content="Recibir satélites meteorológicos Meteor-M">
 <meta property="og:url" content="https://sdr-es.com/recepcion-satelites-meteorologicos-meteor/index.html">
 <meta property="og:site_name" content="SDR en español">
-<meta property="og:description" content="Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos s">
+<meta property="og:description" content="Guía paso a paso sobre cómo recibir imágenes LRTP desde los satélites meteorológicos rusos Meteor-M.">
 <meta property="og:locale" content="es_ES">
 <meta property="og:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-meteor/Meteor-M_2.jpg">
 <meta property="og:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-meteor/meteor_plugin.jpg">
@@ -55,10 +55,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"es","comments":true,"permalink":"https://sdr-es.com/recepcion-satelites-meteorologicos-meteor/","path":"recepcion-satelites-meteorologicos-meteor/","title":"Recepción de satélites meteorológicos Meteor-M"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"es","comments":true,"permalink":"https://sdr-es.com/recepcion-satelites-meteorologicos-meteor/","path":"recepcion-satelites-meteorologicos-meteor/","title":"Recibir satélites meteorológicos Meteor-M"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Recepción de satélites meteorológicos Meteor-M | SDR en español</title>
+<title>Recibir satélites meteorológicos Meteor-M | SDR en español</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216548910-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-216548910-1","only_pageview":false}</script>
@@ -268,7 +268,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Recepción de satélites meteorológicos Meteor-M
+          Recibir satélites meteorológicos Meteor-M
         </h1>
 
         <div class="post-meta-container">
@@ -308,7 +308,7 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.</p>
-<p>La serie Meteor-M fue planificada para la primera década del siglo XXI e incluiría tres nuevos satélites con dos diseños diferentes. El objetivo principal de los dos primeros satélites (Meteor-M N1 y Meteor-M N2) sería proveer de información meteorológica, así como la monitorización de la capa de ozono, los niveles de radiación en el espacio y la observación de los mares y la capa de hielo. El tercero (Meteor-M N3) incorporaría una antena radar de nueva generación para la observación oceánica.<br>Estos satélites transmiten imágenes en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Low-rate_picture_transmission">LRPT</a> en 137 MHz y en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/High-resolution_picture_transmission">HRPT</a> en 1,7 GHz. En este articulo veremos como recibir la señal con nuestro dispositivo SDR y obtener las imágenes LRPT.</p>
+<p>La serie Meteor-M fue planificada para la primera década del siglo XXI e incluiría tres nuevos satélites con dos diseños diferentes. El objetivo principal de los dos primeros satélites (Meteor-M N1 y Meteor-M N2) sería proveer de información meteorológica, así como la monitorización de la capa de ozono, los niveles de radiación en el espacio y la observación de los mares y la capa de hielo. El tercero (Meteor-M N3) incorporaría una antena radar de nueva generación para la observación oceánica.<br>Estos satélites transmiten imágenes en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Low-rate_picture_transmission">LRPT</a> en 137 MHz y en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/High-resolution_picture_transmission">HRPT</a> en 1,7 GHz. En este artículo veremos cómo recibir la señal con nuestro dispositivo SDR y obtener las imágenes LRPT.</p>
 <span id="more"></span>
 
 <img src="/recepcion-satelites-meteorologicos-meteor/Meteor-M_2.jpg" class="" width="600" title="Meteor-M N2-1">
@@ -468,10 +468,10 @@
   <div class="popular-posts-header">Artículos relacionados</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/recepcion-datos-HIRS-satelites-NOAA/" rel="bookmark">Recepción de datos del instrumental HIRS de los satélites NOAA</a></div>
+      <div class="popular-posts-title"><a href="/recepcion-datos-HIRS-satelites-NOAA/" rel="bookmark">Recibir los datos del instrumental HIRS de los satélites NOAA</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/recepcion-satelites-meteorologicos-NOAA/" rel="bookmark">Recepción de satélites meteorológicos NOAA</a></div>
+      <div class="popular-posts-title"><a href="/recepcion-satelites-meteorologicos-NOAA/" rel="bookmark">Recibir satélites meteorológicos NOAA</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/ajuste-frecuencia-doppler-orbitron/" rel="bookmark">Ajuste de frecuencia en recepción de satélites</a></div>
@@ -554,7 +554,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>Enlace a la entrada: </strong>
-      <a href="https://sdr-es.com/recepcion-satelites-meteorologicos-meteor/" title="Recepción de satélites meteorológicos Meteor-M">https://sdr-es.com/recepcion-satelites-meteorologicos-meteor/</a>
+      <a href="https://sdr-es.com/recepcion-satelites-meteorologicos-meteor/" title="Recibir satélites meteorológicos Meteor-M">https://sdr-es.com/recepcion-satelites-meteorologicos-meteor/</a>
   </li>
   -->
   <li class="post-copyright-license">
@@ -568,8 +568,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/recepcion-satelites-meteorologicos-NOAA/" rel="prev" title="Recepción de satélites meteorológicos NOAA">
-                  <i class="fa fa-chevron-left"></i> Recepción de satélites meteorológicos NOAA
+                <a href="/recepcion-satelites-meteorologicos-NOAA/" rel="prev" title="Recibir satélites meteorológicos NOAA">
+                  <i class="fa fa-chevron-left"></i> Recibir satélites meteorológicos NOAA
                 </a>
             </div>
             <div class="post-nav-item">

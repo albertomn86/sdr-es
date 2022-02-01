@@ -19,12 +19,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos p">
+<meta name="description" content="En este artículo veremos cómo instalar SPY Server en una Raspberry Pi usando un dispositivo RTL-SDR.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Instalación de SPY Server en Raspberry Pi">
 <meta property="og:url" content="https://sdr-es.com/instalacion-spyserver-raspberrypi/index.html">
 <meta property="og:site_name" content="SDR en español">
-<meta property="og:description" content="SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos p">
+<meta property="og:description" content="En este artículo veremos cómo instalar SPY Server en una Raspberry Pi usando un dispositivo RTL-SDR.">
 <meta property="og:locale" content="es_ES">
 <meta property="og:image" content="https://sdr-es.com/instalacion-spyserver-raspberrypi/conectar.png">
 <meta property="og:image" content="https://sdr-es.com/instalacion-spyserver-raspberrypi/sdr_sharp.png">
@@ -33,8 +33,8 @@
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="RTL-SDR">
 <meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Raspberry Pi">
 <meta property="article:tag" content="Instalación">
+<meta property="article:tag" content="Raspberry Pi">
 <meta property="article:tag" content="SDRSharp">
 <meta property="article:tag" content="SPY Server">
 <meta name="twitter:card" content="summary">
@@ -296,10 +296,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos como instalar SPY Server en una Raspberry Pi.</p>
+        <p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos cómo instalar SPY Server en una Raspberry Pi.</p>
 <span id="more"></span>
 
-<p>Para usar SPY Server en nuestra Raspberry Pi <strong>necesitamos en primer lugar tener instalado el dispositivo SDR</strong>. Si nuestro dispositivo es un RTL-SDR debemos seguir los pasos descritos en el artículo <a href="/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
+<p>Para usar SPY Server en nuestra Raspberry Pi <strong>necesitamos en primer lugar tener instalado el dispositivo SDR</strong>. Si nuestro dispositivo es un RTL-SDR debemos seguir los pasos descritos en el artículo <a href="/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Linux”</a>.</p>
 <h2 id="Instalar-SPY-Server"><a href="#Instalar-SPY-Server" class="headerlink" title="Instalar SPY Server"></a>Instalar SPY Server</h2><p>SPY Server está disponible ya compilado para procesadores ARM de 32 bits, por lo que bastaría con descargarlo a nuestra Raspberry Pi para que funcione.</p>
 <p>Lo primero que haremos será crear un directorio nuevo para los archivos de SPY Server:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir SPY_Server &amp;&amp; cd $_</span><br></pre></td></tr></table></figure>
@@ -368,7 +368,7 @@
       <div class="popular-posts-title"><a href="/instalacion-satnogs-ansible/" rel="bookmark">Instalación de estación terrestre con SatNOGS (II)</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/instalacion-rtlsdr-macos/" rel="bookmark">Instalar dispositivo RTL-SDR en macOS</a></div>
+      <div class="popular-posts-title"><a href="/instalacion-rtlsdr-macos/" rel="bookmark">Instalar de dispositivo RTL-SDR en macOS</a></div>
     </li>
   </ul>
 
@@ -430,8 +430,8 @@
           <div class="post-tags">
               <a href="/tags/RTL-SDR/" rel="tag"><i class="fa fa-tag"></i> RTL-SDR</a>
               <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
-              <a href="/tags/Raspberry-Pi/" rel="tag"><i class="fa fa-tag"></i> Raspberry Pi</a>
               <a href="/tags/Instalacion/" rel="tag"><i class="fa fa-tag"></i> Instalación</a>
+              <a href="/tags/Raspberry-Pi/" rel="tag"><i class="fa fa-tag"></i> Raspberry Pi</a>
               <a href="/tags/SDRSharp/" rel="tag"><i class="fa fa-tag"></i> SDRSharp</a>
               <a href="/tags/SPY-Server/" rel="tag"><i class="fa fa-tag"></i> SPY Server</a>
           </div>

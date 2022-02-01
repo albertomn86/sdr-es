@@ -316,6 +316,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
+        
           <p>ADS-B (<em>Automatic Dependent Surveillance Broadcast</em>) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.</p>
 <p>En este artículo veremos como convertir una Raspberry Pi en un receptor de mensajes ADS-B y poder determinar y visualizar la posición de las aeronaves que sobrevuelan nuestra ubicación.</p>
           <!--noindex-->
@@ -396,7 +397,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>En el artículo anterior <a href="/instalacion-satnogs/">“Instalación de estación terrestre con SatNOGS”</a> vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.<br>En este artículo veremos como realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.</p>
+        
+          <p>En el artículo anterior <a href="/instalacion-satnogs/">“Instalación de estación terrestre con SatNOGS”</a> vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.<br>En este artículo veremos cómo realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/instalacion-satnogs-ansible/#more" rel="contents">
@@ -475,8 +477,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
+        
           <p><a target="_blank" rel="noopener" href="https://satnogs.org/">SatNOGS</a> (Satellite Networked Open Ground Station) es una plataforma de software y hardware de código abierto con el propósito de crear una red global de estaciones terrestres de seguimiento de satélites.</p>
-<p>En este artículo veremos como instalar una estación terrestre para el seguimiento de satélites de forma desatendida. Para ello vamos a utilizar un dispositivo SDR y una Raspberry Pi con el software SatNOGS.</p>
+<p>En este artículo veremos cómo instalar una estación terrestre para el seguimiento de satélites de forma desatendida. Para ello vamos a utilizar un dispositivo SDR y una Raspberry Pi con el software SatNOGS.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/instalacion-satnogs/#more" rel="contents">
@@ -561,7 +564,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos como instalar SPY Server en una Raspberry Pi.</p>
+        
+          <p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos cómo instalar SPY Server en una Raspberry Pi.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/instalacion-spyserver-raspberrypi/#more" rel="contents">
@@ -640,7 +644,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>En esta guia veremos cómo instalar nuestro dispositivo RTL-SDR en Linux. Realizaremos la instalación en una Raspberry Pi con Raspbian.</p>
+        
+          <p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/instalacion-rtlsdr-raspberrypi/#more" rel="contents">
@@ -687,7 +692,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/recepcion-satelites-meteorologicos-meteor/" class="post-title-link" itemprop="url">Recepción de satélites meteorológicos Meteor-M</a>
+          <a href="/recepcion-satelites-meteorologicos-meteor/" class="post-title-link" itemprop="url">Recibir satélites meteorológicos Meteor-M</a>
         </h2>
 
         <div class="post-meta-container">
@@ -726,8 +731,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
+        
           <p>Tras varios años de desarrollo y pruebas, en 1969 se presentó en la antigua URSS la familia de satélites meteorológicos Meteor. Como muchos de los avances tecnológicos soviéticos de esa época, estos satélites tenían un doble propósito, siendo el principal el militar. Durante la Guerra Fría, la unión soviética necesitaba conocer las condiciones meteorológicas actualizadas en todo el mundo para la coordinación de sus bombarderos y flota naval. Tras la presión por parte de los militares, que veían que Estados Unidos creaba sus sistemas de predicción meteorológica vía satélite, la unión soviética decidió finalmente crear su propia red de satélites meteorológicos.</p>
-<p>La serie Meteor-M fue planificada para la primera década del siglo XXI e incluiría tres nuevos satélites con dos diseños diferentes. El objetivo principal de los dos primeros satélites (Meteor-M N1 y Meteor-M N2) sería proveer de información meteorológica, así como la monitorización de la capa de ozono, los niveles de radiación en el espacio y la observación de los mares y la capa de hielo. El tercero (Meteor-M N3) incorporaría una antena radar de nueva generación para la observación oceánica.<br>Estos satélites transmiten imágenes en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Low-rate_picture_transmission">LRPT</a> en 137 MHz y en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/High-resolution_picture_transmission">HRPT</a> en 1,7 GHz. En este articulo veremos como recibir la señal con nuestro dispositivo SDR y obtener las imágenes LRPT.</p>
+<p>La serie Meteor-M fue planificada para la primera década del siglo XXI e incluiría tres nuevos satélites con dos diseños diferentes. El objetivo principal de los dos primeros satélites (Meteor-M N1 y Meteor-M N2) sería proveer de información meteorológica, así como la monitorización de la capa de ozono, los niveles de radiación en el espacio y la observación de los mares y la capa de hielo. El tercero (Meteor-M N3) incorporaría una antena radar de nueva generación para la observación oceánica.<br>Estos satélites transmiten imágenes en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Low-rate_picture_transmission">LRPT</a> en 137 MHz y en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/High-resolution_picture_transmission">HRPT</a> en 1,7 GHz. En este artículo veremos cómo recibir la señal con nuestro dispositivo SDR y obtener las imágenes LRPT.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/recepcion-satelites-meteorologicos-meteor/#more" rel="contents">
@@ -774,7 +780,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/recepcion-satelites-meteorologicos-NOAA/" class="post-title-link" itemprop="url">Recepción de satélites meteorológicos NOAA</a>
+          <a href="/recepcion-satelites-meteorologicos-NOAA/" class="post-title-link" itemprop="url">Recibir satélites meteorológicos NOAA</a>
         </h2>
 
         <div class="post-meta-container">
@@ -806,8 +812,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
+        
           <p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
-<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos como recibir las imágenes de baja resolución en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Automatic_picture_transmission">APT</a>.</p>
+<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos cómo recibir las imágenes de baja resolución en formato <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Automatic_picture_transmission">APT</a>.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/recepcion-satelites-meteorologicos-NOAA/#more" rel="contents">
@@ -893,6 +900,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
+        
           <p>Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.<br>La finalidad este artículo es orientarnos para escoger el dispositivo que más se ajuste a nuestras necesidades y casos de uso. Para ello se han seleccionado algunos de los dispositivos más conocidos y que habitualmente se recomiendan, y se ha elaborado una breve descripción de cada uno de ellos con algunas de sus características más reseñables.</p>
           <!--noindex-->
             <div class="post-button">
@@ -972,7 +980,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos como decodificar y recibir mensajes Aero.</p>
+        
+          <p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos cómo decodificar y recibir mensajes Aero.</p>
 <p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a target="_blank" rel="noopener" href="https://es.wikipedia.org/wiki/ACARS">ACARS</a>, ADS-C, fax y voz digital.</p>
           <!--noindex-->
             <div class="post-button">
@@ -1059,7 +1068,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>En el artículo <a href="/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos como decodificar los mensajes a modo de estudio utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
+        
+          <p>En el artículo <a href="/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos cómo decodificar algunos mensajes a modo de estudio utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/recepcion-std-c-inmarsat/#more" rel="contents">
