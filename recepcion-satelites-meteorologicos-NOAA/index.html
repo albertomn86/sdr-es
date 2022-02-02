@@ -43,6 +43,7 @@
 <meta property="article:tag" content="NOAA">
 <meta property="article:tag" content="Windows">
 <meta property="article:tag" content="Meteorología">
+<meta property="article:tag" content="WXtoIMG">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-NOAA/apt.jpg">
 
@@ -192,13 +193,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">entradas</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -344,35 +345,40 @@
 <td>137,100 MHz</td>
 </tr>
 </tbody></table>
-<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la version beta 2.11.2):</p>
+<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la versión beta 2.11.2):</p>
 <p><a target="_blank" rel="noopener" href="https://wxtoimgrestored.xyz/downloads/"><center>Descargar WXtoImg</center></a></p>
 <p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
 <ol>
-<li>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Ground Station Location…&quot;</strong></em>. En esta ventana introducimos nuestras coordenadas y altitud.</li>
+<li><p>El primer paso será introducir la clave de registro para poder desbloquear todas las funcionalidades. En la misma página desde dónde hemos descargado el programa podemos encontrar los datos para registrarlo.</p>
+</li>
+<li><p>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <strong><em>&quot;Options&quot;</em></strong> y <strong><em>&quot;Ground Station Location…&quot;</em></strong>. En esta ventana introducimos nuestras coordenadas y altitud.</p>
+</li>
 </ol>
 <img src="/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
 
-<ol start="2">
-<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ellos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Recording Options&quot;</strong></em>. Aquí seleccionamos nuestro cable de audio virtual.</li>
+<ol start="3">
+<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ello vamos a <strong><em>&quot;Options&quot;</em></strong> y <strong><em>&quot;Recording Options&quot;</em></strong>. Aquí seleccionamos nuestro cable de audio virtual.</li>
 </ol>
 <img src="/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
 
-<ol start="3">
-<li>Marcamos la opción de resincronizado en <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Resync&quot;</strong></em>.</li>
+<ol start="4">
+<li>Marcamos la opción de resincronizado en <strong><em>&quot;Options&quot;</em></strong>, <strong><em>&quot;Resync&quot;</em></strong>.</li>
 </ol>
 <img src="/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
 
-<ol start="4">
-<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Auto Processing Options…&quot;</strong></em> y marcamos <em><strong>&quot;Create image(s)&quot;</strong></em>. Después hacemos clic en <em><strong>&quot;Image Settings…&quot;</strong></em> y elegimos las imágenes que queramos.</li>
+<ol start="5">
+<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <strong><em>&quot;Options&quot;</em></strong>, <strong><em>&quot;Auto Processing Options…&quot;</em></strong> y marcamos <strong><em>&quot;Create image(s)&quot;</em></strong>. Después hacemos clic en <strong><em>&quot;Image Settings…&quot;</em></strong> y elegimos las imágenes que queramos.</li>
 </ol>
 <img src="/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
 
-<ol start="5">
-<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <em><strong>&quot;File&quot;</strong></em> y hacemos clic en <em><strong>&quot;Update Keplers&quot;</strong></em>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
+<ol start="6">
+<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <strong><em>&quot;File&quot;</em></strong> y hacemos clic en <strong><em>&quot;Update Keplers&quot;</em></strong>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
 </ol>
 <img src="/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
 
-
+<ol start="7">
+<li>Es importante tener la hora del sistema lo mejor ajustada posible, ya que de ello dependerá en gran medida el ajuste de las capas que WXtoImg superpone a la imagen.</li>
+</ol>
 <h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
 <p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
@@ -394,6 +400,9 @@
   <div class="popular-posts-header">Artículos relacionados</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/recibir-satelites-meteorologicos-NOAA-linux/" rel="bookmark">Recibir satélites meteorológicos NOAA en Linux</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/recepcion-datos-HIRS-satelites-NOAA/" rel="bookmark">Recibir los datos del instrumental HIRS de los satélites NOAA</a></div>
     </li>
     <li class="popular-posts-item">
@@ -404,9 +413,6 @@
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/ajuste-frecuencia-doppler-orbitron/" rel="bookmark">Ajuste de frecuencia en recepción de satélites</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/generar-archivo-TLE/" rel="bookmark">Generar archivo TLE personalizado</a></div>
     </li>
   </ul>
 
@@ -471,6 +477,7 @@
               <a href="/tags/NOAA/" rel="tag"><i class="fa fa-tag"></i> NOAA</a>
               <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
               <a href="/tags/Meteorologia/" rel="tag"><i class="fa fa-tag"></i> Meteorología</a>
+              <a href="/tags/WXtoIMG/" rel="tag"><i class="fa fa-tag"></i> WXtoIMG</a>
           </div>
           
 

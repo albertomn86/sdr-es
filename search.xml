@@ -71,6 +71,141 @@
       </tags>
   </entry>
   <entry>
+    <title>Construcción de antena QFH para satélites meteorológicos</title>
+    <url>/construccion-antena-qfh-137/</url>
+    <content><![CDATA[<p>En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello construiremos nuestra antena para que resuene en 137,5 MHz.</p>
+<span id="more"></span>
+
+<p>Para la construcción de esta antena me he basado tanto en la <a href="https://twitter.com/ea3ibc/status/1061292310783295488">antena fabricada por EA3IBC</a>, como en <a href="https://www.ea5wa.com/antenas/antena-qfh">la antena de EA5WA</a> que incorpora la varilla roscada y que facilita enormemente tanto el montaje como el ajuste de la misma.<br>Las medidas orientativas se han obtenido de la web de <a href="http://jcoppens.com/">John Coppens ON6JC/LW3HAZ</a> para la construcción de una antena con una relación diámetro/altura de 0,4.</p>
+<h2 id="Materiales-necesarios"><a href="#Materiales-necesarios" class="headerlink" title="Materiales necesarios"></a>Materiales necesarios</h2><p>El listado de materiales que se muestra a continuación es el que he empleado para la construcción de esta antena. En mi caso he empleado  aluminio y acero. Esta combinación presenta el problema de la <a href="https://es.wikipedia.org/wiki/Corrosi%C3%B3n_galv%C3%A1nica">corrosión galvánica</a> que puede ser notable en zonas húmedas. Si vamos a instalar la antena a la intemperie en una zona húmeda, lo ideal es evitar la combinación de estos materiales si queremos que nuestra antena nos dure bastante tiempo. Podemos optar en ese caso por construirla entera de aluminio como la antena de EA3IBC, o bien usar cinta perforada de acero en lugar de la pletina de aluminio y hacerla entera de acero.<br>Indicar también que si usamos otros componentes metálicos muy distintos tanto en diámetro como en el tipo de material, el ajuste de la antena podría no corresponder con el obtenido siguiendo esta guía.</p>
+<table>
+<thead>
+<tr>
+<th align="right">Cantidad (uds.)</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1,5 m</td>
+<td>Tubo de PVC Ø 40 mm</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td>Tapón para tubo de PVC Ø 40 mm</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Varilla roscada acero Ø 5 mm</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Pletina aluminio 2 mm x 10 mm</td>
+</tr>
+<tr>
+<td align="right">32</td>
+<td>Tuerca Ø 5 mm</td>
+</tr>
+<tr>
+<td align="right">28</td>
+<td>Arandela Ø 5 mm</td>
+</tr>
+<tr>
+<td align="right">20 cm</td>
+<td>Cable de cobre</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Terminal faston redondo Ø 5 mm</td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td>Cable coaxial 50Ω</td>
+</tr>
+</tbody></table>
+<img src="/construccion-antena-qfh-137/materiales.jpg" class="" width="800" title="Materiales">
+
+<h2 id="Construccion"><a href="#Construccion" class="headerlink" title="Construcción"></a>Construcción</h2><p>Empezamos cortando el tubo de PVC a la medida que queramos. En mi caso voy a usar el propio tubo como parte del mástil de colocación de la antena, por lo que voy a usar una longitud total de 1,5 metros. Si lo preferimos, podemos dejar el tubo más largo o más corto según nos interese.</p>
+<p>Una vez cortado, vamos a hacer los agujeros por los que pasaremos las varillas posteriormente.<br>Para los agujeros superiores podemos ayudarnos de la plantilla que se genera en <a href="http://jcoppens.com/ant/qfh/calc.en.php">la web de John Coppens</a> en el apartado de <em>“Generate a drilling template”</em>, indicando el diámetro del tubo (40 mm) y el diámetro del soporte horizontal (5 mm).<br>Le damos primeramente a <em>Calculate</em> en el apartado superior de <em>“Input data”</em> y después a <em>Generate</em>. Esto nos crea un PDF que podemos imprimir y usar para marcar los agujeros y que queden centrados. Recordar que <strong>solo vamos a utilizar esta plantilla para marcar la distribución de los agujeros superiores en el perímetro del tubo y no debemos hacer caso a las medidas que indica</strong>.</p>
+<img src="/construccion-antena-qfh-137/plantilla.jpg" class="" title="Plantilla">
+
+<p>Las medidas (<strong>en milímetros</strong>) que usaremos son las siguientes (las dimensiones no están a escala):</p>
+<img src="/construccion-antena-qfh-137/medidas_tubo.png" class="" title="Medidas tubo">
+
+
+<p>El siguiente paso será cortar y taladrar las pletinas de aluminio. Cortaremos dos pletinas por cada longitud usando el siguiente esquema:</p>
+<img src="/construccion-antena-qfh-137/medidas_pletinas.png" class="" title="Medidas pletinas">
+
+<p>Por último, cortamos las varillas roscadas para obtener las siguientes piezas:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Medidas (en mm)</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">300</td>
+<td>Varilla inferior para <em>loop</em> largo.</td>
+</tr>
+<tr>
+<td align="center">290</td>
+<td>Varilla inferior para <em>loop</em> corto.</td>
+</tr>
+<tr>
+<td align="center">155</td>
+<td>(2 unidades) Varilla superior para <em>loop</em> largo.</td>
+</tr>
+<tr>
+<td align="center">150</td>
+<td>(2 unidades) Varilla superior para <em>loop</em> corto.</td>
+</tr>
+</tbody></table>
+<img src="/construccion-antena-qfh-137/piezas.jpg" class="" width="900" title="Piezas cortadas">
+
+<h3 id="Montaje"><a href="#Montaje" class="headerlink" title="Montaje"></a>Montaje</h3><p>Una vez tenemos las piezas preparadas, comenzamos el proceso de montaje empezando por las varillas roscadas.</p>
+<img src="/construccion-antena-qfh-137/antena_varillas.jpg" class="" width="400" title="Antena con varillas colocadas">
+
+<p>El siguiente paso es colocar las pletinas, pero primero tendremos que darles la forma. La manera más sencilla de hacerlo es primero hacerles el arco y posteriormente hacerles el giro. Es conveniente dejarlas bien dobladas antes de colocarlas para que no apliquen tensión a las varillas.</p>
+<img src="/construccion-antena-qfh-137/antena_pletinas.jpg" class="" width="400" title="Antena con pletinas colocadas">
+
+<p>A continuación vamos a colocar el cable coaxial. La longitud del cable será la que estimemos necesaria y el tipo de cable podemos usar cualquiera. Es recomendable usar un cable no muy grueso y de bajas pérdidas. En mi caso he usado un cable <em>Aircell-5</em>.</p>
+<p>Hacemos un agujero del mismo diámetro del cable en la parte superior del tubo por debajo de las varillas y pasamos el cable coaxial. Es recomendable que pasemos bastante cable para poder trabajar con comodidad.<br>Ahora necesitamos sacar dos conexiones desde el vivo del coaxial y otras dos desde la malla. Para ello usamos los terminales faston.</p>
+<img src="/construccion-antena-qfh-137/conectores.jpg" class="" width="600" title="Conectores">
+<img src="/construccion-antena-qfh-137/conexiones.jpg" class="" width="600" title="Conexiones">
+
+<p>Ahora insertamos los terminales en las varillas conforme el siguiente esquema:</p>
+<img src="/construccion-antena-qfh-137/conexiones_qfh.png" class="" width="400" title="Vista superior de la antena">
+
+<p>Siendo A y C los lados que conforman el <em>loop</em> corto, y los lados B y D los que forman el <em>loop</em> largo, conectaremos los terminales con el vivo del coaxial a las varillas A y B y los terminales con la malla a las varillas C y D.</p>
+<img src="/construccion-antena-qfh-137/conexiones_interior.jpg" class="" width="500" title="Conexiones">
+
+<p>Una vez conectados, ajustamos el cable que queda dentro del tubo con cuidado y le damos 4 vueltas para hacer una <a href="https://es.wikipedia.org/wiki/Bobina_de_choque">bobina choque</a>. Aquí podemos hacer otro agujero y pasar el resto del cable por dentro de la antena, o bien podemos dejarlo por fuera.</p>
+<img src="/construccion-antena-qfh-137/choque.jpg" class="" width="400" title="Choque cable exterior">
+<img src="/construccion-antena-qfh-137/choque2.jpg" class="" width="400" title="Choque cable interior">
+
+<p>Por último, colocamos el tapón al tubo y ponemos el conector que queramos al cable y ya tenemos lista nuestra antena a falta de ajustarla a la frecuencia exacta.</p>
+<h2 id="Ajuste-de-la-antena"><a href="#Ajuste-de-la-antena" class="headerlink" title="Ajuste de la antena"></a>Ajuste de la antena</h2><p>Para finalizar la construcción de nuestra antena, vamos a medirla usando un analizador de antenas <strong>NanoVNA</strong>. Si hemos seguido los pasos de esta guía y hemos usado las medidas indicadas, la antena debe resonar sobre los 135 MHz ya que las medidas de las varillas son un poco más largas para poder colocar las tuercas con facilidad. Para ajustar la antena a la frecuencia exacta debemos ajustar la distancia entre las pletinas de aluminio de la siguiente manera:</p>
+<ul>
+<li>Para el <em>loop</em> largo <strong>282 mm</strong>.</li>
+<li>Para el <em>loop</em> corto <strong>268 mm</strong>.</li>
+</ul>
+<p>Una vez ajustada, nos dará unos resultados similares a los siguientes:</p>
+<img src="/construccion-antena-qfh-137/nanovna.jpg" class="" width="600" title="NanoVNA">
+
+<h2 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalación"></a>Instalación</h2><p>Para un mejor funcionamiento colocaremos nuestra antena conforme el siguiente esquema:</p>
+<img src="/construccion-antena-qfh-137/orientacion.png" class="" width="300" title="Orientación de la antena">
+
+<p>Orientaremos los lados conectados a la malla (D y C) hacia el norte y los lados conectados al vivo (A y B) hacia el sur.</p>
+<img src="/construccion-antena-qfh-137/colocada.jpg" class="" width="500" title="Antena instalada">
+]]></content>
+      <tags>
+        <tag>Antenas</tag>
+        <tag>QFH</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Elección del dispositivo SDR</title>
     <url>/eleccion-sdr/</url>
     <content><![CDATA[<p>Existen actualmente en el mercado distintos tipos de dispositivos SDR con determinadas características y prestaciones, y por supuesto con distinto rango de precios. Desde los dispositivos de unos pocos euros, hasta los dispositivos de varios cientos de euros, todos nos pueden servir para recibir señales de radio.<br>La finalidad este artículo es orientarnos para escoger el dispositivo que más se ajuste a nuestras necesidades y casos de uso. Para ello se han seleccionado algunos de los dispositivos más conocidos y que habitualmente se recomiendan, y se ha elaborado una breve descripción de cada uno de ellos con algunas de sus características más reseñables.</p>
@@ -409,141 +544,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Construcción de antena QFH para satélites meteorológicos</title>
-    <url>/construccion-antena-qfh-137/</url>
-    <content><![CDATA[<p>En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello construiremos nuestra antena para que resuene en 137,5 MHz.</p>
-<span id="more"></span>
-
-<p>Para la construcción de esta antena me he basado tanto en la <a href="https://twitter.com/ea3ibc/status/1061292310783295488">antena fabricada por EA3IBC</a>, como en <a href="https://www.ea5wa.com/antenas/antena-qfh">la antena de EA5WA</a> que incorpora la varilla roscada y que facilita enormemente tanto el montaje como el ajuste de la misma.<br>Las medidas orientativas se han obtenido de la web de <a href="http://jcoppens.com/">John Coppens ON6JC/LW3HAZ</a> para la construcción de una antena con una relación diámetro/altura de 0,4.</p>
-<h2 id="Materiales-necesarios"><a href="#Materiales-necesarios" class="headerlink" title="Materiales necesarios"></a>Materiales necesarios</h2><p>El listado de materiales que se muestra a continuación es el que he empleado para la construcción de esta antena. En mi caso he empleado  aluminio y acero. Esta combinación presenta el problema de la <a href="https://es.wikipedia.org/wiki/Corrosi%C3%B3n_galv%C3%A1nica">corrosión galvánica</a> que puede ser notable en zonas húmedas. Si vamos a instalar la antena a la intemperie en una zona húmeda, lo ideal es evitar la combinación de estos materiales si queremos que nuestra antena nos dure bastante tiempo. Podemos optar en ese caso por construirla entera de aluminio como la antena de EA3IBC, o bien usar cinta perforada de acero en lugar de la pletina de aluminio y hacerla entera de acero.<br>Indicar también que si usamos otros componentes metálicos muy distintos tanto en diámetro como en el tipo de material, el ajuste de la antena podría no corresponder con el obtenido siguiendo esta guía.</p>
-<table>
-<thead>
-<tr>
-<th align="right">Cantidad (uds.)</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="right">1,5 m</td>
-<td>Tubo de PVC Ø 40 mm</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td>Tapón para tubo de PVC Ø 40 mm</td>
-</tr>
-<tr>
-<td align="right">2</td>
-<td>Varilla roscada acero Ø 5 mm</td>
-</tr>
-<tr>
-<td align="right">4</td>
-<td>Pletina aluminio 2 mm x 10 mm</td>
-</tr>
-<tr>
-<td align="right">32</td>
-<td>Tuerca Ø 5 mm</td>
-</tr>
-<tr>
-<td align="right">28</td>
-<td>Arandela Ø 5 mm</td>
-</tr>
-<tr>
-<td align="right">20 cm</td>
-<td>Cable de cobre</td>
-</tr>
-<tr>
-<td align="right">4</td>
-<td>Terminal faston redondo Ø 5 mm</td>
-</tr>
-<tr>
-<td align="right">-</td>
-<td>Cable coaxial 50Ω</td>
-</tr>
-</tbody></table>
-<img src="/construccion-antena-qfh-137/materiales.jpg" class="" width="800" title="Materiales">
-
-<h2 id="Construccion"><a href="#Construccion" class="headerlink" title="Construcción"></a>Construcción</h2><p>Empezamos cortando el tubo de PVC a la medida que queramos. En mi caso voy a usar el propio tubo como parte del mástil de colocación de la antena, por lo que voy a usar una longitud total de 1,5 metros. Si lo preferimos, podemos dejar el tubo más largo o más corto según nos interese.</p>
-<p>Una vez cortado, vamos a hacer los agujeros por los que pasaremos las varillas posteriormente.<br>Para los agujeros superiores podemos ayudarnos de la plantilla que se genera en <a href="http://jcoppens.com/ant/qfh/calc.en.php">la web de John Coppens</a> en el apartado de <em>“Generate a drilling template”</em>, indicando el diámetro del tubo (40 mm) y el diámetro del soporte horizontal (5 mm).<br>Le damos primeramente a <em>Calculate</em> en el apartado superior de <em>“Input data”</em> y después a <em>Generate</em>. Esto nos crea un PDF que podemos imprimir y usar para marcar los agujeros y que queden centrados. Recordar que <strong>solo vamos a utilizar esta plantilla para marcar la distribución de los agujeros superiores en el perímetro del tubo y no debemos hacer caso a las medidas que indica</strong>.</p>
-<img src="/construccion-antena-qfh-137/plantilla.jpg" class="" title="Plantilla">
-
-<p>Las medidas (<strong>en milímetros</strong>) que usaremos son las siguientes (las dimensiones no están a escala):</p>
-<img src="/construccion-antena-qfh-137/medidas_tubo.png" class="" title="Medidas tubo">
-
-
-<p>El siguiente paso será cortar y taladrar las pletinas de aluminio. Cortaremos dos pletinas por cada longitud usando el siguiente esquema:</p>
-<img src="/construccion-antena-qfh-137/medidas_pletinas.png" class="" title="Medidas pletinas">
-
-<p>Por último, cortamos las varillas roscadas para obtener las siguientes piezas:</p>
-<table>
-<thead>
-<tr>
-<th align="center">Medidas (en mm)</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">300</td>
-<td>Varilla inferior para <em>loop</em> largo.</td>
-</tr>
-<tr>
-<td align="center">290</td>
-<td>Varilla inferior para <em>loop</em> corto.</td>
-</tr>
-<tr>
-<td align="center">155</td>
-<td>(2 unidades) Varilla superior para <em>loop</em> largo.</td>
-</tr>
-<tr>
-<td align="center">150</td>
-<td>(2 unidades) Varilla superior para <em>loop</em> corto.</td>
-</tr>
-</tbody></table>
-<img src="/construccion-antena-qfh-137/piezas.jpg" class="" width="900" title="Piezas cortadas">
-
-<h3 id="Montaje"><a href="#Montaje" class="headerlink" title="Montaje"></a>Montaje</h3><p>Una vez tenemos las piezas preparadas, comenzamos el proceso de montaje empezando por las varillas roscadas.</p>
-<img src="/construccion-antena-qfh-137/antena_varillas.jpg" class="" width="400" title="Antena con varillas colocadas">
-
-<p>El siguiente paso es colocar las pletinas, pero primero tendremos que darles la forma. La manera más sencilla de hacerlo es primero hacerles el arco y posteriormente hacerles el giro. Es conveniente dejarlas bien dobladas antes de colocarlas para que no apliquen tensión a las varillas.</p>
-<img src="/construccion-antena-qfh-137/antena_pletinas.jpg" class="" width="400" title="Antena con pletinas colocadas">
-
-<p>A continuación vamos a colocar el cable coaxial. La longitud del cable será la que estimemos necesaria y el tipo de cable podemos usar cualquiera. Es recomendable usar un cable no muy grueso y de bajas pérdidas. En mi caso he usado un cable <em>Aircell-5</em>.</p>
-<p>Hacemos un agujero del mismo diámetro del cable en la parte superior del tubo por debajo de las varillas y pasamos el cable coaxial. Es recomendable que pasemos bastante cable para poder trabajar con comodidad.<br>Ahora necesitamos sacar dos conexiones desde el vivo del coaxial y otras dos desde la malla. Para ello usamos los terminales faston.</p>
-<img src="/construccion-antena-qfh-137/conectores.jpg" class="" width="600" title="Conectores">
-<img src="/construccion-antena-qfh-137/conexiones.jpg" class="" width="600" title="Conexiones">
-
-<p>Ahora insertamos los terminales en las varillas conforme el siguiente esquema:</p>
-<img src="/construccion-antena-qfh-137/conexiones_qfh.png" class="" width="400" title="Vista superior de la antena">
-
-<p>Siendo A y C los lados que conforman el <em>loop</em> corto, y los lados B y D los que forman el <em>loop</em> largo, conectaremos los terminales con el vivo del coaxial a las varillas A y B y los terminales con la malla a las varillas C y D.</p>
-<img src="/construccion-antena-qfh-137/conexiones_interior.jpg" class="" width="500" title="Conexiones">
-
-<p>Una vez conectados, ajustamos el cable que queda dentro del tubo con cuidado y le damos 4 vueltas para hacer una <a href="https://es.wikipedia.org/wiki/Bobina_de_choque">bobina choque</a>. Aquí podemos hacer otro agujero y pasar el resto del cable por dentro de la antena, o bien podemos dejarlo por fuera.</p>
-<img src="/construccion-antena-qfh-137/choque.jpg" class="" width="400" title="Choque cable exterior">
-<img src="/construccion-antena-qfh-137/choque2.jpg" class="" width="400" title="Choque cable interior">
-
-<p>Por último, colocamos el tapón al tubo y ponemos el conector que queramos al cable y ya tenemos lista nuestra antena a falta de ajustarla a la frecuencia exacta.</p>
-<h2 id="Ajuste-de-la-antena"><a href="#Ajuste-de-la-antena" class="headerlink" title="Ajuste de la antena"></a>Ajuste de la antena</h2><p>Para finalizar la construcción de nuestra antena, vamos a medirla usando un analizador de antenas <strong>NanoVNA</strong>. Si hemos seguido los pasos de esta guía y hemos usado las medidas indicadas, la antena debe resonar sobre los 135 MHz ya que las medidas de las varillas son un poco más largas para poder colocar las tuercas con facilidad. Para ajustar la antena a la frecuencia exacta debemos ajustar la distancia entre las pletinas de aluminio de la siguiente manera:</p>
-<ul>
-<li>Para el <em>loop</em> largo <strong>282 mm</strong>.</li>
-<li>Para el <em>loop</em> corto <strong>268 mm</strong>.</li>
-</ul>
-<p>Una vez ajustada, nos dará unos resultados similares a los siguientes:</p>
-<img src="/construccion-antena-qfh-137/nanovna.jpg" class="" width="600" title="NanoVNA">
-
-<h2 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalación"></a>Instalación</h2><p>Para un mejor funcionamiento colocaremos nuestra antena conforme el siguiente esquema:</p>
-<img src="/construccion-antena-qfh-137/orientacion.png" class="" width="300" title="Orientación de la antena">
-
-<p>Orientaremos los lados conectados a la malla (D y C) hacia el norte y los lados conectados al vivo (A y B) hacia el sur.</p>
-<img src="/construccion-antena-qfh-137/colocada.jpg" class="" width="500" title="Antena instalada">
-]]></content>
-      <tags>
-        <tag>Antenas</tag>
-        <tag>QFH</tag>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Generar archivo TLE personalizado</title>
     <url>/generar-archivo-TLE/</url>
     <content><![CDATA[<p>Si realizamos habitualmente el seguimiento de satélites, uno de los pasos más importantes es tener actualizados nuestros archivos de <a href="https://en.wikipedia.org/wiki/Two-line_element_set">TLE</a>. En este artículo veremos cómo generar un archivo TLE que contenga solo los satélites que queramos y que podemos actualizar con un clic.</p>
@@ -569,6 +569,35 @@
       <tags>
         <tag>Satélites</tag>
         <tag>Orbitron</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalación de SDRPlay RSP2 en Debian Testing</title>
+    <url>/instalacion-SDRPlay-RSP2-debian-testing/</url>
+    <content><![CDATA[<p>Esto son solo notas tomadas al vuelo mientras he instalado y probado la versión citada del driver/API de SDRPlay RSP2 en Debian Testing x64. Han sido realizadas en una máquina con el SO recién instalado y los paquetes <em>Soapy</em> mínimamente necesarios, aunque según el caso y la instalación pudieran ser necesarios otros más para cumplir dependencias.</p>
+<span id="more"></span>
+
+<p>Todos los paquetes Soapy para la mayoría de dispositivos SDR están incluidos en la distribución, a excepción de SDRPlay que hay que compilarlo según sus instrucciones. Previamente hay que instalar el paquete <strong>libsoapysdr-dev</strong>.<br>Si no se quiere, no es necesario instalar los módulos Soapy para el resto de dispositivos si no se van a usar.</p>
+<p>Primeramente, hay que descargar y ejecutar el driver/API (la más actual en este momento es la API 3.07) desde la web de sdrplay.com (Linux x86, distribución Other).<br>Se descarga un archivo <strong>.run</strong> al que hay que darle permisos con el comando <strong>chmod</strong> y se ejecuta. No es necesario hacerlo con <em>sudo</em> en un primer momento ya que tras la lectura y aprobación de la licencia, preguntará la contraseña si se da el caso.</p>
+<p>Tras la instalación, indica que para iniciar o parar el servicio de SDRPlay se hace con los respectivos comandos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start sdrplay</span><br><span class="line">sudo systemctl stop sdrplay</span><br></pre></td></tr></table></figure>
+
+<p>Es aconsejable aquí reiniciar el sistema para que dicho servicio arranque bien.</p>
+<p>Después, hay que compilar el soporte de SoapySDR para SDRPlay (SoapySDRPlay). Para ello es necesario, como se ha comentado al principio, instalar el paquete <strong>libsoapysdr-dev</strong>. Además necesitaremos el paquete <strong>cmake</strong>.<br>A continuación, nos descargamos el zip con el código fuente desde <a href="https://github.com/pothosware/SoapySDRPlay3/archive/refs/heads/master.zip">su repositorio en GitHub</a> (en mi caso he tenido problemas con “git clone” y similares ya que siempre pedía usuario y contraseña de GitHub y para esto no es necesario). Descomprimimos el paquete ZIP en un directorio y hacemos la siguiente secuencia de pasos:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
+
+<p>Comprobar si la compilación e instalación nos ha fallado o no, ya que pudiera ser necesaria la instalación de algún paquete adicional.</p>
+<p>Para comprobar que todo está bien, ejecutaremos los siguientes comandos:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SoapySDRUtil -info <span class="comment"># En los Available Factories nos debe aparecer, entre otros, SDRPlay.</span></span><br><span class="line">SoapySDRUtil --probe=<span class="string">&quot;driver=sdrplay&quot;</span> <span class="comment"># Para ver información más detallada del SDRPlay.</span></span><br></pre></td></tr></table></figure>
+
+<p>Por último, queda arrancar la aplicación SDR que pueda utilizar SoapySDR. Yo utilizo principalmente 2: CubicSDR y GQRX.<br>Para CubicSDR, observo últimamente que da problemas con el módulo para RFSpace al arrancar (yo no lo tengo, así que he desinstalado el paquete soapysdr0.7-module-rfspace). Si CubicSDR arranca bien, se deberá poder ver el dispositivo SDRPlay.</p>
+<p>Para GQRX, igual. Al arrancarlo debería encontrar el SDRPlay sin mayores problemas.</p>
+<p>Las aplicaciones de SDR que he probado son las que trae Debian Testing en sus repositorios que, a día de hoy son CubicSDR 0.2.5 y GQRX 2.14.4. También he probado el receptor DAB/DAB+ welle.io que viene en el repositorio.</p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>SDRPlay</tag>
+        <tag>Instalación</tag>
       </tags>
   </entry>
   <entry>
@@ -626,35 +655,6 @@
 ]]></content>
       <tags>
         <tag>HF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de SDRPlay RSP2 en Debian Testing</title>
-    <url>/instalacion-SDRPlay-RSP2-debian-testing/</url>
-    <content><![CDATA[<p>Esto son solo notas tomadas al vuelo mientras he instalado y probado la versión citada del driver/API de SDRPlay RSP2 en Debian Testing x64. Han sido realizadas en una máquina con el SO recién instalado y los paquetes <em>Soapy</em> mínimamente necesarios, aunque según el caso y la instalación pudieran ser necesarios otros más para cumplir dependencias.</p>
-<span id="more"></span>
-
-<p>Todos los paquetes Soapy para la mayoría de dispositivos SDR están incluidos en la distribución, a excepción de SDRPlay que hay que compilarlo según sus instrucciones. Previamente hay que instalar el paquete <strong>libsoapysdr-dev</strong>.<br>Si no se quiere, no es necesario instalar los módulos Soapy para el resto de dispositivos si no se van a usar.</p>
-<p>Primeramente, hay que descargar y ejecutar el driver/API (la más actual en este momento es la API 3.07) desde la web de sdrplay.com (Linux x86, distribución Other).<br>Se descarga un archivo <strong>.run</strong> al que hay que darle permisos con el comando <strong>chmod</strong> y se ejecuta. No es necesario hacerlo con <em>sudo</em> en un primer momento ya que tras la lectura y aprobación de la licencia, preguntará la contraseña si se da el caso.</p>
-<p>Tras la instalación, indica que para iniciar o parar el servicio de SDRPlay se hace con los respectivos comandos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start sdrplay</span><br><span class="line">sudo systemctl stop sdrplay</span><br></pre></td></tr></table></figure>
-
-<p>Es aconsejable aquí reiniciar el sistema para que dicho servicio arranque bien.</p>
-<p>Después, hay que compilar el soporte de SoapySDR para SDRPlay (SoapySDRPlay). Para ello es necesario, como se ha comentado al principio, instalar el paquete <strong>libsoapysdr-dev</strong>. Además necesitaremos el paquete <strong>cmake</strong>.<br>A continuación, nos descargamos el zip con el código fuente desde <a href="https://github.com/pothosware/SoapySDRPlay3/archive/refs/heads/master.zip">su repositorio en GitHub</a> (en mi caso he tenido problemas con “git clone” y similares ya que siempre pedía usuario y contraseña de GitHub y para esto no es necesario). Descomprimimos el paquete ZIP en un directorio y hacemos la siguiente secuencia de pasos:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
-
-<p>Comprobar si la compilación e instalación nos ha fallado o no, ya que pudiera ser necesaria la instalación de algún paquete adicional.</p>
-<p>Para comprobar que todo está bien, ejecutaremos los siguientes comandos:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SoapySDRUtil -info <span class="comment"># En los Available Factories nos debe aparecer, entre otros, SDRPlay.</span></span><br><span class="line">SoapySDRUtil --probe=<span class="string">&quot;driver=sdrplay&quot;</span> <span class="comment"># Para ver información más detallada del SDRPlay.</span></span><br></pre></td></tr></table></figure>
-
-<p>Por último, queda arrancar la aplicación SDR que pueda utilizar SoapySDR. Yo utilizo principalmente 2: CubicSDR y GQRX.<br>Para CubicSDR, observo últimamente que da problemas con el módulo para RFSpace al arrancar (yo no lo tengo, así que he desinstalado el paquete soapysdr0.7-module-rfspace). Si CubicSDR arranca bien, se deberá poder ver el dispositivo SDRPlay.</p>
-<p>Para GQRX, igual. Al arrancarlo debería encontrar el SDRPlay sin mayores problemas.</p>
-<p>Las aplicaciones de SDR que he probado son las que trae Debian Testing en sus repositorios que, a día de hoy son CubicSDR 0.2.5 y GQRX 2.14.4. También he probado el receptor DAB/DAB+ welle.io que viene en el repositorio.</p>
-]]></content>
-      <tags>
-        <tag>Linux</tag>
-        <tag>SDRPlay</tag>
-        <tag>Instalación</tag>
       </tags>
   </entry>
   <entry>
@@ -1256,6 +1256,51 @@
       </tags>
   </entry>
   <entry>
+    <title>Instalación de cable de audio virtual</title>
+    <url>/instalacion-virtual-cable-audio/</url>
+    <content><![CDATA[<p>Vamos a ver cómo instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.</p>
+<span id="more"></span>
+
+<h2 id="Instalacion-de-VB-Cable-en-Windows"><a href="#Instalacion-de-VB-Cable-en-Windows" class="headerlink" title="Instalación de VB-Cable en Windows"></a>Instalación de VB-Cable en Windows</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
+<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg" class="" width="900" title="Descarga de VB-Cable">
+
+<p>Hacemos clic en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
+<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
+<img src="/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
+
+<p>Hacemos clic en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
+<h3 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h3><p>Abrimos ahora SDR# y abrimos la configuración de audio.</p>
+<img src="/instalacion-virtual-cable-audio/sdrsharp-audio-menu.jpg" class="" title="SDRSharp audio">
+
+<p>Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer clic en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
+<img src="/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" title="SDRSharp output">
+
+<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+<h2 id="Instalacion-de-VB-Cable-en-macOS"><a href="#Instalacion-de-VB-Cable-en-macOS" class="headerlink" title="Instalación de VB-Cable en macOS"></a>Instalación de VB-Cable en macOS</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
+<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
+<img src="/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg" class="" width="900" title="Descarga de VB-Cable">
+
+<p>Hacemos clic en <strong><em>Download</em></strong> y una vez descargado ejecutamos el instalador.</p>
+<img src="/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg" class="" title="Instalación de VB-Cable">
+
+<p>Seguimos los pasos del asistente para instalar VB-Audio.</p>
+<img src="/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg" class="" title="Instalación de VB-Cable">
+
+<h3 id="Configuracion-de-CubicSDR"><a href="#Configuracion-de-CubicSDR" class="headerlink" title="Configuración de CubicSDR"></a>Configuración de CubicSDR</h3><p>Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos clic en <strong>Audio Out</strong> y seleccionamos <em><strong>VB Audio: VB-Cable</strong></em></p>
+<img src="/instalacion-virtual-cable-audio/cubicsdr-audio.jpg" class="" width="900" title="CubicSDR audio output">
+
+<p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
+]]></content>
+      <tags>
+        <tag>Instalación</tag>
+        <tag>macOS</tag>
+        <tag>Windows</tag>
+        <tag>Virtual Audio Cable</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Instalación de SPY Server en Raspberry Pi</title>
     <url>/instalacion-spyserver-raspberrypi/</url>
     <content><![CDATA[<p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos cómo instalar SPY Server en una Raspberry Pi.</p>
@@ -1316,51 +1361,6 @@
         <tag>Raspberry Pi</tag>
         <tag>SDRSharp</tag>
         <tag>SPY Server</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalación de cable de audio virtual</title>
-    <url>/instalacion-virtual-cable-audio/</url>
-    <content><![CDATA[<p>Vamos a ver cómo instalar un cable virtual para poder pasar la señal de audio desde un programa que demodule señales a cualquier programa externo. Este cable virtual es simplemente un programa que conecta la salida de audio de un programa con la entrada de otro mediante software.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion-de-VB-Cable-en-Windows"><a href="#Instalacion-de-VB-Cable-en-Windows" class="headerlink" title="Instalación de VB-Cable en Windows"></a>Instalación de VB-Cable en Windows</h2><p>Existen distintos programas que realizan esta operación, pero en este tutorial usaremos la alternativa gratuita (Donationware) <strong>VB-Cable</strong>.</p>
-<p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/instalacion-virtual-cable-audio/virtual-cable-descarga-windows.jpg" class="" width="900" title="Descarga de VB-Cable">
-
-<p>Hacemos clic en <strong><em>Download</em></strong> y una vez descargado extraemos el contenido del archivo ZIP.</p>
-<p>Buscamos ahora el ejecutable <strong>VBCABLE_Setup_x64.exe</strong> o <strong>VBCABLE_Setup.exe</strong>, dependiendo de la arquitectura de nuestro PC, y lo ejecutamos como Administrador.</p>
-<img src="/instalacion-virtual-cable-audio/virtual-cable-instalacion.jpg" class="" title="Instalando VB-Cable">
-
-<p>Hacemos clic en <strong>Install Driver</strong> y esperamos a que se complete la instalación. Es posible que nos pida confirmar la instalación de los drivers para poder continuar.<br>Si todo ha ido bien, nos aparecerá un mensaje indicando que se han instalado los drivers correctamente y que debemos reiniciar. Así que reiniciamos nuestro PC y ya tendremos instalado el cable virtual.</p>
-<h3 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h3><p>Abrimos ahora SDR# y abrimos la configuración de audio.</p>
-<img src="/instalacion-virtual-cable-audio/sdrsharp-audio-menu.jpg" class="" title="SDRSharp audio">
-
-<p>Para indicarle a SDR# que saque el audio por el cable virtual, debemos hacer clic en <strong>Output</strong> y seleccionar <strong>[MME] CABLE Input …</strong>.</p>
-<img src="/instalacion-virtual-cable-audio/sdrsharp-audio.jpg" class="" title="SDRSharp output">
-
-<p>Ahora cuando iniciemos SDR# el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
-<h2 id="Instalacion-de-VB-Cable-en-macOS"><a href="#Instalacion-de-VB-Cable-en-macOS" class="headerlink" title="Instalación de VB-Cable en macOS"></a>Instalación de VB-Cable en macOS</h2><p>Descargamos el instalador desde la web de VB-Audio desde el siguiente enlace:</p>
-<p><a href="https://www.vb-audio.com/Cable/"><center>https://www.vb-audio.com/Cable/</center></a></p>
-<img src="/instalacion-virtual-cable-audio/virtual-cable-descarga-macos.jpg" class="" width="900" title="Descarga de VB-Cable">
-
-<p>Hacemos clic en <strong><em>Download</em></strong> y una vez descargado ejecutamos el instalador.</p>
-<img src="/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos1.jpg" class="" title="Instalación de VB-Cable">
-
-<p>Seguimos los pasos del asistente para instalar VB-Audio.</p>
-<img src="/instalacion-virtual-cable-audio/virtual-cable-instalacion-macos2.jpg" class="" title="Instalación de VB-Cable">
-
-<h3 id="Configuracion-de-CubicSDR"><a href="#Configuracion-de-CubicSDR" class="headerlink" title="Configuración de CubicSDR"></a>Configuración de CubicSDR</h3><p>Debemos indicarle a CubicSDR que nos saque el audio utilizando el cable de audio virtual. Para ello hacemos clic en <strong>Audio Out</strong> y seleccionamos <em><strong>VB Audio: VB-Cable</strong></em></p>
-<img src="/instalacion-virtual-cable-audio/cubicsdr-audio.jpg" class="" width="900" title="CubicSDR audio output">
-
-<p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
-]]></content>
-      <tags>
-        <tag>Instalación</tag>
-        <tag>macOS</tag>
-        <tag>Windows</tag>
-        <tag>Virtual Audio Cable</tag>
       </tags>
   </entry>
   <entry>
@@ -1548,73 +1548,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recibir los datos del instrumental HIRS de los satélites NOAA</title>
-    <url>/recepcion-datos-HIRS-satelites-NOAA/</url>
-    <content><![CDATA[<p>Como vimos en el artículo <a href="/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
-<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
-<span id="more"></span>
-
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
-<table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>Frecuencia</th>
-<th>Estado</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>NOAA 15</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
-</tr>
-<tr>
-<td>NOAA 18</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
-</tr>
-<tr>
-<td>NOAA 19</td>
-<td>137.770 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
-<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
-<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
-<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
-<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
-<img src="/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
-
-
-<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
-<p>Una vez descargado, extraemos el contenido del archivo.</p>
-<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
-<img src="/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
-
-<p>Para demodular el archivo basta con hacer clic encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
-<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre <strong><em>minorFrames_xxxx.txt</em></strong>.</p>
-<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
-<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
-<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
-<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
-<p>Ahora le pasamos el archivo <strong><em>minorFrames_xxxx.txt</em></strong> como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar). Si nos da un error, tenemos que abrir una terminal y ejecutarlo pasándole el archivo con la opción <strong>-i</strong>.</p>
-<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio <em>output/minorFrames_xxxx</em>.</p>
-<img src="/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
-
-<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
-<img src="/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
-        <tag>Meteorología</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción del satélite FalconSAT-3</title>
     <url>/recepcion-falconsat-3/</url>
     <content><![CDATA[<p>El satélite FalconSAT-3 fue construido entre 2005 y 2006 por cadetes de la academia de la fuerza aérea de Estados Unidos. Desde que fue lanzado en 2007, el satélite ha llevado a cabo dos fases operadas por la academia de la fuerza aérea estadounidense y una tercera fase desde 2017 en la que se abrió su uso para el servicio de radioaficionados. El satélite funciona actualmente como repetidor en modo PACSAT.<br>PACSAT es un término genérico usado para describir un servicio digital para radioaficionados de almacenamiento y distribución por satélite. Este sistema, que utiliza el protocolo AX.25 para los paquetes de datos, permite reenviar mensajes de correo electrónico, telemetría, boletines informativos, etc.<br>En este artículo veremos cómo recibir estos mensajes con nuestro SDR.</p>
@@ -1690,6 +1623,139 @@
       <tags>
         <tag>Satélites</tag>
         <tag>PACSAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir los datos del instrumental HIRS de los satélites NOAA</title>
+    <url>/recepcion-datos-HIRS-satelites-NOAA/</url>
+    <content><![CDATA[<p>Como vimos en el artículo <a href="/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
+<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
+<span id="more"></span>
+
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>Frecuencia</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NOAA 15</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 18</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 19</td>
+<td>137.770 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
+<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
+<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
+<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
+<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
+<img src="/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
+
+
+<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
+<p>Una vez descargado, extraemos el contenido del archivo.</p>
+<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
+<img src="/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
+
+<p>Para demodular el archivo basta con hacer clic encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
+<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre <strong><em>minorFrames_xxxx.txt</em></strong>.</p>
+<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
+<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
+<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
+<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
+<p>Ahora le pasamos el archivo <strong><em>minorFrames_xxxx.txt</em></strong> como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar). Si nos da un error, tenemos que abrir una terminal y ejecutarlo pasándole el archivo con la opción <strong>-i</strong>.</p>
+<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio <em>output/minorFrames_xxxx</em>.</p>
+<img src="/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
+
+<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
+<img src="/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
+        <tag>Meteorología</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción del satélite FUNcube-1</title>
+    <url>/recepcion-funcube1/</url>
+    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
+<span id="more"></span>
+
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>FUNcube-1 (AO-73)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>AMSAT-UK</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>39444</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2013-066AE</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (0,98 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>21 de Noviembre de 2013</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>145,935 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
+
+
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
+
+<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
+
+<p><em>Mensajes:</em></p>
+<img src="/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Cubesat</tag>
       </tags>
   </entry>
   <entry>
@@ -1795,65 +1861,74 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción del satélite FUNcube-1</title>
-    <url>/recepcion-funcube1/</url>
-    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
+    <title>Recepción del satélite JY1-SAT</title>
+    <url>/recepcion-jy1sat/</url>
+    <content><![CDATA[<p>El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan’s Crown Prince Foundation.<br>JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-6. Además de las funciones habituales de FUNcube, el satélite envía imágenes en formato SSDV.<br>En este artículo veremos como recibir la telemetría y las imágenes.</p>
 <span id="more"></span>
 
 <h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
 <thead>
 <tr>
 <th>Satélite</th>
-<th>FUNcube-1 (AO-73)</th>
+<th>JY1-SAT (JO-97)</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><strong>Operador</strong></td>
-<td>AMSAT-UK</td>
+<td>Crown Prince Foundation</td>
 </tr>
 <tr>
 <td><strong>NORAD ID</strong></td>
-<td>39444</td>
+<td>43803</td>
 </tr>
 <tr>
 <td><strong>COSPAR ID</strong></td>
-<td>2013-066AE</td>
+<td>2018-099AX</td>
 </tr>
 <tr>
 <td><strong>Tamaño</strong></td>
-<td>1U CubeSat (0,98 Kg)</td>
+<td>1U CubeSat (1.11 Kg)</td>
 </tr>
 <tr>
 <td><strong>Lanzamiento</strong></td>
-<td>21 de Noviembre de 2013</td>
+<td>3 de Diciembre de 2018</td>
 </tr>
 <tr>
 <td><strong>Señal</strong></td>
-<td>145,935 MHz (1200 bps BPSK)</td>
+<td>145,840 MHz (1200 bps BPSK)</td>
 </tr>
 <tr>
 <td><strong>Web</strong></td>
-<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
+<td><a href="https://www.cpf.jo/en/our-initiatives/masar">https://www.cpf.jo/en/our-initiatives/masar</a></td>
 </tr>
 </tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>JY1-SAT envía los datos de telemetría y las imágenes en la frecuencia <strong>145.840 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145840000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/recepcion-jy1sat/sdrsharp.png" class="" title="SDRSharp JY1-SAT">
 
 
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="/recepcion-funcube1/">FUNcube-1</a>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://download.funcube.org.uk/JY1Sat_Dashboard_v1189.msi"><center>JY1Sat Dashboard v1189</center></a></p>
 <p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
 <p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
+<img src="/recepcion-jy1sat/config.png" class="" title="JY1-SAT Dashboard Configuración">
 
 <p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
 <p><em>Telemetría:</em></p>
-<img src="/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
+<img src="/recepcion-jy1sat/telem.png" class="" title="JY1-SAT Dashboard Telemetría">
 
-<p><em>Mensajes:</em></p>
-<img src="/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
+<p><em>Imágenes:</em></p>
+<img src="/recepcion-jy1sat/images.png" class="" title="JY1-SAT Dashboard Mensajes">
+
+
+<p>Las imágenes necesitan algunos pases para recibirlas completamente.</p>
+<img src="/recepcion-jy1sat/JY1SatAudioId7.jpg" class="" title="JY1SatAudioId7">
+</br>
+<img src="/recepcion-jy1sat/JY1SatAudioId8.jpg" class="" title="JY1SatAudioId8">
+</br>
+<img src="/recepcion-jy1sat/JY1SatAudioId9.jpg" class="" title="JY1SatAudioId9">
+</br>
 ]]></content>
       <tags>
         <tag>Satélites</tag>
@@ -2016,35 +2091,40 @@
 <td>137,100 MHz</td>
 </tr>
 </tbody></table>
-<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la version beta 2.11.2):</p>
+<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la versión beta 2.11.2):</p>
 <p><a href="https://wxtoimgrestored.xyz/downloads/"><center>Descargar WXtoImg</center></a></p>
 <p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
 <ol>
-<li>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Ground Station Location…&quot;</strong></em>. En esta ventana introducimos nuestras coordenadas y altitud.</li>
+<li><p>El primer paso será introducir la clave de registro para poder desbloquear todas las funcionalidades. En la misma página desde dónde hemos descargado el programa podemos encontrar los datos para registrarlo.</p>
+</li>
+<li><p>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <strong><em>&quot;Options&quot;</em></strong> y <strong><em>&quot;Ground Station Location…&quot;</em></strong>. En esta ventana introducimos nuestras coordenadas y altitud.</p>
+</li>
 </ol>
 <img src="/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
 
-<ol start="2">
-<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ellos vamos a <em><strong>&quot;Options&quot;</strong></em> y <em><strong>&quot;Recording Options&quot;</strong></em>. Aquí seleccionamos nuestro cable de audio virtual.</li>
+<ol start="3">
+<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ello vamos a <strong><em>&quot;Options&quot;</em></strong> y <strong><em>&quot;Recording Options&quot;</em></strong>. Aquí seleccionamos nuestro cable de audio virtual.</li>
 </ol>
 <img src="/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
 
-<ol start="3">
-<li>Marcamos la opción de resincronizado en <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Resync&quot;</strong></em>.</li>
+<ol start="4">
+<li>Marcamos la opción de resincronizado en <strong><em>&quot;Options&quot;</em></strong>, <strong><em>&quot;Resync&quot;</em></strong>.</li>
 </ol>
 <img src="/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
 
-<ol start="4">
-<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <em><strong>&quot;Options&quot;</strong></em>, <em><strong>&quot;Auto Processing Options…&quot;</strong></em> y marcamos <em><strong>&quot;Create image(s)&quot;</strong></em>. Después hacemos clic en <em><strong>&quot;Image Settings…&quot;</strong></em> y elegimos las imágenes que queramos.</li>
+<ol start="5">
+<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <strong><em>&quot;Options&quot;</em></strong>, <strong><em>&quot;Auto Processing Options…&quot;</em></strong> y marcamos <strong><em>&quot;Create image(s)&quot;</em></strong>. Después hacemos clic en <strong><em>&quot;Image Settings…&quot;</em></strong> y elegimos las imágenes que queramos.</li>
 </ol>
 <img src="/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
 
-<ol start="5">
-<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <em><strong>&quot;File&quot;</strong></em> y hacemos clic en <em><strong>&quot;Update Keplers&quot;</strong></em>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
+<ol start="6">
+<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <strong><em>&quot;File&quot;</em></strong> y hacemos clic en <strong><em>&quot;Update Keplers&quot;</em></strong>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
 </ol>
 <img src="/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
 
-
+<ol start="7">
+<li>Es importante tener la hora del sistema lo mejor ajustada posible, ya que de ello dependerá en gran medida el ajuste de las capas que WXtoImg superpone a la imagen.</li>
+</ol>
 <h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
 <p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
@@ -2063,81 +2143,7 @@
         <tag>NOAA</tag>
         <tag>Windows</tag>
         <tag>Meteorología</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción del satélite JY1-SAT</title>
-    <url>/recepcion-jy1sat/</url>
-    <content><![CDATA[<p>El satélite JY1-SAT es un CubeSat construido por estudiantes de varias universidades de Jordania y financiado por la Jordan’s Crown Prince Foundation.<br>JY1-SAT se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-6. Además de las funciones habituales de FUNcube, el satélite envía imágenes en formato SSDV.<br>En este artículo veremos como recibir la telemetría y las imágenes.</p>
-<span id="more"></span>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>JY1-SAT (JO-97)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>Crown Prince Foundation</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>43803</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2018-099AX</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (1.11 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>3 de Diciembre de 2018</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145,840 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://www.cpf.jo/en/our-initiatives/masar">https://www.cpf.jo/en/our-initiatives/masar</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>JY1-SAT envía los datos de telemetría y las imágenes en la frecuencia <strong>145.840 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145840000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/recepcion-jy1sat/sdrsharp.png" class="" title="SDRSharp JY1-SAT">
-
-
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="/recepcion-funcube1/">FUNcube-1</a>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://download.funcube.org.uk/JY1Sat_Dashboard_v1189.msi"><center>JY1Sat Dashboard v1189</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/recepcion-jy1sat/config.png" class="" title="JY1-SAT Dashboard Configuración">
-
-<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/recepcion-jy1sat/telem.png" class="" title="JY1-SAT Dashboard Telemetría">
-
-<p><em>Imágenes:</em></p>
-<img src="/recepcion-jy1sat/images.png" class="" title="JY1-SAT Dashboard Mensajes">
-
-
-<p>Las imágenes necesitan algunos pases para recibirlas completamente.</p>
-<img src="/recepcion-jy1sat/JY1SatAudioId7.jpg" class="" title="JY1SatAudioId7">
-</br>
-<img src="/recepcion-jy1sat/JY1SatAudioId8.jpg" class="" title="JY1SatAudioId8">
-</br>
-<img src="/recepcion-jy1sat/JY1SatAudioId9.jpg" class="" title="JY1SatAudioId9">
-</br>
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Cubesat</tag>
+        <tag>WXtoIMG</tag>
       </tags>
   </entry>
   <entry>
@@ -2725,6 +2731,127 @@
         <tag>Cubesat</tag>
         <tag>LoRa</tag>
         <tag>tinyGS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir satélites meteorológicos NOAA en Linux</title>
+    <url>/recibir-satelites-meteorologicos-NOAA-linux/</url>
+    <content><![CDATA[<p>En el artículo <a href="/recepcion-satelites-meteorologicos-NOAA/">“Recibir satélites meteorológicos NOAA”</a> vimos cómo recibir imágenes en formato APT desde los satélites meteorológicos NOAA. El proceso para la recepción y decodificación se realizó íntegramente en Windows, y en este artículo veremos como realizar el mismo proceso usando Linux (Ubuntu) como sistema operativo.</p>
+<span id="more"></span>
+
+<img src="/recibir-satelites-meteorologicos-NOAA-linux/noaa18.jpg" class="" width="500" title="NOAA 18">
+
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Actualmente podemos recibir imágenes APT desde los siguientes satélites meteorológicos NOAA.</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>NOAA 15</th>
+<th>NOAA 18</th>
+<th>NOAA 19</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>NORAD ID</strong></td>
+<td>25338</td>
+<td>28654</td>
+<td>33591</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>1998-030A</td>
+<td>2005-018A</td>
+<td>2009-005A</td>
+</tr>
+<tr>
+<td><strong>Masa de lanzamiento</strong></td>
+<td>1.457 Kg</td>
+<td>1.457 Kg</td>
+<td>1.440 Kg</td>
+</tr>
+<tr>
+<td><strong>Fecha de lanzamiento</strong></td>
+<td>13 de Mayo de 1998</td>
+<td>20 de Mayo de 2005</td>
+<td>6 de Febrero de 2009</td>
+</tr>
+<tr>
+<td><strong>Señal APT</strong></td>
+<td>137,620 MHz</td>
+<td>137,9125 MHz</td>
+<td>137,100 MHz</td>
+</tr>
+</tbody></table>
+<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Disponemos de diferentes formas para decodificar las imágenes APT de estos satélites. En este artículo vamos a utilizar <strong>WXtoImg</strong> al que le pasaremos el audio para generar la imagen en tiempo real. Podemos descargarlo desde el siguiente enlace (descargar la versión beta 2.11.2 para la distribución Linux que usemos):</p>
+<p><a href="https://wxtoimgrestored.xyz/downloads/"><center>Descargar WXtoImg</center></a></p>
+<p>En esta guía estamos usando la última versión de Ubuntu para escritorio, así que descargaremos el paquete <em>.deb</em> correspondiente.</p>
+<p>La instalación la haremos en modo gráfico, simplemente abriendo el archivo descargado con el gestor de paquetes de Ubuntu y haciendo clic en ‘Instalar’.</p>
+<img src="/recibir-satelites-meteorologicos-NOAA-linux/wxtoimg_instalar.jpg" class="" width="900" title="Instalación de WXtoIMG">
+
+<p>Cuando finalice la instalación, iniciamos el programa ejecutando el siguiente comando desde una terminal:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xwxtoimg</span><br></pre></td></tr></table></figure>
+
+<p>Una vez se inicie el programa, seguiremos los siguientes pasos para configurar los ajustes básicos necesarios:</p>
+<ol>
+<li><p>El primer paso será introducir la clave de registro para poder desbloquear todas las funcionalidades. En la misma página desde dónde hemos descargado el programa podemos encontrar los datos para registrarlo.</p>
+</li>
+<li><p>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <strong><em>&quot;Options&quot;</em></strong> y <strong><em>&quot;Ground Station Location…&quot;</em></strong>. En esta ventana introducimos nuestras coordenadas y altitud.</p>
+</li>
+</ol>
+<img src="/recibir-satelites-meteorologicos-NOAA-linux/wxtoimg_location.jpg" class="" width="500" title="WXtoIMG - Ajustes GS">
+
+<ol start="3">
+<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal de audio mediante un cable de audio virtual (veremos más adelante cómo hacerlo). Para ello vamos a <strong><em>&quot;Options&quot;</em></strong> y <strong><em>&quot;Recording Options&quot;</em></strong>. Aquí seleccionamos “Default audio” en <em>soundcard</em>.</li>
+</ol>
+<img src="/recibir-satelites-meteorologicos-NOAA-linux/wxtoimg_recording_options.jpg" class="" width="600" title="WXtoIMG - Recording options">
+
+<ol start="4">
+<li><p>Marcamos la opción de resincronizado en <strong><em>&quot;Options&quot;</em></strong>, <strong><em>&quot;Resync&quot;</em></strong>.</p>
+</li>
+<li><p>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <strong><em>&quot;Options&quot;</em></strong>, <strong><em>&quot;Auto Processing Options…&quot;</em></strong> y marcamos <strong><em>&quot;Create image(s)&quot;</em></strong>. Después hacemos clic en <strong><em>&quot;Image Settings…&quot;</em></strong> y elegimos las imágenes que queramos.</p>
+</li>
+<li><p>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <strong><em>&quot;File&quot;</em></strong> y hacemos clic en <strong><em>&quot;Update Keplers&quot;</em></strong>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</p>
+</li>
+<li><p>Es importante tener la hora del sistema lo mejor ajustada posible, ya que de ello dependerá en gran medida el ajuste de las capas que WXtoImg superpone a la imagen.</p>
+</li>
+</ol>
+<h2 id="Cable-de-audio-virtual"><a href="#Cable-de-audio-virtual" class="headerlink" title="Cable de audio virtual"></a>Cable de audio virtual</h2><p>Necesitamos crear un cable de audio virtual para poder pasar el audio desde el programa de SDR a WXtoImg para que genere la imagen.<br>Existen diferentes formas de hacer este procedimiento. En Linux tenemos una forma nativa de generar un cable virtual activando el <em>loopback</em> del kernel ALSA. Para hacerlo simplemente ejecutamos el siguiente comando en una terminal:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo modprobe snd-aloop</span><br></pre></td></tr></table></figure>
+
+<p>Esto nos redirige la salida de audio general del sistema a una entrada de audio. Podemos verificar este cambio si vamos los ajustes de audio de Ubuntu.<br>Este cambio no es permanente y se perderá la próxima vez que iniciemos el equipo. Para hacerlo fijo debemos añadir un cambio en el sistema para que cargue nuevamente este módulo al iniciar. Para ello ejecutamos el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo echo &#39;snd-aloop&#39; &gt;&gt; &#x2F;etc&#x2F;modules-load.d&#x2F;modules.conf</span><br></pre></td></tr></table></figure>
+
+<p>Por último, debemos asegurarnos que el <em>loopback</em> esté activado en el servicio de ALSA. Para ello ejecutamos el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alsamixer</span><br></pre></td></tr></table></figure>
+
+<p>Ahora buscamos el <em>loopback</em> en los dispositivos de audio y nos aseguramos de que está activado.</p>
+<p>Para finalizar, nos aseguramos que tenemos disponible el control de volumen de PulseAudio. Podemos comprobarlo ejecutándolo desde la terminal mediante el siguiente comando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pavucontrol</span><br></pre></td></tr></table></figure>
+
+<p>Si no lo tenemos instalado, podemos hacerlo con:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install pavucontrol</span><br></pre></td></tr></table></figure>
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal del satélite podemos utilizar cualquier programa SDR que funcione en Linux. En este ejemplo vamos a utilizar <strong>SDR++</strong>, el cual ya vimos como instalar en el artículo <a href="/instalacion-sdrpp/">“Instalar SDR++”</a>.</p>
+<p>Para el ajuste de frecuencia se ha utilizado <strong>Gpredict</strong>, que también vimos como instalar y configurar en el artículo <a href="/seguimiento-satelites-gpredict/">“Seguimiento de satélites con Gpredict”</a>.</p>
+<p>El primer paso será iniciar SDR++ y realizar los ajustes necesarios para la recepción. <strong>Usaremos NFM y un ancho de banda de 36 kHz.</strong></p>
+<img src="/recibir-satelites-meteorologicos-NOAA-linux/sdrpp.jpg" class="" width="900" title="SDR++">
+
+<p>Para hacerle llegar el audio a WXtoImg debemos marcar como salida por defecto la salida de audio que vemos activa en el control de volumen de PulseAudio. Para ver cual es la que hay activa debemos iniciar la recepción en SDR++ para ver la actividad.</p>
+<img src="/recibir-satelites-meteorologicos-NOAA-linux/volumen_entrada.jpg" class="" width="700" title="Volumen entrada">
+
+<p>Por último, iniciamos WXtoImg y si todo está correctamente configurado, veremos que comienza a decodificar la imagen cuando empieza a recibirse la señal del satélite en SDR++.</p>
+<img src="/recibir-satelites-meteorologicos-NOAA-linux/wxtoimg_recibiendo.jpg" class="" width="900" title="WXtoImg - Recibiendo imagen APT">
+
+<p>Una vez termine el pase, WXtoImg nos generará de forma automática las imágenes que le hayamos indicado en el paso anterior.</p>
+<img src="/recibir-satelites-meteorologicos-NOAA-linux/wxtoimg_recibida.jpg" class="" width="900" title="WXtoIMG - Imagen recibida">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
+        <tag>Linux</tag>
+        <tag>Meteorología</tag>
+        <tag>WXtoIMG</tag>
       </tags>
   </entry>
   <entry>
