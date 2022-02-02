@@ -1,7 +1,7 @@
 ---
 title: Recibir satélites meteorológicos NOAA
 date: 2020-03-20 13:16:52
-tags: [Satélites, Satélites meteorológicos, NOAA, Meteorología, Windows]
+tags: [Satélites, Satélites meteorológicos, NOAA, Meteorología, Windows, WXtoIMG]
 author: EA7KOO
 description: Guía detallada para recibir imágenes en formato APT desde los satélites meteorológicos NOAA en Windows.
 ---
@@ -30,32 +30,35 @@ Actualmente podemos recibir imágenes APT desde los siguientes satélites meteor
 
 ## Instalación de WXtoImg
 
-Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar **SDR#** y el software **WXtoImg** para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la version beta 2.11.2):
+Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar **SDR#** y el software **WXtoImg** para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la versión beta 2.11.2):
 
 [<center>Descargar WXtoImg</center>](https://wxtoimgrestored.xyz/downloads/)
 
 Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:
 
-1. Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a _**\"Options\"**_ y _**\"Ground Station Location...\"**_. En esta ventana introducimos nuestras coordenadas y altitud.
+1. El primer paso será introducir la clave de registro para poder desbloquear todas las funcionalidades. En la misma página desde dónde hemos descargado el programa podemos encontrar los datos para registrarlo.
+
+2. Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a **_\"Options\"_** y **_\"Ground Station Location...\"_**. En esta ventana introducimos nuestras coordenadas y altitud.
 
 {% asset_img wx_ground.jpg "WXtoImg" %}
 
-2. Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ellos vamos a _**\"Options\"**_ y _**\"Recording Options\"**_. Aquí seleccionamos nuestro cable de audio virtual.
+3. Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ello vamos a **_\"Options\"_** y **_\"Recording Options\"_**. Aquí seleccionamos nuestro cable de audio virtual.
 
 {% asset_img wx_recording.jpg "WXtoImg" %}
 
-3. Marcamos la opción de resincronizado en _**\"Options\"**_, _**\"Resync\"**_.
+4. Marcamos la opción de resincronizado en **_\"Options\"_**, **_\"Resync\"_**.
 
 {% asset_img wx_resync.jpg "WXtoImg" %}
 
-4. Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a _**\"Options\"**_, _**\"Auto Processing Options...\"**_ y marcamos _**\"Create image(s)\"**_. Después hacemos clic en _**\"Image Settings...\"**_ y elegimos las imágenes que queramos.
+5. Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a **_\"Options\"_**, **_\"Auto Processing Options...\"_** y marcamos **_\"Create image(s)\"_**. Después hacemos clic en **_\"Image Settings...\"_** y elegimos las imágenes que queramos.
 
 {% asset_img wx_record.jpg "WXtoImg" %}
 
-5. Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a _**\"File\"**_ y hacemos clic en _**\"Update Keplers\"**_. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.
+6. Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a **_\"File\"_** y hacemos clic en **_\"Update Keplers\"_**. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.
 
 {% asset_img wx_siguiente.jpg "WXtoImg" %}
 
+7. Es importante tener la hora del sistema lo mejor ajustada posible, ya que de ello dependerá en gran medida el ajuste de las capas que WXtoImg superpone a la imagen.
 
 ## Recepción
 
