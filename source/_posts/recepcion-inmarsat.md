@@ -14,8 +14,6 @@ Inmarsat utiliza sus satélites de tercera y cuarta generación para ofrecer ser
 
 - **SafetyNET (SDT-C)**. Es un servicio de comunicaciones por satélite para embarcaciones. Ofrecen servicio de mensajería entre barcos, mensajes de alerta, partes meteorológicos, mensajes de rescate, etc.
 
-En este artículo nos centraremos en cómo poder recibir la señal y en los sucesivos artículos veremos como recibir datos de cada uno de estos servicios.
-
 <!-- more -->
 
 ## Antenas
