@@ -18,9 +18,6 @@ Si todavía no tenemos un dispositivo SDR y no tenemos claro cual adquirir, en e
 
 [<center>Elección del dispositivo SDR</center>](/eleccion-sdr/)
 
-Programa **Net de la tecnología** sobre dispositivos SDR:
-[<center>Net de la tecnología #286: ¿Qué dispositivo elegir?</center>](https://youtu.be/bIQQoDG1neY?t=4210)
-
 # Instalación del dispositivo
 
 Si ya tenemos el dispositivo, el siguiente paso es instalarlo.
