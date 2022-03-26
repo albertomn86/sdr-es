@@ -58,9 +58,9 @@
     
     <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
     
-    <category term="Gpredict" scheme="https://sdr-es.com/tags/Gpredict/"/>
-    
     <category term="Tracking" scheme="https://sdr-es.com/tags/Tracking/"/>
+    
+    <category term="Gpredict" scheme="https://sdr-es.com/tags/Gpredict/"/>
     
   </entry>
   
@@ -145,29 +145,6 @@
     <category term="Meteorología" scheme="https://sdr-es.com/tags/Meteorologia/"/>
     
     <category term="Weatherfax" scheme="https://sdr-es.com/tags/Weatherfax/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Recepción de mensajes VDL2</title>
-    <link href="https://sdr-es.com/recepcion-mensajes-VDL2/"/>
-    <id>https://sdr-es.com/recepcion-mensajes-VDL2/</id>
-    <published>2021-08-28T10:10:53.000Z</published>
-    <updated>2021-08-28T10:10:53.000Z</updated>
-    
-    
-    <summary type="html">En esta guía veremos cómo recibir y decodificar los mensajes aeronaúticos VDL2 usando MultiPSK.</summary>
-    
-    
-    
-    
-    <category term="SDRSharp" scheme="https://sdr-es.com/tags/SDRSharp/"/>
-    
-    <category term="ATC" scheme="https://sdr-es.com/tags/ATC/"/>
-    
-    <category term="VDL2" scheme="https://sdr-es.com/tags/VDL2/"/>
-    
-    <category term="MultiPSK" scheme="https://sdr-es.com/tags/MultiPSK/"/>
     
   </entry>
   
@@ -443,6 +420,23 @@
     <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
     
     <category term="CubicSDR" scheme="https://sdr-es.com/tags/CubicSDR/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
+    <link href="https://sdr-es.com/identificacion-estaciones-csvuserlistbrowser/"/>
+    <id>https://sdr-es.com/identificacion-estaciones-csvuserlistbrowser/</id>
+    <published>2020-05-10T12:40:22.000Z</published>
+    <updated>2020-05-10T12:40:22.000Z</updated>
+    
+    
+    <summary type="html">Cómo instalar y configurar CSVUserlistBrowser para identificar estaciones de radiodifusión en HF.</summary>
+    
+    
+    
+    
+    <category term="HF" scheme="https://sdr-es.com/tags/HF/"/>
     
   </entry>
   

@@ -26,12 +26,14 @@
 <meta property="og:site_name" content="SDR en español">
 <meta property="og:description" content="En este tutorial veremos cómo instalar nuestro dispositivo RTL-SDR en Windows y usarlo con SDR# (SDR Sharp).">
 <meta property="og:locale" content="es_ES">
-<meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/descarga.jpg">
-<meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/bat.jpg">
-<meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/zadig1.jpg">
+<meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/ejecutar-zadig.jpeg">
+<meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/control-cuentas.jpeg">
+<meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/zadig-instalar.jpeg">
+<meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/zadig-instalado.jpeg">
 <meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/zadig3.jpg">
 <meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/zadig4.jpg">
 <meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/zadig5.jpg">
+<meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/descarga.jpg">
 <meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/sdrsharp_source.jpg">
 <meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/sdrsharp.jpg">
 <meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/sdrsharp_config.jpg">
@@ -40,14 +42,14 @@
 <meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/ganancia_max.jpg">
 <meta property="og:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/ganancia.jpg">
 <meta property="article:published_time" content="2020-01-19T18:26:40.000Z">
-<meta property="article:modified_time" content="2022-01-06T16:26:40.000Z">
+<meta property="article:modified_time" content="2022-03-26T12:26:40.000Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="RTL-SDR">
 <meta property="article:tag" content="Instalación">
 <meta property="article:tag" content="SDRSharp">
 <meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/descarga.jpg">
+<meta name="twitter:image" content="https://sdr-es.com/instalacion-rtlsdr-windows/ejecutar-zadig.jpeg">
 
 
 <link rel="canonical" href="https://sdr-es.com/instalacion-rtlsdr-windows/">
@@ -180,7 +182,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion-de-SDR"><span class="nav-number">1.</span> <span class="nav-text">Instalación de SDR#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion-de-los-controladores"><span class="nav-number">2.</span> <span class="nav-text">Instalación de los controladores</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuracion-de-SDR"><span class="nav-number">3.</span> <span class="nav-text">Configuración de SDR#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajuste-de-la-ganancia"><span class="nav-number">4.</span> <span class="nav-text">Ajuste de la ganancia</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDR-Big-Book"><span class="nav-number">5.</span> <span class="nav-text">SDR# Big Book</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion-de-los-controladores"><span class="nav-number">1.</span> <span class="nav-text">Instalación de los controladores</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalacion-en-Windows-10"><span class="nav-number">1.1.</span> <span class="nav-text">Instalación en Windows 10</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion-de-SDR"><span class="nav-number">2.</span> <span class="nav-text">Instalación de SDR#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuracion"><span class="nav-number">2.1.</span> <span class="nav-text">Configuración</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajuste-de-la-ganancia"><span class="nav-number">2.2.</span> <span class="nav-text">Ajuste de la ganancia</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDR-Big-Book"><span class="nav-number">3.</span> <span class="nav-text">SDR# Big Book</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -195,13 +197,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">entradas</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">44</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -285,7 +287,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Editado el</span>
-      <time title="Modificado por: 06/01/2022 17:26:40" itemprop="dateModified" datetime="2022-01-06T17:26:40+01:00">06/01/2022</time>
+      <time title="Modificado por: 26/03/2022 13:26:40" itemprop="dateModified" datetime="2022-03-26T13:26:40+01:00">26/03/2022</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -306,33 +308,47 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>En este tutorial vamos a ver cómo instalar nuestro nuevo dispositivo RTL-SDR en Windows 10.</p>
-<p>Existen varias alternativas para Windows, pero en este tutorial vamos a instalar y configurar SDR# (SDR Sharp), ya que es el más conocido y utilizado.</p>
+        <p>En este tutorial vamos a ver cómo instalar nuestro nuevo dispositivo RTL-SDR en Windows.</p>
+<p>Actualmente disponemos de varios programas de SDR para Windows. En este tutorial vamos a instalar y configurar SDR# (SDR Sharp), ya que es uno de los más conocidos y utilizados.</p>
 <span id="more"></span>
 
-<h2 id="Instalacion-de-SDR"><a href="#Instalacion-de-SDR" class="headerlink" title="Instalación de SDR#"></a>Instalación de SDR#</h2><p>El primer paso es descargar el software que necesitamos para poder usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo clic en el siguiente enlace:</p>
-<p><a target="_blank" rel="noopener" href="https://airspy.com/download/"><center>https://airspy.com/download/</center></a></p>
-<p>Descargamos SDR# haciendo clic en el botón <em>Download</em>.</p>
-<img src="/instalacion-rtlsdr-windows/descarga.jpg" class="" width="800" title="Descarga de SDR#">
+<h2 id="Instalacion-de-los-controladores"><a href="#Instalacion-de-los-controladores" class="headerlink" title="Instalación de los controladores"></a>Instalación de los controladores</h2><p>El primer paso es instalar los controladores (<em>drivers</em>) para nuestro dispositivo RTL-SDR. Por defecto, Windows nos instala sus propios controladores la primera vez que conectamos el dispositivo. El problema es que estos controladores no nos sirven para poder utilizarlo con los programas para SDR, por lo que tendremos que reemplazarlos por otros. Para ello, utilizaremos los <em>drivers</em> Zadig que descargaremos desde la siguiente página:</p>
+<p><a target="_blank" rel="noopener" href="https://zadig.akeo.ie/"><center>Zadig - USB driver</center></a></p>
+<p>Una vez descargado el instalador, <strong>debemos ejecutarlo como administrador</strong>.</p>
+<img src="/instalacion-rtlsdr-windows/ejecutar-zadig.jpeg" class="" width="800" title="Ejecutar Zadig como administrador">
 
-<p>Una vez descargado el archivo ZIP, extraemos su contenido en el directorio deseado. En este ejemplo vamos a usar el directorio <em>C:/SDR/SDRSharp</em>.</p>
-<h2 id="Instalacion-de-los-controladores"><a href="#Instalacion-de-los-controladores" class="headerlink" title="Instalación de los controladores"></a>Instalación de los controladores</h2><p>El siguiente paso es descargar los controladores (<em>drivers</em>) para nuestro dispositivo RTL-SDR. Para ello, el propio SDR# trae un <em>script</em> que nos los descarga automáticamente. Solo tenemos que ejecutar el archivo <strong>install-rtlsdr.bat</strong> que encontraremos en el directorio en el que acabamos de extraer SDR#.</p>
-<img src="/instalacion-rtlsdr-windows/bat.jpg" class="" width="800" title="install-rtlsdr.bat">
+<p>Es posible que nos aparezca una ventana como la siguiente en la que debemos indicar que <strong>sí</strong> queremos realizar cambios en el dispositivo.</p>
+<img src="/instalacion-rtlsdr-windows/control-cuentas.jpeg" class="" width="400" title="Control de cuentas de Windows">
 
-<p>Una vez el <em>script</em> termine nos pedirá que pulsemos una tecla para finalizar.</p>
-<p>Por defecto, Windows nos instala sus propios controladores para nuestro dispositivo RTL-SDR. El problema es que estos no nos sirven para poder utilizarlo con SDR#, por lo que tendremos que sustituirlos por otros.<br>Para ello utilizaremos el instalador <strong>Zadig</strong>. Este ejecutable se descarga automáticamente al ejecutar el script del paso anterior, por lo que solo tendremos que ir al directorio antes mencionado y ejecutar (<strong>como Administrador</strong>) el archivo <strong>zadig.exe</strong>.</p>
-<img src="/instalacion-rtlsdr-windows/zadig1.jpg" class="" width="800" title="zadig.exe">
+<p>Ahora debemos seleccionar el dispositivo correcto en el listado.<br>Tenemos que asegurarnos de que el dispositivo que seleccionemos se corresponde con el RTL-SDR. De lo contrario vamos a reemplazar el controlador de otro dispositivo y este dejará de funcionar.</p>
+<img src="/instalacion-rtlsdr-windows/zadig-instalar.jpeg" class="" width="600" title="Dispositivos en Windows 11">
 
+<p>Una vez seleccionado, hacemos clic en <em>Install Driver</em> y esperamos a que finalice la instalación.</p>
+<img src="/instalacion-rtlsdr-windows/zadig-instalado.jpeg" class="" width="600" title="Instalación terminada">
+
+
+<h3 id="Instalacion-en-Windows-10"><a href="#Instalacion-en-Windows-10" class="headerlink" title="Instalación en Windows 10"></a>Instalación en Windows 10</h3><p>Si estamos usando Windows 10, debemos realizar un paso previo para la instalación de los controladores.</p>
 <p>En la ventana del instalador seleccionamos <strong>Options</strong> y marcamos <strong>List All Devices</strong>.</p>
 <img src="/instalacion-rtlsdr-windows/zadig3.jpg" class="" title="Zadig list devices">
 
-<p>Ahora tendremos que seleccionar nuestro dispositivo en el listado.<br>Tenemos que asegurarnos de que el dispositivo que seleccionemos se corresponde con el RTL-SDR. De lo contrario vamos a reemplazar el controlador de otro dispositivo y dejará de funcionar.</p>
+<p>Ahora tendremos que seleccionar nuestro dispositivo en el listado.</p>
 <img src="/instalacion-rtlsdr-windows/zadig4.jpg" class="" title="Zadig replace">
 
 <p>Una vez lo tengamos seleccionado correctamente, hacemos clic en <strong>Replace Driver</strong> y esperamos a que se instalen los nuevos controladores.</p>
 <img src="/instalacion-rtlsdr-windows/zadig5.jpg" class="" title="Zadig instalado">
 
-<h2 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h2><p>Ya tenemos nuestro dispositivo conectado e instalado. Es el turno ahora de decirle a SDR# que utilice nuestro dispositivo.<br>Para ello vamos al directorio en el que hemos instalado SDR# y ejecutamos <strong>SDRSharp.exe</strong> para iniciar el programa.</p>
+
+<h2 id="Instalacion-de-SDR"><a href="#Instalacion-de-SDR" class="headerlink" title="Instalación de SDR#"></a>Instalación de SDR#</h2><p>Vamos ahora con la instalación del software que necesitamos para usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo clic en el siguiente enlace:</p>
+<p><a target="_blank" rel="noopener" href="https://airspy.com/download/"><center>https://airspy.com/download/</center></a></p>
+<p>Descargamos SDR# haciendo clic en el botón <em>Download</em>.</p>
+<img src="/instalacion-rtlsdr-windows/descarga.jpg" class="" width="800" title="Descarga de SDR#">
+
+<p>Una vez descargado el archivo ZIP, extraemos su contenido en el directorio deseado. En este ejemplo vamos a usar el directorio <em>C:/SDR/SDRSharp</em>.</p>
+<p>Ahora tenemos que ejecutar el archivo <strong>install-rtlsdr.bat</strong> que encontraremos en el directorio en el que acabamos de extraer SDR#. Este ejecutable nos va a descargar las librerías necesarias para poder utilizar nuestro dispositivo con SDR#.</p>
+
+
+<p>Una vez el <em>script</em> termine nos pedirá que pulsemos una tecla para finalizar.</p>
+<h3 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h3><p>Es el turno ahora de decirle a SDR# que utilice nuestro dispositivo.<br>Para ello vamos al directorio en el que hemos instalado SDR# y ejecutamos <strong>SDRSharp.exe</strong> para iniciar el programa.</p>
 <p>Una vez abierto, hacemos clic en <strong>Source</strong> y seleccionamos <strong>RTL-SDR USB</strong>.</p>
 <img src="/instalacion-rtlsdr-windows/sdrsharp_source.jpg" class="" title="Seleccionando dispositivo">
 
@@ -353,7 +369,7 @@
 <tbody><tr>
 <td><strong>Device</strong></td>
 <td></td>
-<td>Nos permite indicarle el dispositivo RTL-SDR que utilizaremos. Si no hemos instalado los controladores del paso anterior correctamente, no nos aparecerá ninguno disponible.</td>
+<td>Nos permite indicarle el dispositivo RTL-SDR que utilizaremos. Si no hemos instalado los controladores correctamente, no nos aparecerá ninguno disponible.</td>
 </tr>
 <tr>
 <td><strong>Sample Rate</strong></td>
@@ -394,7 +410,7 @@
 <p>Con todo ya configurado, solo queda pulsar el botón de <strong>Start/Stop</strong> para empezar a recibir.</p>
 <img src="/instalacion-rtlsdr-windows/sdrsharp_start.jpg" class="" title="SDR# Start&#x2F;Stop">
 
-<h2 id="Ajuste-de-la-ganancia"><a href="#Ajuste-de-la-ganancia" class="headerlink" title="Ajuste de la ganancia"></a>Ajuste de la ganancia</h2><p>En este último paso vamos a ajustar la ganancia de nuestro dispositivo manualmente. Como hemos visto anteriormente, el ajuste de la ganancia se puede dejar para que el dispositivo lo haga automáticamente. El problema es que este ajuste muy pocas veces se hace correctamente, por lo que es muy recomendable hacerlo manualmente. Para ello sintonizamos cualquier señal en la frecuencia para la que vamos a ajustar la ganancia y abrimos los ajustes del dispositivo.<br>Ahora el objetivo es ajustar el valor de <strong>RF Gain</strong> hasta que consigamos el máximo valor de SNR (Signal to Noise Ratio).</p>
+<h3 id="Ajuste-de-la-ganancia"><a href="#Ajuste-de-la-ganancia" class="headerlink" title="Ajuste de la ganancia"></a>Ajuste de la ganancia</h3><p>En este último paso vamos a ajustar la ganancia de nuestro dispositivo manualmente. Como hemos visto anteriormente, el ajuste de la ganancia se puede dejar para que el dispositivo lo haga automáticamente. El problema es que este ajuste muy pocas veces se hace correctamente, por lo que es muy recomendable hacerlo de forma manual para cada banda que estemos sintonizando. Para ello sintonizamos cualquier señal en la frecuencia para la que vamos a ajustar la ganancia y abrimos los ajustes del dispositivo.<br>Ahora el objetivo es ajustar el valor de <strong>RF Gain</strong> hasta que consigamos el máximo valor de SNR (Signal to Noise Ratio).</p>
 <img src="/instalacion-rtlsdr-windows/ganancia0.jpg" class="" title="Ajuste de la ganancia manualmente">
 <img src="/instalacion-rtlsdr-windows/ganancia_max.jpg" class="" title="Ajuste de la ganancia manualmente">
 <img src="/instalacion-rtlsdr-windows/ganancia.jpg" class="" title="Ajuste de la ganancia manualmente">

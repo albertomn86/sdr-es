@@ -798,33 +798,47 @@
   <entry>
     <title>Instalar dispositivo RTL-SDR en Windows</title>
     <url>/instalacion-rtlsdr-windows/</url>
-    <content><![CDATA[<p>En este tutorial vamos a ver cómo instalar nuestro nuevo dispositivo RTL-SDR en Windows 10.</p>
-<p>Existen varias alternativas para Windows, pero en este tutorial vamos a instalar y configurar SDR# (SDR Sharp), ya que es el más conocido y utilizado.</p>
+    <content><![CDATA[<p>En este tutorial vamos a ver cómo instalar nuestro nuevo dispositivo RTL-SDR en Windows.</p>
+<p>Actualmente disponemos de varios programas de SDR para Windows. En este tutorial vamos a instalar y configurar SDR# (SDR Sharp), ya que es uno de los más conocidos y utilizados.</p>
 <span id="more"></span>
 
-<h2 id="Instalacion-de-SDR"><a href="#Instalacion-de-SDR" class="headerlink" title="Instalación de SDR#"></a>Instalación de SDR#</h2><p>El primer paso es descargar el software que necesitamos para poder usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo clic en el siguiente enlace:</p>
-<p><a href="https://airspy.com/download/"><center>https://airspy.com/download/</center></a></p>
-<p>Descargamos SDR# haciendo clic en el botón <em>Download</em>.</p>
-<img src="/instalacion-rtlsdr-windows/descarga.jpg" class="" width="800" title="Descarga de SDR#">
+<h2 id="Instalacion-de-los-controladores"><a href="#Instalacion-de-los-controladores" class="headerlink" title="Instalación de los controladores"></a>Instalación de los controladores</h2><p>El primer paso es instalar los controladores (<em>drivers</em>) para nuestro dispositivo RTL-SDR. Por defecto, Windows nos instala sus propios controladores la primera vez que conectamos el dispositivo. El problema es que estos controladores no nos sirven para poder utilizarlo con los programas para SDR, por lo que tendremos que reemplazarlos por otros. Para ello, utilizaremos los <em>drivers</em> Zadig que descargaremos desde la siguiente página:</p>
+<p><a href="https://zadig.akeo.ie/"><center>Zadig - USB driver</center></a></p>
+<p>Una vez descargado el instalador, <strong>debemos ejecutarlo como administrador</strong>.</p>
+<img src="/instalacion-rtlsdr-windows/ejecutar-zadig.jpeg" class="" width="800" title="Ejecutar Zadig como administrador">
 
-<p>Una vez descargado el archivo ZIP, extraemos su contenido en el directorio deseado. En este ejemplo vamos a usar el directorio <em>C:/SDR/SDRSharp</em>.</p>
-<h2 id="Instalacion-de-los-controladores"><a href="#Instalacion-de-los-controladores" class="headerlink" title="Instalación de los controladores"></a>Instalación de los controladores</h2><p>El siguiente paso es descargar los controladores (<em>drivers</em>) para nuestro dispositivo RTL-SDR. Para ello, el propio SDR# trae un <em>script</em> que nos los descarga automáticamente. Solo tenemos que ejecutar el archivo <strong>install-rtlsdr.bat</strong> que encontraremos en el directorio en el que acabamos de extraer SDR#.</p>
-<img src="/instalacion-rtlsdr-windows/bat.jpg" class="" width="800" title="install-rtlsdr.bat">
+<p>Es posible que nos aparezca una ventana como la siguiente en la que debemos indicar que <strong>sí</strong> queremos realizar cambios en el dispositivo.</p>
+<img src="/instalacion-rtlsdr-windows/control-cuentas.jpeg" class="" width="400" title="Control de cuentas de Windows">
 
-<p>Una vez el <em>script</em> termine nos pedirá que pulsemos una tecla para finalizar.</p>
-<p>Por defecto, Windows nos instala sus propios controladores para nuestro dispositivo RTL-SDR. El problema es que estos no nos sirven para poder utilizarlo con SDR#, por lo que tendremos que sustituirlos por otros.<br>Para ello utilizaremos el instalador <strong>Zadig</strong>. Este ejecutable se descarga automáticamente al ejecutar el script del paso anterior, por lo que solo tendremos que ir al directorio antes mencionado y ejecutar (<strong>como Administrador</strong>) el archivo <strong>zadig.exe</strong>.</p>
-<img src="/instalacion-rtlsdr-windows/zadig1.jpg" class="" width="800" title="zadig.exe">
+<p>Ahora debemos seleccionar el dispositivo correcto en el listado.<br>Tenemos que asegurarnos de que el dispositivo que seleccionemos se corresponde con el RTL-SDR. De lo contrario vamos a reemplazar el controlador de otro dispositivo y este dejará de funcionar.</p>
+<img src="/instalacion-rtlsdr-windows/zadig-instalar.jpeg" class="" width="600" title="Dispositivos en Windows 11">
 
+<p>Una vez seleccionado, hacemos clic en <em>Install Driver</em> y esperamos a que finalice la instalación.</p>
+<img src="/instalacion-rtlsdr-windows/zadig-instalado.jpeg" class="" width="600" title="Instalación terminada">
+
+
+<h3 id="Instalacion-en-Windows-10"><a href="#Instalacion-en-Windows-10" class="headerlink" title="Instalación en Windows 10"></a>Instalación en Windows 10</h3><p>Si estamos usando Windows 10, debemos realizar un paso previo para la instalación de los controladores.</p>
 <p>En la ventana del instalador seleccionamos <strong>Options</strong> y marcamos <strong>List All Devices</strong>.</p>
 <img src="/instalacion-rtlsdr-windows/zadig3.jpg" class="" title="Zadig list devices">
 
-<p>Ahora tendremos que seleccionar nuestro dispositivo en el listado.<br>Tenemos que asegurarnos de que el dispositivo que seleccionemos se corresponde con el RTL-SDR. De lo contrario vamos a reemplazar el controlador de otro dispositivo y dejará de funcionar.</p>
+<p>Ahora tendremos que seleccionar nuestro dispositivo en el listado.</p>
 <img src="/instalacion-rtlsdr-windows/zadig4.jpg" class="" title="Zadig replace">
 
 <p>Una vez lo tengamos seleccionado correctamente, hacemos clic en <strong>Replace Driver</strong> y esperamos a que se instalen los nuevos controladores.</p>
 <img src="/instalacion-rtlsdr-windows/zadig5.jpg" class="" title="Zadig instalado">
 
-<h2 id="Configuracion-de-SDR"><a href="#Configuracion-de-SDR" class="headerlink" title="Configuración de SDR#"></a>Configuración de SDR#</h2><p>Ya tenemos nuestro dispositivo conectado e instalado. Es el turno ahora de decirle a SDR# que utilice nuestro dispositivo.<br>Para ello vamos al directorio en el que hemos instalado SDR# y ejecutamos <strong>SDRSharp.exe</strong> para iniciar el programa.</p>
+
+<h2 id="Instalacion-de-SDR"><a href="#Instalacion-de-SDR" class="headerlink" title="Instalación de SDR#"></a>Instalación de SDR#</h2><p>Vamos ahora con la instalación del software que necesitamos para usar nuestro SDR. Para ello nos vamos a la web de AIRSPY para descargar la última versión disponible de SDR# haciendo clic en el siguiente enlace:</p>
+<p><a href="https://airspy.com/download/"><center>https://airspy.com/download/</center></a></p>
+<p>Descargamos SDR# haciendo clic en el botón <em>Download</em>.</p>
+<img src="/instalacion-rtlsdr-windows/descarga.jpg" class="" width="800" title="Descarga de SDR#">
+
+<p>Una vez descargado el archivo ZIP, extraemos su contenido en el directorio deseado. En este ejemplo vamos a usar el directorio <em>C:/SDR/SDRSharp</em>.</p>
+<p>Ahora tenemos que ejecutar el archivo <strong>install-rtlsdr.bat</strong> que encontraremos en el directorio en el que acabamos de extraer SDR#. Este ejecutable nos va a descargar las librerías necesarias para poder utilizar nuestro dispositivo con SDR#.</p>
+
+
+<p>Una vez el <em>script</em> termine nos pedirá que pulsemos una tecla para finalizar.</p>
+<h3 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h3><p>Es el turno ahora de decirle a SDR# que utilice nuestro dispositivo.<br>Para ello vamos al directorio en el que hemos instalado SDR# y ejecutamos <strong>SDRSharp.exe</strong> para iniciar el programa.</p>
 <p>Una vez abierto, hacemos clic en <strong>Source</strong> y seleccionamos <strong>RTL-SDR USB</strong>.</p>
 <img src="/instalacion-rtlsdr-windows/sdrsharp_source.jpg" class="" title="Seleccionando dispositivo">
 
@@ -845,7 +859,7 @@
 <tbody><tr>
 <td><strong>Device</strong></td>
 <td></td>
-<td>Nos permite indicarle el dispositivo RTL-SDR que utilizaremos. Si no hemos instalado los controladores del paso anterior correctamente, no nos aparecerá ninguno disponible.</td>
+<td>Nos permite indicarle el dispositivo RTL-SDR que utilizaremos. Si no hemos instalado los controladores correctamente, no nos aparecerá ninguno disponible.</td>
 </tr>
 <tr>
 <td><strong>Sample Rate</strong></td>
@@ -886,7 +900,7 @@
 <p>Con todo ya configurado, solo queda pulsar el botón de <strong>Start/Stop</strong> para empezar a recibir.</p>
 <img src="/instalacion-rtlsdr-windows/sdrsharp_start.jpg" class="" title="SDR# Start&#x2F;Stop">
 
-<h2 id="Ajuste-de-la-ganancia"><a href="#Ajuste-de-la-ganancia" class="headerlink" title="Ajuste de la ganancia"></a>Ajuste de la ganancia</h2><p>En este último paso vamos a ajustar la ganancia de nuestro dispositivo manualmente. Como hemos visto anteriormente, el ajuste de la ganancia se puede dejar para que el dispositivo lo haga automáticamente. El problema es que este ajuste muy pocas veces se hace correctamente, por lo que es muy recomendable hacerlo manualmente. Para ello sintonizamos cualquier señal en la frecuencia para la que vamos a ajustar la ganancia y abrimos los ajustes del dispositivo.<br>Ahora el objetivo es ajustar el valor de <strong>RF Gain</strong> hasta que consigamos el máximo valor de SNR (Signal to Noise Ratio).</p>
+<h3 id="Ajuste-de-la-ganancia"><a href="#Ajuste-de-la-ganancia" class="headerlink" title="Ajuste de la ganancia"></a>Ajuste de la ganancia</h3><p>En este último paso vamos a ajustar la ganancia de nuestro dispositivo manualmente. Como hemos visto anteriormente, el ajuste de la ganancia se puede dejar para que el dispositivo lo haga automáticamente. El problema es que este ajuste muy pocas veces se hace correctamente, por lo que es muy recomendable hacerlo de forma manual para cada banda que estemos sintonizando. Para ello sintonizamos cualquier señal en la frecuencia para la que vamos a ajustar la ganancia y abrimos los ajustes del dispositivo.<br>Ahora el objetivo es ajustar el valor de <strong>RF Gain</strong> hasta que consigamos el máximo valor de SNR (Signal to Noise Ratio).</p>
 <img src="/instalacion-rtlsdr-windows/ganancia0.jpg" class="" title="Ajuste de la ganancia manualmente">
 <img src="/instalacion-rtlsdr-windows/ganancia_max.jpg" class="" title="Ajuste de la ganancia manualmente">
 <img src="/instalacion-rtlsdr-windows/ganancia.jpg" class="" title="Ajuste de la ganancia manualmente">
@@ -1364,71 +1378,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción de mensajes Inmarsat Aero</title>
-    <url>/recepcion-aero-inmarsat/</url>
-    <content><![CDATA[<p>Como ya hemos visto en artículos anteriores, es posible recibir y decodificar algunas señales desde los satélites Inmarsat.<br>En este artículo veremos cómo decodificar y recibir mensajes Aero.</p>
-<p>Inmarsat Aero es el protocolo utilizado para las comunicaciones entre las estaciones de control terrestres y las aeronaves en vuelo mediante satélite. Usando este protocolo se transmiten mensajes <a href="https://es.wikipedia.org/wiki/ACARS">ACARS</a>, ADS-C, fax y voz digital.</p>
-<span id="more"></span>
-
-<p>Para decodificar este protocolo utilizaremos el software Open Source <strong>JAERO</strong>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://github.com/jontio/JAERO/releases/download/v1.0.4.11/JAERO-x64-setup.exe"><center>JAERO x64 v1.0.4.11</center></a></p>
-<p>Una vez descargado e instalado, procedemos a configurar algunos ajustes. Para ello iniciamos el programa y hacemos clic en <em>Tools</em> y en <em>Settings</em>. Esto abre la ventana de ajustes de JAERO.</p>
-<img src="/recepcion-aero-inmarsat/jaero_config.jpg" class="" title="Configuración JAERO">
-
-<p>El primer ajuste es indicarle en el apartado de <em>Soundcard</em> que le vamos a pasar el audio desde SDR# por el cable de audio virtual.<br>El siguiente ajuste es indicarle la ubicación de la base de datos con los datos de las aeronaves. Para ello en el apartado <em>Database</em> nos aseguramos de que la ruta es correcta y le damos a <strong>Download</strong> para que se descargue una base de datos actualizada. Si todo ha ido bien, deberíamos tener un archivo CSV con los datos en la ruta indicada.</p>
-<p>Para recibir datos bastaría con sintonizar SDR# en la frecuencia requerida y ajustar JAERO para que decodifique los mensajes.</p>
-<p>Inmarsat emite la señal en diferentes modulaciones y frecuencias. A continuación veremos ejemplos cada una.</p>
-<h2 id="Aero-600-bps"><a href="#Aero-600-bps" class="headerlink" title="Aero 600 bps"></a>Aero 600 bps</h2><ul>
-<li><strong>Modulación:</strong> Aviation-BPSK.</li>
-<li><strong>Ancho de banda:</strong> 800 Hz.</li>
-<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
-</ul>
-<img src="/recepcion-aero-inmarsat/acars_600_sdr.jpg" class="" title="AERO 600 bps">
-</br>
-<img src="/recepcion-aero-inmarsat/acars_600_jaero.jpg" class="" title="AERO 600 bps">
-</br>
-<img src="/recepcion-aero-inmarsat/acars_600_planelog.jpg" class="" title="AERO 600 bps planelog">
-
-
-<h2 id="Aero-1200-bps"><a href="#Aero-1200-bps" class="headerlink" title="Aero 1200 bps"></a>Aero 1200 bps</h2><ul>
-<li><strong>Modulación:</strong> Aviation-BPSK.</li>
-<li><strong>Ancho de banda:</strong> 1600 Hz.</li>
-<li><strong>Frecuencia:</strong> 1545,10 - 1545,25 MHz (IOR).</li>
-</ul>
-<img src="/recepcion-aero-inmarsat/acars_1200_sdr.jpg" class="" title="AERO 1200 bps">
-</br>
-<img src="/recepcion-aero-inmarsat/acars_1200_jaero.jpg" class="" title="AERO 1200 bps">
-
-
-<h2 id="Aero-H-Aero-H"><a href="#Aero-H-Aero-H" class="headerlink" title="Aero-H, Aero-H+"></a>Aero-H, Aero-H+</h2><ul>
-<li><strong>Modulación:</strong> Aviation-QPSK</li>
-<li><strong>Ancho de banda:</strong> 10,5 KHz</li>
-<li><strong>Frecuencia:</strong> 1546,0 - 1546,2 MHz (IOR).</li>
-</ul>
-<img src="/recepcion-aero-inmarsat/aero_sdr.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/recepcion-aero-inmarsat/aero_jaero.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/recepcion-aero-inmarsat/aero_planelog.jpg" class="" title="AERO 10.5k planelog">
-
-
-<h2 id="Voz-Digital"><a href="#Voz-Digital" class="headerlink" title="Voz Digital"></a>Voz Digital</h2><ul>
-<li><strong>Modulación:</strong> Aviation-QPSK.</li>
-<li><strong>Ancho de banda:</strong> 6 KHz.</li>
-<li><strong>Frecuencia:</strong> 1546,13 - 1546,18 MHz (IOR).</li>
-</ul>
-<img src="/recepcion-aero-inmarsat/aero_call_sdr.jpg" class="" title="AERO 10.5k">
-</br>
-<img src="/recepcion-aero-inmarsat/aero_call_jaero.jpg" class="" title="AERO 10.5k">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>ATC</tag>
-        <tag>Inmarsat</tag>
-        <tag>L-Band</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recibir telemetría de los satélites CAS-4</title>
     <url>/recepcion-cas4/</url>
     <content><![CDATA[<p>Los satélites CAS-4A y CAS-4B son unos micro-satélites construidos por Zhuhai Orbita Control Engineering Ltd. para el sistema orbital de observación terrestre de China. Su principal componente es una cámara de 1,98m de resolución. Estos satélites envían datos de telemetría en VHF, y son estos datos los que vamos a recibir, decodificar y visualizar en este artículo.</p>
@@ -1768,7 +1717,6 @@
 <li><p><strong>SafetyNET (SDT-C)</strong>. Es un servicio de comunicaciones por satélite para embarcaciones. Ofrecen servicio de mensajería entre barcos, mensajes de alerta, partes meteorológicos, mensajes de rescate, etc.</p>
 </li>
 </ul>
-<p>En este artículo nos centraremos en cómo poder recibir la señal y en los sucesivos artículos veremos como recibir datos de cada uno de estos servicios.</p>
 <span id="more"></span>
 
 <h2 id="Antenas"><a href="#Antenas" class="headerlink" title="Antenas"></a>Antenas</h2><p>Existen diferentes tipos de antenas que nos permiten recibir la señal de los satélites en la banda L. A continuación veremos algunos ejemplos de antenas que podemos utilizar.</p>
@@ -1933,45 +1881,6 @@
       <tags>
         <tag>Satélites</tag>
         <tag>Cubesat</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de mensajes VDL2</title>
-    <url>/recepcion-mensajes-VDL2/</url>
-    <content><![CDATA[<p><a href="https://en.wikipedia.org/wiki/VHF_Data_Link#ICAO_VDL_Mode_2">VDL2</a> (<em>VHF Data Link mode 2</em>) es un modo de transmisión de información entre aeronaves y estaciones terrestres. Este modo permite la comunicación de los controladores aéreos con los pilotos a través de un enlace de datos <a href="https://en.wikipedia.org/wiki/Controller%E2%80%93pilot_data_link_communications">(CPDLC)</a>.<br>En este artículo veremos cómo recibir y decodificar estos mensajes a modo de estudio.</p>
-<span id="more"></span>
-
-<p>Para decodificar estos mensajes vamos a utilizar el software MultiPSK. Este programa es una herramienta muy versátil que permite decodificar distintos modos de una manera bastante simple.<br>MultiPSK se puede usar de forma gratuita, pero para ciertos modos, VDL2 entre ellos, tiene una limitación de uso de 5 minutos, tras los que tendremos que reiniciar el programa para seguir usándolo. Si queremos usar el programa de forma ininterrumpida y sin limitaciones, tenemos la opción de adquirir una <a href="http://f6cte.free.fr/Licence_En.htm">licencia</a> por unos 30€ ó 40US$.</p>
-<h2 id="Instalacion-de-MultiPSK"><a href="#Instalacion-de-MultiPSK" class="headerlink" title="Instalación de MultiPSK"></a>Instalación de MultiPSK</h2><p>Para instalar MultiPSK basta con descargar el instalador de la última versión desde la siguiente página:</p>
-<p><a href="http://f6cte.free.fr/index_anglais.htm"><center>Ham Radio Software from F6CTE</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier programa siguiendo el asistente.</p>
-<p>Ahora iniciamos el programa y se nos mostrará una ventana de configuración. El primer ajuste que debemos hacer es indicarle que le vamos a pasar el audio desde el cable de audio virtual. Para ello hacemos clic en <strong>Sound Card (Input)</strong> y seleccionamos el cable de audio virtual.</p>
-<img src="/recepcion-mensajes-VDL2/multipsk-audio.jpg" class="" width="500" title="Ajuste del audio en MultiPSK">
-
-<p>Después le indicamos que los datos desde el SDR le van a llegar a través de la tarjeta de sonido. Para ello pulsamos el botón <strong>“Direct via the sound card”</strong>.</p>
-<img src="/recepcion-mensajes-VDL2/multipsk-config.jpg" class="" width="500" title="Ajustes MultiPSK">
-
-<p>Por último hacemos clic en <strong>“RX/TX screen”</strong> para abrir la ventana principal del programa.</p>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a utilizar SDR# para enviar el audio a MultiPSK, pero podemos usar cualquier otro software para la recepción.</p>
-<p>Lo único que tenemos que hacer es activar la salida de audio por el cable de audio virtual y establecer los ajustes de recepción en modo <strong>RAW</strong> y un ancho de banda de <strong>25 KHz</strong>. Después basta con sintonizar una de las frecuencias usadas para este modo:</p>
-<ul>
-<li>136,975 MHz</li>
-<li>136,725 MHz</li>
-<li>136,775 MHz</li>
-</ul>
-<img src="/recepcion-mensajes-VDL2/sdrsharp-vdl2.jpg" class="" width="900" title="VDL2 en SDR#">
-
-<p>Vamos ahora a MultiPSK y activamos el modo VDL2.</p>
-<img src="/recepcion-mensajes-VDL2/multipsk-modos.jpg" class="" width="600" title="MultiPSK - VDL2">
-
-<p>Una vez recibamos los mensajes, veremos que aparecen decodificados por pantalla.</p>
-<img src="/recepcion-mensajes-VDL2/multipsk-recibiendo.jpg" class="" width="900" title="MultiPSK">
-]]></content>
-      <tags>
-        <tag>SDRSharp</tag>
-        <tag>ATC</tag>
-        <tag>VDL2</tag>
-        <tag>MultiPSK</tag>
       </tags>
   </entry>
   <entry>
@@ -2308,40 +2217,36 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción de mensajes Inmarsat STD-C</title>
-    <url>/recepcion-std-c-inmarsat/</url>
-    <content><![CDATA[<p>En el artículo <a href="/recepcion-inmarsat/">“Recepción de satélites Inmarsat”</a> vimos cómo recibir señal desde los satélites Inmarsat. Ahora veremos cómo decodificar algunos mensajes a modo de estudio utilizando Scytale-C, un software Open Source que permite decodificar mensajes SDT-C.<br>Scytale-C tiene distintos tipos de instalación, tanto para SDR# como para GNU Radio. En este artículo veremos como utilizarlo mediante el plugin para SDR# y la interfaz de usuario.</p>
+    <title>Recibir APRS en macOS con Gqrx</title>
+    <url>/recibir-aprs-macos-con-gqrx/</url>
+    <content><![CDATA[<p>En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando <a href="https://gqrx.dk/">Gqrx</a>.<br>El APRS, es un protocolo de comunicaciones basado en AX.25, usado en el envío de telemetría, paquetes de datos meteorológicos,  posicionamiento GPS, etc. En este caso nos ocuparemos del envío de mensajería entre estaciones de radioaficionados, en la que la Estación Espacial (ISS) es una estación repetidora.</p>
 <span id="more"></span>
 
-<h2 id="Instalacion-del-plugin-en-SDR"><a href="#Instalacion-del-plugin-en-SDR" class="headerlink" title="Instalación del plugin en SDR#"></a>Instalación del plugin en SDR#</h2><p>Lo primero será descargar los los archivos necesarios desde el repositorio de Scytale-C desde el siguiente link:</p>
-<p><a href="https://bitbucket.org/scytalec/scytalec/downloads/"><center>https://bitbucket.org/scytalec/scytalec/downloads/</center></a></p>
-<p>Necesitamos descargar el plugin para SDR# (<strong>SDRSharp.ScytaleC.5004.NET5.PlusUI.zip</strong>).</p>
-<p>Vamos a la carpeta <strong>Plugins</strong> dentro del directorio de instalación de SDR# y creamos una carpeta con el nombre “ScytaleC” (o el que queramos). Ahora extraemos el contenido del archivo que hemos descargado dentro de esta nueva carpeta.</p>
-<img src="/recepcion-std-c-inmarsat/scytale_files.jpg" class="" width="700" title="Archivos de Scytale-C">
+<p>Vamos a interceptar esa mensajería de dominio público entre las distintas estaciones de radioaficionado que se mantiene en esos pocos minutos que dura el pase de la ISS por nuestro cielo.</p>
+<p>Dentro del ecosistema Apple no hay mucha diversidad de programas SDR, pero que en este caso, la suerte nos ha sonreído con GQRX.<br>Es un programa que tiene muchos seguidores, ya que brinda sencillez y no consume muchos recursos. Pero que en este caso nos ofrece todo aquello que necesitamos para la recepción de esa mensajería APRS.</p>
+<h2 id="Instalacion-de-Gqrx"><a href="#Instalacion-de-Gqrx" class="headerlink" title="Instalación de Gqrx"></a>Instalación de Gqrx</h2><p>La instalación es sencilla, y más aún para todos aquellos que ya tienen instalado el sistema de administración de paquetes Homebrew previamente.</p>
+<p>Si no tienes un administrador de programas, proponemos su instalación siguiendo <a href="https://franyerverjel.com/blog/instalacion-de-homebrew-en-mac">esta guía</a>.</p>
+<p>Para la instalación, usando el administrador de paquetes, abrimos una ventana de terminal y escribimos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install --cask gqrx</span><br></pre></td></tr></table></figure>
 
-<p>Por último, iniciamos SDR# y ya tendremos el plugin instalado.</p>
-<h2 id="Instalacion-de-la-interfaz-de-usuario-de-Scytale-C"><a href="#Instalacion-de-la-interfaz-de-usuario-de-Scytale-C" class="headerlink" title="Instalación de la interfaz de usuario de Scytale-C"></a>Instalación de la interfaz de usuario de Scytale-C</h2><p>Turno ahora de instalar la interfaz de usuario de Scytale-C. Para ello simplemente abrimos el <em>plugin</em> en SDR# y hacemos clic en el botón <strong>“Quick UI”</strong>.</p>
-<img src="/recepcion-std-c-inmarsat/scytale_open_ui.jpg" class="" width="200" title="Scytale-C">
+<p>Una vez finalizada la instalación, iniciamos desde el icono de la aplicación:</p>
+<img src="/recibir-aprs-macos-con-gqrx/icono.png" class="" width="90" title="Gqrx">
 
-<p>El propio <em>plugin</em> detectará que no tenemos la interfaz de usuario instalada y nos mostrará una ventana como la siguente en la que haremos clic en <em>“Yes”</em> para proceder con la descarga e instalación de la misma de forma automática.</p>
-<img src="/recepcion-std-c-inmarsat/scytale_download_ui.jpg" class="" title="Scytale-C">
+<p>En el momento de empezar esta guía la versión del programa es la 2.14.4.</p>
+<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Ya finalizada la instalación y familiarizados con el programa, sintonizamos la frecuencia en la que trabaja la ISS, que en este caso es 145.825.000 Hz.<br>Elegimos el modo WFM (mono) y abrimos el único <em>plugin</em> que trae de serie el programa, y que lo podemos encontrar dentro de la pestaña <strong>Tools</strong> con el título de <strong>AFSK1200 Decoder</strong>.</p>
+<img src="/recibir-aprs-macos-con-gqrx/gqrx-menu.png" class="" width="900" title="Gqrx">
 
-<p><strong>Algunos mensajes que se reciben con Scytale-C van a un destinatario en concreto y pueden contener información sensible. Si no somos los destinatarios de dichos mensajes, debemos proceder a la eliminación de los mismos y no reenviarlos ni publicarlos bajo ningún concepto.</strong></p>
-<img src="/recepcion-std-c-inmarsat/scytale_ui.jpg" class="" title="UI Scytale-C">
+<p>Se abrirá una ventana muy simple en la que irán apareciendo los mensajes interceptados y decodificados.</p>
+<img src="/recibir-aprs-macos-con-gqrx/mensajes.png" class="" width="800" title="Gqrx - Mensajes">
 
-<h2 id="Recepcion-y-visualizacion-de-mensajes"><a href="#Recepcion-y-visualizacion-de-mensajes" class="headerlink" title="Recepción y visualización de mensajes"></a>Recepción y visualización de mensajes</h2><p>Vamos ahora a recibir mensajes desde Inmarsat. Si ya tenemos nuestra antena orientada y conectada, iniciamos SDR# y buscamos las frecuencias de SDT-C. En Inmarsat-4A F4 las encontramos en 1.537,100 MHz para NCS y sobre 1.539,500 MHz para los canales LES TDM.</p>
-<p>Una vez las tengamos localizadas, sintonizamos una de las señales en modo <strong>USB</strong> y ancho de banda de <strong>4 KHz</strong>.</p>
-<p>Iniciamos a continuación el plugin marcando la casilla <em><strong>“Enabled”</strong></em>. También marcamos <em><strong>“Auto Tracking”</strong></em> para que ajuste la señal de forma automática.</p>
-<p>Si la señal es buena, veremos que aparece <em><strong>“Locked”</strong></em> en el plugin.</p>
-<img src="/recepcion-std-c-inmarsat/sdrsharp.jpg" class="" title="Plugin Scytale-C">
-
-<p>Con SDR# ya recibiendo la señal correctamente pasamos a la interfaz de usuario de Scytale-C. El plugin y esta interfaz se comunican por UDP de forma local y vienen configurados con el puerto 15003 por defecto.</p>
-<p>Para que nos lleguen los mensajes bastaría con hacer clic en el botón de Play/Stop. Si todo ha ido bien, comenzaremos a recibirlos.</p>
+<p>Y hasta  aquí la guía. Espero que os animéis a intentarlo.</p>
+<p>73 para todos.</p>
 ]]></content>
       <tags>
-        <tag>Satélites</tag>
-        <tag>Inmarsat</tag>
-        <tag>L-Band</tag>
+        <tag>macOS</tag>
+        <tag>APRS</tag>
+        <tag>ISS</tag>
+        <tag>Gqrx</tag>
       </tags>
   </entry>
   <entry>
@@ -2398,39 +2303,6 @@
         <tag>HF</tag>
         <tag>Meteorología</tag>
         <tag>Weatherfax</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recibir APRS en macOS con Gqrx</title>
-    <url>/recibir-aprs-macos-con-gqrx/</url>
-    <content><![CDATA[<p>En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando <a href="https://gqrx.dk/">Gqrx</a>.<br>El APRS, es un protocolo de comunicaciones basado en AX.25, usado en el envío de telemetría, paquetes de datos meteorológicos,  posicionamiento GPS, etc. En este caso nos ocuparemos del envío de mensajería entre estaciones de radioaficionados, en la que la Estación Espacial (ISS) es una estación repetidora.</p>
-<span id="more"></span>
-
-<p>Vamos a interceptar esa mensajería de dominio público entre las distintas estaciones de radioaficionado que se mantiene en esos pocos minutos que dura el pase de la ISS por nuestro cielo.</p>
-<p>Dentro del ecosistema Apple no hay mucha diversidad de programas SDR, pero que en este caso, la suerte nos ha sonreído con GQRX.<br>Es un programa que tiene muchos seguidores, ya que brinda sencillez y no consume muchos recursos. Pero que en este caso nos ofrece todo aquello que necesitamos para la recepción de esa mensajería APRS.</p>
-<h2 id="Instalacion-de-Gqrx"><a href="#Instalacion-de-Gqrx" class="headerlink" title="Instalación de Gqrx"></a>Instalación de Gqrx</h2><p>La instalación es sencilla, y más aún para todos aquellos que ya tienen instalado el sistema de administración de paquetes Homebrew previamente.</p>
-<p>Si no tienes un administrador de programas, proponemos su instalación siguiendo <a href="https://franyerverjel.com/blog/instalacion-de-homebrew-en-mac">esta guía</a>.</p>
-<p>Para la instalación, usando el administrador de paquetes, abrimos una ventana de terminal y escribimos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install --cask gqrx</span><br></pre></td></tr></table></figure>
-
-<p>Una vez finalizada la instalación, iniciamos desde el icono de la aplicación:</p>
-<img src="/recibir-aprs-macos-con-gqrx/icono.png" class="" width="90" title="Gqrx">
-
-<p>En el momento de empezar esta guía la versión del programa es la 2.14.4.</p>
-<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Ya finalizada la instalación y familiarizados con el programa, sintonizamos la frecuencia en la que trabaja la ISS, que en este caso es 145.825.000 Hz.<br>Elegimos el modo WFM (mono) y abrimos el único <em>plugin</em> que trae de serie el programa, y que lo podemos encontrar dentro de la pestaña <strong>Tools</strong> con el título de <strong>AFSK1200 Decoder</strong>.</p>
-<img src="/recibir-aprs-macos-con-gqrx/gqrx-menu.png" class="" width="900" title="Gqrx">
-
-<p>Se abrirá una ventana muy simple en la que irán apareciendo los mensajes interceptados y decodificados.</p>
-<img src="/recibir-aprs-macos-con-gqrx/mensajes.png" class="" width="800" title="Gqrx - Mensajes">
-
-<p>Y hasta  aquí la guía. Espero que os animéis a intentarlo.</p>
-<p>73 para todos.</p>
-]]></content>
-      <tags>
-        <tag>macOS</tag>
-        <tag>APRS</tag>
-        <tag>ISS</tag>
-        <tag>Gqrx</tag>
       </tags>
   </entry>
   <entry>
@@ -2599,6 +2471,36 @@
         <tag>SDRSharp</tag>
         <tag>DMR</tag>
         <tag>DSDPlus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir imágenes SSTV desde la ISS</title>
+    <url>/recibir-sstv-iss/</url>
+    <content><![CDATA[<p><a href="https://www.ariss.org/">ARISS</a> organiza ocasionalmente eventos conmemorativos en los que se envían imágenes <a href="https://es.wikipedia.org/wiki/SSTV">SSTV</a> desde la ISS (<em>International Space Station</em>). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.</p>
+<span id="more"></span>
+
+<img src="/recibir-sstv-iss/sstv.jpg" class="" width="500" title="Imagen SSTV">
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Las imágenes son enviadas en la frecuencia <strong>145,800 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;NFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;20000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145800000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar las imágenes usaremos el programa RX-SSTV que podemos descargar desde el siguiente enlace:</p>
+<p><a href="http://users.belgacom.net/mysoftware/Setup_RXSSTV.exe"><center>Descargar RX-SSTV v2.1.5</center></a></p>
+<p>Una vez descargado el instalador, lo ejecutamos e instalamos el programa.</p>
+<p>Las imágenes se envían actualmente en modo <strong>PD120</strong> con un tiempo de espera de dos minutos entre cada imagen. Podemos indicarle a RX-SSTV que utilice este modo por defecto y evitarnos el tener que cambiarlo cada vez y que se nos olvide. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Setup RX-SSTV</em></strong>. En esta ventana de ajustes le indicamos que utilice PD120 por defecto.</p>
+<img src="/recibir-sstv-iss/Config.png" class="" width="300" title="Ajustes">
+
+<p>El siguiente paso es configurar el programa para que reciba el audio desde cable de audio virtual. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Sound Control and Devices</em></strong>. Se abrirá la ventana de ajustes de audio en la que tenemos que marcar el cable de audio virtual como el dispositivo predeterminado de grabación. Es posible que este cambio afecte a otros programas que tengamos, así que si detectamos problemas de audio debemos revertir este cambio y volver a realizarlo cuando usemos RX-SSTV.</p>
+<p>Una vez tengamos todo correctamente configurado, cuando el programa detecte la señal de una nueva imagen, iniciará la recepción de la misma de forma automática.</p>
+<img src="/recibir-sstv-iss/SDRSharp.png" class="" width="900" title="Recibiendo imagen">
+
+<p>Si nos aparece el mensaje <em>“Overflow”</em> en el programa, significa que tenemos el audio demasiado alto. Para solucionarlo simplemente bajamos el volumen del audio en SDR# hasta que desaparezca el mensaje.</p>
+<p>Al terminar la recepción de una imagen, el programa la guarda automáticamente y queda a la espera de detectar la siguiente imagen.</p>
+<img src="/recibir-sstv-iss/RX-SSTV.png" class="" width="500" title="RX-SSTV">
+]]></content>
+      <tags>
+        <tag>ISS</tag>
+        <tag>SSTV</tag>
       </tags>
   </entry>
   <entry>
@@ -2855,36 +2757,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recibir imágenes SSTV desde la ISS</title>
-    <url>/recibir-sstv-iss/</url>
-    <content><![CDATA[<p><a href="https://www.ariss.org/">ARISS</a> organiza ocasionalmente eventos conmemorativos en los que se envían imágenes <a href="https://es.wikipedia.org/wiki/SSTV">SSTV</a> desde la ISS (<em>International Space Station</em>). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.</p>
-<span id="more"></span>
-
-<img src="/recibir-sstv-iss/sstv.jpg" class="" width="500" title="Imagen SSTV">
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Las imágenes son enviadas en la frecuencia <strong>145,800 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;NFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;20000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145800000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar las imágenes usaremos el programa RX-SSTV que podemos descargar desde el siguiente enlace:</p>
-<p><a href="http://users.belgacom.net/mysoftware/Setup_RXSSTV.exe"><center>Descargar RX-SSTV v2.1.5</center></a></p>
-<p>Una vez descargado el instalador, lo ejecutamos e instalamos el programa.</p>
-<p>Las imágenes se envían actualmente en modo <strong>PD120</strong> con un tiempo de espera de dos minutos entre cada imagen. Podemos indicarle a RX-SSTV que utilice este modo por defecto y evitarnos el tener que cambiarlo cada vez y que se nos olvide. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Setup RX-SSTV</em></strong>. En esta ventana de ajustes le indicamos que utilice PD120 por defecto.</p>
-<img src="/recibir-sstv-iss/Config.png" class="" width="300" title="Ajustes">
-
-<p>El siguiente paso es configurar el programa para que reciba el audio desde cable de audio virtual. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Sound Control and Devices</em></strong>. Se abrirá la ventana de ajustes de audio en la que tenemos que marcar el cable de audio virtual como el dispositivo predeterminado de grabación. Es posible que este cambio afecte a otros programas que tengamos, así que si detectamos problemas de audio debemos revertir este cambio y volver a realizarlo cuando usemos RX-SSTV.</p>
-<p>Una vez tengamos todo correctamente configurado, cuando el programa detecte la señal de una nueva imagen, iniciará la recepción de la misma de forma automática.</p>
-<img src="/recibir-sstv-iss/SDRSharp.png" class="" width="900" title="Recibiendo imagen">
-
-<p>Si nos aparece el mensaje <em>“Overflow”</em> en el programa, significa que tenemos el audio demasiado alto. Para solucionarlo simplemente bajamos el volumen del audio en SDR# hasta que desaparezca el mensaje.</p>
-<p>Al terminar la recepción de una imagen, el programa la guarda automáticamente y queda a la espera de detectar la siguiente imagen.</p>
-<img src="/recibir-sstv-iss/RX-SSTV.png" class="" width="500" title="RX-SSTV">
-]]></content>
-      <tags>
-        <tag>ISS</tag>
-        <tag>SSTV</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recibir telemetría de radiosondas meteorológicas</title>
     <url>/recibir-telemetria-radiosondas/</url>
     <content><![CDATA[<p>A diario son lanzadas en todo el mundo cientos de radiosondas meteorológicas para obtener mediciones que permitan conocer el estado actual en las capas altas de la atmósfera. Estas mediciones ayudan a los servicios meteorológicos en sus predicciones.<br>En España se lanzan diariamente sondas de desde distintos puntos de nuestra geografía. Estas sondas alcanzan varios kilómetros de altura y se pueden recibir desde bastante distancia. En este artículo veremos como podemos recibir la telemetría de estas radiosondas usando nuestro dispositivo SDR.</p>
@@ -3136,6 +3008,43 @@
       </tags>
   </entry>
   <entry>
+    <title>Seguimiento de satélites con Orbitron</title>
+    <url>/seguimiento-satelites-orbitron/</url>
+    <content><![CDATA[<p>Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.<br>Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.</p>
+<span id="more"></span>
+
+<h2 id="Instalacion-de-Orbitron"><a href="#Instalacion-de-Orbitron" class="headerlink" title="Instalación de Orbitron"></a>Instalación de Orbitron</h2><p>El primer paso es descargar Orbitron desde su web: <a href="http://www.stoff.pl/downloads.php">http://www.stoff.pl/downloads.php</a></p>
+<p>Tenemos la opción de descargarnos el instalador o un archivo ZIP. En este ejemplo vamos a descargar el ZIP y lo vamos a extraer en el directorio <em>C:\SDR\Orbitron</em>.</p>
+<p>Ejecutamos ahora el programa haciendo doble clic en <strong>Orbitron.exe</strong> y se nos abrirá la interfaz del programa. Nos pedirá que actualicemos los archivo de TLE al iniciar, a lo que le decimos que no. Más adelante veremos qué son estos archivos y cómo actualizarlos.</p>
+<img src="/seguimiento-satelites-orbitron/orbitron.jpg" class="" title="Orbitron">
+
+<h2 id="Configuracion-de-Orbitron"><a href="#Configuracion-de-Orbitron" class="headerlink" title="Configuración de Orbitron"></a>Configuración de Orbitron</h2><p>Vamos ahora a configurar Orbitron con los ajustes básicos.</p>
+<p>El primer ajuste es indicarle nuestra localización. Para ello vamos a la pestaña Location e introducimos nuestros datos. Si no los sabemos podemos buscar nuestra ciudad (o las más cercana) en el listado que tenemos a la derecha. Lo ideal es meter los valores más exactos posibles.</p>
+<img src="/seguimiento-satelites-orbitron/orbitron-location.jpg" class="" title="Orbitron Location">
+
+<p>Una vez los tengamos introducidos correctamente, hacemos clic en <strong>Choose</strong> para seleccionar esta ubicación.</p>
+<p>El siguiente paso es seleccionar el archivo con los TLE de los satélites que vamos a seguir.<br>Estos archivos TLE contienen un listado de objetos que orbitan la Tierra con sus respectivos elementos orbitales en formato TLE <em>(two-line element set)</em>. Con estos elementos, y usando la fórmula adecuada, podemos estimar la posición y velocidad del objeto en cualquier instante de tiempo pasado o futuro.</p>
+<p>Aquí tenemos varias opciones, utilizar los archivos TLE descargados por Orbitron, o bien crear un archivo con los satélites que nos interesen. Si optamos por la primera opción, necesitamos primeramente actualizar los archivos TLE. Para ello abrimos la ventana de ajustes de Orbitron presionando las teclas <strong><em>Alt+F5</em></strong>, o bien hacemos clic en el siguiente punto y seleccionamos <strong>Setup</strong>:</p>
+<img src="/seguimiento-satelites-orbitron/orbitron-setup.jpg" class="" title="Orbitron Setup">
+
+<p>Vamos a la pestaña <strong>TLE updater</strong> y hacemos clic en el siguiente icono:</p>
+<img src="/seguimiento-satelites-orbitron/setup-tle.jpg" class="" title="Actualizar TLE">
+
+<p>Una vez se actualicen los archivos, cerramos esa ventana y hacemos clic en <strong>Load TLE</strong> y seleccionamos el archivo que contenga los satélites que queremos seguir. En este caso vamos a elegir un archivo que contiene los TLE de algunos satélites que nos interesan.</p>
+<img src="/seguimiento-satelites-orbitron/load-tle.jpg" class="" title="Cargar archivo">
+
+<p>Ahora bastaría con ir seleccionando los satélites que queremos seguir y se mostrarán sobre el mapa.</p>
+<img src="/seguimiento-satelites-orbitron/orbitron-loaded.jpg" class="" title="Orbitron">
+
+<p>En siguientes tutoriales veremos cómo conectar Orbitron con SDR# para realizar seguimientos automáticos.</p>
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Orbitron</tag>
+        <tag>Tracking</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Seguimiento de satélites con Gpredict</title>
     <url>/seguimiento-satelites-gpredict/</url>
     <content><![CDATA[<p><a href="http://gpredict.oz9aec.net/">Gpredict</a> es un programa para el seguimiento en tiempo real y predicción de órbitas para satélites. Este programa es muy similar a Orbitron, el cual ya vimos cómo instalar y configurar en el artículo <a href="/seguimiento-satelites-orbitron">“Seguimiento de satélites con Orbitron”</a>. Pero al contrario de este, Gpredict es multiplataforma, por lo que podremos usarlo en diferentes sistemas operativos.<br>En este artículo veremos cómo instalar y configurar Gpredict en Windows, Linux y macOS.</p>
@@ -3221,45 +3130,8 @@
 ]]></content>
       <tags>
         <tag>Satélites</tag>
+        <tag>Tracking</tag>
         <tag>Gpredict</tag>
-        <tag>Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Seguimiento de satélites con Orbitron</title>
-    <url>/seguimiento-satelites-orbitron/</url>
-    <content><![CDATA[<p>Una de las posibilidades más interesantes que nos ofrecen los dispositivos SDR es el poder recibir señales desde algunos satélites que orbitan el planeta en lo que se denomina órbita baja (LEO o Low Earth Orbit). Si queremos recibir su señal tendremos que estar atentos al momento en el que pasan por encima de nuestra posición. Para ello se usan programas que nos indican en qué posición se encuentra un satélite en un determinado instante de tiempo utilizando los datos de su órbita.<br>Existen distintos programas para Windows que realizan esta predicción. Uno de ellos es Orbitron, y es el que veremos en este tutorial.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion-de-Orbitron"><a href="#Instalacion-de-Orbitron" class="headerlink" title="Instalación de Orbitron"></a>Instalación de Orbitron</h2><p>El primer paso es descargar Orbitron desde su web: <a href="http://www.stoff.pl/downloads.php">http://www.stoff.pl/downloads.php</a></p>
-<p>Tenemos la opción de descargarnos el instalador o un archivo ZIP. En este ejemplo vamos a descargar el ZIP y lo vamos a extraer en el directorio <em>C:\SDR\Orbitron</em>.</p>
-<p>Ejecutamos ahora el programa haciendo doble clic en <strong>Orbitron.exe</strong> y se nos abrirá la interfaz del programa. Nos pedirá que actualicemos los archivo de TLE al iniciar, a lo que le decimos que no. Más adelante veremos qué son estos archivos y cómo actualizarlos.</p>
-<img src="/seguimiento-satelites-orbitron/orbitron.jpg" class="" title="Orbitron">
-
-<h2 id="Configuracion-de-Orbitron"><a href="#Configuracion-de-Orbitron" class="headerlink" title="Configuración de Orbitron"></a>Configuración de Orbitron</h2><p>Vamos ahora a configurar Orbitron con los ajustes básicos.</p>
-<p>El primer ajuste es indicarle nuestra localización. Para ello vamos a la pestaña Location e introducimos nuestros datos. Si no los sabemos podemos buscar nuestra ciudad (o las más cercana) en el listado que tenemos a la derecha. Lo ideal es meter los valores más exactos posibles.</p>
-<img src="/seguimiento-satelites-orbitron/orbitron-location.jpg" class="" title="Orbitron Location">
-
-<p>Una vez los tengamos introducidos correctamente, hacemos clic en <strong>Choose</strong> para seleccionar esta ubicación.</p>
-<p>El siguiente paso es seleccionar el archivo con los TLE de los satélites que vamos a seguir.<br>Estos archivos TLE contienen un listado de objetos que orbitan la Tierra con sus respectivos elementos orbitales en formato TLE <em>(two-line element set)</em>. Con estos elementos, y usando la fórmula adecuada, podemos estimar la posición y velocidad del objeto en cualquier instante de tiempo pasado o futuro.</p>
-<p>Aquí tenemos varias opciones, utilizar los archivos TLE descargados por Orbitron, o bien crear un archivo con los satélites que nos interesen. Si optamos por la primera opción, necesitamos primeramente actualizar los archivos TLE. Para ello abrimos la ventana de ajustes de Orbitron presionando las teclas <strong><em>Alt+F5</em></strong>, o bien hacemos clic en el siguiente punto y seleccionamos <strong>Setup</strong>:</p>
-<img src="/seguimiento-satelites-orbitron/orbitron-setup.jpg" class="" title="Orbitron Setup">
-
-<p>Vamos a la pestaña <strong>TLE updater</strong> y hacemos clic en el siguiente icono:</p>
-<img src="/seguimiento-satelites-orbitron/setup-tle.jpg" class="" title="Actualizar TLE">
-
-<p>Una vez se actualicen los archivos, cerramos esa ventana y hacemos clic en <strong>Load TLE</strong> y seleccionamos el archivo que contenga los satélites que queremos seguir. En este caso vamos a elegir un archivo que contiene los TLE de algunos satélites que nos interesan.</p>
-<img src="/seguimiento-satelites-orbitron/load-tle.jpg" class="" title="Cargar archivo">
-
-<p>Ahora bastaría con ir seleccionando los satélites que queremos seguir y se mostrarán sobre el mapa.</p>
-<img src="/seguimiento-satelites-orbitron/orbitron-loaded.jpg" class="" title="Orbitron">
-
-<p>En siguientes tutoriales veremos cómo conectar Orbitron con SDR# para realizar seguimientos automáticos.</p>
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Orbitron</tag>
-        <tag>Tracking</tag>
       </tags>
   </entry>
 </search>

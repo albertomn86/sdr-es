@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sdr-es.com/instalacion-rtlsdr-windows/</loc>
+    
+    <lastmod>2022-03-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://sdr-es.com/recibir-satelites-meteorologicos-NOAA-linux/</loc>
     
     <lastmod>2022-02-02</lastmod>
@@ -23,24 +32,6 @@
     <loc>https://sdr-es.com/recepcion-inmarsat/</loc>
     
     <lastmod>2022-01-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://sdr-es.com/recepcion-std-c-inmarsat/</loc>
-    
-    <lastmod>2022-01-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://sdr-es.com/instalacion-rtlsdr-windows/</loc>
-    
-    <lastmod>2022-01-06</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -131,15 +122,6 @@
     <loc>https://sdr-es.com/recepcion-weather-fax/</loc>
     
     <lastmod>2021-09-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://sdr-es.com/recepcion-mensajes-VDL2/</loc>
-    
-    <lastmod>2021-08-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -353,15 +335,6 @@
   </url>
   
   <url>
-    <loc>https://sdr-es.com/recepcion-aero-inmarsat/</loc>
-    
-    <lastmod>2020-03-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://sdr-es.com/recepcion-nayif1/</loc>
     
     <lastmod>2020-02-26</lastmod>
@@ -400,7 +373,7 @@
 
   <url>
     <loc>https://sdr-es.com/</loc>
-    <lastmod>2022-03-14</lastmod>
+    <lastmod>2022-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
