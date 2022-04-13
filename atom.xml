@@ -58,9 +58,9 @@
     
     <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
     
-    <category term="Tracking" scheme="https://sdr-es.com/tags/Tracking/"/>
-    
     <category term="Gpredict" scheme="https://sdr-es.com/tags/Gpredict/"/>
+    
+    <category term="Tracking" scheme="https://sdr-es.com/tags/Tracking/"/>
     
   </entry>
   
