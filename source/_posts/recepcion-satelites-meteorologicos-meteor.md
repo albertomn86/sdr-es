@@ -101,7 +101,7 @@ path=C:\SDR\MeteorM2\imágenes
 FORMAT=jpg <-- Cambiar por 'bmp' para obtener imagen sin comprimir.
 R=1
 G=2
-B=3 <-- Cambiar por 2 según los canales activos.
+B=3 <-- Modificar según los canales activos.
 ```
 
 - Ajustes para decodificar mediante **archivo**:
@@ -125,7 +125,7 @@ path=C:\SDR\MeteorM2\imágenes
 FORMAT=jpg <-- Cambiar por 'bmp' para obtener imagen sin comprimir.
 R=1
 G=2
-B=3 <-- Cambiar por 2 según los canales activos.
+B=3 <-- Modificar según los canales activos.
 ```
 
 ### Recepción
@@ -213,7 +213,7 @@ Grabaremos el pase usando el _plugin_ de grabación de SDR# usando los siguiente
 
 {% asset_img sdr_sharp_recording.jpg 300 "SDR# - Ajustes grabación" %}
 
-Para evitar generar un archivo enorme, podemos usar las opciones de _decimation_ o reducir el _sample rate_ a 0.9 MSPS. Necesitamos grabar solo un ancho de banda de unos 120 MHz.
+Para evitar generar un archivo enorme, podemos usar las opciones de _decimation_ o reducir el _sample rate_ a 0.9 MSPS. Necesitamos grabar solo un ancho de banda de unos 120 KHz.
 
 Ahora nos movemos a la frecuencia del satélite (no es necesario corregir la desviación de la señal en este método) y cuando veamos que aparece la señal pulsamos sobre _"Record"_ para comenzar a grabarlo. Cuando dejemos de ver la señal paramos la grabación.
 
