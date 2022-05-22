@@ -1,7 +1,7 @@
 ---
 title: Recibir satélite Es'hail-2/QO-100
 date: 2022-05-22 13:13:01
-tags: [Satélites, Es'hail-2/QO-100, SDRSharp]
+tags: [Satélites, Es'hail-2/QO-100, SDRSharp, SDR Console]
 author: EA7KOO
 description: Guía para la recepción del satélite geoestacionario Es'hail-2/QO-100.
 ---
