@@ -6,7 +6,7 @@
   <link href="https://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="https://sdr-es.com/"/>
-  <updated>2022-02-02T17:21:07.000Z</updated>
+  <updated>2022-05-22T11:13:01.000Z</updated>
   <id>https://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recibir satelite Es&#39;hail-2/QO-100</title>
+    <link href="https://sdr-es.com/recibir-satelite-eshail2-qo100/"/>
+    <id>https://sdr-es.com/recibir-satelite-eshail2-qo100/</id>
+    <published>2022-05-22T11:13:01.000Z</published>
+    <updated>2022-05-22T11:13:01.000Z</updated>
+    
+    
+    <summary type="html">Guía para la recepción del satélite geoestacionario Es&#39;hail-2/QO-100.</summary>
+    
+    
+    
+    
+    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
+    
+    <category term="SDRSharp" scheme="https://sdr-es.com/tags/SDRSharp/"/>
+    
+    <category term="Es&#39;hail-2/QO-100" scheme="https://sdr-es.com/tags/Es-hail-2-QO-100/"/>
+    
+  </entry>
   
   <entry>
     <title>Recibir satélites meteorológicos NOAA en Linux</title>
@@ -420,23 +441,6 @@
     <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
     
     <category term="CubicSDR" scheme="https://sdr-es.com/tags/CubicSDR/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Identificación de estaciones de radiodifusión con CSVUserlistBrowser</title>
-    <link href="https://sdr-es.com/identificacion-estaciones-csvuserlistbrowser/"/>
-    <id>https://sdr-es.com/identificacion-estaciones-csvuserlistbrowser/</id>
-    <published>2020-05-10T12:40:22.000Z</published>
-    <updated>2020-05-10T12:40:22.000Z</updated>
-    
-    
-    <summary type="html">Cómo instalar y configurar CSVUserlistBrowser para identificar estaciones de radiodifusión en HF.</summary>
-    
-    
-    
-    
-    <category term="HF" scheme="https://sdr-es.com/tags/HF/"/>
     
   </entry>
   

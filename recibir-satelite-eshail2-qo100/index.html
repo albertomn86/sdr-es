@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png">
+  <meta name="google-site-verification" content="zvjkvYHg6-B9vMVEvFFO8k4UMoFzQQ1tTyQBdG8c-so">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="Guía para la recepción del satélite geoestacionario Es&#39;hail-2&#x2F;QO-100.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recibir satelite Es&#39;hail-2&#x2F;QO-100">
+<meta property="og:url" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/index.html">
+<meta property="og:site_name" content="SDR en español">
+<meta property="og:description" content="Guía para la recepción del satélite geoestacionario Es&#39;hail-2&#x2F;QO-100.">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/lnb.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/biast.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/sdr-biast.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/AMSAT-QO-100-NB-Transponder-Bandplan-Graph.png">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/sdr-sharp-beacon.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/sdr-sharp-recibiendo.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/sdr-console-ajustar-rango.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/sdr-console-add-converter.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/sdr-console-set-converter.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/sdr-console-seleccionar-converter.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/sdr-console-geo-beacon-activar.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/sdr-console-geo-beacon-iniciar.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/sdr-console-recibiendo.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/sdr-sharp-beacon-decode.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/beacon-decoder-input.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/beacon-decoder-signal.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/beacon-decoder-status.jpeg">
+<meta property="article:published_time" content="2022-05-22T11:13:01.000Z">
+<meta property="article:modified_time" content="2022-05-22T11:13:01.000Z">
+<meta property="article:author" content="SDR en español">
+<meta property="article:tag" content="Satélites">
+<meta property="article:tag" content="SDRSharp">
+<meta property="article:tag" content="Es&#39;hail-2&#x2F;QO-100">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sdr-es.com/recibir-satelite-eshail2-qo100/lnb.jpeg">
+
+
+<link rel="canonical" href="https://sdr-es.com/recibir-satelite-eshail2-qo100/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"es","comments":true,"permalink":"https://sdr-es.com/recibir-satelite-eshail2-qo100/","path":"recibir-satelite-eshail2-qo100/","title":"Recibir satelite Es'hail-2/QO-100"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Recibir satelite Es'hail-2/QO-100 | SDR en español</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216548910-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-216548910-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Cambiar a barra de navegación" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">SDR en español</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li>
+        <li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li>
+        <li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li>
+        <li class="menu-item menu-item-bands-plan"><a href="/plan-bandas/" rel="section"><i class="fa fa-broadcast-tower fa-fw"></i>Plan bandas IARU</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Buscando..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Contenidos
+        </li>
+        <li class="sidebar-nav-overview">
+          Inicio
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Datos-del-satelite"><span class="nav-number">1.</span> <span class="nav-text">Datos del satélite</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Material-necesario"><span class="nav-number">2.</span> <span class="nav-text">Material necesario</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Antena"><span class="nav-number">2.1.</span> <span class="nav-text">Antena</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bias-Tee"><span class="nav-number">2.2.</span> <span class="nav-text">Bias-Tee</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SDR"><span class="nav-number">2.3.</span> <span class="nav-text">SDR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion-y-orientacion-de-la-antena"><span class="nav-number">3.</span> <span class="nav-text">Instalación y orientación de la antena</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recepcion-del-transpondedor-NB"><span class="nav-number">4.</span> <span class="nav-text">Recepción del transpondedor NB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Recepcion-con-SDR"><span class="nav-number">4.1.</span> <span class="nav-text">Recepción con SDR#</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Recepcion-con-SDR-Console"><span class="nav-number">4.2.</span> <span class="nav-text">Recepción con SDR Console</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decodificar-telemetria"><span class="nav-number">5.</span> <span class="nav-text">Decodificar telemetría</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SDR en español"
+      src="/images/avatar-sdr.gif">
+  <p class="site-author-name" itemprop="name">SDR en español</p>
+  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-name">entradas</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/sdr_esp" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
+    <link itemprop="mainEntityOfPage" href="https://sdr-es.com/recibir-satelite-eshail2-qo100/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-sdr.gif">
+      <meta itemprop="name" content="SDR en español">
+      <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SDR en español">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Recibir satelite Es'hail-2/QO-100
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
+
+      <time title="Creado por: 22/05/2022 13:13:01" itemprop="dateCreated datePublished" datetime="2022-05-22T13:13:01+02:00">22/05/2022</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>EA7KOO</span>
+    </span>
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><a target="_blank" rel="noopener" href="https://amsat-dl.org/en/eshail-2-amsat-phase-4-a/">Es’hail-2/Qatar-OSCAR 100</a> es un satélite geoestacionario catarí construido por Mitsubishi Electric que ofrece servicios de retransmisión de televisión para las regiones del Medio Oeste y Norte de África. Además de estos servicios de retransmisión, este satélite incorpora dos transpondedores para comunicaciones de radioaficionado por satélite.</p>
+<p>En este artículo veremos como recibir la señal de estos transpondedores usando una antena parabólica y nuestro dispositivo SDR.</p>
+<span id="more"></span>
+
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>Es’hail-2/QO-100</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>NORAD ID</strong></td>
+<td>43700</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2018-090A</td>
+</tr>
+<tr>
+<td><strong>Posición</strong></td>
+<td>26° Este</td>
+</tr>
+<tr>
+<td><strong>Masa de lanzamiento</strong></td>
+<td>5.300 Kg</td>
+</tr>
+<tr>
+<td><strong>Fecha de lanzamiento</strong></td>
+<td>15 de Noviembre de 2018</td>
+</tr>
+<tr>
+<td><strong>Transpondedores bajada</strong></td>
+<td><strong>NB:</strong> 10.489,5 MHz - 10.490 MHz (Pol. V) <br> <strong>WB:</strong> 10.491 MHz - 10.499 MHz (Pol. H)</td>
+</tr>
+</tbody></table>
+<h2 id="Material-necesario"><a href="#Material-necesario" class="headerlink" title="Material necesario"></a>Material necesario</h2><h3 id="Antena"><a href="#Antena" class="headerlink" title="Antena"></a>Antena</h3><p>Para la recepción de este satélite necesitamos una antena parabólica con un disco de al menos 40 centímetros para el transpondedor de banda estrecha y de 80 centímetros para el de banda ancha. El LNB puede ser cualquiera de nuestra elección. Si bien los LNB normales de TV para banda Ku presentan el problema de la desviación de la señal (<em>LNB drift</em>), veremos como resolver este problema usando la opción que <strong>SDR Console</strong> proporciona para ello. Aunque lo más recomendable es utilizar un LNB con TCXO, ya que proporciona una mejor recepción en este caso. El LNB recomendado, y que se utiliza en este ejemplo, es el <a target="_blank" rel="noopener" href="https://www.rtl-sdr.com/qo-100-bullseye-tcxo-ultra-stable-lnb-now-available-in-our-store-for-29-95-with-free-shipping/"><strong>Bullseye LNB</strong></a>.</p>
+<img src="/recibir-satelite-eshail2-qo100/lnb.jpeg" class="" width="600" title="Bullseye LNB">
+
+<h3 id="Bias-Tee"><a href="#Bias-Tee" class="headerlink" title="Bias-Tee"></a>Bias-Tee</h3><p>Para hacer funcionar el LNB vamos a necesitar alimentarlo con una tensión de 13V a 18V. Los dispositivos SDR normales pueden proporcionar hasta un máximo de 4,5V, por lo que vamos a requerir de otra forma de alimentación. Podemos encontrar muchas formas distintas de hacerlo si buscamos por internet (inyectores de tensión de TV por satélite, receptores de TV por satélite, etc.), pero en este ejemplo vamos a usar un Bias-Tee externo. Podemos adquirir fácilmente estos dispositivos en cualquier sitio y su coste no es muy elevado (unos 14€).</p>
+<img src="/recibir-satelite-eshail2-qo100/biast.jpeg" class="" width="400" title="Bias-Tee">
+
+<p>Para alimentar el LNB necesitaremos una fuente que nos pueda proporcionar dos voltajes distintos. Unos 13V a 14V para activar la polarización vertical y unos 17V a 18V para la horizontal.</p>
+<h3 id="SDR"><a href="#SDR" class="headerlink" title="SDR"></a>SDR</h3><p>Para la recepción en estas frecuencias podemos usar cualquier SDR, ya que el propio LNB actúa como un <em>Downconverter</em>, reduciendo la frecuencia de entrada a un rango de salida que comienza en 739MHz y que la mayoría de los dispositivos SDR reciben sin ningún problema.</p>
+<h2 id="Instalacion-y-orientacion-de-la-antena"><a href="#Instalacion-y-orientacion-de-la-antena" class="headerlink" title="Instalación y orientación de la antena"></a>Instalación y orientación de la antena</h2><p>El satélite esta situado en los 26° Este. Para orientar nuestra antena podemos usar algunas aplicaciones existentes para móviles, o bien utilizar una <a target="_blank" rel="noopener" href="https://eshail.batc.org.uk/point/">aplicación online</a> y una brújula.</p>
+<p>Una vez colocada y orientada (parcialmente, ya que posiblemente después haya que afinar para mejorar la recepción), vamos a realizar la conexión con nuestro SDR. Para ello necesitamos conectar el LNB (conector verde si usamos el Bullseye) a la entrada del Bias-Tee marcada con RF+DC y el SDR a la salida marcada con RF. En este ejemplo se ha utilizado un cable coaxial para TV con dos conectores F y un adaptador a SMA para conectarlo al Bias-Tee.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-biast.jpeg" class="" width="900" title="Conexiones SDR, Bias-Tee y LNB">
+
+
+<h2 id="Recepcion-del-transpondedor-NB"><a href="#Recepcion-del-transpondedor-NB" class="headerlink" title="Recepción del transpondedor NB"></a>Recepción del transpondedor NB</h2><p>Como ya se ha mencionado anteriormente, el satélite incorpora dos transpondedores para su uso por radioaficionados. Un transpondedor lineal de banda estrecha (<em>Narrow Band</em>) en polarización vertical y otro de banda ancha (<em>Wide Band</em>) para televisión digital de radioaficionado (DATV) en polarización horizontal. En este artículo nos vamos a centrar en la recepción del transpondedor de banda estrecha. Para seleccionar el transpondedor bastará con cambiar la tensión de alimentación del LNB en cada caso.</p>
+<p>En la siguiente imagen podemos ver la distribución de las bandas en este transpondedor.</p>
+<img src="/recibir-satelite-eshail2-qo100/AMSAT-QO-100-NB-Transponder-Bandplan-Graph.png" class="" width="900" title="QO-100 NB Bandplan © AMSAT-DL">
+
+<p>Más información en la <a target="_blank" rel="noopener" href="https://amsat-dl.org/en/new-qo-100-band-plan/">página web de AMSAT-DL</a>.</p>
+<h3 id="Recepcion-con-SDR"><a href="#Recepcion-con-SDR" class="headerlink" title="Recepción con SDR#"></a>Recepción con SDR#</h3><p>Para recibir la señal del satélite iniciamos SDR# y sintonizamos la frecuencia de 739,770 MHz. Si todo está correctamente conectado y la antena medianamente orientada, deberíamos poder ver la señal de la baliza del satélite. Podemos usar la misma para ajustar nuestra antena lo mejor posible y recibir el máximo de señal.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-sharp-beacon.jpeg" class="" width="900" title="Baliza QO-100">
+
+<p>Ahora vamos a aplicar el desplazamiento en SDR# para que las frecuencias se correspondan con las reales del satélite. Esto no es imprescindible, pero nos hará más fácil la búsqueda e identificación de las mismas. Para ello basta con restar a la frecuencia central de la baliza (10.489,750 MHz) la frecuencia en la que nos encontramos dicha señal en el programa (739,771 MHz en nuestro caso).</p>
+<center><b>10.489.750.000 Hz - 739.771.000 Hz  = 9.749.979.000 Hz</b></center>
+
+<p>Por último, introducimos este resultado en el campo <em>Shift</em> y lo activamos para aplicar el desplazamiento.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-sharp-recibiendo.jpeg" class="" width="900" title="Recepción QO-100">
+
+<h3 id="Recepcion-con-SDR-Console"><a href="#Recepcion-con-SDR-Console" class="headerlink" title="Recepción con SDR Console"></a>Recepción con SDR Console</h3><p>Como ya se mencionó anteriormente, si estamos usando un LNB que no tenga TCXO es posible que veamos que las señales se desplazan continuamente, lo que hace muy difícil recibirlas correctamente. Para solucionar este inconveniente mediante <em>software</em> podemos usar una utilidad que incorpora el programa <a target="_blank" rel="noopener" href="https://www.sdr-radio.com/download">SDR Console</a>.<br>Seguiremos los pasos indicados en su <a target="_blank" rel="noopener" href="https://www.sdr-radio.com/EsHail-2">página web</a> y que se describen a continuación.</p>
+<p>El primer paso es habilitar que se muestren las frecuencias superiores a 9 GHz. Para ello vamos a los ajustes y marcamos el rango indicado en la siguiente imagen.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-ajustar-rango.jpeg" class="" width="900" title="SDR Console - Ajuste rango">
+
+<p>El siguiente paso es aplicar el desplazamiento de la señal. Para introducir el valor de desplazamiento debemos editar los valores de definición de nuestro dispositivo SDR. Para modificar este valor seleccionamos nuestra radio y le damos a <strong>Definitions</strong> y en la ventana que aparece marcamos <strong>Converter selection</strong> y hacemos clic en <strong>Edit</strong>.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-add-converter.jpeg" class="" width="900" title="SDR Console - Desplazamiento">
+
+<p>Ahora introducimos el valor de desplazamiento que vimos como calcular en el apartado anterior.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-set-converter.jpeg" class="" width="700" title="SDR Console - Converter">
+
+<p>Hacemos clic en <strong>Save</strong> y seleccionamos ahora el nuevo <em>converter</em> que acabamos de crear.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-seleccionar-converter.jpeg" class="" width="500" title="SDR Console - Converter">
+
+<p>Por último, vamos a activar la utilidad de corrección de frecuencia usando la baliza. Para ello vamos a <strong>“View”</strong> en el menú de opciones, le damos a <strong>“Select”</strong> y activamos la opción <strong>“Geostationary Beacon”</strong>. Nos pedirá reiniciar el programa.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-geo-beacon-activar.jpeg" class="" width="900" title="SDR Console">
+
+<p>Una vez se ha reiniciado el programa, sintonizamos la frecuencia de la baliza y después accedemos a esta nueva opción que acabamos de habilitar. Ahora hacemos clic en el icono del círculo indicado en la siguiente imagen para iniciar la visualización del espectro.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-geo-beacon-iniciar.jpeg" class="" width="900" title="SDR Console">
+
+<p>El objetivo ahora es seleccionar la baliza haciendo clic en el centro de la señal (podemos usar los botones ⊕ y ⊝ para hacer zoom). Una vez la señal esté marcada, hacemos clic en el icono ▶ para comenzar la corrección.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-recibiendo.jpeg" class="" width="900" title="SDR Console">
+
+
+<h2 id="Decodificar-telemetria"><a href="#Decodificar-telemetria" class="headerlink" title="Decodificar telemetría"></a>Decodificar telemetría</h2><p>Es posible decodificar la señal de la baliza PSK que hemos visto en los apartados anteriores. Esta baliza transmite telemetría y datos del satélite y de la estación de control terrestre.</p>
+<p>Usaremos el programa <strong>AO40Rcv</strong> que podemos descargar desde el siguiente enlace:</p>
+<p><a target="_blank" rel="noopener" href="https://www.moetronix.com/ae4jy/ao40rcv.htm"><center>Descargar AO40Rcv</center></a></p>
+<p>Lo primero es sintonizar la señal en modo <strong>USB</strong> y un ancho de banda de 1,5KHz. Sacamos el audio por el cable de audio virtual.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-sharp-beacon-decode.jpeg" class="" width="900" title="Baliza telemetría QO-100">
+
+<p>Ahora iniciamos el programa y seleccionamos como entrada de audio el cable de audio virtual.</p>
+<img src="/recibir-satelite-eshail2-qo100/beacon-decoder-input.jpeg" class="" width="350" title="SDR Console">
+
+<p>Veremos que ahora le llega la señal al programa.</p>
+<img src="/recibir-satelite-eshail2-qo100/beacon-decoder-signal.jpeg" class="" width="800" title="SDR Console">
+
+<p>Una vez se sincronice la señal comenzaremos a visualizar los datos.</p>
+<img src="/recibir-satelite-eshail2-qo100/beacon-decoder-status.jpeg" class="" width="800" title="SDR Console">
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Artículos relacionados</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/ajuste-frecuencia-doppler-orbitron/" rel="bookmark">Ajuste de frecuencia en recepción de satélites</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/generar-archivo-TLE/" rel="bookmark">Generar archivo TLE personalizado</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/instalacion-satnogs-ansible/" rel="bookmark">Instalación de estación terrestre con SatNOGS (II)</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/instalacion-satnogs/" rel="bookmark">Instalación de estación terrestre con SatNOGS</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/recepcion-cas4/" rel="bookmark">Recibir telemetría de los satélites CAS-4</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+          <div class="followme">
+  <span>Síguenos en nuestros otros canales</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://twitter.com/sdr_esp">
+          <span class="icon">
+            <i class="fab fa-twitter"></i>
+          </span>
+
+          <span class="label">Twitter</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA">
+          <span class="icon">
+            <i class="fab fa-youtube"></i>
+          </span>
+
+          <span class="label">YouTube</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://t.me/sdr_esp">
+          <span class="icon">
+            <i class="fab fa-telegram-plane"></i>
+          </span>
+
+          <span class="label">Telegram</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Satelites/" rel="tag"><i class="fa fa-tag"></i> Satélites</a>
+              <a href="/tags/SDRSharp/" rel="tag"><i class="fa fa-tag"></i> SDRSharp</a>
+              <a href="/tags/Es-hail-2-QO-100/" rel="tag"><i class="fa fa-tag"></i> Es'hail-2/QO-100</a>
+          </div>
+          
+
+<div class="post-copyright">
+<ul>
+  <!--
+  <li class="post-copyright-author">
+      <strong>Written by:  </strong>EA7KOO
+  </li>
+  <li class="post-copyright-link">
+      <strong>Enlace a la entrada: </strong>
+      <a href="https://sdr-es.com/recibir-satelite-eshail2-qo100/" title="Recibir satelite Es&#39;hail-2&#x2F;QO-100">https://sdr-es.com/recibir-satelite-eshail2-qo100/</a>
+  </li>
+  -->
+  <li class="post-copyright-license">
+    <strong>Copyright:  </strong>Todos los artículos de este sitio están licenciados bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> a no ser que se especifique una licencia adicional.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/recibir-satelites-meteorologicos-NOAA-linux/" rel="prev" title="Recibir satélites meteorológicos NOAA en Linux">
+                  <i class="fa fa-chevron-left"></i> Recibir satélites meteorológicos NOAA en Linux
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class=""></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SDR en español</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Twitter,Facebook,Linkedin,Reddit,GoogleBookmarks";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+</body>
+</html>
