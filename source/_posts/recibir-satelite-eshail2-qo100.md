@@ -1,5 +1,5 @@
 ---
-title: Recibir satelite Es'hail-2/QO-100
+title: Recibir satélite Es'hail-2/QO-100
 date: 2022-05-22 13:13:01
 tags: [Satélites, Es'hail-2/QO-100, SDRSharp]
 author: EA7KOO
