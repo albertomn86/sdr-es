@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Recibir satelite Es&#39;hail-2/QO-100</title>
+    <title>Recibir satélite Es&#39;hail-2/QO-100</title>
     <link href="https://sdr-es.com/recibir-satelite-eshail2-qo100/"/>
     <id>https://sdr-es.com/recibir-satelite-eshail2-qo100/</id>
     <published>2022-05-22T11:13:01.000Z</published>
@@ -79,9 +79,9 @@
     
     <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
     
-    <category term="Gpredict" scheme="https://sdr-es.com/tags/Gpredict/"/>
-    
     <category term="Tracking" scheme="https://sdr-es.com/tags/Tracking/"/>
+    
+    <category term="Gpredict" scheme="https://sdr-es.com/tags/Gpredict/"/>
     
   </entry>
   
