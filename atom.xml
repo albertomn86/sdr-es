@@ -35,6 +35,8 @@
     
     <category term="Es&#39;hail-2/QO-100" scheme="https://sdr-es.com/tags/Es-hail-2-QO-100/"/>
     
+    <category term="SDR Console" scheme="https://sdr-es.com/tags/SDR-Console/"/>
+    
   </entry>
   
   <entry>
@@ -79,9 +81,9 @@
     
     <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
     
-    <category term="Tracking" scheme="https://sdr-es.com/tags/Tracking/"/>
-    
     <category term="Gpredict" scheme="https://sdr-es.com/tags/Gpredict/"/>
+    
+    <category term="Tracking" scheme="https://sdr-es.com/tags/Tracking/"/>
     
   </entry>
   
@@ -98,11 +100,11 @@
     
     
     
-    <category term="Linux" scheme="https://sdr-es.com/tags/Linux/"/>
+    <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
     
     <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
     
-    <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
+    <category term="Linux" scheme="https://sdr-es.com/tags/Linux/"/>
     
     <category term="Windows" scheme="https://sdr-es.com/tags/Windows/"/>
     
@@ -245,11 +247,11 @@
     
     
     
+    <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
+    
     <category term="Linux" scheme="https://sdr-es.com/tags/Linux/"/>
     
     <category term="SDRPlay" scheme="https://sdr-es.com/tags/SDRPlay/"/>
-    
-    <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
     
   </entry>
   
@@ -436,11 +438,11 @@
     
     <category term="RTL-SDR" scheme="https://sdr-es.com/tags/RTL-SDR/"/>
     
-    <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
-    
     <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
     
     <category term="CubicSDR" scheme="https://sdr-es.com/tags/CubicSDR/"/>
+    
+    <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
     
   </entry>
   
