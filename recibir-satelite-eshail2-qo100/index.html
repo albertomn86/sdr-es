@@ -419,11 +419,11 @@
 <p>Más información en la <a target="_blank" rel="noopener" href="https://wiki.batc.org.uk/QO-100_WB_Bandplan">página web de BATC</a>.</p>
 <p>Podemos consultar el estado en tiempo real del transpondedor en el siguiente enlace.</p>
 <p><a target="_blank" rel="noopener" href="https://eshail.batc.org.uk/wb/"><center>Qatar-OSCAR 100 Wideband Spectrum Monitor</center></a></p>
-<p>Para decodificar las señales DATV usaremos el software <strong><em>DVB-S2 Demod GUI</em></strong> que el usuario <a target="_blank" rel="noopener" href="https://forum.amsat-dl.org/cms/index.php?user/248-swl-markro92/">SWL-markro92</a> publica regularmente en <a target="_blank" rel="noopener" href="https://forum.amsat-dl.org/index.php?thread/101-software-dvb-s-demodulator/">foro de AMSAT-DL</a>. Podemos descargar la última versión desde el siguiente enlace:</p>
+<p>Para decodificar las señales DATV usaremos el software <strong><em>DVB-S2 Demod GUI</em></strong> que el usuario <a target="_blank" rel="noopener" href="https://forum.amsat-dl.org/cms/index.php?user/248-swl-markro92/">SWL-markro92</a> publica regularmente en el <a target="_blank" rel="noopener" href="https://forum.amsat-dl.org/index.php?thread/101-software-dvb-s-demodulator/">foro de AMSAT-DL</a>. Podemos descargar la última versión desde el siguiente enlace:</p>
 <p><a target="_blank" rel="noopener" href="http://v.1337team.tk/dvb-s_gui_amsat.zip"><center>Descargar DVB-S2 Demod GUI</center></a></p>
 <p>También necesitaremos un programa que nos permita reproducir video por red, como por ejemplo <a target="_blank" rel="noopener" href="https://www.videolan.org/vlc/index.es.html">VLC media player</a>.</p>
 <p>El primer paso será cambiar la polarización del LNB a horizontal para recibir este transpondedor. A continuación, iniciamos el programa <em>DVB-S2 Demod GUI</em> que hemos descargado y esperamos a que cargue todas las librerías necesarias. Durante el inicio debe detectar nuestro SDR sin problemas. Soporta actualmente los dispositivos RTL-SDR, AirSpy y Hackrf.</p>
-<p>Una vez iniciado, nos aseguramos que nuestro SDR aparece seleccionado y hacemos clic en <strong>Open Device</strong>.<br>Ahora sintonizamos una frecuencia (sin la correción del desplazamiento del LNB) en la que se esté emitiendo una señal en DATV y seleccionamos el valor de <em>sym_rate</em> correcto. Podemos conocer estos valores en el monitor en tiempo real del transpondedor que se ha mencionado anteriormente. Los demás valores debemos configurarlos de forma aproximada tal y como se muestran en la siguiente imagen (los marcados en rojo). Para conseguir demodular correctamente la señal, es posible que debamos jugar con la ganancia del SDR (indicado en azul).</p>
+<p>Una vez iniciado, nos aseguramos que nuestro SDR aparece seleccionado y hacemos clic en <strong>Open Device</strong>.<br>Ahora sintonizamos una frecuencia (sin la correción del desplazamiento del LNB) en la que se esté emitiendo una señal en DATV y seleccionamos el valor de <em>sym_rate</em> correcto. Podemos consultar estos valores en la web que monitoriza en tiempo real el transpondedor y que se ha mencionado anteriormente. Los demás valores debemos configurarlos de forma aproximada tal y como se muestran en la siguiente imagen (los marcados en rojo). Para conseguir demodular correctamente la señal, es posible que debamos jugar con la ganancia del SDR (indicado en azul).</p>
 <img src="/recibir-satelite-eshail2-qo100/datv-config.jpeg" class="" width="700" title="DVB-S2 Demod GUI">
 
 <p>Una vez consigamos sintonizar correctamente y la señal se esté demodulando, veremos que aparecen los cuatro puntos bien diferenciados en el <em>IQ Plot</em> y abajo la etiqueta de <em>sync_confidence</em> cambia a color verde. En este punto es cuando activamos la salida de video. Para ello en la opción <em>Recording/Network</em> seleccionamos UDP o TCP para activarla. Por último, iniciamos VLC y abrimos la dirección de red para comenzar la visualización; en nuestro ejemplo <em>tcp://127.0.0.1:8888</em>.</p>
@@ -446,10 +446,10 @@
       <div class="popular-posts-title"><a href="/generar-archivo-TLE/" rel="bookmark">Generar archivo TLE personalizado</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/instalacion-satnogs-ansible/" rel="bookmark">Instalación de estación terrestre con SatNOGS (II)</a></div>
+      <div class="popular-posts-title"><a href="/instalacion-satnogs/" rel="bookmark">Instalación de estación terrestre con SatNOGS</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/instalacion-satnogs/" rel="bookmark">Instalación de estación terrestre con SatNOGS</a></div>
+      <div class="popular-posts-title"><a href="/instalacion-satnogs-ansible/" rel="bookmark">Instalación de estación terrestre con SatNOGS (II)</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/recepcion-cas4/" rel="bookmark">Recibir telemetría de los satélites CAS-4</a></div>
