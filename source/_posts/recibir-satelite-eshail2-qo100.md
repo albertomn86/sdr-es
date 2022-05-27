@@ -151,7 +151,7 @@ Podemos consultar el estado en tiempo real del transpondedor en el siguiente enl
 
 [<center>Qatar-OSCAR 100 Wideband Spectrum Monitor</center>](https://eshail.batc.org.uk/wb/)
 
-Para decodificar las señales DATV usaremos el software **_DVB-S2 Demod GUI_** que el usuario [SWL-markro92](https://forum.amsat-dl.org/cms/index.php?user/248-swl-markro92/) publica regularmente en [foro de AMSAT-DL](https://forum.amsat-dl.org/index.php?thread/101-software-dvb-s-demodulator/). Podemos descargar la última versión desde el siguiente enlace:
+Para decodificar las señales DATV usaremos el software **_DVB-S2 Demod GUI_** que el usuario [SWL-markro92](https://forum.amsat-dl.org/cms/index.php?user/248-swl-markro92/) publica regularmente en el [foro de AMSAT-DL](https://forum.amsat-dl.org/index.php?thread/101-software-dvb-s-demodulator/). Podemos descargar la última versión desde el siguiente enlace:
 
 [<center>Descargar DVB-S2 Demod GUI</center>](http://v.1337team.tk/dvb-s_gui_amsat.zip)
 
@@ -160,7 +160,7 @@ También necesitaremos un programa que nos permita reproducir video por red, com
 El primer paso será cambiar la polarización del LNB a horizontal para recibir este transpondedor. A continuación, iniciamos el programa _DVB-S2 Demod GUI_ que hemos descargado y esperamos a que cargue todas las librerías necesarias. Durante el inicio debe detectar nuestro SDR sin problemas. Soporta actualmente los dispositivos RTL-SDR, AirSpy y Hackrf.
 
 Una vez iniciado, nos aseguramos que nuestro SDR aparece seleccionado y hacemos clic en **Open Device**.
-Ahora sintonizamos una frecuencia (sin la correción del desplazamiento del LNB) en la que se esté emitiendo una señal en DATV y seleccionamos el valor de _sym\_rate_ correcto. Podemos conocer estos valores en el monitor en tiempo real del transpondedor que se ha mencionado anteriormente. Los demás valores debemos configurarlos de forma aproximada tal y como se muestran en la siguiente imagen (los marcados en rojo). Para conseguir demodular correctamente la señal, es posible que debamos jugar con la ganancia del SDR (indicado en azul).
+Ahora sintonizamos una frecuencia (sin la correción del desplazamiento del LNB) en la que se esté emitiendo una señal en DATV y seleccionamos el valor de _sym\_rate_ correcto. Podemos consultar estos valores en la web que monitoriza en tiempo real el transpondedor y que se ha mencionado anteriormente. Los demás valores debemos configurarlos de forma aproximada tal y como se muestran en la siguiente imagen (los marcados en rojo). Para conseguir demodular correctamente la señal, es posible que debamos jugar con la ganancia del SDR (indicado en azul).
 
 {% asset_img datv-config.jpeg 700 "DVB-S2 Demod GUI" %}
 
