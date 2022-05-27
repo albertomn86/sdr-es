@@ -629,46 +629,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Instalar de dispositivo RTL-SDR en macOS</title>
-    <url>/instalacion-rtlsdr-macos/</url>
-    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en macOS. También veremos como instalar CubicSDR para poder usarlo.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion-de-los-drivers"><a href="#Instalacion-de-los-drivers" class="headerlink" title="Instalación de los drivers"></a>Instalación de los drivers</h2><p>Para poder instalar los drivers necesitamos tener instalado previamente un gestor de paquetes. El más conocido y recomendado es <strong>Homebrew</strong>. Si no lo tenemos aún instalado podemos seguir los pasos descritos en su página web:</p>
-<p><a href="https://brew.sh/index_es"><center>https://brew.sh/index_es</center></a></p>
-<p>Si ya lo tenemos instalado, procedemos a instalar los drivers ejecutando el siguiente comando desde la consola.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install rtl-sdr</span><br></pre></td></tr></table></figure>
-
-<p>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para comprobar que se ha instalado correctamente.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
-
-<p>Si todo ha ido bien, tendremos una salida como la siguiente.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br></pre></td></tr></table></figure>
-
-<h2 id="Instalacion-de-CubicSDR"><a href="#Instalacion-de-CubicSDR" class="headerlink" title="Instalación de CubicSDR"></a>Instalación de CubicSDR</h2><p><a href="https://cubicsdr.com/">CubicSDR</a> es una aplicación multiplataforma para SDR que nos permite navegar por el espectro radioeléctrico de forma visual y demodular señales de forma sencilla.</p>
-<p>Para descargar CubicSDR debemos ir a su repositorio en GitHub y descargar la última versión disponible para macOS. Para ello accedemos su repositorio a través del siguiente enlace y descargamos el instalador para macOS.</p>
-<p><a href="https://github.com/cjcliffe/CubicSDR/releases"><center>https://github.com/cjcliffe/CubicSDR/releases</center></a></p>
-<img src="/instalacion-rtlsdr-macos/download_cubicsdr.png" class="" width="700" title="Descarga de CubicSDR">
-
-<p>Una vez descargado, lo ejecutamos y en la ventana que aparece arrastramos el binario a nuestro directorio de aplicaciones.</p>
-<img src="/instalacion-rtlsdr-macos/install_cubicsdr.png" class="" width="700" title="Instalación de CubicSDR">
-
-<p>Ahora ejecutamos CubicSDR desde las aplicaciones instaladas para iniciarlo. Nos mostrará una ventana como la siguiente en la que debemos seleccionar nuestro dispositivo SDR y hacemos clic en <em>Start</em>.</p>
-<img src="/instalacion-rtlsdr-macos/cubicsdr_devices.png" class="" width="700" title="Configuración de CubicSDR">
-
-<p>Finalmente, CubicSDR se iniciará y ya podremos utilizarlo.</p>
-<img src="/instalacion-rtlsdr-macos/cubicsdr.png" class="" width="900" title="CubicSDR">
-
-<p>CubicSDR también nos permite sacar el audio demodulado para poder usarlo con otros programas. Podemos seguir los pasos descritos en el tutorial <a href="/instalacion-virtual-cable-audio/">“Instalación de cable de audio virtual”</a> para configurarlo.</p>
-]]></content>
-      <tags>
-        <tag>RTL-SDR</tag>
-        <tag>macOS</tag>
-        <tag>CubicSDR</tag>
-        <tag>Instalación</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Instalación de SDRPlay RSP2 en Debian Testing</title>
     <url>/instalacion-SDRPlay-RSP2-debian-testing/</url>
     <content><![CDATA[<p>Esto son solo notas tomadas al vuelo mientras he instalado y probado la versión citada del driver/API de SDRPlay RSP2 en Debian Testing x64. Han sido realizadas en una máquina con el SO recién instalado y los paquetes <em>Soapy</em> mínimamente necesarios, aunque según el caso y la instalación pudieran ser necesarios otros más para cumplir dependencias.</p>
@@ -692,9 +652,9 @@
 <p>Las aplicaciones de SDR que he probado son las que trae Debian Testing en sus repositorios que, a día de hoy son CubicSDR 0.2.5 y GQRX 2.14.4. También he probado el receptor DAB/DAB+ welle.io que viene en el repositorio.</p>
 ]]></content>
       <tags>
-        <tag>Instalación</tag>
         <tag>Linux</tag>
         <tag>SDRPlay</tag>
+        <tag>Instalación</tag>
       </tags>
   </entry>
   <entry>
@@ -753,6 +713,46 @@
       </tags>
   </entry>
   <entry>
+    <title>Instalar de dispositivo RTL-SDR en macOS</title>
+    <url>/instalacion-rtlsdr-macos/</url>
+    <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en macOS. También veremos como instalar CubicSDR para poder usarlo.</p>
+<span id="more"></span>
+
+<h2 id="Instalacion-de-los-drivers"><a href="#Instalacion-de-los-drivers" class="headerlink" title="Instalación de los drivers"></a>Instalación de los drivers</h2><p>Para poder instalar los drivers necesitamos tener instalado previamente un gestor de paquetes. El más conocido y recomendado es <strong>Homebrew</strong>. Si no lo tenemos aún instalado podemos seguir los pasos descritos en su página web:</p>
+<p><a href="https://brew.sh/index_es"><center>https://brew.sh/index_es</center></a></p>
+<p>Si ya lo tenemos instalado, procedemos a instalar los drivers ejecutando el siguiente comando desde la consola.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install rtl-sdr</span><br></pre></td></tr></table></figure>
+
+<p>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para comprobar que se ha instalado correctamente.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
+
+<p>Si todo ha ido bien, tendremos una salida como la siguiente.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br></pre></td></tr></table></figure>
+
+<h2 id="Instalacion-de-CubicSDR"><a href="#Instalacion-de-CubicSDR" class="headerlink" title="Instalación de CubicSDR"></a>Instalación de CubicSDR</h2><p><a href="https://cubicsdr.com/">CubicSDR</a> es una aplicación multiplataforma para SDR que nos permite navegar por el espectro radioeléctrico de forma visual y demodular señales de forma sencilla.</p>
+<p>Para descargar CubicSDR debemos ir a su repositorio en GitHub y descargar la última versión disponible para macOS. Para ello accedemos su repositorio a través del siguiente enlace y descargamos el instalador para macOS.</p>
+<p><a href="https://github.com/cjcliffe/CubicSDR/releases"><center>https://github.com/cjcliffe/CubicSDR/releases</center></a></p>
+<img src="/instalacion-rtlsdr-macos/download_cubicsdr.png" class="" width="700" title="Descarga de CubicSDR">
+
+<p>Una vez descargado, lo ejecutamos y en la ventana que aparece arrastramos el binario a nuestro directorio de aplicaciones.</p>
+<img src="/instalacion-rtlsdr-macos/install_cubicsdr.png" class="" width="700" title="Instalación de CubicSDR">
+
+<p>Ahora ejecutamos CubicSDR desde las aplicaciones instaladas para iniciarlo. Nos mostrará una ventana como la siguiente en la que debemos seleccionar nuestro dispositivo SDR y hacemos clic en <em>Start</em>.</p>
+<img src="/instalacion-rtlsdr-macos/cubicsdr_devices.png" class="" width="700" title="Configuración de CubicSDR">
+
+<p>Finalmente, CubicSDR se iniciará y ya podremos utilizarlo.</p>
+<img src="/instalacion-rtlsdr-macos/cubicsdr.png" class="" width="900" title="CubicSDR">
+
+<p>CubicSDR también nos permite sacar el audio demodulado para poder usarlo con otros programas. Podemos seguir los pasos descritos en el tutorial <a href="/instalacion-virtual-cable-audio/">“Instalación de cable de audio virtual”</a> para configurarlo.</p>
+]]></content>
+      <tags>
+        <tag>RTL-SDR</tag>
+        <tag>Instalación</tag>
+        <tag>macOS</tag>
+        <tag>CubicSDR</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Instalar dispositivo RTL-SDR en Linux</title>
     <url>/instalacion-rtlsdr-raspberrypi/</url>
     <content><![CDATA[<p>En este tutorial veremos como instalar nuestro dispositivo RTL-SDR en una Raspberry Pi. Para la realización del mismo se ha empleado una Raspberry Pi 3 con la distribución Raspbian Buster Lite, si bien estos pasos son similares para cualquier distribución Linux.</p>
@@ -790,8 +790,8 @@
 ]]></content>
       <tags>
         <tag>RTL-SDR</tag>
-        <tag>Instalación</tag>
         <tag>Linux</tag>
+        <tag>Instalación</tag>
         <tag>Raspberry Pi</tag>
       </tags>
   </entry>
@@ -1012,8 +1012,8 @@
 ]]></content>
       <tags>
         <tag>Satélites</tag>
-        <tag>Instalación</tag>
         <tag>Linux</tag>
+        <tag>Instalación</tag>
         <tag>Raspberry Pi</tag>
         <tag>SatNOGS</tag>
       </tags>
@@ -1262,9 +1262,9 @@
 <img src="/instalacion-sdrpp/sdrpp-macos.jpg" class="" width="900" title="SDR++ macOS">
 ]]></content>
       <tags>
-        <tag>macOS</tag>
-        <tag>Instalación</tag>
         <tag>Linux</tag>
+        <tag>Instalación</tag>
+        <tag>macOS</tag>
         <tag>Windows</tag>
         <tag>SDR++</tag>
       </tags>
@@ -1325,8 +1325,8 @@
 ]]></content>
       <tags>
         <tag>RTL-SDR</tag>
-        <tag>Instalación</tag>
         <tag>Linux</tag>
+        <tag>Instalación</tag>
         <tag>Raspberry Pi</tag>
         <tag>SDRSharp</tag>
         <tag>SPY Server</tag>
@@ -1371,8 +1371,8 @@
 <p>Ahora el audio saldrá por el cable de audio virtual y para recibirlo en otro programa bastaría con seleccionar el cable virtual como entrada.</p>
 ]]></content>
       <tags>
-        <tag>macOS</tag>
         <tag>Instalación</tag>
+        <tag>macOS</tag>
         <tag>Windows</tag>
         <tag>Virtual Audio Cable</tag>
       </tags>
@@ -1494,6 +1494,73 @@
       <tags>
         <tag>Satélites</tag>
         <tag>KISS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir los datos del instrumental HIRS de los satélites NOAA</title>
+    <url>/recepcion-datos-HIRS-satelites-NOAA/</url>
+    <content><![CDATA[<p>Como vimos en el artículo <a href="/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
+<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
+<span id="more"></span>
+
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>Frecuencia</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NOAA 15</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 18</td>
+<td>137.350 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
+</tr>
+<tr>
+<td>NOAA 19</td>
+<td>137.770 Mhz</td>
+<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
+<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
+<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
+<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
+<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
+<img src="/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
+
+
+<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
+<p>Una vez descargado, extraemos el contenido del archivo.</p>
+<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
+<img src="/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
+
+<p>Para demodular el archivo basta con hacer clic encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
+<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre <strong><em>minorFrames_xxxx.txt</em></strong>.</p>
+<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
+<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
+<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
+<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
+<p>Ahora le pasamos el archivo <strong><em>minorFrames_xxxx.txt</em></strong> como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar). Si nos da un error, tenemos que abrir una terminal y ejecutarlo pasándole el archivo con la opción <strong>-i</strong>.</p>
+<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio <em>output/minorFrames_xxxx</em>.</p>
+<img src="/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
+
+<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
+<img src="/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
+        <tag>Meteorología</tag>
       </tags>
   </entry>
   <entry>
@@ -1739,73 +1806,6 @@
         <tag>Satélites</tag>
         <tag>Inmarsat</tag>
         <tag>L-Band</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recibir los datos del instrumental HIRS de los satélites NOAA</title>
-    <url>/recepcion-datos-HIRS-satelites-NOAA/</url>
-    <content><![CDATA[<p>Como vimos en el artículo <a href="/recepcion-satelites-meteorologicos-NOAA/">“Recepción de satélites meteorológicos NOAA”</a>, es posible recibir las imágenes desde estos satélites meteorológicos con nuestro dispositivo SDR. Estos satélites envían, además de imágenes, datos de medidas de su instrumental de observación HIRS y que también podemos recibir.</p>
-<p>El HIRS <em>(High Resolution Infrared Radiation Sounder)</em> es un instrumental de escaneo incremental por líneas diseñado para medir la radiación en 20 bandas espectrales. Esta medición permite calcular el perfil de temperatura vertical de la superficie de la Tierra a una altura aproximada de 40 kilómetros.<br>Los datos multiespectrales del canal visible (0,69 µm), de los siete canales de onda corta (3,7 a 4,6 µm) y de los doce canales de onda larga (6,5 a 15 µm) se obtienen desde el mismo telescopio utilizando una lente rotativa con veinte filtros individuales.</p>
-<span id="more"></span>
-
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Los satélites activos de los que podemos recibir la señal son los siguientes:</p>
-<table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>Frecuencia</th>
-<th>Estado</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>NOAA 15</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA15/hirs.html">Consultar</a></td>
-</tr>
-<tr>
-<td>NOAA 18</td>
-<td>137.350 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA18/hirs.html">Consultar</a></td>
-</tr>
-<tr>
-<td>NOAA 19</td>
-<td>137.770 Mhz</td>
-<td><a href="https://www.ospo.noaa.gov/Operations/POES/NOAA19/hirs.html">Consultar</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>En este ejemplo vamos a ver como recibir estos datos desde Windows, aunque también es posible hacerlo desde cualquier sistema operativo.</p>
-<p>El proceso de recepción es similar al de recibir las imágenes, solo que en este caso grabaremos la señal para su posterior demodulación y decodificación.</p>
-<p>Lo primero que haremos será configurar Orbitron u otro programa para que nos realice la corrección de la frecuencia durante el pase.</p>
-<p>Posteriormente ajustamos el <strong>ancho de banda a 32 KHz</strong> en SDR# y <strong>modo RAW</strong>.</p>
-<p>Ahora esperamos a que pase el satélite y cuando tengamos señal comenzamos la grabación de la misma (<strong>solo audio</strong>, el baseband lo desmarcamos). Cuando termine el pase y perdamos la señal detenemos la grabación.</p>
-<img src="/recepcion-datos-HIRS-satelites-NOAA/grabacion.jpg" class="" width="900" title="SDR#">
-
-
-<h2 id="Demodular-la-senal"><a href="#Demodular-la-senal" class="headerlink" title="Demodular la señal"></a>Demodular la señal</h2><p>El siguiente paso es demodular la señal obtenida en el paso anterior. Para ello vamos a utilizar el demodulador <em>Project Desert Tortoise</em> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://github.com/nebarnix/Project-Desert-Tortoise/archive/master.zip"><center>Project Desert Tortoise - Demodulator</center></a></p>
-<p>Una vez descargado, extraemos el contenido del archivo.</p>
-<p>Ahora buscamos el archivo de audio del paso anterior (SDR# debe haberlo generado en su carpeta de instalación) y lo copiamos a la carpeta de <em>Project Desert Tortoise</em> que acabamos de extraer.</p>
-<img src="/recepcion-datos-HIRS-satelites-NOAA/demodulador.jpg" class="" title="Project Desert Tortoise">
-
-<p>Para demodular el archivo basta con hacer clic encima del archivo de audio y arrastrarlo encima del binario <strong>demodPOES.exe</strong> y soltar. Esto hace que se pase el archivo de audio como parámetro al binario. También podemos hacerlo mediante la línea de comando si queremos.</p>
-<p>Cuando el demodulador procese el archivo de audio completo, generará un nuevo archivo con los datos en ese mismo directorio con el nombre <strong><em>minorFrames_xxxx.txt</em></strong>.</p>
-<p>Más información sobre el demodulador: <a href="http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation">http://wiki.nebarnix.com/wiki/NOAA_POES_TIP_Demodulation</a></p>
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>El último paso es decodificar los datos obtenidos en el paso anterior. Para ello utilizamos el software <em>NOAA HIRS Decoder</em> que podemos descargar desde la web:</p>
-<p><a href="https://noaa_hirs_decoder.surge.sh/download.html"><center>NOAA HIRS Decoder</center></a></p>
-<p>Necesitamos tener instalada la máquina virtual de Java para poder ejecutar el software. Podemos descargar la ultima versión desde la <a href="https://www.java.com/es/download/">web oficial de Oracle</a>.</p>
-<p>Una vez descargado el <em>NOAA HIRS Decoder</em>, extraemos el contenido en un directorio y copiamos el archivo del paso anterior dentro del mismo.</p>
-<p>Ahora le pasamos el archivo <strong><em>minorFrames_xxxx.txt</em></strong> como parámetro al binario <strong>NOAA_HIRS_Decoder.exe</strong> de la misma forma que vimos en el paso anterior (arrastrar y soltar). Si nos da un error, tenemos que abrir una terminal y ejecutarlo pasándole el archivo con la opción <strong>-i</strong>.</p>
-<p>Una vez termine el proceso de decodificación veremos los datos dentro del directorio <em>output/minorFrames_xxxx</em>.</p>
-<img src="/recepcion-datos-HIRS-satelites-NOAA/decoder.jpg" class="" title="NOAA HIRS Decoder">
-
-<p>Tendremos una serie de imágenes por cada uno de los canales. Estas imágenes son de 56 píxeles de ancho y el largo depende de la duración de la grabación.</p>
-<img src="/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
-        <tag>Meteorología</tag>
       </tags>
   </entry>
   <entry>
@@ -2477,10 +2477,10 @@
     <title>Recibir satélite Es&#39;hail-2/QO-100</title>
     <url>/recibir-satelite-eshail2-qo100/</url>
     <content><![CDATA[<p><a href="https://amsat-dl.org/en/eshail-2-amsat-phase-4-a/">Es’hail-2/Qatar-OSCAR 100</a> es un satélite geoestacionario catarí construido por Mitsubishi Electric que ofrece servicios de retransmisión de televisión para las regiones del Medio Oeste y Norte de África. Además de estos servicios de retransmisión, este satélite incorpora dos transpondedores para comunicaciones de radioaficionado por satélite.</p>
-<p>En este artículo veremos como recibir la señal de estos transpondedores usando una antena parabólica y nuestro dispositivo SDR.</p>
+<p>En este artículo veremos como recibir y decodificar la señal de estos transpondedores usando una antena parabólica y nuestro dispositivo SDR.</p>
 <span id="more"></span>
 
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<h1 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h1><table>
 <thead>
 <tr>
 <th>Satélite</th>
@@ -2512,23 +2512,21 @@
 <td><strong>NB:</strong> 10.489,5 MHz - 10.490 MHz (Pol. V) <br> <strong>WB:</strong> 10.491 MHz - 10.499 MHz (Pol. H)</td>
 </tr>
 </tbody></table>
-<h2 id="Material-necesario"><a href="#Material-necesario" class="headerlink" title="Material necesario"></a>Material necesario</h2><h3 id="Antena"><a href="#Antena" class="headerlink" title="Antena"></a>Antena</h3><p>Para la recepción de este satélite necesitamos una antena parabólica con un disco de al menos 40 centímetros para el transpondedor de banda estrecha y de 80 centímetros para el de banda ancha. El LNB puede ser cualquiera de nuestra elección. Si bien los LNB normales de TV para banda Ku presentan el problema de la desviación de la señal (<em>LNB drift</em>), veremos como resolver este problema usando la opción que <strong>SDR Console</strong> proporciona para ello. Aunque lo más recomendable es utilizar un LNB con TCXO, ya que proporciona una mejor recepción en este caso. El LNB recomendado, y que se utiliza en este ejemplo, es el <a href="https://www.rtl-sdr.com/qo-100-bullseye-tcxo-ultra-stable-lnb-now-available-in-our-store-for-29-95-with-free-shipping/"><strong>Bullseye LNB</strong></a>.</p>
+<h1 id="Material-necesario"><a href="#Material-necesario" class="headerlink" title="Material necesario"></a>Material necesario</h1><h2 id="Antena"><a href="#Antena" class="headerlink" title="Antena"></a>Antena</h2><p>Para la recepción de este satélite necesitamos una antena parabólica con un disco de al menos 40 centímetros para el transpondedor de banda estrecha y de 80 centímetros para el de banda ancha. El LNB puede ser cualquiera de nuestra elección. Si bien los LNB normales de TV para banda Ku presentan el problema de la desviación de la señal (<em>LNB drift</em>) en el transpondedor de banda estrecha, veremos como resolver este problema usando la opción que <strong>SDR Console</strong> proporciona para ello. Aunque lo más recomendable es utilizar un LNB con TCXO, ya que proporciona una mejor recepción en este caso. El LNB recomendado, y que se utiliza en este ejemplo, es el <a href="https://www.rtl-sdr.com/qo-100-bullseye-tcxo-ultra-stable-lnb-now-available-in-our-store-for-29-95-with-free-shipping/"><strong>Bullseye LNB</strong></a>.</p>
 <img src="/recibir-satelite-eshail2-qo100/lnb.jpeg" class="" width="600" title="Bullseye LNB">
 
-<h3 id="Bias-Tee"><a href="#Bias-Tee" class="headerlink" title="Bias-Tee"></a>Bias-Tee</h3><p>Para hacer funcionar el LNB vamos a necesitar alimentarlo con una tensión de 13V a 18V. Los dispositivos SDR normales pueden proporcionar hasta un máximo de 4,5V, por lo que vamos a requerir de otra forma de alimentación. Podemos encontrar muchas formas distintas de hacerlo si buscamos por internet (inyectores de tensión de TV por satélite, receptores de TV por satélite, etc.), pero en este ejemplo vamos a usar un Bias-Tee externo. Podemos adquirir fácilmente estos dispositivos en cualquier sitio y su coste no es muy elevado (unos 14€).</p>
+<h2 id="Bias-Tee"><a href="#Bias-Tee" class="headerlink" title="Bias-Tee"></a>Bias-Tee</h2><p>Para hacer funcionar el LNB vamos a necesitar alimentarlo con una tensión de 13V a 18V. Los dispositivos SDR normales pueden proporcionar hasta un máximo de 4,5V, por lo que vamos a requerir de otra forma de alimentación. Podemos encontrar muchas formas distintas de hacerlo si buscamos por internet (inyectores de tensión de TV por satélite, receptores de TV por satélite, etc.), pero en este ejemplo vamos a usar un Bias-Tee externo. Podemos adquirir fácilmente estos dispositivos en cualquier sitio y su coste no es muy elevado (unos 14€).</p>
 <img src="/recibir-satelite-eshail2-qo100/biast.jpeg" class="" width="400" title="Bias-Tee">
 
 <p>Para alimentar el LNB necesitaremos una fuente que nos pueda proporcionar dos voltajes distintos. Unos 13V a 14V para activar la polarización vertical y unos 17V a 18V para la horizontal.</p>
-<h3 id="SDR"><a href="#SDR" class="headerlink" title="SDR"></a>SDR</h3><p>Para la recepción en estas frecuencias podemos usar cualquier SDR, ya que el propio LNB actúa como un <em>Downconverter</em>, reduciendo la frecuencia de entrada a un rango de salida que comienza en 739MHz y que la mayoría de los dispositivos SDR reciben sin ningún problema.</p>
-<h2 id="Instalacion-y-orientacion-de-la-antena"><a href="#Instalacion-y-orientacion-de-la-antena" class="headerlink" title="Instalación y orientación de la antena"></a>Instalación y orientación de la antena</h2><p>El satélite esta situado en los 26° Este. Para orientar nuestra antena podemos usar algunas aplicaciones existentes para móviles, o bien utilizar una <a href="https://eshail.batc.org.uk/point/">aplicación online</a> y una brújula.</p>
+<h2 id="SDR"><a href="#SDR" class="headerlink" title="SDR"></a>SDR</h2><p>Para la recepción en estas frecuencias podemos usar cualquier SDR, ya que el propio LNB actúa como un <em>Downconverter</em>, reduciendo la frecuencia de entrada a un rango de salida que comienza en 739MHz y que la mayoría de los dispositivos SDR reciben sin ningún problema.</p>
+<h1 id="Instalacion-y-orientacion-de-la-antena"><a href="#Instalacion-y-orientacion-de-la-antena" class="headerlink" title="Instalación y orientación de la antena"></a>Instalación y orientación de la antena</h1><p>El satélite esta situado en los 26° Este. Para orientar nuestra antena podemos usar algunas aplicaciones existentes para móviles, o bien utilizar una <a href="https://eshail.batc.org.uk/point/">aplicación online</a> y una brújula.</p>
 <p>Una vez colocada y orientada (parcialmente, ya que posiblemente después haya que afinar para mejorar la recepción), vamos a realizar la conexión con nuestro SDR. Para ello necesitamos conectar el LNB (conector verde si usamos el Bullseye) a la entrada del Bias-Tee marcada con RF+DC y el SDR a la salida marcada con RF. En este ejemplo se ha utilizado un cable coaxial para TV con dos conectores F y un adaptador a SMA para conectarlo al Bias-Tee.</p>
 <img src="/recibir-satelite-eshail2-qo100/sdr-biast.jpeg" class="" width="900" title="Conexiones SDR, Bias-Tee y LNB">
 
-
-<h2 id="Recepcion-del-transpondedor-NB"><a href="#Recepcion-del-transpondedor-NB" class="headerlink" title="Recepción del transpondedor NB"></a>Recepción del transpondedor NB</h2><p>Como ya se ha mencionado anteriormente, el satélite incorpora dos transpondedores para su uso por radioaficionados. Un transpondedor lineal de banda estrecha (<em>Narrow Band</em>) en polarización vertical y otro de banda ancha (<em>Wide Band</em>) para televisión digital de radioaficionado (DATV) en polarización horizontal. En este artículo nos vamos a centrar en la recepción del transpondedor de banda estrecha. Para seleccionar el transpondedor bastará con cambiar la tensión de alimentación del LNB en cada caso.</p>
-<p>En la siguiente imagen podemos ver la distribución de las bandas en este transpondedor.</p>
-<img src="/recibir-satelite-eshail2-qo100/AMSAT-QO-100-NB-Transponder-Bandplan-Graph.png" class="" width="900" title="QO-100 NB Bandplan © AMSAT-DL">
-
+<h1 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h1><p>Como ya se ha mencionado anteriormente, el satélite incorpora dos transpondedores para su uso por radioaficionados. Un transpondedor lineal de banda estrecha (<em>Narrow Band</em>) en polarización vertical y otro de banda ancha (<em>Wide Band</em>) para televisión digital de radioaficionado (DATV) en polarización horizontal. Para seleccionar el transpondedor bastará con cambiar la tensión de alimentación del LNB en cada caso.</p>
+<h2 id="Transpondedor-NB"><a href="#Transpondedor-NB" class="headerlink" title="Transpondedor NB"></a>Transpondedor NB</h2><p>En la siguiente imagen podemos ver la distribución de las bandas en este transpondedor.</p>
+<p><img src="https://amsat-dl.org/wp-content/uploads/2020/02/AMSAT-QO-100-NB-Transponder-Bandplan-Graph-1140x641.png" alt="QO-100 NB Bandplan © AMSAT-DL"></p>
 <p>Más información en la <a href="https://amsat-dl.org/en/new-qo-100-band-plan/">página web de AMSAT-DL</a>.</p>
 <h3 id="Recepcion-con-SDR"><a href="#Recepcion-con-SDR" class="headerlink" title="Recepción con SDR#"></a>Recepción con SDR#</h3><p>Para recibir la señal del satélite iniciamos SDR# y sintonizamos la frecuencia de 739,770 MHz. Si todo está correctamente conectado y la antena medianamente orientada, deberíamos poder ver la señal de la baliza del satélite. Podemos usar la misma para ajustar nuestra antena lo mejor posible y recibir el máximo de señal.</p>
 <img src="/recibir-satelite-eshail2-qo100/sdr-sharp-beacon.jpeg" class="" width="900" title="Baliza QO-100">
@@ -2562,7 +2560,7 @@
 <img src="/recibir-satelite-eshail2-qo100/sdr-console-recibiendo.jpeg" class="" width="900" title="SDR Console">
 
 
-<h2 id="Decodificar-telemetria"><a href="#Decodificar-telemetria" class="headerlink" title="Decodificar telemetría"></a>Decodificar telemetría</h2><p>Es posible decodificar la señal de la baliza PSK que hemos visto en los apartados anteriores. Esta baliza transmite telemetría y datos del satélite y de la estación de control terrestre.</p>
+<h3 id="Decodificar-telemetria"><a href="#Decodificar-telemetria" class="headerlink" title="Decodificar telemetría"></a>Decodificar telemetría</h3><p>Es posible decodificar la señal de la baliza PSK que hemos visto en los apartados anteriores. Esta baliza transmite telemetría y datos del satélite y de la estación de control terrestre.</p>
 <p>Usaremos el programa <strong>AO40Rcv</strong> que podemos descargar desde el siguiente enlace:</p>
 <p><a href="https://www.moetronix.com/ae4jy/ao40rcv.htm"><center>Descargar AO40Rcv</center></a></p>
 <p>Lo primero es sintonizar la señal en modo <strong>USB</strong> y un ancho de banda de 1,5KHz. Sacamos el audio por el cable de audio virtual.</p>
@@ -2576,12 +2574,30 @@
 
 <p>Una vez se sincronice la señal comenzaremos a visualizar los datos.</p>
 <img src="/recibir-satelite-eshail2-qo100/beacon-decoder-status.jpeg" class="" width="800" title="SDR Console">
+
+<h2 id="Transpondedor-WB"><a href="#Transpondedor-WB" class="headerlink" title="Transpondedor WB"></a>Transpondedor WB</h2><p>La distribución de este transpondedor se muestra en la siguiente imagen.</p>
+<p><img src="https://wiki.batc.org.uk/images/2/2b/V3.0_Graphic_Final.JPG" alt="QO-100 WB Bandplan © BATC"></p>
+<p>Más información en la <a href="https://wiki.batc.org.uk/QO-100_WB_Bandplan">página web de BATC</a>.</p>
+<p>Podemos consultar el estado en tiempo real del transpondedor en el siguiente enlace.</p>
+<p><a href="https://eshail.batc.org.uk/wb/"><center>Qatar-OSCAR 100 Wideband Spectrum Monitor</center></a></p>
+<p>Para decodificar las señales DATV usaremos el software <strong><em>DVB-S2 Demod GUI</em></strong> que el usuario <a href="https://forum.amsat-dl.org/cms/index.php?user/248-swl-markro92/">SWL-markro92</a> publica regularmente en <a href="https://forum.amsat-dl.org/index.php?thread/101-software-dvb-s-demodulator/">foro de AMSAT-DL</a>. Podemos descargar la última versión desde el siguiente enlace:</p>
+<p><a href="http://v.1337team.tk/dvb-s_gui_amsat.zip"><center>Descargar DVB-S2 Demod GUI</center></a></p>
+<p>También necesitaremos un programa que nos permita reproducir video por red, como por ejemplo <a href="https://www.videolan.org/vlc/index.es.html">VLC media player</a>.</p>
+<p>El primer paso será cambiar la polarización del LNB a horizontal para recibir este transpondedor. A continuación, iniciamos el programa <em>DVB-S2 Demod GUI</em> que hemos descargado y esperamos a que cargue todas las librerías necesarias. Durante el inicio debe detectar nuestro SDR sin problemas. Soporta actualmente los dispositivos RTL-SDR, AirSpy y Hackrf.</p>
+<p>Una vez iniciado, nos aseguramos que nuestro SDR aparece seleccionado y hacemos clic en <strong>Open Device</strong>.<br>Ahora sintonizamos una frecuencia (sin la correción del desplazamiento del LNB) en la que se esté emitiendo una señal en DATV y seleccionamos el valor de <em>sym_rate</em> correcto. Podemos conocer estos valores en el monitor en tiempo real del transpondedor que se ha mencionado anteriormente. Los demás valores debemos configurarlos de forma aproximada tal y como se muestran en la siguiente imagen (los marcados en rojo). Para conseguir demodular correctamente la señal, es posible que debamos jugar con la ganancia del SDR (indicado en azul).</p>
+<img src="/recibir-satelite-eshail2-qo100/datv-config.jpeg" class="" width="700" title="DVB-S2 Demod GUI">
+
+<p>Una vez consigamos sintonizar correctamente y la señal se esté demodulando, veremos que aparecen los cuatro puntos bien diferenciados en el <em>IQ Plot</em> y abajo la etiqueta de <em>sync_confidence</em> cambia a color verde. En este punto es cuando activamos la salida de video. Para ello en la opción <em>Recording/Network</em> seleccionamos UDP o TCP para activarla. Por último, iniciamos VLC y abrimos la dirección de red para comenzar la visualización; en nuestro ejemplo <em>tcp://127.0.0.1:8888</em>.</p>
+<img src="/recibir-satelite-eshail2-qo100/datv-promo.jpeg" class="" width="900" title="DVB-S2 Demod GUI - Beacon">
+
+<img src="/recibir-satelite-eshail2-qo100/datv-500.jpeg" class="" width="900" title="DVB-S2 Demod GUI - Señal DATV">
 ]]></content>
       <tags>
         <tag>Satélites</tag>
         <tag>SDRSharp</tag>
         <tag>Es&#39;hail-2/QO-100</tag>
         <tag>SDR Console</tag>
+        <tag>DATV</tag>
       </tags>
   </entry>
   <entry>
@@ -2717,36 +2733,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recibir imágenes SSTV desde la ISS</title>
-    <url>/recibir-sstv-iss/</url>
-    <content><![CDATA[<p><a href="https://www.ariss.org/">ARISS</a> organiza ocasionalmente eventos conmemorativos en los que se envían imágenes <a href="https://es.wikipedia.org/wiki/SSTV">SSTV</a> desde la ISS (<em>International Space Station</em>). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.</p>
-<span id="more"></span>
-
-<img src="/recibir-sstv-iss/sstv.jpg" class="" width="500" title="Imagen SSTV">
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Las imágenes son enviadas en la frecuencia <strong>145,800 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;NFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;20000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145800000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar las imágenes usaremos el programa RX-SSTV que podemos descargar desde el siguiente enlace:</p>
-<p><a href="http://users.belgacom.net/mysoftware/Setup_RXSSTV.exe"><center>Descargar RX-SSTV v2.1.5</center></a></p>
-<p>Una vez descargado el instalador, lo ejecutamos e instalamos el programa.</p>
-<p>Las imágenes se envían actualmente en modo <strong>PD120</strong> con un tiempo de espera de dos minutos entre cada imagen. Podemos indicarle a RX-SSTV que utilice este modo por defecto y evitarnos el tener que cambiarlo cada vez y que se nos olvide. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Setup RX-SSTV</em></strong>. En esta ventana de ajustes le indicamos que utilice PD120 por defecto.</p>
-<img src="/recibir-sstv-iss/Config.png" class="" width="300" title="Ajustes">
-
-<p>El siguiente paso es configurar el programa para que reciba el audio desde cable de audio virtual. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Sound Control and Devices</em></strong>. Se abrirá la ventana de ajustes de audio en la que tenemos que marcar el cable de audio virtual como el dispositivo predeterminado de grabación. Es posible que este cambio afecte a otros programas que tengamos, así que si detectamos problemas de audio debemos revertir este cambio y volver a realizarlo cuando usemos RX-SSTV.</p>
-<p>Una vez tengamos todo correctamente configurado, cuando el programa detecte la señal de una nueva imagen, iniciará la recepción de la misma de forma automática.</p>
-<img src="/recibir-sstv-iss/SDRSharp.png" class="" width="900" title="Recibiendo imagen">
-
-<p>Si nos aparece el mensaje <em>“Overflow”</em> en el programa, significa que tenemos el audio demasiado alto. Para solucionarlo simplemente bajamos el volumen del audio en SDR# hasta que desaparezca el mensaje.</p>
-<p>Al terminar la recepción de una imagen, el programa la guarda automáticamente y queda a la espera de detectar la siguiente imagen.</p>
-<img src="/recibir-sstv-iss/RX-SSTV.png" class="" width="500" title="RX-SSTV">
-]]></content>
-      <tags>
-        <tag>ISS</tag>
-        <tag>SSTV</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recibir satélites meteorológicos NOAA en Linux</title>
     <url>/recibir-satelites-meteorologicos-NOAA-linux/</url>
     <content><![CDATA[<p>En el artículo <a href="/recepcion-satelites-meteorologicos-NOAA/">“Recibir satélites meteorológicos NOAA”</a> vimos cómo recibir imágenes en formato APT desde los satélites meteorológicos NOAA. El proceso para la recepción y decodificación se realizó íntegramente en Windows, y en este artículo veremos como realizar el mismo proceso usando Linux (Ubuntu) como sistema operativo.</p>
@@ -2865,6 +2851,36 @@
         <tag>Linux</tag>
         <tag>Meteorología</tag>
         <tag>WXtoIMG</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir imágenes SSTV desde la ISS</title>
+    <url>/recibir-sstv-iss/</url>
+    <content><![CDATA[<p><a href="https://www.ariss.org/">ARISS</a> organiza ocasionalmente eventos conmemorativos en los que se envían imágenes <a href="https://es.wikipedia.org/wiki/SSTV">SSTV</a> desde la ISS (<em>International Space Station</em>). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.</p>
+<span id="more"></span>
+
+<img src="/recibir-sstv-iss/sstv.jpg" class="" width="500" title="Imagen SSTV">
+
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Las imágenes son enviadas en la frecuencia <strong>145,800 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;NFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;20000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145800000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar las imágenes usaremos el programa RX-SSTV que podemos descargar desde el siguiente enlace:</p>
+<p><a href="http://users.belgacom.net/mysoftware/Setup_RXSSTV.exe"><center>Descargar RX-SSTV v2.1.5</center></a></p>
+<p>Una vez descargado el instalador, lo ejecutamos e instalamos el programa.</p>
+<p>Las imágenes se envían actualmente en modo <strong>PD120</strong> con un tiempo de espera de dos minutos entre cada imagen. Podemos indicarle a RX-SSTV que utilice este modo por defecto y evitarnos el tener que cambiarlo cada vez y que se nos olvide. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Setup RX-SSTV</em></strong>. En esta ventana de ajustes le indicamos que utilice PD120 por defecto.</p>
+<img src="/recibir-sstv-iss/Config.png" class="" width="300" title="Ajustes">
+
+<p>El siguiente paso es configurar el programa para que reciba el audio desde cable de audio virtual. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Sound Control and Devices</em></strong>. Se abrirá la ventana de ajustes de audio en la que tenemos que marcar el cable de audio virtual como el dispositivo predeterminado de grabación. Es posible que este cambio afecte a otros programas que tengamos, así que si detectamos problemas de audio debemos revertir este cambio y volver a realizarlo cuando usemos RX-SSTV.</p>
+<p>Una vez tengamos todo correctamente configurado, cuando el programa detecte la señal de una nueva imagen, iniciará la recepción de la misma de forma automática.</p>
+<img src="/recibir-sstv-iss/SDRSharp.png" class="" width="900" title="Recibiendo imagen">
+
+<p>Si nos aparece el mensaje <em>“Overflow”</em> en el programa, significa que tenemos el audio demasiado alto. Para solucionarlo simplemente bajamos el volumen del audio en SDR# hasta que desaparezca el mensaje.</p>
+<p>Al terminar la recepción de una imagen, el programa la guarda automáticamente y queda a la espera de detectar la siguiente imagen.</p>
+<img src="/recibir-sstv-iss/RX-SSTV.png" class="" width="500" title="RX-SSTV">
+]]></content>
+      <tags>
+        <tag>ISS</tag>
+        <tag>SSTV</tag>
       </tags>
   </entry>
   <entry>

@@ -6,7 +6,7 @@
   <link href="https://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="https://sdr-es.com/"/>
-  <updated>2022-05-22T11:13:01.000Z</updated>
+  <updated>2022-05-27T10:20:24.000Z</updated>
   <id>https://sdr-es.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://sdr-es.com/recibir-satelite-eshail2-qo100/"/>
     <id>https://sdr-es.com/recibir-satelite-eshail2-qo100/</id>
     <published>2022-05-22T11:13:01.000Z</published>
-    <updated>2022-05-22T11:13:01.000Z</updated>
+    <updated>2022-05-27T10:20:24.000Z</updated>
     
     
     <summary type="html">Guía para la recepción del satélite geoestacionario Es&#39;hail-2/QO-100.</summary>
@@ -36,6 +36,8 @@
     <category term="Es&#39;hail-2/QO-100" scheme="https://sdr-es.com/tags/Es-hail-2-QO-100/"/>
     
     <category term="SDR Console" scheme="https://sdr-es.com/tags/SDR-Console/"/>
+    
+    <category term="DATV" scheme="https://sdr-es.com/tags/DATV/"/>
     
   </entry>
   
@@ -100,11 +102,11 @@
     
     
     
-    <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
+    <category term="Linux" scheme="https://sdr-es.com/tags/Linux/"/>
     
     <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
     
-    <category term="Linux" scheme="https://sdr-es.com/tags/Linux/"/>
+    <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
     
     <category term="Windows" scheme="https://sdr-es.com/tags/Windows/"/>
     
@@ -247,11 +249,11 @@
     
     
     
-    <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
-    
     <category term="Linux" scheme="https://sdr-es.com/tags/Linux/"/>
     
     <category term="SDRPlay" scheme="https://sdr-es.com/tags/SDRPlay/"/>
+    
+    <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
     
   </entry>
   
@@ -438,11 +440,11 @@
     
     <category term="RTL-SDR" scheme="https://sdr-es.com/tags/RTL-SDR/"/>
     
+    <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
+    
     <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
     
     <category term="CubicSDR" scheme="https://sdr-es.com/tags/CubicSDR/"/>
-    
-    <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
     
   </entry>
   
