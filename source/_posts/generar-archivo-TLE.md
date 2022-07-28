@@ -3,6 +3,7 @@ title: Generar archivo TLE personalizado
 date: 2021-04-18 13:01:07
 tags: [Orbitron, Satélites]
 author: EA7KOO
+updated: 2022-07-28 20:42:00
 description: Cómo generar de forma automática un archivo TLE con los satélites deseados.
 ---
 
@@ -13,7 +14,7 @@ Si realizamos habitualmente el seguimiento de satélites, uno de los pasos más 
 Para ello vamos a usar el programa [**TLE Generator**](https://github.com/albertomn86/TLE_Generator). Este programa es un _script_ que a partir de un listado de satélites descarga los datos TLE de los mismos de forma automática. Este _script_ se puede ejecutar en cualquier sistema operativo si tenemos el intérprete de Python previamente instalado.
 En este ejemplo vamos a usar un binario para Windows que no necesita tener el intérprete instalado y que podemos descargar desde el siguiente enlace:
 
-[<center>Descargar TLE Generator para Windows</center>](https://github.com/albertomn86/TLE_Generator/releases/download/v2.3/TLE_Generator.Windows.zip)
+[<center>Descargar TLE Generator para Windows</center>](https://github.com/albertomn86/TLE_Generator/releases/download/v2.4/TLE_Generator.Windows.zip)
 
 Una vez descargado el archivo, extraemos su contenido:
 
@@ -22,7 +23,7 @@ Una vez descargado el archivo, extraemos su contenido:
 Ahora abrimos el archivo **_satellites.txt_** y editamos el listado de satélites con los que vayamos a añadir al archivo TLE.
 Para añadir un nuevo satélite, simplemente necesitamos insertar en el archivo su identificador dado por el [NORAD](https://es.wikipedia.org/wiki/NORAD). Para obtener el identificador de cualquier satélite, podemos usar el buscador de la web de CelesTrack:
 
-[<center>CelesTrack Satellite Catalog</center>](https://www.celestrak.com/satcat/search.php)
+[<center>CelesTrack Satellite Catalog</center>](https://celestrak.org/satcat/search.php)
 
 Si queremos quitar satélites bastaría con eliminar la linea o simplemente comentarla con el caracter '#' al principio.
 
