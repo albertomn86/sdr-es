@@ -1,6 +1,5 @@
 node_modules/*
 scaffolds/*
 db.json
-package-lock.json
 .deploy_git
 public/*
