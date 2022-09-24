@@ -1,7 +1,7 @@
 ---
 title: Instalar dispositivo RTL-SDR en Windows
 date: 2020-01-19 19:26:40
-updated: 2022-03-26 13:26:40
+updated: 2022-09-24 18:26:42
 tags: [RTL-SDR, SDRSharp, Windows, Instalación]
 author: EA7KOO
 description: En este tutorial veremos cómo instalar nuestro dispositivo RTL-SDR en Windows y usarlo con SDR# (SDR Sharp).
@@ -119,4 +119,4 @@ Una vez tengamos la ganancia ajustada, ya tendremos listo nuestro dispositivo SD
 
 En el siguiente enlace podemos consultar la guía de uso de SDR# traducida al español por Miguel Iborra (EA4BAS):
 
-[<center>SDR# Big Book en español (PDF)</center>](https://airspy.com/downloads/SDRSharp_Guia_v2.2_ESP.pdf)
+[<center>SDR# Big Book en español (PDF)</center>](https://airspy.com/downloads/SDRSharp_Guia_v5.3_ESP.pdf)
