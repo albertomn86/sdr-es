@@ -18,10 +18,10 @@
   --btn-default-hover-bg: #222;
   --btn-default-hover-color: #fff;
   --btn-default-hover-border-color: #222;
-  --highlight-background: #1d1f21;
+  --highlight-background: #303030;
   --highlight-foreground: #c5c8c6;
-  --highlight-gutter-background: #2d2f31;
-  --highlight-gutter-foreground: #b4b7b5;
+  --highlight-gutter-background: #3e3f3f;
+  --highlight-gutter-foreground: #b6b8b7;
   color-scheme: light;
 }
 html {
@@ -362,85 +362,13 @@ td {
   top: -5px;
   transform: rotate(-45deg);
 }
-/* Tomorrow Night Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-  color: #969896;
-}
-
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-  color: #cc6666;
-}
-
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-  color: #de935f;
-}
-
-/* Tomorrow Yellow */
-.hljs-attribute {
-  color: #f0c674;
-}
-
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-  color: #b5bd68;
-}
-
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-  color: #81a2be;
-}
-
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-  color: #b294bb;
-}
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  background: #1d1f21;
-  color: #c5c8c6;
-  padding: 0.5em;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
+pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{background:#303030;color:#c5c8c6}.hljs-comment{color:#8d8d8d}.hljs-quote{color:#b3c7d8}.hljs-deletion,.hljs-name,.hljs-regexp,.hljs-selector-class,.hljs-selector-id,.hljs-tag,.hljs-template-variable,.hljs-variable{color:#c66}.hljs-built_in,.hljs-literal,.hljs-number,.hljs-subst .hljs-link,.hljs-type{color:#de935f}.hljs-attribute{color:#f0c674}.hljs-addition,.hljs-bullet,.hljs-params,.hljs-string{color:#b5bd68}.hljs-class,.hljs-function,.hljs-keyword,.hljs-selector-tag{color:#be94bb}.hljs-meta,.hljs-section,.hljs-title{color:#81a2be}.hljs-symbol{color:#dbc4d9}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
 .highlight:hover .copy-btn,
 pre:hover .copy-btn {
   opacity: 1;
+}
+figure.highlight .table-container {
+  position: relative;
 }
 .copy-btn {
   color: #333;
@@ -975,6 +903,7 @@ pre code {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 5;
 }
 @media (max-width: 413px) {
   .post-body .tabs ul.nav-tabs,
@@ -1163,7 +1092,7 @@ pre code {
     display: none;
   }
 }
-.header {
+header.header {
   background: transparent;
 }
 .header-inner {
@@ -1185,7 +1114,7 @@ pre code {
   flex-shrink: 0;
   padding: 0 10px;
 }
-.use-motion .header,
+.use-motion header.header,
 .use-motion .site-brand-container .toggle {
   opacity: 0;
 }
@@ -1983,7 +1912,7 @@ pre code {
   font-size: 0.875em;
   font-weight: bold;
   line-height: 1;
-  margin: -20px auto 15px;
+  margin: -15px auto 15px;
   text-align: center;
 }
 .post-body iframe,

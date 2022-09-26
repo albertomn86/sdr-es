@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
@@ -16,10 +15,11 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Guía detallada para recibir imágenes en formato APT desde los satélites meteorológicos NOAA en Linux.">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"No hemos encontrado ningún resultado para la búsqueda: ${query}","hits_time":"${hits} resultados encontrados en ${time} ms","hits":"${hits} resultados encontrados"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Guía detallada para recibir imágenes en formato APT desde los satélites meteorológicos NOAA en Linux.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Recibir satélites meteorológicos NOAA en Linux">
 <meta property="og:url" content="https://sdr-es.com/recibir-satelites-meteorologicos-NOAA-linux/index.html">
@@ -59,6 +59,8 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216548910-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-216548910-1","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
 
 
 
@@ -115,12 +117,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li>
-        <li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li>
-        <li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li>
-        <li class="menu-item menu-item-bands-plan"><a href="/plan-bandas/" rel="section"><i class="fa fa-broadcast-tower fa-fw"></i>Plan bandas IARU</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li><li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li><li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li><li class="menu-item menu-item-bands-plan"><a href="/plan-bandas/" rel="section"><i class="fa fa-broadcast-tower fa-fw"></i>Plan bandas IARU</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
         </a>
@@ -192,14 +189,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">entradas</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">47</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-name">etiquetas</span></a>
       </div>
   </nav>
 </div>
@@ -230,7 +227,7 @@
     </header>
 
     
-  <div class="back-to-top" role="button" aria-label="Back to top">
+  <div class="back-to-top" role="button" aria-label="Volver al principio">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -256,11 +253,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar-sdr.gif">
       <meta itemprop="name" content="SDR en español">
-      <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="SDR en español">
+      <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Recibir satélites meteorológicos NOAA en Linux | SDR en español">
+      <meta itemprop="description" content="Guía detallada para recibir imágenes en formato APT desde los satélites meteorológicos NOAA en Linux.">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -349,7 +351,7 @@
 <img src="/recibir-satelites-meteorologicos-NOAA-linux/wxtoimg_instalar.jpg" class="" width="900" title="Instalación de WXtoIMG">
 
 <p>Cuando finalice la instalación, iniciamos el programa ejecutando el siguiente comando desde una terminal:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xwxtoimg</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xwxtoimg</span><br></pre></td></tr></table></figure>
 
 <p>Una vez se inicie el programa, seguiremos los siguientes pasos para configurar los ajustes básicos necesarios:</p>
 <ol>
@@ -376,20 +378,20 @@
 </li>
 </ol>
 <h2 id="Cable-de-audio-virtual"><a href="#Cable-de-audio-virtual" class="headerlink" title="Cable de audio virtual"></a>Cable de audio virtual</h2><p>Necesitamos crear un cable de audio virtual para poder pasar el audio desde el programa de SDR a WXtoImg para que genere la imagen.<br>Existen diferentes formas de hacer este procedimiento. En Linux tenemos una forma nativa de generar un cable virtual activando el <em>loopback</em> del kernel ALSA. Para hacerlo simplemente ejecutamos el siguiente comando en una terminal:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo modprobe snd-aloop</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo modprobe snd-aloop</span><br></pre></td></tr></table></figure>
 
 <p>Esto nos redirige la salida de audio general del sistema a una entrada de audio. Podemos verificar este cambio si vamos los ajustes de audio de Ubuntu.<br>Este cambio no es permanente y se perderá la próxima vez que iniciemos el equipo. Para hacerlo fijo debemos añadir un cambio en el sistema para que cargue nuevamente este módulo al iniciar. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo echo &#39;snd-aloop&#39; &gt;&gt; &#x2F;etc&#x2F;modules-load.d&#x2F;modules.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo echo &#x27;snd-aloop&#x27; &gt;&gt; /etc/modules-load.d/modules.conf</span><br></pre></td></tr></table></figure>
 
 <p>Por último, debemos asegurarnos que el <em>loopback</em> esté activado en el servicio de ALSA. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alsamixer</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alsamixer</span><br></pre></td></tr></table></figure>
 
 <p>Ahora buscamos el <em>loopback</em> en los dispositivos de audio y nos aseguramos de que está activado.</p>
 <p>Para finalizar, nos aseguramos que tenemos disponible el control de volumen de PulseAudio. Podemos comprobarlo ejecutándolo desde la terminal mediante el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pavucontrol</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pavucontrol</span><br></pre></td></tr></table></figure>
 
 <p>Si no lo tenemos instalado, podemos hacerlo con:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install pavucontrol</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install pavucontrol</span><br></pre></td></tr></table></figure>
 
 <h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal del satélite podemos utilizar cualquier programa SDR que funcione en Linux. En este ejemplo vamos a utilizar <strong>SDR++</strong>, el cual ya vimos como instalar en el artículo <a href="/instalacion-sdrpp/">“Instalar SDR++”</a>.</p>
 <p>Para el ajuste de frecuencia se ha utilizado <strong>Gpredict</strong>, que también vimos como instalar y configurar en el artículo <a href="/seguimiento-satelites-gpredict/">“Seguimiento de satélites con Gpredict”</a>.</p>
@@ -420,13 +422,13 @@
       <div class="popular-posts-title"><a href="/recepcion-datos-HIRS-satelites-NOAA/" rel="bookmark">Recibir los datos del instrumental HIRS de los satélites NOAA</a></div>
     </li>
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/recepcion-satelites-meteorologicos-HRPT/" rel="bookmark">Recibir imágenes HRPT desde satélites meteorológicos</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/recepcion-satelites-meteorologicos-meteor/" rel="bookmark">Recibir satélites meteorológicos Meteor-M</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/instalacion-satnogs-ansible/" rel="bookmark">Instalación de estación terrestre con SatNOGS (II)</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/construccion-antena-qfh-137/" rel="bookmark">Construcción de antena QFH para satélites meteorológicos</a></div>
     </li>
   </ul>
 
@@ -499,7 +501,7 @@
 <ul>
   <!--
   <li class="post-copyright-author">
-      <strong>Written by:  </strong>EA7KOO
+      <strong>Escrito por:  </strong>EA7KOO
   </li>
   <li class="post-copyright-link">
       <strong>Enlace a la entrada: </strong>
@@ -556,12 +558,12 @@
   </footer>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
 
   
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
 
 

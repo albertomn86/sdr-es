@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png">
+  <meta name="google-site-verification" content="zvjkvYHg6-B9vMVEvFFO8k4UMoFzQQ1tTyQBdG8c-so">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"No hemos encontrado ningún resultado para la búsqueda: ${query}","hits_time":"${hits} resultados encontrados en ${time} ms","hits":"${hits} resultados encontrados"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Guía para recibir imágenes HRPT desde los satélites meteorológicos LEO.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recibir imágenes HRPT desde satélites meteorológicos">
+<meta property="og:url" content="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/index.html">
+<meta property="og:site_name" content="SDR en español">
+<meta property="og:description" content="Guía para recibir imágenes HRPT desde los satélites meteorológicos LEO.">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/lna.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/helix.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/helix_adapter.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/antena.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/montaje.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/Look4Sat.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/LeanHRPT_Demod.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/lean_fft.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/LeanHRPT_Decode_NOAA19.jpeg">
+<meta property="og:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/LeanHRPT_Decode_MetOpB.jpeg">
+<meta property="article:published_time" content="2022-09-25T16:10:49.000Z">
+<meta property="article:modified_time" content="2022-09-25T16:10:49.000Z">
+<meta property="article:author" content="SDR en español">
+<meta property="article:tag" content="Satélites">
+<meta property="article:tag" content="Satélites meteorológicos">
+<meta property="article:tag" content="Meteorología">
+<meta property="article:tag" content="HRPT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/lna.jpeg">
+
+
+<link rel="canonical" href="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"es","comments":true,"permalink":"https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/","path":"recepcion-satelites-meteorologicos-HRPT/","title":"Recibir imágenes HRPT desde satélites meteorológicos"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Recibir imágenes HRPT desde satélites meteorológicos | SDR en español</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216548910-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-216548910-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Cambiar a barra de navegación" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">SDR en español</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li><li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li><li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li><li class="menu-item menu-item-bands-plan"><a href="/plan-bandas/" rel="section"><i class="fa fa-broadcast-tower fa-fw"></i>Plan bandas IARU</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Buscando..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Contenidos
+        </li>
+        <li class="sidebar-nav-overview">
+          Inicio
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Satelites"><span class="nav-number">1.</span> <span class="nav-text">Satélites</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Preparacion"><span class="nav-number">2.</span> <span class="nav-text">Preparación</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#El-SDR"><span class="nav-number">2.1.</span> <span class="nav-text">El SDR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#El-LNA"><span class="nav-number">2.2.</span> <span class="nav-text">El LNA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#La-antena"><span class="nav-number">2.3.</span> <span class="nav-text">La antena</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Montaje"><span class="nav-number">3.</span> <span class="nav-text">Montaje</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#El-software"><span class="nav-number">3.1.</span> <span class="nav-text">El software</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Recepcion"><span class="nav-number">4.</span> <span class="nav-text">Recepción</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Seguimiento"><span class="nav-number">4.1.</span> <span class="nav-text">Seguimiento</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Grabacion"><span class="nav-number">4.2.</span> <span class="nav-text">Grabación</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decodificacion"><span class="nav-number">4.3.</span> <span class="nav-text">Decodificación</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Agradecimientos"><span class="nav-number">5.</span> <span class="nav-text">Agradecimientos</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SDR en español"
+      src="/images/avatar-sdr.gif">
+  <p class="site-author-name" itemprop="name">SDR en español</p>
+  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">entradas</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-name">etiquetas</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/sdr_esp" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Volver al principio">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
+    <link itemprop="mainEntityOfPage" href="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-sdr.gif">
+      <meta itemprop="name" content="SDR en español">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SDR en español">
+      <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Recibir imágenes HRPT desde satélites meteorológicos | SDR en español">
+      <meta itemprop="description" content="Guía para recibir imágenes HRPT desde los satélites meteorológicos LEO.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Recibir imágenes HRPT desde satélites meteorológicos
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
+
+      <time title="Creado por: 25/09/2022 18:10:49" itemprop="dateCreated datePublished" datetime="2022-09-25T18:10:49+02:00">25/09/2022</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>EA7KOO</span>
+    </span>
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Como ya vimos en artículos anteriores, podemos recibir imágenes meteorológicas desde los distintos satélites que fotografían continuamente la superficie terrestre desde una órbita baja. Hasta ahora habíamos visto como obtener esas imágenes de baja resolución en la banda de VHF desde los satélites NOAA y Meteor-M. En este artículo veremos cómo obtener imágenes en una resolución mucho mayor en la banda L.</p>
+<span id="more"></span>
+
+<p>Este artículo no es más que una breve adaptación del artículo de  <a target="_blank" rel="noopener" href="https://sgcderek.github.io/blog/beginner-hrpt-guide.html">“Beginner’s guide to HRPT reception”</a> de <a target="_blank" rel="noopener" href="https://sgcderek.github.io/">Derek OK9SGC</a>. En dicho artículo están descritos minuciosamente y todos los pasos que vamos a ver aquí, por lo que es recomendable su lectura previamente a la de este artículo.<br>Todos los pasos que se van a mostrar a continuación son los que se han seguido hasta la obtención de imágenes de una forma bastante aceptable. Esto quiere decir, que no es el único ni el mejor método para obtener dichas imágenes, sino que existen muchas otras formas para obtenerlas.</p>
+<h1 id="Satelites"><a href="#Satelites" class="headerlink" title="Satélites"></a>Satélites</h1><p>Los satélites que emiten actualmente imágenes en modo HRPT en banda L son los siguientes.</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>Frecuencia (MHz)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NOAA-15</td>
+<td>1.702,5</td>
+</tr>
+<tr>
+<td>NOAA-18</td>
+<td>1.707</td>
+</tr>
+<tr>
+<td>NOAA-19</td>
+<td>1.698</td>
+</tr>
+<tr>
+<td>Meteor-M N2</td>
+<td>1.700</td>
+</tr>
+<tr>
+<td>Meteor-M N2-2</td>
+<td>1.700</td>
+</tr>
+<tr>
+<td>MetOp-B</td>
+<td>1.701,3</td>
+</tr>
+<tr>
+<td>MetOp-C</td>
+<td>1.701,3</td>
+</tr>
+<tr>
+<td>FengYun-3B (*)</td>
+<td>1.704,5</td>
+</tr>
+<tr>
+<td>FengYun-3C (*)</td>
+<td>1.701,4</td>
+</tr>
+</tbody></table>
+<p>(*) Los satélites FengYun-3 emiten con ciertas limitaciones y de forma discontinua.</p>
+<h1 id="Preparacion"><a href="#Preparacion" class="headerlink" title="Preparación"></a>Preparación</h1><h2 id="El-SDR"><a href="#El-SDR" class="headerlink" title="El SDR"></a>El SDR</h2><p>El único requisito que necesita nuestro dispositivo SDR para poder recibir estas señales es que pueda sintonizar esas frecuencias y que posea al menos 2,56 MSPS de tasa de muestreo. Los dispositivos como el RTL-SDR V3 y los Nooelec NESDR son perfectamente válidos para la recepción, pero se recomienda usar un dispositivo un poco más estable y con mayores tasas de muestreo como el AirSpy Mini o el AirSpy R2. Para este artículo se ha utilizado un AirSpy R2.</p>
+<h2 id="El-LNA"><a href="#El-LNA" class="headerlink" title="El LNA"></a>El LNA</h2><p>Dado que estamos trabajando en banda L, es casi imprescindible el uso de un amplificador para poder captar la señal correctamente. Podemos utilizar cualquier LNA que abarque esta banda y permita una correcta recepción de la señal.<br>También tenemos la opción de adquirir un LNA con filtro diseñado para estas frecuencias. Nooelec dispone de dos modelos de LNA con filtro SAW centrados en 1.688 MHz con similares prestaciones.</p>
+<table>
+<thead>
+<tr>
+<th>Modelo</th>
+<th align="center">Ganancia</th>
+<th>Observaciones</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SAWbird GOES</td>
+<td align="center">20 dBm</td>
+<td>Requiere 30 mA. Se puede usar con el <em>Bias-Tee</em> del SDR.</td>
+</tr>
+<tr>
+<td>SAWbird+ GOES</td>
+<td align="center">30 dBm</td>
+<td>Requiere 180 mA. Necesita alimentación externa.</td>
+</tr>
+</tbody></table>
+<p>En este caso se ha utilizado el modelo SAWbird+ GOES alimentado de forma externa con una batería portátil de 5 voltios.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/lna.jpeg" class="" width="400" title="Nooelec SAWbird+ GOES">
+
+
+<h2 id="La-antena"><a href="#La-antena" class="headerlink" title="La antena"></a>La antena</h2><p>Para la recepción vamos a utilizar una antena con reflector parabólico. En este caso se ha usado un reflector de 80 centímetros, pero lógicamente con uno de mayor tamaño recibiremos mucho mejor.<br>Para el <em>feed</em> de la antena se ha construido la antena helicoidal para 1,7 GHz con las medidas que Derek OK9SGC indicó en el artículo. Si disponemos de impresora 3D, lo más fácil es imprimir la plantilla que el autor publicó en Thingiverse y que podemos encontrar en el siguiente enlace:</p>
+<p><a target="_blank" rel="noopener" href="https://www.thingiverse.com/thing:4980180"><center>Helical antenna scaffold set (v4)</center></a></p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/helix.jpeg" class="" width="600" title="Helix">
+
+<p>Para realizar el acople al reflector, se ha diseñado una pieza para poder realizar el montaje usando la propia montura del LNB. Si el modelo de reflector que vamos a usar es de la marca Televés, es posible que se pueda usar la misma. Podemos descargar el STL de la pieza desde el siguiente enlace:</p>
+<p><a target="_blank" rel="noopener" href="https://www.thingiverse.com/thing:5437712"><center>Helical antenna adapter for dish reflector</center></a></p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/helix_adapter.jpeg" class="" width="600" title="Adaptador">
+
+<h1 id="Montaje"><a href="#Montaje" class="headerlink" title="Montaje"></a>Montaje</h1><p>Dado que en este caso se va a realizar el seguimiento manualmente, lo que se ha hecho es usar un trípode y colocar un tubo de PVC sobre el mismo (que hará de eje horizontal) en el que se ha colocado el reflector. Para el eje vertical se ha colocado el propio herraje del reflector, pero dejando solo un tornillo para que pueda moverse libremente hasta quedar casi en horizontal.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/antena.jpeg" class="" width="600" title="Montaje de la antena">
+
+<p>La colocación de la antena helicoidal se hará en el sitio del LNB usando la pieza mencionada anteriormente. Después colocamos el LNA directamente a la antena y después el SDR. Ya que era demasiado el peso que debía soportar el conector SMA al colocar el SDR directamente tras el LNA, se ha optado por usar un latiguillo lo más corto posible.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/montaje.jpeg" class="" width="700" title="Detalle del feed">
+
+
+<h2 id="El-software"><a href="#El-software" class="headerlink" title="El software"></a>El software</h2><p>Para realizar tanto la grabación como la posterior decodificación existen distintas alternativas. Las más comunes son <a target="_blank" rel="noopener" href="https://github.com/altillimity/SatDump">SatDump</a> y <a target="_blank" rel="noopener" href="https://github.com/Xerbo/LeanHRPT-Demod">LeanHRPT</a>. En este ejemplo se ha usado LeanHRPT que se compone de dos programas, uno para la grabación y otro para la decodificación y procesado. Podemos descargarlos desde los siguientes enlaces</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Xerbo/LeanHRPT-Demod/releases/latest">LeanHRPT-Demod</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Xerbo/LeanHRPT-Decode/releases/latest">LeanHRPT-Decode</a></p>
+</li>
+</ul>
+<p>La instalación de ambos programas en Windows es muy simple. Basta con descargar el archivo ZIP y extraer su contenido.</p>
+<h1 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h1><h2 id="Seguimiento"><a href="#Seguimiento" class="headerlink" title="Seguimiento"></a>Seguimiento</h2><p>Llegamos ahora a la parte que en un principio puede resultar más complicada, si no disponemos de un rotor que realice el seguimiento de forma automática. En este caso se ha optado por la opción de hacerlo manualmente, por lo que vamos a tener que ir moviendo la antena y apuntando a la dirección del satélite de la mejor manera que podamos. En un principio puede parecernos algo muy complicado, pero con un poco de práctica, teniendo buen pulso y evitando los movimientos bruscos, se puede realizar bastante bien y obtener unos resultados más que aceptables.</p>
+<p>Lo recomendable es usar alguna aplicación o programa que nos indique la posición del satélite para ayudarnos a apuntar. En este caso se ha usado la aplicación para móvil Android <a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.rtbishop.look4sat">Look4Sat: Satellite tracker</a>. Esta aplicación usa los sensores del teléfono para ayudarnos a encontrar la posición actual del satélite que queramos.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/Look4Sat.jpeg" class="" width="400" title="Look4Sat">
+<h2 id="Grabacion"><a href="#Grabacion" class="headerlink" title="Grabación"></a>Grabación</h2><p>Puesto que hemos optado por usar el programa LeanHRPT para grabar la señal, debemos configurarlo antes de que comience el pase del satélite.</p>
+<p>Los ajustes que debemos introducir son los siguientes:</p>
+<ul>
+<li><strong>Source.</strong> Seleccionamos SDR para que utilice nuestro dispositivo. El dispositivo debe estar conectado para que cargue los drivers. El programa ya lleva los drivers para los dispositivos más comunes.</li>
+<li><strong>Downlink.</strong> Seleccionamos el satélite que vamos a recibir. Dependiendo del satélite se grabará en un modo u otro.</li>
+<li><strong>Frequency.</strong> Aquí debemos introducir la frecuencia del satélite. <a href="#Satelites">Consultar el punto 1 del artículo.</a></li>
+<li><strong>Sample Rate.</strong> Tasa de muestreo. Consultar los valores recomendados por Derek OK9SGC. Para el AirSpy R2 hay que introducir 6 MSPS.</li>
+<li><strong>Gain.</strong> Ganancia del SDR. Se activa después de pulsar <em>Start</em>. Ajustar según sea necesario.</li>
+<li><strong>Enable Bias Tee.</strong> Activa el <em>Bias Tee</em> del SDR si este lo permite. Debemos tener cuidado con activarlo si ya estamos alimentando el LNA de forma externa.</li>
+<li><strong>Output file.</strong> Indicamos la ubicación del archivo de grabación.</li>
+</ul>
+<p>Una vez esté todo configurado hacemos clic en <em>Start</em> para iniciar la grabación.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/LeanHRPT_Demod.jpeg" class="" width="700" title="LeanHRPT Demod">
+
+<p>También podemos abrir la ventana de FFT para ver el espectro de la señal.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/lean_fft.jpeg" class="" width="600" title="LeanHRPT FFT">
+
+<p>Ahora el objetivo es realizar el seguimiento y asegurarse de que la demodulación se está realizando correctamente. Cuanto más definidos veamos los puntos en la ventana, más limpia saldrá la imagen una vez decodificada.</p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Por último, una vez ha finalizado el pase y hemos detenido la grabación, vamos a decodificar el archivo generado y poder ver la imagen.<br>Para ello abrimos el programa LeanHRPT-Decode, hacemos clic en <em>File</em> y <em>Open</em> y seleccionamos el archivo.<br>Si la grabación ha sido buena, veremos que se procesa el archivo y aparece la imagen en pantalla.<br>Una vez tengamos la imagen, ya podemos jugar con las distintas configuraciones y canales para obtener la imagen a nuestro gusto.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/LeanHRPT_Decode_NOAA19.jpeg" class="" title="LeanHRPT Decode NOAA19">
+
+<img src="/recepcion-satelites-meteorologicos-HRPT/LeanHRPT_Decode_MetOpB.jpeg" class="" title="LeanHRPT Decode MetOpB">
+
+<h1 id="Agradecimientos"><a href="#Agradecimientos" class="headerlink" title="Agradecimientos"></a>Agradecimientos</h1><p>Como no podía ser de otra forma, quiero agradecer a Derek OK9SGC su trabajo en la elaboración de la guía en la que me he basado. Creo que la sencillez y la claridad de esta, han sido los incentivos que me han empujado a probar esta forma de recibir imágenes.</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Artículos relacionados</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/recepcion-datos-HIRS-satelites-NOAA/" rel="bookmark">Recibir los datos del instrumental HIRS de los satélites NOAA</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/recepcion-satelites-meteorologicos-NOAA/" rel="bookmark">Recibir satélites meteorológicos NOAA</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/recepcion-satelites-meteorologicos-meteor/" rel="bookmark">Recibir satélites meteorológicos Meteor-M</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/recibir-satelites-meteorologicos-NOAA-linux/" rel="bookmark">Recibir satélites meteorológicos NOAA en Linux</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/ajuste-frecuencia-doppler-orbitron/" rel="bookmark">Ajuste de frecuencia en recepción de satélites</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+          <div class="followme">
+  <span>Síguenos en nuestros otros canales</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://twitter.com/sdr_esp">
+          <span class="icon">
+            <i class="fab fa-twitter"></i>
+          </span>
+
+          <span class="label">Twitter</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA">
+          <span class="icon">
+            <i class="fab fa-youtube"></i>
+          </span>
+
+          <span class="label">YouTube</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://t.me/sdr_esp">
+          <span class="icon">
+            <i class="fab fa-telegram-plane"></i>
+          </span>
+
+          <span class="label">Telegram</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Satelites/" rel="tag"><i class="fa fa-tag"></i> Satélites</a>
+              <a href="/tags/Satelites-meteorologicos/" rel="tag"><i class="fa fa-tag"></i> Satélites meteorológicos</a>
+              <a href="/tags/Meteorologia/" rel="tag"><i class="fa fa-tag"></i> Meteorología</a>
+              <a href="/tags/HRPT/" rel="tag"><i class="fa fa-tag"></i> HRPT</a>
+          </div>
+          
+
+<div class="post-copyright">
+<ul>
+  <!--
+  <li class="post-copyright-author">
+      <strong>Escrito por:  </strong>EA7KOO
+  </li>
+  <li class="post-copyright-link">
+      <strong>Enlace a la entrada: </strong>
+      <a href="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/" title="Recibir imágenes HRPT desde satélites meteorológicos">https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/</a>
+  </li>
+  -->
+  <li class="post-copyright-license">
+    <strong>Copyright:  </strong>Todos los artículos de este sitio están licenciados bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> a no ser que se especifique una licencia adicional.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/instalacion-igate-APRS-raspberrypi/" rel="prev" title="Instalación de iGate APRS en Raspberry Pi">
+                  <i class="fa fa-chevron-left"></i> Instalación de iGate APRS en Raspberry Pi
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class=""></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SDR en español</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Twitter,Facebook,Linkedin,Reddit,GoogleBookmarks";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+</body>
+</html>

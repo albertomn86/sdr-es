@@ -6,7 +6,7 @@
   <link href="https://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="https://sdr-es.com/"/>
-  <updated>2022-05-27T10:20:24.000Z</updated>
+  <updated>2022-09-25T16:10:49.000Z</updated>
   <id>https://sdr-es.com/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recibir imágenes HRPT desde satélites meteorológicos</title>
+    <link href="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/"/>
+    <id>https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/</id>
+    <published>2022-09-25T16:10:49.000Z</published>
+    <updated>2022-09-25T16:10:49.000Z</updated>
+    
+    
+    <summary type="html">Guía para recibir imágenes HRPT desde los satélites meteorológicos LEO.</summary>
+    
+    
+    
+    
+    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
+    
+    <category term="Satélites meteorológicos" scheme="https://sdr-es.com/tags/Satelites-meteorologicos/"/>
+    
+    <category term="Meteorología" scheme="https://sdr-es.com/tags/Meteorologia/"/>
+    
+    <category term="HRPT" scheme="https://sdr-es.com/tags/HRPT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Instalación de iGate APRS en Raspberry Pi</title>
+    <link href="https://sdr-es.com/instalacion-igate-APRS-raspberrypi/"/>
+    <id>https://sdr-es.com/instalacion-igate-APRS-raspberrypi/</id>
+    <published>2022-09-06T14:05:59.000Z</published>
+    <updated>2022-09-06T14:05:59.000Z</updated>
+    
+    
+    <summary type="html">En este artículo veremos cómo instalar y configurar un iGate para APRS en una Raspberry Pi.</summary>
+    
+    
+    
+    
+    <category term="RTL-SDR" scheme="https://sdr-es.com/tags/RTL-SDR/"/>
+    
+    <category term="APRS" scheme="https://sdr-es.com/tags/APRS/"/>
+    
+    <category term="Raspberry Pi" scheme="https://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+    <category term="DireWolf" scheme="https://sdr-es.com/tags/DireWolf/"/>
+    
+  </entry>
   
   <entry>
     <title>Recibir satélite Es&#39;hail-2/QO-100</title>
@@ -270,9 +316,9 @@
     
     
     
-    <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
-    
     <category term="APRS" scheme="https://sdr-es.com/tags/APRS/"/>
+    
+    <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
     
     <category term="ISS" scheme="https://sdr-es.com/tags/ISS/"/>
     
@@ -396,55 +442,9 @@
     
     <category term="Linux" scheme="https://sdr-es.com/tags/Linux/"/>
     
-    <category term="OpenWebRX" scheme="https://sdr-es.com/tags/OpenWebRX/"/>
-    
     <category term="Raspberry Pi" scheme="https://sdr-es.com/tags/Raspberry-Pi/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Recibir los datos del instrumental HIRS de los satélites NOAA</title>
-    <link href="https://sdr-es.com/recepcion-datos-HIRS-satelites-NOAA/"/>
-    <id>https://sdr-es.com/recepcion-datos-HIRS-satelites-NOAA/</id>
-    <published>2020-07-27T18:19:04.000Z</published>
-    <updated>2020-07-27T18:19:04.000Z</updated>
-    
-    
-    <summary type="html">Guía para la recepción de los datos del instrumental HIRS de los satélites NOAA.</summary>
-    
-    
-    
-    
-    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
-    
-    <category term="Satélites meteorológicos" scheme="https://sdr-es.com/tags/Satelites-meteorologicos/"/>
-    
-    <category term="NOAA" scheme="https://sdr-es.com/tags/NOAA/"/>
-    
-    <category term="Meteorología" scheme="https://sdr-es.com/tags/Meteorologia/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Instalar de dispositivo RTL-SDR en macOS</title>
-    <link href="https://sdr-es.com/instalacion-rtlsdr-macos/"/>
-    <id>https://sdr-es.com/instalacion-rtlsdr-macos/</id>
-    <published>2020-06-14T08:32:42.000Z</published>
-    <updated>2020-06-14T08:32:42.000Z</updated>
-    
-    
-    <summary type="html">En este tutorial veremos cómo instalar nuestro dispositivo RTL-SDR en macOS y usarlo con CubicSDR.</summary>
-    
-    
-    
-    
-    <category term="RTL-SDR" scheme="https://sdr-es.com/tags/RTL-SDR/"/>
-    
-    <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
-    
-    <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
-    
-    <category term="CubicSDR" scheme="https://sdr-es.com/tags/CubicSDR/"/>
+    <category term="OpenWebRX" scheme="https://sdr-es.com/tags/OpenWebRX/"/>
     
   </entry>
   

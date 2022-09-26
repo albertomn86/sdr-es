@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
@@ -16,10 +15,11 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Instalación de receptor de mensajes ADS-B en una Raspberry Pi para el seguimiento de aviones.">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"No hemos encontrado ningún resultado para la búsqueda: ${query}","hits_time":"${hits} resultados encontrados en ${time} ms","hits":"${hits} resultados encontrados"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Instalación de receptor de mensajes ADS-B en una Raspberry Pi para el seguimiento de aviones.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Recepción de mensajes ADS-B en Raspberry Pi">
 <meta property="og:url" content="https://sdr-es.com/seguimiento-aviones-raspberry-pi/index.html">
@@ -55,6 +55,8 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216548910-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-216548910-1","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
 
 
 
@@ -111,12 +113,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li>
-        <li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li>
-        <li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li>
-        <li class="menu-item menu-item-bands-plan"><a href="/plan-bandas/" rel="section"><i class="fa fa-broadcast-tower fa-fw"></i>Plan bandas IARU</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li><li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li><li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li><li class="menu-item menu-item-bands-plan"><a href="/plan-bandas/" rel="section"><i class="fa fa-broadcast-tower fa-fw"></i>Plan bandas IARU</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
         </a>
@@ -188,14 +185,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">entradas</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">47</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-name">etiquetas</span></a>
       </div>
   </nav>
 </div>
@@ -226,7 +223,7 @@
     </header>
 
     
-  <div class="back-to-top" role="button" aria-label="Back to top">
+  <div class="back-to-top" role="button" aria-label="Volver al principio">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -252,11 +249,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar-sdr.gif">
       <meta itemprop="name" content="SDR en español">
-      <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="SDR en español">
+      <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Recepción de mensajes ADS-B en Raspberry Pi | SDR en español">
+      <meta itemprop="description" content="Instalación de receptor de mensajes ADS-B en una Raspberry Pi para el seguimiento de aviones.">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -300,44 +302,44 @@
 <h3 id="Instalacion-de-dump1090"><a href="#Instalacion-de-dump1090" class="headerlink" title="Instalación de dump1090"></a>Instalación de dump1090</h3><p>Vamos a instalar la versión de <em>dump1090</em> mantenida por FlightAware, ya que está actualizada y nos instala y levanta un servidor web en el que podemos ver las aeronaves sobre el mapa sin muchas complicaciones.</p>
 <p>El primer paso es instalar el repositorio de FlightAware en nuestra Raspberry Pi dependiendo de la versión de Raspbian que tengamos. También podemos generar paquetes para otras distribuciones siguiendo los pasos descritos <a target="_blank" rel="noopener" href="https://github.com/flightaware/dump1090">aquí</a>.</p>
 <p>Si no conocemos la versión de Raspbian, podemos consultarla ejecutando:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;os-release | grep VERSION_CODENAME</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/os-release | grep VERSION_CODENAME</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>Repositorio para <strong>Raspbian Buster</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;flightaware.com&#x2F;adsb&#x2F;piaware&#x2F;files&#x2F;packages&#x2F;pool&#x2F;piaware&#x2F;p&#x2F;piaware-support&#x2F;piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure></li>
 <li><p>Repositorio para <strong>Raspbian Stretch</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;flightaware.com&#x2F;adsb&#x2F;piaware&#x2F;files&#x2F;packages&#x2F;pool&#x2F;piaware&#x2F;p&#x2F;piaware-support&#x2F;piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>Una vez instalado el repositorio correspondiente ejecutamos:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 
 <p>Ahora instalamos <em>dump1090</em>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y dump1090-fa</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y dump1090-fa</span><br></pre></td></tr></table></figure>
 
 <p>Podemos ajustar las opciones de <em>dump1090</em> en su archivo de configuración:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;dump1090-fa</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/default/dump1090-fa</span><br></pre></td></tr></table></figure>
 
 <p>Editamos la siguiente línea con la ganancia y valor de PPM. Es aconsejable establecer un valor para la ganancia, ya que por defecto el nivel viene establecido en automático (-10) y no siempre proporciona buenos resultados.<br>Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en <em>device-index</em>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RECEIVER_OPTIONS&#x3D;&quot;--device-index 0 --gain -10 --ppm 0&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RECEIVER_OPTIONS=&quot;--device-index 0 --gain -10 --ppm 0&quot;</span><br></pre></td></tr></table></figure>
 
 <p>Reiniciamos el servicio para que se apliquen los cambios.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service dump1090-fa restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service dump1090-fa restart</span><br></pre></td></tr></table></figure>
 
 <p>Por último, accedemos a nuestra Raspberry Pi desde cualquier navegador web:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;IP_RASPBERRY:8080&#x2F;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://IP_RASPBERRY:8080/</span><br></pre></td></tr></table></figure>
 
 <img src="/seguimiento-aviones-raspberry-pi/dump1090.jpg" class="" width="900" title="dump1090 FlightAware">
 
 <p>Esta interfaz web utiliza el puerto 8080 por defecto. Si queremos cambiarlo editamos el archivo de configuración de <em>Lighttpd</em>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;lighttpd&#x2F;conf-enabled&#x2F;89-dump1090-fa.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/lighttpd/conf-enabled/89-dump1090-fa.conf</span><br></pre></td></tr></table></figure>
 
 <p>Editamos la siguiente línea y modificamos el puerto 8080 por el que queramos utilizar:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$SERVER[&quot;socket&quot;] &#x3D;&#x3D; &quot;:8080&quot; &#123;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$SERVER[&quot;socket&quot;] == &quot;:8080&quot; &#123;</span><br></pre></td></tr></table></figure>
 
 <p>Por último reiniciamos el servicio para que se apliquen los cambios:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service lighttpd restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service lighttpd restart</span><br></pre></td></tr></table></figure>
 
 
 <h3 id="Enviar-datos-a-FlightAware"><a href="#Enviar-datos-a-FlightAware" class="headerlink" title="Enviar datos a FlightAware"></a>Enviar datos a FlightAware</h3><p><a target="_blank" rel="noopener" href="https://flightaware.com/">FlightAware</a> es una compañía con sede en Houston (TX, Estados Unidos) que ofrece servicios de software y datos para aviación. Esta compañía ofrece información de seguimiento de aeronaves de forma gratuita desde su página web y sus aplicaciones para móviles. Es actualmente la mayor plataforma de seguimiento de vuelos.</p>
@@ -349,13 +351,13 @@
 <p><a target="_blank" rel="noopener" href="https://es.flightaware.com/account/join"><center>https://es.flightaware.com/account/join</center></a></p>
 <ol start="2">
 <li><p>Instalamos <em>piaware</em>. Este software será el encargado de establecer la comunicación con el servidor de FlightAware para enviar los datos y recibir ajustes.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y piaware</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y piaware</span><br></pre></td></tr></table></figure></li>
 <li><p>Podemos ajustar <em>piaware</em> para que se actualice de forma automática y para que podamos actualizarlo desde la interfaz web de FlightAware.<br>Si queremos que se actualice automático ejecutamos:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo piaware-config allow-auto-updates yes</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo piaware-config allow-auto-updates yes</span><br></pre></td></tr></table></figure>
 <p>Si queremos que se pueda hacer de forma manual vía web ejecutamos:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo piaware-config allow-manual-updates yes</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo piaware-config allow-manual-updates yes</span><br></pre></td></tr></table></figure></li>
 <li><p>Reiniciamos el servicio para que se apliquen los ajustes.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service piaware restart</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service piaware restart</span><br></pre></td></tr></table></figure></li>
 <li><p>Accedemos a la siguiente dirección para vincular nuestra Raspberry Pi con la cuenta que acabamos de crear. Si accedemos desde la misma dirección IP que tiene la Raspberry Pi, la detectará de forma automática.</p>
 </li>
 </ol>
@@ -375,19 +377,19 @@
 <p>Las pasos que seguiremos son los siguientes:</p>
 <ol>
 <li><p>Instalamos <em>rbfeeder</em>. Será el programa que envíe los datos al servidor.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - http:&#x2F;&#x2F;apt.rb24.com&#x2F;inst_rbfeeder.sh)&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - http://apt.rb24.com/inst_rbfeeder.sh)&quot;</span><br></pre></td></tr></table></figure>
 <p>Cuando pregunte si queremos instalar <code>dump978-rb</code> le decimos que no.</p>
 </li>
 <li><p>Instalamos el cliente de MLAT. La siguiente versión es para Raspbian. Si necesitamos paquete para otra versión, podemos generarlo siguiendo los pasos descritos <a target="_blank" rel="noopener" href="https://github.com/mutability/mlat-client">aquí</a>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget &#x2F;seguimiento-aviones-raspberry-pi&#x2F;mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget /seguimiento-aviones-raspberry-pi/mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure></li>
 <li><p>Nos registramos en RadarBox.</p>
 </li>
 </ol>
 <p><a target="_blank" rel="noopener" href="https://www.radarbox.com/register"><center>https://www.radarbox.com/register</center></a></p>
 <ol start="4">
 <li><p>Una vez registrados necesitamos vincular nuestro receptor con RadarBox. Para ello usaremos la clave que nos genera <em>rbfeeder</em> la primera vez que se conecta al servidor. Consultamos la clave con el comando:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rbfeeder --showkey --no-start</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rbfeeder --showkey --no-start</span><br></pre></td></tr></table></figure></li>
 <li><p>Accedemos a esta dirección, introducimos nuestra clave en <em>Sharing Key</em> y pulsamos en <strong>CLAIM!</strong>.</p>
 </li>
 </ol>
@@ -400,7 +402,7 @@
 </ol>
 <h3 id="Enviar-datos-a-ADS-B-Exchange"><a href="#Enviar-datos-a-ADS-B-Exchange" class="headerlink" title="Enviar datos a ADS-B Exchange"></a>Enviar datos a ADS-B Exchange</h3><p><a target="_blank" rel="noopener" href="https://www.adsbexchange.com/">ADS-B Exchange</a> es un servicio colaborativo de datos de seguimiento y es la mayor fuente de datos de vuelos <strong>sin filtrar</strong>. En este caso no obtendremos beneficios como suscripciones, ya que este servicio ofrece todos los datos de forma <strong>gratuita para fines no comerciales</strong>.</p>
 <p>Para enviar nuestros datos a ADS-B Exchange tendremos que ejecutar un script de instalación que realizará el proceso de forma sencilla. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;adsbxchange&#x2F;adsb-exchange&#x2F;master&#x2F;install.sh)&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https://raw.githubusercontent.com/adsbxchange/adsb-exchange/master/install.sh)&quot;</span><br></pre></td></tr></table></figure>
 
 <p>Se iniciará un asistente instalación en el que debemos indicar un nombre para nuestro <em>feeder</em> y nuestra posición para los cálculos de MLAT.</p>
 <img src="/seguimiento-aviones-raspberry-pi/adsb-script.png" class="" title="Asistente instalación ADS-B Exchange">
@@ -411,10 +413,10 @@
 <li>Comprobar el estado de los servidores de MLAT: <a target="_blank" rel="noopener" href="http://adsbx.org/sync">http://adsbx.org/sync</a></li>
 </ul>
 <p>Opcionalmente, podemos instalar la herramienta proporcionada por ADS-B Exchange para ver online los datos que estamos enviando desde nuestro receptor en tiempo real. Para instalarla basta con ejecutar el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;adsbxchange&#x2F;adsbexchange-stats&#x2F;master&#x2F;stats.sh)&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https://raw.githubusercontent.com/adsbxchange/adsbexchange-stats/master/stats.sh)&quot;</span><br></pre></td></tr></table></figure>
 
 <p>Una vez instalada, ejecutamos el siguiente comando para obtener nuestra URL personalizada en la que consultar los datos:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adsbexchange-showurl</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adsbexchange-showurl</span><br></pre></td></tr></table></figure>
 
 <p>Obtendremos una URL que debemos copiar e introducir en el navegador web. Una vez accedemos, tendremos dos enlaces que nos llevarán a una página con los datos de las aeronaves que estamos recibiendo en nuestra estación y a un visor con el mapa en tiempo real. Podemos consultar el funcionamiento de las distintas opciones del visor en <a target="_blank" rel="noopener" href="https://www.adsbexchange.com/map-help/">este enlace</a>.</p>
 <img src="/seguimiento-aviones-raspberry-pi/adsb-exchange.jpg" class="" width="900" title="ADS-B Exchange">
@@ -424,23 +426,23 @@
 <p>Lo primero sera registrarse en Flightradar24.</p>
 <p><a target="_blank" rel="noopener" href="https://www.flightradar24.com/premium/signup"><center>https://www.flightradar24.com/premium/signup</center></a></p>
 <p>Para enviar los datos debemos descargar e instalar <em>fr24feed</em>. Para ello ejecutamos el siguiente comando y seguimos los pasos del asistente de instalación.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https:&#x2F;&#x2F;repo-feed.flightradar24.com&#x2F;install_fr24_rpi.sh)&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https://repo-feed.flightradar24.com/install_fr24_rpi.sh)&quot;</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li><p>Introducir el correo electrónico con el que nos hemos registrado.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Step 1.1 - Enter your email address (username@domain.tld)</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Step 1.1 - Enter your email address (username@domain.tld)</span><br></pre></td></tr></table></figure></li>
 <li><p>Si tenemos ya una clave previa la introducimos. En caso contrario lo dejamos en blanco.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Step 1.2 - If you used to feed FR24 with ADS-B data before, enter your sharing key.</span><br><span class="line">If you don&#39;t remember your sharing key, you can find it in your account on the website under &quot;My data sharing&quot;.</span><br><span class="line">https:&#x2F;&#x2F;www.flightradar24.com&#x2F;account&#x2F;data-sharing</span><br><span class="line"></span><br><span class="line">Otherwise leave this field empty and continue.</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Step 1.2 - If you used to feed FR24 with ADS-B data before, enter your sharing key.</span><br><span class="line">If you don&#x27;t remember your sharing key, you can find it in your account on the website under &quot;My data sharing&quot;.</span><br><span class="line">https://www.flightradar24.com/account/data-sharing</span><br><span class="line"></span><br><span class="line">Otherwise leave this field empty and continue.</span><br></pre></td></tr></table></figure></li>
 <li><p>Introducimos <code>yes</code> para activar MLAT.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Step 1.3 - Would you like to participate in MLAT calculations? (yes&#x2F;no)$:yes</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Step 1.3 - Would you like to participate in MLAT calculations? (yes/no)$:yes</span><br></pre></td></tr></table></figure></li>
 <li><p>Introducimos nuestras coordenadas y altitud.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">IMPORTANT: For MLAT calculations the antenna&#39;s location should be entered very precise!</span><br><span class="line"></span><br><span class="line">Step 3.A - Enter antenna&#39;s latitude (DD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.B - Enter antenna&#39;s longitude (DDD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.C - Enter antenna&#39;s altitude above the sea level (in feet)</span><br><span class="line"></span><br><span class="line">Using latitude: 37.XXXX, longitude: -3.XXXX, altitude: 720ft above sea level</span><br><span class="line"></span><br><span class="line">Validating email&#x2F;location information...OK</span><br><span class="line"></span><br><span class="line">The closest airport found is ICAO:LEGR IATA:GRX near Granada.</span><br><span class="line"></span><br><span class="line">Latitude: 37.188728</span><br><span class="line">Longitude: -3.777350</span><br><span class="line">Country: Spain</span><br><span class="line"></span><br><span class="line">Flightradar24 may, if needed, use your email address to contact you regarding your data feed.</span><br><span class="line"></span><br><span class="line">Would you like to continue using these settings?</span><br><span class="line"></span><br><span class="line">Enter your choice (yes&#x2F;no)$:yes</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">IMPORTANT: For MLAT calculations the antenna&#x27;s location should be entered very precise!</span><br><span class="line"></span><br><span class="line">Step 3.A - Enter antenna&#x27;s latitude (DD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.B - Enter antenna&#x27;s longitude (DDD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.C - Enter antenna&#x27;s altitude above the sea level (in feet)</span><br><span class="line"></span><br><span class="line">Using latitude: 37.XXXX, longitude: -3.XXXX, altitude: 720ft above sea level</span><br><span class="line"></span><br><span class="line">Validating email/location information...OK</span><br><span class="line"></span><br><span class="line">The closest airport found is ICAO:LEGR IATA:GRX near Granada.</span><br><span class="line"></span><br><span class="line">Latitude: 37.188728</span><br><span class="line">Longitude: -3.777350</span><br><span class="line">Country: Spain</span><br><span class="line"></span><br><span class="line">Flightradar24 may, if needed, use your email address to contact you regarding your data feed.</span><br><span class="line"></span><br><span class="line">Would you like to continue using these settings?</span><br><span class="line"></span><br><span class="line">Enter your choice (yes/no)$:yes</span><br></pre></td></tr></table></figure></li>
 <li><p>Introducimos <code>yes</code> para que usar la configuración automática y que utilice la instancia de <em>dump1090</em> que ya tenemos instalada.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">We have detected that you already have a dump1090 instance running. We can therefore automatically configure the FR24 feeder to use existing receiver configuration, or you can manually configure all the parameters.</span><br><span class="line"></span><br><span class="line">Would you like to use autoconfig (*yes*&#x2F;no)$:yes</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">We have detected that you already have a dump1090 instance running. We can therefore automatically configure the FR24 feeder to use existing receiver configuration, or you can manually configure all the parameters.</span><br><span class="line"></span><br><span class="line">Would you like to use autoconfig (*yes*/no)$:yes</span><br></pre></td></tr></table></figure></li>
 <li><p>Activamos el log si queremos. No es necesario.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Step 6 - Please select desired logfile mode:</span><br><span class="line"> 0 -  Disabled</span><br><span class="line"> 1 -  48 hour, 24h rotation</span><br><span class="line"> 2 -  72 hour, 24h rotation</span><br><span class="line">Select logfile mode (0-2)$:0</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Step 6 - Please select desired logfile mode:</span><br><span class="line"> 0 -  Disabled</span><br><span class="line"> 1 -  48 hour, 24h rotation</span><br><span class="line"> 2 -  72 hour, 24h rotation</span><br><span class="line">Select logfile mode (0-2)$:0</span><br></pre></td></tr></table></figure></li>
 <li><p>Por último, reiniciamos el servicio.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart fr24feed</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart fr24feed</span><br></pre></td></tr></table></figure></li>
 </ol>
 
     </div>
@@ -452,6 +454,9 @@
   <div class="popular-posts-header">Artículos relacionados</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/instalacion-igate-APRS-raspberrypi/" rel="bookmark">Instalación de iGate APRS en Raspberry Pi</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/instalacion-openwebrx/" rel="bookmark">Instalar receptor SDR online con OpenWebRX</a></div>
     </li>
     <li class="popular-posts-item">
@@ -462,9 +467,6 @@
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/instalacion-satnogs/" rel="bookmark">Instalación de estación terrestre con SatNOGS</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/instalacion-spyserver-raspberrypi/" rel="bookmark">Instalación de SPY Server en Raspberry Pi</a></div>
     </li>
   </ul>
 
@@ -535,7 +537,7 @@
 <ul>
   <!--
   <li class="post-copyright-author">
-      <strong>Written by:  </strong>EA7KOO
+      <strong>Escrito por:  </strong>EA7KOO
   </li>
   <li class="post-copyright-link">
       <strong>Enlace a la entrada: </strong>
@@ -592,12 +594,12 @@
   </footer>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
 
   
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
 
 

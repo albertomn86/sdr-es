@@ -28,7 +28,7 @@
 </ol>
 <ol start="3">
 <li><p>Añadimos las siguientes líneas al archivo de configuración de Orbitron <em><strong>Setup.cfg</strong></em>, que encontramos dentro de la carpeta <em>Config</em> en el directorio de instalación de Orbitron.<br> Debemos indicar la ruta completa en la que hemos colocado el archivo <em>SDRSharpDriverDDE.exe</em> en el paso anterior.</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Drivers]</span><br><span class="line">SDRSharp&#x3D;C:\SDR\SDRSharp\Plugins\DDETracker\SDRSharpDriverDDE.exe</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Drivers]</span><br><span class="line">SDRSharp=C:\SDR\SDRSharp\Plugins\DDETracker\SDRSharpDriverDDE.exe</span><br></pre></td></tr></table></figure>
  </br>
  <img src="/ajuste-frecuencia-doppler-orbitron/orbitron-config.jpg" class="" title="Orbitron">
 
@@ -57,8 +57,8 @@
 <p>Como podemos ver en la ventana tenemos dos bloques para introducir las acciones que SDR# debe realizar. En el bloque <strong>AOS</strong> (Acquisition of Signal) le diremos qué debe hacer cuando el satélite comience a verse sobre el horizonte en nuestra posición y en el bloque inferior <strong>LOS</strong> (Loss Of Signal) le indicamos que hará cuando termine el pase.</p>
 <p>Estas acciones podemos escribirlas manualmente o seleccionarlas de la columna de la derecha e ir insertando con el botón “<strong>&lt;&lt;</strong>“ dónde corresponda.</p>
 <p>En el caso de nuestro ejemplo haremos las siguientes acciones:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
-<p><strong>LOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_tracking_frequency_Off</span><br><span class="line">radio_Stop</span><br></pre></td></tr></table></figure></p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p><strong>LOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_tracking_frequency_Off</span><br><span class="line">radio_Stop</span><br></pre></td></tr></table></figure></p>
 </br>
 <img src="/ajuste-frecuencia-doppler-orbitron/dde-configured.jpg" class="" title="DDETracker FUNCUBE">
 
@@ -559,7 +559,7 @@
 <p>Si queremos quitar satélites bastaría con eliminar la linea o simplemente comentarla con el caracter ‘#’ al principio.</p>
 <p>Una vez tenemos el listado de satélites, vamos a crear un archivo <em>batch</em> con la llamada al ejecutable con los parámetros ya establecidos, para que simplemente tengamos que hacer doble clic para generar nuestro archivo dónde queramos.</p>
 <p>En este caso voy a generar un archivo con los TLE dentro de la carpeta de Orbitron. Para ello creamos un nuevo archivo de texto con la extensión <em>.bat</em> y el contenido siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tle_gen.exe -o C:\SDR\Portable\Orbitron\Tle\custom.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tle_gen.exe -o C:\SDR\Portable\Orbitron\Tle\custom.txt</span><br></pre></td></tr></table></figure>
 
 <img src="/generar-archivo-TLE/bat.png" class="" width="200" title="Archivo BAT">
 
@@ -637,11 +637,11 @@
 <p>Todos los paquetes Soapy para la mayoría de dispositivos SDR están incluidos en la distribución, a excepción de SDRPlay que hay que compilarlo según sus instrucciones. Previamente hay que instalar el paquete <strong>libsoapysdr-dev</strong>.<br>Si no se quiere, no es necesario instalar los módulos Soapy para el resto de dispositivos si no se van a usar.</p>
 <p>Primeramente, hay que descargar y ejecutar el driver/API (la más actual en este momento es la API 3.07) desde la web de sdrplay.com (Linux x86, distribución Other).<br>Se descarga un archivo <strong>.run</strong> al que hay que darle permisos con el comando <strong>chmod</strong> y se ejecuta. No es necesario hacerlo con <em>sudo</em> en un primer momento ya que tras la lectura y aprobación de la licencia, preguntará la contraseña si se da el caso.</p>
 <p>Tras la instalación, indica que para iniciar o parar el servicio de SDRPlay se hace con los respectivos comandos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start sdrplay</span><br><span class="line">sudo systemctl stop sdrplay</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl start sdrplay</span><br><span class="line">sudo systemctl stop sdrplay</span><br></pre></td></tr></table></figure>
 
 <p>Es aconsejable aquí reiniciar el sistema para que dicho servicio arranque bien.</p>
 <p>Después, hay que compilar el soporte de SoapySDR para SDRPlay (SoapySDRPlay). Para ello es necesario, como se ha comentado al principio, instalar el paquete <strong>libsoapysdr-dev</strong>. Además necesitaremos el paquete <strong>cmake</strong>.<br>A continuación, nos descargamos el zip con el código fuente desde <a href="https://github.com/pothosware/SoapySDRPlay3/archive/refs/heads/master.zip">su repositorio en GitHub</a> (en mi caso he tenido problemas con “git clone” y similares ya que siempre pedía usuario y contraseña de GitHub y para esto no es necesario). Descomprimimos el paquete ZIP en un directorio y hacemos la siguiente secuencia de pasos:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
 
 <p>Comprobar si la compilación e instalación nos ha fallado o no, ya que pudiera ser necesaria la instalación de algún paquete adicional.</p>
 <p>Para comprobar que todo está bien, ejecutaremos los siguientes comandos:</p>
@@ -655,6 +655,62 @@
         <tag>Linux</tag>
         <tag>SDRPlay</tag>
         <tag>Instalación</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalación de iGate APRS en Raspberry Pi</title>
+    <url>/instalacion-igate-APRS-raspberrypi/</url>
+    <content><![CDATA[<p>Como ya vimos anteriormente en algunos artículos, es posible recibir mensajes APRS desde distintos orígenes (terrestre, ISS, cubesats) de forma muy sencilla. En este artículo veremos como pasar estos mensajes a la red <a href="https://www.aprs-is.net/">APRS-IS</a> a través de un iGate para mejorar la cobertura de nuestra zona.</p>
+<span id="more"></span>
+
+<p>Únicamente vamos a configurar el sistema en modo RX iGate, es decir, solo va a recibir mensajes. Existe cierta polémica sobre si los iGates de solo recepción rompen la funcionalidad bidireccional de la mensajería APRS. Según Heikki Hannikainen, creador y propietario de la web <a href="https://aprs.fi/">aprs.fi</a>, <strong>los iGates de solo recepción no interrumpen la mensajería si hay iGates con capacidad de transmisión cerca que estén conectados a un servidor APRS-IS</strong>. Si no tenemos un iGate con capacidad de transmisión cerca, lógicamente la comunicación bidireccional no va a funcionar. <strong>Si tenemos un iGate de TX cercano, los iGates adicionales de solo recepción mejoran el rendimiento de la mensajería.</strong><br>Podemos leer el artículo completo de Heikki Hannikainen en el siguiente enlace:</p>
+<p><a href="https://blog.aprs.fi/2019/08/rx-only-igates-considered-beneficial-to.html"><center>RX-only igates considered beneficial to the network</center></a></p>
+<p>Antes de continuar, debemos tener en cuenta que puesto que vamos a inyectar datos a la red ARPS-IS, <strong>necesitamos obligatoriamente indicativo de radioaficionado</strong>. Seremos los responsables de los mensajes que pasen a la red a través de nuestro iGate.</p>
+<h2 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalación"></a>Instalación</h2><h3 id="Instalar-dispositivo-SDR"><a href="#Instalar-dispositivo-SDR" class="headerlink" title="Instalar dispositivo SDR"></a>Instalar dispositivo SDR</h3><p>Si aún no hemos instalado el dispositivo en nuestra Raspberry Pi, podemos seguir los pasos descritos en el siguiente artículo:</p>
+<p><a href="/instalacion-rtlsdr-raspberrypi/"><center>Instalar dispositivo RTL-SDR en Linux</center></a></p>
+<h3 id="Instalar-Dire-Wolf"><a href="#Instalar-Dire-Wolf" class="headerlink" title="Instalar Dire Wolf"></a>Instalar Dire Wolf</h3><p>El software que vamos a usar para decodificar los mensajes AX.25 de APRS será <a href="https://github.com/wb2osz/direwolf">Dire Wolf</a>.</p>
+<p>Para instalarlo en Raspberry OS basta con ejecutar el siguiente comando:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install direwolf</span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El primer paso es generar un archivo de configuración para Dire Wolf. Para ello vamos a generar un archivo ‘.conf’ en la ubicación que queramos. En este ejemplo se ha creado el archivo <em>direwolf.conf</em> en <em>/etc</em>.<br>Para el contenido copiaremos la siguiente plantilla, obtenida del propio <a href="https://github.com/wb2osz/direwolf/blob/master/conf/sdr.conf">repositorio de Dire Wolf</a>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#</span><br><span class="line"># Sample configuration for SDR read-only IGate.</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line"># We might not have an audio output device so set to null.</span><br><span class="line"># We will override the input half on the command line.</span><br><span class="line">ADEVICE null null</span><br><span class="line">CHANNEL 0</span><br><span class="line">MYCALL xxx</span><br><span class="line"></span><br><span class="line"># First you need to specify the name of a Tier 2 server.</span><br><span class="line"># The current preferred way is to use one of these regional rotate addresses:</span><br><span class="line"></span><br><span class="line">#	noam.aprs2.net 		- for North America</span><br><span class="line">#	soam.aprs2.net		- for South America</span><br><span class="line">#	euro.aprs2.net		- for Europe and Africa</span><br><span class="line">#	asia.aprs2.net 		- for Asia</span><br><span class="line">#	aunz.aprs2.net		- for Oceania</span><br><span class="line"></span><br><span class="line">IGSERVER noam.aprs2.net</span><br><span class="line"></span><br><span class="line"># You also need to specify your login name and passcode.</span><br><span class="line"># Contact the author if you can&#x27;t figure out how to generate the passcode.</span><br><span class="line"></span><br><span class="line">IGLOGIN xxx 123456</span><br><span class="line"></span><br><span class="line"># That&#x27;s all you need for a receive only IGate which relays</span><br><span class="line"># messages from the local radio channel to the global servers.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Ahora veamos qué datos debemos introducir en la plantilla.</p>
+<h4 id="MYCALL"><a href="#MYCALL" class="headerlink" title="MYCALL"></a>MYCALL</h4><p>Aquí debemos de introducir nuestro indicativo seguido del SSID recomendado para un iGate. Según <a href="http://www.aprs.org/aprs11/SSIDs.txt">las recomendaciones de APRS del 6 de febrero de 2012</a>, debemos añadir el SSID -10.</p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">-10 internet, Igates, echolink, winlink, AVRS, APRN, etc</span><br></pre></td></tr></table></figure>
+
+<h4 id="IGSERVER"><a href="#IGSERVER" class="headerlink" title="IGSERVER"></a>IGSERVER</h4><p>El servidor al que realizaremos la conexión. Debemos cambiarlo por el nuestro dependiendo de dónde nos encontremos.</p>
+<h4 id="IGLOGIN"><a href="#IGLOGIN" class="headerlink" title="IGLOGIN"></a>IGLOGIN</h4><p>Aquí introducimos nuestro indicativo y la clave de acceso a la red APRS-IG. Si no conocemos nuestra clave, podemos generarla <a href="https://apps.magicbug.co.uk/passcode/">aquí</a>.</p>
+<h4 id="PBEACON-Opcional"><a href="#PBEACON-Opcional" class="headerlink" title="PBEACON (Opcional)"></a>PBEACON (Opcional)</h4><p>Añadimos esta opción si queremos que nuestro iGate aparezca en las webs que muestran los datos APRS, tipo <a href="https://aprs.fi/">aprs.fi</a>, <a href="https://aprs-map.info/">APRS Track Direct</a>, etc.</p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">PBEACON delay=1 every=60 symbol=R&amp; overlay=I lat=XX.XX long=XX.XX comment=&quot;Comentario que queramos&quot; sendto=IG</span><br></pre></td></tr></table></figure>
+
+<p>Una vez configurado el archivo, ya podemos probar el sistema completo. Lo que haremos será escuchar en la frecuencia de APRS con el programa <em>rtl_fm</em> y pasarle los datos a Dire Wolf en tiempo real. Para ello bastará con ejecutar el siguiente comando:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rtl_fm -f 144.80M -g 37 - | direwolf -c /etc/direwolf.conf -r 24000 -D 1 -</span><br></pre></td></tr></table></figure>
+<p>Podemos usar los parámetros de ajuste de <em>rtl_fm</em> que necesitemos: <strong>-p</strong> para los PPM, <strong>-d</strong> para indicar el número de serie del dispositivo, <strong>-g</strong> para la ganancia, etc.</p>
+<p>Por último, vamos a hacer que el proceso funcione de forma autónoma en la Raspberry Pi y que se inicie de forma automática cuando esta se reinicie. Para ello vamos a crear un servicio que lo haga todo y que se lance al iniciar la Raspberry Pi.</p>
+<p>Lo primero será crear un archivo <em>unit</em> con la información del servicio:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/systemd/system/aprsigate.service</span><br></pre></td></tr></table></figure>
+
+<p>El contenido del archivo será el siguiente (modificar si es necesario):</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=APRS iGate</span><br><span class="line">After=network.target</span><br><span class="line">StartLimitIntervalSec=0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=1</span><br><span class="line">User=pi</span><br><span class="line">ExecStart=/bin/sh -c <span class="string">&#x27;rtl_fm -f 144.80M -g 37 - | direwolf -c /etc/direwolf.conf -r 24000 -D 1 -&#x27;</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>Ahora vamos a cargar el servicio en el arranque mediante el siguiente comando:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> aprsigate</span><br></pre></td></tr></table></figure>
+
+<p>Por último iniciamos el servicio:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl start aprsigate</span><br></pre></td></tr></table></figure>
+
+<p>Para consultar el estado del servicio ejecutamos:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl status aprsigate</span><br></pre></td></tr></table></figure>
+
+<p>Si todo está correcto tendremos la siguiente salida:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ sudo systemctl status aprsigate</span><br><span class="line">● aprsigate.service - APRS iGate</span><br><span class="line">     Loaded: loaded (/etc/systemd/system/aprsigate.service; enabled; vendor preset: enabled)</span><br><span class="line">     Active: active (running) since Sat 2022-09-03 17:08:03 CEST; 31s ago</span><br><span class="line">   Main PID: 1367 (sh)</span><br><span class="line">      Tasks: 21 (<span class="built_in">limit</span>: 415)</span><br><span class="line">        CPU: 17.650s</span><br><span class="line">     CGroup: /system.slice/aprsigate.service</span><br><span class="line">             ├─1367 /bin/sh -c rtl_fm -f 144.80M -g 37 - | direwolf -c /etc/direwo&gt;</span><br><span class="line">             ├─1368 rtl_fm -f 144.80M -g 37 -</span><br><span class="line">             └─1369 direwolf -c /etc/direwolf.conf -r 24000 -D 1 -</span><br><span class="line"></span><br><span class="line">Sep 03 17:08:04 raspberrypi sh[1368]: Oversampling output by: 1x.</span><br><span class="line">Sep 03 17:08:04 raspberrypi sh[1368]: Buffer size: 8.13ms</span><br><span class="line">Sep 03 17:08:04 raspberrypi sh[1368]: Exact sample rate is: 1008000.009613 Hz</span><br><span class="line">Sep 03 17:08:04 raspberrypi sh[1368]: Allocating 15 zero-copy buffers</span><br><span class="line">Sep 03 17:08:04 raspberrypi sh[1368]: Sampling at 1008000 S/s.</span><br><span class="line">Sep 03 17:08:04 raspberrypi sh[1368]: Output at 24000 Hz.</span><br><span class="line">Sep 03 17:08:08 raspberrypi sh[1369]: Now connected to IGate server euro.aprs2.net (46.18.33.196)</span><br><span class="line">Sep 03 17:08:08 raspberrypi sh[1369]: Check server status here http://46.18.33.196:14501</span><br><span class="line">Sep 03 17:08:13 raspberrypi sh[1369]: [ig] <span class="comment"># aprsc 2.1.4-g408ed49</span></span><br><span class="line">Sep 03 17:08:13 raspberrypi sh[1369]: [ig] <span class="comment"># logresp EA7KOO-10 verified, server T2BELGIUM</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>RTL-SDR</tag>
+        <tag>APRS</tag>
+        <tag>Raspberry Pi</tag>
+        <tag>DireWolf</tag>
       </tags>
   </entry>
   <entry>
@@ -679,7 +735,7 @@
 <img src="/instalacion-openwebrx/openwebrx_password.jpg" class="" width="600" title="Instalación OpenWebRX">
 
 <h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>Una vez termine la instalación, accedemos desde un navegador web a la dirección IP de la Raspberry Pi y el puerto 8073.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;[IP_RASPBERRY]:8073&#x2F;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://[IP_RASPBERRY]:8073/</span><br></pre></td></tr></table></figure>
 
 <p>Se nos mostrará la ventana principal de OpenWebRX. Si solo tenemos un SDR conectado es posible que ya podamos comenzar a usarlo, pero si tenemos varios dispositivos conectados nos mostrará un error como el siguiente y que solventaremos en los siguientes pasos.</p>
 <img src="/instalacion-openwebrx/openwebrx_loaded.jpg" class="" width="900" title="OpenWebRX">
@@ -708,8 +764,8 @@
       <tags>
         <tag>RTL-SDR</tag>
         <tag>Linux</tag>
-        <tag>OpenWebRX</tag>
         <tag>Raspberry Pi</tag>
+        <tag>OpenWebRX</tag>
       </tags>
   </entry>
   <entry>
@@ -721,13 +777,13 @@
 <h2 id="Instalacion-de-los-drivers"><a href="#Instalacion-de-los-drivers" class="headerlink" title="Instalación de los drivers"></a>Instalación de los drivers</h2><p>Para poder instalar los drivers necesitamos tener instalado previamente un gestor de paquetes. El más conocido y recomendado es <strong>Homebrew</strong>. Si no lo tenemos aún instalado podemos seguir los pasos descritos en su página web:</p>
 <p><a href="https://brew.sh/index_es"><center>https://brew.sh/index_es</center></a></p>
 <p>Si ya lo tenemos instalado, procedemos a instalar los drivers ejecutando el siguiente comando desde la consola.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install rtl-sdr</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install rtl-sdr</span><br></pre></td></tr></table></figure>
 
 <p>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para comprobar que se ha instalado correctamente.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
 
 <p>Si todo ha ido bien, tendremos una salida como la siguiente.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S/s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br></pre></td></tr></table></figure>
 
 <h2 id="Instalacion-de-CubicSDR"><a href="#Instalacion-de-CubicSDR" class="headerlink" title="Instalación de CubicSDR"></a>Instalación de CubicSDR</h2><p><a href="https://cubicsdr.com/">CubicSDR</a> es una aplicación multiplataforma para SDR que nos permite navegar por el espectro radioeléctrico de forma visual y demodular señales de forma sencilla.</p>
 <p>Para descargar CubicSDR debemos ir a su repositorio en GitHub y descargar la última versión disponible para macOS. Para ello accedemos su repositorio a través del siguiente enlace y descargamos el instalador para macOS.</p>
@@ -761,32 +817,32 @@
 <img src="/instalacion-rtlsdr-raspberrypi/raspberry-pi-3.png" class="" title="Raspberry Pi 3">
 
 <p>Vamos a instalar los drivers y librerias necesarias para usar el dispositivo SDR. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install rtl-sdr librtlsdr-dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install rtl-sdr librtlsdr-dev</span><br></pre></td></tr></table></figure>
 
 <p>Una vez instalado el dispositivo le daremos permisos a los usuarios no <em>root</em> para poder usar el dispositivo. Para ello seguiremos los siguientes pasos para crear una regla <em>udev</em>.</p>
 <ol>
 <li>Con el dispositivo SDR conectado, ejecutamos el siguiente comando para obtener la lista de dispositivos USB conectados:</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lsusb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsusb</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>Buscamos en la lista el dispositivo SDR y nos fijamos en los identificadores de fabricante y de dispositivo. En este caso son <strong>0bda</strong> y <strong>2838</strong> respectivamente.</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Bus 001 Device 004: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Bus 001 Device 004: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>Ahora creamos un archivo de reglas nuevo:</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;udev&#x2F;rules.d&#x2F;rtl-sdr.rules</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/udev/rules.d/rtl-sdr.rules</span><br></pre></td></tr></table></figure>
 
 <p>Y añadimos la siguiente regla modificando los identificadores si fuese necesario para que correspondan con los obtenidos en el paso anterior:</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">SUBSYSTEMS==<span class="string">&quot;usb&quot;</span>, ATTRS&#123;idVendor&#125;==<span class="string">&quot;0bda&quot;</span>, ATTRS&#123;idProduct&#125;==<span class="string">&quot;2838&quot;</span>, MODE:=<span class="string">&quot;0666&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>Por último desconectamos el dispostivo SDR y lo volvemos a conectar para que se aplique la regla y ejecutamos el siguiente comando para comprobar que el dispositivo funciona correctamente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rtl_test</span><br></pre></td></tr></table></figure>
 
 <p>Si todo está correctamente instalado veremos una salida como la siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 82020715</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Detached kernel driver</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S&#x2F;s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br><span class="line">Allocating 15 zero-copy buffers</span><br><span class="line">lost at least 140 bytes</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 82020715</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Detached kernel driver</span><br><span class="line">Found Rafael Micro R820T tuner</span><br><span class="line">Supported gain values (29): 0.0 0.9 1.4 2.7 3.7 7.7 8.7 12.5 14.4 15.7 16.6 19.7 20.7 22.9 25.4 28.0 29.7 32.8 33.8 36.4 37.2 38.6 40.2 42.1 43.4 43.9 44.5 48.0 49.6</span><br><span class="line">[R82XX] PLL not locked!</span><br><span class="line">Sampling at 2048000 S/s.</span><br><span class="line"></span><br><span class="line">Info: This tool will continuously read from the device, and report if</span><br><span class="line">samples get lost. If you observe no further output, everything is fine.</span><br><span class="line"></span><br><span class="line">Reading samples in async mode...</span><br><span class="line">Allocating 15 zero-copy buffers</span><br><span class="line">lost at least 140 bytes</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>RTL-SDR</tag>
@@ -907,7 +963,7 @@
 
 <p>Una vez tengamos la ganancia ajustada, ya tendremos listo nuestro dispositivo SDR.</p>
 <h2 id="SDR-Big-Book"><a href="#SDR-Big-Book" class="headerlink" title="SDR# Big Book"></a>SDR# Big Book</h2><p>En el siguiente enlace podemos consultar la guía de uso de SDR# traducida al español por Miguel Iborra (EA4BAS):</p>
-<p><a href="https://airspy.com/downloads/SDRSharp_Guia_v2.2_ESP.pdf"><center>SDR# Big Book en español (PDF)</center></a></p>
+<p><a href="https://airspy.com/downloads/SDRSharp_Guia_v5.3_ESP.pdf"><center>SDR# Big Book en español (PDF)</center></a></p>
 ]]></content>
       <tags>
         <tag>RTL-SDR</tag>
@@ -932,68 +988,68 @@
 <ol>
 <li>Añadir el repositorio de Ansible.</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo &quot;deb http:&#x2F;&#x2F;ppa.launchpad.net&#x2F;ansible&#x2F;ansible&#x2F;ubuntu trusty main&quot; | sudo tee -a &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &quot;deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main&quot; | sudo tee -a /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>Añadir la clave del repositorio.</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>Actualizar lista de repositorios.</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 
 <ol start="4">
 <li>Instalar Ansible.</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y ansible</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y ansible</span><br></pre></td></tr></table></figure>
 
 <h2 id="Instalacion-del-cliente-Ansible-de-SatNOGS"><a href="#Instalacion-del-cliente-Ansible-de-SatNOGS" class="headerlink" title="Instalación del cliente Ansible de SatNOGS"></a>Instalación del cliente Ansible de SatNOGS</h2><p>A continuación vamos a descargar e instalar el instalador del cliente SatNOGS.</p>
 <ol>
 <li>Instalamos las dependencias que vamos a necesitar:</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y git needrestart</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y git needrestart</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>Descargamos el repositorio:</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b stable https:&#x2F;&#x2F;gitlab.com&#x2F;librespacefoundation&#x2F;satnogs&#x2F;satnogs-client-ansible.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b stable https://gitlab.com/librespacefoundation/satnogs/satnogs-client-ansible.git</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>Accedemos a la carpeta descargada:</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd satnogs-client-ansible</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd satnogs-client-ansible</span><br></pre></td></tr></table></figure>
 
 <ol start="4">
 <li>Copiamos y renombramos el siguiente directorio:</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp -r production.dist production</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cp -r production.dist production</span><br></pre></td></tr></table></figure>
 
 <ol start="5">
 <li>Ahora editamos el archivo <code>hosts</code> con nuestros datos de conexión SSH a la Raspberry Pi:</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano production&#x2F;inventory&#x2F;hosts</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano production/inventory/hosts</span><br></pre></td></tr></table></figure>
 
 <p>Debemos editar el <em>host</em>, el usuario y la clave:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">all:</span><br><span class="line">  hosts:</span><br><span class="line">    satnogs:</span><br><span class="line">      ansible_host: &#39;localhost&#39;</span><br><span class="line">      ansible_user: &#39;pi&#39;</span><br><span class="line">      ansible_ssh_pass: &#39;raspberry&#39;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">all:</span><br><span class="line">  hosts:</span><br><span class="line">    satnogs:</span><br><span class="line">      ansible_host: &#x27;localhost&#x27;</span><br><span class="line">      ansible_user: &#x27;pi&#x27;</span><br><span class="line">      ansible_ssh_pass: &#x27;raspberry&#x27;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <ol start="6">
 <li>Comprobamos la conexión SSH:</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh pi@localhost true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh pi@localhost true</span><br></pre></td></tr></table></figure>
 
 <ol start="7">
 <li>Por último ejecutamos el <em>playbook</em>:</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ansible-playbook -i production&#x2F;inventory -K site.yml</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ansible-playbook -i production/inventory -K site.yml</span><br></pre></td></tr></table></figure>
 
 <p>La instalación tardará unos minutos (pueden ser bastantes dependiendo de nuestra conexión y la CPU de la Raspberry Pi) y al finalizar mostrará un mensaje como el siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- Play recap -</span><br><span class="line">  satnogs                    : ok&#x3D;121  changed&#x3D;49   unreachable&#x3D;0    failed&#x3D;0    rescued&#x3D;0    ignored&#x3D;0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- Play recap -</span><br><span class="line">  satnogs                    : ok=121  changed=49   unreachable=0    failed=0    rescued=0    ignored=0</span><br></pre></td></tr></table></figure>
 
 <h2 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h2><p>Los pasos para la configuración del cliente son idénticos a los descritos en el artículo anterior en este mismo apartado.</p>
 <p>La única observación es que ahora al tener más de un dispositivo SDR conectado, debemos indicar cual de ellos debe utilizar.<br>Necesitaremos el número de serie del dispositivo para diferenciarlos. Para extraerlo usamos la herramienta <code>rtl_test</code>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ rtl_test</span><br><span class="line">Found 2 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line">  1:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ rtl_test</span><br><span class="line">Found 2 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line">  1:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>En este caso vamos a utilizar el segundo dispositivo, y por lo tanto se lo debemos indicar a SatNOGS. Para ello en <strong><em>Basic configuration options</em></strong> realizaremos el siguiente cambio:</p>
 <table>
@@ -1059,7 +1115,7 @@
 
 <h2 id="Configuracion-de-Raspberry-Pi"><a href="#Configuracion-de-Raspberry-Pi" class="headerlink" title="Configuración de Raspberry Pi"></a>Configuración de Raspberry Pi</h2><p>Ahora vamos a configurar algunos aspectos esenciales en nuestra Raspberry Pi.</p>
 <p>Una vez que tengamos la Raspberry Pi iniciada, accedemos a ella mediante SSH (usuario <strong>“pi”</strong> y clave <strong>“raspberry”</strong>) y ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
 
 <p>Se nos muestra en pantalla el menú de la herramienta de configuración de la Raspberry Pi.</p>
 <img src="/instalacion-satnogs/raspi-config.png" class="" title="Configuración de Raspberry Pi">
@@ -1074,7 +1130,7 @@
 
 <p>Por último, reiniciamos la Raspberry Pi para que se apliquen los cambios.</p>
 <h2 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h2><p>Turno ahora de configurar el cliente SatNOGS. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo satnogs-setup</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo satnogs-setup</span><br></pre></td></tr></table></figure>
 
 <p>Se mostrará el menú principal de opciones:</p>
 <img src="/instalacion-satnogs/satnogs-setup.png" class="" title="SatNOGS Setup">
@@ -1145,10 +1201,10 @@
 <img src="/instalacion-satnogs/satnogs-setup_advanced_radio.png" class="" title="SatNOGS Setup">
 
 <p>Volvemos al menú principal y le damos a <strong><em>Apply</em></strong> para que se apliquen los ajustes. Cuando se termine de configurar podemos comprobar si se ha iniciado correctamente con:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl status satnogs-client</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl status satnogs-client</span><br></pre></td></tr></table></figure>
 
 <p>Si todo ha ido bien tendremos la siguiente salida:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● satnogs-client.service - SatNOGS client</span><br><span class="line">   Loaded: loaded (&#x2F;etc&#x2F;systemd&#x2F;system&#x2F;satnogs-client.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Fri 2020-04-23 19:33:57 UTC; 26min ago</span><br><span class="line"> Main PID: 27871 (satnogs-client)</span><br><span class="line">    Tasks: 22 (limit: 2200)</span><br><span class="line">   Memory: 55.7M</span><br><span class="line">   CGroup: &#x2F;system.slice&#x2F;satnogs-client.service</span><br><span class="line">           └─27871 &#x2F;var&#x2F;lib&#x2F;satnogs&#x2F;bin&#x2F;python3 &#x2F;var&#x2F;lib&#x2F;satnogs&#x2F;bin&#x2F;satnogs-client</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">● satnogs-client.service - SatNOGS client</span><br><span class="line">   Loaded: loaded (/etc/systemd/system/satnogs-client.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Fri 2020-04-23 19:33:57 UTC; 26min ago</span><br><span class="line"> Main PID: 27871 (satnogs-client)</span><br><span class="line">    Tasks: 22 (limit: 2200)</span><br><span class="line">   Memory: 55.7M</span><br><span class="line">   CGroup: /system.slice/satnogs-client.service</span><br><span class="line">           └─27871 /var/lib/satnogs/bin/python3 /var/lib/satnogs/bin/satnogs-client</span><br></pre></td></tr></table></figure>
 
 <h2 id="Programar-seguimientos-en-SatNOGS"><a href="#Programar-seguimientos-en-SatNOGS" class="headerlink" title="Programar seguimientos en SatNOGS"></a>Programar seguimientos en SatNOGS</h2><p>Con nuestra Raspberry Pi finalmente configurada, es el momento de comprobar que todo funciona correctamente y podemos realizar el seguimiento de satélites.</p>
 <p>Para programar un pase debemos hacerlo desde el panel de control de SatNOGS. Nuestra Raspberry Pi se comunicará con la red de SatNOGS, realizará los seguimientos que le indiquemos y subirá los datos a la misma.</p>
@@ -1174,42 +1230,42 @@
 <ol>
 <li>Descargar el código fuente.</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;rtlsdrblog&#x2F;rtl_biast.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/rtlsdrblog/rtl_biast.git</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>Instalar las dependencias necesarias para compilar.</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install cmake libusb-1.0-0-dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install cmake libusb-1.0-0-dev</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>Accedemos a la carpeta descargada.</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd rtl_biast</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd rtl_biast</span><br></pre></td></tr></table></figure>
 
 <ol start="4">
 <li>Generamos el <em>makefile</em>.</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cmake .</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cmake .</span><br></pre></td></tr></table></figure>
 
 <ol start="5">
 <li>Compilamos.</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
 
 <ol start="6">
 <li>Copiamos el binario compilado a <code>/usr/bin</code>.</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo cp src&#x2F;rtl_biast &#x2F;usr&#x2F;bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cp src/rtl_biast /usr/bin</span><br></pre></td></tr></table></figure>
 
 <p>Por último, nos aseguramos de que funciona correctamente ejecutando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rtl_biast</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rtl_biast</span><br></pre></td></tr></table></figure>
 
 <p>Debemos obtener una salida como la siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Found Rafael Micro R820T tuner</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Found 1 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line"></span><br><span class="line">Using device 0: Generic RTL2832U OEM</span><br><span class="line">Found Rafael Micro R820T tuner</span><br></pre></td></tr></table></figure>
 
 <p>Ahora vamos a configurar el cliente SatNOGS para que active y desactive el Bias-T de forma automática.</p>
 <p>Accedemos al menú de configuración mediante:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo satnogs-setup</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo satnogs-setup</span><br></pre></td></tr></table></figure>
 
 <p>Vamos a <strong><em>Advanced</em></strong> y <strong><em>Pre/post observation scripts</em></strong> y establecemos los siguientes ajustes:</p>
 <table>
@@ -1238,6 +1294,38 @@
       </tags>
   </entry>
   <entry>
+    <title>Instalar SDR++</title>
+    <url>/instalacion-sdrpp/</url>
+    <content><![CDATA[<p><a href="https://www.sdrpp.org/">SDR++</a> es un software multiplataforma y de código abierto para la recepción de señales mediante SDR. Este nuevo programa, desarrollado por <a href="https://twitter.com/ryzerth">Alexandre Rouma</a>, busca como objetivo ser sencillo de utilizar y eficiente.<br>En este post veremos cómo instalar SDR++ en Windows, Linux y macOS.</p>
+<span id="more"></span>
+
+<p>Para instalar SDR++ en cualquier sistema operativo, tenemos la posibilidad de descargar los instaladores para cada uno de ellos desde el siguiente enlace:</p>
+<p><a href="https://github.com/AlexandreRouma/SDRPlusPlus/releases/latest"><center>Releases SDR++</center></a></p>
+<p>En cualquier caso, necesitaremos tener instalados previamente los controladores del dispositivo que vayamos a utilizar. Si vamos a usar un dispositivo RTL-SDR por primera vez, podemos seguir los pasos de instalación descritos en <a href="/primeros-pasos/#Instalacion-del-dispositivo">este enlace</a>.</p>
+<h2 id="Instalacion-en-Windows"><a href="#Instalacion-en-Windows" class="headerlink" title="Instalación en Windows"></a>Instalación en Windows</h2><p>Una vez descargado el archivo comprimido para Windows, procedemos a extraer su contenido en la ubicación que queramos. Para iniciar el programa bastaría con abrir el ejecutable <strong><em>sdrpp.exe</em></strong>.</p>
+<img src="/instalacion-sdrpp/sdrpp-windows.jpg" class="" width="900" title="SDR++ Windows">
+
+<h2 id="Instalacion-en-Linux"><a href="#Instalacion-en-Linux" class="headerlink" title="Instalación en Linux"></a>Instalación en Linux</h2><p>Nos descargamos el archivo PKG para nuestro distribución Linux y lo instalamos con el gestor de paquetes correspondiente.<br>Para iniciar el programa, bastaría con buscarlo en los programas instalados e iniciarlo.</p>
+<img src="/instalacion-sdrpp/sdrpp-linux.jpg" class="" width="900" title="SDR++ Linux">
+
+<h2 id="Instalacion-en-macOS"><a href="#Instalacion-en-macOS" class="headerlink" title="Instalación en macOS"></a>Instalación en macOS</h2><p>Lo primero que haremos será descargar el archivo PKG para nuestra arquitectura e instalarlo. Por ahora solo está disponible el paquete para procesadores con arquitectura <em>amd64</em> y no para <em>ARM</em> (Apple M1).</p>
+<p>Una vez instalado el paquete con el programa, necesitamos instalar algunas dependencias externas:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install fftw glew glfw volk</span><br></pre></td></tr></table></figure>
+
+<p>Por último ejecutamos el programa desde la terminal para iniciarlo:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sdrpp</span><br></pre></td></tr></table></figure>
+
+<img src="/instalacion-sdrpp/sdrpp-macos.jpg" class="" width="900" title="SDR++ macOS">
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Instalación</tag>
+        <tag>macOS</tag>
+        <tag>Windows</tag>
+        <tag>SDR++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Instalación de SPY Server en Raspberry Pi</title>
     <url>/instalacion-spyserver-raspberrypi/</url>
     <content><![CDATA[<p>SPY Server es un software que permite crear un servidor SDR al que nos podemos conectar de forma remota mediante SDR#. Este software es desarrollado por Airspy siendo compatible con sus dispositivos pero también con los RTL-SDR.<br>En este artículo veremos cómo instalar SPY Server en una Raspberry Pi.</p>
@@ -1246,45 +1334,45 @@
 <p>Para usar SPY Server en nuestra Raspberry Pi <strong>necesitamos en primer lugar tener instalado el dispositivo SDR</strong>. Si nuestro dispositivo es un RTL-SDR debemos seguir los pasos descritos en el artículo <a href="/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Linux”</a>.</p>
 <h2 id="Instalar-SPY-Server"><a href="#Instalar-SPY-Server" class="headerlink" title="Instalar SPY Server"></a>Instalar SPY Server</h2><p>SPY Server está disponible ya compilado para procesadores ARM de 32 bits, por lo que bastaría con descargarlo a nuestra Raspberry Pi para que funcione.</p>
 <p>Lo primero que haremos será crear un directorio nuevo para los archivos de SPY Server:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir SPY_Server &amp;&amp; cd $_</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir SPY_Server &amp;&amp; cd $_</span><br></pre></td></tr></table></figure>
 
 <p>Descargamos SPY Server usando el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;airspy.com&#x2F;downloads&#x2F;spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://airspy.com/downloads/spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
 
 <p>Extraemos el contenido:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar -xzf spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -xzf spyserver-arm32.tgz</span><br></pre></td></tr></table></figure>
 
 <p>SPY Server funciona correctamente con los valores por defecto. También detecta el dispositivo SDR de forma automática y selecciona el primero disponible. Si necesitamos realizar algún ajuste debemos editar el archivo <strong>spyserver.config</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano spyserver.config</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano spyserver.config</span><br></pre></td></tr></table></figure>
 
 <p>Por último ejecutamos SPY Server:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;spyserver spyserver.config</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./spyserver spyserver.config</span><br></pre></td></tr></table></figure>
 
 <p>Si todo ha ido bien, nos mostrará una salida como la siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SPY Server v2.0.1700</span><br><span class="line">Copyright (C) 2016-2018 Youssef Touil - https:&#x2F;&#x2F;airspy.com</span><br><span class="line">Reading the configuration file: spyserver.config</span><br><span class="line">Listening for connections on 0.0.0.0:5555</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SPY Server v2.0.1700</span><br><span class="line">Copyright (C) 2016-2018 Youssef Touil - https://airspy.com</span><br><span class="line">Reading the configuration file: spyserver.config</span><br><span class="line">Listening for connections on 0.0.0.0:5555</span><br></pre></td></tr></table></figure>
 
 
 <p>Necesitamos que SPY Server funcione de forma autónoma en la Raspberry Pi y que se inicie de forma automática cuando esta se reinicie. Para ello vamos a lanzar SPY Server como un servicio.</p>
 <p>Lo primero será crear un archivo <em>unit</em> con la información del servicio:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/systemd/system/spyserver.service</span><br></pre></td></tr></table></figure>
 
 <p>El contenido del archivo será el siguiente (modificar las rutas si es necesario):</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;SPY Server</span><br><span class="line">After&#x3D;network.target</span><br><span class="line">StartLimitIntervalSec&#x3D;0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">Restart&#x3D;always</span><br><span class="line">RestartSec&#x3D;1</span><br><span class="line">User&#x3D;pi</span><br><span class="line">WorkingDirectory&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server</span><br><span class="line">ExecStart&#x3D;&#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver spyserver.config</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=SPY Server</span><br><span class="line">After=network.target</span><br><span class="line">StartLimitIntervalSec=0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=1</span><br><span class="line">User=pi</span><br><span class="line">WorkingDirectory=/home/pi/SPY_Server</span><br><span class="line">ExecStart=/home/pi/SPY_Server/spyserver spyserver.config</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 
 <p>Ahora vamos a cargar el servicio en el arranque mediante el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable spyserver</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl enable spyserver</span><br></pre></td></tr></table></figure>
 
 <p>Por último iniciamos el servicio:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl start spyserver</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl start spyserver</span><br></pre></td></tr></table></figure>
 
 <p>Para consultar el estado del servicio ejecutamos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl status spyserver</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl status spyserver</span><br></pre></td></tr></table></figure>
 
 <p>Si todo está correcto tendremos la siguiente salida:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● spyserver.service - SPY Server</span><br><span class="line">   Loaded: loaded (&#x2F;etc&#x2F;systemd&#x2F;system&#x2F;spyserver.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Fri 2020-04-10 21:45:26 CEST; 13s ago</span><br><span class="line"> Main PID: 20788 (spyserver)</span><br><span class="line">    Tasks: 2 (limit: 2200)</span><br><span class="line">   Memory: 252.0K</span><br><span class="line">   CGroup: &#x2F;system.slice&#x2F;spyserver.service</span><br><span class="line">           └─20788 &#x2F;home&#x2F;pi&#x2F;SPY_Server&#x2F;spyserver</span><br><span class="line"></span><br><span class="line">Apr 10 21:45:26 raspberrypi systemd[1]: Started SPY Server.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">● spyserver.service - SPY Server</span><br><span class="line">   Loaded: loaded (/etc/systemd/system/spyserver.service; enabled; vendor preset: enabled)</span><br><span class="line">   Active: active (running) since Fri 2020-04-10 21:45:26 CEST; 13s ago</span><br><span class="line"> Main PID: 20788 (spyserver)</span><br><span class="line">    Tasks: 2 (limit: 2200)</span><br><span class="line">   Memory: 252.0K</span><br><span class="line">   CGroup: /system.slice/spyserver.service</span><br><span class="line">           └─20788 /home/pi/SPY_Server/spyserver</span><br><span class="line"></span><br><span class="line">Apr 10 21:45:26 raspberrypi systemd[1]: Started SPY Server.</span><br></pre></td></tr></table></figure>
 
 <h2 id="Conectar-SDR-a-SPY-Server"><a href="#Conectar-SDR-a-SPY-Server" class="headerlink" title="Conectar SDR# a SPY Server"></a>Conectar SDR# a SPY Server</h2><p>El último paso será conectarnos a nuestro servidor desde SDR#. Para ello seleccionamos <strong>SPY Server Network</strong> en el desplegable de seleción de fuentes e introducimos la dirección IP del servidor de la siguiente forma:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sdr:&#x2F;&#x2F;IP_RASPBERRY:5555</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sdr://IP_RASPBERRY:5555</span><br></pre></td></tr></table></figure>
 <br>
 <img src="/instalacion-spyserver-raspberrypi/conectar.png" class="" title="Conexión">
 
@@ -1420,7 +1508,7 @@
 
 <h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Los satélites envían los datos de telemetría en las frecuencias <strong>145.835 MHz</strong> (CAS-4A) y <strong>145.890 MHz</strong> (CAS-4B). Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;nfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;10000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;nfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;10000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
 <h2 id="Decodificar-la-senal"><a href="#Decodificar-la-senal" class="headerlink" title="Decodificar la señal"></a>Decodificar la señal</h2><p>Estos satélites utilizan el protocolo AX.25 en modo KISS. Para decodificar este modo necesitamos instalar el software <a href="http://uz7.ho.ua/packetradio.htm">Packet-Radio TNC</a> que utiliza la tarjeta de sonido de nuestro ordenador como un modem para AX.25.<br>Podemos descargar el programa desde el siguiente enlace:<br><a href="http://uz7.ho.ua/modem_beta/hs_soundmodem27.zip"><center>Descargar High-Speed SoundModem by UZ7HO</center></a></p>
 <p>Una vez descargado el archivo, extraemos el contenido en el directorio que queramos. Posteriormente ejecutamos el archivo <strong><em>hs_soundmodem.exe</em></strong> y se nos abrirá la interfaz del programa.</p>
 <p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em> y en <strong>Input device</strong> seleccionamos el <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a>. También debemos activar el <strong>KISS Server Port</strong>.</p>
@@ -1432,11 +1520,11 @@
 
 <h2 id="Procesar-los-datos"><a href="#Procesar-los-datos" class="headerlink" title="Procesar los datos"></a>Procesar los datos</h2><p>Una vez tenemos la parte que decodifica la señal, necesitamos configurar la parte que se va a encargar de procesar los datos en modo KISS decodificados y generar un archivo con todos los mensajes para su posterior visualización. Para ello vamos a usar el software <strong>GetKISS</strong> de <a href="https://www.dk3wn.info/wp/ueber-mich/">DK3WN</a>, que podemos descargar desde el siguiente enlace:<br><a href="https://www.dk3wn.info/files/getkiss.zip"><center>Descargar GetKISS</center></a></p>
 <p>Una vez descargado y extraído el contenido, tenemos que editar algunos ajustes en el archivo <strong><em>conf.ini</em></strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#</span><br><span class="line"># This is the ini file for GetKISS</span><br><span class="line">#</span><br><span class="line"># use tcp port 52002 for ubuntu decoder and port 8100 for windows soundmodem</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">FILE_PATH &#x3D; D:\Amateurfunk &lt;-- Carpeta en la que se guardarán los datos</span><br><span class="line">#</span><br><span class="line">CALLSIGN &#x3D; DK3WN</span><br><span class="line">#</span><br><span class="line"># use QTH height in km</span><br><span class="line">#</span><br><span class="line">QTH_LAT &#x3D; 49.7 &lt;-- Latitud</span><br><span class="line">QTH_LONG &#x3D; 8.95  &lt;-- Longitud</span><br><span class="line">QTH_HEIGHT &#x3D; 0.2 &lt;-- Altitud en kilómetros</span><br><span class="line">#</span><br><span class="line">TLEFILE &#x3D; D:\Amateurfunk\Orbitron\TLE\amateur.txt &lt;-- Archivo TLE que contenga los satélites CAS-4</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line">#TCP_SERVER &#x3D; 192.168.178.28</span><br><span class="line">#TCP_PORT &#x3D; 52002</span><br><span class="line"></span><br><span class="line">TCP_SERVER &#x3D; localhost</span><br><span class="line">TCP_PORT &#x3D; 8100</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#</span><br><span class="line"># This is the ini file for GetKISS</span><br><span class="line">#</span><br><span class="line"># use tcp port 52002 for ubuntu decoder and port 8100 for windows soundmodem</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">FILE_PATH = D:\Amateurfunk &lt;-- Carpeta en la que se guardarán los datos</span><br><span class="line">#</span><br><span class="line">CALLSIGN = DK3WN</span><br><span class="line">#</span><br><span class="line"># use QTH height in km</span><br><span class="line">#</span><br><span class="line">QTH_LAT = 49.7 &lt;-- Latitud</span><br><span class="line">QTH_LONG = 8.95  &lt;-- Longitud</span><br><span class="line">QTH_HEIGHT = 0.2 &lt;-- Altitud en kilómetros</span><br><span class="line">#</span><br><span class="line">TLEFILE = D:\Amateurfunk\Orbitron\TLE\amateur.txt &lt;-- Archivo TLE que contenga los satélites CAS-4</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line">#TCP_SERVER = 192.168.178.28</span><br><span class="line">#TCP_PORT = 52002</span><br><span class="line"></span><br><span class="line">TCP_SERVER = localhost</span><br><span class="line">TCP_PORT = 8100</span><br></pre></td></tr></table></figure>
 
 <p>Una vez modificado el archivo, iniciamos el programa haciendo clic en <strong>getkiss.exe</strong>. Es posible que nos de algún error al iniciar si no tenemos instalados ciertos componentes Active-X. Para solucionarlo debemos descargar el siguiente archivo que contiene los archivos OCX que suelen faltar:<br><a href="https://www.dk3wn.info/files/ocx.zip"><center>Descargar archivos OCX</center></a></p>
 <p>Una vez descargado, extraemos el archivo OCX que falte dentro de la carpeta en la que hemos guardado GetKISS en el paso anterior. Después registramos el archivo OCX en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.OCX</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.OCX</span><br></pre></td></tr></table></figure>
 
 <img src="/recepcion-cas4/regsvr32.png" class="" width="800" title="regsvr32">
 
@@ -1462,38 +1550,6 @@
       <tags>
         <tag>Satélites</tag>
         <tag>KISS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Instalar SDR++</title>
-    <url>/instalacion-sdrpp/</url>
-    <content><![CDATA[<p><a href="https://www.sdrpp.org/">SDR++</a> es un software multiplataforma y de código abierto para la recepción de señales mediante SDR. Este nuevo programa, desarrollado por <a href="https://twitter.com/ryzerth">Alexandre Rouma</a>, busca como objetivo ser sencillo de utilizar y eficiente.<br>En este post veremos cómo instalar SDR++ en Windows, Linux y macOS.</p>
-<span id="more"></span>
-
-<p>Para instalar SDR++ en cualquier sistema operativo, tenemos la posibilidad de descargar los instaladores para cada uno de ellos desde el siguiente enlace:</p>
-<p><a href="https://github.com/AlexandreRouma/SDRPlusPlus/releases/latest"><center>Releases SDR++</center></a></p>
-<p>En cualquier caso, necesitaremos tener instalados previamente los controladores del dispositivo que vayamos a utilizar. Si vamos a usar un dispositivo RTL-SDR por primera vez, podemos seguir los pasos de instalación descritos en <a href="/primeros-pasos/#Instalacion-del-dispositivo">este enlace</a>.</p>
-<h2 id="Instalacion-en-Windows"><a href="#Instalacion-en-Windows" class="headerlink" title="Instalación en Windows"></a>Instalación en Windows</h2><p>Una vez descargado el archivo comprimido para Windows, procedemos a extraer su contenido en la ubicación que queramos. Para iniciar el programa bastaría con abrir el ejecutable <strong><em>sdrpp.exe</em></strong>.</p>
-<img src="/instalacion-sdrpp/sdrpp-windows.jpg" class="" width="900" title="SDR++ Windows">
-
-<h2 id="Instalacion-en-Linux"><a href="#Instalacion-en-Linux" class="headerlink" title="Instalación en Linux"></a>Instalación en Linux</h2><p>Nos descargamos el archivo PKG para nuestro distribución Linux y lo instalamos con el gestor de paquetes correspondiente.<br>Para iniciar el programa, bastaría con buscarlo en los programas instalados e iniciarlo.</p>
-<img src="/instalacion-sdrpp/sdrpp-linux.jpg" class="" width="900" title="SDR++ Linux">
-
-<h2 id="Instalacion-en-macOS"><a href="#Instalacion-en-macOS" class="headerlink" title="Instalación en macOS"></a>Instalación en macOS</h2><p>Lo primero que haremos será descargar el archivo PKG para nuestra arquitectura e instalarlo. Por ahora solo está disponible el paquete para procesadores con arquitectura <em>amd64</em> y no para <em>ARM</em> (Apple M1).</p>
-<p>Una vez instalado el paquete con el programa, necesitamos instalar algunas dependencias externas:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install fftw glew glfw volk</span><br></pre></td></tr></table></figure>
-
-<p>Por último ejecutamos el programa desde la terminal para iniciarlo:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sdrpp</span><br></pre></td></tr></table></figure>
-
-<img src="/instalacion-sdrpp/sdrpp-macos.jpg" class="" width="900" title="SDR++ macOS">
-]]></content>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Instalación</tag>
-        <tag>macOS</tag>
-        <tag>Windows</tag>
-        <tag>SDR++</tag>
       </tags>
   </entry>
   <entry>
@@ -1685,7 +1741,7 @@
 </tbody></table>
 <h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
 <img src="/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
 
 
@@ -1852,7 +1908,7 @@
 </tbody></table>
 <h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>JY1-SAT envía los datos de telemetría y las imágenes en la frecuencia <strong>145.840 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145840000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145840000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
 <img src="/recepcion-jy1sat/sdrsharp.png" class="" title="SDRSharp JY1-SAT">
 
 
@@ -1927,7 +1983,7 @@
 </tbody></table>
 <h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
 <img src="/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
 
 
@@ -1947,6 +2003,142 @@
       <tags>
         <tag>Satélites</tag>
         <tag>Cubesat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir imágenes HRPT desde satélites meteorológicos</title>
+    <url>/recepcion-satelites-meteorologicos-HRPT/</url>
+    <content><![CDATA[<p>Como ya vimos en artículos anteriores, podemos recibir imágenes meteorológicas desde los distintos satélites que fotografían continuamente la superficie terrestre desde una órbita baja. Hasta ahora habíamos visto como obtener esas imágenes de baja resolución en la banda de VHF desde los satélites NOAA y Meteor-M. En este artículo veremos cómo obtener imágenes en una resolución mucho mayor en la banda L.</p>
+<span id="more"></span>
+
+<p>Este artículo no es más que una breve adaptación del artículo de  <a href="https://sgcderek.github.io/blog/beginner-hrpt-guide.html">“Beginner’s guide to HRPT reception”</a> de <a href="https://sgcderek.github.io/">Derek OK9SGC</a>. En dicho artículo están descritos minuciosamente y todos los pasos que vamos a ver aquí, por lo que es recomendable su lectura previamente a la de este artículo.<br>Todos los pasos que se van a mostrar a continuación son los que se han seguido hasta la obtención de imágenes de una forma bastante aceptable. Esto quiere decir, que no es el único ni el mejor método para obtener dichas imágenes, sino que existen muchas otras formas para obtenerlas.</p>
+<h1 id="Satelites"><a href="#Satelites" class="headerlink" title="Satélites"></a>Satélites</h1><p>Los satélites que emiten actualmente imágenes en modo HRPT en banda L son los siguientes.</p>
+<table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>Frecuencia (MHz)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NOAA-15</td>
+<td>1.702,5</td>
+</tr>
+<tr>
+<td>NOAA-18</td>
+<td>1.707</td>
+</tr>
+<tr>
+<td>NOAA-19</td>
+<td>1.698</td>
+</tr>
+<tr>
+<td>Meteor-M N2</td>
+<td>1.700</td>
+</tr>
+<tr>
+<td>Meteor-M N2-2</td>
+<td>1.700</td>
+</tr>
+<tr>
+<td>MetOp-B</td>
+<td>1.701,3</td>
+</tr>
+<tr>
+<td>MetOp-C</td>
+<td>1.701,3</td>
+</tr>
+<tr>
+<td>FengYun-3B (*)</td>
+<td>1.704,5</td>
+</tr>
+<tr>
+<td>FengYun-3C (*)</td>
+<td>1.701,4</td>
+</tr>
+</tbody></table>
+<p>(*) Los satélites FengYun-3 emiten con ciertas limitaciones y de forma discontinua.</p>
+<h1 id="Preparacion"><a href="#Preparacion" class="headerlink" title="Preparación"></a>Preparación</h1><h2 id="El-SDR"><a href="#El-SDR" class="headerlink" title="El SDR"></a>El SDR</h2><p>El único requisito que necesita nuestro dispositivo SDR para poder recibir estas señales es que pueda sintonizar esas frecuencias y que posea al menos 2,56 MSPS de tasa de muestreo. Los dispositivos como el RTL-SDR V3 y los Nooelec NESDR son perfectamente válidos para la recepción, pero se recomienda usar un dispositivo un poco más estable y con mayores tasas de muestreo como el AirSpy Mini o el AirSpy R2. Para este artículo se ha utilizado un AirSpy R2.</p>
+<h2 id="El-LNA"><a href="#El-LNA" class="headerlink" title="El LNA"></a>El LNA</h2><p>Dado que estamos trabajando en banda L, es casi imprescindible el uso de un amplificador para poder captar la señal correctamente. Podemos utilizar cualquier LNA que abarque esta banda y permita una correcta recepción de la señal.<br>También tenemos la opción de adquirir un LNA con filtro diseñado para estas frecuencias. Nooelec dispone de dos modelos de LNA con filtro SAW centrados en 1.688 MHz con similares prestaciones.</p>
+<table>
+<thead>
+<tr>
+<th>Modelo</th>
+<th align="center">Ganancia</th>
+<th>Observaciones</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SAWbird GOES</td>
+<td align="center">20 dBm</td>
+<td>Requiere 30 mA. Se puede usar con el <em>Bias-Tee</em> del SDR.</td>
+</tr>
+<tr>
+<td>SAWbird+ GOES</td>
+<td align="center">30 dBm</td>
+<td>Requiere 180 mA. Necesita alimentación externa.</td>
+</tr>
+</tbody></table>
+<p>En este caso se ha utilizado el modelo SAWbird+ GOES alimentado de forma externa con una batería portátil de 5 voltios.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/lna.jpeg" class="" width="400" title="Nooelec SAWbird+ GOES">
+
+
+<h2 id="La-antena"><a href="#La-antena" class="headerlink" title="La antena"></a>La antena</h2><p>Para la recepción vamos a utilizar una antena con reflector parabólico. En este caso se ha usado un reflector de 80 centímetros, pero lógicamente con uno de mayor tamaño recibiremos mucho mejor.<br>Para el <em>feed</em> de la antena se ha construido la antena helicoidal para 1,7 GHz con las medidas que Derek OK9SGC indicó en el artículo. Si disponemos de impresora 3D, lo más fácil es imprimir la plantilla que el autor publicó en Thingiverse y que podemos encontrar en el siguiente enlace:</p>
+<p><a href="https://www.thingiverse.com/thing:4980180"><center>Helical antenna scaffold set (v4)</center></a></p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/helix.jpeg" class="" width="600" title="Helix">
+
+<p>Para realizar el acople al reflector, se ha diseñado una pieza para poder realizar el montaje usando la propia montura del LNB. Si el modelo de reflector que vamos a usar es de la marca Televés, es posible que se pueda usar la misma. Podemos descargar el STL de la pieza desde el siguiente enlace:</p>
+<p><a href="https://www.thingiverse.com/thing:5437712"><center>Helical antenna adapter for dish reflector</center></a></p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/helix_adapter.jpeg" class="" width="600" title="Adaptador">
+
+<h1 id="Montaje"><a href="#Montaje" class="headerlink" title="Montaje"></a>Montaje</h1><p>Dado que en este caso se va a realizar el seguimiento manualmente, lo que se ha hecho es usar un trípode y colocar un tubo de PVC sobre el mismo (que hará de eje horizontal) en el que se ha colocado el reflector. Para el eje vertical se ha colocado el propio herraje del reflector, pero dejando solo un tornillo para que pueda moverse libremente hasta quedar casi en horizontal.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/antena.jpeg" class="" width="600" title="Montaje de la antena">
+
+<p>La colocación de la antena helicoidal se hará en el sitio del LNB usando la pieza mencionada anteriormente. Después colocamos el LNA directamente a la antena y después el SDR. Ya que era demasiado el peso que debía soportar el conector SMA al colocar el SDR directamente tras el LNA, se ha optado por usar un latiguillo lo más corto posible.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/montaje.jpeg" class="" width="700" title="Detalle del feed">
+
+
+<h2 id="El-software"><a href="#El-software" class="headerlink" title="El software"></a>El software</h2><p>Para realizar tanto la grabación como la posterior decodificación existen distintas alternativas. Las más comunes son <a href="https://github.com/altillimity/SatDump">SatDump</a> y <a href="https://github.com/Xerbo/LeanHRPT-Demod">LeanHRPT</a>. En este ejemplo se ha usado LeanHRPT que se compone de dos programas, uno para la grabación y otro para la decodificación y procesado. Podemos descargarlos desde los siguientes enlaces</p>
+<ul>
+<li><p><a href="https://github.com/Xerbo/LeanHRPT-Demod/releases/latest">LeanHRPT-Demod</a></p>
+</li>
+<li><p><a href="https://github.com/Xerbo/LeanHRPT-Decode/releases/latest">LeanHRPT-Decode</a></p>
+</li>
+</ul>
+<p>La instalación de ambos programas en Windows es muy simple. Basta con descargar el archivo ZIP y extraer su contenido.</p>
+<h1 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h1><h2 id="Seguimiento"><a href="#Seguimiento" class="headerlink" title="Seguimiento"></a>Seguimiento</h2><p>Llegamos ahora a la parte que en un principio puede resultar más complicada, si no disponemos de un rotor que realice el seguimiento de forma automática. En este caso se ha optado por la opción de hacerlo manualmente, por lo que vamos a tener que ir moviendo la antena y apuntando a la dirección del satélite de la mejor manera que podamos. En un principio puede parecernos algo muy complicado, pero con un poco de práctica, teniendo buen pulso y evitando los movimientos bruscos, se puede realizar bastante bien y obtener unos resultados más que aceptables.</p>
+<p>Lo recomendable es usar alguna aplicación o programa que nos indique la posición del satélite para ayudarnos a apuntar. En este caso se ha usado la aplicación para móvil Android <a href="https://play.google.com/store/apps/details?id=com.rtbishop.look4sat">Look4Sat: Satellite tracker</a>. Esta aplicación usa los sensores del teléfono para ayudarnos a encontrar la posición actual del satélite que queramos.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/Look4Sat.jpeg" class="" width="400" title="Look4Sat">
+<h2 id="Grabacion"><a href="#Grabacion" class="headerlink" title="Grabación"></a>Grabación</h2><p>Puesto que hemos optado por usar el programa LeanHRPT para grabar la señal, debemos configurarlo antes de que comience el pase del satélite.</p>
+<p>Los ajustes que debemos introducir son los siguientes:</p>
+<ul>
+<li><strong>Source.</strong> Seleccionamos SDR para que utilice nuestro dispositivo. El dispositivo debe estar conectado para que cargue los drivers. El programa ya lleva los drivers para los dispositivos más comunes.</li>
+<li><strong>Downlink.</strong> Seleccionamos el satélite que vamos a recibir. Dependiendo del satélite se grabará en un modo u otro.</li>
+<li><strong>Frequency.</strong> Aquí debemos introducir la frecuencia del satélite. <a href="#Satelites">Consultar el punto 1 del artículo.</a></li>
+<li><strong>Sample Rate.</strong> Tasa de muestreo. Consultar los valores recomendados por Derek OK9SGC. Para el AirSpy R2 hay que introducir 6 MSPS.</li>
+<li><strong>Gain.</strong> Ganancia del SDR. Se activa después de pulsar <em>Start</em>. Ajustar según sea necesario.</li>
+<li><strong>Enable Bias Tee.</strong> Activa el <em>Bias Tee</em> del SDR si este lo permite. Debemos tener cuidado con activarlo si ya estamos alimentando el LNA de forma externa.</li>
+<li><strong>Output file.</strong> Indicamos la ubicación del archivo de grabación.</li>
+</ul>
+<p>Una vez esté todo configurado hacemos clic en <em>Start</em> para iniciar la grabación.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/LeanHRPT_Demod.jpeg" class="" width="700" title="LeanHRPT Demod">
+
+<p>También podemos abrir la ventana de FFT para ver el espectro de la señal.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/lean_fft.jpeg" class="" width="600" title="LeanHRPT FFT">
+
+<p>Ahora el objetivo es realizar el seguimiento y asegurarse de que la demodulación se está realizando correctamente. Cuanto más definidos veamos los puntos en la ventana, más limpia saldrá la imagen una vez decodificada.</p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Por último, una vez ha finalizado el pase y hemos detenido la grabación, vamos a decodificar el archivo generado y poder ver la imagen.<br>Para ello abrimos el programa LeanHRPT-Decode, hacemos clic en <em>File</em> y <em>Open</em> y seleccionamos el archivo.<br>Si la grabación ha sido buena, veremos que se procesa el archivo y aparece la imagen en pantalla.<br>Una vez tengamos la imagen, ya podemos jugar con las distintas configuraciones y canales para obtener la imagen a nuestro gusto.</p>
+<img src="/recepcion-satelites-meteorologicos-HRPT/LeanHRPT_Decode_NOAA19.jpeg" class="" title="LeanHRPT Decode NOAA19">
+
+<img src="/recepcion-satelites-meteorologicos-HRPT/LeanHRPT_Decode_MetOpB.jpeg" class="" title="LeanHRPT Decode MetOpB">
+
+<h1 id="Agradecimientos"><a href="#Agradecimientos" class="headerlink" title="Agradecimientos"></a>Agradecimientos</h1><p>Como no podía ser de otra forma, quiero agradecer a Derek OK9SGC su trabajo en la elaboración de la guía en la que me he basado. Creo que la sencillez y la claridad de esta, han sido los incentivos que me han empujado a probar esta forma de recibir imágenes.</p>
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>Meteorología</tag>
+        <tag>HRPT</tag>
       </tags>
   </entry>
   <entry>
@@ -2036,7 +2228,7 @@
 </ol>
 <h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
 <p>Para recibir el pase tenemos que sacar el audio de SDR# mediante el cable de audio virtual y tener WXtoImg abierto. Una vez el satélite comience a verse sobre el horizonte, SDR# iniciará el seguimiento y WXtoImg comenzará a recibir y procesar la señal.</p>
 <img src="/recepcion-satelites-meteorologicos-NOAA/sdr_sharp.jpg" class="" title="SDR#">
 
@@ -2146,16 +2338,16 @@
 <ul>
 <li>Ajustes para decodificar mediante <strong>socket</strong>:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[IN]</span><br><span class="line">source&#x3D;TCP</span><br><span class="line">mode&#x3D;auto</span><br><span class="line">sat&#x3D;auto</span><br><span class="line">host&#x3D;localhost</span><br><span class="line">port&#x3D;2011</span><br><span class="line"></span><br><span class="line">[OUT]</span><br><span class="line">rgb&#x3D;123.jpg &lt;-- Cambiar por 122.jpg según los canales activos. También se puede cambiar &#39;jpg&#39; por &#39;bmp&#39;.</span><br><span class="line">rgb_q&#x3D;100</span><br><span class="line">mono&#x3D;yes</span><br><span class="line">logs&#x3D;no</span><br><span class="line">APID70&#x3D;no</span><br><span class="line">VCDU&#x3D;no</span><br><span class="line">path&#x3D;C:\SDR\MeteorM2\imágenes</span><br><span class="line"></span><br><span class="line">[FAST]</span><br><span class="line">FORMAT&#x3D;jpg &lt;-- Cambiar por &#39;bmp&#39; para obtener imagen sin comprimir.</span><br><span class="line">R&#x3D;1</span><br><span class="line">G&#x3D;2</span><br><span class="line">B&#x3D;3 &lt;-- Modificar según los canales activos.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[IN]</span><br><span class="line">source=TCP</span><br><span class="line">mode=auto</span><br><span class="line">sat=auto</span><br><span class="line">host=localhost</span><br><span class="line">port=2011</span><br><span class="line"></span><br><span class="line">[OUT]</span><br><span class="line">rgb=123.jpg &lt;-- Cambiar por 122.jpg según los canales activos. También se puede cambiar &#x27;jpg&#x27; por &#x27;bmp&#x27;.</span><br><span class="line">rgb_q=100</span><br><span class="line">mono=yes</span><br><span class="line">logs=no</span><br><span class="line">APID70=no</span><br><span class="line">VCDU=no</span><br><span class="line">path=C:\SDR\MeteorM2\imágenes</span><br><span class="line"></span><br><span class="line">[FAST]</span><br><span class="line">FORMAT=jpg &lt;-- Cambiar por &#x27;bmp&#x27; para obtener imagen sin comprimir.</span><br><span class="line">R=1</span><br><span class="line">G=2</span><br><span class="line">B=3 &lt;-- Modificar según los canales activos.</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>Ajustes para decodificar mediante <strong>archivo</strong>:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[IN]</span><br><span class="line">source&#x3D;man</span><br><span class="line">sat&#x3D;M2</span><br><span class="line">mode&#x3D;72k</span><br><span class="line"></span><br><span class="line">[OUT]</span><br><span class="line">rgb&#x3D;123.jpg &lt;-- Cambiar por 122.jpg según los canales activos. También se puede cambiar &#39;jpg&#39; por &#39;bmp&#39;.</span><br><span class="line">rgb_q&#x3D;100</span><br><span class="line">mono&#x3D;yes</span><br><span class="line">logs&#x3D;no</span><br><span class="line">APID70&#x3D;yes</span><br><span class="line">VCDU&#x3D;no</span><br><span class="line">path&#x3D;C:\SDR\MeteorM2\imágenes</span><br><span class="line"></span><br><span class="line">[FAST]</span><br><span class="line">FORMAT&#x3D;jpg &lt;-- Cambiar por &#39;bmp&#39; para obtener imagen sin comprimir.</span><br><span class="line">R&#x3D;1</span><br><span class="line">G&#x3D;2</span><br><span class="line">B&#x3D;3 &lt;-- Modificar según los canales activos.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[IN]</span><br><span class="line">source=man</span><br><span class="line">sat=M2</span><br><span class="line">mode=72k</span><br><span class="line"></span><br><span class="line">[OUT]</span><br><span class="line">rgb=123.jpg &lt;-- Cambiar por 122.jpg según los canales activos. También se puede cambiar &#x27;jpg&#x27; por &#x27;bmp&#x27;.</span><br><span class="line">rgb_q=100</span><br><span class="line">mono=yes</span><br><span class="line">logs=no</span><br><span class="line">APID70=yes</span><br><span class="line">VCDU=no</span><br><span class="line">path=C:\SDR\MeteorM2\imágenes</span><br><span class="line"></span><br><span class="line">[FAST]</span><br><span class="line">FORMAT=jpg &lt;-- Cambiar por &#x27;bmp&#x27; para obtener imagen sin comprimir.</span><br><span class="line">R=1</span><br><span class="line">G=2</span><br><span class="line">B=3 &lt;-- Modificar según los canales activos.</span><br></pre></td></tr></table></figure>
 
 <h3 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h3><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;120000&gt;</span><br><span class="line">QPSK_demodulator_Start</span><br><span class="line">send_tracking_frequency_On</span><br><span class="line">start_programm_Path&lt;C:\SDR\MeteorM2\Decoder\M2_LRPT_Decoder.exe&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;120000&gt;</span><br><span class="line">QPSK_demodulator_Start</span><br><span class="line">send_tracking_frequency_On</span><br><span class="line">start_programm_Path&lt;C:\SDR\MeteorM2\Decoder\M2_LRPT_Decoder.exe&gt;</span><br></pre></td></tr></table></figure></p>
 <p>En este ejemplo se ha usado la opción de enviar los datos por socket, por lo que en los ajustes anteriores se ha añadido el comando <strong>start_programm_Path</strong> para que se inice LRPT Decoder de forma automática cuando se inicie el seguimiento. Si optamos por la decodificación desde el archivo, este comando no es necesario.</p>
 <p>Una vez configurado todo correctamente, en el instante en el que el satélite comience a verse por nuestra localización, comenzará el seguimiento automático.</p>
 <p>En el momento en que la señal sea detectada por el <em>plugin</em>, este comenzará a demodularla y a procesarla. Veremos que aparece <strong>Locked</strong> en la interfaz.</p>
@@ -2283,7 +2475,7 @@
 <h2 id="Instalacion-de-Gqrx"><a href="#Instalacion-de-Gqrx" class="headerlink" title="Instalación de Gqrx"></a>Instalación de Gqrx</h2><p>La instalación es sencilla, y más aún para todos aquellos que ya tienen instalado el sistema de administración de paquetes Homebrew previamente.</p>
 <p>Si no tienes un administrador de programas, proponemos su instalación siguiendo <a href="https://franyerverjel.com/blog/instalacion-de-homebrew-en-mac">esta guía</a>.</p>
 <p>Para la instalación, usando el administrador de paquetes, abrimos una ventana de terminal y escribimos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install --cask gqrx</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install --cask gqrx</span><br></pre></td></tr></table></figure>
 
 <p>Una vez finalizada la instalación, iniciamos desde el icono de la aplicación:</p>
 <img src="/recibir-aprs-macos-con-gqrx/icono.png" class="" width="90" title="Gqrx">
@@ -2299,8 +2491,8 @@
 <p>73 para todos.</p>
 ]]></content>
       <tags>
-        <tag>macOS</tag>
         <tag>APRS</tag>
+        <tag>macOS</tag>
         <tag>ISS</tag>
         <tag>Gqrx</tag>
       </tags>
@@ -2349,7 +2541,7 @@
 
 <h2 id="Recibir-APRS-desde-la-ISS"><a href="#Recibir-APRS-desde-la-ISS" class="headerlink" title="Recibir APRS desde la ISS"></a>Recibir APRS desde la ISS</h2><p>La Estación Espacial Internacional (ISS por sus siglas en inglés) lleva a bordo un transpondedor que funciona como repetidor APRS, el cual podemos recibir de una forma muy similar al ejemplo anterior. En este caso la principal diferencia es que tendremos que realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;WFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;10000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145825000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;WFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;10000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145825000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
 <p>Una vez comenzamos a recibir el pase de la ISS, veremos que aparecen los mensajes recibidos por pantalla.</p>
 <img src="/recibir-aprs/SoundModemDataISS.png" class="" width="500" title="SoundModem">
 
@@ -2381,7 +2573,7 @@
 <li><a href="libfaac.dll">libfaac.dll</a></li>
 </ul>
 <p>Por último, registramos los archivos DLL en el sistema ejecutando el siguiente comando en una consola del sistema (como Administrador):</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.DLL</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">regsvr32 RUTA_COMPLETA_DEL_ARCHIVO.DLL</span><br></pre></td></tr></table></figure>
 
 <h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El siguiente paso es configurar el programa para que reciba el audio desde SDR#. Para ello hacemos clic en <em>Settings</em>, <em>Sound Card</em>, <em>Signal Input</em> y en <em>Device</em> seleccionamos el <strong>cable de audio virtual</strong>.</p>
 <img src="/recibir-drm/input.png" class="" width="800" title="Entrada audio">
@@ -2788,7 +2980,7 @@
 <img src="/recibir-satelites-meteorologicos-NOAA-linux/wxtoimg_instalar.jpg" class="" width="900" title="Instalación de WXtoIMG">
 
 <p>Cuando finalice la instalación, iniciamos el programa ejecutando el siguiente comando desde una terminal:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xwxtoimg</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">xwxtoimg</span><br></pre></td></tr></table></figure>
 
 <p>Una vez se inicie el programa, seguiremos los siguientes pasos para configurar los ajustes básicos necesarios:</p>
 <ol>
@@ -2815,20 +3007,20 @@
 </li>
 </ol>
 <h2 id="Cable-de-audio-virtual"><a href="#Cable-de-audio-virtual" class="headerlink" title="Cable de audio virtual"></a>Cable de audio virtual</h2><p>Necesitamos crear un cable de audio virtual para poder pasar el audio desde el programa de SDR a WXtoImg para que genere la imagen.<br>Existen diferentes formas de hacer este procedimiento. En Linux tenemos una forma nativa de generar un cable virtual activando el <em>loopback</em> del kernel ALSA. Para hacerlo simplemente ejecutamos el siguiente comando en una terminal:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo modprobe snd-aloop</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo modprobe snd-aloop</span><br></pre></td></tr></table></figure>
 
 <p>Esto nos redirige la salida de audio general del sistema a una entrada de audio. Podemos verificar este cambio si vamos los ajustes de audio de Ubuntu.<br>Este cambio no es permanente y se perderá la próxima vez que iniciemos el equipo. Para hacerlo fijo debemos añadir un cambio en el sistema para que cargue nuevamente este módulo al iniciar. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo echo &#39;snd-aloop&#39; &gt;&gt; &#x2F;etc&#x2F;modules-load.d&#x2F;modules.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo echo &#x27;snd-aloop&#x27; &gt;&gt; /etc/modules-load.d/modules.conf</span><br></pre></td></tr></table></figure>
 
 <p>Por último, debemos asegurarnos que el <em>loopback</em> esté activado en el servicio de ALSA. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alsamixer</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alsamixer</span><br></pre></td></tr></table></figure>
 
 <p>Ahora buscamos el <em>loopback</em> en los dispositivos de audio y nos aseguramos de que está activado.</p>
 <p>Para finalizar, nos aseguramos que tenemos disponible el control de volumen de PulseAudio. Podemos comprobarlo ejecutándolo desde la terminal mediante el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pavucontrol</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pavucontrol</span><br></pre></td></tr></table></figure>
 
 <p>Si no lo tenemos instalado, podemos hacerlo con:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install pavucontrol</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install pavucontrol</span><br></pre></td></tr></table></figure>
 
 <h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal del satélite podemos utilizar cualquier programa SDR que funcione en Linux. En este ejemplo vamos a utilizar <strong>SDR++</strong>, el cual ya vimos como instalar en el artículo <a href="/instalacion-sdrpp/">“Instalar SDR++”</a>.</p>
 <p>Para el ajuste de frecuencia se ha utilizado <strong>Gpredict</strong>, que también vimos como instalar y configurar en el artículo <a href="/seguimiento-satelites-gpredict/">“Seguimiento de satélites con Gpredict”</a>.</p>
@@ -2863,7 +3055,7 @@
 
 <h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Las imágenes son enviadas en la frecuencia <strong>145,800 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;NFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;20000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145800000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;NFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;20000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145800000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
 <h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar las imágenes usaremos el programa RX-SSTV que podemos descargar desde el siguiente enlace:</p>
 <p><a href="http://users.belgacom.net/mysoftware/Setup_RXSSTV.exe"><center>Descargar RX-SSTV v2.1.5</center></a></p>
 <p>Una vez descargado el instalador, lo ejecutamos e instalamos el programa.</p>
@@ -2984,44 +3176,44 @@
 <h3 id="Instalacion-de-dump1090"><a href="#Instalacion-de-dump1090" class="headerlink" title="Instalación de dump1090"></a>Instalación de dump1090</h3><p>Vamos a instalar la versión de <em>dump1090</em> mantenida por FlightAware, ya que está actualizada y nos instala y levanta un servidor web en el que podemos ver las aeronaves sobre el mapa sin muchas complicaciones.</p>
 <p>El primer paso es instalar el repositorio de FlightAware en nuestra Raspberry Pi dependiendo de la versión de Raspbian que tengamos. También podemos generar paquetes para otras distribuciones siguiendo los pasos descritos <a href="https://github.com/flightaware/dump1090">aquí</a>.</p>
 <p>Si no conocemos la versión de Raspbian, podemos consultarla ejecutando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;os-release | grep VERSION_CODENAME</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /etc/os-release | grep VERSION_CODENAME</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>Repositorio para <strong>Raspbian Buster</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;flightaware.com&#x2F;adsb&#x2F;piaware&#x2F;files&#x2F;packages&#x2F;pool&#x2F;piaware&#x2F;p&#x2F;piaware-support&#x2F;piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure></li>
 <li><p>Repositorio para <strong>Raspbian Stretch</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;flightaware.com&#x2F;adsb&#x2F;piaware&#x2F;files&#x2F;packages&#x2F;pool&#x2F;piaware&#x2F;p&#x2F;piaware-support&#x2F;piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>Una vez instalado el repositorio correspondiente ejecutamos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 
 <p>Ahora instalamos <em>dump1090</em>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y dump1090-fa</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y dump1090-fa</span><br></pre></td></tr></table></figure>
 
 <p>Podemos ajustar las opciones de <em>dump1090</em> en su archivo de configuración:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;default&#x2F;dump1090-fa</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/default/dump1090-fa</span><br></pre></td></tr></table></figure>
 
 <p>Editamos la siguiente línea con la ganancia y valor de PPM. Es aconsejable establecer un valor para la ganancia, ya que por defecto el nivel viene establecido en automático (-10) y no siempre proporciona buenos resultados.<br>Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en <em>device-index</em>.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">RECEIVER_OPTIONS&#x3D;&quot;--device-index 0 --gain -10 --ppm 0&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">RECEIVER_OPTIONS=&quot;--device-index 0 --gain -10 --ppm 0&quot;</span><br></pre></td></tr></table></figure>
 
 <p>Reiniciamos el servicio para que se apliquen los cambios.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service dump1090-fa restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service dump1090-fa restart</span><br></pre></td></tr></table></figure>
 
 <p>Por último, accedemos a nuestra Raspberry Pi desde cualquier navegador web:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;IP_RASPBERRY:8080&#x2F;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://IP_RASPBERRY:8080/</span><br></pre></td></tr></table></figure>
 
 <img src="/seguimiento-aviones-raspberry-pi/dump1090.jpg" class="" width="900" title="dump1090 FlightAware">
 
 <p>Esta interfaz web utiliza el puerto 8080 por defecto. Si queremos cambiarlo editamos el archivo de configuración de <em>Lighttpd</em>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;lighttpd&#x2F;conf-enabled&#x2F;89-dump1090-fa.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/lighttpd/conf-enabled/89-dump1090-fa.conf</span><br></pre></td></tr></table></figure>
 
 <p>Editamos la siguiente línea y modificamos el puerto 8080 por el que queramos utilizar:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$SERVER[&quot;socket&quot;] &#x3D;&#x3D; &quot;:8080&quot; &#123;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$SERVER[&quot;socket&quot;] == &quot;:8080&quot; &#123;</span><br></pre></td></tr></table></figure>
 
 <p>Por último reiniciamos el servicio para que se apliquen los cambios:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service lighttpd restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service lighttpd restart</span><br></pre></td></tr></table></figure>
 
 
 <h3 id="Enviar-datos-a-FlightAware"><a href="#Enviar-datos-a-FlightAware" class="headerlink" title="Enviar datos a FlightAware"></a>Enviar datos a FlightAware</h3><p><a href="https://flightaware.com/">FlightAware</a> es una compañía con sede en Houston (TX, Estados Unidos) que ofrece servicios de software y datos para aviación. Esta compañía ofrece información de seguimiento de aeronaves de forma gratuita desde su página web y sus aplicaciones para móviles. Es actualmente la mayor plataforma de seguimiento de vuelos.</p>
@@ -3033,13 +3225,13 @@
 <p><a href="https://es.flightaware.com/account/join"><center>https://es.flightaware.com/account/join</center></a></p>
 <ol start="2">
 <li><p>Instalamos <em>piaware</em>. Este software será el encargado de establecer la comunicación con el servidor de FlightAware para enviar los datos y recibir ajustes.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install -y piaware</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y piaware</span><br></pre></td></tr></table></figure></li>
 <li><p>Podemos ajustar <em>piaware</em> para que se actualice de forma automática y para que podamos actualizarlo desde la interfaz web de FlightAware.<br>Si queremos que se actualice automático ejecutamos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-auto-updates yes</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-auto-updates yes</span><br></pre></td></tr></table></figure>
 <p>Si queremos que se pueda hacer de forma manual vía web ejecutamos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-manual-updates yes</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-manual-updates yes</span><br></pre></td></tr></table></figure></li>
 <li><p>Reiniciamos el servicio para que se apliquen los ajustes.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo service piaware restart</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service piaware restart</span><br></pre></td></tr></table></figure></li>
 <li><p>Accedemos a la siguiente dirección para vincular nuestra Raspberry Pi con la cuenta que acabamos de crear. Si accedemos desde la misma dirección IP que tiene la Raspberry Pi, la detectará de forma automática.</p>
 </li>
 </ol>
@@ -3059,19 +3251,19 @@
 <p>Las pasos que seguiremos son los siguientes:</p>
 <ol>
 <li><p>Instalamos <em>rbfeeder</em>. Será el programa que envíe los datos al servidor.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - http:&#x2F;&#x2F;apt.rb24.com&#x2F;inst_rbfeeder.sh)&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - http://apt.rb24.com/inst_rbfeeder.sh)&quot;</span><br></pre></td></tr></table></figure>
 <p>Cuando pregunte si queremos instalar <code>dump978-rb</code> le decimos que no.</p>
 </li>
 <li><p>Instalamos el cliente de MLAT. La siguiente versión es para Raspbian. Si necesitamos paquete para otra versión, podemos generarlo siguiendo los pasos descritos <a href="https://github.com/mutability/mlat-client">aquí</a>.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget &#x2F;seguimiento-aviones-raspberry-pi&#x2F;mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget /seguimiento-aviones-raspberry-pi/mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure></li>
 <li><p>Nos registramos en RadarBox.</p>
 </li>
 </ol>
 <p><a href="https://www.radarbox.com/register"><center>https://www.radarbox.com/register</center></a></p>
 <ol start="4">
 <li><p>Una vez registrados necesitamos vincular nuestro receptor con RadarBox. Para ello usaremos la clave que nos genera <em>rbfeeder</em> la primera vez que se conecta al servidor. Consultamos la clave con el comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo rbfeeder --showkey --no-start</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo rbfeeder --showkey --no-start</span><br></pre></td></tr></table></figure></li>
 <li><p>Accedemos a esta dirección, introducimos nuestra clave en <em>Sharing Key</em> y pulsamos en <strong>CLAIM!</strong>.</p>
 </li>
 </ol>
@@ -3084,7 +3276,7 @@
 </ol>
 <h3 id="Enviar-datos-a-ADS-B-Exchange"><a href="#Enviar-datos-a-ADS-B-Exchange" class="headerlink" title="Enviar datos a ADS-B Exchange"></a>Enviar datos a ADS-B Exchange</h3><p><a href="https://www.adsbexchange.com/">ADS-B Exchange</a> es un servicio colaborativo de datos de seguimiento y es la mayor fuente de datos de vuelos <strong>sin filtrar</strong>. En este caso no obtendremos beneficios como suscripciones, ya que este servicio ofrece todos los datos de forma <strong>gratuita para fines no comerciales</strong>.</p>
 <p>Para enviar nuestros datos a ADS-B Exchange tendremos que ejecutar un script de instalación que realizará el proceso de forma sencilla. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;adsbxchange&#x2F;adsb-exchange&#x2F;master&#x2F;install.sh)&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https://raw.githubusercontent.com/adsbxchange/adsb-exchange/master/install.sh)&quot;</span><br></pre></td></tr></table></figure>
 
 <p>Se iniciará un asistente instalación en el que debemos indicar un nombre para nuestro <em>feeder</em> y nuestra posición para los cálculos de MLAT.</p>
 <img src="/seguimiento-aviones-raspberry-pi/adsb-script.png" class="" title="Asistente instalación ADS-B Exchange">
@@ -3095,10 +3287,10 @@
 <li>Comprobar el estado de los servidores de MLAT: <a href="http://adsbx.org/sync">http://adsbx.org/sync</a></li>
 </ul>
 <p>Opcionalmente, podemos instalar la herramienta proporcionada por ADS-B Exchange para ver online los datos que estamos enviando desde nuestro receptor en tiempo real. Para instalarla basta con ejecutar el siguiente comando:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;adsbxchange&#x2F;adsbexchange-stats&#x2F;master&#x2F;stats.sh)&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https://raw.githubusercontent.com/adsbxchange/adsbexchange-stats/master/stats.sh)&quot;</span><br></pre></td></tr></table></figure>
 
 <p>Una vez instalada, ejecutamos el siguiente comando para obtener nuestra URL personalizada en la que consultar los datos:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">adsbexchange-showurl</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">adsbexchange-showurl</span><br></pre></td></tr></table></figure>
 
 <p>Obtendremos una URL que debemos copiar e introducir en el navegador web. Una vez accedemos, tendremos dos enlaces que nos llevarán a una página con los datos de las aeronaves que estamos recibiendo en nuestra estación y a un visor con el mapa en tiempo real. Podemos consultar el funcionamiento de las distintas opciones del visor en <a href="https://www.adsbexchange.com/map-help/">este enlace</a>.</p>
 <img src="/seguimiento-aviones-raspberry-pi/adsb-exchange.jpg" class="" width="900" title="ADS-B Exchange">
@@ -3108,23 +3300,23 @@
 <p>Lo primero sera registrarse en Flightradar24.</p>
 <p><a href="https://www.flightradar24.com/premium/signup"><center>https://www.flightradar24.com/premium/signup</center></a></p>
 <p>Para enviar los datos debemos descargar e instalar <em>fr24feed</em>. Para ello ejecutamos el siguiente comando y seguimos los pasos del asistente de instalación.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https:&#x2F;&#x2F;repo-feed.flightradar24.com&#x2F;install_fr24_rpi.sh)&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https://repo-feed.flightradar24.com/install_fr24_rpi.sh)&quot;</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li><p>Introducir el correo electrónico con el que nos hemos registrado.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 1.1 - Enter your email address (username@domain.tld)</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 1.1 - Enter your email address (username@domain.tld)</span><br></pre></td></tr></table></figure></li>
 <li><p>Si tenemos ya una clave previa la introducimos. En caso contrario lo dejamos en blanco.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 1.2 - If you used to feed FR24 with ADS-B data before, enter your sharing key.</span><br><span class="line">If you don&#39;t remember your sharing key, you can find it in your account on the website under &quot;My data sharing&quot;.</span><br><span class="line">https:&#x2F;&#x2F;www.flightradar24.com&#x2F;account&#x2F;data-sharing</span><br><span class="line"></span><br><span class="line">Otherwise leave this field empty and continue.</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 1.2 - If you used to feed FR24 with ADS-B data before, enter your sharing key.</span><br><span class="line">If you don&#x27;t remember your sharing key, you can find it in your account on the website under &quot;My data sharing&quot;.</span><br><span class="line">https://www.flightradar24.com/account/data-sharing</span><br><span class="line"></span><br><span class="line">Otherwise leave this field empty and continue.</span><br></pre></td></tr></table></figure></li>
 <li><p>Introducimos <code>yes</code> para activar MLAT.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 1.3 - Would you like to participate in MLAT calculations? (yes&#x2F;no)$:yes</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 1.3 - Would you like to participate in MLAT calculations? (yes/no)$:yes</span><br></pre></td></tr></table></figure></li>
 <li><p>Introducimos nuestras coordenadas y altitud.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">IMPORTANT: For MLAT calculations the antenna&#39;s location should be entered very precise!</span><br><span class="line"></span><br><span class="line">Step 3.A - Enter antenna&#39;s latitude (DD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.B - Enter antenna&#39;s longitude (DDD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.C - Enter antenna&#39;s altitude above the sea level (in feet)</span><br><span class="line"></span><br><span class="line">Using latitude: 37.XXXX, longitude: -3.XXXX, altitude: 720ft above sea level</span><br><span class="line"></span><br><span class="line">Validating email&#x2F;location information...OK</span><br><span class="line"></span><br><span class="line">The closest airport found is ICAO:LEGR IATA:GRX near Granada.</span><br><span class="line"></span><br><span class="line">Latitude: 37.188728</span><br><span class="line">Longitude: -3.777350</span><br><span class="line">Country: Spain</span><br><span class="line"></span><br><span class="line">Flightradar24 may, if needed, use your email address to contact you regarding your data feed.</span><br><span class="line"></span><br><span class="line">Would you like to continue using these settings?</span><br><span class="line"></span><br><span class="line">Enter your choice (yes&#x2F;no)$:yes</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IMPORTANT: For MLAT calculations the antenna&#x27;s location should be entered very precise!</span><br><span class="line"></span><br><span class="line">Step 3.A - Enter antenna&#x27;s latitude (DD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.B - Enter antenna&#x27;s longitude (DDD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.C - Enter antenna&#x27;s altitude above the sea level (in feet)</span><br><span class="line"></span><br><span class="line">Using latitude: 37.XXXX, longitude: -3.XXXX, altitude: 720ft above sea level</span><br><span class="line"></span><br><span class="line">Validating email/location information...OK</span><br><span class="line"></span><br><span class="line">The closest airport found is ICAO:LEGR IATA:GRX near Granada.</span><br><span class="line"></span><br><span class="line">Latitude: 37.188728</span><br><span class="line">Longitude: -3.777350</span><br><span class="line">Country: Spain</span><br><span class="line"></span><br><span class="line">Flightradar24 may, if needed, use your email address to contact you regarding your data feed.</span><br><span class="line"></span><br><span class="line">Would you like to continue using these settings?</span><br><span class="line"></span><br><span class="line">Enter your choice (yes/no)$:yes</span><br></pre></td></tr></table></figure></li>
 <li><p>Introducimos <code>yes</code> para que usar la configuración automática y que utilice la instancia de <em>dump1090</em> que ya tenemos instalada.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">We have detected that you already have a dump1090 instance running. We can therefore automatically configure the FR24 feeder to use existing receiver configuration, or you can manually configure all the parameters.</span><br><span class="line"></span><br><span class="line">Would you like to use autoconfig (*yes*&#x2F;no)$:yes</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">We have detected that you already have a dump1090 instance running. We can therefore automatically configure the FR24 feeder to use existing receiver configuration, or you can manually configure all the parameters.</span><br><span class="line"></span><br><span class="line">Would you like to use autoconfig (*yes*/no)$:yes</span><br></pre></td></tr></table></figure></li>
 <li><p>Activamos el log si queremos. No es necesario.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Step 6 - Please select desired logfile mode:</span><br><span class="line"> 0 -  Disabled</span><br><span class="line"> 1 -  48 hour, 24h rotation</span><br><span class="line"> 2 -  72 hour, 24h rotation</span><br><span class="line">Select logfile mode (0-2)$:0</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 6 - Please select desired logfile mode:</span><br><span class="line"> 0 -  Disabled</span><br><span class="line"> 1 -  48 hour, 24h rotation</span><br><span class="line"> 2 -  72 hour, 24h rotation</span><br><span class="line">Select logfile mode (0-2)$:0</span><br></pre></td></tr></table></figure></li>
 <li><p>Por último, reiniciamos el servicio.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart fr24feed</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart fr24feed</span><br></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
       <tags>
@@ -3147,14 +3339,14 @@
 </ul>
 <p>Una vez descargado el archivo extraemos su contenido en la ubicación deseada y lo iniciamos desde el archivo ejecutable.</p>
 <h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>En Linux podemos instalarlo desde consola usando el gestor de paquetes de nuestra distribución. Para Debian/Ubuntu usaremos el siguiente:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install gpredict</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install gpredict</span><br></pre></td></tr></table></figure>
 
 <p>Para iniciarlo podemos buscarlos en el listado de programas instalados o hacerlo desde una terminal.</p>
 <h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><p>Para instalar Gpredict en macOS necesitamos un gestor de paquetes como por ejemplo <a href="https://brew.sh/index_es">Homebrew</a>. Si ya lo tenemos, bastaría con ejecutar el siguiente comando:</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">brew install gpredict</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install gpredict</span><br></pre></td></tr></table></figure>
 
 <p>Para iniciar Gpredict debemos usar una terminal:</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">gpredict</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gpredict</span><br></pre></td></tr></table></figure>
 
 
 <img src="/seguimiento-satelites-gpredict/Gpredict.jpg" class="" width="800" title="Gpredict">

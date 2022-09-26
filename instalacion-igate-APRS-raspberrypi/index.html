@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png">
+  <meta name="google-site-verification" content="zvjkvYHg6-B9vMVEvFFO8k4UMoFzQQ1tTyQBdG8c-so">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"sdr-es.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Buscando...","empty":"No hemos encontrado ningún resultado para la búsqueda: ${query}","hits_time":"${hits} resultados encontrados en ${time} ms","hits":"${hits} resultados encontrados"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="En este artículo veremos cómo instalar y configurar un iGate para APRS en una Raspberry Pi.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Instalación de iGate APRS en Raspberry Pi">
+<meta property="og:url" content="https://sdr-es.com/instalacion-igate-APRS-raspberrypi/index.html">
+<meta property="og:site_name" content="SDR en español">
+<meta property="og:description" content="En este artículo veremos cómo instalar y configurar un iGate para APRS en una Raspberry Pi.">
+<meta property="og:locale" content="es_ES">
+<meta property="article:published_time" content="2022-09-06T14:05:59.000Z">
+<meta property="article:modified_time" content="2022-09-06T14:05:59.000Z">
+<meta property="article:author" content="SDR en español">
+<meta property="article:tag" content="RTL-SDR">
+<meta property="article:tag" content="APRS">
+<meta property="article:tag" content="Raspberry Pi">
+<meta property="article:tag" content="DireWolf">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://sdr-es.com/instalacion-igate-APRS-raspberrypi/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"es","comments":true,"permalink":"https://sdr-es.com/instalacion-igate-APRS-raspberrypi/","path":"instalacion-igate-APRS-raspberrypi/","title":"Instalación de iGate APRS en Raspberry Pi"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Instalación de iGate APRS en Raspberry Pi | SDR en español</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216548910-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-216548910-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="SDR en español" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Cambiar a barra de navegación" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">SDR en español</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a></li><li class="menu-item menu-item-first-steps"><a href="/primeros-pasos/" rel="section"><i class="fa fa-map-signs fa-fw"></i>Primeros pasos</a></li><li class="menu-item menu-item-frequencies"><a href="/frecuencias/" rel="section"><i class="fa fa-list-ul fa-fw"></i>Listado de frecuencias</a></li><li class="menu-item menu-item-bands-plan"><a href="/plan-bandas/" rel="section"><i class="fa fa-broadcast-tower fa-fw"></i>Plan bandas IARU</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Publicaciones</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Buscar
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Buscando..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Contenidos
+        </li>
+        <li class="sidebar-nav-overview">
+          Inicio
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instalacion"><span class="nav-number">1.</span> <span class="nav-text">Instalación</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-dispositivo-SDR"><span class="nav-number">1.1.</span> <span class="nav-text">Instalar dispositivo SDR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instalar-Dire-Wolf"><span class="nav-number">1.2.</span> <span class="nav-text">Instalar Dire Wolf</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuracion"><span class="nav-number">2.</span> <span class="nav-text">Configuración</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="SDR en español"
+      src="/images/avatar-sdr.gif">
+  <p class="site-author-name" itemprop="name">SDR en español</p>
+  <div class="site-description" itemprop="description">Web de referencia para los amantes de los dispositivos SDR</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">entradas</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-name">etiquetas</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/sdr_esp" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/sdr_esp" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;sdr_esp" rel="noopener" target="_blank"><i class="fab fa-telegram-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCoGAWwxJqds9iTIJCUyaSRA" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Volver al principio">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="es">
+    <link itemprop="mainEntityOfPage" href="https://sdr-es.com/instalacion-igate-APRS-raspberrypi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-sdr.gif">
+      <meta itemprop="name" content="SDR en español">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SDR en español">
+      <meta itemprop="description" content="Web de referencia para los amantes de los dispositivos SDR">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Instalación de iGate APRS en Raspberry Pi | SDR en español">
+      <meta itemprop="description" content="En este artículo veremos cómo instalar y configurar un iGate para APRS en una Raspberry Pi.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Instalación de iGate APRS en Raspberry Pi
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Publicado el</span>
+
+      <time title="Creado por: 06/09/2022 16:05:59" itemprop="dateCreated datePublished" datetime="2022-09-06T16:05:59+02:00">06/09/2022</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-user"></i>
+      </span>
+      <span class="post-meta-item-text">Creado por</span>
+      <span>EA7KOO</span>
+    </span>
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Como ya vimos anteriormente en algunos artículos, es posible recibir mensajes APRS desde distintos orígenes (terrestre, ISS, cubesats) de forma muy sencilla. En este artículo veremos como pasar estos mensajes a la red <a target="_blank" rel="noopener" href="https://www.aprs-is.net/">APRS-IS</a> a través de un iGate para mejorar la cobertura de nuestra zona.</p>
+<span id="more"></span>
+
+<p>Únicamente vamos a configurar el sistema en modo RX iGate, es decir, solo va a recibir mensajes. Existe cierta polémica sobre si los iGates de solo recepción rompen la funcionalidad bidireccional de la mensajería APRS. Según Heikki Hannikainen, creador y propietario de la web <a target="_blank" rel="noopener" href="https://aprs.fi/">aprs.fi</a>, <strong>los iGates de solo recepción no interrumpen la mensajería si hay iGates con capacidad de transmisión cerca que estén conectados a un servidor APRS-IS</strong>. Si no tenemos un iGate con capacidad de transmisión cerca, lógicamente la comunicación bidireccional no va a funcionar. <strong>Si tenemos un iGate de TX cercano, los iGates adicionales de solo recepción mejoran el rendimiento de la mensajería.</strong><br>Podemos leer el artículo completo de Heikki Hannikainen en el siguiente enlace:</p>
+<p><a target="_blank" rel="noopener" href="https://blog.aprs.fi/2019/08/rx-only-igates-considered-beneficial-to.html"><center>RX-only igates considered beneficial to the network</center></a></p>
+<p>Antes de continuar, debemos tener en cuenta que puesto que vamos a inyectar datos a la red ARPS-IS, <strong>necesitamos obligatoriamente indicativo de radioaficionado</strong>. Seremos los responsables de los mensajes que pasen a la red a través de nuestro iGate.</p>
+<h2 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalación"></a>Instalación</h2><h3 id="Instalar-dispositivo-SDR"><a href="#Instalar-dispositivo-SDR" class="headerlink" title="Instalar dispositivo SDR"></a>Instalar dispositivo SDR</h3><p>Si aún no hemos instalado el dispositivo en nuestra Raspberry Pi, podemos seguir los pasos descritos en el siguiente artículo:</p>
+<p><a href="/instalacion-rtlsdr-raspberrypi/"><center>Instalar dispositivo RTL-SDR en Linux</center></a></p>
+<h3 id="Instalar-Dire-Wolf"><a href="#Instalar-Dire-Wolf" class="headerlink" title="Instalar Dire Wolf"></a>Instalar Dire Wolf</h3><p>El software que vamos a usar para decodificar los mensajes AX.25 de APRS será <a target="_blank" rel="noopener" href="https://github.com/wb2osz/direwolf">Dire Wolf</a>.</p>
+<p>Para instalarlo en Raspberry OS basta con ejecutar el siguiente comando:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install direwolf</span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>El primer paso es generar un archivo de configuración para Dire Wolf. Para ello vamos a generar un archivo ‘.conf’ en la ubicación que queramos. En este ejemplo se ha creado el archivo <em>direwolf.conf</em> en <em>/etc</em>.<br>Para el contenido copiaremos la siguiente plantilla, obtenida del propio <a target="_blank" rel="noopener" href="https://github.com/wb2osz/direwolf/blob/master/conf/sdr.conf">repositorio de Dire Wolf</a>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#</span><br><span class="line"># Sample configuration for SDR read-only IGate.</span><br><span class="line">#</span><br><span class="line"></span><br><span class="line"># We might not have an audio output device so set to null.</span><br><span class="line"># We will override the input half on the command line.</span><br><span class="line">ADEVICE null null</span><br><span class="line">CHANNEL 0</span><br><span class="line">MYCALL xxx</span><br><span class="line"></span><br><span class="line"># First you need to specify the name of a Tier 2 server.</span><br><span class="line"># The current preferred way is to use one of these regional rotate addresses:</span><br><span class="line"></span><br><span class="line">#	noam.aprs2.net 		- for North America</span><br><span class="line">#	soam.aprs2.net		- for South America</span><br><span class="line">#	euro.aprs2.net		- for Europe and Africa</span><br><span class="line">#	asia.aprs2.net 		- for Asia</span><br><span class="line">#	aunz.aprs2.net		- for Oceania</span><br><span class="line"></span><br><span class="line">IGSERVER noam.aprs2.net</span><br><span class="line"></span><br><span class="line"># You also need to specify your login name and passcode.</span><br><span class="line"># Contact the author if you can&#x27;t figure out how to generate the passcode.</span><br><span class="line"></span><br><span class="line">IGLOGIN xxx 123456</span><br><span class="line"></span><br><span class="line"># That&#x27;s all you need for a receive only IGate which relays</span><br><span class="line"># messages from the local radio channel to the global servers.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Ahora veamos qué datos debemos introducir en la plantilla.</p>
+<h4 id="MYCALL"><a href="#MYCALL" class="headerlink" title="MYCALL"></a>MYCALL</h4><p>Aquí debemos de introducir nuestro indicativo seguido del SSID recomendado para un iGate. Según <a target="_blank" rel="noopener" href="http://www.aprs.org/aprs11/SSIDs.txt">las recomendaciones de APRS del 6 de febrero de 2012</a>, debemos añadir el SSID -10.</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-10 internet, Igates, echolink, winlink, AVRS, APRN, etc</span><br></pre></td></tr></table></figure>
+
+<h4 id="IGSERVER"><a href="#IGSERVER" class="headerlink" title="IGSERVER"></a>IGSERVER</h4><p>El servidor al que realizaremos la conexión. Debemos cambiarlo por el nuestro dependiendo de dónde nos encontremos.</p>
+<h4 id="IGLOGIN"><a href="#IGLOGIN" class="headerlink" title="IGLOGIN"></a>IGLOGIN</h4><p>Aquí introducimos nuestro indicativo y la clave de acceso a la red APRS-IG. Si no conocemos nuestra clave, podemos generarla <a target="_blank" rel="noopener" href="https://apps.magicbug.co.uk/passcode/">aquí</a>.</p>
+<h4 id="PBEACON-Opcional"><a href="#PBEACON-Opcional" class="headerlink" title="PBEACON (Opcional)"></a>PBEACON (Opcional)</h4><p>Añadimos esta opción si queremos que nuestro iGate aparezca en las webs que muestran los datos APRS, tipo <a target="_blank" rel="noopener" href="https://aprs.fi/">aprs.fi</a>, <a target="_blank" rel="noopener" href="https://aprs-map.info/">APRS Track Direct</a>, etc.</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PBEACON delay=1 every=60 symbol=R&amp; overlay=I lat=XX.XX long=XX.XX comment=&quot;Comentario que queramos&quot; sendto=IG</span><br></pre></td></tr></table></figure>
+
+<p>Una vez configurado el archivo, ya podemos probar el sistema completo. Lo que haremos será escuchar en la frecuencia de APRS con el programa <em>rtl_fm</em> y pasarle los datos a Dire Wolf en tiempo real. Para ello bastará con ejecutar el siguiente comando:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rtl_fm -f 144.80M -g 37 - | direwolf -c /etc/direwolf.conf -r 24000 -D 1 -</span><br></pre></td></tr></table></figure>
+<p>Podemos usar los parámetros de ajuste de <em>rtl_fm</em> que necesitemos: <strong>-p</strong> para los PPM, <strong>-d</strong> para indicar el número de serie del dispositivo, <strong>-g</strong> para la ganancia, etc.</p>
+<p>Por último, vamos a hacer que el proceso funcione de forma autónoma en la Raspberry Pi y que se inicie de forma automática cuando esta se reinicie. Para ello vamos a crear un servicio que lo haga todo y que se lance al iniciar la Raspberry Pi.</p>
+<p>Lo primero será crear un archivo <em>unit</em> con la información del servicio:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/systemd/system/aprsigate.service</span><br></pre></td></tr></table></figure>
+
+<p>El contenido del archivo será el siguiente (modificar si es necesario):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=APRS iGate</span><br><span class="line">After=network.target</span><br><span class="line">StartLimitIntervalSec=0</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=1</span><br><span class="line">User=pi</span><br><span class="line">ExecStart=/bin/sh -c <span class="string">&#x27;rtl_fm -f 144.80M -g 37 - | direwolf -c /etc/direwolf.conf -r 24000 -D 1 -&#x27;</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>Ahora vamos a cargar el servicio en el arranque mediante el siguiente comando:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> aprsigate</span><br></pre></td></tr></table></figure>
+
+<p>Por último iniciamos el servicio:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start aprsigate</span><br></pre></td></tr></table></figure>
+
+<p>Para consultar el estado del servicio ejecutamos:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status aprsigate</span><br></pre></td></tr></table></figure>
+
+<p>Si todo está correcto tendremos la siguiente salida:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">pi@raspberrypi:~ $ sudo systemctl status aprsigate</span><br><span class="line">● aprsigate.service - APRS iGate</span><br><span class="line">     Loaded: loaded (/etc/systemd/system/aprsigate.service; enabled; vendor preset: enabled)</span><br><span class="line">     Active: active (running) since Sat 2022-09-03 17:08:03 CEST; 31s ago</span><br><span class="line">   Main PID: 1367 (sh)</span><br><span class="line">      Tasks: 21 (<span class="built_in">limit</span>: 415)</span><br><span class="line">        CPU: 17.650s</span><br><span class="line">     CGroup: /system.slice/aprsigate.service</span><br><span class="line">             ├─1367 /bin/sh -c rtl_fm -f 144.80M -g 37 - | direwolf -c /etc/direwo&gt;</span><br><span class="line">             ├─1368 rtl_fm -f 144.80M -g 37 -</span><br><span class="line">             └─1369 direwolf -c /etc/direwolf.conf -r 24000 -D 1 -</span><br><span class="line"></span><br><span class="line">Sep 03 17:08:04 raspberrypi sh[1368]: Oversampling output by: 1x.</span><br><span class="line">Sep 03 17:08:04 raspberrypi sh[1368]: Buffer size: 8.13ms</span><br><span class="line">Sep 03 17:08:04 raspberrypi sh[1368]: Exact sample rate is: 1008000.009613 Hz</span><br><span class="line">Sep 03 17:08:04 raspberrypi sh[1368]: Allocating 15 zero-copy buffers</span><br><span class="line">Sep 03 17:08:04 raspberrypi sh[1368]: Sampling at 1008000 S/s.</span><br><span class="line">Sep 03 17:08:04 raspberrypi sh[1368]: Output at 24000 Hz.</span><br><span class="line">Sep 03 17:08:08 raspberrypi sh[1369]: Now connected to IGate server euro.aprs2.net (46.18.33.196)</span><br><span class="line">Sep 03 17:08:08 raspberrypi sh[1369]: Check server status here http://46.18.33.196:14501</span><br><span class="line">Sep 03 17:08:13 raspberrypi sh[1369]: [ig] <span class="comment"># aprsc 2.1.4-g408ed49</span></span><br><span class="line">Sep 03 17:08:13 raspberrypi sh[1369]: [ig] <span class="comment"># logresp EA7KOO-10 verified, server T2BELGIUM</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">Artículos relacionados</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/instalacion-openwebrx/" rel="bookmark">Instalar receptor SDR online con OpenWebRX</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/instalacion-rtlsdr-raspberrypi/" rel="bookmark">Instalar dispositivo RTL-SDR en Linux</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/instalacion-spyserver-raspberrypi/" rel="bookmark">Instalación de SPY Server en Raspberry Pi</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/eleccion-sdr/" rel="bookmark">Elección del dispositivo SDR</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/instalacion-rtlsdr-macos/" rel="bookmark">Instalar de dispositivo RTL-SDR en macOS</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+          <div class="followme">
+  <span>Síguenos en nuestros otros canales</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://twitter.com/sdr_esp">
+          <span class="icon">
+            <i class="fab fa-twitter"></i>
+          </span>
+
+          <span class="label">Twitter</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://www.youtube.com/channel/UCoGAWwxJqds9iTIJCUyaSRA">
+          <span class="icon">
+            <i class="fab fa-youtube"></i>
+          </span>
+
+          <span class="label">YouTube</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://t.me/sdr_esp">
+          <span class="icon">
+            <i class="fab fa-telegram-plane"></i>
+          </span>
+
+          <span class="label">Telegram</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/RTL-SDR/" rel="tag"><i class="fa fa-tag"></i> RTL-SDR</a>
+              <a href="/tags/APRS/" rel="tag"><i class="fa fa-tag"></i> APRS</a>
+              <a href="/tags/Raspberry-Pi/" rel="tag"><i class="fa fa-tag"></i> Raspberry Pi</a>
+              <a href="/tags/DireWolf/" rel="tag"><i class="fa fa-tag"></i> DireWolf</a>
+          </div>
+          
+
+<div class="post-copyright">
+<ul>
+  <!--
+  <li class="post-copyright-author">
+      <strong>Escrito por:  </strong>EA7KOO
+  </li>
+  <li class="post-copyright-link">
+      <strong>Enlace a la entrada: </strong>
+      <a href="https://sdr-es.com/instalacion-igate-APRS-raspberrypi/" title="Instalación de iGate APRS en Raspberry Pi">https://sdr-es.com/instalacion-igate-APRS-raspberrypi/</a>
+  </li>
+  -->
+  <li class="post-copyright-license">
+    <strong>Copyright:  </strong>Todos los artículos de este sitio están licenciados bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> a no ser que se especifique una licencia adicional.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/recibir-satelite-eshail2-qo100/" rel="prev" title="Recibir satélite Es'hail-2/QO-100">
+                  <i class="fa fa-chevron-left"></i> Recibir satélite Es'hail-2/QO-100
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/recepcion-satelites-meteorologicos-HRPT/" rel="next" title="Recibir imágenes HRPT desde satélites meteorológicos">
+                  Recibir imágenes HRPT desde satélites meteorológicos <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class=""></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SDR en español</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Twitter,Facebook,Linkedin,Reddit,GoogleBookmarks";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
+</body>
+</html>
