@@ -3,7 +3,7 @@ title: Recibir satélites meteorológicos Meteor-M
 date: 2020-03-27 12:10:49
 tags: [Satélites, Satélites meteorológicos, Meteorología]
 author: EA7KOO
-updated: 2022-01-06 09:10:12
+updated: 2023-02-05 16:10:12
 description: Guía paso a paso sobre cómo recibir imágenes LRTP desde los satélites meteorológicos rusos Meteor-M.
 ---
 
@@ -29,7 +29,7 @@ Tenemos en órbita tres satélites Meteor-M, pero actualmente solo uno de ellos 
 | **COSPAR ID**   | 2009-049A   | 2014-037A    | 2019-038A     |
 | **Masa de lanzamiento**  | 2.900 Kg | 2.900 Kg | 2.900 Kg |
 | **Fecha de lanzamiento** | 17 de Septiembre de 2009 | 8 de Julio de 2014 | 5 de Julio de 2019 |
-| **Estado LRPT**      | Inactivo    | Operativo(*) | Averiado      |
+| **Estado LRPT**      | Inactivo    | Averiado(*) | Averiado      |
 | **Frecuencia LRPT**  | -           | 137,100 MHz  | -             |
 
 _(*) El satélite tiene [un fallo](http://vu2iia-meteor-m2.blogspot.com/2014/10/meteor-m2-images-from-rtl-sdr.html) en el sistema de compresión de imágenes RAW HRPT a JPEG LRPT. Esto produce unos cortes en las imágenes recibidas._

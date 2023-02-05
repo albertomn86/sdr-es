@@ -3,7 +3,7 @@ title: Elección del dispositivo SDR
 date: 2020-03-16 12:07:36
 tags: RTL-SDR
 author: EA7KOO
-updated: 2022-01-06 15:10:12
+updated: 2023-02-05 16:10:12
 description: Guía para la elección del dispositivo SDR. Tabla comparativa y características de los dispositivos más vendidos.
 ---
 
@@ -14,19 +14,19 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 
 | Dispositivo | Sintonizador | Ancho de Banda | Rango frecuencias | Bias Tee | Precio |
 | --- | :-: | --: | --- | :-: | --: |
-| [Modelos genéricos](/eleccion-sdr/#Modelos-genericos) | FC0012 | 2.4 MHz | 22 MHz – 948,6 MHz | No | ~12€ |
-| [Modelos genéricos](/eleccion-sdr/#Modelos-genericos) | R820T/2 | 2.4 MHz | 24 MHz – 1700 MHz | No | ~15€ |
-| [RTL-SDR Blog V3](/eleccion-sdr/#RTL-SDR-Blog-V3) | R820T2 | 2.4 MHz | 500 kHz – 1766 MHz | Sí | ~35€ |
-| [Nooelec NESDR SMArt v4](/eleccion-sdr/#Nooelec-NESDR-SMArt-v4) | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | No | ~37€ |
-| [Nooelec NESDR SMArTee v2](/eleccion-sdr/#Nooelec-NESDR-SMArTee-v2) | R820T2 | 2.4 MHz | 25 MHz - 1750 MHz | Sí | ~37€ |
-| [Nooelec NESDR SMArt XTR](/eleccion-sdr/#Nooelec-NESDR-SMArt-XTR) | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | No | ~45€ |
-| [Nooelec NESDR SMArTee XTR](/eleccion-sdr/#Nooelec-NESDR-SMArTee-XTR) | E4000  | 2.4 MHz | 65 MHz - 2300 MHz | Sí | ~47€ |
-| [Nooelec NESDR Nano 3](/eleccion-sdr/#Nooelec-NESDR-Nano-3) | R820T2 | 2.4 MHz | 25 MHz - 1700 MHz | No | ~30€ |
-| [Airspy Mini](/eleccion-sdr/#Airspy-Mini) | R820T2 |  6 MHz | 24 MHz - 1700 MHz | Sí | ~140€ |
-| [Airspy R2](/eleccion-sdr/#Airspy-R2) | R820T2 |  10 MHz | 24 MHz - 1700 MHz | Sí | ~235€ |
-| [Airspy HF+ Discovery](/eleccion-sdr/#Airspy-HF-Discovery) |  -  | 610 kHz | 0.5 kHz - 31 MHz, 60 - 260 MHz | No | ~210€ |
+| [Modelos genéricos](/eleccion-sdr/#Modelos-genericos) | FC0012 | 2,4 MHz | 22 MHz – 948,6 MHz | No | ~12€ |
+| [Modelos genéricos](/eleccion-sdr/#Modelos-genericos) | R820T/2 | 2,4 MHz | 24 MHz – 1700 MHz | No | ~15€ |
+| [RTL-SDR Blog V3](/eleccion-sdr/#RTL-SDR-Blog-V3) | R820T2 | 2,4 MHz | 500 kHz – 1766 MHz | Sí | ~38€ |
+| [Nooelec NESDR SMArt v5](/eleccion-sdr/#Nooelec-NESDR-SMArt-v5) | R820T2 | 3,2 MHz | 100 KHz - 1750 MHz | No | ~41€ |
+| [Nooelec NESDR SMArTee v2](/eleccion-sdr/#Nooelec-NESDR-SMArTee-v2) | R820T2 | 2,4 MHz | 25 MHz - 1750 MHz | Sí | ~41€ |
+| [Nooelec NESDR SMArt XTR](/eleccion-sdr/#Nooelec-NESDR-SMArt-XTR) | E4000  | 2,4 MHz | 65 MHz - 2300 MHz | No | ~54€ |
+| [Nooelec NESDR SMArTee XTR](/eleccion-sdr/#Nooelec-NESDR-SMArTee-XTR) | E4000  | 2,4 MHz | 65 MHz - 2300 MHz | Sí | ~54€ |
+| [Nooelec NESDR Nano 3](/eleccion-sdr/#Nooelec-NESDR-Nano-3) | R820T2 | 2,4 MHz | 25 MHz - 1700 MHz | No | ~35€ |
+| [Airspy Mini](/eleccion-sdr/#Airspy-Mini) | R820T2 |  6 MHz | 24 MHz - 1700 MHz | Sí | ~120€ |
+| [Airspy R2](/eleccion-sdr/#Airspy-R2) | R820T2 |  10 MHz | 24 MHz - 1700 MHz | Sí | ~209€ |
+| [Airspy HF+ Discovery](/eleccion-sdr/#Airspy-HF-Discovery) |  -  | 610 kHz | 0.5 kHz - 31 MHz, 60 - 260 MHz | No | ~209€ |
 | [Airspy HF+ Dual Port](/eleccion-sdr/#Airspy-HF-Dual-Port) |  -  | 610 kHz | 9 kHz - 31 MHz, 60 - 260 MHz | No | ~240€ |
-| [SDRplay RSP1A](/eleccion-sdr/#SDRplay-RSP1A) |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~122€ |
+| [SDRplay RSP1A](/eleccion-sdr/#SDRplay-RSP1A) |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~125€ |
 | [SDRplay RSPdx](/eleccion-sdr/#SDRplay-RSPdx) |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~228€ |
 | [SDRplay RSPduo](/eleccion-sdr/#SDRplay-RSPduo) |  -  | 10 MHz | 1 kHz - 2000 MHz | Sí | ~286€ |
 | [KiwiSDR](/eleccion-sdr/#KiwiSDR) |  -  | 32 MHz | 10 KHz - 30 MHz  | No | ~330€ |
@@ -61,14 +61,14 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 - Más información: [Datasheet (PDF)](https://www.rtl-sdr.com/wp-content/uploads/2018/02/RTL-SDR-Blog-V3-Datasheet.pdf).
 
 
-## Nooelec NESDR SMArt v4
+## Nooelec NESDR SMArt v5
 
-{% asset_img smartv4.jpg 500 "Nooelec NESDR SMArt v4" %}
+{% asset_img smartv5.jpg 500 "Nooelec NESDR SMArt v5" %}
 
-- **Ancho de banda:** Hasta 2,4 MHz.
+- **Ancho de banda:** Hasta 3,2 MHz.
 - **ADC:** RTL2832U 8-bits.
 - **Sintonizador:** R820T2.
-- **Rango de frecuencias:** 25 MHz - 1.750 MHz.
+- **Rango de frecuencias:** 100 KHz - 1.750 MHz (100 kHz – 24 MHz en modo *Direct Sampling*).
 - **Bias-Tee:** No.
 - **TCXO:** 0,5 PPM.
 - **Conector:** SMA hembra.
@@ -147,7 +147,7 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 - **Bias-Tee:** Sí, activación por software (4,5V).
 - **TCXO:** 0,5 PPM.
 - **Conector:** SMA hembra.
-- Disponible en WiMo.
+- Disponible en Astroradio y WiMo.
 - Más información: [Airspy](https://airspy.com/airspy-mini/).
 
 
@@ -162,7 +162,7 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 - **Bias-Tee:** Sí, activación por software (4,5V).
 - **TCXO:** 0,5 PPM.
 - **Conector:** SMA hembra.
-- Disponible en WiMo.
+- Disponible en Astroradio y WiMo.
 - Más información: [Airspy](https://airspy.com/airspy-r2/).
 
 

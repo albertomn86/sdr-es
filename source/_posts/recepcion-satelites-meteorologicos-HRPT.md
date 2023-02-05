@@ -10,7 +10,7 @@ Como ya vimos en artículos anteriores, podemos recibir imágenes meteorológica
 
 <!-- more -->
 
-Este artículo no es más que una breve adaptación del artículo de  ["Beginner's guide to HRPT reception"](https://sgcderek.github.io/blog/beginner-hrpt-guide.html) de [Derek OK9SGC](https://sgcderek.github.io/). En dicho artículo están descritos minuciosamente y todos los pasos que vamos a ver aquí, por lo que es recomendable su lectura previamente a la de este artículo.
+Este artículo no es más que una breve adaptación del artículo de  ["Beginner's guide to HRPT reception"](https://sgcderek.github.io/blog/beginner-hrpt-guide.html) de [Derek OK9SGC](https://sgcderek.github.io/). En dicho artículo están descritos minuciosamente todos los pasos que vamos a ver aquí, por lo que es recomendable su lectura previamente a la de este artículo.
 Todos los pasos que se van a mostrar a continuación son los que se han seguido hasta la obtención de imágenes de una forma bastante aceptable. Esto quiere decir, que no es el único ni el mejor método para obtener dichas imágenes, sino que existen muchas otras formas para obtenerlas.
 
 # Satélites
