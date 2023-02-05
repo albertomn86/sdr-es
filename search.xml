@@ -225,7 +225,7 @@
 <tbody><tr>
 <td><a href="/eleccion-sdr/#Modelos-genericos">Modelos genéricos</a></td>
 <td align="center">FC0012</td>
-<td align="right">2.4 MHz</td>
+<td align="right">2,4 MHz</td>
 <td>22 MHz – 948,6 MHz</td>
 <td align="center">No</td>
 <td align="right">~12€</td>
@@ -233,7 +233,7 @@
 <tr>
 <td><a href="/eleccion-sdr/#Modelos-genericos">Modelos genéricos</a></td>
 <td align="center">R820T/2</td>
-<td align="right">2.4 MHz</td>
+<td align="right">2,4 MHz</td>
 <td>24 MHz – 1700 MHz</td>
 <td align="center">No</td>
 <td align="right">~15€</td>
@@ -241,50 +241,50 @@
 <tr>
 <td><a href="/eleccion-sdr/#RTL-SDR-Blog-V3">RTL-SDR Blog V3</a></td>
 <td align="center">R820T2</td>
-<td align="right">2.4 MHz</td>
+<td align="right">2,4 MHz</td>
 <td>500 kHz – 1766 MHz</td>
 <td align="center">Sí</td>
-<td align="right">~35€</td>
+<td align="right">~38€</td>
 </tr>
 <tr>
-<td><a href="/eleccion-sdr/#Nooelec-NESDR-SMArt-v4">Nooelec NESDR SMArt v4</a></td>
+<td><a href="/eleccion-sdr/#Nooelec-NESDR-SMArt-v5">Nooelec NESDR SMArt v5</a></td>
 <td align="center">R820T2</td>
-<td align="right">2.4 MHz</td>
-<td>25 MHz - 1750 MHz</td>
+<td align="right">3,2 MHz</td>
+<td>100 KHz - 1750 MHz</td>
 <td align="center">No</td>
-<td align="right">~37€</td>
+<td align="right">~41€</td>
 </tr>
 <tr>
 <td><a href="/eleccion-sdr/#Nooelec-NESDR-SMArTee-v2">Nooelec NESDR SMArTee v2</a></td>
 <td align="center">R820T2</td>
-<td align="right">2.4 MHz</td>
+<td align="right">2,4 MHz</td>
 <td>25 MHz - 1750 MHz</td>
 <td align="center">Sí</td>
-<td align="right">~37€</td>
+<td align="right">~41€</td>
 </tr>
 <tr>
 <td><a href="/eleccion-sdr/#Nooelec-NESDR-SMArt-XTR">Nooelec NESDR SMArt XTR</a></td>
 <td align="center">E4000</td>
-<td align="right">2.4 MHz</td>
+<td align="right">2,4 MHz</td>
 <td>65 MHz - 2300 MHz</td>
 <td align="center">No</td>
-<td align="right">~45€</td>
+<td align="right">~54€</td>
 </tr>
 <tr>
 <td><a href="/eleccion-sdr/#Nooelec-NESDR-SMArTee-XTR">Nooelec NESDR SMArTee XTR</a></td>
 <td align="center">E4000</td>
-<td align="right">2.4 MHz</td>
+<td align="right">2,4 MHz</td>
 <td>65 MHz - 2300 MHz</td>
 <td align="center">Sí</td>
-<td align="right">~47€</td>
+<td align="right">~54€</td>
 </tr>
 <tr>
 <td><a href="/eleccion-sdr/#Nooelec-NESDR-Nano-3">Nooelec NESDR Nano 3</a></td>
 <td align="center">R820T2</td>
-<td align="right">2.4 MHz</td>
+<td align="right">2,4 MHz</td>
 <td>25 MHz - 1700 MHz</td>
 <td align="center">No</td>
-<td align="right">~30€</td>
+<td align="right">~35€</td>
 </tr>
 <tr>
 <td><a href="/eleccion-sdr/#Airspy-Mini">Airspy Mini</a></td>
@@ -292,7 +292,7 @@
 <td align="right">6 MHz</td>
 <td>24 MHz - 1700 MHz</td>
 <td align="center">Sí</td>
-<td align="right">~140€</td>
+<td align="right">~120€</td>
 </tr>
 <tr>
 <td><a href="/eleccion-sdr/#Airspy-R2">Airspy R2</a></td>
@@ -300,7 +300,7 @@
 <td align="right">10 MHz</td>
 <td>24 MHz - 1700 MHz</td>
 <td align="center">Sí</td>
-<td align="right">~235€</td>
+<td align="right">~209€</td>
 </tr>
 <tr>
 <td><a href="/eleccion-sdr/#Airspy-HF-Discovery">Airspy HF+ Discovery</a></td>
@@ -308,7 +308,7 @@
 <td align="right">610 kHz</td>
 <td>0.5 kHz - 31 MHz, 60 - 260 MHz</td>
 <td align="center">No</td>
-<td align="right">~210€</td>
+<td align="right">~209€</td>
 </tr>
 <tr>
 <td><a href="/eleccion-sdr/#Airspy-HF-Dual-Port">Airspy HF+ Dual Port</a></td>
@@ -324,7 +324,7 @@
 <td align="right">10 MHz</td>
 <td>1 kHz - 2000 MHz</td>
 <td align="center">Sí</td>
-<td align="right">~122€</td>
+<td align="right">~125€</td>
 </tr>
 <tr>
 <td><a href="/eleccion-sdr/#SDRplay-RSPdx">SDRplay RSPdx</a></td>
@@ -376,13 +376,13 @@
 <li>Disponible en eBay <a href="https://www.ebay.com/str/rtlsdrblog">(tienda oficial)</a>, AliExpress <a href="https://es.aliexpress.com/store/4523039">(tienda oficial)</a>, RTL-SDR.com y Astroradio.</li>
 <li>Más información: <a href="https://www.rtl-sdr.com/wp-content/uploads/2018/02/RTL-SDR-Blog-V3-Datasheet.pdf">Datasheet (PDF)</a>.</li>
 </ul>
-<h2 id="Nooelec-NESDR-SMArt-v4"><a href="#Nooelec-NESDR-SMArt-v4" class="headerlink" title="Nooelec NESDR SMArt v4"></a>Nooelec NESDR SMArt v4</h2><img src="/eleccion-sdr/smartv4.jpg" class="" width="500" title="Nooelec NESDR SMArt v4">
+<h2 id="Nooelec-NESDR-SMArt-v5"><a href="#Nooelec-NESDR-SMArt-v5" class="headerlink" title="Nooelec NESDR SMArt v5"></a>Nooelec NESDR SMArt v5</h2><img src="/eleccion-sdr/smartv5.jpg" class="" width="500" title="Nooelec NESDR SMArt v5">
 
 <ul>
-<li><strong>Ancho de banda:</strong> Hasta 2,4 MHz.</li>
+<li><strong>Ancho de banda:</strong> Hasta 3,2 MHz.</li>
 <li><strong>ADC:</strong> RTL2832U 8-bits.</li>
 <li><strong>Sintonizador:</strong> R820T2.</li>
-<li><strong>Rango de frecuencias:</strong> 25 MHz - 1.750 MHz.</li>
+<li><strong>Rango de frecuencias:</strong> 100 KHz - 1.750 MHz (100 kHz – 24 MHz en modo <em>Direct Sampling</em>).</li>
 <li><strong>Bias-Tee:</strong> No.</li>
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> SMA hembra.</li>
@@ -451,7 +451,7 @@
 <li><strong>Bias-Tee:</strong> Sí, activación por software (4,5V).</li>
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> SMA hembra.</li>
-<li>Disponible en WiMo.</li>
+<li>Disponible en Astroradio y WiMo.</li>
 <li>Más información: <a href="https://airspy.com/airspy-mini/">Airspy</a>.</li>
 </ul>
 <h2 id="Airspy-R2"><a href="#Airspy-R2" class="headerlink" title="Airspy R2"></a>Airspy R2</h2><img src="/eleccion-sdr/airspyr2.jpg" class="" width="350" title="Airspy R2">
@@ -464,7 +464,7 @@
 <li><strong>Bias-Tee:</strong> Sí, activación por software (4,5V).</li>
 <li><strong>TCXO:</strong> 0,5 PPM.</li>
 <li><strong>Conector:</strong> SMA hembra.</li>
-<li>Disponible en WiMo.</li>
+<li>Disponible en Astroradio y WiMo.</li>
 <li>Más información: <a href="https://airspy.com/airspy-r2/">Airspy</a>.</li>
 </ul>
 <h2 id="Airspy-HF-Discovery"><a href="#Airspy-HF-Discovery" class="headerlink" title="Airspy HF+ Discovery"></a>Airspy HF+ Discovery</h2><img src="/eleccion-sdr/hfplusdiscovery.jpg" class="" width="400" title="Airspy HF+ Discovery">
@@ -973,108 +973,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Instalación de estación terrestre con SatNOGS (II)</title>
-    <url>/instalacion-satnogs-ansible/</url>
-    <content><![CDATA[<p>En el artículo anterior <a href="/instalacion-satnogs/">“Instalación de estación terrestre con SatNOGS”</a> vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.<br>En este artículo veremos cómo realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.</p>
-<span id="more"></span>
-
-
-<p>Si bien este artículo se centra en la instalación en una Raspberry Pi, es posible realizar la instalación en otros dispositivos Linux mediante este mismo procedimiento. El <em>playbook</em> de Ansible que vamos a utilizar es compatible con las siguientes distribuciones y versiones:</p>
-<ul>
-<li><strong>Debian:</strong> <em>stretch</em>, <em>buster</em>.</li>
-<li><strong>Raspbian:</strong> <em>stretch</em>, <em>buster</em>.</li>
-</ul>
-<h2 id="Instalacion-de-Ansible"><a href="#Instalacion-de-Ansible" class="headerlink" title="Instalación de Ansible"></a>Instalación de Ansible</h2><p>Lo primero que haremos será instalar la última versión de Ansible. Para ello seguimos los siguientes pasos:</p>
-<ol>
-<li>Añadir el repositorio de Ansible.</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &quot;deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main&quot; | sudo tee -a /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Añadir la clave del repositorio.</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Actualizar lista de repositorios.</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Instalar Ansible.</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y ansible</span><br></pre></td></tr></table></figure>
-
-<h2 id="Instalacion-del-cliente-Ansible-de-SatNOGS"><a href="#Instalacion-del-cliente-Ansible-de-SatNOGS" class="headerlink" title="Instalación del cliente Ansible de SatNOGS"></a>Instalación del cliente Ansible de SatNOGS</h2><p>A continuación vamos a descargar e instalar el instalador del cliente SatNOGS.</p>
-<ol>
-<li>Instalamos las dependencias que vamos a necesitar:</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y git needrestart</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Descargamos el repositorio:</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b stable https://gitlab.com/librespacefoundation/satnogs/satnogs-client-ansible.git</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Accedemos a la carpeta descargada:</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd satnogs-client-ansible</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Copiamos y renombramos el siguiente directorio:</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cp -r production.dist production</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>Ahora editamos el archivo <code>hosts</code> con nuestros datos de conexión SSH a la Raspberry Pi:</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano production/inventory/hosts</span><br></pre></td></tr></table></figure>
-
-<p>Debemos editar el <em>host</em>, el usuario y la clave:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">all:</span><br><span class="line">  hosts:</span><br><span class="line">    satnogs:</span><br><span class="line">      ansible_host: &#x27;localhost&#x27;</span><br><span class="line">      ansible_user: &#x27;pi&#x27;</span><br><span class="line">      ansible_ssh_pass: &#x27;raspberry&#x27;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>Comprobamos la conexión SSH:</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh pi@localhost true</span><br></pre></td></tr></table></figure>
-
-<ol start="7">
-<li>Por último ejecutamos el <em>playbook</em>:</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ansible-playbook -i production/inventory -K site.yml</span><br></pre></td></tr></table></figure>
-
-<p>La instalación tardará unos minutos (pueden ser bastantes dependiendo de nuestra conexión y la CPU de la Raspberry Pi) y al finalizar mostrará un mensaje como el siguiente:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- Play recap -</span><br><span class="line">  satnogs                    : ok=121  changed=49   unreachable=0    failed=0    rescued=0    ignored=0</span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h2><p>Los pasos para la configuración del cliente son idénticos a los descritos en el artículo anterior en este mismo apartado.</p>
-<p>La única observación es que ahora al tener más de un dispositivo SDR conectado, debemos indicar cual de ellos debe utilizar.<br>Necesitaremos el número de serie del dispositivo para diferenciarlos. Para extraerlo usamos la herramienta <code>rtl_test</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ rtl_test</span><br><span class="line">Found 2 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line">  1:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<p>En este caso vamos a utilizar el segundo dispositivo, y por lo tanto se lo debemos indicar a SatNOGS. Para ello en <strong><em>Basic configuration options</em></strong> realizaremos el siguiente cambio:</p>
-<table>
-<thead>
-<tr>
-<th>Ajuste</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>SATNOGS_SOAPY_RX_DEVICE</td>
-<td>Dispositivo SDR que vamos a usar y número de serie: <code>driver=rtlsdr,serial=08201703</code>.</td>
-</tr>
-</tbody></table>
-<img src="/instalacion-satnogs-ansible/satnogs-config.png" class="" title="SatNOGS Setup">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Linux</tag>
-        <tag>Instalación</tag>
-        <tag>Raspberry Pi</tag>
-        <tag>SatNOGS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Instalación de estación terrestre con SatNOGS</title>
     <url>/instalacion-satnogs/</url>
     <content><![CDATA[<p><a href="https://satnogs.org/">SatNOGS</a> (Satellite Networked Open Ground Station) es una plataforma de software y hardware de código abierto con el propósito de crear una red global de estaciones terrestres de seguimiento de satélites.</p>
@@ -1288,6 +1186,108 @@
 ]]></content>
       <tags>
         <tag>Satélites</tag>
+        <tag>Instalación</tag>
+        <tag>Raspberry Pi</tag>
+        <tag>SatNOGS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalación de estación terrestre con SatNOGS (II)</title>
+    <url>/instalacion-satnogs-ansible/</url>
+    <content><![CDATA[<p>En el artículo anterior <a href="/instalacion-satnogs/">“Instalación de estación terrestre con SatNOGS”</a> vimos como crear una estación terrestre para el seguimiento de satélites usando una Raspberry Pi, y para ello utilizamos la imagen ya generada para el cliente de SatNOGS.<br>En este artículo veremos cómo realizar la instalación del cliente SatNOGS en una Raspberry Pi previamente configurada, en la que ya tenemos otros servicios corriendo.</p>
+<span id="more"></span>
+
+
+<p>Si bien este artículo se centra en la instalación en una Raspberry Pi, es posible realizar la instalación en otros dispositivos Linux mediante este mismo procedimiento. El <em>playbook</em> de Ansible que vamos a utilizar es compatible con las siguientes distribuciones y versiones:</p>
+<ul>
+<li><strong>Debian:</strong> <em>stretch</em>, <em>buster</em>.</li>
+<li><strong>Raspbian:</strong> <em>stretch</em>, <em>buster</em>.</li>
+</ul>
+<h2 id="Instalacion-de-Ansible"><a href="#Instalacion-de-Ansible" class="headerlink" title="Instalación de Ansible"></a>Instalación de Ansible</h2><p>Lo primero que haremos será instalar la última versión de Ansible. Para ello seguimos los siguientes pasos:</p>
+<ol>
+<li>Añadir el repositorio de Ansible.</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &quot;deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main&quot; | sudo tee -a /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Añadir la clave del repositorio.</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Actualizar lista de repositorios.</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Instalar Ansible.</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y ansible</span><br></pre></td></tr></table></figure>
+
+<h2 id="Instalacion-del-cliente-Ansible-de-SatNOGS"><a href="#Instalacion-del-cliente-Ansible-de-SatNOGS" class="headerlink" title="Instalación del cliente Ansible de SatNOGS"></a>Instalación del cliente Ansible de SatNOGS</h2><p>A continuación vamos a descargar e instalar el instalador del cliente SatNOGS.</p>
+<ol>
+<li>Instalamos las dependencias que vamos a necesitar:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y git needrestart</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Descargamos el repositorio:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b stable https://gitlab.com/librespacefoundation/satnogs/satnogs-client-ansible.git</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Accedemos a la carpeta descargada:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd satnogs-client-ansible</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Copiamos y renombramos el siguiente directorio:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cp -r production.dist production</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>Ahora editamos el archivo <code>hosts</code> con nuestros datos de conexión SSH a la Raspberry Pi:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano production/inventory/hosts</span><br></pre></td></tr></table></figure>
+
+<p>Debemos editar el <em>host</em>, el usuario y la clave:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">all:</span><br><span class="line">  hosts:</span><br><span class="line">    satnogs:</span><br><span class="line">      ansible_host: &#x27;localhost&#x27;</span><br><span class="line">      ansible_user: &#x27;pi&#x27;</span><br><span class="line">      ansible_ssh_pass: &#x27;raspberry&#x27;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>Comprobamos la conexión SSH:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh pi@localhost true</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>Por último ejecutamos el <em>playbook</em>:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ansible-playbook -i production/inventory -K site.yml</span><br></pre></td></tr></table></figure>
+
+<p>La instalación tardará unos minutos (pueden ser bastantes dependiendo de nuestra conexión y la CPU de la Raspberry Pi) y al finalizar mostrará un mensaje como el siguiente:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- Play recap -</span><br><span class="line">  satnogs                    : ok=121  changed=49   unreachable=0    failed=0    rescued=0    ignored=0</span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuracion-de-SatNOGS"><a href="#Configuracion-de-SatNOGS" class="headerlink" title="Configuración de SatNOGS"></a>Configuración de SatNOGS</h2><p>Los pasos para la configuración del cliente son idénticos a los descritos en el artículo anterior en este mismo apartado.</p>
+<p>La única observación es que ahora al tener más de un dispositivo SDR conectado, debemos indicar cual de ellos debe utilizar.<br>Necesitaremos el número de serie del dispositivo para diferenciarlos. Para extraerlo usamos la herramienta <code>rtl_test</code>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi:~ $ rtl_test</span><br><span class="line">Found 2 device(s):</span><br><span class="line">  0:  Realtek, RTL2838UHIDIR, SN: 02201602</span><br><span class="line">  1:  Realtek, RTL2838UHIDIR, SN: 08201703</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>En este caso vamos a utilizar el segundo dispositivo, y por lo tanto se lo debemos indicar a SatNOGS. Para ello en <strong><em>Basic configuration options</em></strong> realizaremos el siguiente cambio:</p>
+<table>
+<thead>
+<tr>
+<th>Ajuste</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SATNOGS_SOAPY_RX_DEVICE</td>
+<td>Dispositivo SDR que vamos a usar y número de serie: <code>driver=rtlsdr,serial=08201703</code>.</td>
+</tr>
+</tbody></table>
+<img src="/instalacion-satnogs-ansible/satnogs-config.png" class="" title="SatNOGS Setup">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Linux</tag>
         <tag>Instalación</tag>
         <tag>Raspberry Pi</tag>
         <tag>SatNOGS</tag>
@@ -1623,6 +1623,7 @@
     <title>Recepción del satélite FalconSAT-3</title>
     <url>/recepcion-falconsat-3/</url>
     <content><![CDATA[<p>El satélite FalconSAT-3 fue construido entre 2005 y 2006 por cadetes de la academia de la fuerza aérea de Estados Unidos. Desde que fue lanzado en 2007, el satélite ha llevado a cabo dos fases operadas por la academia de la fuerza aérea estadounidense y una tercera fase desde 2017 en la que se abrió su uso para el servicio de radioaficionados. El satélite funciona actualmente como repetidor en modo PACSAT.<br>PACSAT es un término genérico usado para describir un servicio digital para radioaficionados de almacenamiento y distribución por satélite. Este sistema, que utiliza el protocolo AX.25 para los paquetes de datos, permite reenviar mensajes de correo electrónico, telemetría, boletines informativos, etc.<br>En este artículo veremos cómo recibir estos mensajes con nuestro SDR.</p>
+<p><em>Actualización 05/02/2023: El satélite dejó de estar operativo el 21 de enero de 2023.</em></p>
 <span id="more"></span>
 
 <h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
@@ -1940,69 +1941,109 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción del satélite NAYIF-1</title>
-    <url>/recepcion-nayif1/</url>
-    <content><![CDATA[<p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos cómo recibirlos y decodificarlos.</p>
+    <title>Recibir satélites meteorológicos NOAA</title>
+    <url>/recepcion-satelites-meteorologicos-NOAA/</url>
+    <content><![CDATA[<p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
+<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos cómo recibir las imágenes de baja resolución en formato <a href="https://en.wikipedia.org/wiki/Automatic_picture_transmission">APT</a>.</p>
 <span id="more"></span>
 
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<img src="/recepcion-satelites-meteorologicos-NOAA/apt.jpg" class="" width="500" title="Imagen APT de satélite NOAA">
+
+
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Actualmente podemos recibir imágenes APT desde los siguientes satélites meteorológicos NOAA.</p>
+<table>
 <thead>
 <tr>
 <th>Satélite</th>
-<th>NAYIF-1 (EO-88)</th>
+<th>NOAA 15</th>
+<th>NOAA 18</th>
+<th>NOAA 19</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>Operador</strong></td>
-<td>EIAST y AUS</td>
-</tr>
-<tr>
 <td><strong>NORAD ID</strong></td>
-<td>42017</td>
+<td>25338</td>
+<td>28654</td>
+<td>33591</td>
 </tr>
 <tr>
 <td><strong>COSPAR ID</strong></td>
-<td>2017-008BX</td>
+<td>1998-030A</td>
+<td>2005-018A</td>
+<td>2009-005A</td>
 </tr>
 <tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (1.32 Kg)</td>
+<td><strong>Masa de lanzamiento</strong></td>
+<td>1.457 Kg</td>
+<td>1.457 Kg</td>
+<td>1.440 Kg</td>
 </tr>
 <tr>
-<td><strong>Lanzamiento</strong></td>
-<td>15 de Febrero de 2017</td>
+<td><strong>Fecha de lanzamiento</strong></td>
+<td>13 de Mayo de 1998</td>
+<td>20 de Mayo de 2005</td>
+<td>6 de Febrero de 2009</td>
 </tr>
 <tr>
-<td><strong>Señal</strong></td>
-<td>145,940 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://www.mbrsc.ae/satellite-programme/nayif-1">https://www.mbrsc.ae/satellite-programme/nayif-1</a></td>
+<td><strong>Señal APT</strong></td>
+<td>137,620 MHz</td>
+<td>137,9125 MHz</td>
+<td>137,100 MHz</td>
 </tr>
 </tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
+<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la versión beta 2.11.2):</p>
+<p><a href="https://wxtoimgrestored.xyz/downloads/"><center>Descargar WXtoImg</center></a></p>
+<p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
+<ol>
+<li><p>El primer paso será introducir la clave de registro para poder desbloquear todas las funcionalidades. En la misma página desde dónde hemos descargado el programa podemos encontrar los datos para registrarlo.</p>
+</li>
+<li><p>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <strong><em>&quot;Options&quot;</em></strong> y <strong><em>&quot;Ground Station Location…&quot;</em></strong>. En esta ventana introducimos nuestras coordenadas y altitud.</p>
+</li>
+</ol>
+<img src="/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
+
+<ol start="3">
+<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ello vamos a <strong><em>&quot;Options&quot;</em></strong> y <strong><em>&quot;Recording Options&quot;</em></strong>. Aquí seleccionamos nuestro cable de audio virtual.</li>
+</ol>
+<img src="/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
+
+<ol start="4">
+<li>Marcamos la opción de resincronizado en <strong><em>&quot;Options&quot;</em></strong>, <strong><em>&quot;Resync&quot;</em></strong>.</li>
+</ol>
+<img src="/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
+
+<ol start="5">
+<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <strong><em>&quot;Options&quot;</em></strong>, <strong><em>&quot;Auto Processing Options…&quot;</em></strong> y marcamos <strong><em>&quot;Create image(s)&quot;</em></strong>. Después hacemos clic en <strong><em>&quot;Image Settings…&quot;</em></strong> y elegimos las imágenes que queramos.</li>
+</ol>
+<img src="/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
+
+<ol start="6">
+<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <strong><em>&quot;File&quot;</em></strong> y hacemos clic en <strong><em>&quot;Update Keplers&quot;</em></strong>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
+</ol>
+<img src="/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
+
+<ol start="7">
+<li>Es importante tener la hora del sistema lo mejor ajustada posible, ya que de ello dependerá en gran medida el ajuste de las capas que WXtoImg superpone a la imagen.</li>
+</ol>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p>Para recibir el pase tenemos que sacar el audio de SDR# mediante el cable de audio virtual y tener WXtoImg abierto. Una vez el satélite comience a verse sobre el horizonte, SDR# iniciará el seguimiento y WXtoImg comenzará a recibir y procesar la señal.</p>
+<img src="/recepcion-satelites-meteorologicos-NOAA/sdr_sharp.jpg" class="" title="SDR#">
 
+<p>Es importante asegurarse que el volumen de la salida de SDR# sea el adecuado. Podemos ver el nivel que llega a WXtoImg en la esquina inferior derecha. Para que la imagen se genere correctamente, el indicador de nivel de volumen debe mantenerse en color verde durante todo el pase.</p>
+<img src="/recepcion-satelites-meteorologicos-NOAA/wx_recibiendo.jpg" class="" title="WXtoImg">
 
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="/recepcion-funcube1/">FUNcube-1</a> y <a href="/recepcion-jy1sat/">JY1-SAT</a>. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi"><center>Nayif-1 Dashboard v1040</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/recepcion-nayif1/config.png" class="" title="NAYIF-1 Dashboard Configuración">
-
-<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/recepcion-nayif1/telem.png" class="" title="NAYIF-1 Dashboard Telemetría">
-
-<p><em>Mensajes:</em></p>
-<img src="/recepcion-nayif1/messages.png" class="" title="NAYIF-1 Dashboard Mensajes">
+<p>Al finalizar el pase, WXtoImg dejará de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.</p>
+<img src="/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" width="500" title="WXtoImg">
 ]]></content>
       <tags>
         <tag>Satélites</tag>
-        <tag>Cubesat</tag>
+        <tag>Satélites meteorológicos</tag>
+        <tag>NOAA</tag>
+        <tag>Windows</tag>
+        <tag>Meteorología</tag>
+        <tag>WXtoIMG</tag>
       </tags>
   </entry>
   <entry>
@@ -2011,7 +2052,7 @@
     <content><![CDATA[<p>Como ya vimos en artículos anteriores, podemos recibir imágenes meteorológicas desde los distintos satélites que fotografían continuamente la superficie terrestre desde una órbita baja. Hasta ahora habíamos visto como obtener esas imágenes de baja resolución en la banda de VHF desde los satélites NOAA y Meteor-M. En este artículo veremos cómo obtener imágenes en una resolución mucho mayor en la banda L.</p>
 <span id="more"></span>
 
-<p>Este artículo no es más que una breve adaptación del artículo de  <a href="https://sgcderek.github.io/blog/beginner-hrpt-guide.html">“Beginner’s guide to HRPT reception”</a> de <a href="https://sgcderek.github.io/">Derek OK9SGC</a>. En dicho artículo están descritos minuciosamente y todos los pasos que vamos a ver aquí, por lo que es recomendable su lectura previamente a la de este artículo.<br>Todos los pasos que se van a mostrar a continuación son los que se han seguido hasta la obtención de imágenes de una forma bastante aceptable. Esto quiere decir, que no es el único ni el mejor método para obtener dichas imágenes, sino que existen muchas otras formas para obtenerlas.</p>
+<p>Este artículo no es más que una breve adaptación del artículo de  <a href="https://sgcderek.github.io/blog/beginner-hrpt-guide.html">“Beginner’s guide to HRPT reception”</a> de <a href="https://sgcderek.github.io/">Derek OK9SGC</a>. En dicho artículo están descritos minuciosamente todos los pasos que vamos a ver aquí, por lo que es recomendable su lectura previamente a la de este artículo.<br>Todos los pasos que se van a mostrar a continuación son los que se han seguido hasta la obtención de imágenes de una forma bastante aceptable. Esto quiere decir, que no es el único ni el mejor método para obtener dichas imágenes, sino que existen muchas otras formas para obtenerlas.</p>
 <h1 id="Satelites"><a href="#Satelites" class="headerlink" title="Satélites"></a>Satélites</h1><p>Los satélites que emiten actualmente imágenes en modo HRPT en banda L son los siguientes.</p>
 <table>
 <thead>
@@ -2142,109 +2183,69 @@
       </tags>
   </entry>
   <entry>
-    <title>Recibir satélites meteorológicos NOAA</title>
-    <url>/recepcion-satelites-meteorologicos-NOAA/</url>
-    <content><![CDATA[<p>Actualmente existen infinidad de satélites meteorológicos orbitando la Tierra. La mayoría de ellos envían sus imágenes y datos encriptados a las estaciones terrestres, pero existen otros satélites de los que es posible recibir sus imágenes de forma sencilla utilizando un dispositivo SDR. En este artículo veremos como recibir imágenes de los satélites meteorológicos NOAA. Estos satélites pertenecen a la agencia científica estadounidense NOAA (<em>National Oceanic and Atmospheric Administration</em>). Orbitan en una órbita polar y tienen como finalidad recoger datos atmosféricos tales como imágenes de las nubes y superficie terrestre, temperatura y humedad atmosférica y los niveles de ozono en las capas altas de la atmósfera.</p>
-<p>Estos satélites envían la información en diferentes frecuencias y modulaciones. En este articulo veremos cómo recibir las imágenes de baja resolución en formato <a href="https://en.wikipedia.org/wiki/Automatic_picture_transmission">APT</a>.</p>
+    <title>Recepción del satélite NAYIF-1</title>
+    <url>/recepcion-nayif1/</url>
+    <content><![CDATA[<p>El satélite NAYIF-1 es un CubeSat construido por estudiante de la <em>Emirates Institution for Advanced Science and Technology (EIAST)</em>, en colaboración con la <em>American University of Sharjah (AUS)</em>.<br>NAYIF-1 se basa en la plataforma FUNCube, por lo que también se identifica como FUNcube-5.<br>Este satélite envía datos de telemetría y mensajes que pueden ser recibidos con nuestros dispositivos SDR. En este artículo veremos cómo recibirlos y decodificarlos.</p>
 <span id="more"></span>
 
-<img src="/recepcion-satelites-meteorologicos-NOAA/apt.jpg" class="" width="500" title="Imagen APT de satélite NOAA">
-
-
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Actualmente podemos recibir imágenes APT desde los siguientes satélites meteorológicos NOAA.</p>
-<table>
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
 <thead>
 <tr>
 <th>Satélite</th>
-<th>NOAA 15</th>
-<th>NOAA 18</th>
-<th>NOAA 19</th>
+<th>NAYIF-1 (EO-88)</th>
 </tr>
 </thead>
 <tbody><tr>
+<td><strong>Operador</strong></td>
+<td>EIAST y AUS</td>
+</tr>
+<tr>
 <td><strong>NORAD ID</strong></td>
-<td>25338</td>
-<td>28654</td>
-<td>33591</td>
+<td>42017</td>
 </tr>
 <tr>
 <td><strong>COSPAR ID</strong></td>
-<td>1998-030A</td>
-<td>2005-018A</td>
-<td>2009-005A</td>
+<td>2017-008BX</td>
 </tr>
 <tr>
-<td><strong>Masa de lanzamiento</strong></td>
-<td>1.457 Kg</td>
-<td>1.457 Kg</td>
-<td>1.440 Kg</td>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (1.32 Kg)</td>
 </tr>
 <tr>
-<td><strong>Fecha de lanzamiento</strong></td>
-<td>13 de Mayo de 1998</td>
-<td>20 de Mayo de 2005</td>
-<td>6 de Febrero de 2009</td>
+<td><strong>Lanzamiento</strong></td>
+<td>15 de Febrero de 2017</td>
 </tr>
 <tr>
-<td><strong>Señal APT</strong></td>
-<td>137,620 MHz</td>
-<td>137,9125 MHz</td>
-<td>137,100 MHz</td>
+<td><strong>Señal</strong></td>
+<td>145,940 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://www.mbrsc.ae/satellite-programme/nayif-1">https://www.mbrsc.ae/satellite-programme/nayif-1</a></td>
 </tr>
 </tbody></table>
-<h2 id="Instalacion-de-WXtoImg"><a href="#Instalacion-de-WXtoImg" class="headerlink" title="Instalación de WXtoImg"></a>Instalación de WXtoImg</h2><p>Existen diferentes programas y utilidades para decodificar la señal APT de estos satélites. En este artículo vamos a utilizar <strong>SDR#</strong> y el software <strong>WXtoImg</strong> para Windows. Podemos descargarlo desde el siguiente enlace (para Windows 10 descargar la versión beta 2.11.2):</p>
-<p><a href="https://wxtoimgrestored.xyz/downloads/"><center>Descargar WXtoImg</center></a></p>
-<p>Una vez descargado e instalado, realizaremos los siguientes pasos para configurarlo:</p>
-<ol>
-<li><p>El primer paso será introducir la clave de registro para poder desbloquear todas las funcionalidades. En la misma página desde dónde hemos descargado el programa podemos encontrar los datos para registrarlo.</p>
-</li>
-<li><p>Introducir los datos de nuestra ubicación. Estos datos los necesita WXtoImg para calcular los pases de los satélites y para colocar la capa de líneas con los contornos. Cuanto más ajustados sean estos valores, mejor se ajustará esta capa a la imagen. Para introducirlos vamos a <strong><em>&quot;Options&quot;</em></strong> y <strong><em>&quot;Ground Station Location…&quot;</em></strong>. En esta ventana introducimos nuestras coordenadas y altitud.</p>
-</li>
-</ol>
-<img src="/recepcion-satelites-meteorologicos-NOAA/wx_ground.jpg" class="" title="WXtoImg">
-
-<ol start="3">
-<li>Ajustes de grabación. Tenemos que indicarle a WXtoImg que le vamos a pasar la señal desde SDR# mediante el cable de audio virtual. Para ello vamos a <strong><em>&quot;Options&quot;</em></strong> y <strong><em>&quot;Recording Options&quot;</em></strong>. Aquí seleccionamos nuestro cable de audio virtual.</li>
-</ol>
-<img src="/recepcion-satelites-meteorologicos-NOAA/wx_recording.jpg" class="" title="WXtoImg">
-
-<ol start="4">
-<li>Marcamos la opción de resincronizado en <strong><em>&quot;Options&quot;</em></strong>, <strong><em>&quot;Resync&quot;</em></strong>.</li>
-</ol>
-<img src="/recepcion-satelites-meteorologicos-NOAA/wx_resync.jpg" class="" title="WXtoImg">
-
-<ol start="5">
-<li>Podemos hacer que WXtoImg nos genere las imágenes que queramos añadiendo los datos de la telemetría una vez termine de recibir la imagen del satélite. Para ello vamos a <strong><em>&quot;Options&quot;</em></strong>, <strong><em>&quot;Auto Processing Options…&quot;</em></strong> y marcamos <strong><em>&quot;Create image(s)&quot;</em></strong>. Después hacemos clic en <strong><em>&quot;Image Settings…&quot;</em></strong> y elegimos las imágenes que queramos.</li>
-</ol>
-<img src="/recepcion-satelites-meteorologicos-NOAA/wx_record.jpg" class="" title="WXtoImg">
-
-<ol start="6">
-<li>Por último actualizamos los datos de posición de los satélites en WXtoImg. Vamos a <strong><em>&quot;File&quot;</em></strong> y hacemos clic en <strong><em>&quot;Update Keplers&quot;</em></strong>. Una vez se actualicen, el programa nos mostrará en la parte inferior de la ventana la información del siguiente pase sobre nuestra ubicación.</li>
-</ol>
-<img src="/recepcion-satelites-meteorologicos-NOAA/wx_siguiente.jpg" class="" title="WXtoImg">
-
-<ol start="7">
-<li>Es importante tener la hora del sistema lo mejor ajustada posible, ya que de ello dependerá en gran medida el ajuste de las capas que WXtoImg superpone a la imagen.</li>
-</ol>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>NAYIF-1 envía los datos de telemetría en la frecuencia <strong>145.940 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites.</p>
 <p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;36000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
-<p>Para recibir el pase tenemos que sacar el audio de SDR# mediante el cable de audio virtual y tener WXtoImg abierto. Una vez el satélite comience a verse sobre el horizonte, SDR# iniciará el seguimiento y WXtoImg comenzará a recibir y procesar la señal.</p>
-<img src="/recepcion-satelites-meteorologicos-NOAA/sdr_sharp.jpg" class="" title="SDR#">
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145940000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/recepcion-nayif1/sdrsharp.png" class="" title="SDRSharp NAYIF-1">
 
-<p>Es importante asegurarse que el volumen de la salida de SDR# sea el adecuado. Podemos ver el nivel que llega a WXtoImg en la esquina inferior derecha. Para que la imagen se genere correctamente, el indicador de nivel de volumen debe mantenerse en color verde durante todo el pase.</p>
-<img src="/recepcion-satelites-meteorologicos-NOAA/wx_recibiendo.jpg" class="" title="WXtoImg">
 
-<p>Al finalizar el pase, WXtoImg dejará de grabar y generará las imágenes que le hemos indicado en el paso 4 de la configuración.</p>
-<img src="/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" width="500" title="WXtoImg">
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Al ser un proyecto basado en FUNcube, el software es muy similar al que ya hemos usado para el <a href="/recepcion-funcube1/">FUNcube-1</a> y <a href="/recepcion-jy1sat/">JY1-SAT</a>. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="https://download.funcube.org.uk/Nayif-1_Dashboard_1040_Installer.msi"><center>Nayif-1 Dashboard v1040</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/recepcion-nayif1/config.png" class="" title="NAYIF-1 Dashboard Configuración">
+
+<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/recepcion-nayif1/telem.png" class="" title="NAYIF-1 Dashboard Telemetría">
+
+<p><em>Mensajes:</em></p>
+<img src="/recepcion-nayif1/messages.png" class="" title="NAYIF-1 Dashboard Mensajes">
 ]]></content>
       <tags>
         <tag>Satélites</tag>
-        <tag>Satélites meteorológicos</tag>
-        <tag>NOAA</tag>
-        <tag>Windows</tag>
-        <tag>Meteorología</tag>
-        <tag>WXtoIMG</tag>
+        <tag>Cubesat</tag>
       </tags>
   </entry>
   <entry>
@@ -2294,7 +2295,7 @@
 <tr>
 <td><strong>Estado LRPT</strong></td>
 <td>Inactivo</td>
-<td>Operativo(*)</td>
+<td>Averiado(*)</td>
 <td>Averiado</td>
 </tr>
 <tr>
