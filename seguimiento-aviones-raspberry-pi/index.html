@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://sdr-es.com/seguimiento-aviones-raspberry-pi/adsb-script.png">
 <meta property="og:image" content="https://sdr-es.com/seguimiento-aviones-raspberry-pi/adsb-exchange.jpg">
 <meta property="article:published_time" content="2020-05-03T08:56:04.000Z">
-<meta property="article:modified_time" content="2020-05-03T08:56:04.000Z">
+<meta property="article:modified_time" content="2023-02-24T11:45:05.000Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="Raspberry Pi">
 <meta property="article:tag" content="ATC">
@@ -277,6 +277,13 @@
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Editado el</span>
+      <time title="Modificado por: 24/02/2023 12:45:05" itemprop="dateModified" datetime="2023-02-24T12:45:05+01:00">24/02/2023</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
         <i class="far fa-user"></i>
       </span>
       <span class="post-meta-item-text">Creado por</span>
@@ -299,20 +306,13 @@
 <span id="more"></span>
 
 <p>Lo primero que haremos será instalar nuestro dispositivo SDR, si todavía no lo hemos hecho, siguiendo los pasos descritos en <a href="/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
-<h3 id="Instalacion-de-dump1090"><a href="#Instalacion-de-dump1090" class="headerlink" title="Instalación de dump1090"></a>Instalación de dump1090</h3><p>Vamos a instalar la versión de <em>dump1090</em> mantenida por FlightAware, ya que está actualizada y nos instala y levanta un servidor web en el que podemos ver las aeronaves sobre el mapa sin muchas complicaciones.</p>
-<p>El primer paso es instalar el repositorio de FlightAware en nuestra Raspberry Pi dependiendo de la versión de Raspbian que tengamos. También podemos generar paquetes para otras distribuciones siguiendo los pasos descritos <a target="_blank" rel="noopener" href="https://github.com/flightaware/dump1090">aquí</a>.</p>
-<p>Si no conocemos la versión de Raspbian, podemos consultarla ejecutando:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/os-release | grep VERSION_CODENAME</span><br></pre></td></tr></table></figure>
+<h3 id="Instalacion-de-dump1090"><a href="#Instalacion-de-dump1090" class="headerlink" title="Instalación de dump1090"></a>Instalación de dump1090</h3><p>Vamos a instalar la versión de <em>dump1090</em> mantenida por FlightAware, ya que está actualizada y además nos instala un servidor web en el que podemos ver las aeronaves sobre el mapa sin muchas complicaciones.</p>
+<p>El primer paso es instalar el repositorio de FlightAware en nuestra Raspberry Pi. Actualmente los paquetes de instalación no están disponibles en el repositorio para arquitecturas de 64 bits. Si necesitamos instalar <em>dump1090</em> en un sistema operativo distinto o con otras arquitecturas, debemos compilarlo siguiendo los pasos descritos <a target="_blank" rel="noopener" href="https://github.com/flightaware/dump1090">aquí</a>.<br>Para Raspbian de 32 bits ejecutaremos los siguiente comandos:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://es.flightaware.com/adsb/piaware/files/packages/pool/piaware/f/flightaware-apt-repository/flightaware-apt-repository_1.1_all.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i flightaware-apt-repository_1.1_all.deb</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><p>Repositorio para <strong>Raspbian Buster</strong>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0_all.deb</span><br></pre></td></tr></table></figure></li>
-<li><p>Repositorio para <strong>Raspbian Stretch</strong>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i piaware-repository_5.0~bpo9+1_all.deb</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>Una vez instalado el repositorio correspondiente ejecutamos:</p>
+
+<p>Una vez instalado el repositorio ejecutamos:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 
 <p>Ahora instalamos <em>dump1090</em>:</p>
@@ -321,8 +321,11 @@
 <p>Podemos ajustar las opciones de <em>dump1090</em> en su archivo de configuración:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/default/dump1090-fa</span><br></pre></td></tr></table></figure>
 
-<p>Editamos la siguiente línea con la ganancia y valor de PPM. Es aconsejable establecer un valor para la ganancia, ya que por defecto el nivel viene establecido en automático (-10) y no siempre proporciona buenos resultados.<br>Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en <em>device-index</em>.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RECEIVER_OPTIONS=&quot;--device-index 0 --gain -10 --ppm 0&quot;</span><br></pre></td></tr></table></figure>
+<p>Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en <em>RECEIVER_SERIAL</em>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RECEIVER_SERIAL=&quot;82020715&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Para ajustar el valor de desviación del dispositivo (si lo tuviese) debemos añadir lo siguiente al valor <em>EXTRA_OPTIONS</em>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EXTRA_OPTIONS=&quot; --ppm 10&quot;</span><br></pre></td></tr></table></figure>
 
 <p>Reiniciamos el servicio para que se apliquen los cambios.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service dump1090-fa restart</span><br></pre></td></tr></table></figure>
@@ -333,7 +336,7 @@
 <img src="/seguimiento-aviones-raspberry-pi/dump1090.jpg" class="" width="900" title="dump1090 FlightAware">
 
 <p>Esta interfaz web utiliza el puerto 8080 por defecto. Si queremos cambiarlo editamos el archivo de configuración de <em>Lighttpd</em>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/lighttpd/conf-enabled/89-dump1090-fa.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/lighttpd/conf-enabled/89-skyaware.conf</span><br></pre></td></tr></table></figure>
 
 <p>Editamos la siguiente línea y modificamos el puerto 8080 por el que queramos utilizar:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$SERVER[&quot;socket&quot;] == &quot;:8080&quot; &#123;</span><br></pre></td></tr></table></figure>
@@ -350,8 +353,11 @@
 </ol>
 <p><a target="_blank" rel="noopener" href="https://es.flightaware.com/account/join"><center>https://es.flightaware.com/account/join</center></a></p>
 <ol start="2">
-<li><p>Instalamos <em>piaware</em>. Este software será el encargado de establecer la comunicación con el servidor de FlightAware para enviar los datos y recibir ajustes.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y piaware</span><br></pre></td></tr></table></figure></li>
+<li>Instalamos <em>piaware</em>. Este software será el encargado de establecer la comunicación con el servidor de FlightAware para enviar los datos y recibir ajustes. Previamente debemos añadir el repositorio a nuesto sistema. Si ya hemos hecho este paso en la sección anterior, simplemente debemos ejecutar el siguiente comando.<br>Actualmente los paquetes de instalación no están disponibles en el repositorio para arquitecturas de 64 bits. Si necesitamos instalar <em>piaware</em> en un sistema operativo distinto o con otras arquitecturas, debemos compilarlo siguiendo los pasos descritos <a target="_blank" rel="noopener" href="https://github.com/flightaware/piaware_builder">aquí</a>.</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y piaware</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
 <li><p>Podemos ajustar <em>piaware</em> para que se actualice de forma automática y para que podamos actualizarlo desde la interfaz web de FlightAware.<br>Si queremos que se actualice automático ejecutamos:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo piaware-config allow-auto-updates yes</span><br></pre></td></tr></table></figure>
 <p>Si queremos que se pueda hacer de forma manual vía web ejecutamos:</p>
@@ -381,8 +387,7 @@
 <p>Cuando pregunte si queremos instalar <code>dump978-rb</code> le decimos que no.</p>
 </li>
 <li><p>Instalamos el cliente de MLAT. La siguiente versión es para Raspbian. Si necesitamos paquete para otra versión, podemos generarlo siguiendo los pasos descritos <a target="_blank" rel="noopener" href="https://github.com/mutability/mlat-client">aquí</a>.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget /seguimiento-aviones-raspberry-pi/mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i mlat-client_0.2.11_armhf.deb</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y mlat-client</span><br></pre></td></tr></table></figure></li>
 <li><p>Nos registramos en RadarBox.</p>
 </li>
 </ol>
@@ -402,7 +407,7 @@
 </ol>
 <h3 id="Enviar-datos-a-ADS-B-Exchange"><a href="#Enviar-datos-a-ADS-B-Exchange" class="headerlink" title="Enviar datos a ADS-B Exchange"></a>Enviar datos a ADS-B Exchange</h3><p><a target="_blank" rel="noopener" href="https://www.adsbexchange.com/">ADS-B Exchange</a> es un servicio colaborativo de datos de seguimiento y es la mayor fuente de datos de vuelos <strong>sin filtrar</strong>. En este caso no obtendremos beneficios como suscripciones, ya que este servicio ofrece todos los datos de forma <strong>gratuita para fines no comerciales</strong>.</p>
 <p>Para enviar nuestros datos a ADS-B Exchange tendremos que ejecutar un script de instalación que realizará el proceso de forma sencilla. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https://raw.githubusercontent.com/adsbxchange/adsb-exchange/master/install.sh)&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https://adsbexchange.com/feed.sh)&quot;</span><br></pre></td></tr></table></figure>
 
 <p>Se iniciará un asistente instalación en el que debemos indicar un nombre para nuestro <em>feeder</em> y nuestra posición para los cálculos de MLAT.</p>
 <img src="/seguimiento-aviones-raspberry-pi/adsb-script.png" class="" title="Asistente instalación ADS-B Exchange">
@@ -410,10 +415,10 @@
 <p>Una vez finalice el asistente, ya estaremos conectados y enviando datos a ADS-B Exchange. Para conocer el estado del servicio tenemos los siguientes enlaces:</p>
 <ul>
 <li>Comprobar el estado de nuestro <em>feeder</em>: <a target="_blank" rel="noopener" href="https://adsbexchange.com/myip/">https://adsbexchange.com/myip/</a></li>
-<li>Comprobar el estado de los servidores de MLAT: <a target="_blank" rel="noopener" href="http://adsbx.org/sync">http://adsbx.org/sync</a></li>
+<li>Comprobar el estado de los servidores de MLAT: <a target="_blank" rel="noopener" href="https://map.adsbexchange.com/mlat-map/">https://map.adsbexchange.com/mlat-map/</a></li>
 </ul>
 <p>Opcionalmente, podemos instalar la herramienta proporcionada por ADS-B Exchange para ver online los datos que estamos enviando desde nuestro receptor en tiempo real. Para instalarla basta con ejecutar el siguiente comando:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -nv -O - https://raw.githubusercontent.com/adsbxchange/adsbexchange-stats/master/stats.sh)&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https://adsbexchange.com/stats.sh)&quot;</span><br></pre></td></tr></table></figure>
 
 <p>Una vez instalada, ejecutamos el siguiente comando para obtener nuestra URL personalizada en la que consultar los datos:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adsbexchange-showurl</span><br></pre></td></tr></table></figure>
@@ -463,10 +468,10 @@
       <div class="popular-posts-title"><a href="/instalacion-rtlsdr-raspberrypi/" rel="bookmark">Instalar dispositivo RTL-SDR en Linux</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/instalacion-satnogs/" rel="bookmark">Instalación de estación terrestre con SatNOGS</a></div>
+      <div class="popular-posts-title"><a href="/instalacion-satnogs-ansible/" rel="bookmark">Instalación de estación terrestre con SatNOGS (II)</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/instalacion-satnogs-ansible/" rel="bookmark">Instalación de estación terrestre con SatNOGS (II)</a></div>
+      <div class="popular-posts-title"><a href="/instalacion-satnogs/" rel="bookmark">Instalación de estación terrestre con SatNOGS</a></div>
     </li>
   </ul>
 
