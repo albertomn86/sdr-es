@@ -1,6 +1,7 @@
 ---
 title: Recepción de mensajes ADS-B en Raspberry Pi
 date: 2020-05-03 10:56:04
+updated: 2023-02-25 12:45:05
 tags: [ATC, ADS-B, Raspberry Pi, dump1090]
 author: EA7KOO
 description: Instalación de receptor de mensajes ADS-B en una Raspberry Pi para el seguimiento de aviones.
@@ -16,33 +17,19 @@ Lo primero que haremos será instalar nuestro dispositivo SDR, si todavía no lo
 
 ### Instalación de dump1090
 
-Vamos a instalar la versión de _dump1090_ mantenida por FlightAware, ya que está actualizada y nos instala y levanta un servidor web en el que podemos ver las aeronaves sobre el mapa sin muchas complicaciones.
+Vamos a instalar la versión de _dump1090_ mantenida por FlightAware, ya que está actualizada y además nos instala un servidor web en el que podemos ver las aeronaves sobre el mapa sin muchas complicaciones.
 
-El primer paso es instalar el repositorio de FlightAware en nuestra Raspberry Pi dependiendo de la versión de Raspbian que tengamos. También podemos generar paquetes para otras distribuciones siguiendo los pasos descritos [aquí](https://github.com/flightaware/dump1090).
+El primer paso es instalar el repositorio de FlightAware en nuestra Raspberry Pi. Actualmente los paquetes de instalación no están disponibles en el repositorio para arquitecturas de 64 bits. Si necesitamos instalar _dump1090_ en un sistema operativo distinto o con otra arquitectura, debemos compilarlo siguiendo los pasos descritos [aquí](https://github.com/flightaware/dump1090).
+Para Raspbian de 32 bits ejecutaremos los siguiente comandos:
 
-Si no conocemos la versión de Raspbian, podemos consultarla ejecutando:
-
 ```
-cat /etc/os-release | grep VERSION_CODENAME
-```
-
-- Repositorio para **Raspbian Buster**:
-```
-wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_5.0_all.deb
+wget https://es.flightaware.com/adsb/piaware/files/packages/pool/piaware/f/flightaware-apt-repository/flightaware-apt-repository_1.1_all.deb
 ```
 ```
-sudo dpkg -i piaware-repository_5.0_all.deb
+sudo dpkg -i flightaware-apt-repository_1.1_all.deb
 ```
 
-- Repositorio para **Raspbian Stretch**:
-```
-wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_5.0~bpo9+1_all.deb
-```
-```
-sudo dpkg -i piaware-repository_5.0~bpo9+1_all.deb
-```
-
-Una vez instalado el repositorio correspondiente ejecutamos:
+Una vez instalado el repositorio ejecutamos:
 ```
 sudo apt update
 ```
@@ -57,11 +44,14 @@ Podemos ajustar las opciones de _dump1090_ en su archivo de configuración:
 sudo nano /etc/default/dump1090-fa
 ```
 
-Editamos la siguiente línea con la ganancia y valor de PPM. Es aconsejable establecer un valor para la ganancia, ya que por defecto el nivel viene establecido en automático (-10) y no siempre proporciona buenos resultados.
-Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en _device-index_.
-
+Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en _RECEIVER\_SERIAL_.
 ```
-RECEIVER_OPTIONS="--device-index 0 --gain -10 --ppm 0"
+RECEIVER_SERIAL="82020715"
+```
+
+Para ajustar el valor de desviación del dispositivo (si la tuviese) debemos añadir lo siguiente al valor _EXTRA\_OPTIONS_.
+```
+EXTRA_OPTIONS=" --ppm 10"
 ```
 
 Reiniciamos el servicio para que se apliquen los cambios.
@@ -78,7 +68,7 @@ http://IP_RASPBERRY:8080/
 
 Esta interfaz web utiliza el puerto 8080 por defecto. Si queremos cambiarlo editamos el archivo de configuración de _Lighttpd_:
 ```
-sudo nano /etc/lighttpd/conf-enabled/89-dump1090-fa.conf
+sudo nano /etc/lighttpd/conf-enabled/89-skyaware.conf
 ```
 
 Editamos la siguiente línea y modificamos el puerto 8080 por el que queramos utilizar:
@@ -105,17 +95,19 @@ Los pasos para enviar los datos son los siguientes:
 [<center>https://es.flightaware.com/account/join</center>](https://es.flightaware.com/account/join)
 
 
-2. Instalamos _piaware_. Este software será el encargado de establecer la comunicación con el servidor de FlightAware para enviar los datos y recibir ajustes.
+2. Instalamos _piaware_. Este software será el encargado de establecer la comunicación con el servidor de FlightAware para enviar los datos y recibir ajustes. Previamente debemos añadir el repositorio de FlightAware a nuesto sistema. Si ya hemos hecho este paso en la sección anterior, simplemente debemos ejecutar el siguiente comando.
+Actualmente los paquetes de instalación no están disponibles en el repositorio para arquitecturas de 64 bits. Si necesitamos instalar _piaware_ en un sistema operativo distinto o con otra arquitectura, debemos compilarlo siguiendo los pasos descritos [aquí](https://github.com/flightaware/piaware_builder).
+
 ```
 sudo apt install -y piaware
 ```
 
 3. Podemos ajustar _piaware_ para que se actualice de forma automática y para que podamos actualizarlo desde la interfaz web de FlightAware.
-Si queremos que se actualice automático ejecutamos:
+Si queremos que se actualice de forma automática ejecutamos:
 ```
 sudo piaware-config allow-auto-updates yes
 ```
-Si queremos que se pueda hacer de forma manual vía web ejecutamos:
+Si además queremos que se pueda hacer de forma manual vía web ejecutamos:
 ```
 sudo piaware-config allow-manual-updates yes
 ```
@@ -152,10 +144,7 @@ Cuando pregunte si queremos instalar `dump978-rb` le decimos que no.
 
 2. Instalamos el cliente de MLAT. La siguiente versión es para Raspbian. Si necesitamos paquete para otra versión, podemos generarlo siguiendo los pasos descritos [aquí](https://github.com/mutability/mlat-client).
 ```
-wget /seguimiento-aviones-raspberry-pi/mlat-client_0.2.11_armhf.deb
-```
-```
-sudo dpkg -i mlat-client_0.2.11_armhf.deb
+sudo apt install -y mlat-client
 ```
 
 3. Nos registramos en RadarBox.
@@ -183,7 +172,7 @@ sudo rbfeeder --showkey --no-start
 
 Para enviar nuestros datos a ADS-B Exchange tendremos que ejecutar un script de instalación que realizará el proceso de forma sencilla. Para ello ejecutamos el siguiente comando:
 ```
-sudo bash -c "$(wget -nv -O - https://raw.githubusercontent.com/adsbxchange/adsb-exchange/master/install.sh)"
+sudo bash -c "$(wget -O - https://adsbexchange.com/feed.sh)"
 ```
 
 Se iniciará un asistente instalación en el que debemos indicar un nombre para nuestro _feeder_ y nuestra posición para los cálculos de MLAT.
@@ -193,11 +182,11 @@ Se iniciará un asistente instalación en el que debemos indicar un nombre para 
 Una vez finalice el asistente, ya estaremos conectados y enviando datos a ADS-B Exchange. Para conocer el estado del servicio tenemos los siguientes enlaces:
 
 - Comprobar el estado de nuestro _feeder_: https://adsbexchange.com/myip/
-- Comprobar el estado de los servidores de MLAT: http://adsbx.org/sync
+- Comprobar el estado de los servidores de MLAT: https://map.adsbexchange.com/mlat-map/
 
 Opcionalmente, podemos instalar la herramienta proporcionada por ADS-B Exchange para ver online los datos que estamos enviando desde nuestro receptor en tiempo real. Para instalarla basta con ejecutar el siguiente comando:
 ```
-sudo bash -c "$(wget -nv -O - https://raw.githubusercontent.com/adsbxchange/adsbexchange-stats/master/stats.sh)"
+sudo bash -c "$(wget -O - https://adsbexchange.com/stats.sh)"
 ```
 
 Una vez instalada, ejecutamos el siguiente comando para obtener nuestra URL personalizada en la que consultar los datos:
