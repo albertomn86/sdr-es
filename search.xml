@@ -1075,38 +1075,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Instalar SDR++</title>
-    <url>/instalacion-sdrpp/</url>
-    <content><![CDATA[<p><a href="https://www.sdrpp.org/">SDR++</a> es un software multiplataforma y de código abierto para la recepción de señales mediante SDR. Este nuevo programa, desarrollado por <a href="https://twitter.com/ryzerth">Alexandre Rouma</a>, busca como objetivo ser sencillo de utilizar y eficiente.<br>En este post veremos cómo instalar SDR++ en Windows, Linux y macOS.</p>
-<span id="more"></span>
-
-<p>Para instalar SDR++ en cualquier sistema operativo, tenemos la posibilidad de descargar los instaladores para cada uno de ellos desde el siguiente enlace:</p>
-<p><a href="https://github.com/AlexandreRouma/SDRPlusPlus/releases/latest"><center>Releases SDR++</center></a></p>
-<p>En cualquier caso, necesitaremos tener instalados previamente los controladores del dispositivo que vayamos a utilizar. Si vamos a usar un dispositivo RTL-SDR por primera vez, podemos seguir los pasos de instalación descritos en <a href="/primeros-pasos/#Instalacion-del-dispositivo">este enlace</a>.</p>
-<h2 id="Instalacion-en-Windows"><a href="#Instalacion-en-Windows" class="headerlink" title="Instalación en Windows"></a>Instalación en Windows</h2><p>Una vez descargado el archivo comprimido para Windows, procedemos a extraer su contenido en la ubicación que queramos. Para iniciar el programa bastaría con abrir el ejecutable <strong><em>sdrpp.exe</em></strong>.</p>
-<img src="/instalacion-sdrpp/sdrpp-windows.jpg" class="" width="900" title="SDR++ Windows">
-
-<h2 id="Instalacion-en-Linux"><a href="#Instalacion-en-Linux" class="headerlink" title="Instalación en Linux"></a>Instalación en Linux</h2><p>Nos descargamos el archivo PKG para nuestro distribución Linux y lo instalamos con el gestor de paquetes correspondiente.<br>Para iniciar el programa, bastaría con buscarlo en los programas instalados e iniciarlo.</p>
-<img src="/instalacion-sdrpp/sdrpp-linux.jpg" class="" width="900" title="SDR++ Linux">
-
-<h2 id="Instalacion-en-macOS"><a href="#Instalacion-en-macOS" class="headerlink" title="Instalación en macOS"></a>Instalación en macOS</h2><p>Lo primero que haremos será descargar el archivo PKG para nuestra arquitectura e instalarlo. Por ahora solo está disponible el paquete para procesadores con arquitectura <em>amd64</em> y no para <em>ARM</em> (Apple M1).</p>
-<p>Una vez instalado el paquete con el programa, necesitamos instalar algunas dependencias externas:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install fftw glew glfw volk</span><br></pre></td></tr></table></figure>
-
-<p>Por último ejecutamos el programa desde la terminal para iniciarlo:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sdrpp</span><br></pre></td></tr></table></figure>
-
-<img src="/instalacion-sdrpp/sdrpp-macos.jpg" class="" width="900" title="SDR++ macOS">
-]]></content>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Instalación</tag>
-        <tag>macOS</tag>
-        <tag>Windows</tag>
-        <tag>SDR++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Instalación de estación terrestre con SatNOGS</title>
     <url>/instalacion-satnogs/</url>
     <content><![CDATA[<p><a href="https://satnogs.org/">SatNOGS</a> (Satellite Networked Open Ground Station) es una plataforma de software y hardware de código abierto con el propósito de crear una red global de estaciones terrestres de seguimiento de satélites.</p>
@@ -1323,6 +1291,38 @@
         <tag>Instalación</tag>
         <tag>Raspberry Pi</tag>
         <tag>SatNOGS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Instalar SDR++</title>
+    <url>/instalacion-sdrpp/</url>
+    <content><![CDATA[<p><a href="https://www.sdrpp.org/">SDR++</a> es un software multiplataforma y de código abierto para la recepción de señales mediante SDR. Este nuevo programa, desarrollado por <a href="https://twitter.com/ryzerth">Alexandre Rouma</a>, busca como objetivo ser sencillo de utilizar y eficiente.<br>En este post veremos cómo instalar SDR++ en Windows, Linux y macOS.</p>
+<span id="more"></span>
+
+<p>Para instalar SDR++ en cualquier sistema operativo, tenemos la posibilidad de descargar los instaladores para cada uno de ellos desde el siguiente enlace:</p>
+<p><a href="https://github.com/AlexandreRouma/SDRPlusPlus/releases/latest"><center>Releases SDR++</center></a></p>
+<p>En cualquier caso, necesitaremos tener instalados previamente los controladores del dispositivo que vayamos a utilizar. Si vamos a usar un dispositivo RTL-SDR por primera vez, podemos seguir los pasos de instalación descritos en <a href="/primeros-pasos/#Instalacion-del-dispositivo">este enlace</a>.</p>
+<h2 id="Instalacion-en-Windows"><a href="#Instalacion-en-Windows" class="headerlink" title="Instalación en Windows"></a>Instalación en Windows</h2><p>Una vez descargado el archivo comprimido para Windows, procedemos a extraer su contenido en la ubicación que queramos. Para iniciar el programa bastaría con abrir el ejecutable <strong><em>sdrpp.exe</em></strong>.</p>
+<img src="/instalacion-sdrpp/sdrpp-windows.jpg" class="" width="900" title="SDR++ Windows">
+
+<h2 id="Instalacion-en-Linux"><a href="#Instalacion-en-Linux" class="headerlink" title="Instalación en Linux"></a>Instalación en Linux</h2><p>Nos descargamos el archivo PKG para nuestro distribución Linux y lo instalamos con el gestor de paquetes correspondiente.<br>Para iniciar el programa, bastaría con buscarlo en los programas instalados e iniciarlo.</p>
+<img src="/instalacion-sdrpp/sdrpp-linux.jpg" class="" width="900" title="SDR++ Linux">
+
+<h2 id="Instalacion-en-macOS"><a href="#Instalacion-en-macOS" class="headerlink" title="Instalación en macOS"></a>Instalación en macOS</h2><p>Lo primero que haremos será descargar el archivo PKG para nuestra arquitectura e instalarlo. Por ahora solo está disponible el paquete para procesadores con arquitectura <em>amd64</em> y no para <em>ARM</em> (Apple M1).</p>
+<p>Una vez instalado el paquete con el programa, necesitamos instalar algunas dependencias externas:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install fftw glew glfw volk</span><br></pre></td></tr></table></figure>
+
+<p>Por último ejecutamos el programa desde la terminal para iniciarlo:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sdrpp</span><br></pre></td></tr></table></figure>
+
+<img src="/instalacion-sdrpp/sdrpp-macos.jpg" class="" width="900" title="SDR++ macOS">
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Instalación</tag>
+        <tag>macOS</tag>
+        <tag>Windows</tag>
+        <tag>SDR++</tag>
       </tags>
   </entry>
   <entry>
@@ -1699,72 +1699,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Recepción del satélite FUNcube-1</title>
-    <url>/recepcion-funcube1/</url>
-    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
-<span id="more"></span>
-
-<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>FUNcube-1 (AO-73)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Operador</strong></td>
-<td>AMSAT-UK</td>
-</tr>
-<tr>
-<td><strong>NORAD ID</strong></td>
-<td>39444</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2013-066AE</td>
-</tr>
-<tr>
-<td><strong>Tamaño</strong></td>
-<td>1U CubeSat (0,98 Kg)</td>
-</tr>
-<tr>
-<td><strong>Lanzamiento</strong></td>
-<td>21 de Noviembre de 2013</td>
-</tr>
-<tr>
-<td><strong>Señal</strong></td>
-<td>145,935 MHz (1200 bps BPSK)</td>
-</tr>
-<tr>
-<td><strong>Web</strong></td>
-<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
-</tr>
-</tbody></table>
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<img src="/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
-
-
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
-<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
-<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
-<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
-<img src="/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
-
-<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
-<p><em>Telemetría:</em></p>
-<img src="/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
-
-<p><em>Mensajes:</em></p>
-<img src="/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Cubesat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Recepción de satélites Inmarsat</title>
     <url>/recepcion-inmarsat/</url>
     <content><![CDATA[<p>Inmarsat es un proveedor de comunicaciones vía satélite con sede en Reino Unido. La constelación de satélites Inmarsat se compone actualmente de 12 satélites geoestacionarios que proporcionan cobertura en el 90% del planeta.<br>Inmarsat utiliza sus satélites de tercera y cuarta generación para ofrecer servicios de comunicaciones utilizando la <strong>banda L</strong> (1 a 2 GHz). Estos servicios son:</p>
@@ -1863,6 +1797,72 @@
         <tag>Satélites</tag>
         <tag>Inmarsat</tag>
         <tag>L-Band</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recepción del satélite FUNcube-1</title>
+    <url>/recepcion-funcube1/</url>
+    <content><![CDATA[<p>El satélite FUNcube-1 es un <a href="https://es.wikipedia.org/wiki/CubeSat">CubeSat</a> construido por AMSAT-UK con fines educativos.<br>Como parte de su misión, FUNcube-1 está equipado con distintos sensores que monitorizan el estado del satélite y envía la telemetría por radio. Estos datos pueden ser recibidos con nuestros dispositivos SDR y en este artículo veremos como recibirlos y decodificarlos.</p>
+<span id="more"></span>
+
+<h2 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h2><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>FUNcube-1 (AO-73)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Operador</strong></td>
+<td>AMSAT-UK</td>
+</tr>
+<tr>
+<td><strong>NORAD ID</strong></td>
+<td>39444</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2013-066AE</td>
+</tr>
+<tr>
+<td><strong>Tamaño</strong></td>
+<td>1U CubeSat (0,98 Kg)</td>
+</tr>
+<tr>
+<td><strong>Lanzamiento</strong></td>
+<td>21 de Noviembre de 2013</td>
+</tr>
+<tr>
+<td><strong>Señal</strong></td>
+<td>145,935 MHz (1200 bps BPSK)</td>
+</tr>
+<tr>
+<td><strong>Web</strong></td>
+<td><a href="https://funcube.org.uk/">https://funcube.org.uk/</a></td>
+</tr>
+</tbody></table>
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>FUNcube-1 envía los datos de telemetría en la frecuencia <strong>145.935 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<img src="/recepcion-funcube1/SDRSharp_FUNcube1.png" class="" title="SDRSharp FUNcube-1">
+
+
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar los datos de telemetría vamos a utilizar el software que AMSAT nos facilita para este satélite. Podemos descargarlo desde el siguiente enlace:</p>
+<p><a href="http://download.funcube.org.uk/FUNcube_Dashboard_v1044.msi"><center>FUNcube-1 Dashboard v1044</center></a></p>
+<p>Una vez descargado, lo instalamos como cualquier aplicación de Windows y lo iniciamos.</p>
+<p>El siguiente paso es configurarlo. Para ello hacemos clic en <strong>“File”</strong> y después <strong>“Settings…”</strong>. Esto nos abre la pestaña de configuración del programa.<br>Ahora debemos indicarle que le vamos a pasar el audio desde SDR#, así que seleccionamos nuestro <a href="/instalacion-virtual-cable-audio/">cable de audio virtual</a> en la opción <strong>“Input Device”</strong>.</p>
+<img src="/recepcion-funcube1/FUNcube1_Dashboard_config.png" class="" title="FUNcube1 Dashboard Configuración">
+
+<p>Hacemos clic en <strong>“Save”</strong> y ya tendremos el programa listo para recibir la señal desde SDR#.<br>Para iniciar el procesamiento de señal hacemos clic en <strong>“Capture”</strong> y <strong>“Capture From Soundcard”</strong>. Ahora cuando el satélite comience a recibirse en SDR#, podremos ver los datos en tiempo real en el programa.</p>
+<p><em>Telemetría:</em></p>
+<img src="/recepcion-funcube1/FUNcube1_Dashboard_telem.png" class="" title="FUNcube1 Dashboard Telemetría">
+
+<p><em>Mensajes:</em></p>
+<img src="/recepcion-funcube1/FUNcube1_Dashboard_messages.png" class="" title="FUNcube1 Dashboard Mensajes">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Cubesat</tag>
       </tags>
   </entry>
   <entry>
@@ -3167,6 +3167,164 @@
       </tags>
   </entry>
   <entry>
+    <title>Recepción de mensajes ADS-B en Raspberry Pi</title>
+    <url>/seguimiento-aviones-raspberry-pi/</url>
+    <content><![CDATA[<p>ADS-B (<em>Automatic Dependent Surveillance Broadcast</em>) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.</p>
+<p>En este artículo veremos como convertir una Raspberry Pi en un receptor de mensajes ADS-B y poder determinar y visualizar la posición de las aeronaves que sobrevuelan nuestra ubicación.</p>
+<span id="more"></span>
+
+<p>Lo primero que haremos será instalar nuestro dispositivo SDR, si todavía no lo hemos hecho, siguiendo los pasos descritos en <a href="/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
+<h3 id="Instalacion-de-dump1090"><a href="#Instalacion-de-dump1090" class="headerlink" title="Instalación de dump1090"></a>Instalación de dump1090</h3><p>Vamos a instalar la versión de <em>dump1090</em> mantenida por FlightAware, ya que está actualizada y además nos instala un servidor web en el que podemos ver las aeronaves sobre el mapa sin muchas complicaciones.</p>
+<p>El primer paso es instalar el repositorio de FlightAware en nuestra Raspberry Pi. Actualmente los paquetes de instalación no están disponibles en el repositorio para arquitecturas de 64 bits. Si necesitamos instalar <em>dump1090</em> en un sistema operativo distinto o con otra arquitectura, debemos compilarlo siguiendo los pasos descritos <a href="https://github.com/flightaware/dump1090">aquí</a>.<br>Para Raspbian de 32 bits ejecutaremos los siguiente comandos:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://es.flightaware.com/adsb/piaware/files/packages/pool/piaware/f/flightaware-apt-repository/flightaware-apt-repository_1.1_all.deb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i flightaware-apt-repository_1.1_all.deb</span><br></pre></td></tr></table></figure>
+
+<p>Una vez instalado el repositorio ejecutamos:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+
+<p>Ahora instalamos <em>dump1090</em>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y dump1090-fa</span><br></pre></td></tr></table></figure>
+
+<p>Podemos ajustar las opciones de <em>dump1090</em> en su archivo de configuración:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/default/dump1090-fa</span><br></pre></td></tr></table></figure>
+
+<p>Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en <em>RECEIVER_SERIAL</em>.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">RECEIVER_SERIAL=&quot;82020715&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Para ajustar el valor de desviación del dispositivo (si la tuviese) debemos añadir lo siguiente al valor <em>EXTRA_OPTIONS</em>.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">EXTRA_OPTIONS=&quot; --ppm 10&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Reiniciamos el servicio para que se apliquen los cambios.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service dump1090-fa restart</span><br></pre></td></tr></table></figure>
+
+<p>Por último, accedemos a nuestra Raspberry Pi desde cualquier navegador web:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://IP_RASPBERRY:8080/</span><br></pre></td></tr></table></figure>
+
+<img src="/seguimiento-aviones-raspberry-pi/dump1090.jpg" class="" width="900" title="dump1090 FlightAware">
+
+<p>Esta interfaz web utiliza el puerto 8080 por defecto. Si queremos cambiarlo editamos el archivo de configuración de <em>Lighttpd</em>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/lighttpd/conf-enabled/89-skyaware.conf</span><br></pre></td></tr></table></figure>
+
+<p>Editamos la siguiente línea y modificamos el puerto 8080 por el que queramos utilizar:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$SERVER[&quot;socket&quot;] == &quot;:8080&quot; &#123;</span><br></pre></td></tr></table></figure>
+
+<p>Por último reiniciamos el servicio para que se apliquen los cambios:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service lighttpd restart</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Enviar-datos-a-FlightAware"><a href="#Enviar-datos-a-FlightAware" class="headerlink" title="Enviar datos a FlightAware"></a>Enviar datos a FlightAware</h3><p><a href="https://flightaware.com/">FlightAware</a> es una compañía con sede en Houston (TX, Estados Unidos) que ofrece servicios de software y datos para aviación. Esta compañía ofrece información de seguimiento de aeronaves de forma gratuita desde su página web y sus aplicaciones para móviles. Es actualmente la mayor plataforma de seguimiento de vuelos.</p>
+<p>Podemos reenviar los datos de seguimiento a FlightAware desde nuestra Raspberry Pi. Estos serán utilizados para el seguimiento a nivel global y a cambio recibiremos una suscripción <em><a href="https://flightaware.com/commercial/premium/">Enterprise</a></em>.</p>
+<p>Los pasos para enviar los datos son los siguientes:</p>
+<ol>
+<li>Lo primero será registrarnos en FlightAware:</li>
+</ol>
+<p><a href="https://es.flightaware.com/account/join"><center>https://es.flightaware.com/account/join</center></a></p>
+<ol start="2">
+<li>Instalamos <em>piaware</em>. Este software será el encargado de establecer la comunicación con el servidor de FlightAware para enviar los datos y recibir ajustes. Previamente debemos añadir el repositorio de FlightAware a nuesto sistema. Si ya hemos hecho este paso en la sección anterior, simplemente debemos ejecutar el siguiente comando.<br>Actualmente los paquetes de instalación no están disponibles en el repositorio para arquitecturas de 64 bits. Si necesitamos instalar <em>piaware</em> en un sistema operativo distinto o con otra arquitectura, debemos compilarlo siguiendo los pasos descritos <a href="https://github.com/flightaware/piaware_builder">aquí</a>.</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y piaware</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>Podemos ajustar <em>piaware</em> para que se actualice de forma automática y para que podamos actualizarlo desde la interfaz web de FlightAware.<br>Si queremos que se actualice de forma automática ejecutamos:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-auto-updates yes</span><br></pre></td></tr></table></figure>
+<p>Si además queremos que se pueda hacer de forma manual vía web ejecutamos:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-manual-updates yes</span><br></pre></td></tr></table></figure></li>
+<li><p>Reiniciamos el servicio para que se apliquen los ajustes.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service piaware restart</span><br></pre></td></tr></table></figure></li>
+<li><p>Accedemos a la siguiente dirección para vincular nuestra Raspberry Pi con la cuenta que acabamos de crear. Si accedemos desde la misma dirección IP que tiene la Raspberry Pi, la detectará de forma automática.</p>
+</li>
+</ol>
+<p><a href="https://flightaware.com/adsb/piaware/claim"><center>https://flightaware.com/adsb/piaware/claim</center></a></p>
+<ol start="6">
+<li>Vamos a nuestro panel de control y abrimos las opciones de configuración.</li>
+</ol>
+<img src="/seguimiento-aviones-raspberry-pi/flightaware-panel.png" class="" width="900" title="FlightAware">
+
+<ol start="7">
+<li>Por último, introducimos nuestros datos de latitud, longitud y altitud para poder usar el seguimiento con MLAT y reiniciamos el servicio desde la propia web pulsando el botón <em>Send</em>.</li>
+</ol>
+<img src="/seguimiento-aviones-raspberry-pi/flightaware-config.jpg" class="" title="FlightAware">
+
+
+<h3 id="Enviar-datos-a-AirNav-RadarBox"><a href="#Enviar-datos-a-AirNav-RadarBox" class="headerlink" title="Enviar datos a AirNav RadarBox"></a>Enviar datos a AirNav RadarBox</h3><p><a href="https://www.radarbox.com/">RadarBox</a> es una compañía con sede en Tampa (FL, Estados Unidos) que ofrece servicios de información de vuelos. Podemos compartir los datos que recibimos en nuestra Raspberry Pi con RadarBox y a cambio obtendremos una suscripción <em><a href="https://www.radarbox.com/subscribe">Business</a></em>.</p>
+<p>Las pasos que seguiremos son los siguientes:</p>
+<ol>
+<li><p>Instalamos <em>rbfeeder</em>. Será el programa que envíe los datos al servidor.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - http://apt.rb24.com/inst_rbfeeder.sh)&quot;</span><br></pre></td></tr></table></figure>
+<p>Cuando pregunte si queremos instalar <code>dump978-rb</code> le decimos que no.</p>
+</li>
+<li><p>Instalamos el cliente de MLAT. La siguiente versión es para Raspbian. Si necesitamos paquete para otra versión, podemos generarlo siguiendo los pasos descritos <a href="https://github.com/mutability/mlat-client">aquí</a>.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y mlat-client</span><br></pre></td></tr></table></figure></li>
+<li><p>Nos registramos en RadarBox.</p>
+</li>
+</ol>
+<p><a href="https://www.radarbox.com/register"><center>https://www.radarbox.com/register</center></a></p>
+<ol start="4">
+<li><p>Una vez registrados necesitamos vincular nuestro receptor con RadarBox. Para ello usaremos la clave que nos genera <em>rbfeeder</em> la primera vez que se conecta al servidor. Consultamos la clave con el comando:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo rbfeeder --showkey --no-start</span><br></pre></td></tr></table></figure></li>
+<li><p>Accedemos a esta dirección, introducimos nuestra clave en <em>Sharing Key</em> y pulsamos en <strong>CLAIM!</strong>.</p>
+</li>
+</ol>
+<p><a href="https://www.radarbox.com/raspberry-pi/claim"><center>https://www.radarbox.com/raspberry-pi/claim</center></a></p>
+<img src="/seguimiento-aviones-raspberry-pi/radarbox-claim.jpg" class="" width="900" title="RadarBox">
+
+
+<ol start="6">
+<li>Por último introducimos nuestras coordenadas cuando nos lo pida.</li>
+</ol>
+<h3 id="Enviar-datos-a-ADS-B-Exchange"><a href="#Enviar-datos-a-ADS-B-Exchange" class="headerlink" title="Enviar datos a ADS-B Exchange"></a>Enviar datos a ADS-B Exchange</h3><p><a href="https://www.adsbexchange.com/">ADS-B Exchange</a> es un servicio colaborativo de datos de seguimiento y es la mayor fuente de datos de vuelos <strong>sin filtrar</strong>. En este caso no obtendremos beneficios como suscripciones, ya que este servicio ofrece todos los datos de forma <strong>gratuita para fines no comerciales</strong>.</p>
+<p>Para enviar nuestros datos a ADS-B Exchange tendremos que ejecutar un script de instalación que realizará el proceso de forma sencilla. Para ello ejecutamos el siguiente comando:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https://adsbexchange.com/feed.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Se iniciará un asistente instalación en el que debemos indicar un nombre para nuestro <em>feeder</em> y nuestra posición para los cálculos de MLAT.</p>
+<img src="/seguimiento-aviones-raspberry-pi/adsb-script.png" class="" title="Asistente instalación ADS-B Exchange">
+
+<p>Una vez finalice el asistente, ya estaremos conectados y enviando datos a ADS-B Exchange. Para conocer el estado del servicio tenemos los siguientes enlaces:</p>
+<ul>
+<li>Comprobar el estado de nuestro <em>feeder</em>: <a href="https://adsbexchange.com/myip/">https://adsbexchange.com/myip/</a></li>
+<li>Comprobar el estado de los servidores de MLAT: <a href="https://map.adsbexchange.com/mlat-map/">https://map.adsbexchange.com/mlat-map/</a></li>
+</ul>
+<p>Opcionalmente, podemos instalar la herramienta proporcionada por ADS-B Exchange para ver online los datos que estamos enviando desde nuestro receptor en tiempo real. Para instalarla basta con ejecutar el siguiente comando:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https://adsbexchange.com/stats.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Una vez instalada, ejecutamos el siguiente comando para obtener nuestra URL personalizada en la que consultar los datos:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">adsbexchange-showurl</span><br></pre></td></tr></table></figure>
+
+<p>Obtendremos una URL que debemos copiar e introducir en el navegador web. Una vez accedemos, tendremos dos enlaces que nos llevarán a una página con los datos de las aeronaves que estamos recibiendo en nuestra estación y a un visor con el mapa en tiempo real. Podemos consultar el funcionamiento de las distintas opciones del visor en <a href="https://www.adsbexchange.com/map-help/">este enlace</a>.</p>
+<img src="/seguimiento-aviones-raspberry-pi/adsb-exchange.jpg" class="" width="900" title="ADS-B Exchange">
+
+
+<h3 id="Enviar-datos-a-Flightradar24"><a href="#Enviar-datos-a-Flightradar24" class="headerlink" title="Enviar datos a Flightradar24"></a>Enviar datos a Flightradar24</h3><p><a href="https://www.flightradar24.com/">Flightradar24</a> es una compañía europea con sede en Estocolmo (Suecia) que ofrece servicios de información de vuelos. Compartiendo nuestros datos con Flightradar24 obtendremos una suscripción <em><a href="https://www.flightradar24.com/premium">Business</a></em>.</p>
+<p>Lo primero sera registrarse en Flightradar24.</p>
+<p><a href="https://www.flightradar24.com/premium/signup"><center>https://www.flightradar24.com/premium/signup</center></a></p>
+<p>Para enviar los datos debemos descargar e instalar <em>fr24feed</em>. Para ello ejecutamos el siguiente comando y seguimos los pasos del asistente de instalación.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https://repo-feed.flightradar24.com/install_fr24_rpi.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>Introducir el correo electrónico con el que nos hemos registrado.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 1.1 - Enter your email address (username@domain.tld)</span><br></pre></td></tr></table></figure></li>
+<li><p>Si tenemos ya una clave previa la introducimos. En caso contrario lo dejamos en blanco.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 1.2 - If you used to feed FR24 with ADS-B data before, enter your sharing key.</span><br><span class="line">If you don&#x27;t remember your sharing key, you can find it in your account on the website under &quot;My data sharing&quot;.</span><br><span class="line">https://www.flightradar24.com/account/data-sharing</span><br><span class="line"></span><br><span class="line">Otherwise leave this field empty and continue.</span><br></pre></td></tr></table></figure></li>
+<li><p>Introducimos <code>yes</code> para activar MLAT.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 1.3 - Would you like to participate in MLAT calculations? (yes/no)$:yes</span><br></pre></td></tr></table></figure></li>
+<li><p>Introducimos nuestras coordenadas y altitud.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IMPORTANT: For MLAT calculations the antenna&#x27;s location should be entered very precise!</span><br><span class="line"></span><br><span class="line">Step 3.A - Enter antenna&#x27;s latitude (DD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.B - Enter antenna&#x27;s longitude (DDD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.C - Enter antenna&#x27;s altitude above the sea level (in feet)</span><br><span class="line"></span><br><span class="line">Using latitude: 37.XXXX, longitude: -3.XXXX, altitude: 720ft above sea level</span><br><span class="line"></span><br><span class="line">Validating email/location information...OK</span><br><span class="line"></span><br><span class="line">The closest airport found is ICAO:LEGR IATA:GRX near Granada.</span><br><span class="line"></span><br><span class="line">Latitude: 37.188728</span><br><span class="line">Longitude: -3.777350</span><br><span class="line">Country: Spain</span><br><span class="line"></span><br><span class="line">Flightradar24 may, if needed, use your email address to contact you regarding your data feed.</span><br><span class="line"></span><br><span class="line">Would you like to continue using these settings?</span><br><span class="line"></span><br><span class="line">Enter your choice (yes/no)$:yes</span><br></pre></td></tr></table></figure></li>
+<li><p>Introducimos <code>yes</code> para que usar la configuración automática y que utilice la instancia de <em>dump1090</em> que ya tenemos instalada.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">We have detected that you already have a dump1090 instance running. We can therefore automatically configure the FR24 feeder to use existing receiver configuration, or you can manually configure all the parameters.</span><br><span class="line"></span><br><span class="line">Would you like to use autoconfig (*yes*/no)$:yes</span><br></pre></td></tr></table></figure></li>
+<li><p>Activamos el log si queremos. No es necesario.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 6 - Please select desired logfile mode:</span><br><span class="line"> 0 -  Disabled</span><br><span class="line"> 1 -  48 hour, 24h rotation</span><br><span class="line"> 2 -  72 hour, 24h rotation</span><br><span class="line">Select logfile mode (0-2)$:0</span><br></pre></td></tr></table></figure></li>
+<li><p>Por último, reiniciamos el servicio.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart fr24feed</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Raspberry Pi</tag>
+        <tag>ATC</tag>
+        <tag>ADS-B</tag>
+        <tag>dump1090</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Seguimiento de satélites con Gpredict</title>
     <url>/seguimiento-satelites-gpredict/</url>
     <content><![CDATA[<p><a href="http://gpredict.oz9aec.net/">Gpredict</a> es un programa para el seguimiento en tiempo real y predicción de órbitas para satélites. Este programa es muy similar a Orbitron, el cual ya vimos cómo instalar y configurar en el artículo <a href="/seguimiento-satelites-orbitron">“Seguimiento de satélites con Orbitron”</a>. Pero al contrario de este, Gpredict es multiplataforma, por lo que podremos usarlo en diferentes sistemas operativos.<br>En este artículo veremos cómo instalar y configurar Gpredict en Windows, Linux y macOS.</p>
@@ -3291,165 +3449,6 @@
         <tag>Satélites</tag>
         <tag>Orbitron</tag>
         <tag>Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recepción de mensajes ADS-B en Raspberry Pi</title>
-    <url>/seguimiento-aviones-raspberry-pi/</url>
-    <content><![CDATA[<p>ADS-B (<em>Automatic Dependent Surveillance Broadcast</em>) es una tecnología de control en la que un avión determina su posición a través de la navegación por satélite y la emite periódicamente, lo que permite realizar su seguimiento.</p>
-<p>En este artículo veremos como convertir una Raspberry Pi en un receptor de mensajes ADS-B y poder determinar y visualizar la posición de las aeronaves que sobrevuelan nuestra ubicación.</p>
-<span id="more"></span>
-
-<p>Lo primero que haremos será instalar nuestro dispositivo SDR, si todavía no lo hemos hecho, siguiendo los pasos descritos en <a href="/instalacion-rtlsdr-raspberrypi/">“Instalación de dispositivos RTL-SDR en Raspberry Pi”</a>.</p>
-<h3 id="Instalacion-de-dump1090"><a href="#Instalacion-de-dump1090" class="headerlink" title="Instalación de dump1090"></a>Instalación de dump1090</h3><p>Vamos a instalar la versión de <em>dump1090</em> mantenida por FlightAware, ya que está actualizada y además nos instala un servidor web en el que podemos ver las aeronaves sobre el mapa sin muchas complicaciones.</p>
-<p>El primer paso es instalar el repositorio de FlightAware en nuestra Raspberry Pi. Actualmente los paquetes de instalación no están disponibles en el repositorio para arquitecturas de 64 bits. Si necesitamos instalar <em>dump1090</em> en un sistema operativo distinto o con otras arquitecturas, debemos compilarlo siguiendo los pasos descritos <a href="https://github.com/flightaware/dump1090">aquí</a>.<br>Para Raspbian de 32 bits ejecutaremos los siguiente comandos:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://es.flightaware.com/adsb/piaware/files/packages/pool/piaware/f/flightaware-apt-repository/flightaware-apt-repository_1.1_all.deb</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i flightaware-apt-repository_1.1_all.deb</span><br></pre></td></tr></table></figure>
-
-
-<p>Una vez instalado el repositorio ejecutamos:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-
-<p>Ahora instalamos <em>dump1090</em>:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y dump1090-fa</span><br></pre></td></tr></table></figure>
-
-<p>Podemos ajustar las opciones de <em>dump1090</em> en su archivo de configuración:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/default/dump1090-fa</span><br></pre></td></tr></table></figure>
-
-<p>Si tenemos más de un dispositivo SDR conectado introducimos su número de serie en <em>RECEIVER_SERIAL</em>.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">RECEIVER_SERIAL=&quot;82020715&quot;</span><br></pre></td></tr></table></figure>
-
-<p>Para ajustar el valor de desviación del dispositivo (si lo tuviese) debemos añadir lo siguiente al valor <em>EXTRA_OPTIONS</em>.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">EXTRA_OPTIONS=&quot; --ppm 10&quot;</span><br></pre></td></tr></table></figure>
-
-<p>Reiniciamos el servicio para que se apliquen los cambios.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service dump1090-fa restart</span><br></pre></td></tr></table></figure>
-
-<p>Por último, accedemos a nuestra Raspberry Pi desde cualquier navegador web:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://IP_RASPBERRY:8080/</span><br></pre></td></tr></table></figure>
-
-<img src="/seguimiento-aviones-raspberry-pi/dump1090.jpg" class="" width="900" title="dump1090 FlightAware">
-
-<p>Esta interfaz web utiliza el puerto 8080 por defecto. Si queremos cambiarlo editamos el archivo de configuración de <em>Lighttpd</em>:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/lighttpd/conf-enabled/89-skyaware.conf</span><br></pre></td></tr></table></figure>
-
-<p>Editamos la siguiente línea y modificamos el puerto 8080 por el que queramos utilizar:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$SERVER[&quot;socket&quot;] == &quot;:8080&quot; &#123;</span><br></pre></td></tr></table></figure>
-
-<p>Por último reiniciamos el servicio para que se apliquen los cambios:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service lighttpd restart</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Enviar-datos-a-FlightAware"><a href="#Enviar-datos-a-FlightAware" class="headerlink" title="Enviar datos a FlightAware"></a>Enviar datos a FlightAware</h3><p><a href="https://flightaware.com/">FlightAware</a> es una compañía con sede en Houston (TX, Estados Unidos) que ofrece servicios de software y datos para aviación. Esta compañía ofrece información de seguimiento de aeronaves de forma gratuita desde su página web y sus aplicaciones para móviles. Es actualmente la mayor plataforma de seguimiento de vuelos.</p>
-<p>Podemos reenviar los datos de seguimiento a FlightAware desde nuestra Raspberry Pi. Estos serán utilizados para el seguimiento a nivel global y a cambio recibiremos una suscripción <em><a href="https://flightaware.com/commercial/premium/">Enterprise</a></em>.</p>
-<p>Los pasos para enviar los datos son los siguientes:</p>
-<ol>
-<li>Lo primero será registrarnos en FlightAware:</li>
-</ol>
-<p><a href="https://es.flightaware.com/account/join"><center>https://es.flightaware.com/account/join</center></a></p>
-<ol start="2">
-<li>Instalamos <em>piaware</em>. Este software será el encargado de establecer la comunicación con el servidor de FlightAware para enviar los datos y recibir ajustes. Previamente debemos añadir el repositorio a nuesto sistema. Si ya hemos hecho este paso en la sección anterior, simplemente debemos ejecutar el siguiente comando.<br>Actualmente los paquetes de instalación no están disponibles en el repositorio para arquitecturas de 64 bits. Si necesitamos instalar <em>piaware</em> en un sistema operativo distinto o con otras arquitecturas, debemos compilarlo siguiendo los pasos descritos <a href="https://github.com/flightaware/piaware_builder">aquí</a>.</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y piaware</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>Podemos ajustar <em>piaware</em> para que se actualice de forma automática y para que podamos actualizarlo desde la interfaz web de FlightAware.<br>Si queremos que se actualice automático ejecutamos:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-auto-updates yes</span><br></pre></td></tr></table></figure>
-<p>Si queremos que se pueda hacer de forma manual vía web ejecutamos:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo piaware-config allow-manual-updates yes</span><br></pre></td></tr></table></figure></li>
-<li><p>Reiniciamos el servicio para que se apliquen los ajustes.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service piaware restart</span><br></pre></td></tr></table></figure></li>
-<li><p>Accedemos a la siguiente dirección para vincular nuestra Raspberry Pi con la cuenta que acabamos de crear. Si accedemos desde la misma dirección IP que tiene la Raspberry Pi, la detectará de forma automática.</p>
-</li>
-</ol>
-<p><a href="https://flightaware.com/adsb/piaware/claim"><center>https://flightaware.com/adsb/piaware/claim</center></a></p>
-<ol start="6">
-<li>Vamos a nuestro panel de control y abrimos las opciones de configuración.</li>
-</ol>
-<img src="/seguimiento-aviones-raspberry-pi/flightaware-panel.png" class="" width="900" title="FlightAware">
-
-<ol start="7">
-<li>Por último, introducimos nuestros datos de latitud, longitud y altitud para poder usar el seguimiento con MLAT y reiniciamos el servicio desde la propia web pulsando el botón <em>Send</em>.</li>
-</ol>
-<img src="/seguimiento-aviones-raspberry-pi/flightaware-config.jpg" class="" title="FlightAware">
-
-
-<h3 id="Enviar-datos-a-AirNav-RadarBox"><a href="#Enviar-datos-a-AirNav-RadarBox" class="headerlink" title="Enviar datos a AirNav RadarBox"></a>Enviar datos a AirNav RadarBox</h3><p><a href="https://www.radarbox.com/">RadarBox</a> es una compañía con sede en Tampa (FL, Estados Unidos) que ofrece servicios de información de vuelos. Podemos compartir los datos que recibimos en nuestra Raspberry Pi con RadarBox y a cambio obtendremos una suscripción <em><a href="https://www.radarbox.com/subscribe">Business</a></em>.</p>
-<p>Las pasos que seguiremos son los siguientes:</p>
-<ol>
-<li><p>Instalamos <em>rbfeeder</em>. Será el programa que envíe los datos al servidor.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - http://apt.rb24.com/inst_rbfeeder.sh)&quot;</span><br></pre></td></tr></table></figure>
-<p>Cuando pregunte si queremos instalar <code>dump978-rb</code> le decimos que no.</p>
-</li>
-<li><p>Instalamos el cliente de MLAT. La siguiente versión es para Raspbian. Si necesitamos paquete para otra versión, podemos generarlo siguiendo los pasos descritos <a href="https://github.com/mutability/mlat-client">aquí</a>.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install -y mlat-client</span><br></pre></td></tr></table></figure></li>
-<li><p>Nos registramos en RadarBox.</p>
-</li>
-</ol>
-<p><a href="https://www.radarbox.com/register"><center>https://www.radarbox.com/register</center></a></p>
-<ol start="4">
-<li><p>Una vez registrados necesitamos vincular nuestro receptor con RadarBox. Para ello usaremos la clave que nos genera <em>rbfeeder</em> la primera vez que se conecta al servidor. Consultamos la clave con el comando:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo rbfeeder --showkey --no-start</span><br></pre></td></tr></table></figure></li>
-<li><p>Accedemos a esta dirección, introducimos nuestra clave en <em>Sharing Key</em> y pulsamos en <strong>CLAIM!</strong>.</p>
-</li>
-</ol>
-<p><a href="https://www.radarbox.com/raspberry-pi/claim"><center>https://www.radarbox.com/raspberry-pi/claim</center></a></p>
-<img src="/seguimiento-aviones-raspberry-pi/radarbox-claim.jpg" class="" width="900" title="RadarBox">
-
-
-<ol start="6">
-<li>Por último introducimos nuestras coordenadas cuando nos lo pida.</li>
-</ol>
-<h3 id="Enviar-datos-a-ADS-B-Exchange"><a href="#Enviar-datos-a-ADS-B-Exchange" class="headerlink" title="Enviar datos a ADS-B Exchange"></a>Enviar datos a ADS-B Exchange</h3><p><a href="https://www.adsbexchange.com/">ADS-B Exchange</a> es un servicio colaborativo de datos de seguimiento y es la mayor fuente de datos de vuelos <strong>sin filtrar</strong>. En este caso no obtendremos beneficios como suscripciones, ya que este servicio ofrece todos los datos de forma <strong>gratuita para fines no comerciales</strong>.</p>
-<p>Para enviar nuestros datos a ADS-B Exchange tendremos que ejecutar un script de instalación que realizará el proceso de forma sencilla. Para ello ejecutamos el siguiente comando:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https://adsbexchange.com/feed.sh)&quot;</span><br></pre></td></tr></table></figure>
-
-<p>Se iniciará un asistente instalación en el que debemos indicar un nombre para nuestro <em>feeder</em> y nuestra posición para los cálculos de MLAT.</p>
-<img src="/seguimiento-aviones-raspberry-pi/adsb-script.png" class="" title="Asistente instalación ADS-B Exchange">
-
-<p>Una vez finalice el asistente, ya estaremos conectados y enviando datos a ADS-B Exchange. Para conocer el estado del servicio tenemos los siguientes enlaces:</p>
-<ul>
-<li>Comprobar el estado de nuestro <em>feeder</em>: <a href="https://adsbexchange.com/myip/">https://adsbexchange.com/myip/</a></li>
-<li>Comprobar el estado de los servidores de MLAT: <a href="https://map.adsbexchange.com/mlat-map/">https://map.adsbexchange.com/mlat-map/</a></li>
-</ul>
-<p>Opcionalmente, podemos instalar la herramienta proporcionada por ADS-B Exchange para ver online los datos que estamos enviando desde nuestro receptor en tiempo real. Para instalarla basta con ejecutar el siguiente comando:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https://adsbexchange.com/stats.sh)&quot;</span><br></pre></td></tr></table></figure>
-
-<p>Una vez instalada, ejecutamos el siguiente comando para obtener nuestra URL personalizada en la que consultar los datos:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">adsbexchange-showurl</span><br></pre></td></tr></table></figure>
-
-<p>Obtendremos una URL que debemos copiar e introducir en el navegador web. Una vez accedemos, tendremos dos enlaces que nos llevarán a una página con los datos de las aeronaves que estamos recibiendo en nuestra estación y a un visor con el mapa en tiempo real. Podemos consultar el funcionamiento de las distintas opciones del visor en <a href="https://www.adsbexchange.com/map-help/">este enlace</a>.</p>
-<img src="/seguimiento-aviones-raspberry-pi/adsb-exchange.jpg" class="" width="900" title="ADS-B Exchange">
-
-
-<h3 id="Enviar-datos-a-Flightradar24"><a href="#Enviar-datos-a-Flightradar24" class="headerlink" title="Enviar datos a Flightradar24"></a>Enviar datos a Flightradar24</h3><p><a href="https://www.flightradar24.com/">Flightradar24</a> es una compañía europea con sede en Estocolmo (Suecia) que ofrece servicios de información de vuelos. Compartiendo nuestros datos con Flightradar24 obtendremos una suscripción <em><a href="https://www.flightradar24.com/premium">Business</a></em>.</p>
-<p>Lo primero sera registrarse en Flightradar24.</p>
-<p><a href="https://www.flightradar24.com/premium/signup"><center>https://www.flightradar24.com/premium/signup</center></a></p>
-<p>Para enviar los datos debemos descargar e instalar <em>fr24feed</em>. Para ello ejecutamos el siguiente comando y seguimos los pasos del asistente de instalación.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo bash -c &quot;$(wget -O - https://repo-feed.flightradar24.com/install_fr24_rpi.sh)&quot;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>Introducir el correo electrónico con el que nos hemos registrado.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 1.1 - Enter your email address (username@domain.tld)</span><br></pre></td></tr></table></figure></li>
-<li><p>Si tenemos ya una clave previa la introducimos. En caso contrario lo dejamos en blanco.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 1.2 - If you used to feed FR24 with ADS-B data before, enter your sharing key.</span><br><span class="line">If you don&#x27;t remember your sharing key, you can find it in your account on the website under &quot;My data sharing&quot;.</span><br><span class="line">https://www.flightradar24.com/account/data-sharing</span><br><span class="line"></span><br><span class="line">Otherwise leave this field empty and continue.</span><br></pre></td></tr></table></figure></li>
-<li><p>Introducimos <code>yes</code> para activar MLAT.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 1.3 - Would you like to participate in MLAT calculations? (yes/no)$:yes</span><br></pre></td></tr></table></figure></li>
-<li><p>Introducimos nuestras coordenadas y altitud.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">IMPORTANT: For MLAT calculations the antenna&#x27;s location should be entered very precise!</span><br><span class="line"></span><br><span class="line">Step 3.A - Enter antenna&#x27;s latitude (DD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.B - Enter antenna&#x27;s longitude (DDD.DDDD)</span><br><span class="line"></span><br><span class="line">Step 3.C - Enter antenna&#x27;s altitude above the sea level (in feet)</span><br><span class="line"></span><br><span class="line">Using latitude: 37.XXXX, longitude: -3.XXXX, altitude: 720ft above sea level</span><br><span class="line"></span><br><span class="line">Validating email/location information...OK</span><br><span class="line"></span><br><span class="line">The closest airport found is ICAO:LEGR IATA:GRX near Granada.</span><br><span class="line"></span><br><span class="line">Latitude: 37.188728</span><br><span class="line">Longitude: -3.777350</span><br><span class="line">Country: Spain</span><br><span class="line"></span><br><span class="line">Flightradar24 may, if needed, use your email address to contact you regarding your data feed.</span><br><span class="line"></span><br><span class="line">Would you like to continue using these settings?</span><br><span class="line"></span><br><span class="line">Enter your choice (yes/no)$:yes</span><br></pre></td></tr></table></figure></li>
-<li><p>Introducimos <code>yes</code> para que usar la configuración automática y que utilice la instancia de <em>dump1090</em> que ya tenemos instalada.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">We have detected that you already have a dump1090 instance running. We can therefore automatically configure the FR24 feeder to use existing receiver configuration, or you can manually configure all the parameters.</span><br><span class="line"></span><br><span class="line">Would you like to use autoconfig (*yes*/no)$:yes</span><br></pre></td></tr></table></figure></li>
-<li><p>Activamos el log si queremos. No es necesario.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 6 - Please select desired logfile mode:</span><br><span class="line"> 0 -  Disabled</span><br><span class="line"> 1 -  48 hour, 24h rotation</span><br><span class="line"> 2 -  72 hour, 24h rotation</span><br><span class="line">Select logfile mode (0-2)$:0</span><br></pre></td></tr></table></figure></li>
-<li><p>Por último, reiniciamos el servicio.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart fr24feed</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Raspberry Pi</tag>
-        <tag>ATC</tag>
-        <tag>ADS-B</tag>
-        <tag>dump1090</tag>
       </tags>
   </entry>
 </search>
