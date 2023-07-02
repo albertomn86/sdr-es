@@ -3,7 +3,7 @@ title: Recibir satélites meteorológicos Meteor-M
 date: 2020-03-27 12:10:49
 tags: [Satélites, Satélites meteorológicos, Meteorología]
 author: EA7KOO
-updated: 2023-02-05 16:10:12
+updated: 2023-07-02 17:11:12
 description: Guía paso a paso sobre cómo recibir imágenes LRTP desde los satélites meteorológicos rusos Meteor-M.
 ---
 
@@ -23,16 +23,13 @@ Más información sobre los satélites Meteor-M en [este enlace](http://www.russ
 
 Tenemos en órbita tres satélites Meteor-M, pero actualmente solo uno de ellos emite imágenes en LRPT. El último satélite puesto en órbita sufrió a finales de 2019 el impacto de un micro-meteorito que le produjo daños y dejó el sistema de LRPT fuera de servicio. Solo consiguieron restablecer el sistema de HRPT. [Enlace a la publicación de Roscosmos.](https://www.roscosmos.ru/27891/)
 
-| Satélite        | Meteor-M N1 | Meteor-M N2  | Meteor-M N2-2 |
-|-----------------|-------------|--------------|---------------|
-| **NORAD ID**    | 35865       | 40069        | 44387         |
-| **COSPAR ID**   | 2009-049A   | 2014-037A    | 2019-038A     |
-| **Masa de lanzamiento**  | 2.900 Kg | 2.900 Kg | 2.900 Kg |
-| **Fecha de lanzamiento** | 17 de Septiembre de 2009 | 8 de Julio de 2014 | 5 de Julio de 2019 |
-| **Estado LRPT**      | Inactivo    | Averiado(*) | Averiado      |
-| **Frecuencia LRPT**  | -           | 137,100 MHz  | -             |
-
-_(*) El satélite tiene [un fallo](http://vu2iia-meteor-m2.blogspot.com/2014/10/meteor-m2-images-from-rtl-sdr.html) en el sistema de compresión de imágenes RAW HRPT a JPEG LRPT. Esto produce unos cortes en las imágenes recibidas._
+| Satélite        | Meteor-M N1 | Meteor-M N2  | Meteor-M N2-2 | Meteor-M N2-3 |
+|-----------------|-------------|--------------|---------------|---------------|
+| **NORAD ID**    | 35865       | 40069        | 44387         | 57166         |
+| **COSPAR ID**   | 2009-049A   | 2014-037A    | 2019-038A     | 2023-091A     |
+| **Fecha de lanzamiento** | 17 de septiembre de 2009 | 8 de julio de 2014 | 5 de julio de 2019 | 27 de junio de 2023 |
+| **Estado LRPT**      | Inactivo    | Averiado    | Averiado      | **Activo**  |
+| **Frecuencia LRPT**  | -           | -           | -             | 137,900 MHz |
 
 Podemos conocer el estado actual de los satélites en la siguiente página: [Meteor Status (por Happysat)](http://happysat.nl/Meteor/html/Meteor_Status.html).
 
@@ -56,7 +53,7 @@ Vamos a instalar un _plugin_ para SDR# que nos permitirá demodular la señal de
 
     Los ajustes que vamos a utilizar son:
 
-    - **Modulation type**: aquí le indicamos el tipo de modulación de pendiendo del satélite. Este ajuste lo haremos de forma automática desde DDE Tracker.
+    - **Modulation type**: aquí le indicamos el tipo de modulación. Este ajuste lo haremos de forma automática desde DDE Tracker.
 
     - **SymbolRate**: el satélite usa los modos 72K y 80K de forma aleatoria. Lo dejaremos en **Auto** para que lo detecte automático.
 
@@ -132,16 +129,16 @@ B=3 <-- Modificar según los canales activos.
 
 Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo ["Ajuste de frecuencia en recepción de satélites"](/ajuste-frecuencia-doppler-orbitron/).
 
-Los datos para DDETracker son los siguientes:
+Los datos para DDETracker son los siguientes (Meteor-M N2-3):
 
 **AOS:**
     ```
     radio_Start
     radio_modulation_type<wfm>
-    radio_center_frequency_Hz<137100000>
-    radio_frequency_Hz<137100000>
+    radio_center_frequency_Hz<137900000>
+    radio_frequency_Hz<137900000>
     radio_bandwidth_Hz<120000>
-    QPSK_demodulator_Start
+    OQPSK_demodulator_Start
     send_tracking_frequency_On
     start_programm_Path<C:\SDR\MeteorM2\Decoder\M2_LRPT_Decoder.exe>
     ```
@@ -232,5 +229,3 @@ Una vez introducidas las opciones, hacemos clic en _"Start"_ para que comience e
 {% asset_img satdump_processing.jpg 700 "SatDump - Procesando archivo" %}
 
 Una vez termine el procesado, accedemos al directorio de salida que hemos especificado y podremos ver las imágenes generadas.
-
-{% asset_img satdump_files.jpg 700 "SatDump - Imágenes" %}
