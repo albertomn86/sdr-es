@@ -6,7 +6,7 @@
   <link href="https://sdr-es.com/atom.xml" rel="self"/>
   
   <link href="https://sdr-es.com/"/>
-  <updated>2022-09-25T16:10:49.000Z</updated>
+  <updated>2023-07-02T15:11:12.000Z</updated>
   <id>https://sdr-es.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/"/>
     <id>https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/</id>
     <published>2022-09-25T16:10:49.000Z</published>
-    <updated>2022-09-25T16:10:49.000Z</updated>
+    <updated>2023-07-02T15:11:12.000Z</updated>
     
     
     <summary type="html">Guía para recibir imágenes HRPT desde los satélites meteorológicos LEO.</summary>
@@ -29,9 +29,9 @@
     
     
     
-    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
-    
     <category term="Satélites meteorológicos" scheme="https://sdr-es.com/tags/Satelites-meteorologicos/"/>
+    
+    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
     
     <category term="Meteorología" scheme="https://sdr-es.com/tags/Meteorologia/"/>
     
@@ -100,11 +100,11 @@
     
     
     
-    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
-    
     <category term="Satélites meteorológicos" scheme="https://sdr-es.com/tags/Satelites-meteorologicos/"/>
     
     <category term="NOAA" scheme="https://sdr-es.com/tags/NOAA/"/>
+    
+    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
     
     <category term="Linux" scheme="https://sdr-es.com/tags/Linux/"/>
     
