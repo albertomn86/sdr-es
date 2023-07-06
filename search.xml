@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Ajuste de frecuencia en recepción de satélites</title>
+    <url>/ajuste-frecuencia-doppler-orbitron/</url>
+    <content><![CDATA[<p>Cuando realizamos seguimiento de satélites nos encontramos con que la frecuencia en la que deberíamos recibir una señal no se ajusta con la que estamos recibiendo y además cambia durante el pase. Esto se debe al conocido como <strong>efecto Doppler</strong>.</p>
+<p>El efecto Doppler, llamado así por el físico austriaco Christian Andreas Doppler, es el cambio de frecuencia asociado a la alta velocidad que presenta el satélite con respecto a una estación terrestre.</p>
+<p>Usando Orbitron y el plugin DDETracker podemos hacer que SDR# realice la correción y el ajuste de la frecuencia de recepción de forma automática y en tiempo real. De esta forma evitaremos el tener que ajustarla manualmente y tendremos siempre la señal correctamente centrada.</p>
+<span id="more"></span>
+
+<h2 id="Correccion-automatica-de-la-frecuencia-con-Orbitron"><a href="#Correccion-automatica-de-la-frecuencia-con-Orbitron" class="headerlink" title="Corrección automática de la frecuencia con Orbitron"></a>Corrección automática de la frecuencia con Orbitron</h2><p>En el post anterior <a href="/seguimiento-satelites-orbitron/">“Seguimiento de satélites con Orbitron”</a> vimos como instalar y configurar este programa para realizar el seguimiento de satélites. Este programa también nos va a permitir corregir en tiempo real la frecuencia del satélite que estemos siguiendo, y además podremos enviar esta frecuencia a SDR# para que la ajuste de manera automática. De esta forma no tendremos que preocuparnos por ajustarla manualmente y tendremos siempre la señal perfectamente sintonizada.</p>
+<p>El primer paso es indicarle a Orbitron la frecuencia del satélite para que pueda llevar a cabo el ajuste. Para ello seleccionamos el satélite para marcarlo como activo y vamos a la pestaña <em>Sat/Orbit info</em>.</p>
+<p>Hacemos doble clic en el cuadro de texto de la derecha para que nos cargue la plantilla por defecto.</p>
+<img src="/ajuste-frecuencia-doppler-orbitron/orbitron-plantilla.jpg" class="" title="Orbitron">
+
+<p>Ahora introducimos la frecuencia en MHz en la etiqueta <strong>DNLINK</strong>.</p>
+<img src="/ajuste-frecuencia-doppler-orbitron/orbitron-dnlink.jpg" class="" title="Introducir frecuencia en Orbitron">
+
+<p>Los demás datos son opcionales, pero podemos completarlos para tener más información sobre el satélite.</p>
+<h2 id="Instalacion-de-DDETracker"><a href="#Instalacion-de-DDETracker" class="headerlink" title="Instalación de DDETracker"></a>Instalación de DDETracker</h2><p>El siguiente paso es instalar un plugin en SDR# que nos permita cambiar la frecuencia de forma automática.<br>En este ejemplo vamos a usar el plugin <strong>DDETracker</strong> que podemos descargar desde el siguiente link:</p>
+<p><a href="http://rtl-sdr.ru/uploads/download/ddetracker.zip"><center>Descargar DDE Tracker</center></a></p>
+<p>Una vez descargado el archivo seguimos los siguientes pasos:</p>
+<ol>
+<li><p>Vamos a la carpeta de instalación de SDR# y dentro de la carpeta <strong>Plugins</strong> creamos una nueva de nombre <strong>DDETracker</strong>.</p>
+</li>
+<li><p>Abrimos el archivo descargado y extraemos los archivos que se muestran en la siguiente captura dentro de la carpeta que hemos creado en el paso anterior.</p>
+ <img src="/ajuste-frecuencia-doppler-orbitron/dde-archivos.jpg" class="" title="Archivos de DDETracker"></li>
+</ol>
+<ol start="3">
+<li><p>Añadimos las siguientes líneas al archivo de configuración de Orbitron <em><strong>Setup.cfg</strong></em>, que encontramos dentro de la carpeta <em>Config</em> en el directorio de instalación de Orbitron.<br> Debemos indicar la ruta completa en la que hemos colocado el archivo <em>SDRSharpDriverDDE.exe</em> en el paso anterior.</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Drivers]</span><br><span class="line">SDRSharp=C:\SDR\SDRSharp\Plugins\DDETracker\SDRSharpDriverDDE.exe</span><br></pre></td></tr></table></figure>
+ </br>
+ <img src="/ajuste-frecuencia-doppler-orbitron/orbitron-config.jpg" class="" title="Orbitron">
+
+<p> Por último, reiniciamos Orbitron para aplicar los cambios.</p>
+</li>
+</ol>
+<p>Ahora que tenemos el plugin instalado, iniciamos SDR# y abrimos el plugin desde el menú.</p>
+<img src="/ajuste-frecuencia-doppler-orbitron/sdrsharp-menu.jpg" class="" title="SDR# menú">
+
+<p>Lo activamos haciendo clic en <em>Scheduler</em>.</p>
+<img src="/ajuste-frecuencia-doppler-orbitron/dde-plugin.jpg" class="" title="DDETracker">
+
+
+<h2 id="Conexion-con-DDETracker"><a href="#Conexion-con-DDETracker" class="headerlink" title="Conexión con DDETracker"></a>Conexión con DDETracker</h2><p>Ahora ya podemos decirle a Orbitron que mande los datos a SDR#. Para ello vamos a Orbitron y seleccionamos en Driver <em>“SDRSharp”</em> y hacemos clic en el botón de conexión:</p>
+<img src="/ajuste-frecuencia-doppler-orbitron/orbitron-driver.jpg" class="" title="Orbitron">
+
+<p>Ahora ya podemos ver que DDETracker recibe los datos del satélite que tenemos activo en Orbitron.</p>
+<img src="/ajuste-frecuencia-doppler-orbitron/dde-active.jpg" class="" title="DDETracker activo">
+
+
+<h2 id="Configurar-satelites-en-DDETracker"><a href="#Configurar-satelites-en-DDETracker" class="headerlink" title="Configurar satélites en DDETracker"></a>Configurar satélites en DDETracker</h2><p>Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.<br>Para introducir los datos, hacemos clic en sobre el botón <strong>Config</strong> que aparece en el plugin y se abrirá una ventana para introducir los datos.</p>
+<img src="/ajuste-frecuencia-doppler-orbitron/dde-config.jpg" class="" title="DDETracker config">
+
+
+<p>Hacemos clic en <em>“Add new satellite”</em> para crear un nuevo satélite.<br>Lo primero es introducir el nombre. Este nombre debe coincidir exactamente con el nombre del satélite que aparece en el plugin.<br>Si el nombre es muy largo o contiene caracteres especiales, podremos usar el asterisco (*) para omitir ciertas partes.</p>
+<p>Como podemos ver en la ventana tenemos dos bloques para introducir las acciones que SDR# debe realizar. En el bloque <strong>AOS</strong> (Acquisition of Signal) le diremos qué debe hacer cuando el satélite comience a verse sobre el horizonte en nuestra posición y en el bloque inferior <strong>LOS</strong> (Loss Of Signal) le indicamos que hará cuando termine el pase.</p>
+<p>Estas acciones podemos escribirlas manualmente o seleccionarlas de la columna de la derecha e ir insertando con el botón “<strong>&lt;&lt;</strong>“ dónde corresponda.</p>
+<p>En el caso de nuestro ejemplo haremos las siguientes acciones:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
+<p><strong>LOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_tracking_frequency_Off</span><br><span class="line">radio_Stop</span><br></pre></td></tr></table></figure></p>
+</br>
+<img src="/ajuste-frecuencia-doppler-orbitron/dde-configured.jpg" class="" title="DDETracker FUNCUBE">
+
+<p>Con esto ya tendríamos los datos del satélite introducidos. Ahora cuando el satélite se acerque a nuestra posición, SDR# se iniciará para recibir la señal de forma automática y se detendrá cuando el satélite desaparezca por el horizonte.</p>
+<img src="/ajuste-frecuencia-doppler-orbitron/sdr-sharp.jpg" class="" title="DDETracker activo">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Orbitron</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Construcción de antena QFH para satélites meteorológicos</title>
     <url>/construccion-antena-qfh-137/</url>
     <content><![CDATA[<p>En este artículo veremos como construir paso a paso una antena QFH para la recepción de satélites meteorológicos. Estos satélites, como ya hemos visto en artículos anteriores, envían imágenes en las frecuencias de 137 MHz a 138 MHz y por ello construiremos nuestra antena para que resuene en 137,5 MHz.</p>
@@ -471,76 +541,6 @@
 ]]></content>
       <tags>
         <tag>RTL-SDR</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ajuste de frecuencia en recepción de satélites</title>
-    <url>/ajuste-frecuencia-doppler-orbitron/</url>
-    <content><![CDATA[<p>Cuando realizamos seguimiento de satélites nos encontramos con que la frecuencia en la que deberíamos recibir una señal no se ajusta con la que estamos recibiendo y además cambia durante el pase. Esto se debe al conocido como <strong>efecto Doppler</strong>.</p>
-<p>El efecto Doppler, llamado así por el físico austriaco Christian Andreas Doppler, es el cambio de frecuencia asociado a la alta velocidad que presenta el satélite con respecto a una estación terrestre.</p>
-<p>Usando Orbitron y el plugin DDETracker podemos hacer que SDR# realice la correción y el ajuste de la frecuencia de recepción de forma automática y en tiempo real. De esta forma evitaremos el tener que ajustarla manualmente y tendremos siempre la señal correctamente centrada.</p>
-<span id="more"></span>
-
-<h2 id="Correccion-automatica-de-la-frecuencia-con-Orbitron"><a href="#Correccion-automatica-de-la-frecuencia-con-Orbitron" class="headerlink" title="Corrección automática de la frecuencia con Orbitron"></a>Corrección automática de la frecuencia con Orbitron</h2><p>En el post anterior <a href="/seguimiento-satelites-orbitron/">“Seguimiento de satélites con Orbitron”</a> vimos como instalar y configurar este programa para realizar el seguimiento de satélites. Este programa también nos va a permitir corregir en tiempo real la frecuencia del satélite que estemos siguiendo, y además podremos enviar esta frecuencia a SDR# para que la ajuste de manera automática. De esta forma no tendremos que preocuparnos por ajustarla manualmente y tendremos siempre la señal perfectamente sintonizada.</p>
-<p>El primer paso es indicarle a Orbitron la frecuencia del satélite para que pueda llevar a cabo el ajuste. Para ello seleccionamos el satélite para marcarlo como activo y vamos a la pestaña <em>Sat/Orbit info</em>.</p>
-<p>Hacemos doble clic en el cuadro de texto de la derecha para que nos cargue la plantilla por defecto.</p>
-<img src="/ajuste-frecuencia-doppler-orbitron/orbitron-plantilla.jpg" class="" title="Orbitron">
-
-<p>Ahora introducimos la frecuencia en MHz en la etiqueta <strong>DNLINK</strong>.</p>
-<img src="/ajuste-frecuencia-doppler-orbitron/orbitron-dnlink.jpg" class="" title="Introducir frecuencia en Orbitron">
-
-<p>Los demás datos son opcionales, pero podemos completarlos para tener más información sobre el satélite.</p>
-<h2 id="Instalacion-de-DDETracker"><a href="#Instalacion-de-DDETracker" class="headerlink" title="Instalación de DDETracker"></a>Instalación de DDETracker</h2><p>El siguiente paso es instalar un plugin en SDR# que nos permita cambiar la frecuencia de forma automática.<br>En este ejemplo vamos a usar el plugin <strong>DDETracker</strong> que podemos descargar desde el siguiente link:</p>
-<p><a href="http://rtl-sdr.ru/uploads/download/ddetracker.zip"><center>Descargar DDE Tracker</center></a></p>
-<p>Una vez descargado el archivo seguimos los siguientes pasos:</p>
-<ol>
-<li><p>Vamos a la carpeta de instalación de SDR# y dentro de la carpeta <strong>Plugins</strong> creamos una nueva de nombre <strong>DDETracker</strong>.</p>
-</li>
-<li><p>Abrimos el archivo descargado y extraemos los archivos que se muestran en la siguiente captura dentro de la carpeta que hemos creado en el paso anterior.</p>
- <img src="/ajuste-frecuencia-doppler-orbitron/dde-archivos.jpg" class="" title="Archivos de DDETracker"></li>
-</ol>
-<ol start="3">
-<li><p>Añadimos las siguientes líneas al archivo de configuración de Orbitron <em><strong>Setup.cfg</strong></em>, que encontramos dentro de la carpeta <em>Config</em> en el directorio de instalación de Orbitron.<br> Debemos indicar la ruta completa en la que hemos colocado el archivo <em>SDRSharpDriverDDE.exe</em> en el paso anterior.</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[Drivers]</span><br><span class="line">SDRSharp=C:\SDR\SDRSharp\Plugins\DDETracker\SDRSharpDriverDDE.exe</span><br></pre></td></tr></table></figure>
- </br>
- <img src="/ajuste-frecuencia-doppler-orbitron/orbitron-config.jpg" class="" title="Orbitron">
-
-<p> Por último, reiniciamos Orbitron para aplicar los cambios.</p>
-</li>
-</ol>
-<p>Ahora que tenemos el plugin instalado, iniciamos SDR# y abrimos el plugin desde el menú.</p>
-<img src="/ajuste-frecuencia-doppler-orbitron/sdrsharp-menu.jpg" class="" title="SDR# menú">
-
-<p>Lo activamos haciendo clic en <em>Scheduler</em>.</p>
-<img src="/ajuste-frecuencia-doppler-orbitron/dde-plugin.jpg" class="" title="DDETracker">
-
-
-<h2 id="Conexion-con-DDETracker"><a href="#Conexion-con-DDETracker" class="headerlink" title="Conexión con DDETracker"></a>Conexión con DDETracker</h2><p>Ahora ya podemos decirle a Orbitron que mande los datos a SDR#. Para ello vamos a Orbitron y seleccionamos en Driver <em>“SDRSharp”</em> y hacemos clic en el botón de conexión:</p>
-<img src="/ajuste-frecuencia-doppler-orbitron/orbitron-driver.jpg" class="" title="Orbitron">
-
-<p>Ahora ya podemos ver que DDETracker recibe los datos del satélite que tenemos activo en Orbitron.</p>
-<img src="/ajuste-frecuencia-doppler-orbitron/dde-active.jpg" class="" title="DDETracker activo">
-
-
-<h2 id="Configurar-satelites-en-DDETracker"><a href="#Configurar-satelites-en-DDETracker" class="headerlink" title="Configurar satélites en DDETracker"></a>Configurar satélites en DDETracker</h2><p>Para que el plugin pueda iniciar el seguimiento, debemos indicarle algunos datos sobre el satélite en cuestión.<br>Para introducir los datos, hacemos clic en sobre el botón <strong>Config</strong> que aparece en el plugin y se abrirá una ventana para introducir los datos.</p>
-<img src="/ajuste-frecuencia-doppler-orbitron/dde-config.jpg" class="" title="DDETracker config">
-
-
-<p>Hacemos clic en <em>“Add new satellite”</em> para crear un nuevo satélite.<br>Lo primero es introducir el nombre. Este nombre debe coincidir exactamente con el nombre del satélite que aparece en el plugin.<br>Si el nombre es muy largo o contiene caracteres especiales, podremos usar el asterisco (*) para omitir ciertas partes.</p>
-<p>Como podemos ver en la ventana tenemos dos bloques para introducir las acciones que SDR# debe realizar. En el bloque <strong>AOS</strong> (Acquisition of Signal) le diremos qué debe hacer cuando el satélite comience a verse sobre el horizonte en nuestra posición y en el bloque inferior <strong>LOS</strong> (Loss Of Signal) le indicamos que hará cuando termine el pase.</p>
-<p>Estas acciones podemos escribirlas manualmente o seleccionarlas de la columna de la derecha e ir insertando con el botón “<strong>&lt;&lt;</strong>“ dónde corresponda.</p>
-<p>En el caso de nuestro ejemplo haremos las siguientes acciones:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;USB&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;4800&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145935000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure></p>
-<p><strong>LOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_tracking_frequency_Off</span><br><span class="line">radio_Stop</span><br></pre></td></tr></table></figure></p>
-</br>
-<img src="/ajuste-frecuencia-doppler-orbitron/dde-configured.jpg" class="" title="DDETracker FUNCUBE">
-
-<p>Con esto ya tendríamos los datos del satélite introducidos. Ahora cuando el satélite se acerque a nuestra posición, SDR# se iniciará para recibir la señal de forma automática y se detendrá cuando el satélite desaparezca por el horizonte.</p>
-<img src="/ajuste-frecuencia-doppler-orbitron/sdr-sharp.jpg" class="" title="DDETracker activo">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Orbitron</tag>
       </tags>
   </entry>
   <entry>
@@ -1613,9 +1613,9 @@
 <img src="/recepcion-datos-HIRS-satelites-NOAA/Compo.png" class="" title="NOAA HIRS Decoder">
 ]]></content>
       <tags>
+        <tag>Satélites</tag>
         <tag>Satélites meteorológicos</tag>
         <tag>NOAA</tag>
-        <tag>Satélites</tag>
         <tag>Meteorología</tag>
       </tags>
   </entry>
@@ -2136,8 +2136,8 @@
 <h1 id="Agradecimientos"><a href="#Agradecimientos" class="headerlink" title="Agradecimientos"></a>Agradecimientos</h1><p>Como no podía ser de otra forma, quiero agradecer a Derek OK9SGC su trabajo en la elaboración de la guía en la que me he basado. Creo que la sencillez y la claridad de esta, han sido los incentivos que me han empujado a probar esta forma de recibir imágenes.</p>
 ]]></content>
       <tags>
-        <tag>Satélites meteorológicos</tag>
         <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
         <tag>Meteorología</tag>
         <tag>HRPT</tag>
       </tags>
@@ -2240,9 +2240,9 @@
 <img src="/recepcion-satelites-meteorologicos-NOAA/wx_terminado.jpg" class="" width="500" title="WXtoImg">
 ]]></content>
       <tags>
+        <tag>Satélites</tag>
         <tag>Satélites meteorológicos</tag>
         <tag>NOAA</tag>
-        <tag>Satélites</tag>
         <tag>Windows</tag>
         <tag>Meteorología</tag>
         <tag>WXtoIMG</tag>
@@ -2302,7 +2302,7 @@
 <td>-</td>
 <td>-</td>
 <td>-</td>
-<td>137,900 MHz</td>
+<td>137,100 MHz</td>
 </tr>
 </tbody></table>
 <p>Podemos conocer el estado actual de los satélites en la siguiente página: <a href="http://happysat.nl/Meteor/html/Meteor_Status.html">Meteor Status (por Happysat)</a>.</p>
@@ -2346,8 +2346,8 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[IN]</span><br><span class="line">source=man</span><br><span class="line">sat=M2</span><br><span class="line">mode=72k</span><br><span class="line"></span><br><span class="line">[OUT]</span><br><span class="line">rgb=123.jpg &lt;-- Cambiar por 122.jpg según los canales activos. También se puede cambiar &#x27;jpg&#x27; por &#x27;bmp&#x27;.</span><br><span class="line">rgb_q=100</span><br><span class="line">mono=yes</span><br><span class="line">logs=no</span><br><span class="line">APID70=yes</span><br><span class="line">VCDU=no</span><br><span class="line">path=C:\SDR\MeteorM2\imágenes</span><br><span class="line"></span><br><span class="line">[FAST]</span><br><span class="line">FORMAT=jpg &lt;-- Cambiar por &#x27;bmp&#x27; para obtener imagen sin comprimir.</span><br><span class="line">R=1</span><br><span class="line">G=2</span><br><span class="line">B=3 &lt;-- Modificar según los canales activos.</span><br></pre></td></tr></table></figure>
 
 <h3 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h3><p>Para recibir la señal debemos realizar los pasos habituales para el seguimiento de satélites que ya vimos en el artículo <a href="/ajuste-frecuencia-doppler-orbitron/">“Ajuste de frecuencia en recepción de satélites”</a>.</p>
-<p>Los datos para DDETracker son los siguientes (Meteor-M N2-3):</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;137900000&gt;</span><br><span class="line">radio_frequency_Hz&lt;137900000&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;120000&gt;</span><br><span class="line">OQPSK_demodulator_Start</span><br><span class="line">send_tracking_frequency_On</span><br><span class="line">start_programm_Path&lt;C:\SDR\MeteorM2\Decoder\M2_LRPT_Decoder.exe&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;wfm&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_frequency_Hz&lt;137100000&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;120000&gt;</span><br><span class="line">OQPSK_demodulator_Start</span><br><span class="line">send_tracking_frequency_On</span><br><span class="line">start_programm_Path&lt;C:\SDR\MeteorM2\Decoder\M2_LRPT_Decoder.exe&gt;</span><br></pre></td></tr></table></figure></p>
 <p>En este ejemplo se ha usado la opción de enviar los datos por socket, por lo que en los ajustes anteriores se ha añadido el comando <strong>start_programm_Path</strong> para que se inice LRPT Decoder de forma automática cuando se inicie el seguimiento. Si optamos por la decodificación desde el archivo, este comando no es necesario.</p>
 <p>Una vez configurado todo correctamente, en el instante en el que el satélite comience a verse por nuestra localización, comenzará el seguimiento automático.</p>
 <p>En el momento en que la señal sea detectada por el <em>plugin</em>, este comenzará a demodularla y a procesarla. Veremos que aparece <strong>Locked</strong> en la interfaz.</p>
@@ -2402,42 +2402,9 @@
 <p>Una vez termine el procesado, accedemos al directorio de salida que hemos especificado y podremos ver las imágenes generadas.</p>
 ]]></content>
       <tags>
-        <tag>Satélites meteorológicos</tag>
         <tag>Satélites</tag>
+        <tag>Satélites meteorológicos</tag>
         <tag>Meteorología</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recibir APRS en macOS con Gqrx</title>
-    <url>/recibir-aprs-macos-con-gqrx/</url>
-    <content><![CDATA[<p>En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando <a href="https://gqrx.dk/">Gqrx</a>.<br>El APRS, es un protocolo de comunicaciones basado en AX.25, usado en el envío de telemetría, paquetes de datos meteorológicos,  posicionamiento GPS, etc. En este caso nos ocuparemos del envío de mensajería entre estaciones de radioaficionados, en la que la Estación Espacial (ISS) es una estación repetidora.</p>
-<span id="more"></span>
-
-<p>Vamos a interceptar esa mensajería de dominio público entre las distintas estaciones de radioaficionado que se mantiene en esos pocos minutos que dura el pase de la ISS por nuestro cielo.</p>
-<p>Dentro del ecosistema Apple no hay mucha diversidad de programas SDR, pero que en este caso, la suerte nos ha sonreído con GQRX.<br>Es un programa que tiene muchos seguidores, ya que brinda sencillez y no consume muchos recursos. Pero que en este caso nos ofrece todo aquello que necesitamos para la recepción de esa mensajería APRS.</p>
-<h2 id="Instalacion-de-Gqrx"><a href="#Instalacion-de-Gqrx" class="headerlink" title="Instalación de Gqrx"></a>Instalación de Gqrx</h2><p>La instalación es sencilla, y más aún para todos aquellos que ya tienen instalado el sistema de administración de paquetes Homebrew previamente.</p>
-<p>Si no tienes un administrador de programas, proponemos su instalación siguiendo <a href="https://franyerverjel.com/blog/instalacion-de-homebrew-en-mac">esta guía</a>.</p>
-<p>Para la instalación, usando el administrador de paquetes, abrimos una ventana de terminal y escribimos:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install --cask gqrx</span><br></pre></td></tr></table></figure>
-
-<p>Una vez finalizada la instalación, iniciamos desde el icono de la aplicación:</p>
-<img src="/recibir-aprs-macos-con-gqrx/icono.png" class="" width="90" title="Gqrx">
-
-<p>En el momento de empezar esta guía la versión del programa es la 2.14.4.</p>
-<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Ya finalizada la instalación y familiarizados con el programa, sintonizamos la frecuencia en la que trabaja la ISS, que en este caso es 145.825.000 Hz.<br>Elegimos el modo WFM (mono) y abrimos el único <em>plugin</em> que trae de serie el programa, y que lo podemos encontrar dentro de la pestaña <strong>Tools</strong> con el título de <strong>AFSK1200 Decoder</strong>.</p>
-<img src="/recibir-aprs-macos-con-gqrx/gqrx-menu.png" class="" width="900" title="Gqrx">
-
-<p>Se abrirá una ventana muy simple en la que irán apareciendo los mensajes interceptados y decodificados.</p>
-<img src="/recibir-aprs-macos-con-gqrx/mensajes.png" class="" width="800" title="Gqrx - Mensajes">
-
-<p>Y hasta  aquí la guía. Espero que os animéis a intentarlo.</p>
-<p>73 para todos.</p>
-]]></content>
-      <tags>
-        <tag>APRS</tag>
-        <tag>macOS</tag>
-        <tag>ISS</tag>
-        <tag>Gqrx</tag>
       </tags>
   </entry>
   <entry>
@@ -2554,6 +2521,39 @@
       </tags>
   </entry>
   <entry>
+    <title>Recibir APRS en macOS con Gqrx</title>
+    <url>/recibir-aprs-macos-con-gqrx/</url>
+    <content><![CDATA[<p>En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando <a href="https://gqrx.dk/">Gqrx</a>.<br>El APRS, es un protocolo de comunicaciones basado en AX.25, usado en el envío de telemetría, paquetes de datos meteorológicos,  posicionamiento GPS, etc. En este caso nos ocuparemos del envío de mensajería entre estaciones de radioaficionados, en la que la Estación Espacial (ISS) es una estación repetidora.</p>
+<span id="more"></span>
+
+<p>Vamos a interceptar esa mensajería de dominio público entre las distintas estaciones de radioaficionado que se mantiene en esos pocos minutos que dura el pase de la ISS por nuestro cielo.</p>
+<p>Dentro del ecosistema Apple no hay mucha diversidad de programas SDR, pero que en este caso, la suerte nos ha sonreído con GQRX.<br>Es un programa que tiene muchos seguidores, ya que brinda sencillez y no consume muchos recursos. Pero que en este caso nos ofrece todo aquello que necesitamos para la recepción de esa mensajería APRS.</p>
+<h2 id="Instalacion-de-Gqrx"><a href="#Instalacion-de-Gqrx" class="headerlink" title="Instalación de Gqrx"></a>Instalación de Gqrx</h2><p>La instalación es sencilla, y más aún para todos aquellos que ya tienen instalado el sistema de administración de paquetes Homebrew previamente.</p>
+<p>Si no tienes un administrador de programas, proponemos su instalación siguiendo <a href="https://franyerverjel.com/blog/instalacion-de-homebrew-en-mac">esta guía</a>.</p>
+<p>Para la instalación, usando el administrador de paquetes, abrimos una ventana de terminal y escribimos:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install --cask gqrx</span><br></pre></td></tr></table></figure>
+
+<p>Una vez finalizada la instalación, iniciamos desde el icono de la aplicación:</p>
+<img src="/recibir-aprs-macos-con-gqrx/icono.png" class="" width="90" title="Gqrx">
+
+<p>En el momento de empezar esta guía la versión del programa es la 2.14.4.</p>
+<h2 id="Funcionamiento"><a href="#Funcionamiento" class="headerlink" title="Funcionamiento"></a>Funcionamiento</h2><p>Ya finalizada la instalación y familiarizados con el programa, sintonizamos la frecuencia en la que trabaja la ISS, que en este caso es 145.825.000 Hz.<br>Elegimos el modo WFM (mono) y abrimos el único <em>plugin</em> que trae de serie el programa, y que lo podemos encontrar dentro de la pestaña <strong>Tools</strong> con el título de <strong>AFSK1200 Decoder</strong>.</p>
+<img src="/recibir-aprs-macos-con-gqrx/gqrx-menu.png" class="" width="900" title="Gqrx">
+
+<p>Se abrirá una ventana muy simple en la que irán apareciendo los mensajes interceptados y decodificados.</p>
+<img src="/recibir-aprs-macos-con-gqrx/mensajes.png" class="" width="800" title="Gqrx - Mensajes">
+
+<p>Y hasta  aquí la guía. Espero que os animéis a intentarlo.</p>
+<p>73 para todos.</p>
+]]></content>
+      <tags>
+        <tag>APRS</tag>
+        <tag>macOS</tag>
+        <tag>ISS</tag>
+        <tag>Gqrx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Recibir radio digital mundial (DRM)</title>
     <url>/recibir-drm/</url>
     <content><![CDATA[<p><a href="https://www.drm.org/">Digital Radio Mondiale (DRM)</a>, en español radio digital mundial, es un conjunto de tecnologías de transmisión de audio digital diseñadas para operar sobre las bandas utilizadas actualmente para la radiodifusión analógica en AM (especialmente de onda corta) y FM.<br>DRM ha sido diseñado para poder reutilizar los transmisores analógicos existentes. Las instalaciones como las antenas, alimentadores o amplificadores no necesitan modificación, evitando importantes inversiones.<br>En este artículo veremos cómo recibir emisiones en el estándar DRM30 con nuestro dispositivo SDR.</p>
@@ -2587,6 +2587,133 @@
       <tags>
         <tag>HF</tag>
         <tag>DRM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Recibir satélite Es&#39;hail-2/QO-100</title>
+    <url>/recibir-satelite-eshail2-qo100/</url>
+    <content><![CDATA[<p><a href="https://amsat-dl.org/en/eshail-2-amsat-phase-4-a/">Es’hail-2/Qatar-OSCAR 100</a> es un satélite geoestacionario catarí construido por Mitsubishi Electric que ofrece servicios de retransmisión de televisión para las regiones del Medio Oeste y Norte de África. Además de estos servicios de retransmisión, este satélite incorpora dos transpondedores para comunicaciones de radioaficionado por satélite.</p>
+<p>En este artículo veremos como recibir y decodificar la señal de estos transpondedores usando una antena parabólica y nuestro dispositivo SDR.</p>
+<span id="more"></span>
+
+<h1 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h1><table>
+<thead>
+<tr>
+<th>Satélite</th>
+<th>Es’hail-2/QO-100</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>NORAD ID</strong></td>
+<td>43700</td>
+</tr>
+<tr>
+<td><strong>COSPAR ID</strong></td>
+<td>2018-090A</td>
+</tr>
+<tr>
+<td><strong>Posición</strong></td>
+<td>26° Este</td>
+</tr>
+<tr>
+<td><strong>Masa de lanzamiento</strong></td>
+<td>5.300 Kg</td>
+</tr>
+<tr>
+<td><strong>Fecha de lanzamiento</strong></td>
+<td>15 de Noviembre de 2018</td>
+</tr>
+<tr>
+<td><strong>Transpondedores bajada</strong></td>
+<td><strong>NB:</strong> 10.489,5 MHz - 10.490 MHz (Pol. V) <br> <strong>WB:</strong> 10.491 MHz - 10.499 MHz (Pol. H)</td>
+</tr>
+</tbody></table>
+<h1 id="Material-necesario"><a href="#Material-necesario" class="headerlink" title="Material necesario"></a>Material necesario</h1><h2 id="Antena"><a href="#Antena" class="headerlink" title="Antena"></a>Antena</h2><p>Para la recepción de este satélite necesitamos una antena parabólica con un disco de al menos 40 centímetros para el transpondedor de banda estrecha y de 80 centímetros para el de banda ancha. El LNB puede ser cualquiera de nuestra elección. Si bien los LNB normales de TV para banda Ku presentan el problema de la desviación de la señal (<em>LNB drift</em>) en el transpondedor de banda estrecha, veremos como resolver este problema usando la opción que <strong>SDR Console</strong> proporciona para ello. Aunque lo más recomendable es utilizar un LNB con TCXO, ya que proporciona una mejor recepción en este caso. El LNB recomendado, y que se utiliza en este ejemplo, es el <a href="https://www.rtl-sdr.com/qo-100-bullseye-tcxo-ultra-stable-lnb-now-available-in-our-store-for-29-95-with-free-shipping/"><strong>Bullseye LNB</strong></a>.</p>
+<img src="/recibir-satelite-eshail2-qo100/lnb.jpeg" class="" width="600" title="Bullseye LNB">
+
+<h2 id="Bias-Tee"><a href="#Bias-Tee" class="headerlink" title="Bias-Tee"></a>Bias-Tee</h2><p>Para hacer funcionar el LNB vamos a necesitar alimentarlo con una tensión de 13V a 18V. Los dispositivos SDR normales pueden proporcionar hasta un máximo de 4,5V, por lo que vamos a requerir de otra forma de alimentación. Podemos encontrar muchas formas distintas de hacerlo si buscamos por internet (inyectores de tensión de TV por satélite, receptores de TV por satélite, etc.), pero en este ejemplo vamos a usar un Bias-Tee externo. Podemos adquirir fácilmente estos dispositivos en cualquier sitio y su coste no es muy elevado (unos 14€).</p>
+<img src="/recibir-satelite-eshail2-qo100/biast.jpeg" class="" width="400" title="Bias-Tee">
+
+<p>Para alimentar el LNB necesitaremos una fuente que nos pueda proporcionar dos voltajes distintos. Unos 13V a 14V para activar la polarización vertical y unos 17V a 18V para la horizontal.</p>
+<h2 id="SDR"><a href="#SDR" class="headerlink" title="SDR"></a>SDR</h2><p>Para la recepción en estas frecuencias podemos usar cualquier SDR, ya que el propio LNB actúa como un <em>Downconverter</em>, reduciendo la frecuencia de entrada a un rango de salida que comienza en 739MHz y que la mayoría de los dispositivos SDR reciben sin ningún problema.</p>
+<h1 id="Instalacion-y-orientacion-de-la-antena"><a href="#Instalacion-y-orientacion-de-la-antena" class="headerlink" title="Instalación y orientación de la antena"></a>Instalación y orientación de la antena</h1><p>El satélite esta situado en los 26° Este. Para orientar nuestra antena podemos usar algunas aplicaciones existentes para móviles, o bien utilizar una <a href="https://eshail.batc.org.uk/point/">aplicación online</a> y una brújula.</p>
+<p>Una vez colocada y orientada (parcialmente, ya que posiblemente después haya que afinar para mejorar la recepción), vamos a realizar la conexión con nuestro SDR. Para ello necesitamos conectar el LNB (conector verde si usamos el Bullseye) a la entrada del Bias-Tee marcada con RF+DC y el SDR a la salida marcada con RF. En este ejemplo se ha utilizado un cable coaxial para TV con dos conectores F y un adaptador a SMA para conectarlo al Bias-Tee.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-biast.jpeg" class="" width="900" title="Conexiones SDR, Bias-Tee y LNB">
+
+<h1 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h1><p>Como ya se ha mencionado anteriormente, el satélite incorpora dos transpondedores para su uso por radioaficionados. Un transpondedor lineal de banda estrecha (<em>Narrow Band</em>) en polarización vertical y otro de banda ancha (<em>Wide Band</em>) para televisión digital de radioaficionado (DATV) en polarización horizontal. Para seleccionar el transpondedor bastará con cambiar la tensión de alimentación del LNB en cada caso.</p>
+<h2 id="Transpondedor-NB"><a href="#Transpondedor-NB" class="headerlink" title="Transpondedor NB"></a>Transpondedor NB</h2><p>En la siguiente imagen podemos ver la distribución de las bandas en este transpondedor.</p>
+<p><img src="https://amsat-dl.org/wp-content/uploads/2020/02/AMSAT-QO-100-NB-Transponder-Bandplan-Graph-1140x641.png" alt="QO-100 NB Bandplan © AMSAT-DL"></p>
+<p>Más información en la <a href="https://amsat-dl.org/en/new-qo-100-band-plan/">página web de AMSAT-DL</a>.</p>
+<h3 id="Recepcion-con-SDR"><a href="#Recepcion-con-SDR" class="headerlink" title="Recepción con SDR#"></a>Recepción con SDR#</h3><p>Para recibir la señal del satélite iniciamos SDR# y sintonizamos la frecuencia de 739,770 MHz. Si todo está correctamente conectado y la antena medianamente orientada, deberíamos poder ver la señal de la baliza del satélite. Podemos usar la misma para ajustar nuestra antena lo mejor posible y recibir el máximo de señal.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-sharp-beacon.jpeg" class="" width="900" title="Baliza QO-100">
+
+<p>Ahora vamos a aplicar el desplazamiento en SDR# para que las frecuencias se correspondan con las reales del satélite. Esto no es imprescindible, pero nos hará más fácil la búsqueda e identificación de las mismas. Para ello basta con restar a la frecuencia central de la baliza (10.489,750 MHz) la frecuencia en la que nos encontramos dicha señal en el programa (739,771 MHz en nuestro caso).</p>
+<center><b>10.489.750.000 Hz - 739.771.000 Hz  = 9.749.979.000 Hz</b></center>
+
+<p>Por último, introducimos este resultado en el campo <em>Shift</em> y lo activamos para aplicar el desplazamiento.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-sharp-recibiendo.jpeg" class="" width="900" title="Recepción QO-100">
+
+<h3 id="Recepcion-con-SDR-Console"><a href="#Recepcion-con-SDR-Console" class="headerlink" title="Recepción con SDR Console"></a>Recepción con SDR Console</h3><p>Como ya se mencionó anteriormente, si estamos usando un LNB que no tenga TCXO es posible que veamos que las señales se desplazan continuamente, lo que hace muy difícil recibirlas correctamente. Para solucionar este inconveniente mediante <em>software</em> podemos usar una utilidad que incorpora el programa <a href="https://www.sdr-radio.com/download">SDR Console</a>.<br>Seguiremos los pasos indicados en su <a href="https://www.sdr-radio.com/EsHail-2">página web</a> y que se describen a continuación.</p>
+<p>El primer paso es habilitar que se muestren las frecuencias superiores a 9 GHz. Para ello vamos a los ajustes y marcamos el rango indicado en la siguiente imagen.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-ajustar-rango.jpeg" class="" width="900" title="SDR Console - Ajuste rango">
+
+<p>El siguiente paso es aplicar el desplazamiento de la señal. Para introducir el valor de desplazamiento debemos editar los valores de definición de nuestro dispositivo SDR. Para modificar este valor seleccionamos nuestra radio y le damos a <strong>Definitions</strong> y en la ventana que aparece marcamos <strong>Converter selection</strong> y hacemos clic en <strong>Edit</strong>.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-add-converter.jpeg" class="" width="900" title="SDR Console - Desplazamiento">
+
+<p>Ahora introducimos el valor de desplazamiento que vimos como calcular en el apartado anterior.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-set-converter.jpeg" class="" width="700" title="SDR Console - Converter">
+
+<p>Hacemos clic en <strong>Save</strong> y seleccionamos ahora el nuevo <em>converter</em> que acabamos de crear.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-seleccionar-converter.jpeg" class="" width="500" title="SDR Console - Converter">
+
+<p>Por último, vamos a activar la utilidad de corrección de frecuencia usando la baliza. Para ello vamos a <strong>“View”</strong> en el menú de opciones, le damos a <strong>“Select”</strong> y activamos la opción <strong>“Geostationary Beacon”</strong>. Nos pedirá reiniciar el programa.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-geo-beacon-activar.jpeg" class="" width="900" title="SDR Console">
+
+<p>Una vez se ha reiniciado el programa, sintonizamos la frecuencia de la baliza y después accedemos a esta nueva opción que acabamos de habilitar. Ahora hacemos clic en el icono del círculo indicado en la siguiente imagen para iniciar la visualización del espectro.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-geo-beacon-iniciar.jpeg" class="" width="900" title="SDR Console">
+
+<p>El objetivo ahora es seleccionar la baliza haciendo clic en el centro de la señal (podemos usar los botones ⊕ y ⊝ para hacer zoom). Una vez la señal esté marcada, hacemos clic en el icono ▶ para comenzar la corrección.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-console-recibiendo.jpeg" class="" width="900" title="SDR Console">
+
+
+<h3 id="Decodificar-telemetria"><a href="#Decodificar-telemetria" class="headerlink" title="Decodificar telemetría"></a>Decodificar telemetría</h3><p>Es posible decodificar la señal de la baliza PSK que hemos visto en los apartados anteriores. Esta baliza transmite telemetría y datos del satélite y de la estación de control terrestre.</p>
+<p>Usaremos el programa <strong>AO40Rcv</strong> que podemos descargar desde el siguiente enlace:</p>
+<p><a href="https://www.moetronix.com/ae4jy/ao40rcv.htm"><center>Descargar AO40Rcv</center></a></p>
+<p>Lo primero es sintonizar la señal en modo <strong>USB</strong> y un ancho de banda de 1,5KHz. Sacamos el audio por el cable de audio virtual.</p>
+<img src="/recibir-satelite-eshail2-qo100/sdr-sharp-beacon-decode.jpeg" class="" width="900" title="Baliza telemetría QO-100">
+
+<p>Ahora iniciamos el programa y seleccionamos como entrada de audio el cable de audio virtual.</p>
+<img src="/recibir-satelite-eshail2-qo100/beacon-decoder-input.jpeg" class="" width="350" title="SDR Console">
+
+<p>Veremos que ahora le llega la señal al programa.</p>
+<img src="/recibir-satelite-eshail2-qo100/beacon-decoder-signal.jpeg" class="" width="800" title="SDR Console">
+
+<p>Una vez se sincronice la señal comenzaremos a visualizar los datos.</p>
+<img src="/recibir-satelite-eshail2-qo100/beacon-decoder-status.jpeg" class="" width="800" title="SDR Console">
+
+<h2 id="Transpondedor-WB"><a href="#Transpondedor-WB" class="headerlink" title="Transpondedor WB"></a>Transpondedor WB</h2><p>La distribución de este transpondedor se muestra en la siguiente imagen.</p>
+<p><img src="https://wiki.batc.org.uk/images/2/2b/V3.0_Graphic_Final.JPG" alt="QO-100 WB Bandplan © BATC"></p>
+<p>Más información en la <a href="https://wiki.batc.org.uk/QO-100_WB_Bandplan">página web de BATC</a>.</p>
+<p>Podemos consultar el estado en tiempo real del transpondedor en el siguiente enlace.</p>
+<p><a href="https://eshail.batc.org.uk/wb/"><center>Qatar-OSCAR 100 Wideband Spectrum Monitor</center></a></p>
+<p>Para decodificar las señales DATV usaremos el software <strong><em>DVB-S2 Demod GUI</em></strong> que el usuario <a href="https://forum.amsat-dl.org/cms/index.php?user/248-swl-markro92/">SWL-markro92</a> publica regularmente en el <a href="https://forum.amsat-dl.org/index.php?thread/101-software-dvb-s-demodulator/">foro de AMSAT-DL</a>. Podemos descargar la última versión desde el siguiente enlace:</p>
+<p><a href="http://v.1337team.tk/dvb-s_gui_amsat.zip"><center>Descargar DVB-S2 Demod GUI</center></a></p>
+<p>También necesitaremos un programa que nos permita reproducir video por red, como por ejemplo <a href="https://www.videolan.org/vlc/index.es.html">VLC media player</a>.</p>
+<p>El primer paso será cambiar la polarización del LNB a horizontal para recibir este transpondedor. A continuación, iniciamos el programa <em>DVB-S2 Demod GUI</em> que hemos descargado y esperamos a que cargue todas las librerías necesarias. Durante el inicio debe detectar nuestro SDR sin problemas. Soporta actualmente los dispositivos RTL-SDR, AirSpy y Hackrf.</p>
+<p>Una vez iniciado, nos aseguramos que nuestro SDR aparece seleccionado y hacemos clic en <strong>Open Device</strong>.<br>Ahora sintonizamos una frecuencia (sin la correción del desplazamiento del LNB) en la que se esté emitiendo una señal en DATV y seleccionamos el valor de <em>sym_rate</em> correcto. Podemos consultar estos valores en la web que monitoriza en tiempo real el transpondedor y que se ha mencionado anteriormente. Los demás valores debemos configurarlos de forma aproximada tal y como se muestran en la siguiente imagen (los marcados en rojo). Para conseguir demodular correctamente la señal, es posible que debamos jugar con la ganancia del SDR (indicado en azul).</p>
+<img src="/recibir-satelite-eshail2-qo100/datv-config.jpeg" class="" width="700" title="DVB-S2 Demod GUI">
+
+<p>Una vez consigamos sintonizar correctamente y la señal se esté demodulando, veremos que aparecen los cuatro puntos bien diferenciados en el <em>IQ Plot</em> y abajo la etiqueta de <em>sync_confidence</em> cambia a color verde. En este punto es cuando activamos la salida de video. Para ello en la opción <em>Recording/Network</em> seleccionamos UDP o TCP para activarla. Por último, iniciamos VLC y abrimos la dirección de red para comenzar la visualización; en nuestro ejemplo <em>tcp://127.0.0.1:8888</em>.</p>
+<img src="/recibir-satelite-eshail2-qo100/datv-promo.jpeg" class="" width="900" title="DVB-S2 Demod GUI - Beacon">
+
+<img src="/recibir-satelite-eshail2-qo100/datv-500.jpeg" class="" width="900" title="DVB-S2 Demod GUI - Señal DATV">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>SDRSharp</tag>
+        <tag>Es&#39;hail-2/QO-100</tag>
+        <tag>SDR Console</tag>
+        <tag>DATV</tag>
       </tags>
   </entry>
   <entry>
@@ -2797,130 +2924,33 @@
       </tags>
   </entry>
   <entry>
-    <title>Recibir satélite Es&#39;hail-2/QO-100</title>
-    <url>/recibir-satelite-eshail2-qo100/</url>
-    <content><![CDATA[<p><a href="https://amsat-dl.org/en/eshail-2-amsat-phase-4-a/">Es’hail-2/Qatar-OSCAR 100</a> es un satélite geoestacionario catarí construido por Mitsubishi Electric que ofrece servicios de retransmisión de televisión para las regiones del Medio Oeste y Norte de África. Además de estos servicios de retransmisión, este satélite incorpora dos transpondedores para comunicaciones de radioaficionado por satélite.</p>
-<p>En este artículo veremos como recibir y decodificar la señal de estos transpondedores usando una antena parabólica y nuestro dispositivo SDR.</p>
+    <title>Recibir imágenes SSTV desde la ISS</title>
+    <url>/recibir-sstv-iss/</url>
+    <content><![CDATA[<p><a href="https://www.ariss.org/">ARISS</a> organiza ocasionalmente eventos conmemorativos en los que se envían imágenes <a href="https://es.wikipedia.org/wiki/SSTV">SSTV</a> desde la ISS (<em>International Space Station</em>). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.</p>
 <span id="more"></span>
 
-<h1 id="Datos-del-satelite"><a href="#Datos-del-satelite" class="headerlink" title="Datos del satélite"></a>Datos del satélite</h1><table>
-<thead>
-<tr>
-<th>Satélite</th>
-<th>Es’hail-2/QO-100</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>NORAD ID</strong></td>
-<td>43700</td>
-</tr>
-<tr>
-<td><strong>COSPAR ID</strong></td>
-<td>2018-090A</td>
-</tr>
-<tr>
-<td><strong>Posición</strong></td>
-<td>26° Este</td>
-</tr>
-<tr>
-<td><strong>Masa de lanzamiento</strong></td>
-<td>5.300 Kg</td>
-</tr>
-<tr>
-<td><strong>Fecha de lanzamiento</strong></td>
-<td>15 de Noviembre de 2018</td>
-</tr>
-<tr>
-<td><strong>Transpondedores bajada</strong></td>
-<td><strong>NB:</strong> 10.489,5 MHz - 10.490 MHz (Pol. V) <br> <strong>WB:</strong> 10.491 MHz - 10.499 MHz (Pol. H)</td>
-</tr>
-</tbody></table>
-<h1 id="Material-necesario"><a href="#Material-necesario" class="headerlink" title="Material necesario"></a>Material necesario</h1><h2 id="Antena"><a href="#Antena" class="headerlink" title="Antena"></a>Antena</h2><p>Para la recepción de este satélite necesitamos una antena parabólica con un disco de al menos 40 centímetros para el transpondedor de banda estrecha y de 80 centímetros para el de banda ancha. El LNB puede ser cualquiera de nuestra elección. Si bien los LNB normales de TV para banda Ku presentan el problema de la desviación de la señal (<em>LNB drift</em>) en el transpondedor de banda estrecha, veremos como resolver este problema usando la opción que <strong>SDR Console</strong> proporciona para ello. Aunque lo más recomendable es utilizar un LNB con TCXO, ya que proporciona una mejor recepción en este caso. El LNB recomendado, y que se utiliza en este ejemplo, es el <a href="https://www.rtl-sdr.com/qo-100-bullseye-tcxo-ultra-stable-lnb-now-available-in-our-store-for-29-95-with-free-shipping/"><strong>Bullseye LNB</strong></a>.</p>
-<img src="/recibir-satelite-eshail2-qo100/lnb.jpeg" class="" width="600" title="Bullseye LNB">
+<img src="/recibir-sstv-iss/sstv.jpg" class="" width="500" title="Imagen SSTV">
 
-<h2 id="Bias-Tee"><a href="#Bias-Tee" class="headerlink" title="Bias-Tee"></a>Bias-Tee</h2><p>Para hacer funcionar el LNB vamos a necesitar alimentarlo con una tensión de 13V a 18V. Los dispositivos SDR normales pueden proporcionar hasta un máximo de 4,5V, por lo que vamos a requerir de otra forma de alimentación. Podemos encontrar muchas formas distintas de hacerlo si buscamos por internet (inyectores de tensión de TV por satélite, receptores de TV por satélite, etc.), pero en este ejemplo vamos a usar un Bias-Tee externo. Podemos adquirir fácilmente estos dispositivos en cualquier sitio y su coste no es muy elevado (unos 14€).</p>
-<img src="/recibir-satelite-eshail2-qo100/biast.jpeg" class="" width="400" title="Bias-Tee">
+<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Las imágenes son enviadas en la frecuencia <strong>145,800 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
+<p>Los datos para DDETracker son los siguientes:</p>
+<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;NFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;20000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145800000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
+<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar las imágenes usaremos el programa RX-SSTV que podemos descargar desde el siguiente enlace:</p>
+<p><a href="http://users.belgacom.net/mysoftware/Setup_RXSSTV.exe"><center>Descargar RX-SSTV v2.1.5</center></a></p>
+<p>Una vez descargado el instalador, lo ejecutamos e instalamos el programa.</p>
+<p>Las imágenes se envían actualmente en modo <strong>PD120</strong> con un tiempo de espera de dos minutos entre cada imagen. Podemos indicarle a RX-SSTV que utilice este modo por defecto y evitarnos el tener que cambiarlo cada vez y que se nos olvide. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Setup RX-SSTV</em></strong>. En esta ventana de ajustes le indicamos que utilice PD120 por defecto.</p>
+<img src="/recibir-sstv-iss/Config.png" class="" width="300" title="Ajustes">
 
-<p>Para alimentar el LNB necesitaremos una fuente que nos pueda proporcionar dos voltajes distintos. Unos 13V a 14V para activar la polarización vertical y unos 17V a 18V para la horizontal.</p>
-<h2 id="SDR"><a href="#SDR" class="headerlink" title="SDR"></a>SDR</h2><p>Para la recepción en estas frecuencias podemos usar cualquier SDR, ya que el propio LNB actúa como un <em>Downconverter</em>, reduciendo la frecuencia de entrada a un rango de salida que comienza en 739MHz y que la mayoría de los dispositivos SDR reciben sin ningún problema.</p>
-<h1 id="Instalacion-y-orientacion-de-la-antena"><a href="#Instalacion-y-orientacion-de-la-antena" class="headerlink" title="Instalación y orientación de la antena"></a>Instalación y orientación de la antena</h1><p>El satélite esta situado en los 26° Este. Para orientar nuestra antena podemos usar algunas aplicaciones existentes para móviles, o bien utilizar una <a href="https://eshail.batc.org.uk/point/">aplicación online</a> y una brújula.</p>
-<p>Una vez colocada y orientada (parcialmente, ya que posiblemente después haya que afinar para mejorar la recepción), vamos a realizar la conexión con nuestro SDR. Para ello necesitamos conectar el LNB (conector verde si usamos el Bullseye) a la entrada del Bias-Tee marcada con RF+DC y el SDR a la salida marcada con RF. En este ejemplo se ha utilizado un cable coaxial para TV con dos conectores F y un adaptador a SMA para conectarlo al Bias-Tee.</p>
-<img src="/recibir-satelite-eshail2-qo100/sdr-biast.jpeg" class="" width="900" title="Conexiones SDR, Bias-Tee y LNB">
+<p>El siguiente paso es configurar el programa para que reciba el audio desde cable de audio virtual. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Sound Control and Devices</em></strong>. Se abrirá la ventana de ajustes de audio en la que tenemos que marcar el cable de audio virtual como el dispositivo predeterminado de grabación. Es posible que este cambio afecte a otros programas que tengamos, así que si detectamos problemas de audio debemos revertir este cambio y volver a realizarlo cuando usemos RX-SSTV.</p>
+<p>Una vez tengamos todo correctamente configurado, cuando el programa detecte la señal de una nueva imagen, iniciará la recepción de la misma de forma automática.</p>
+<img src="/recibir-sstv-iss/SDRSharp.png" class="" width="900" title="Recibiendo imagen">
 
-<h1 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h1><p>Como ya se ha mencionado anteriormente, el satélite incorpora dos transpondedores para su uso por radioaficionados. Un transpondedor lineal de banda estrecha (<em>Narrow Band</em>) en polarización vertical y otro de banda ancha (<em>Wide Band</em>) para televisión digital de radioaficionado (DATV) en polarización horizontal. Para seleccionar el transpondedor bastará con cambiar la tensión de alimentación del LNB en cada caso.</p>
-<h2 id="Transpondedor-NB"><a href="#Transpondedor-NB" class="headerlink" title="Transpondedor NB"></a>Transpondedor NB</h2><p>En la siguiente imagen podemos ver la distribución de las bandas en este transpondedor.</p>
-<p><img src="https://amsat-dl.org/wp-content/uploads/2020/02/AMSAT-QO-100-NB-Transponder-Bandplan-Graph-1140x641.png" alt="QO-100 NB Bandplan © AMSAT-DL"></p>
-<p>Más información en la <a href="https://amsat-dl.org/en/new-qo-100-band-plan/">página web de AMSAT-DL</a>.</p>
-<h3 id="Recepcion-con-SDR"><a href="#Recepcion-con-SDR" class="headerlink" title="Recepción con SDR#"></a>Recepción con SDR#</h3><p>Para recibir la señal del satélite iniciamos SDR# y sintonizamos la frecuencia de 739,770 MHz. Si todo está correctamente conectado y la antena medianamente orientada, deberíamos poder ver la señal de la baliza del satélite. Podemos usar la misma para ajustar nuestra antena lo mejor posible y recibir el máximo de señal.</p>
-<img src="/recibir-satelite-eshail2-qo100/sdr-sharp-beacon.jpeg" class="" width="900" title="Baliza QO-100">
-
-<p>Ahora vamos a aplicar el desplazamiento en SDR# para que las frecuencias se correspondan con las reales del satélite. Esto no es imprescindible, pero nos hará más fácil la búsqueda e identificación de las mismas. Para ello basta con restar a la frecuencia central de la baliza (10.489,750 MHz) la frecuencia en la que nos encontramos dicha señal en el programa (739,771 MHz en nuestro caso).</p>
-<center><b>10.489.750.000 Hz - 739.771.000 Hz  = 9.749.979.000 Hz</b></center>
-
-<p>Por último, introducimos este resultado en el campo <em>Shift</em> y lo activamos para aplicar el desplazamiento.</p>
-<img src="/recibir-satelite-eshail2-qo100/sdr-sharp-recibiendo.jpeg" class="" width="900" title="Recepción QO-100">
-
-<h3 id="Recepcion-con-SDR-Console"><a href="#Recepcion-con-SDR-Console" class="headerlink" title="Recepción con SDR Console"></a>Recepción con SDR Console</h3><p>Como ya se mencionó anteriormente, si estamos usando un LNB que no tenga TCXO es posible que veamos que las señales se desplazan continuamente, lo que hace muy difícil recibirlas correctamente. Para solucionar este inconveniente mediante <em>software</em> podemos usar una utilidad que incorpora el programa <a href="https://www.sdr-radio.com/download">SDR Console</a>.<br>Seguiremos los pasos indicados en su <a href="https://www.sdr-radio.com/EsHail-2">página web</a> y que se describen a continuación.</p>
-<p>El primer paso es habilitar que se muestren las frecuencias superiores a 9 GHz. Para ello vamos a los ajustes y marcamos el rango indicado en la siguiente imagen.</p>
-<img src="/recibir-satelite-eshail2-qo100/sdr-console-ajustar-rango.jpeg" class="" width="900" title="SDR Console - Ajuste rango">
-
-<p>El siguiente paso es aplicar el desplazamiento de la señal. Para introducir el valor de desplazamiento debemos editar los valores de definición de nuestro dispositivo SDR. Para modificar este valor seleccionamos nuestra radio y le damos a <strong>Definitions</strong> y en la ventana que aparece marcamos <strong>Converter selection</strong> y hacemos clic en <strong>Edit</strong>.</p>
-<img src="/recibir-satelite-eshail2-qo100/sdr-console-add-converter.jpeg" class="" width="900" title="SDR Console - Desplazamiento">
-
-<p>Ahora introducimos el valor de desplazamiento que vimos como calcular en el apartado anterior.</p>
-<img src="/recibir-satelite-eshail2-qo100/sdr-console-set-converter.jpeg" class="" width="700" title="SDR Console - Converter">
-
-<p>Hacemos clic en <strong>Save</strong> y seleccionamos ahora el nuevo <em>converter</em> que acabamos de crear.</p>
-<img src="/recibir-satelite-eshail2-qo100/sdr-console-seleccionar-converter.jpeg" class="" width="500" title="SDR Console - Converter">
-
-<p>Por último, vamos a activar la utilidad de corrección de frecuencia usando la baliza. Para ello vamos a <strong>“View”</strong> en el menú de opciones, le damos a <strong>“Select”</strong> y activamos la opción <strong>“Geostationary Beacon”</strong>. Nos pedirá reiniciar el programa.</p>
-<img src="/recibir-satelite-eshail2-qo100/sdr-console-geo-beacon-activar.jpeg" class="" width="900" title="SDR Console">
-
-<p>Una vez se ha reiniciado el programa, sintonizamos la frecuencia de la baliza y después accedemos a esta nueva opción que acabamos de habilitar. Ahora hacemos clic en el icono del círculo indicado en la siguiente imagen para iniciar la visualización del espectro.</p>
-<img src="/recibir-satelite-eshail2-qo100/sdr-console-geo-beacon-iniciar.jpeg" class="" width="900" title="SDR Console">
-
-<p>El objetivo ahora es seleccionar la baliza haciendo clic en el centro de la señal (podemos usar los botones ⊕ y ⊝ para hacer zoom). Una vez la señal esté marcada, hacemos clic en el icono ▶ para comenzar la corrección.</p>
-<img src="/recibir-satelite-eshail2-qo100/sdr-console-recibiendo.jpeg" class="" width="900" title="SDR Console">
-
-
-<h3 id="Decodificar-telemetria"><a href="#Decodificar-telemetria" class="headerlink" title="Decodificar telemetría"></a>Decodificar telemetría</h3><p>Es posible decodificar la señal de la baliza PSK que hemos visto en los apartados anteriores. Esta baliza transmite telemetría y datos del satélite y de la estación de control terrestre.</p>
-<p>Usaremos el programa <strong>AO40Rcv</strong> que podemos descargar desde el siguiente enlace:</p>
-<p><a href="https://www.moetronix.com/ae4jy/ao40rcv.htm"><center>Descargar AO40Rcv</center></a></p>
-<p>Lo primero es sintonizar la señal en modo <strong>USB</strong> y un ancho de banda de 1,5KHz. Sacamos el audio por el cable de audio virtual.</p>
-<img src="/recibir-satelite-eshail2-qo100/sdr-sharp-beacon-decode.jpeg" class="" width="900" title="Baliza telemetría QO-100">
-
-<p>Ahora iniciamos el programa y seleccionamos como entrada de audio el cable de audio virtual.</p>
-<img src="/recibir-satelite-eshail2-qo100/beacon-decoder-input.jpeg" class="" width="350" title="SDR Console">
-
-<p>Veremos que ahora le llega la señal al programa.</p>
-<img src="/recibir-satelite-eshail2-qo100/beacon-decoder-signal.jpeg" class="" width="800" title="SDR Console">
-
-<p>Una vez se sincronice la señal comenzaremos a visualizar los datos.</p>
-<img src="/recibir-satelite-eshail2-qo100/beacon-decoder-status.jpeg" class="" width="800" title="SDR Console">
-
-<h2 id="Transpondedor-WB"><a href="#Transpondedor-WB" class="headerlink" title="Transpondedor WB"></a>Transpondedor WB</h2><p>La distribución de este transpondedor se muestra en la siguiente imagen.</p>
-<p><img src="https://wiki.batc.org.uk/images/2/2b/V3.0_Graphic_Final.JPG" alt="QO-100 WB Bandplan © BATC"></p>
-<p>Más información en la <a href="https://wiki.batc.org.uk/QO-100_WB_Bandplan">página web de BATC</a>.</p>
-<p>Podemos consultar el estado en tiempo real del transpondedor en el siguiente enlace.</p>
-<p><a href="https://eshail.batc.org.uk/wb/"><center>Qatar-OSCAR 100 Wideband Spectrum Monitor</center></a></p>
-<p>Para decodificar las señales DATV usaremos el software <strong><em>DVB-S2 Demod GUI</em></strong> que el usuario <a href="https://forum.amsat-dl.org/cms/index.php?user/248-swl-markro92/">SWL-markro92</a> publica regularmente en el <a href="https://forum.amsat-dl.org/index.php?thread/101-software-dvb-s-demodulator/">foro de AMSAT-DL</a>. Podemos descargar la última versión desde el siguiente enlace:</p>
-<p><a href="http://v.1337team.tk/dvb-s_gui_amsat.zip"><center>Descargar DVB-S2 Demod GUI</center></a></p>
-<p>También necesitaremos un programa que nos permita reproducir video por red, como por ejemplo <a href="https://www.videolan.org/vlc/index.es.html">VLC media player</a>.</p>
-<p>El primer paso será cambiar la polarización del LNB a horizontal para recibir este transpondedor. A continuación, iniciamos el programa <em>DVB-S2 Demod GUI</em> que hemos descargado y esperamos a que cargue todas las librerías necesarias. Durante el inicio debe detectar nuestro SDR sin problemas. Soporta actualmente los dispositivos RTL-SDR, AirSpy y Hackrf.</p>
-<p>Una vez iniciado, nos aseguramos que nuestro SDR aparece seleccionado y hacemos clic en <strong>Open Device</strong>.<br>Ahora sintonizamos una frecuencia (sin la correción del desplazamiento del LNB) en la que se esté emitiendo una señal en DATV y seleccionamos el valor de <em>sym_rate</em> correcto. Podemos consultar estos valores en la web que monitoriza en tiempo real el transpondedor y que se ha mencionado anteriormente. Los demás valores debemos configurarlos de forma aproximada tal y como se muestran en la siguiente imagen (los marcados en rojo). Para conseguir demodular correctamente la señal, es posible que debamos jugar con la ganancia del SDR (indicado en azul).</p>
-<img src="/recibir-satelite-eshail2-qo100/datv-config.jpeg" class="" width="700" title="DVB-S2 Demod GUI">
-
-<p>Una vez consigamos sintonizar correctamente y la señal se esté demodulando, veremos que aparecen los cuatro puntos bien diferenciados en el <em>IQ Plot</em> y abajo la etiqueta de <em>sync_confidence</em> cambia a color verde. En este punto es cuando activamos la salida de video. Para ello en la opción <em>Recording/Network</em> seleccionamos UDP o TCP para activarla. Por último, iniciamos VLC y abrimos la dirección de red para comenzar la visualización; en nuestro ejemplo <em>tcp://127.0.0.1:8888</em>.</p>
-<img src="/recibir-satelite-eshail2-qo100/datv-promo.jpeg" class="" width="900" title="DVB-S2 Demod GUI - Beacon">
-
-<img src="/recibir-satelite-eshail2-qo100/datv-500.jpeg" class="" width="900" title="DVB-S2 Demod GUI - Señal DATV">
+<p>Si nos aparece el mensaje <em>“Overflow”</em> en el programa, significa que tenemos el audio demasiado alto. Para solucionarlo simplemente bajamos el volumen del audio en SDR# hasta que desaparezca el mensaje.</p>
+<p>Al terminar la recepción de una imagen, el programa la guarda automáticamente y queda a la espera de detectar la siguiente imagen.</p>
+<img src="/recibir-sstv-iss/RX-SSTV.png" class="" width="500" title="RX-SSTV">
 ]]></content>
       <tags>
-        <tag>Satélites</tag>
-        <tag>SDRSharp</tag>
-        <tag>Es&#39;hail-2/QO-100</tag>
-        <tag>SDR Console</tag>
-        <tag>DATV</tag>
+        <tag>ISS</tag>
+        <tag>SSTV</tag>
       </tags>
   </entry>
   <entry>
@@ -3036,9 +3066,9 @@
 <img src="/recibir-satelites-meteorologicos-NOAA-linux/wxtoimg_recibida.jpg" class="" width="900" title="WXtoIMG - Imagen recibida">
 ]]></content>
       <tags>
+        <tag>Satélites</tag>
         <tag>Satélites meteorológicos</tag>
         <tag>NOAA</tag>
-        <tag>Satélites</tag>
         <tag>Linux</tag>
         <tag>Meteorología</tag>
         <tag>WXtoIMG</tag>
@@ -3132,126 +3162,6 @@
       <tags>
         <tag>Meteorología</tag>
         <tag>Radiosonda</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Recibir imágenes SSTV desde la ISS</title>
-    <url>/recibir-sstv-iss/</url>
-    <content><![CDATA[<p><a href="https://www.ariss.org/">ARISS</a> organiza ocasionalmente eventos conmemorativos en los que se envían imágenes <a href="https://es.wikipedia.org/wiki/SSTV">SSTV</a> desde la ISS (<em>International Space Station</em>). Estas imágenes se pueden recibir de forma sencilla con cualquier dispositivo SDR y en este artículo veremos como hacerlo.</p>
-<span id="more"></span>
-
-<img src="/recibir-sstv-iss/sstv.jpg" class="" width="500" title="Imagen SSTV">
-
-<h2 id="Recepcion"><a href="#Recepcion" class="headerlink" title="Recepción"></a>Recepción</h2><p>Las imágenes son enviadas en la frecuencia <strong>145,800 MHz</strong>. Para recibir la señal debemos realizar los pasos habituales para el <a href="/ajuste-frecuencia-doppler-orbitron/">seguimiento de satélites</a>.</p>
-<p>Los datos para DDETracker son los siguientes:</p>
-<p><strong>AOS:</strong><br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">radio_Start</span><br><span class="line">radio_modulation_type&lt;NFM&gt;</span><br><span class="line">radio_bandwidth_Hz&lt;20000&gt;</span><br><span class="line">radio_center_frequency_Hz&lt;145800000&gt;</span><br><span class="line">radio_tracking_frequency_On</span><br></pre></td></tr></table></figure><br></br></p>
-<h2 id="Decodificacion"><a href="#Decodificacion" class="headerlink" title="Decodificación"></a>Decodificación</h2><p>Para decodificar las imágenes usaremos el programa RX-SSTV que podemos descargar desde el siguiente enlace:</p>
-<p><a href="http://users.belgacom.net/mysoftware/Setup_RXSSTV.exe"><center>Descargar RX-SSTV v2.1.5</center></a></p>
-<p>Una vez descargado el instalador, lo ejecutamos e instalamos el programa.</p>
-<p>Las imágenes se envían actualmente en modo <strong>PD120</strong> con un tiempo de espera de dos minutos entre cada imagen. Podemos indicarle a RX-SSTV que utilice este modo por defecto y evitarnos el tener que cambiarlo cada vez y que se nos olvide. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Setup RX-SSTV</em></strong>. En esta ventana de ajustes le indicamos que utilice PD120 por defecto.</p>
-<img src="/recibir-sstv-iss/Config.png" class="" width="300" title="Ajustes">
-
-<p>El siguiente paso es configurar el programa para que reciba el audio desde cable de audio virtual. Para ello vamos a <strong><em>Setup</em></strong> y <strong><em>Sound Control and Devices</em></strong>. Se abrirá la ventana de ajustes de audio en la que tenemos que marcar el cable de audio virtual como el dispositivo predeterminado de grabación. Es posible que este cambio afecte a otros programas que tengamos, así que si detectamos problemas de audio debemos revertir este cambio y volver a realizarlo cuando usemos RX-SSTV.</p>
-<p>Una vez tengamos todo correctamente configurado, cuando el programa detecte la señal de una nueva imagen, iniciará la recepción de la misma de forma automática.</p>
-<img src="/recibir-sstv-iss/SDRSharp.png" class="" width="900" title="Recibiendo imagen">
-
-<p>Si nos aparece el mensaje <em>“Overflow”</em> en el programa, significa que tenemos el audio demasiado alto. Para solucionarlo simplemente bajamos el volumen del audio en SDR# hasta que desaparezca el mensaje.</p>
-<p>Al terminar la recepción de una imagen, el programa la guarda automáticamente y queda a la espera de detectar la siguiente imagen.</p>
-<img src="/recibir-sstv-iss/RX-SSTV.png" class="" width="500" title="RX-SSTV">
-]]></content>
-      <tags>
-        <tag>ISS</tag>
-        <tag>SSTV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Seguimiento de satélites con Gpredict</title>
-    <url>/seguimiento-satelites-gpredict/</url>
-    <content><![CDATA[<p><a href="http://gpredict.oz9aec.net/">Gpredict</a> es un programa para el seguimiento en tiempo real y predicción de órbitas para satélites. Este programa es muy similar a Orbitron, el cual ya vimos cómo instalar y configurar en el artículo <a href="/seguimiento-satelites-orbitron">“Seguimiento de satélites con Orbitron”</a>. Pero al contrario de este, Gpredict es multiplataforma, por lo que podremos usarlo en diferentes sistemas operativos.<br>En este artículo veremos cómo instalar y configurar Gpredict en Windows, Linux y macOS.</p>
-<span id="more"></span>
-
-<h2 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalación"></a>Instalación</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>Para instalar Gpredict en Windows bastará con descargar el archivo comprimido con los binarios desde cualquiera de los repositorios siguientes:</p>
-<ul>
-<li><a href="https://github.com/csete/gpredict/releases/latest">GitHub</a></li>
-<li><a href="https://sourceforge.net/projects/gpredict/">Sourceforge</a></li>
-</ul>
-<p>Una vez descargado el archivo extraemos su contenido en la ubicación deseada y lo iniciamos desde el archivo ejecutable.</p>
-<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>En Linux podemos instalarlo desde consola usando el gestor de paquetes de nuestra distribución. Para Debian/Ubuntu usaremos el siguiente:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install gpredict</span><br></pre></td></tr></table></figure>
-
-<p>Para iniciarlo podemos buscarlos en el listado de programas instalados o hacerlo desde una terminal.</p>
-<h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><p>Para instalar Gpredict en macOS necesitamos un gestor de paquetes como por ejemplo <a href="https://brew.sh/index_es">Homebrew</a>. Si ya lo tenemos, bastaría con ejecutar el siguiente comando:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install gpredict</span><br></pre></td></tr></table></figure>
-
-<p>Para iniciar Gpredict debemos usar una terminal:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gpredict</span><br></pre></td></tr></table></figure>
-
-
-<img src="/seguimiento-satelites-gpredict/Gpredict.jpg" class="" width="800" title="Gpredict">
-
-
-<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>Una vez tenemos Gpredict instalado e iniciado, seguimos los pasos enumerados a continuación para actualizarlo y configurarlo.</p>
-<ol>
-<li><p>El primer paso es descargarnos los archivos TLE actualizados para poder realizar el cálculo de las órbitas correctamente. Es recomendable realizar esta actualización regularmente para tener siempre las correcciones lo más exactas posibles.<br>Para ello vamos a <em>“Edit”</em> y seleccionamos <em>“Update TLE data from network”</em>. Esto inicia el proceso de descarga de los archivos TLE más recientes.</p>
- <img src="/seguimiento-satelites-gpredict/Gpredict-update-tle.jpg" class="" width="300" title="Gpredict - Update TLE"></li>
-</ol>
-<ol start="2">
-<li><p>A continuación descargamos los datos de los transpondedores activos de cada satélite. Esto incorpora las frecuencias en las que emite cada satélite para que solo tengamos que seleccionarlas. Para descargarlos vamos a <em>“Edit”</em> y hacemos clic en <em>“Update transponder data”</em>.</p>
- <img src="/seguimiento-satelites-gpredict/Gpredict-update-tp.jpg" class="" width="300" title="Gpredict - Update transponder"></li>
-</ol>
-<ol start="3">
-<li><p>El siguiente paso es configurar nuestra posición. Para ello vamos a <em>“Edit”</em> y hacemos clic en <em>“Preferences”</em>. Ahora se nos abre una nueva ventana en la que seleccionamos <em>“Ground Stations”</em>. Para añadir los datos de nuestra <em>ground station</em> hacemos clic en <em>“Add new”</em>.</p>
- <img src="/seguimiento-satelites-gpredict/Gpredict-config-qth.jpg" class="" width="800" title="Gpredict - Ground station">
-
-<p> En la nueva ventana que aparece introducimos los datos de nuestra ubicación y guardamos haciendo clic en <em>“OK”</em>. Si no conocemos los datos, podemos buscar nuestra población haciendo clic en <em>“Select”</em>. Esto nos auto-completará todos los datos aunque no sean los más exactos.</p>
- <img src="/seguimiento-satelites-gpredict/Gpredict-config-qth-new.jpg" class="" width="800" title="Gpredict - Ground station">
-
-<p> Por último, eliminamos la <em>ground station</em> que viene por defecto para dejar la nuestra marcada por defecto.</p>
- <img src="/seguimiento-satelites-gpredict/Gpredict-config-qth-delete.jpg" class="" width="800" title="Gpredict - Ground station"></li>
-</ol>
-<ol start="4">
-<li><p>Ahora vamos a configurar la conexión con programas externos para que podamos realizar el tracking de forma automática en nuestro programa de SDR. Para ello vamos a <em>“Interfaces”</em>, <em>“Radios”</em> y  hacemos clic en <em>“Add new”</em>.</p>
- <img src="/seguimiento-satelites-gpredict/Gpredict-radios.jpg" class="" width="800" title="Gpredict - Radios">
-
-<p> Introducimos el nombre que queramos y guardamos haciendo clic en <em>“Ok”</em>.</p>
- <img src="/seguimiento-satelites-gpredict/Gpredict-radios-new.jpg" class="" width="800" title="Gpredict - Radios"></li>
-</ol>
-<ol start="5">
-<li><p>Para finalizar, vamos a seleccionar ahora que satélites vamos a seguir. Para ello hacemos clic en el botón indicado en la siguiente captura y después en <em>“Configure”</em>. En Linux el botón puede aparecer con un icono distinto.</p>
- <img src="/seguimiento-satelites-gpredict/Gpredict-configure.jpg" class="" width="300" title="Gpredict - configurar">
-
-<p> A continuación iremos buscando y añadiendo los satélites deseados a la lista.</p>
- <img src="/seguimiento-satelites-gpredict/Gpredict-sats.jpg" class="" width="800" title="Gpredict - configurar satélites"></li>
-</ol>
-<h2 id="Conectar-con-programas-de-SDR"><a href="#Conectar-con-programas-de-SDR" class="headerlink" title="Conectar con programas de SDR"></a>Conectar con programas de SDR</h2><p>Para realizar la correción en nuestros programas de SDR tenemos que conectar Gpredict a estos. Para ello necesitamos que nuestro programa tenga el servicio a la escucha para que Gpredict pueda enviarle la frecuencia que debe sintonizar en cada momento. En el siguiente punto veremos como habilitar este servicio en SDR# y SDR++. Si ya tenemos el programa preparado, abrimos el control de radio de Gpredict desde el icono indicado en la siguiente captura y hacemos clic en <em>“Radio Control”</em>.</p>
-<img src="/seguimiento-satelites-gpredict/Gpredict-radio-control.jpg" class="" width="300" title="Gpredict - Radio control">
-
-<p>Ahora seleccionamos el satélite y la frecuencia y hacemos clic en <em>“Track”</em> para iniciar la corrección, y posteriormente seleccionamos la radio y hacemos clic en <em>“Engage”</em> para conectar con el programa SDR.</p>
-<img src="/seguimiento-satelites-gpredict/Gpredict-radio-control-2.jpg" class="" width="800" title="Gpredict - Radio control">
-
-<p>Si todo ha ido bien, veremos que la frecuencia se va moviendo en programa para corregir el efecto <em>Doppler</em> de la señal del satélite.</p>
-<h3 id="SDR"><a href="#SDR" class="headerlink" title="SDR#"></a>SDR#</h3><p>Para conectar Gpredict con SDR# vamos a usar el plugin <strong>GpredictConnector</strong> que podemos descargar desde el siguiente repositorio:</p>
-<p><a href="https://github.com/alexwahl/SDRSharp.GpredictConnector/releases/latest"><center>Releases GpredictConnector</center></a></p>
-<p>El proceso para instalarlo es el mismo que para cualquier otro plugin de SDR#. Creamos una carpeta dentro de <em>Plugins</em> e introducimos el contenido del archivo descargado en su interior.<br>Una vez instalado iniciamos SDR# y abrimos el plugin.</p>
-<img src="/seguimiento-satelites-gpredict/GpredictConnector-disabled.png" class="" width="300" title="SDR# - GpredictConnector">
-
-<p>Ahora marcamos <em>enable</em> para ponerlo a la escucha.</p>
-<img src="/seguimiento-satelites-gpredict/GpredictConnector-listening.png" class="" width="300" title="SDR# - GpredictConnector listening">
-
-<p>Cuando conectemos desde Gpredict veremos que aparece <em>connected</em> y la frecuencia a la que debe sintonizar.</p>
-<img src="/seguimiento-satelites-gpredict/GpredictConnector-connected.png" class="" width="300" title="SDR# - GpredictConnector connected">
-
-
-<h3 id="SDR-1"><a href="#SDR-1" class="headerlink" title="SDR++"></a>SDR++</h3><p>En el caso de SDR++ ya viene incluido un módulo para poder conectar Gpredict. Lo único que debemos hacer es hacer clic en <em>“Start”</em> en el módulo <strong>Rigctl Server</strong> para ponerlo a la escucha.</p>
-<img src="/seguimiento-satelites-gpredict/sdrpp-listening.png" class="" width="300" title="SDR++ - Rigctl listening">
-
-<p>Una vez conectado veremos que aparece <em>Connected</em>.</p>
-<img src="/seguimiento-satelites-gpredict/sdrpp-connected.png" class="" width="300" title="SDR++ - Rigctl connected">
-]]></content>
-      <tags>
-        <tag>Satélites</tag>
-        <tag>Gpredict</tag>
-        <tag>Tracking</tag>
       </tags>
   </entry>
   <entry>
@@ -3410,6 +3320,96 @@
         <tag>ATC</tag>
         <tag>ADS-B</tag>
         <tag>dump1090</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Seguimiento de satélites con Gpredict</title>
+    <url>/seguimiento-satelites-gpredict/</url>
+    <content><![CDATA[<p><a href="http://gpredict.oz9aec.net/">Gpredict</a> es un programa para el seguimiento en tiempo real y predicción de órbitas para satélites. Este programa es muy similar a Orbitron, el cual ya vimos cómo instalar y configurar en el artículo <a href="/seguimiento-satelites-orbitron">“Seguimiento de satélites con Orbitron”</a>. Pero al contrario de este, Gpredict es multiplataforma, por lo que podremos usarlo en diferentes sistemas operativos.<br>En este artículo veremos cómo instalar y configurar Gpredict en Windows, Linux y macOS.</p>
+<span id="more"></span>
+
+<h2 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalación"></a>Instalación</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>Para instalar Gpredict en Windows bastará con descargar el archivo comprimido con los binarios desde cualquiera de los repositorios siguientes:</p>
+<ul>
+<li><a href="https://github.com/csete/gpredict/releases/latest">GitHub</a></li>
+<li><a href="https://sourceforge.net/projects/gpredict/">Sourceforge</a></li>
+</ul>
+<p>Una vez descargado el archivo extraemos su contenido en la ubicación deseada y lo iniciamos desde el archivo ejecutable.</p>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>En Linux podemos instalarlo desde consola usando el gestor de paquetes de nuestra distribución. Para Debian/Ubuntu usaremos el siguiente:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install gpredict</span><br></pre></td></tr></table></figure>
+
+<p>Para iniciarlo podemos buscarlos en el listado de programas instalados o hacerlo desde una terminal.</p>
+<h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><p>Para instalar Gpredict en macOS necesitamos un gestor de paquetes como por ejemplo <a href="https://brew.sh/index_es">Homebrew</a>. Si ya lo tenemos, bastaría con ejecutar el siguiente comando:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install gpredict</span><br></pre></td></tr></table></figure>
+
+<p>Para iniciar Gpredict debemos usar una terminal:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gpredict</span><br></pre></td></tr></table></figure>
+
+
+<img src="/seguimiento-satelites-gpredict/Gpredict.jpg" class="" width="800" title="Gpredict">
+
+
+<h2 id="Configuracion"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración</h2><p>Una vez tenemos Gpredict instalado e iniciado, seguimos los pasos enumerados a continuación para actualizarlo y configurarlo.</p>
+<ol>
+<li><p>El primer paso es descargarnos los archivos TLE actualizados para poder realizar el cálculo de las órbitas correctamente. Es recomendable realizar esta actualización regularmente para tener siempre las correcciones lo más exactas posibles.<br>Para ello vamos a <em>“Edit”</em> y seleccionamos <em>“Update TLE data from network”</em>. Esto inicia el proceso de descarga de los archivos TLE más recientes.</p>
+ <img src="/seguimiento-satelites-gpredict/Gpredict-update-tle.jpg" class="" width="300" title="Gpredict - Update TLE"></li>
+</ol>
+<ol start="2">
+<li><p>A continuación descargamos los datos de los transpondedores activos de cada satélite. Esto incorpora las frecuencias en las que emite cada satélite para que solo tengamos que seleccionarlas. Para descargarlos vamos a <em>“Edit”</em> y hacemos clic en <em>“Update transponder data”</em>.</p>
+ <img src="/seguimiento-satelites-gpredict/Gpredict-update-tp.jpg" class="" width="300" title="Gpredict - Update transponder"></li>
+</ol>
+<ol start="3">
+<li><p>El siguiente paso es configurar nuestra posición. Para ello vamos a <em>“Edit”</em> y hacemos clic en <em>“Preferences”</em>. Ahora se nos abre una nueva ventana en la que seleccionamos <em>“Ground Stations”</em>. Para añadir los datos de nuestra <em>ground station</em> hacemos clic en <em>“Add new”</em>.</p>
+ <img src="/seguimiento-satelites-gpredict/Gpredict-config-qth.jpg" class="" width="800" title="Gpredict - Ground station">
+
+<p> En la nueva ventana que aparece introducimos los datos de nuestra ubicación y guardamos haciendo clic en <em>“OK”</em>. Si no conocemos los datos, podemos buscar nuestra población haciendo clic en <em>“Select”</em>. Esto nos auto-completará todos los datos aunque no sean los más exactos.</p>
+ <img src="/seguimiento-satelites-gpredict/Gpredict-config-qth-new.jpg" class="" width="800" title="Gpredict - Ground station">
+
+<p> Por último, eliminamos la <em>ground station</em> que viene por defecto para dejar la nuestra marcada por defecto.</p>
+ <img src="/seguimiento-satelites-gpredict/Gpredict-config-qth-delete.jpg" class="" width="800" title="Gpredict - Ground station"></li>
+</ol>
+<ol start="4">
+<li><p>Ahora vamos a configurar la conexión con programas externos para que podamos realizar el tracking de forma automática en nuestro programa de SDR. Para ello vamos a <em>“Interfaces”</em>, <em>“Radios”</em> y  hacemos clic en <em>“Add new”</em>.</p>
+ <img src="/seguimiento-satelites-gpredict/Gpredict-radios.jpg" class="" width="800" title="Gpredict - Radios">
+
+<p> Introducimos el nombre que queramos y guardamos haciendo clic en <em>“Ok”</em>.</p>
+ <img src="/seguimiento-satelites-gpredict/Gpredict-radios-new.jpg" class="" width="800" title="Gpredict - Radios"></li>
+</ol>
+<ol start="5">
+<li><p>Para finalizar, vamos a seleccionar ahora que satélites vamos a seguir. Para ello hacemos clic en el botón indicado en la siguiente captura y después en <em>“Configure”</em>. En Linux el botón puede aparecer con un icono distinto.</p>
+ <img src="/seguimiento-satelites-gpredict/Gpredict-configure.jpg" class="" width="300" title="Gpredict - configurar">
+
+<p> A continuación iremos buscando y añadiendo los satélites deseados a la lista.</p>
+ <img src="/seguimiento-satelites-gpredict/Gpredict-sats.jpg" class="" width="800" title="Gpredict - configurar satélites"></li>
+</ol>
+<h2 id="Conectar-con-programas-de-SDR"><a href="#Conectar-con-programas-de-SDR" class="headerlink" title="Conectar con programas de SDR"></a>Conectar con programas de SDR</h2><p>Para realizar la correción en nuestros programas de SDR tenemos que conectar Gpredict a estos. Para ello necesitamos que nuestro programa tenga el servicio a la escucha para que Gpredict pueda enviarle la frecuencia que debe sintonizar en cada momento. En el siguiente punto veremos como habilitar este servicio en SDR# y SDR++. Si ya tenemos el programa preparado, abrimos el control de radio de Gpredict desde el icono indicado en la siguiente captura y hacemos clic en <em>“Radio Control”</em>.</p>
+<img src="/seguimiento-satelites-gpredict/Gpredict-radio-control.jpg" class="" width="300" title="Gpredict - Radio control">
+
+<p>Ahora seleccionamos el satélite y la frecuencia y hacemos clic en <em>“Track”</em> para iniciar la corrección, y posteriormente seleccionamos la radio y hacemos clic en <em>“Engage”</em> para conectar con el programa SDR.</p>
+<img src="/seguimiento-satelites-gpredict/Gpredict-radio-control-2.jpg" class="" width="800" title="Gpredict - Radio control">
+
+<p>Si todo ha ido bien, veremos que la frecuencia se va moviendo en programa para corregir el efecto <em>Doppler</em> de la señal del satélite.</p>
+<h3 id="SDR"><a href="#SDR" class="headerlink" title="SDR#"></a>SDR#</h3><p>Para conectar Gpredict con SDR# vamos a usar el plugin <strong>GpredictConnector</strong> que podemos descargar desde el siguiente repositorio:</p>
+<p><a href="https://github.com/alexwahl/SDRSharp.GpredictConnector/releases/latest"><center>Releases GpredictConnector</center></a></p>
+<p>El proceso para instalarlo es el mismo que para cualquier otro plugin de SDR#. Creamos una carpeta dentro de <em>Plugins</em> e introducimos el contenido del archivo descargado en su interior.<br>Una vez instalado iniciamos SDR# y abrimos el plugin.</p>
+<img src="/seguimiento-satelites-gpredict/GpredictConnector-disabled.png" class="" width="300" title="SDR# - GpredictConnector">
+
+<p>Ahora marcamos <em>enable</em> para ponerlo a la escucha.</p>
+<img src="/seguimiento-satelites-gpredict/GpredictConnector-listening.png" class="" width="300" title="SDR# - GpredictConnector listening">
+
+<p>Cuando conectemos desde Gpredict veremos que aparece <em>connected</em> y la frecuencia a la que debe sintonizar.</p>
+<img src="/seguimiento-satelites-gpredict/GpredictConnector-connected.png" class="" width="300" title="SDR# - GpredictConnector connected">
+
+
+<h3 id="SDR-1"><a href="#SDR-1" class="headerlink" title="SDR++"></a>SDR++</h3><p>En el caso de SDR++ ya viene incluido un módulo para poder conectar Gpredict. Lo único que debemos hacer es hacer clic en <em>“Start”</em> en el módulo <strong>Rigctl Server</strong> para ponerlo a la escucha.</p>
+<img src="/seguimiento-satelites-gpredict/sdrpp-listening.png" class="" width="300" title="SDR++ - Rigctl listening">
+
+<p>Una vez conectado veremos que aparece <em>Connected</em>.</p>
+<img src="/seguimiento-satelites-gpredict/sdrpp-connected.png" class="" width="300" title="SDR++ - Rigctl connected">
+]]></content>
+      <tags>
+        <tag>Satélites</tag>
+        <tag>Gpredict</tag>
+        <tag>Tracking</tag>
       </tags>
   </entry>
   <entry>
