@@ -21,7 +21,7 @@ Más información sobre los satélites Meteor-M en [este enlace](http://www.russ
 
 ## Datos de los satélites
 
-Tenemos en órbita tres satélites Meteor-M, pero actualmente solo uno de ellos emite imágenes en LRPT. El último satélite puesto en órbita sufrió a finales de 2019 el impacto de un micro-meteorito que le produjo daños y dejó el sistema de LRPT fuera de servicio. Solo consiguieron restablecer el sistema de HRPT. [Enlace a la publicación de Roscosmos.](https://www.roscosmos.ru/27891/)
+Tenemos en órbita cuatro satélites Meteor-M, pero actualmente solo uno de ellos emite imágenes en LRPT, el Meteor-M N2-3. A pesar de que es el más reciente, su antena para LRPT no se desplegó correctamente y la señal que se recibe es algo inestable y débil.
 
 | Satélite        | Meteor-M N1 | Meteor-M N2  | Meteor-M N2-2 | Meteor-M N2-3 |
 |-----------------|-------------|--------------|---------------|---------------|
@@ -157,7 +157,7 @@ Durante el pase podemos ver como LRPT Decoder genera la imagen si hemos optado p
 
 {% asset_img meteor_analizer.jpg 900 "LRPT Decoder" %}
 
-Una vez termine el pase vamos a LRPT Decoder para generar la imagen final. El satélite tiene seis canales de los cuales utiliza tres de forma simultanea. Los tres primeros corresponden a espectro visible y los tres últimos al espectro infrarrojo. A veces podemos encontrar los tres canales del espectro visible o bien dos del visible uno del infrarrojo. La imagen final a color se puede componer uniendo los tres canales RGB del espectro visible, o bien con dos de ellos.
+Una vez termine el pase vamos a LRPT Decoder para generar la imagen final. El satélite tiene seis canales de los cuales utiliza tres de forma simultanea. Los tres primeros corresponden a espectro visible y los tres últimos al espectro infrarrojo. En verano podemos encontrar los tres canales del espectro visible y en invierno dos del visible uno del infrarrojo. La imagen final a color se puede componer uniendo los tres canales RGB del espectro visible, o bien con dos de ellos.
 
 {% asset_img meteor_analizer_finalizado.jpg 900 "LRPT Decoder" %}
 
