@@ -315,7 +315,7 @@
 <img src="/recepcion-satelites-meteorologicos-meteor/Meteor-M_2.jpg" class="" width="600" title="Meteor-M N2-1">
 
 <p>Más información sobre los satélites Meteor-M en <a target="_blank" rel="noopener" href="http://www.russianspaceweb.com/meteor-m.html">este enlace</a> (en inglés).</p>
-<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Tenemos en órbita tres satélites Meteor-M, pero actualmente solo uno de ellos emite imágenes en LRPT. El último satélite puesto en órbita sufrió a finales de 2019 el impacto de un micro-meteorito que le produjo daños y dejó el sistema de LRPT fuera de servicio. Solo consiguieron restablecer el sistema de HRPT. <a target="_blank" rel="noopener" href="https://www.roscosmos.ru/27891/">Enlace a la publicación de Roscosmos.</a></p>
+<h2 id="Datos-de-los-satelites"><a href="#Datos-de-los-satelites" class="headerlink" title="Datos de los satélites"></a>Datos de los satélites</h2><p>Tenemos en órbita cuatro satélites Meteor-M, pero actualmente solo uno de ellos emite imágenes en LRPT, el Meteor-M N2-3. A pesar de que es el más reciente, su antena para LRPT no se desplegó correctamente y la señal que se recibe es algo inestable y débil.</p>
 <table>
 <thead>
 <tr>
@@ -415,7 +415,7 @@
 <p>Durante el pase podemos ver como LRPT Decoder genera la imagen si hemos optado por sacar los datos por el socket.</p>
 <img src="/recepcion-satelites-meteorologicos-meteor/meteor_analizer.jpg" class="" width="900" title="LRPT Decoder">
 
-<p>Una vez termine el pase vamos a LRPT Decoder para generar la imagen final. El satélite tiene seis canales de los cuales utiliza tres de forma simultanea. Los tres primeros corresponden a espectro visible y los tres últimos al espectro infrarrojo. A veces podemos encontrar los tres canales del espectro visible o bien dos del visible uno del infrarrojo. La imagen final a color se puede componer uniendo los tres canales RGB del espectro visible, o bien con dos de ellos.</p>
+<p>Una vez termine el pase vamos a LRPT Decoder para generar la imagen final. El satélite tiene seis canales de los cuales utiliza tres de forma simultanea. Los tres primeros corresponden a espectro visible y los tres últimos al espectro infrarrojo. En verano podemos encontrar los tres canales del espectro visible y en invierno dos del visible uno del infrarrojo. La imagen final a color se puede componer uniendo los tres canales RGB del espectro visible, o bien con dos de ellos.</p>
 <img src="/recepcion-satelites-meteorologicos-meteor/meteor_analizer_finalizado.jpg" class="" width="900" title="LRPT Decoder">
 
 <p>Para generarla seleccionamos los canales y hacemos clic en <strong>Generate RGB</strong>. Nos aparecerá una ventana con la vista previa. Ahora hacemos clic en <strong>Save</strong> y seleccionamos el formato de salida de la imagen que se guardará en la ruta que le hemos indicado en el archivo <strong>M2_LRPT_Decoder.ini</strong>.</p>
