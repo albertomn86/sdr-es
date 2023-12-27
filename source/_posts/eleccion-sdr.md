@@ -3,7 +3,7 @@ title: Elección del dispositivo SDR
 date: 2020-03-16 12:07:36
 tags: RTL-SDR
 author: EA7KOO
-updated: 2023-02-05 16:10:12
+updated: 2023-12-27 18:10:12
 description: Guía para la elección del dispositivo SDR. Tabla comparativa y características de los dispositivos más vendidos.
 ---
 
@@ -16,7 +16,8 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 | --- | :-: | --: | --- | :-: | --: |
 | [Modelos genéricos](/eleccion-sdr/#Modelos-genericos) | FC0012 | 2,4 MHz | 22 MHz – 948,6 MHz | No | ~12€ |
 | [Modelos genéricos](/eleccion-sdr/#Modelos-genericos) | R820T/2 | 2,4 MHz | 24 MHz – 1700 MHz | No | ~15€ |
-| [RTL-SDR Blog V3](/eleccion-sdr/#RTL-SDR-Blog-V3) | R820T2 | 2,4 MHz | 500 kHz – 1766 MHz | Sí | ~38€ |
+| [RTL-SDR Blog V3](/eleccion-sdr/#RTL-SDR-Blog-V3) | R820T2 | 2,4 MHz | 500 kHz – 1766 MHz | Sí | ~39€ |
+| [RTL-SDR Blog V4](/eleccion-sdr/#RTL-SDR-Blog-V4) | R828D | 2,4 MHz | 500 kHz – 1766 MHz | Sí | ~39€ |
 | [Nooelec NESDR SMArt v5](/eleccion-sdr/#Nooelec-NESDR-SMArt-v5) | R820T2 | 3,2 MHz | 100 KHz - 1750 MHz | No | ~41€ |
 | [Nooelec NESDR SMArTee v2](/eleccion-sdr/#Nooelec-NESDR-SMArTee-v2) | R820T2 | 2,4 MHz | 25 MHz - 1750 MHz | Sí | ~41€ |
 | [Nooelec NESDR SMArt XTR](/eleccion-sdr/#Nooelec-NESDR-SMArt-XTR) | E4000  | 2,4 MHz | 65 MHz - 2300 MHz | No | ~54€ |
@@ -59,6 +60,20 @@ La finalidad este artículo es orientarnos para escoger el dispositivo que más 
 - **Conector:** SMA hembra.
 - Disponible en eBay [(tienda oficial)](https://www.ebay.com/str/rtlsdrblog), AliExpress [(tienda oficial)](https://es.aliexpress.com/store/4523039), RTL-SDR.com y Astroradio.
 - Más información: [Datasheet (PDF)](https://www.rtl-sdr.com/wp-content/uploads/2018/02/RTL-SDR-Blog-V3-Datasheet.pdf).
+
+## RTL-SDR Blog V4
+
+{% asset_img rtlsdrblogV4.jpg 400 "RTL-SDR Blog V4" %}
+
+- **Ancho de banda:** Hasta 2,4 MHz.
+- **ADC:** RTL2832U 8-bits.
+- **Sintonizador:** R828D.
+- **Rango de frecuencias:** 500 kHz – 1.766 MHz (Desaparece el modo *Direct Sampling*, lleva un *Upconverter* integrado).
+- **Bias-Tee:** Sí, activación por software (4,5V 180mA).
+- **TCXO:** 1 PPM.
+- **Conector:** SMA hembra.
+- Disponible en eBay [(tienda oficial)](https://www.ebay.com/str/rtlsdrblog), AliExpress [(tienda oficial)](https://es.aliexpress.com/store/4523039), RTL-SDR.com y Astroradio.
+- Más información: [RTL-SDR BLOG](https://www.rtl-sdr.com/rtl-sdr-blog-v4-dongle-initial-release/).
 
 
 ## Nooelec NESDR SMArt v5
