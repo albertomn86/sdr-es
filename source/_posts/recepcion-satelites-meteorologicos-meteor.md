@@ -3,7 +3,7 @@ title: Recibir satélites meteorológicos Meteor-M
 date: 2020-03-27 12:10:49
 tags: [Satélites, Satélites meteorológicos, Meteorología]
 author: EA7KOO
-updated: 2023-07-06 19:14:12
+updated: 2023-12-27 11:14:12
 description: Guía paso a paso sobre cómo recibir imágenes LRTP desde los satélites meteorológicos rusos Meteor-M.
 ---
 
@@ -21,7 +21,7 @@ Más información sobre los satélites Meteor-M en [este enlace](http://www.russ
 
 ## Datos de los satélites
 
-Tenemos en órbita cuatro satélites Meteor-M, pero actualmente solo uno de ellos emite imágenes en LRPT, el Meteor-M N2-3. A pesar de que es el más reciente, su antena para LRPT no se desplegó correctamente y la señal que se recibe es algo inestable y débil.
+Tenemos en órbita cuatro satélites Meteor-M, pero actualmente solo uno de ellos emite imágenes en LRPT, el Meteor-M N2-3. A pesar de que es el más reciente, su antena para LRPT no se desplegó correctamente y la señal deja de recibirse unos grados antes de lo esperado.
 
 | Satélite        | Meteor-M N1 | Meteor-M N2  | Meteor-M N2-2 | Meteor-M N2-3 |
 |-----------------|-------------|--------------|---------------|---------------|
@@ -29,9 +29,9 @@ Tenemos en órbita cuatro satélites Meteor-M, pero actualmente solo uno de ello
 | **COSPAR ID**   | 2009-049A   | 2014-037A    | 2019-038A     | 2023-091A     |
 | **Fecha de lanzamiento** | 17 de septiembre de 2009 | 8 de julio de 2014 | 5 de julio de 2019 | 27 de junio de 2023 |
 | **Estado LRPT**      | Inactivo    | Averiado    | Averiado      | **Activo**  |
-| **Frecuencia LRPT**  | -           | -           | -             | 137,100 MHz |
+| **Frecuencia LRPT**  | -           | -           | -             | 137,900 MHz |
 
-Podemos conocer el estado actual de los satélites en la siguiente página: [Meteor Status (por Happysat)](http://happysat.nl/Meteor/html/Meteor_Status.html).
+Podemos conocer el estado actual de los satélites en la siguiente página: [Meteor Status (por Carl Reinemann - USRadioguy)](https://usradioguy.com/meteor-satellite/).
 
 
 ## Método 1: SDR# + Meteor Demodulator
@@ -135,8 +135,8 @@ Los datos para DDETracker son los siguientes:
     ```
     radio_Start
     radio_modulation_type<wfm>
-    radio_center_frequency_Hz<137100000>
-    radio_frequency_Hz<137100000>
+    radio_center_frequency_Hz<137900000>
+    radio_frequency_Hz<137900000>
     radio_bandwidth_Hz<120000>
     OQPSK_demodulator_Start
     send_tracking_frequency_On
