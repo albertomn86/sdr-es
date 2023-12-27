@@ -26,16 +26,14 @@
 <meta property="og:site_name" content="SDR en español">
 <meta property="og:description" content="Cómo generar de forma automática un archivo TLE con los satélites deseados.">
 <meta property="og:locale" content="es_ES">
-<meta property="og:image" content="https://sdr-es.com/generar-archivo-TLE/archivos.png">
-<meta property="og:image" content="https://sdr-es.com/generar-archivo-TLE/bat.png">
-<meta property="og:image" content="https://sdr-es.com/generar-archivo-TLE/consola.png">
+<meta property="og:image" content="https://sdr-es.com/generar-archivo-TLE/consola.jpg">
 <meta property="article:published_time" content="2021-04-18T11:01:07.000Z">
-<meta property="article:modified_time" content="2022-07-28T18:42:00.000Z">
+<meta property="article:modified_time" content="2023-12-27T17:42:00.000Z">
 <meta property="article:author" content="SDR en español">
 <meta property="article:tag" content="Satélites">
 <meta property="article:tag" content="Orbitron">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://sdr-es.com/generar-archivo-TLE/archivos.png">
+<meta name="twitter:image" content="https://sdr-es.com/generar-archivo-TLE/consola.jpg">
 
 
 <link rel="canonical" href="https://sdr-es.com/generar-archivo-TLE/">
@@ -274,7 +272,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Editado el</span>
-      <time title="Modificado por: 28/07/2022 20:42:00" itemprop="dateModified" datetime="2022-07-28T20:42:00+02:00">28/07/2022</time>
+      <time title="Modificado por: 27/12/2023 18:42:00" itemprop="dateModified" datetime="2023-12-27T18:42:00+01:00">27/12/2023</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -295,25 +293,24 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Si realizamos habitualmente el seguimiento de satélites, uno de los pasos más importantes es tener actualizados nuestros archivos de <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Two-line_element_set">TLE</a>. En este artículo veremos cómo generar un archivo TLE que contenga solo los satélites que queramos y que podemos actualizar con un clic.</p>
+        <p>Si realizamos habitualmente el seguimiento de satélites, uno de los puntos más importantes es mantener actualizados nuestros archivos de <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Two-line_element_set">TLE</a>. En este artículo veremos cómo generar un archivo TLE que contenga solo los satélites que queramos y que podemos actualizar con un simple clic.</p>
 <span id="more"></span>
 
-<p>Para ello vamos a usar el programa <a target="_blank" rel="noopener" href="https://github.com/albertomn86/TLE_Generator"><strong>TLE Generator</strong></a>. Este programa es un <em>script</em> que a partir de un listado de satélites descarga los datos TLE de los mismos de forma automática. Este <em>script</em> se puede ejecutar en cualquier sistema operativo si tenemos el intérprete de Python previamente instalado.<br>En este ejemplo vamos a usar un binario para Windows que no necesita tener el intérprete instalado y que podemos descargar desde el siguiente enlace:</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/albertomn86/TLE_Generator/releases/download/v2.4/TLE_Generator.Windows.zip"><center>Descargar TLE Generator para Windows</center></a></p>
-<p>Una vez descargado el archivo, extraemos su contenido:</p>
-<img src="/generar-archivo-TLE/archivos.png" class="" width="200" title="Archivos">
-
-<p>Ahora abrimos el archivo <strong><em>satellites.txt</em></strong> y editamos el listado de satélites con los que vayamos a añadir al archivo TLE.<br>Para añadir un nuevo satélite, simplemente necesitamos insertar en el archivo su identificador dado por el <a target="_blank" rel="noopener" href="https://es.wikipedia.org/wiki/NORAD">NORAD</a>. Para obtener el identificador de cualquier satélite, podemos usar el buscador de la web de CelesTrack:</p>
+<p>Para ello vamos a usar el programa <a target="_blank" rel="noopener" href="https://github.com/albertomn86/TLEGenerator"><strong>TLE Generator</strong></a>, que descarga los datos TLE de un listado de satélites de forma automática. Este programa se puede ejecutar en cualquier sistema operativo. Únicamente requiere tener las librerías de ejecución de .NET 8 instaladas previamente (en Windows, Linux x64 y MacOS x64) y que podemos descargar desde el siguiente enlace:</p>
+<p><a target="_blank" rel="noopener" href="https://dotnet.microsoft.com/es-es/download/dotnet/8.0/runtime"><center>Descargar .NET 8.0 Runtime</center></a></p>
+<p>Para utilizarlo en otro sistema operativo distinto a los antes mencionados, debemos descargar <a target="_blank" rel="noopener" href="https://dotnet.microsoft.com/es-es/download/dotnet/8.0">el SDK de .NET 8</a> y compilar el programa nosotros mismos.</p>
+<p>En este ejemplo vamos a usar la versión de TLE Generator para Windows, que podemos descargar ya compilada desde el siguiente enlace:</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/albertomn86/TLEGenerator/releases/download/v1.0/tlegenerator-windows-x64.zip"><center>Descargar TLE Generator para Windows</center></a></p>
+<p>Una vez descargado el archivo, extraemos su contenido.</p>
+<p>Ahora abrimos el archivo <strong><em>satellites.json</em></strong> y editamos el listado de satélites con los que vayamos a añadir al archivo TLE.<br>Para añadir un nuevo satélite, simplemente necesitamos insertar en el archivo su identificador dado por el <a target="_blank" rel="noopener" href="https://es.wikipedia.org/wiki/NORAD">NORAD</a>. Para obtener el identificador de cualquier satélite, podemos usar el buscador de la web de CelesTrack:</p>
 <p><a target="_blank" rel="noopener" href="https://celestrak.org/satcat/search.php"><center>CelesTrack Satellite Catalog</center></a></p>
-<p>Si queremos quitar satélites bastaría con eliminar la linea o simplemente comentarla con el caracter ‘#’ al principio.</p>
-<p>Una vez tenemos el listado de satélites, vamos a crear un archivo <em>batch</em> con la llamada al ejecutable con los parámetros ya establecidos, para que simplemente tengamos que hacer doble clic para generar nuestro archivo dónde queramos.</p>
-<p>En este caso voy a generar un archivo con los TLE dentro de la carpeta de Orbitron. Para ello creamos un nuevo archivo de texto con la extensión <em>.bat</em> y el contenido siguiente:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tle_gen.exe -o C:\SDR\Portable\Orbitron\Tle\custom.txt</span><br></pre></td></tr></table></figure>
+<p>Una vez tenemos el listado de satélites, simplemente bastaría con ejecutar el archivo <em>tlegenerator.exe</em> para que se genere el nuevo archivo <em>custom_TLE.txt</em> que contiene los TLE.</p>
+<p>Ahora, a modo de ejemplo, vamos a automatizar el proceso para varios archivos de TLE de forma que podamos mantenerlos actualizados de una manera muy sencilla. Vamos a crear un archivo <em>batch</em> con la llamada al ejecutable con los parámetros ya establecidos, para que simplemente tengamos que hacer doble clic para actualizar los archivos que queramos.</p>
+<p>En este caso vamos a generar un archivo de nombre <em>custom.txt</em> dentro de la carpeta de Orbitron que contendrá los TLE especificados en el archivo <em>satellites.json</em> y otro archivo con los TLE de los satélites meteorológicos NOAA dentro de la carpeta de instalación de WXtoImg.<br>Para ello creamos un nuevo archivo de texto con la extensión <strong>.bat</strong> (<em>actualizar.bat</em> por ejemplo) y el contenido siguiente:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tlegenerator.exe -o C:\SDR\Portable\Orbitron\Tle\custom.txt</span><br><span class="line">tlegenerator.exe -o C:\SDR\Portable\WXtoImg\weather.txt -i 25338,28654,33591</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
 
-<img src="/generar-archivo-TLE/bat.png" class="" width="200" title="Archivo BAT">
-
-<p>Ahora cada vez que queramos tener el archivo de TLE actualizado, simplemente ejecutamos este archivo antes de iniciar Orbitron.</p>
-<img src="/generar-archivo-TLE/consola.png" class="" width="600" title="Terminal de Windows">
+<p>Ahora cada vez que queramos actualizar todos nuestros archivos TLE, simplemente ejecutamos este archivo.</p>
+<img src="/generar-archivo-TLE/consola.jpg" class="" width="800" title="Terminal de Windows">
 
     </div>
 
