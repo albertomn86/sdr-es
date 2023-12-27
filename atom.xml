@@ -152,9 +152,9 @@
     
     <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
     
-    <category term="Windows" scheme="https://sdr-es.com/tags/Windows/"/>
-    
     <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
+    
+    <category term="Windows" scheme="https://sdr-es.com/tags/Windows/"/>
     
     <category term="SDR++" scheme="https://sdr-es.com/tags/SDR/"/>
     
