@@ -4,7 +4,7 @@ date: 2022-09-25 18:10:49
 tags: [Satélites, Satélites meteorológicos, Meteorología, HRPT]
 author: EA7KOO
 description: Guía para recibir imágenes HRPT desde los satélites meteorológicos LEO.
-updated: 2023-07-02 17:11:12
+updated: 2024-03-02 12:11:12
 ---
 
 Como ya vimos en artículos anteriores, podemos recibir imágenes meteorológicas desde los distintos satélites que fotografían continuamente la superficie terrestre desde una órbita baja. Hasta ahora habíamos visto como obtener esas imágenes de baja resolución en la banda de VHF desde los satélites NOAA y Meteor-M. En este artículo veremos cómo obtener imágenes en una resolución mucho mayor en la banda L.
@@ -25,6 +25,7 @@ Los satélites que emiten actualmente imágenes en modo HRPT en banda L son los 
 | NOAA-19       | 1.698   |
 | Meteor-M N2-2 | 1.700   |
 | Meteor-M N2-3 | 1.700   |
+| Meteor-M N2-4 | 1.700   |
 | MetOp-B       | 1.701,3 |
 | MetOp-C       | 1.701,3 |
 | FengYun-3B (*)| 1.704,5 |
