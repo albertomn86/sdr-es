@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>SDR en español</title>
+  <icon>https://sdr-es.com/favicon.ico</icon>
+  
+  <link href="https://sdr-es.com/atom.xml" rel="self"/>
+  
+  <link href="https://sdr-es.com/"/>
+  <updated>2024-03-02T11:11:12.000Z</updated>
+  <id>https://sdr-es.com/</id>
+  
+  <author>
+    <name>SDR en español</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recibir imágenes HRPT desde satélites meteorológicos</title>
+    <link href="https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/"/>
+    <id>https://sdr-es.com/recepcion-satelites-meteorologicos-HRPT/</id>
+    <published>2022-09-25T16:10:49.000Z</published>
+    <updated>2024-03-02T11:11:12.000Z</updated>
+    
+    
+    <summary type="html">Guía para recibir imágenes HRPT desde los satélites meteorológicos LEO.</summary>
+    
+    
+    
+    
+    <category term="Satélites meteorológicos" scheme="https://sdr-es.com/tags/Satelites-meteorologicos/"/>
+    
+    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
+    
+    <category term="Meteorología" scheme="https://sdr-es.com/tags/Meteorologia/"/>
+    
+    <category term="HRPT" scheme="https://sdr-es.com/tags/HRPT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Instalación de iGate APRS en Raspberry Pi</title>
+    <link href="https://sdr-es.com/instalacion-igate-APRS-raspberrypi/"/>
+    <id>https://sdr-es.com/instalacion-igate-APRS-raspberrypi/</id>
+    <published>2022-09-06T14:05:59.000Z</published>
+    <updated>2022-09-06T14:05:59.000Z</updated>
+    
+    
+    <summary type="html">En este artículo veremos cómo instalar y configurar un iGate para APRS en una Raspberry Pi.</summary>
+    
+    
+    
+    
+    <category term="RTL-SDR" scheme="https://sdr-es.com/tags/RTL-SDR/"/>
+    
+    <category term="APRS" scheme="https://sdr-es.com/tags/APRS/"/>
+    
+    <category term="Raspberry Pi" scheme="https://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+    <category term="DireWolf" scheme="https://sdr-es.com/tags/DireWolf/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recibir satélite Es&#39;hail-2/QO-100</title>
+    <link href="https://sdr-es.com/recibir-satelite-eshail2-qo100/"/>
+    <id>https://sdr-es.com/recibir-satelite-eshail2-qo100/</id>
+    <published>2022-05-22T11:13:01.000Z</published>
+    <updated>2022-05-27T10:20:24.000Z</updated>
+    
+    
+    <summary type="html">Guía para la recepción del satélite geoestacionario Es&#39;hail-2/QO-100.</summary>
+    
+    
+    
+    
+    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
+    
+    <category term="SDRSharp" scheme="https://sdr-es.com/tags/SDRSharp/"/>
+    
+    <category term="Es&#39;hail-2/QO-100" scheme="https://sdr-es.com/tags/Es-hail-2-QO-100/"/>
+    
+    <category term="SDR Console" scheme="https://sdr-es.com/tags/SDR-Console/"/>
+    
+    <category term="DATV" scheme="https://sdr-es.com/tags/DATV/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recibir satélites meteorológicos NOAA en Linux</title>
+    <link href="https://sdr-es.com/recibir-satelites-meteorologicos-NOAA-linux/"/>
+    <id>https://sdr-es.com/recibir-satelites-meteorologicos-NOAA-linux/</id>
+    <published>2022-02-02T17:21:07.000Z</published>
+    <updated>2022-02-02T17:21:07.000Z</updated>
+    
+    
+    <summary type="html">Guía detallada para recibir imágenes en formato APT desde los satélites meteorológicos NOAA en Linux.</summary>
+    
+    
+    
+    
+    <category term="Satélites meteorológicos" scheme="https://sdr-es.com/tags/Satelites-meteorologicos/"/>
+    
+    <category term="NOAA" scheme="https://sdr-es.com/tags/NOAA/"/>
+    
+    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
+    
+    <category term="Linux" scheme="https://sdr-es.com/tags/Linux/"/>
+    
+    <category term="Meteorología" scheme="https://sdr-es.com/tags/Meteorologia/"/>
+    
+    <category term="WXtoIMG" scheme="https://sdr-es.com/tags/WXtoIMG/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Seguimiento de satélites con Gpredict</title>
+    <link href="https://sdr-es.com/seguimiento-satelites-gpredict/"/>
+    <id>https://sdr-es.com/seguimiento-satelites-gpredict/</id>
+    <published>2021-12-23T12:50:15.000Z</published>
+    <updated>2021-12-23T12:50:15.000Z</updated>
+    
+    
+    <summary type="html">En este artículo veremos cómo instalar y configurar Gpredict en Windows, Linux y macOS.</summary>
+    
+    
+    
+    
+    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
+    
+    <category term="Gpredict" scheme="https://sdr-es.com/tags/Gpredict/"/>
+    
+    <category term="Tracking" scheme="https://sdr-es.com/tags/Tracking/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Instalar SDR++</title>
+    <link href="https://sdr-es.com/instalacion-sdrpp/"/>
+    <id>https://sdr-es.com/instalacion-sdrpp/</id>
+    <published>2021-12-21T17:55:53.000Z</published>
+    <updated>2021-12-21T17:55:53.000Z</updated>
+    
+    
+    <summary type="html">Breves notas para la instalación de SDR++ en Windows, Linux y macOS.</summary>
+    
+    
+    
+    
+    <category term="Linux" scheme="https://sdr-es.com/tags/Linux/"/>
+    
+    <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
+    
+    <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
+    
+    <category term="Windows" scheme="https://sdr-es.com/tags/Windows/"/>
+    
+    <category term="SDR++" scheme="https://sdr-es.com/tags/SDR/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recepción del satélite FalconSAT-3</title>
+    <link href="https://sdr-es.com/recepcion-falconsat-3/"/>
+    <id>https://sdr-es.com/recepcion-falconsat-3/</id>
+    <published>2021-10-17T08:31:38.000Z</published>
+    <updated>2023-02-05T15:10:12.000Z</updated>
+    
+    
+    <summary type="html">Guía para recibir mensajes de radioaficionados desde el satélite FalconSAT-3.</summary>
+    
+    
+    
+    
+    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
+    
+    <category term="PACSAT" scheme="https://sdr-es.com/tags/PACSAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recibir telemetría de radiosondas meteorológicas</title>
+    <link href="https://sdr-es.com/recibir-telemetria-radiosondas/"/>
+    <id>https://sdr-es.com/recibir-telemetria-radiosondas/</id>
+    <published>2021-10-03T08:48:43.000Z</published>
+    <updated>2021-10-03T08:48:43.000Z</updated>
+    
+    
+    <summary type="html">Recibir globos sonda y radiosondas meteorológicas usando un dispositivo SDR y los programas SondeMonitor y RS41 Tracker.</summary>
+    
+    
+    
+    
+    <category term="Meteorología" scheme="https://sdr-es.com/tags/Meteorologia/"/>
+    
+    <category term="Radiosonda" scheme="https://sdr-es.com/tags/Radiosonda/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recibir cartas meteorológicas (weather fax)</title>
+    <link href="https://sdr-es.com/recepcion-weather-fax/"/>
+    <id>https://sdr-es.com/recepcion-weather-fax/</id>
+    <published>2021-09-01T15:11:53.000Z</published>
+    <updated>2021-09-01T15:11:53.000Z</updated>
+    
+    
+    <summary type="html">Cómo recibir cartas meteorológicas (weather fax) en HF usando un dispositivo SDR.</summary>
+    
+    
+    
+    
+    <category term="HF" scheme="https://sdr-es.com/tags/HF/"/>
+    
+    <category term="Meteorología" scheme="https://sdr-es.com/tags/Meteorologia/"/>
+    
+    <category term="Weatherfax" scheme="https://sdr-es.com/tags/Weatherfax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recibir radio movil digital (DMR)</title>
+    <link href="https://sdr-es.com/recibir-radio-movil-digital-DMR/"/>
+    <id>https://sdr-es.com/recibir-radio-movil-digital-DMR/</id>
+    <published>2021-08-27T08:30:04.000Z</published>
+    <updated>2021-08-27T08:30:04.000Z</updated>
+    
+    
+    <summary type="html">Cómo escuchar DMR (Radio Móvil Digital) usando un dispositivo SDR en Windows y los plugins para SDR#.</summary>
+    
+    
+    
+    
+    <category term="SDRSharp" scheme="https://sdr-es.com/tags/SDRSharp/"/>
+    
+    <category term="DMR" scheme="https://sdr-es.com/tags/DMR/"/>
+    
+    <category term="DSDPlus" scheme="https://sdr-es.com/tags/DSDPlus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Generar archivo TLE personalizado</title>
+    <link href="https://sdr-es.com/generar-archivo-TLE/"/>
+    <id>https://sdr-es.com/generar-archivo-TLE/</id>
+    <published>2021-04-18T11:01:07.000Z</published>
+    <updated>2023-12-27T17:42:00.000Z</updated>
+    
+    
+    <summary type="html">Cómo generar de forma automática un archivo TLE con los satélites deseados.</summary>
+    
+    
+    
+    
+    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
+    
+    <category term="Orbitron" scheme="https://sdr-es.com/tags/Orbitron/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Construcción de antena QFH para satélites meteorológicos</title>
+    <link href="https://sdr-es.com/construccion-antena-qfh-137/"/>
+    <id>https://sdr-es.com/construccion-antena-qfh-137/</id>
+    <published>2021-04-10T12:25:54.000Z</published>
+    <updated>2021-07-13T16:25:54.000Z</updated>
+    
+    
+    <summary type="html">Cómo construir paso a paso y de forma sencilla una antena QFH para recibir satélites meteorológicos (137,5 MHz).</summary>
+    
+    
+    
+    
+    <category term="Antenas" scheme="https://sdr-es.com/tags/Antenas/"/>
+    
+    <category term="QFH" scheme="https://sdr-es.com/tags/QFH/"/>
+    
+    <category term="Satélites meteorológicos" scheme="https://sdr-es.com/tags/Satelites-meteorologicos/"/>
+    
+    <category term="NOAA" scheme="https://sdr-es.com/tags/NOAA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Instalación de SDRPlay RSP2 en Debian Testing</title>
+    <link href="https://sdr-es.com/instalacion-SDRPlay-RSP2-debian-testing/"/>
+    <id>https://sdr-es.com/instalacion-SDRPlay-RSP2-debian-testing/</id>
+    <published>2021-04-05T17:40:25.000Z</published>
+    <updated>2021-04-05T17:40:25.000Z</updated>
+    
+    
+    <summary type="html">Notas para la instalación de SDRPlay RSP2 en Debian Testing.</summary>
+    
+    
+    
+    
+    <category term="Linux" scheme="https://sdr-es.com/tags/Linux/"/>
+    
+    <category term="SDRPlay" scheme="https://sdr-es.com/tags/SDRPlay/"/>
+    
+    <category term="Instalación" scheme="https://sdr-es.com/tags/Instalacion/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recibir APRS en macOS con Gqrx</title>
+    <link href="https://sdr-es.com/recibir-aprs-macos-con-gqrx/"/>
+    <id>https://sdr-es.com/recibir-aprs-macos-con-gqrx/</id>
+    <published>2021-04-02T15:06:10.000Z</published>
+    <updated>2021-04-02T15:06:10.000Z</updated>
+    
+    
+    <summary type="html">En esta guía os queremos proponer la recepción de paquetes APRS provenientes de la Estación Espacial (ISS) usando Gqrx.</summary>
+    
+    
+    
+    
+    <category term="APRS" scheme="https://sdr-es.com/tags/APRS/"/>
+    
+    <category term="macOS" scheme="https://sdr-es.com/tags/macOS/"/>
+    
+    <category term="ISS" scheme="https://sdr-es.com/tags/ISS/"/>
+    
+    <category term="Gqrx" scheme="https://sdr-es.com/tags/Gqrx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recibir satélites LoRa</title>
+    <link href="https://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/"/>
+    <id>https://sdr-es.com/recibir-satelites-LoRa-con-tinyGS/</id>
+    <published>2021-03-30T16:55:34.000Z</published>
+    <updated>2021-03-30T16:55:34.000Z</updated>
+    
+    
+    <summary type="html">En este artículo veremos como instalar y configurar nuestra estación terrestre (TinyGS) para recibir satélites LoRa.</summary>
+    
+    
+    
+    
+    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
+    
+    <category term="Cubesat" scheme="https://sdr-es.com/tags/Cubesat/"/>
+    
+    <category term="LoRa" scheme="https://sdr-es.com/tags/LoRa/"/>
+    
+    <category term="tinyGS" scheme="https://sdr-es.com/tags/tinyGS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recibir APRS</title>
+    <link href="https://sdr-es.com/recibir-aprs/"/>
+    <id>https://sdr-es.com/recibir-aprs/</id>
+    <published>2021-03-23T20:02:24.000Z</published>
+    <updated>2022-01-30T15:20:24.000Z</updated>
+    
+    
+    <summary type="html">Cómo recibir y decodificar paquetes APRS (terrestres y desde la Estación Espacial Internacional) usando nuestro dispositivo SDR.</summary>
+    
+    
+    
+    
+    <category term="APRS" scheme="https://sdr-es.com/tags/APRS/"/>
+    
+    <category term="ISS" scheme="https://sdr-es.com/tags/ISS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recibir imágenes SSTV desde la ISS</title>
+    <link href="https://sdr-es.com/recibir-sstv-iss/"/>
+    <id>https://sdr-es.com/recibir-sstv-iss/</id>
+    <published>2020-12-26T17:15:55.000Z</published>
+    <updated>2020-12-26T17:15:55.000Z</updated>
+    
+    
+    <summary type="html">Recibir las imágenes en formato SSTV (Slow Scan TV) enviadas desde la Estación Espacial Internacional.</summary>
+    
+    
+    
+    
+    <category term="ISS" scheme="https://sdr-es.com/tags/ISS/"/>
+    
+    <category term="SSTV" scheme="https://sdr-es.com/tags/SSTV/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recibir radio digital mundial (DRM)</title>
+    <link href="https://sdr-es.com/recibir-drm/"/>
+    <id>https://sdr-es.com/recibir-drm/</id>
+    <published>2020-10-25T10:52:23.000Z</published>
+    <updated>2022-01-06T13:10:00.000Z</updated>
+    
+    
+    <summary type="html">Cómo recibir radio digital mundial (DRM) en HF mediante SDR y el programa Dream AM/DRM Receiver.</summary>
+    
+    
+    
+    
+    <category term="HF" scheme="https://sdr-es.com/tags/HF/"/>
+    
+    <category term="DRM" scheme="https://sdr-es.com/tags/DRM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recibir telemetría de los satélites CAS-4</title>
+    <link href="https://sdr-es.com/recepcion-cas4/"/>
+    <id>https://sdr-es.com/recepcion-cas4/</id>
+    <published>2020-10-10T17:23:32.000Z</published>
+    <updated>2020-10-10T17:23:32.000Z</updated>
+    
+    
+    <summary type="html">Guía paso a paso para recibir, decodificar y visualizar la telemetría de los satélites CAS-4.</summary>
+    
+    
+    
+    
+    <category term="Satélites" scheme="https://sdr-es.com/tags/Satelites/"/>
+    
+    <category term="KISS" scheme="https://sdr-es.com/tags/KISS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Instalar receptor SDR online con OpenWebRX</title>
+    <link href="https://sdr-es.com/instalacion-openwebrx/"/>
+    <id>https://sdr-es.com/instalacion-openwebrx/</id>
+    <published>2020-08-13T15:36:20.000Z</published>
+    <updated>2021-12-03T19:42:00.000Z</updated>
+    
+    
+    <summary type="html">En este artículo veremos cómo instalar y configurar nuestro propio WebSDR en una Raspberry Pi con OpenWebRX.</summary>
+    
+    
+    
+    
+    <category term="RTL-SDR" scheme="https://sdr-es.com/tags/RTL-SDR/"/>
+    
+    <category term="Linux" scheme="https://sdr-es.com/tags/Linux/"/>
+    
+    <category term="Raspberry Pi" scheme="https://sdr-es.com/tags/Raspberry-Pi/"/>
+    
+    <category term="OpenWebRX" scheme="https://sdr-es.com/tags/OpenWebRX/"/>
+    
+  </entry>
+  
+</feed>
